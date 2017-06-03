@@ -7,15 +7,14 @@
         <meta name="description" content="{{site.description}}"/>
         <meta name="author" content="{{site.author}}"/>
         <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{site.baseurl}}/feed.xml" />
-        <link rel="stylesheet" href="{{site.baseurl}}/tortoise/layout.css">
-        <link rel="stylesheet" href="{{site.baseurl}}/tortoise/design.css">
         <link rel="stylesheet" href="{{site.baseurl}}/tortoise/tortoise.css">
         <link rel="stylesheet" href="{{site.baseurl}}/tortoise/global.css">
+        <link rel="stylesheet" href="{{site.baseurl}}/local.css">
     </head>
 
     <body>
 
-{% include tortoise/topheader.html %}
+{% include topheader/topheader.html %}
 
         <header>
             <h1><a href="{{site.baseurl}}/">Welcome to {{ site.name }}</a></h1>
