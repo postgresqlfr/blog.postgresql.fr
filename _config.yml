@@ -25,6 +25,8 @@ github_username:  postgresqlfr
 # Build settings
 markdown: kramdown
 theme: minima
+include:
+  - tortoise 
 gems:
   - jekyll-feed
 exclude:
