@@ -1,8 +1,8 @@
 
 DOCKER_IMAGE=jekyll/jekyll:pages
 PORT=4444
-SERVE=jekyll serve --watch
-BUILD=jekyll build
+SERVE=jekyll serve --baseurl=/ --watch
+BUILD=jekyll build --baseurl=/
 
 serve:
 	$(SERVE)

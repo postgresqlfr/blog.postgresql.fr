@@ -17,8 +17,12 @@ title: Actualité de PostgreSQL
 email: contact@postgresql.fr
 description: > # this means to ignore newlines until "baseurl:"
   Retrouvez l'actualité de PostgreSQL et de ses logiciels satelittes
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://blog.postgresql.fr" # the base hostname & protocol for your site, e.g. http://example.com
+
+# /!\ Temporairement
+baseurl: "/blog.postgresql.fr" # the subpath of your site, e.g. /blog
+
+url: "https://blog.postgresql.fr" # the base hostname & protocol for your site, e.g. http://example.com
+
 twitter_username: postgresqlfr
 github_username:  postgresqlfr
 
