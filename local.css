@@ -20,6 +20,17 @@ li > ul, li > ol { margin-bottom: 0; }
 /** Headings */
 h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
+h1 {
+  margin-top: 1em;
+  font-size: 2em;
+  text-align: center;
+}
+
+header hr {
+  display: none;
+}
+
+
 /** Links */
 a { color: #2a7ae2; text-decoration: none; }
 a:visited { color: #1756a9; }
@@ -96,7 +107,10 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 /** Page content */
 .page-content { padding: 30px 0; }
 
-.page-heading { font-size: 20px; }
+.page-heading {
+/*  font-size: 20px; */
+  display: none;
+}
 
 .post-list { margin-left: 0; list-style: none; }
 .post-list > li { margin-bottom: 30px; }
