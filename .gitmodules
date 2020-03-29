@@ -1,6 +1,0 @@
-[submodule "tortoise"]
-	path = assets/tortoise
-	url = https://github.com/postgresqlfr/dokuwiki-template-tortoise.git
-[submodule "_includes/topheader"]
-	path = _includes/topheader
-	url = https://github.com/postgresqlfr/topheader.git 
