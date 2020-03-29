@@ -4,7 +4,9 @@ title: Nouvelles hebdomadaires de PostgreSQL - 19 mars 2017
 author: 'chl'
 ---
 
-<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+## Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s
+
+
 <ul>
 <li>pgpool versions 3.6.2, 3.5.6, 3.4.10, 3.3.14 et 3.2.19 publi&eacute;es. <a target="_blank" href="http://pgpool.net/mediawiki/index.php/Downloads">http://pgpool.net/mediawiki/index.php/Downloads</a></li>
 <li>Postgresqltuner, un programme d'analyse et d'affinage de la configuration de PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/jfcoz/postgresqltuner">https://github.com/jfcoz/postgresqltuner</a></li>
