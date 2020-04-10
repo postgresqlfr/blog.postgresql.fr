@@ -1,0 +1,170 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 4 mai 2014"
+author: "NBougain"
+redirect_from: "index.php?post/2014-05-08-nouvelles-hebdomadaires-de-postgresql-4-mai-2014 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Minor fixes for ALTER TABLE documentation. Etsuro Fujita 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/728c06f17f68f4f80b61808b491b1c7b065a3d27">http://git.postgresql.org/pg/commitdiff/728c06f17f68f4f80b61808b491b1c7b065a3d27</a></li>
+
+<li>Consistently allow reading of messages from a detached shm_mq. This was intended to work always, but the previous code only allowed it if at least one message was successfully read by the receiver before the sender detached the queue. Report by Petr Jelinek. Patch by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5ec45bb7fa0a1495a360165a12ba5d6b4587bb4a">http://git.postgresql.org/pg/commitdiff/5ec45bb7fa0a1495a360165a12ba5d6b4587bb4a</a></li>
+
+<li>Documentation corrections for pg_replication_slots. Thomas Reiss, with changes to the catalog_xmin language by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/65fb5ff13009ef34ff95300d3e03540cf872e494">http://git.postgresql.org/pg/commitdiff/65fb5ff13009ef34ff95300d3e03540cf872e494</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix two bugs in WAL-logging of GIN pending-list pages. In writeListPage, never take a full-page image of the page, because we have all the information required to re-initialize in the WAL record anyway. Before this fix, a full-page image was always generated, unless full_page_writes=off, because when the page is initialized its LSN is always 0. In stable-branches, keep the code to restore the backup blocks if they exist, in case that the WAL is generated with an older minor version, but in master Assert that there are no full-page images. In the redo routine, add missing "off++". Otherwise the tuples are added to the page in reverse order. That happens to be harmless because we always scan and remove all the tuples together, but it was clearly wrong. Also, it was masked by the first bug unless full_page_writes=off, because the page was always restored from a full-page image. Backpatch to all supported versions. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d2722443d993988ff2e529b652c61fec1ca527f7">http://git.postgresql.org/pg/commitdiff/d2722443d993988ff2e529b652c61fec1ca527f7</a></li>
+
+<li>Add missing SYSTEMQUOTEs. Some popen() calls were missing SYSTEMQUOTEs, which caused initdb and pg_upgrade to fail on Windows, if the installation path contained both spaces and @ signs. Patch by Nikhil Deshpande. Backpatch to all supported versions. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/503de5462158b0260f6deaf3087cf0945f7327f0">http://git.postgresql.org/pg/commitdiff/503de5462158b0260f6deaf3087cf0945f7327f0</a></li>
+
+</ul>
+
+<p>Gregory Stark a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add support for wrapping to psql's "extended" mode. This makes it very feasible to display tables that have both many columns and some large data in some columns (such as pg_stats). Emre Hasegeli with review and rewriting from Sergey Muraviov and reviewed by Greg Stark 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6513633b94173fc1d9e2b213c43f9422ddbf5faa">http://git.postgresql.org/pg/commitdiff/6513633b94173fc1d9e2b213c43f9422ddbf5faa</a></li>
+
+<li>Remove unnecessary cast causing a warning. Incidentally, I reversed the two names in the earlier commit. The original author was Sergey Muraviov and the reviewer was Emre Hasegeli. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/dbe31616c9be7380b8a88cdfbeaa68dbdcdebc36">http://git.postgresql.org/pg/commitdiff/dbe31616c9be7380b8a88cdfbeaa68dbdcdebc36</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Improve planner to drop constant-NULL inputs of AND/OR where it's legal. In general we can't discard constant-NULL inputs, since they could change the result of the AND/OR to be NULL. But at top level of WHERE, we do not need to distinguish a NULL result from a FALSE result, so it's okay to treat NULL as FALSE and then simplify AND/OR accordingly. This is a very ancient oversight, but in 9.2 and later it can lead to failure to optimize queries that previous releases did optimize, as a result of more aggressive parameter substitution rules making it possible to reduce more subexpressions to NULL constants. This is the root cause of bug #10171 from Arnold Scheffler. We could alternatively have fixed that by teaching orclauses.c to ignore constant-NULL OR arms, but it seems better to get rid of them globally. I resisted the temptation to back-patch this change into all active branches, but it seems appropriate to back-patch as far as 9.2 so that there will not be performance regressions of the kind shown in this bug. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/95811032d782049642a672e3db0a5382616ab084">http://git.postgresql.org/pg/commitdiff/95811032d782049642a672e3db0a5382616ab084</a></li>
+
+<li>Fix uninitialized-variable warnings induced by recent commit. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5358bfdc98a47d26649ae094dab88842a0603968">http://git.postgresql.org/pg/commitdiff/5358bfdc98a47d26649ae094dab88842a0603968</a></li>
+
+<li>Fix indentation of JOIN clauses in rule/view dumps. The code attempted to outdent JOIN clauses further left than the parent FROM keyword, which was odd in any case, and led to inconsistent formatting since in simple cases the clauses couldn't be moved any further left than that. And it left a permanent decrement of the indentation level, causing subsequent lines to be much further left than they should be (again, this couldn't be seen in simple cases for lack of indentation to give up). After a little experimentation I chose to make it indent JOIN keywords two spaces from the parent FROM, which is one space more than the join's lefthand input in cases where that appears on a different line from FROM. Back-patch to 9.3. This is a purely cosmetic change, and the bug is quite old, so that may seem arbitrary; but we are going to be making some other changes to the indentation behavior in both HEAD and 9.3, so it seems reasonable to include this in 9.3 too. I committed this one first because its effects are more visible in the regression test results as they currently stand than they will be later. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d166eed302400a71eed1aaa301d30be3af7b5715">http://git.postgresql.org/pg/commitdiff/d166eed302400a71eed1aaa301d30be3af7b5715</a></li>
+
+<li>Limit overall indentation in rule/view dumps. Continuing to indent no matter how deeply nested we get doesn't really do anything for readability; what's worse, it results in O(N^2) total whitespace, which can become a performance and memory-consumption issue. To address this, once we get past 40 characters of indentation, reduce the indentation step distance 4x, and also limit the maximum indentation by reducing it modulo 40. This latter choice is a bit weird at first glance, but it seems to preserve readability better than a simple cap would do. Back-patch to 9.3, because since commit 62e666400d the performance issue is a hazard for pg_dump. Greg Stark and Tom Lane 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0601cb54dac14d979d726ab2ebeda251ae36e857">http://git.postgresql.org/pg/commitdiff/0601cb54dac14d979d726ab2ebeda251ae36e857</a></li>
+
+<li>Reduce indentation/parenthesization of set operations in rule/view dumps. A query such as "SELECT x UNION SELECT y UNION SELECT z UNION ..." produces a left-deep nested parse tree, which we formerly showed in its full nested glory and with all the possible parentheses. This does little for readability, though, and long UNION lists resulting in excessive indentation are common. Instead, let's omit parentheses and indent all the subqueries at the same level in such cases. This patch skips indentation/parenthesization whenever the lefthand input of a SetOperationStmt is another SetOperationStmt of the same kind and ALL/DISTINCT property. We could teach the code the exact syntactic precedence of set operations and thereby avoid parenthesization in some more cases, but it's not clear that that'd be a readability win: it seems better to parenthesize if the set operation changes. (As an example, if there's one UNION in a long list of UNION ALL, it now stands out like a sore thumb, which seems like a good thing.) Back-patch to 9.3. This completes our response to a complaint from Greg Stark that since commit 62e666400d there's a performance problem in pg_dump for views containing long UNION sequences (or other types of deeply nested constructs). The previous commit 0601cb54dac14d979d726ab2ebeda251ae36e857 handles the general problem, but this one makes the specific case of UNION lists look a lot nicer. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/41de93c53aa941167d445ecb7d91d58829adcc92">http://git.postgresql.org/pg/commitdiff/41de93c53aa941167d445ecb7d91d58829adcc92</a></li>
+
+<li>Check for interrupts and stack overflow during rule/view dumps. Since ruleutils.c recurses, it could be driven to stack overflow by deeply nested constructs. Very large queries might also take long enough to deparse that a check for interrupts seems like a good idea. Stick appropriate tests into a couple of key places. Noted by Greg Stark. Back-patch to all supported branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0bff398761b5e6119b40550bbe3751f4194dc7a7">http://git.postgresql.org/pg/commitdiff/0bff398761b5e6119b40550bbe3751f4194dc7a7</a></li>
+
+<li>Rationalize common/relpath.[hc]. Commit a73018392636ce832b09b5c31f6ad1f18a4643ea created rather a mess by putting dependencies on backend-only include files into include/common. We really shouldn't do that. To clean it up: * Move TABLESPACE_VERSION_DIRECTORY back to its longtime home in catalog/catalog.h. We won't consider this symbol part of the FE/BE API. * Push enum ForkNumber from relfilenode.h into relpath.h. We'll consider relpath.h as the source of truth for fork numbers, since relpath.c was already partially serving that function, and anyway relfilenode.h was kind of a random place for that enum. * So, relfilenode.h now includes relpath.h rather than vice-versa. This direction of dependency is fine. (That allows most, but not quite all, of the existing explicit #includes of relpath.h to go away again.) * Push forkname_to_number from catalog.c to relpath.c, just to centralize fork number stuff a bit better. * Push GetDatabasePath from catalog.c to relpath.c; it was rather odd that the previous commit didn't keep this together with relpath(). * To avoid needing relfilenode.h in common/, redefine the underlying function (now called GetRelationPath) as taking separate OID arguments, and make the APIs using RelFileNode or RelFileNodeBackend into macro wrappers. (The macros have a potential multiple-eval risk, but none of the existing call sites have an issue with that; one of them had such a risk already anyway.) * Fix failure to follow the directions when "init" fork type was added; specifically, the errhint in forkname_to_number wasn't updated, and neither was the SGML documentation for pg_relation_size(). * Fix tablespace-path-too-long check in CreateTableSpace() to account for fork-name component of maximum-length pathnames. This requires putting FORKNAMECHARS into a header file, but it was rather useless (and actually unreferenced) where it was. The last couple of items are potentially back-patchable bug fixes, if anyone is sufficiently excited about them; but personally I'm not. Per a gripe from Christoph Berg about how include/common wasn't self-contained. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2d00190495b22e0d0ba351b2cda9c95fb2e3d083">http://git.postgresql.org/pg/commitdiff/2d00190495b22e0d0ba351b2cda9c95fb2e3d083</a></li>
+
+<li>Improve error messages in reorderbuffer.c. Be more clear about failure cases in relfilenode-&gt;relation lookup, and fix some other places that were inconsistent or not per our message style guidelines. Andres Freund and Tom Lane 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/203b0d132fe9038061b5bab70f1362440ae94aa8">http://git.postgresql.org/pg/commitdiff/203b0d132fe9038061b5bab70f1362440ae94aa8</a></li>
+
+<li>Fix failure to detoast fields in composite elements of structured types. If we have an array of records stored on disk, the individual record fields cannot contain out-of-line TOAST pointers: the tuptoaster.c mechanisms are only prepared to deal with TOAST pointers appearing in top-level fields of a stored row. The same applies for ranges over composite types, nested composites, etc. However, the existing code only took care of expanding sub-field TOAST pointers for the case of nested composites, not for other structured types containing composites. For example, given a command such as UPDATE tab SET arraycol = ARRAY[(ROW(x,42)::mycompositetype] ... where x is a direct reference to a field of an on-disk tuple, if that field is long enough to be toasted out-of-line then the TOAST pointer would be inserted as-is into the array column. If the source record for x is later deleted, the array field value would become a dangling pointer, leading to errors along the line of "missing chunk number 0 for toast value ..." when the value is referenced. A reproducible test case for this was provided by Jan Pecek, but it seems likely that some of the "missing chunk number" reports we've heard in the past were caused by similar issues. Code-wise, the problem is that PG_DETOAST_DATUM() is not adequate to produce a self-contained Datum value if the Datum is of composite type. Seen in this light, the problem is not just confined to arrays and ranges, but could also affect some other places where detoasting is done in that way, for example form_index_tuple(). I tried teaching the array code to apply toast_flatten_tuple_attribute() along with PG_DETOAST_DATUM() when the array element type is composite, but this was messy and imposed extra cache lookup costs whether or not any TOAST pointers were present, indeed sometimes when the array element type isn't even composite (since sometimes it takes a typcache lookup to find that out). The idea of extending that approach to all the places that currently use PG_DETOAST_DATUM() wasn't attractive at all. This patch instead solves the problem by decreeing that composite Datum values must not contain any out-of-line TOAST pointers in the first place; that is, we expand out-of-line fields at the point of constructing a composite Datum, not at the point where we're about to insert it into a larger tuple. This rule is applied only to true composite Datums, not to tuples that are being passed around the system as tuples, so it's not as invasive as it might sound at first. With this approach, the amount of code that has to be touched for a full solution is greatly reduced, and added cache lookup costs are avoided except when there actually is a TOAST pointer that needs to be inlined. The main drawback of this approach is that we might sometimes dereference a TOAST pointer that will never actually be used by the query, imposing a rather large cost that wasn't there before. On the other side of the coin, if the field value is used multiple times then we'll come out ahead by avoiding repeat detoastings. Experimentation suggests that common SQL coding patterns are unaffected either way, though. Applications that are very negatively affected could be advised to modify their code to not fetch columns they won't be using. In future, we might consider reverting this solution in favor of detoasting only at the point where data is about to be stored to disk, using some method that can drill down into multiple levels of nested structured types. That will require defining new APIs for structured types, though, so it doesn't seem feasible as a back-patchable fix. Note that this patch changes HeapTupleGetDatum() from a macro to a function call; this means that any third-party code using that macro will not get protection against creating TOAST-pointer-containing Datums until it's recompiled. The same applies to any uses of PG_RETURN_HEAPTUPLEHEADER(). It seems likely that this is not a big problem in practice: most of the tuple-returning functions in core and contrib produce outputs that could not possibly be toasted anyway, and the same probably holds for third-party extensions. This bug has existed since TOAST was invented, so back-patch to all supported branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3f8c8e3c61cef5729980ee4372ec159862a979f1">http://git.postgresql.org/pg/commitdiff/3f8c8e3c61cef5729980ee4372ec159862a979f1</a></li>
+
+<li>Fix yet another corner case in dumping rules/views with USING clauses. ruleutils.c tries to cope with additions/deletions/renamings of columns in tables referenced by views, by means of adding machine-generated aliases to the printed form of a view when needed to preserve the original semantics. A recent blog post by Marko Tiikkaja pointed out a case I'd missed though: if one input of a join with USING is itself a join, there is nothing to stop the user from adding a column of the same name as the USING column to whichever side of the sub-join didn't provide the USING column. And then there'll be an error when the view is re-parsed, since now the sub-join exposes two columns matching the USING specification. We were catching a lot of related cases, but not this one, so add some logic to cope with it. Back-patch to 9.3, which is the first release that makes any serious attempt to cope with such cases (cf commit 2ffa740be and follow-ons). 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/91e16b980612d80de1017e97e9f206239afb9026">http://git.postgresql.org/pg/commitdiff/91e16b980612d80de1017e97e9f206239afb9026</a></li>
+
+<li>Fix "quiet inline" configure test for newer clang compilers. This test used to just define an unused static inline function and check whether that causes a warning. But newer clang versions warn about unused static inline functions when defined inside a .c file, but not when defined in an included header, which is the case we care about. Change the test to cope. Andres Freund 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4c8aa8b5aea1e032f569222d4b6c1019e84622dc">http://git.postgresql.org/pg/commitdiff/4c8aa8b5aea1e032f569222d4b6c1019e84622dc</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix whitespace 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/322173eb0a6c2f43394645f8ae33eedd70bab432">http://git.postgresql.org/pg/commitdiff/322173eb0a6c2f43394645f8ae33eedd70bab432</a></li>
+
+<li>PL/Python: Adjust the regression tests for Python 3.4. The error test case in the plpython_do test resulted in a slightly different error message with Python 3.4. So pick a different way to test it that avoids that and is perhaps also a bit clearer. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d0765d50f429472d00554701ac6531c84d324811">http://git.postgresql.org/pg/commitdiff/d0765d50f429472d00554701ac6531c84d324811</a></li>
+
+<li>doc: Update pg_basebackup version compatibility claim for 9.4 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0717748c904719af8689c04dc610a937de6d9a0e">http://git.postgresql.org/pg/commitdiff/0717748c904719af8689c04dc610a937de6d9a0e</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add missing 9.4 release file. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d69ffd6f035fe24483247bf9b2335d7474eaf31a">http://git.postgresql.org/pg/commitdiff/d69ffd6f035fe24483247bf9b2335d7474eaf31a</a></li>
+
+<li>Initial version of Postgres 9.4 release notes 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/21223c24c2c4694efea3d9b4b29dfe45fda71f2a">http://git.postgresql.org/pg/commitdiff/21223c24c2c4694efea3d9b4b29dfe45fda71f2a</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>No one was disappointed this week</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Ashutosh Bapat sent in a patch to fix an issue in ECPG where using an array of char pointers gives wrong results.</li>
+
+<li>Andres Freund sent in a patch to fix an issue Coverity pointed out where it wasn't Assert()ed that pre/post-fix updated tuples are on the same page during replay.</li>
+
+<li>Tom Lane sent in a patch to remove what appeared to be obsolete code in fork_process.c.</li>
+
+<li>Peter Eisentraut sent in a patch to require xmllint so buildfarm animal borka would have it.</li>
+
+<li>Dilip Kumar sent in another revision of a patch to allow merge joins on some criteria other than equality.</li>
+
+<li>Hadi Moshayedi sent in a patch to make array_length() faster by detoasting only the overhead part of the datum.</li>
+
+<li>Jeff Janes sent in a patch to add tab completion for setting search_path.</li>
+
+<li>Andres Freund sent in a patch to add a pg_shmem_allocations view.</li>
+
+<li>Jeff Davis sent in a patch to fix the in-line documentation for index-only scans.</li>
+
+</ul>

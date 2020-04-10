@@ -1,0 +1,168 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 2 août 2009"
+author: "NBougain"
+redirect_from: "index.php?post/2009-08-06-nouvelles-hebdomadaires-de-postgresql-2-aoucirc-t-2009 "
+---
+
+
+
+<p><strong>Offres d'emplois autour de PostgreSQL en août</strong></p>
+
+<ul>
+
+<li><a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2009-08/threads.php">http://archives.postgresql.org/pgsql-jobs/2009-08/threads.php</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>L'"OpenSQL Camp" aura lieu les 22 &amp; 23 août à S<sup>t</sup> Augustin (All.), près de Bonn et de Cologne. La date limite pour les propositions de conférences est le 19 juillet 2009&nbsp;:
+
+<a target="_blank" href="http://opensqlcamp.org/Events/2009/Call_for_Participation">http://opensqlcamp.org/Events/2009/Call_for_Participation</a></li>
+
+<li>Le PUG allemand a obtenu un emplacement développeur au FrOSCon le dimanche 23 août 2009. L'appel à conférences est ouvert&nbsp;:
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/573-Call-for-Papers-fuer-den-PostgreSQL-Devroom-auf-der-FrOSCon-2009.html">http://andreas.scherbaum.la/blog/archives/573-Call-for-Papers-fuer-den-PostgreSQL-Devroom-auf-der-FrOSCon-2009.html</a></li>
+
+<li>L'appel à conférences pour la "PyCon Argentina" est lancé jusqu'à la date du 29 juin 2009, 23h59 ART [ndt: UTC-3 ?]. La conférence elle-même aura lieu à Buenos Aires les 4 &amp; 5 septembre 2009&nbsp;:
+
+<a target="_blank" href="http://ar.pycon.org/2009/rfp/">http://ar.pycon.org/2009/rfp/</a></li>
+
+<li>Andreas (ads) Scherbaum enseignera au centre pour adultes de Magdeburg (All.) du 7 au 11 septembre 2009 sur le sujet "PostgreSQL for Corporate Use". Détails ci-dessous&nbsp;:
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/574-PostgreSQL-als-Bildungsurlaub.html">http://andreas.scherbaum.la/blog/archives/574-PostgreSQL-als-Bildungsurlaub.html</a></li>
+
+<li>Il y aura une conférence à Athens (Georgie, États-Unis) le 19 septembre 2009. L'appel aux conférences est ouvert&nbsp;:
+
+<a target="_blank" href="http://www.postgresqlconference.org/2009/pgday/athens">http://www.postgresqlconference.org/2009/pgday/athens</a></li>
+
+<li>Une suite de conférences est organisée à Seattle (État de Washington, États-Unis) du 16 au 18 octobre 2009. L'appel à conférences est ouvert&nbsp;:
+
+<a target="_blank" href="http://www.postgresqlconference.org/2009/west">http://www.postgresqlconference.org/2009/west</a></li>
+
+<li>La "PGCon Brazil" prendra place à l'Unicamp de Campinas (État de São Paulo) les 23 &amp; 24 octobre 2009. L'appel à conférences est lancé&nbsp;:
+
+<a target="_blank" href="http://pgcon.postgresql.org.br/2009/chamadas.en.php">http://pgcon.postgresql.org.br/2009/chamadas.en.php</a></li>
+
+<li>Le PGDay.EU 2009 est programmé pour les 6 &amp; 7 novembre 2009 à Telecom ParisTech [ndt: ENST ?]&nbsp;:
+
+<a target="_blank" href="http://www.pgday.eu/">http://www.pgday.eu/</a></li>
+
+<li>Vos propositions de conférences sont attendues pour le 10<sup>ème</sup> anniversaire du JPUG. Le rassemblement aura lieu les 20 &amp; 21 novembre 2009 à Tokyo, Japan&nbsp;:
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2009-05/msg00018.php">http://archives.postgresql.org/pgsql-announce/2009-05/msg00018.php</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les média</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;:
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><em>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter et Josh Berkus. Traduction par l'équipe PostgreSQLFr sous licence CC BY-NC-SA.</em></p>
+
+<p><em>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais à david (a) fetter.org, en allemand à pwn (a) pgug.de, en italien à pwn (a) itpug.org.</em></p>
+
+<p><strong>Correctifs appliqués</strong></p>
+
+<p>Magnus Hagander a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/tools/msvc/Project.pm, enable the use of multiple CPUs/cores when building on MSVC. This only affects the C compiler step - we still only build one target at a time.</li>
+
+<li>In pgsql/src/port/exec.c, fix minor memory leak in Win32 SID handling functions. Not a big issue since it's only called during process startup, thus no backpatch. Found by TAKATSUKA Haruka, patch by Magnus Hagander and Andrew Chernow.</li>
+
+<li>In pgsql/contrib/pgbench/pgbench.c, make sure FD_SETSIZE is set before we include any Windows header files. Josh Williams.</li>
+
+</ul>
+
+<p>Tom Lane a commité&nbsp;:</p>
+
+<ul>
+
+<li>Add system catalog columns pg_constraint.conindid and pg_trigger.tgconstrindid. conindid is the index supporting a constraint. We can use this not only for unique/primary-key constraints, but also foreign-key constraints, which depend on the unique index that constrains the referenced columns. tgconstrindid is just copied from the constraint's conindid field, or is zero for triggers not associated with constraints. This is mainly intended as infrastructure for upcoming patches, but it has some virtue in itself, since it exposes a relationship that you formerly had to grovel in pg_depend to determine. I simplified one information_schema view accordingly. (There is a pg_dump query that could also use conindid, but I left it alone because it wasn't clear it'd get any faster.)</li>
+
+<li>In pgsql/src/backend/storage/ipc/procarray.c, fix a thinko introduced into CountActiveBackends by a recent patch: we should ignore NULL array entries, not non-NULL ones. This had the effect of disabling commit_delay, and could have caused a crash in the rare race condition the patch was intended to fix. Bug report and diagnosis by Jeff Janes, in bug #4952.</li>
+
+<li>Support deferrable uniqueness constraints. The current implementation fires an AFTER ROW trigger for each tuple that looks like it might be non-unique according to the index contents at the time of insertion. This works well as long as there aren't many conflicts, but won't scale to massive unique-key reassignments. Improving that case is a TODO item. Dean Rasheed.</li>
+
+<li>In pgsql/src/backend/utils/adt/date.c, fix time_part and timetz_part (ie, EXTRACT() for those datatypes) to include a fractional part in the output for MILLISECOND and SECOND cases, rather than truncating the source value. This is what the float-timestamp code has always done, and it was clearly the code author's intent to do the same for integer timestamps, but he forgot about integer division in C. The other datatypes supported by EXTRACT() already do this correctly. Backpatch to 8.4, so that the default (integer) behavior of that branch will match the default (float) behavior of older branches. Arguably we should patch further back, but it's possible that applications are expecting the broken behavior in older branches. 8.4 is new enough that expectations shouldn't be too settled. Per report from Greg Stark.</li>
+
+<li>Merge the Constraint and FkConstraint node types into a single type. This was foreseen to be a good idea long ago, but nobody had got round to doing it. The recent patch for deferred unique constraints made transformConstraintAttrs() ugly enough that I decided it was time. This change will also greatly simplify parsing of deferred CHECK constraints, if anyone ever gets around to implementing that. While at it, add a location field to Constraint, and use that to provide an error cursor for some of the constraint-related error messages.</li>
+
+<li>Create a multiplexing structure for signals to Postgres child processes. This patch gets us out from under the Unix limitation of two user-defined signal types. We already had done something similar for signals directed to the postmaster process; this adds multiplexing for signals directed to backends and auxiliary processes (so long as they're connected to shared memory). As proof of concept, replace the former usage of SIGUSR1 and SIGUSR2 for backends with use of the multiplexing mechanism. There are still some hard-wired definitions of SIGUSR1 and SIGUSR2 for other process types, but getting rid of those doesn't seem interesting at the moment. Fujii Masao.</li>
+
+<li>Improve unique-constraint-violation error messages to include the exact values being complained of. In passing, also remove the arbitrary length limitation in the similar error detail message for foreign key violations. Itagaki Takahiro.</li>
+
+<li>Department of second thoughts: let's show the exact key during unique index build failures, too. Refactor a bit more since that error message isn't spelled the same.</li>
+
+<li>Add ALTER TABLE ... ALTER COLUMN ... SET STATISTICS DISTINCT. Robert Haas</li>
+
+</ul>
+
+<p>Teodor Sigaev a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/backend/utils/adt/tsquery_rewrite.c, fix incorrect cleanup of tsquery in ts_rewrite(). Per bug #4933 by Aaron Marcuse-Kubitza.</li>
+
+<li>Correct calculations of overlap and contains operations over polygons.</li>
+
+</ul>
+
+<p><strong>Correctifs rejetés (à ce jour)</strong></p>
+
+<ul>
+
+<li>Fernando Ike de Oliveira's patch to list languages. Not updated in time, returned with feedback.</li>
+
+<li>Tsutomu Yamada's patch to support 64-bit platforms more portably. Incomplete, returned with feedback.</li>
+
+<li>Dickson S. Guedes's patch to display client and server versions in psql prompt. Not updated in time, returned with feedback.</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Teodor Sigaev sent in two patches to split up Oleg Bartunov's patch for filtering dictionaries and unaccent in textsearch.</li>
+
+<li>Josh Williams sent in a fix to the multi-threaded pgbench patch.</li>
+
+<li>Sergey V. Karpov submitted two versions and Robert Haas and Tom Lane reworked another revision of the patch to improve dict_xsyn.</li>
+
+<li>Robert Haas sent in another revision of his machine-readable explain output patch.</li>
+
+<li>Steve Prentice sent in two revisions of a patch to make PL/pgsql's input parameters writeable.</li>
+
+<li>Zoltan Boszormenyi sent in a patch adding a lock_timeout GUC which sets how long SELECT ... FOR UPDATE will wait. This defaults to 0, meaning "wait forever if needed."</li>
+
+<li>Bernd Helmle sent in a revised patch for mixed named notation in PL/pgsql.</li>
+
+<li>Tom Lane sent in an improvement to Kevin Grittner's patch to revise parallel pg_restore's scheduling heuristic by getting rid of the find_ready_items() scans, thus avoiding O(n2) behavior.</li>
+
+<li>Dimitri Fontaine sent in an updated version of the ALTER TABLE...ALTER COLUMN...SET DISTINCT patch.</li>
+
+<li>Marko (johto) Tiikkaja sent in another WIP patch to allow write operations inside CTEs.</li>
+
+<li>Mark Kirkwood sent in an updated patch to show lock wait statistics.</li>
+
+<li>Joe Conway sent in an updated version of Abhijit Menon-Sen's patch to implement has_sequence_privilege().</li>
+
+<li>Jeff Davis sent in a rework of Oleg Bartunov's patch to support prefix in synonym dictionaries.</li>
+
+</ul>

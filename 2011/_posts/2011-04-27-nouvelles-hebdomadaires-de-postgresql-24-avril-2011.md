@@ -1,0 +1,254 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 24 avril 2011"
+author: "NBougain"
+redirect_from: "index.php?post/2011-04-27-nouvelles-hebdomadaires-de-postgresql-24-avril-2011 "
+---
+
+
+
+<p><strong>Revues de code</strong></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>recoveryStopsHere() must check the resource manager ID. Before commit c016ce728139be95bb0dc7c4e5640507334c2339, this wasn't needed, but now that multiple resource manager IDs can percolate down through here, we have to make sure we know which one we've got. Otherwise, we can confuse (for example) an XLOG_XACT_COMMIT record with an XLOG_CHECKPOINT_SHUTDOWN record. Review by Jaime Casanova 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/aea1f24c2c25f01540435ded6ba611016392ef06">http://git.postgresql.org/pg/commitdiff/aea1f24c2c25f01540435ded6ba611016392ef06</a></li>
+
+<li>Only allow typed tables to hang off composite types, not e.g. tables. This also ensures that we take a relation lock on the composite type when creating a typed table, which is necessary to prevent the composite type and the typed table from getting out of step in the face of concurrent DDL. Noah Misch, with some changes. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/04db0fdbfa9382730bb65f94bca2cd8063a3456a">http://git.postgresql.org/pg/commitdiff/04db0fdbfa9382730bb65f94bca2cd8063a3456a</a></li>
+
+<li>Allow ALTER TABLE name {OF type | NOT OF}. This syntax allows a standalone table to be made into a typed table, or a typed table to be made standalone. This is possibly a mildly useful feature in its own right, but the real motivation for this change is that we need it to make pg_upgrade work with typed tables. This doesn't actually fix that problem, but it's necessary infrastructure. Noah Misch. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/68739ba856c52e6721d6cffec21f1bf0327a9a7b">http://git.postgresql.org/pg/commitdiff/68739ba856c52e6721d6cffec21f1bf0327a9a7b</a></li>
+
+<li>Typo fix. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0babcdf6cfdfb2a828056afc3172ec524f090fd5">http://git.postgresql.org/pg/commitdiff/0babcdf6cfdfb2a828056afc3172ec524f090fd5</a></li>
+
+<li>Fix use of incorrect constant RemoveRoleFromObjectACL. This could cause failures when DROP OWNED BY attempt to remove default privileges on sequences. Back-patching to 9.0. Shigeru Hanada 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8ede427938e9676d0e497406c213f098303a93f3">http://git.postgresql.org/pg/commitdiff/8ede427938e9676d0e497406c213f098303a93f3</a></li>
+
+<li>Allow ALTER TYPE .. ADD ATTRIBUTE .. CASCADE to recurse to descendants. Without this, adding an attribute to a typed table with an inheritance child fails, which is surprising. Noah Misch, with minor changes by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a0e8df527ec24e8dba98f295c0e2ab6ccf3e5d2c">http://git.postgresql.org/pg/commitdiff/a0e8df527ec24e8dba98f295c0e2ab6ccf3e5d2c</a></li>
+
+</ul>
+
+<p>Andrew Dunstan a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Attempt to remedy buildfarm breakage caused by commit f536d4194. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b7b86924c6da46c774e1ab5d524a6bc4f72627ab">http://git.postgresql.org/pg/commitdiff/b7b86924c6da46c774e1ab5d524a6bc4f72627ab</a></li>
+
+<li>Silence compiler warning about casting HANDLE to long on WIN64. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ca5a75fbaed63f41c6e52e5d4b35470080356bdf">http://git.postgresql.org/pg/commitdiff/ca5a75fbaed63f41c6e52e5d4b35470080356bdf</a></li>
+
+<li>Silence a few compiler warnings from gcc on MinGW. Most of these cast DWORD to int or unsigned int for printf type handling. This is safe even on 64 bit architectures because a DWORD is always 32 bits. In one case a variable is initialised to keep the compiler happy. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d98711dfef6ade6a26aa0f4c0a775087ed13e060">http://git.postgresql.org/pg/commitdiff/d98711dfef6ade6a26aa0f4c0a775087ed13e060</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Improve findoidjoins to cover more cases. Teach the program and script to deal with OID-array referencing columns, which we now have several of. Also, modify the recommended usage process to specify that the program should be run against the regression database rather than template1. This lets it find numerous joins that cannot be found in template1 because the relevant catalogs are entirely empty. Together these changes add seventeen formerly-missed cases to the oidjoins regression test. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/795c382e8caf27f9db2fb09d12384b8183280fee">http://git.postgresql.org/pg/commitdiff/795c382e8caf27f9db2fb09d12384b8183280fee</a></li>
+
+<li>Improve cost estimation for aggregates and window functions. The previous coding failed to account properly for the costs of evaluating the input expressions of aggregates and window functions, as seen in a recent gripe from Claudio Freire. (I said at the time that it wasn't counting these costs at all; but on closer inspection, it was effectively charging these costs once per output tuple. That is completely wrong for aggregates, and not exactly right for window functions either.) There was also a hard-wired assumption that aggregates and window functions had procost 1.0, which is now fixed to respect the actual cataloged costs. The costing of WindowAgg is still pretty bogus, since it doesn't try to estimate the effects of spilling data to disk, but that seems like a separate issue. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e6a30a8c3c81a7a2949f852379d34a19dfc26a0d">http://git.postgresql.org/pg/commitdiff/e6a30a8c3c81a7a2949f852379d34a19dfc26a0d</a></li>
+
+<li>- Update oidjoins regression test for 9.1 catalog schema additions. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/970d8a39736fd67e3ebf406ed8129eed0767d15d">http://git.postgresql.org/pg/commitdiff/970d8a39736fd67e3ebf406ed8129eed0767d15d</a></li>
+
+<li>Fix handling of collations in multi-row VALUES constructs. Per spec we ought to apply select_common_collation() across the expressions in each column of the VALUES table. The original coding was just taking the first row and assuming it was representative. This patch adds a field to struct RangeTblEntry to carry the resolved collations, so initdb is forced for changes in stored rule representation. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/918854cc08868d569aad3bdf2529fc61c66ecde5">http://git.postgresql.org/pg/commitdiff/918854cc08868d569aad3bdf2529fc61c66ecde5</a></li>
+
+<li>Refrain from canonicalizing a client_encoding setting of "UNICODE". While "UTF8" is the correct name for this encoding, existing JDBC drivers expect that if they send "UNICODE" it will read back the same way; they fail with an opaque "Protocol error" complaint if not. This will be fixed in the 9.1 drivers, but until older drivers are no longer in use in the wild, we'd better leave "UNICODE" alone. Continue to canonicalize all other inputs. Per report from Steve Singer and subsequent discussion. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/390cf3209b718382c0ec9793b714422189e9b68b">http://git.postgresql.org/pg/commitdiff/390cf3209b718382c0ec9793b714422189e9b68b</a></li>
+
+<li>Revert "Prevent incorrect updates of pg_index while reindexing pg_index itself." This reverts commit 4b6106ccfea21e86943f881edcf3cfc03661a415 of 2011-04-15. There's a better way to do it, which will follow shortly. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c096d19b74a637443109e528000342e896b150f3">http://git.postgresql.org/pg/commitdiff/c096d19b74a637443109e528000342e896b150f3</a></li>
+
+<li>Avoid changing an index's indcheckxmin horizon during REINDEX. There can never be a need to push the indcheckxmin horizon forward, since any HOT chains that are actually broken with respect to the index must pre-date its original creation. So we can just avoid changing pg_index altogether during a REINDEX operation. This offers a cleaner solution than my previous patch for the problem found a few days ago that we mustn't try to update pg_index while we are reindexing it. System catalog indexes will always be created with indcheckxmin = false during initdb, and with this modified code we should never try to change their pg_index entries. This avoids special-casing system catalogs as the former patch did, and should provide a performance benefit for many cases where REINDEX formerly caused an index to be considered unusable for a short time. Back-patch to 8.3 to cover all versions containing HOT. Note that this patch changes the API for index_build(), but I believe it is unlikely that any add-on code is calling that directly. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8c19977e9c515cc29af449a7ab6c25e496f539f3">http://git.postgresql.org/pg/commitdiff/8c19977e9c515cc29af449a7ab6c25e496f539f3</a></li>
+
+<li>Make plan_cluster_use_sort cope with no IndexOptInfo for the target index. The original coding assumed that such a case represents caller error, but actually get_relation_info will omit generating an IndexOptInfo for any index it thinks is unsafe to use. Therefore, handle this case by returning "true" to indicate that a seqscan-and-sort is the preferred way to implement the CLUSTER operation. New bug in 9.1, no backpatch needed. Per bug #5985 from Daniel Grace. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5b8e442953da0bf4950b86c7cb4a6117842aedf7">http://git.postgresql.org/pg/commitdiff/5b8e442953da0bf4950b86c7cb4a6117842aedf7</a></li>
+
+<li>Set indcheckxmin true when REINDEX fixes an invalid or not-ready index. Per comment from Greg Stark, it's less clear that HOT chains don't conflict with the index than it would be for a valid index. So, let's preserve the former behavior that indcheckxmin does get set when there are potentially-broken HOT chains in this case. This change does not cause any pg_index update that wouldn't have happened anyway, so we're not re-introducing the previous bug with pg_index updates, and surely the case is not significant from a performance standpoint; so let's be as conservative as possible. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9ad7e15507ffa14f51d80d6ae3ed942ea191826d">http://git.postgresql.org/pg/commitdiff/9ad7e15507ffa14f51d80d6ae3ed942ea191826d</a></li>
+
+<li>Fix bugs in indexing of in-doubt HOT-updated tuples. If we find a DELETE_IN_PROGRESS HOT-updated tuple, it is impossible to know whether to index it or not except by waiting to see if the deleting transaction commits. If it doesn't, the tuple might again be LIVE, meaning we have to index it. So wait and recheck in that case. Also, we must not rely on ii_BrokenHotChain to decide that it's possible to omit tuples from the index. That could result in omitting tuples that we need, particularly in view of yesterday's fixes to not necessarily set indcheckxmin (but it's broken even without that, as per my analysis today). Since this is just an extremely marginal performance optimization, dropping the test shouldn't hurt. These cases are only expected to happen in system catalogs (they're possible there due to early release of RowExclusiveLock in most catalog-update code paths). Since reindexing of a system catalog isn't a particularly performance-critical operation anyway, there's no real need to be concerned about possible performance degradation from these changes. The worst aspects of this bug were introduced in 9.0 --- 8.x will always wait out a DELETE_IN_PROGRESS tuple. But I think dropping index entries on the strength of ii_BrokenHotChain is dangerous even without that, so back-patch removal of that optimization to 8.3 and 8.4. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/520bcd9c9bb4d06627054e1c567bac1feb2da879">http://git.postgresql.org/pg/commitdiff/520bcd9c9bb4d06627054e1c567bac1feb2da879</a></li>
+
+<li>Avoid possible divide-by-zero in gincostestimate. Per report from Jeff Janes. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/92647fc4b9cd7406afb2ee240a20082ba6097177">http://git.postgresql.org/pg/commitdiff/92647fc4b9cd7406afb2ee240a20082ba6097177</a></li>
+
+<li>Make a code-cleanup pass over the collations patch. This patch is almost entirely cosmetic --- mostly cleaning up a lot of neglected comments, and fixing code layout problems in places where the patch made lines too long and then pgindent did weird things with that. I did find a bug-of-omission in equalTupleDescs(). 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9e9b9ac7d1860fbb98eb4db17a94ff25524b6447">http://git.postgresql.org/pg/commitdiff/9e9b9ac7d1860fbb98eb4db17a94ff25524b6447</a></li>
+
+<li>De-kludge contrib/btree_gin for collations. Using DEFAULT_COLLATION_OID in the comparePartial functions was not only a lame hack, but outright wrong, because the compare functions for collation-aware types were already responding to the declared index collation. So comparePartial would have the wrong expectation about the index's sort order, possibly leading to missing matches for prefix searches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/474ff212e5c2e89a9955cc2355cb96b2fe40398e">http://git.postgresql.org/pg/commitdiff/474ff212e5c2e89a9955cc2355cb96b2fe40398e</a></li>
+
+<li>Make GIN and GIST pass the index collation to all their support functions. Experimentation with contrib/btree_gist shows that the majority of the GIST support functions potentially need collation information. Safest policy seems to be to pass it to all of them, instead of making assumptions about which ones could possibly need it. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ae20bf1740c53494e15fadfd8c2c6444032a3441">http://git.postgresql.org/pg/commitdiff/ae20bf1740c53494e15fadfd8c2c6444032a3441</a></li>
+
+<li>Fix contrib/btree_gist to handle collations properly. Make use of the collation attached to the index column, instead of hard-wiring DEFAULT_COLLATION_OID. (Note: in theory this could require reindexing btree_gist indexes on textual columns, but I rather doubt anyone has one with a non-default declared collation as yet.) 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bb850306307d3d6ebb611c4039ae127236eb1699">http://git.postgresql.org/pg/commitdiff/bb850306307d3d6ebb611c4039ae127236eb1699</a></li>
+
+<li>Fix char2wchar/wchar2char to support collations properly. These functions should take a pg_locale_t, not a collation OID, and should call mbstowcs_l/wcstombs_l where available. Where those functions are not available, temporarily select the correct locale with uselocale(). This change removes the bogus assumption that all locales selectable in a given database have the same wide-character conversion method; in particular, the collate.linux.utf8 regression test now passes with LC_CTYPE=C, so long as the database encoding is UTF8. I decided to move the char2wchar/wchar2char functions out of mbutils.c and into pg_locale.c, because they work on wchar_t not pg_wchar_t and thus don't really belong with the mbutils.c functions. Keeping them where they were would have required importing pg_locale_t into pg_wchar.h somehow, which did not seem like a good plan. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2ab0796d7a3a7116a79b65531fd33f1548514b52">http://git.postgresql.org/pg/commitdiff/2ab0796d7a3a7116a79b65531fd33f1548514b52</a></li>
+
+<li>Adjust comments about collate.linux.utf8 regression test. This test should now work in any database with UTF8 encoding, regardless of the database's default locale. The former restriction was really "doesn't work if default locale is C", and that was because of not handling mbstowcs/wcstombs correctly. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1abd146dddc1dc5efff5ccac065c460108acbaa9">http://git.postgresql.org/pg/commitdiff/1abd146dddc1dc5efff5ccac065c460108acbaa9</a></li>
+
+<li>Hash indexes had better pass the index collation to support functions, too. Per experimentation with contrib/citext, whose hash function assumes that it'll be passed a collation. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a0b75a41a907e1582acdb8aa6ebb9cacca39d7d8">http://git.postgresql.org/pg/commitdiff/a0b75a41a907e1582acdb8aa6ebb9cacca39d7d8</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Silence compiler warning about unused variable on Windows. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a7cb69a5a345fe9ba481a035559d77abd07791d9">http://git.postgresql.org/pg/commitdiff/a7cb69a5a345fe9ba481a035559d77abd07791d9</a></li>
+
+<li>Quotes in strings injected into bki file need to escaped. In particular, "People's Republic of China" locale on Windows was causing initdb to fail. This fixes bug #5818 reported by yulei. On master, this makes the mapping of "People's Republic of China" to just "China" obsolete. In 9.0 and 8.4, just fix the escaping. Earlier versions didn't have locale names in bki file. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2b919118c2511c7741c21f325d2ca4f270aa3aba">http://git.postgresql.org/pg/commitdiff/2b919118c2511c7741c21f325d2ca4f270aa3aba</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Avoid unused variable warnings for certain configurations. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/001cbb145f3250b0d69d6be3d5fa0236e1a261dc">http://git.postgresql.org/pg/commitdiff/001cbb145f3250b0d69d6be3d5fa0236e1a261dc</a></li>
+
+<li>Add gitignore entries for Windows MSVC builds 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/63e9c5b71b3b8afa772a5f4e5ee7179f77f87050">http://git.postgresql.org/pg/commitdiff/63e9c5b71b3b8afa772a5f4e5ee7179f77f87050</a></li>
+
+<li>Fix typo 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/908eb1f98bd9f81613cf4c14d6ab5877815c7b50">http://git.postgresql.org/pg/commitdiff/908eb1f98bd9f81613cf4c14d6ab5877815c7b50</a></li>
+
+<li>Treat config.pl as optional in vcregress.pl. This is how build.pl treats it and how it's documented. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2e8d9544752a7d68cb46f028a4f16ab0eb76c26e">http://git.postgresql.org/pg/commitdiff/2e8d9544752a7d68cb46f028a4f16ab0eb76c26e</a></li>
+
+<li>Refix the unaccent regression test on MSVC properly ... for some value of "properly". Instead of overriding REGRESS_OPTS, set the variables ENCODING and NO_LOCALE, which is more expressive and allows overriding by the user. Fix vcregress.pl to handle that. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/385942f46ce526000d231c51c76360a807c2f809">http://git.postgresql.org/pg/commitdiff/385942f46ce526000d231c51c76360a807c2f809</a></li>
+
+<li>Fix PL/Python traceback for error in separate file. It assumed that the lineno from the traceback always refers to the PL/Python function. If you created a PL/Python function that imports some code, runs it, and that code raises an exception, PLy_traceback would get utterly confused. Now we look at the file name reported with the traceback and only print the source line if it came from the PL/Python function. Jan Urba&#324;ski 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/395fcac29906d22615ba68bd1dfa31daf691979e">http://git.postgresql.org/pg/commitdiff/395fcac29906d22615ba68bd1dfa31daf691979e</a></li>
+
+<li>Add fill-column setting to emacs example configurations. This matches the maximum line length that pgindent uses. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/415f5e12592d135919549a5eb21893fda0417ebf">http://git.postgresql.org/pg/commitdiff/415f5e12592d135919549a5eb21893fda0417ebf</a></li>
+
+<li>Small update to emacs example configuration. Since both tarballs and git now result in a "postgresql" directory rather than a "pgsql" directory, adjust the example configuration to look for the former. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/78e7e20afe768d9c5f6b4fbf30a2d7100d46bb2f">http://git.postgresql.org/pg/commitdiff/78e7e20afe768d9c5f6b4fbf30a2d7100d46bb2f</a></li>
+
+<li>Normalize whitespace in the arguments of &lt;indexterm&gt;. Strip leading and trailing whitespace and replace interior whitespace by a single space. This avoids problems with the index generator producing duplicate index entries for terms that differ only in whitespace. Commit dca30da3433c40b5f92f1704c496cda052decef9 actually fixed all the indexterm elements that would cause this problem at the moment, but in case it sneaks in again, we're set. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9412606265c2774712e3f805798896734b32c7fd">http://git.postgresql.org/pg/commitdiff/9412606265c2774712e3f805798896734b32c7fd</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add C comment about why we throw an error if the pg_upgrade old/new database counts don't match. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/034194470647b3de206fb42464d49a438853fa5e">http://git.postgresql.org/pg/commitdiff/034194470647b3de206fb42464d49a438853fa5e</a></li>
+
+<li>Throw error for mismatched pg_upgrade clusters. If someone removes the 'postgres' database from the old cluster and the new cluster has a 'postgres' database, the number of databases will not match. We actually could upgrade such a setup, but it would violate the 1-to-1 mapping of database counts, so we throw an error instead. Previously they got an error during the upgrade, and not at the check stage; Peter Geoghegan 9.0.4 does the same. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7228d02989afd3858ce6eb4de845c56f4c0188a6">http://git.postgresql.org/pg/commitdiff/7228d02989afd3858ce6eb4de845c56f4c0188a6</a></li>
+
+<li>pg_upgrade C comment addition. Document why we do the missing new database check during the check phase. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0262251c337ca066d1b1698684784254849b5676">http://git.postgresql.org/pg/commitdiff/0262251c337ca066d1b1698684784254849b5676</a></li>
+
+<li>Improve doc wording for SQL syntax of LIMIT/OFFSET. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0cfdc1c657b7c2aa1e4524f495e84005f750ec02">http://git.postgresql.org/pg/commitdiff/0cfdc1c657b7c2aa1e4524f495e84005f750ec02</a></li>
+
+<li>In pg_upgrade, only compile copy_file() on non-Win32 systems. Per report from Andrew Dunstan. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f6322b31918c5c57eeea80c26a088af44d573095">http://git.postgresql.org/pg/commitdiff/f6322b31918c5c57eeea80c26a088af44d573095</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Shigeru HANADA sent in another revision of the patch to fix foreign table privileges.</li>
+
+<li>Robert Haas sent in a patch for 9.2 to allow for time-delayed standbys.</li>
+
+<li>Noah Misch sent in another revision of the patch to resolve an incompatibility between pg_dump --binary-upgrade and ALTER TYPE ... DROP ATTRIBUTE.</li>
+
+<li>Bruce Momjian sent in three revisions of a patch to make pg_upgrade disable autovacuum.</li>
+
+<li>Dan Ports sent in a patch to fix the UPDATE performance under SSI.</li>
+
+<li>Leonardo Francalanci sent in a patch to allow switching tables from UNLOGGED to LOGGED state.</li>
+
+<li>Alex Hunsaker sent in two revisions of a patch to enable the new perl 5.14 to work with the build system.</li>
+
+<li>Gianni Ciolli sent in a patch to fix a performance issue in NOTIFY.</li>
+
+<li>Andrew Dunstan sent in a patch to do a consolidate cleanup on win32.</li>
+
+<li>Peter Eisentraut sent in a patch to allow make check to work in contrib.</li>
+
+</ul>

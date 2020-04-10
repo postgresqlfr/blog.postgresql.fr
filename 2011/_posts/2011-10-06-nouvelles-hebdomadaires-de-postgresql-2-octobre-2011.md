@@ -1,0 +1,180 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 2 octobre 2011"
+author: "NBougain"
+redirect_from: "index.php?post/2011-10-06-nouvelles-hebdomadaires-de-postgresql-2-octobre-2011 "
+---
+
+
+
+<p><strong>Revues de code</strong></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Use a fresh copy of query_list when making a second plan in GetCachedPlan. The code path that tried a generic plan, didn't like it, and then made a custom plan was mistakenly passing the same copy of the query_list to the planner both times. This doesn't work too well for nontrivial queries, since the planner tends to scribble on its input. Diagnosis and fix by Yamamoto Takashi. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/21fb95da46bce8de3e149707c680d489b8a5ffb0">http://git.postgresql.org/pg/commitdiff/21fb95da46bce8de3e149707c680d489b8a5ffb0</a></li>
+
+<li>Speed up array element assignment in plpgsql by caching type information. Cache assorted data in the PLpgSQL_arrayelem struct to avoid repetitive catalog lookups over multiple executions of the same statement. Pavel Stehule 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/16762b519c9421ad5f1e373b1d89b0f2f6568769">http://git.postgresql.org/pg/commitdiff/16762b519c9421ad5f1e373b1d89b0f2f6568769</a></li>
+
+<li>Allow snapshot references to still work during transaction abort. In REPEATABLE READ (nee SERIALIZABLE) mode, an attempt to do GetTransactionSnapshot() between AbortTransaction and CleanupTransaction failed, because GetTransactionSnapshot would recompute the transaction snapshot (which is already wrong, given the isolation mode) and then re-register it in the TopTransactionResourceOwner, leading to an Assert because the TopTransactionResourceOwner should be empty of resources after AbortTransaction. This is the root cause of bug #6218 from Yamamoto Takashi. While changing plancache.c to avoid requesting a snapshot when handling a ROLLBACK masks the problem, I think this is really a snapmgr.c bug: it's lower-level than the resource manager mechanism and should not be shutting itself down before we unwind resource manager resources. However, just postponing the release of the transaction snapshot until cleanup time didn't work because of the circular dependency with TopTransactionResourceOwner. Fix by managing the internal reference to that snapshot manually instead of depending on TopTransactionResourceOwner. This saves a few cycles as well as making the module layering more straightforward. predicate.c's dependencies on TopTransactionResourceOwner go away too. I think this is a longstanding bug, but there's no evidence that it's more than a latent bug, so it doesn't seem worth any risk of back-patching. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/57eb009092684e6e1788dd0dae641ccee1668b10">http://git.postgresql.org/pg/commitdiff/57eb009092684e6e1788dd0dae641ccee1668b10</a></li>
+
+<li>Fix window functions that sort by expressions involving aggregates. In commit c1d9579dd8bf3c921ca6bc2b62c40da6d25372e5, I changed things so that the output of the Agg node that feeds the window functions would not list any ungrouped Vars directly. Formerly, for example, the Agg tlist might have included both "x" and "sum(x)", which is not really valid if "x" isn't a grouping column. If we then had a window function ordering on something like "sum(x) + 1", prepare_sort_from_pathkeys would find no exact match for this in the Agg tlist, and would conclude that it must recompute the expression. But it would break the expression down to just the Var "x", which it would find in the tlist, and then rebuild the ORDER BY expression using a reference to the subplan's "x" output. Now, after the above-referenced changes, "x" isn't in the Agg tlist if it's not a grouping column, so that prepare_sort_from_pathkeys fails with "could not find pathkey item to sort", as reported by Bricklen Anderson. The fix is to not break down Aggrefs into their component parts, but just treat them as irreducible expressions to be sought in the subplan tlist. This is definitely OK for the use with respect to window functions in grouping_planner, since it just built the tlist being used on the same basis. AFAICT it is safe for other uses too; most of the other call sites couldn't encounter Aggrefs anyway. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/269c5dd2f46e3490da05d5dd5dad07828df281d9">http://git.postgresql.org/pg/commitdiff/269c5dd2f46e3490da05d5dd5dad07828df281d9</a></li>
+
+<li>Take sepgsql regression tests out of the regular regression test mechanism. Because these tests require root privileges, not to mention invasive changes to the security configuration of the host system, it's not reasonable for them to be invoked by a regular "make check" or "make installcheck". Instead, dike out the Makefile's knowledge of the tests, and change chkselinuxenv (now renamed "test_sepgsql") into a script that verifies the environment is workable and then runs the tests. It's expected that test_sepgsql will only be run manually. While at it, do some cleanup in the error checking in the script, and do some wordsmithing in the documentation. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cc4ff8742b99d3b20a52f529d03bbe802f4b0053">http://git.postgresql.org/pg/commitdiff/cc4ff8742b99d3b20a52f529d03bbe802f4b0053</a></li>
+
+<li>Update and extend the EXPLAIN-related documentation. I've made a significant effort at filling in the "Using EXPLAIN" section to be reasonably complete about mentioning everything that EXPLAIN can output, including the "Rows Removed" outputs that were added by Marko Tiikkaja's recent documentation-free patch. I also updated the examples to be consistent with current behavior; several of them were not close to what the current code will do. No doubt there's more that can be done here, but I'm out of patience for today. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a32dd16459ae8fbc1e09607d7ed960b3dcce7dba">http://git.postgresql.org/pg/commitdiff/a32dd16459ae8fbc1e09607d7ed960b3dcce7dba</a></li>
+
+<li>Fix index matching for operators with mixed collatable/noncollatable inputs. If an indexable operator for a non-collatable indexed datatype has a collatable right-hand input type, any OpExpr for it will be marked with a nonzero inputcollid (since having one collatable input is sufficient to make that happen). However, an index on a non-collatable column certainly doesn't have any collation. This caused us to fail to match such operators to their indexes, because indxpath.c required an exact match of index collation and clause collation. It seems correct to allow a match when the index is collation-less regardless of the clause's inputcollid: an operator with both noncollatable and collatable inputs could perhaps depend on the collation of the collatable input, but it could hardly expect the index for the noncollatable input to have that same collation. Per bug #6232 from Pierre Ducroquet. His example is specifically about "hstore ? text" but the problem seems quite generic. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cb37c291060dd13b1a8ff61fceee09efcfbc34e1">http://git.postgresql.org/pg/commitdiff/cb37c291060dd13b1a8ff61fceee09efcfbc34e1</a></li>
+
+<li>Fix recursion into previously planned sub-query in examine_simple_variable. This code was looking at the sub-Query tree as seen in the parent query's RangeTblEntry; but that's the pristine parser output, and what we need to look at is the tree as it stands at the completion of planning. Otherwise we might pick up a Var that references a subquery that got flattened and hence has no RelOptInfo in the subroot. Per report from Peter Geoghegan. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/79edb2b1dc33166b576f51a8255a7614f748d9c9">http://git.postgresql.org/pg/commitdiff/79edb2b1dc33166b576f51a8255a7614f748d9c9</a></li>
+
+<li>Support GiST index support functions that want to cache data across calls. pg_trgm was already doing this unofficially, but the implementation hadn't been thought through very well and leaked memory. Restructure the core GiST code so that it actually works, and document it. Ordinarily this would have required an extra memory context creation/destruction for each GiST index search, but I was able to avoid that in the normal case of a non-rescanned search by finessing the handling of the RBTree. It used to have its own context always, but now shares a context with the scan-lifespan data structures, unless there is more than one rescan call. This should make the added overhead unnoticeable in typical cases. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d22a09dc70f9830fa78c1cd1a3a453e4e473d354">http://git.postgresql.org/pg/commitdiff/d22a09dc70f9830fa78c1cd1a3a453e4e473d354</a></li>
+
+<li>Cache the result of makesign() across calls of gtrgm_penalty(). Since gtrgm_penalty() is usually called many times in a row with the same "newval" (to determine which item on an index page newval fits into best), the makesign() calculation is repetitious. It's expensive enough to make it worth caching the result, so do so. On my machine this is good for more than a 40% savings in the time needed to build a trigram index on /usr/share/dict/words. This is all per a suggestion of Heikki's. In passing, make some mostly-cosmetic improvements in the caching logic in the other functions in this file that rely on caching info in fn_extra. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0a5d5a49d9965aa092e75ce31a88fbf5f05c5009">http://git.postgresql.org/pg/commitdiff/0a5d5a49d9965aa092e75ce31a88fbf5f05c5009</a></li>
+
+<li>Improve generated column names for cases involving sub-SELECTs. We'll now use "exists" for EXISTS(SELECT ...), "array" for ARRAY(SELECT ...), or the sub-select's own result column name for a simple expression sub-select. Previously, you usually got "?column?" in such cases. Marti Raudsepp, reviewed by Kyotaro Horiugchi 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5ec6b7f1b87f0fa006b8e08a11cd4e99bcb67358">http://git.postgresql.org/pg/commitdiff/5ec6b7f1b87f0fa006b8e08a11cd4e99bcb67358</a></li>
+
+<li>Restructure error handling in reading of postgresql.conf. This patch has two distinct purposes: to report multiple problems in postgresql.conf rather than always bailing out after the first one, and to change the policy for whether changes are applied when there are unrelated errors in postgresql.conf. Formerly the policy was to apply no changes if any errors could be detected, but that had a significant consistency problem, because in some cases specific values might be seen as valid by some processes but invalid by others. This meant that the latter processes would fail to adopt changes in other parameters even though the former processes had done so. The new policy is that during SIGHUP, the file is rejected as a whole if there are any errors in the "name = value" syntax, or if any lines attempt to set nonexistent built-in parameters, or if any lines attempt to set custom parameters whose prefix is not listed in (the new value of) custom_variable_classes. These tests should always give the same results in all processes, and provide what seems a reasonably robust defense against loading values from badly corrupted config files. If these tests pass, all processes will apply all settings that they individually see as good, ignoring (but logging) any they don't. In addition, the postmaster does not abandon reading a configuration file after the first syntax error, but continues to read the file and report syntax errors (up to a maximum of 100 syntax errors per file). The postmaster will still refuse to start up if the configuration file contains any errors at startup time, but these changes allow multiple errors to be detected and reported before quitting. Alexey Klyukin, reviewed by Andy Colson and av (Alexander ?) with some additional hacking by Tom Lane 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d56b3afc0376afe491065d9eca6440b3cc7b1346">http://git.postgresql.org/pg/commitdiff/d56b3afc0376afe491065d9eca6440b3cc7b1346</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Update obsolete comments. This was partially fixed by 57fdb2b0d835fe201434fc28bf5dabf83ada26d1, back in 2005, but it missed a couple of spots. YAMAMOTO Takashi 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/821fd903f9b7f5a8ca439b9b7cb6d2f54672582f">http://git.postgresql.org/pg/commitdiff/821fd903f9b7f5a8ca439b9b7cb6d2f54672582f</a></li>
+
+<li>heap_update() must recheck tuple after unlocking and relocking buffer. Bug found by Alvaro Herrera, fix suggested by Heikki Linnakangas and reviewed by Tom Lane. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/624f155ffa93d1af4fb9d91fd5c0eb05da1e9e54">http://git.postgresql.org/pg/commitdiff/624f155ffa93d1af4fb9d91fd5c0eb05da1e9e54</a></li>
+
+<li>sepgsql uavc comment improvements. Robert Haas and KaiGai Kohei 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a9d845be496b779efbcf16095bf236639e9e7665">http://git.postgresql.org/pg/commitdiff/a9d845be496b779efbcf16095bf236639e9e7665</a></li>
+
+<li>Update comments related to the crash-safety of the visibility map. In hio.c, document how we avoid deadlock with respect to visibility map buffer locks. In visibilitymap.c, update the LOCKING section of the file header comment. Both oversights noted by Heikki Linnakangas. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f70648d5a16b4b048cacd04b82079e6734449bc2">http://git.postgresql.org/pg/commitdiff/f70648d5a16b4b048cacd04b82079e6734449bc2</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix typo 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/173499273804f137bbb4a6785d6967b9e2d7e478">http://git.postgresql.org/pg/commitdiff/173499273804f137bbb4a6785d6967b9e2d7e478</a></li>
+
+<li>Remove dependency on error ordering in isolation tests. We now report errors reported by the just-unblocked and unblocking transactions identically; this should fix relatively common buildfarm failures reported by animals that are failing the "wrong" session. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bbd38af3a879604db2b455cbb2b4ec93275249fa">http://git.postgresql.org/pg/commitdiff/bbd38af3a879604db2b455cbb2b4ec93275249fa</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pg_upgrade, because toast table names can be mismatched with the heap oid on 8.4, modify the toast name comparison test to only apply to old 9.0+ servers. (The test was previously 8.4+.) Backpatch to 9.1.X. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5e5958428b7c6e91ffddf46bf9aafd920af57a60">http://git.postgresql.org/pg/commitdiff/5e5958428b7c6e91ffddf46bf9aafd920af57a60</a></li>
+
+<li>Fix pg_upgrade for EXEC_BACKEND builds (e.g. Windows) by properly passing the -b/binary-upgrade flag. Backpatch to 9.1.X. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/054219c907a9fe668b2dac4134563b4f38e2b233">http://git.postgresql.org/pg/commitdiff/054219c907a9fe668b2dac4134563b4f38e2b233</a></li>
+
+<li>In pg_upgrade, remove unnecessary local variable. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/878b74e094a70e660e5ed365a2c4e1b41460515d">http://git.postgresql.org/pg/commitdiff/878b74e094a70e660e5ed365a2c4e1b41460515d</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Peter Geoghegan sent in another revision of the patch to inline comparison operators.</li>
+
+<li>Shigeru HANADA sent in another revision of the patch to display accumulated autovacuum cost.</li>
+
+<li>Noah Misch and Alvaro Herrera traded patches to test for isolation failures.</li>
+
+<li>Fujii Masao sent in two more revisions of the patch to enable making a base backup from a hot standby.</li>
+
+<li>Bruce Momjian sent in two more revisions of a patch to fix testing for pg_upgrade.</li>
+
+<li>Andreas Karlsson sent in a patch to allow for EXECUTE tab completion in psql.</li>
+
+<li>Tom Lane sent in a WIP patch to break a circular dependency in snapshot management.</li>
+
+<li>Marti Raudsepp sent in a patch to log crashed backends.</li>
+
+<li>Brar Piening sent in another revision of the patch to support VS2010.</li>
+
+<li>Joachim Wieland sent in another revision of the patch to enable exporting and synchronizing snapshots.</li>
+
+<li>KaiGai Kohei sent in another revision of the patch to rework DROP into a single framework.</li>
+
+<li>KaiGai Kohei sent in another revision of the patch to fix certain leaks in VIEWs.</li>
+
+<li>Bruce Momjian sent in another revision of a patch to fix pg_upgrade.</li>
+
+<li>Gurjeet Singh sent in a patch to remove savepointLevel from TransactionState.</li>
+
+<li>Alvaro Herrera sent in a patch to make SLRU's truncate use callbacks.</li>
+
+<li>Fujii Masao sent in a patch which prevents the creation of restartpoints by using rm_safe_restartpoint callback when a consistent state is not yet reached and the invalid-page table is not empty.</li>
+
+<li>Kyotaro HORIGUCHI sent in another revision of the patch to add make_greater_string().</li>
+
+<li>KaiGai Kohei sent in another revision of the patch to add object access hooks with argument support.</li>
+
+<li>Jeff Davis sent in two more revisions of the patch to add range types.</li>
+
+<li>Bruce Momjian sent in a patch which makes an empty string the default for external_pid_file in postgresql.conf to make it consistent with other defaults there.</li>
+
+<li>Bruce Momjian sent in a patch to add a configuration directory setting for pg_upgrade.</li>
+
+<li>Simon Riggs sent in another revision of a patch to separate the background writer process from the checkpointer.</li>
+
+<li>Tom Lane sent in a WIP patch to remove custom variable classes for GUCs. There hadn't been a way to validate them anyhow, so now arbitrary GUCs are allowed.</li>
+
+</ul>

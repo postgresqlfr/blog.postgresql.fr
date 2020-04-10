@@ -1,0 +1,280 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 8 mars 2015"
+author: "NBougain"
+redirect_from: "index.php?post/2015-03-10-nouvelles-hebdomadaires-de-postgresql-8-mars-2015 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Stephen Frost a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix pg_dump handling of extension config tables Since 9.1, we've provided extensions with a way to denote "configuration" tables- tables created by an extension which the user may modify. By marking these as "configuration" tables, the extension is asking for the data in these tables to be pg_dump'd (tables which are not marked in this way are assumed to be entirely handled during CREATE EXTENSION and are not included at all in a pg_dump). Unfortunately, pg_dump neglected to consider foreign key relationships between extension configuration tables and therefore could end up trying to reload the data in an order which would cause FK violations. This patch teaches pg_dump about these dependencies, so that the data dumped out is done so in the best order possible. Note that there's no way to handle circular dependencies, but those have yet to be seen in the wild. The release notes for this should include a caution to users that existing pg_dump-based backups may be invalid due to this issue. The data is all there, but restoring from it will require extracting the data for the configuration tables and then loading them in the correct order by hand. Discussed initially back in bug #6738, more recently brought up by Gilles Darold, who provided an initial patch which was further reworked by Michael Paquier. Further modifications and documentation updates by me. Back-patch to 9.1 where we added the concept of extension configuration tables. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ebd092bc2a07787b31b249d62033b9c8140a5d85">http://git.postgresql.org/pg/commitdiff/ebd092bc2a07787b31b249d62033b9c8140a5d85</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>pgbench: Add a real expression syntax to \set. Previously, you could do \set variable operand1 operator operand2, but nothing more complicated. Now, you can \set variable expression, which makes it much simpler to do multi-step calculations here. This also adds support for the modulo operator (%), with the same semantics as in C. Robert Haas and Fabien Coelho, reviewed by &Aacute;lvaro Herrera and Stephen Frost 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/878fdcb843e087cc1cdeadc987d6ef55202ddd04">http://git.postgresql.org/pg/commitdiff/878fdcb843e087cc1cdeadc987d6ef55202ddd04</a></li>
+
+<li>pgbench: Fix mistakes in Makefile. My commit 878fdcb843e087cc1cdeadc987d6ef55202ddd04 was not quite right. Tom Lane pointed out one of the mistakes fixed here, and I noticed the other myself while reviewing what I'd committed. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e5f36902495d0c8d5dee9a5f43fb45d44540f795">http://git.postgresql.org/pg/commitdiff/e5f36902495d0c8d5dee9a5f43fb45d44540f795</a></li>
+
+<li>Remove residual NULL-pstate handling in addRangeTableEntry. Passing a NULL pstate wouldn't actually work, because isLockedRefname() isn't prepared to cope with it; and there hasn't been any in-core code that tries in over a decade. So just remove the residual NULL handling. Spotted by Coverity; analysis and patch by Michael Paquier. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5223ddacdc737b401ed58184e321f354bdf46686">http://git.postgresql.org/pg/commitdiff/5223ddacdc737b401ed58184e321f354bdf46686</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix busted markup. Evidently from commit 878fdcb843e087cc1cdeadc987d6ef55202ddd04. Per buildfarm. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d1479011744d80d80c669b5bd64dc32187f26c1e">http://git.postgresql.org/pg/commitdiff/d1479011744d80d80c669b5bd64dc32187f26c1e</a></li>
+
+<li>Reduce json &lt;=&gt; jsonb casts from explicit-only to assignment level. There's no reason to make users write an explicit cast to store a json value in a jsonb column or vice versa. We could probably even make these implicit, but that might open us up to problems with ambiguous function calls, so for now just do this. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b67f1ce181910e012b3a8ec7a35ba20a48247757">http://git.postgresql.org/pg/commitdiff/b67f1ce181910e012b3a8ec7a35ba20a48247757</a></li>
+
+<li>Fix long-obsolete code for separating filter conditions in cost_index(). This code relied on pointer equality to identify which restriction clauses also appear in the indexquals (and, therefore, don't need to be applied as simple filter conditions). That was okay once upon a time, years ago, before we introduced the equivalence-class machinery. Now there's about a 50-50 chance that an equality clause appearing in the indexquals will be the mirror image (commutator) of its mate in the restriction list. When that happens, we'd erroneously think that the clause would be re-evaluated at each visited row, and therefore inflate the cost estimate for the indexscan by the clause's cost. Add some logic to catch this case. It seems to me that it continues not to be worthwhile to expend the extra predicate-proof work that createplan.c will do on the finally-selected plan, but this case is common enough and cheap enough to handle that we should do so. This will make a small difference (about one cpu_operator_cost per row) in simple cases; but in situations where there's an expensive function in the indexquals, it can make a very large difference, as seen in recent example from Jeff Janes. This is a long-standing bug, but I'm hesitant to back-patch because of the possibility of destabilizing plan choices that people may be happy with. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/497bac7d290df13d8b00ba48653a96015ff4741b">http://git.postgresql.org/pg/commitdiff/497bac7d290df13d8b00ba48653a96015ff4741b</a></li>
+
+<li>Fix cost estimation for indexscans on expensive indexed expressions. genericcostestimate() and friends used the cost of the entire indexqual expressions as the charge for initial evaluation of indexscan arguments. But of course the index column is not evaluated, only the other side of the qual expression, so this was a bad overestimate if the index column was an expensive expression. To fix, refactor the logic in this area so that there's a single routine charged with deconstructing index quals and figuring out what is the index column and what is the comparison expression. This is more or less free in the case of btree indexes, since btcostestimate() was doing equivalent deconstruction already. It probably adds a bit of new overhead in the cases of other index types, but not a lot. (In the case of GIN I think I saved something by getting rid of code that wasn't aware that the index column associations were already available "for free".) Per recent gripe from Jeff Janes. Arguably this is a bug fix, but I'm hesitant to back-patch because of the possibility of destabilizing plan choices that people may be happy with. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b9896198cfbc1b0cd0c631d2af72ffe34bd4c7e5">http://git.postgresql.org/pg/commitdiff/b9896198cfbc1b0cd0c631d2af72ffe34bd4c7e5</a></li>
+
+<li>Use standard casting mechanism to convert types in plpgsql, when possible. plpgsql's historical method for converting datatypes during assignments was to apply the source type's output function and then the destination type's input function. Aside from being miserably inefficient in most cases, this method failed outright in many cases where a user might expect it to work; an example is that "declare x int; ... x := 3.9;" would fail, not round the value to 4. Instead, let's convert by applying the appropriate assignment cast whenever there is one. To avoid breaking compatibility unnecessarily, fall back to the I/O conversion method if there is no assignment cast. So far as I can tell, there is just one case where this method produces a different result than the old code in a case where the old code would not have thrown an error. That is assignment of a boolean value to a string variable (type text, varchar, or bpchar); the old way gave boolean's output representation, ie 't'/'f', while the new way follows the behavior of the bool-to-text cast and so gives 'true' or 'false'. This will need to be called out as an incompatibility in the 9.5 release notes. Aside from handling many conversion cases more sanely, this method is often significantly faster than the old way. In part that's because of more effective caching of the conversion info. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1345cc67bbb014209714af32b5681b1e11eaf964">http://git.postgresql.org/pg/commitdiff/1345cc67bbb014209714af32b5681b1e11eaf964</a></li>
+
+<li>Need to special-case RECORD as well as UNKNOWN in plpgsql's casting logic. This is because can_coerce_type thinks that RECORD can be cast to any composite type, but coerce_record_to_complex only works for inputs that are RowExprs or whole-row Vars, so we get a hard failure on a CaseTestExpr. Perhaps these corner cases ought to be fixed so that coerce_to_target_type actually returns NULL as per its specification, rather than failing ... but for the moment an extra check here is the path of least resistance. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/45f2c2fc4e4adcf75cd689e18dab77ebe622fc2e">http://git.postgresql.org/pg/commitdiff/45f2c2fc4e4adcf75cd689e18dab77ebe622fc2e</a></li>
+
+<li>Change plpgsql's cast cache to consider source typmod as significant. I had thought that there was no need to maintain separate cache entries for different source typmods, but further experimentation shows that there is an advantage to doing so in some cases. In particular, if a domain has a typmod (say, "CREATE DOMAIN d AS numeric(20,0)"), failing to notice the source typmod leads to applying a length-coercion step even when the source has the correct typmod. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7f3014dce56c7975113809f2ff5e92cf7c1563a3">http://git.postgresql.org/pg/commitdiff/7f3014dce56c7975113809f2ff5e92cf7c1563a3</a></li>
+
+<li>Avoid unused-variable warning in non-assert builds. Oversight in my commit b9896198cfbc1b0cd0c631d2af72ffe34bd4c7e5. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a5c29d37aab00e9e70e72c97f2be29030f6ee84c">http://git.postgresql.org/pg/commitdiff/a5c29d37aab00e9e70e72c97f2be29030f6ee84c</a></li>
+
+<li>Remove comment claiming that PARAM_EXTERN Params always have typmod -1. This hasn't been true in quite some time, cf plpgsql's make_datum_param(). 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3200b15b20d9248be1b0f436ee787b2077d00298">http://git.postgresql.org/pg/commitdiff/3200b15b20d9248be1b0f436ee787b2077d00298</a></li>
+
+<li>Rethink function argument sorting in pg_dump. Commit 7b583b20b1c95acb621c71251150beef958bb603 created an unnecessary dump failure hazard by applying pg_get_function_identity_arguments() to every function in the database, even those that won't get dumped. This could result in snapshot-related problems if concurrent sessions are, for example, creating and dropping temporary functions, as noted by Marko Tiikkaja in bug #12832. While this is by no means pg_dump's only such issue with concurrent DDL, it's unfortunate that we added a new failure mode for cases that used to work, and even more so that the failure was created for basically cosmetic reasons (ie, to sort overloaded functions more deterministically). To fix, revert that patch and instead sort function arguments using information that pg_dump has available anyway, namely the names of the argument types. This will produce a slightly different sort ordering for overloaded functions than the previous coding; but applying strcmp directly to the output of pg_get_function_identity_arguments really was a bit odd anyway. The sorting will still be name-based and hence independent of possibly-installation-specific OID assignments. A small additional benefit is that sorting now works regardless of server version. Back-patch to 9.3, where the previous commit appeared. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e3bfe6d84d4919433d8323cfb8194ca60d99f2c4">http://git.postgresql.org/pg/commitdiff/e3bfe6d84d4919433d8323cfb8194ca60d99f2c4</a></li>
+
+<li>Fix erroneous error message for REINDEX SYSTEM. Missed case in commit fe263d115a7dd16095b8b8f1e943aff2bb4574d2. Sawada Masahiko 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ac0914285ac90bd411730c3219f226bbbbc57f3a">http://git.postgresql.org/pg/commitdiff/ac0914285ac90bd411730c3219f226bbbbc57f3a</a></li>
+
+<li>Code cleanup for REINDEX DATABASE/SCHEMA/SYSTEM. Fix some minor infelicities. Some of these things were introduced in commit fe263d115a7dd16095b8b8f1e943aff2bb4574d2, and some are older. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/90c35a9ed06c1353a0d3818c259e629ff09dba18">http://git.postgresql.org/pg/commitdiff/90c35a9ed06c1353a0d3818c259e629ff09dba18</a></li>
+
+<li>Fix documentation for libpq's PQfn(). The SGML docs claimed that 1-byte integers could be sent or received with the "isint" options, but no such behavior has ever been implemented in pqGetInt() or pqPutInt(). The in-code documentation header for PQfn() was even less in tune with reality, and the code itself used parameter names matching neither the SGML docs nor its libpq-fe.h declaration. Do a bit of additional wordsmithing on the SGML docs while at it. Since the business about 1-byte integers is a clear documentation bug, back-patch to all supported branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1a0bc4c2bfc278b63965486b1525ad04a1f85989">http://git.postgresql.org/pg/commitdiff/1a0bc4c2bfc278b63965486b1525ad04a1f85989</a></li>
+
+<li>Remove struct PQArgBlock from server-side header libpq/libpq.h. This struct is purely a client-side artifact. Perhaps there was once reason for the server to know it, but any such reason is lost in the mists of time. We certainly don't need two independent declarations of it. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/01cca2c1b1a0d52c83f250c50942ee00e62637ca">http://git.postgresql.org/pg/commitdiff/01cca2c1b1a0d52c83f250c50942ee00e62637ca</a></li>
+
+<li>Cast to (void *) rather than (int *) when passing int64's to PQfn(). This is a possibly-vain effort to silence a Coverity warning about bogus endianness dependency. The code's fine, because it takes care of endianness issues for itself, but Coverity sees an int64 being passed to an int* argument and not unreasonably suspects something's wrong. I'm not sure if putting the void* cast in the way will shut it up; but it can't hurt and seems better from a documentation standpoint anyway, since the pointer is not used as an int* in this code path. Just for a bit of additional safety, verify that the result length is 8 bytes as expected. Back-patch to 9.3 where the code in question was added. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ef75508efc789c79c5a5d4acd7ad5da85f1e4f08">http://git.postgresql.org/pg/commitdiff/ef75508efc789c79c5a5d4acd7ad5da85f1e4f08</a></li>
+
+</ul>
+
+<p>&Aacute;lvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add comment for "is_internal" parameter. This was missed in my commit f4c4335 of 9.3 vintage, so backpatch to that. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6f9d79904748c26a58991942dc6719db558f77b0">http://git.postgresql.org/pg/commitdiff/6f9d79904748c26a58991942dc6719db558f77b0</a></li>
+
+<li>Change many routines to return ObjectAddress rather than OID. The changed routines are mostly those that can be directly called by ProcessUtilitySlow; the intention is to make the affected object information more precise, in support for future event trigger changes. Originally it was envisioned that the OID of the affected object would be enough, and in most cases that is correct, but upon actually implementing the event trigger changes it turned out that ObjectAddress is more widely useful. Additionally, some command execution routines grew an output argument that's an object address which provides further info about the executed command. To wit: * for ALTER DOMAIN / ADD CONSTRAINT, it corresponds to the address of the new constraint * for ALTER OBJECT / SET SCHEMA, it corresponds to the address of the schema that originally contained the object. * for ALTER EXTENSION {ADD, DROP} OBJECT, it corresponds to the address of the object added to or dropped from the extension. There's no user-visible change in this commit, and no functional change either. Discussion: 20150218213255.GC6717@tamriel.snowman.net Reviewed-By: Stephen Frost, Andres Freund 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a2e35b53c39b2a27d3e332dc7c506539c306fd44">http://git.postgresql.org/pg/commitdiff/a2e35b53c39b2a27d3e332dc7c506539c306fd44</a></li>
+
+<li>Silence warning in non-assert-enabled build. An OID return value was being used only for a (rather pointless) assert. Silence by removing the variable and the assert. Per note from Peter Geoghegan 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bf22d2707a2f47a7cc4caa239a14f2bf0a72bfd0">http://git.postgresql.org/pg/commitdiff/bf22d2707a2f47a7cc4caa239a14f2bf0a72bfd0</a></li>
+
+<li>Fix user mapping object description. We were using "user mapping for user XYZ" as description for user mappings, but that's ambiguous because users can have mappings on multiple foreign servers; therefore change it to "for user XYZ on server UVW" instead. Object identities for user mappings are also updated in the same way, in branches 9.3 and above. The incomplete description string was introduced together with the whole SQL/MED infrastructure by commit cae565e503 of 8.4 era, so backpatch all the way back. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cf34e373fcf42239a73f36e3054d9e9fbdc1e0de">http://git.postgresql.org/pg/commitdiff/cf34e373fcf42239a73f36e3054d9e9fbdc1e0de</a></li>
+
+<li>Fix contrib/file_fdw's expected file. I forgot to update it on yesterday's cf34e373fcf. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c6ee39bc8587042f018979ddd6ed9825acbbd3d8">http://git.postgresql.org/pg/commitdiff/c6ee39bc8587042f018979ddd6ed9825acbbd3d8</a></li>
+
+<li>Add some more tests on event triggers. Fabien Coelho. Reviewed by Robert Haas 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6510c832bbf91d52541c7aeefa371123abc2d832">http://git.postgresql.org/pg/commitdiff/6510c832bbf91d52541c7aeefa371123abc2d832</a></li>
+
+</ul>
+
+<p>Fujii Masao a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix an obsolete reference to SnapshotNow in comment. Peter Geoghegan 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f8b031bca848a21fb9a7c9530f8cdc7eb6919dd9">http://git.postgresql.org/pg/commitdiff/f8b031bca848a21fb9a7c9530f8cdc7eb6919dd9</a></li>
+
+<li>Fix typo in comment. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/934d12268585823c271c1490fc9aa4467c301e9c">http://git.postgresql.org/pg/commitdiff/934d12268585823c271c1490fc9aa4467c301e9c</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Remove rolcatupdate. This role attribute is an ancient PostgreSQL feature, but could only be set by directly updating the system catalogs, and it doesn't have any clearly defined use. Author: Adam Brightwell &lt;adam.brightwell@crunchydatasolutions.com&gt; 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bb8582abf3c4db18b508627a52effd43672f9410">http://git.postgresql.org/pg/commitdiff/bb8582abf3c4db18b508627a52effd43672f9410</a></li>
+
+<li>Sort SUBDIRS variable in src/bin/Makefile. The previous order appears to have been historically grown randomness. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5a2a48f0367e24f8f12cfe0a90a886dae0db1ce2">http://git.postgresql.org/pg/commitdiff/5a2a48f0367e24f8f12cfe0a90a886dae0db1ce2</a></li>
+
+</ul>
+
+<p>Noah Misch a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Build fls.o only when AC_REPLACE_FUNCS so dictates via $(LIBOBJS). By building it unconditionally, libpgport inadvertently replaced any libc version of the function. This is essentially a code cleanup; any effect on performance is almost surely too small to notice. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9d265ae77af6f8d99bbd68b6ee644e7572b16754">http://git.postgresql.org/pg/commitdiff/9d265ae77af6f8d99bbd68b6ee644e7572b16754</a></li>
+
+<li>Add CHECK_FOR_INTERRUPTS() to the wait_pid() loop. Though the one contemporary caller uses it in a limited way, this function could loop indefinitely if pointed to an arbitrary PID. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/93751570731ba08dca4e791234984c3b1a15e885">http://git.postgresql.org/pg/commitdiff/93751570731ba08dca4e791234984c3b1a15e885</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>No one was disappointed this week</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Michael Paquier sent in a patch to fix broken Install.bat when target directory contains a space.</li>
+
+<li>Jan de Visser sent in two more revisions of a patch to let pg ctl check the result of a postmaster config reload.</li>
+
+<li>Gregory Stark and Haribabu Kommi traded patches to provide a catalog view of pg_hba.conf.</li>
+
+<li>Joshua Berkus sent in four revisions of a patch to raise default for max_wal_segments to 1GB.</li>
+
+<li>SAWADA Masahiko sent in another revision of a patch to implement REINDEX...VERBOSE.</li>
+
+<li>Dean Rasheed sent in two more revisions of a patch to update RLS timings.</li>
+
+<li>&Aacute;lvaro Herrera sent in four more revisions of a patch to implement ALTER USER/ROLE ... CURRENT USER.</li>
+
+<li>Michael Paquier sent in two more revisions of a patch to improve test coverage with pg_dump.</li>
+
+<li>Shigeru HANADA and Ashutosh Bapat traded patches to implement push-down JOIN support for foreign tables.</li>
+
+<li>Marko Kreen sent in a patch to fix excessive float lossiness in PL/Python.</li>
+
+<li>Julien Tachoires sent in another revision of a patch to allow toast tables to be moved to a different tablespace.</li>
+
+<li>Amit Kapila sent in another revision of a patch to implement parallel seq scan.</li>
+
+<li>Kaigai Kouhei and Shigeru HANADA traded patches to add custom foreign join APIs.</li>
+
+<li>Peter Geoghegan sent in another revision of a patch to add logical decoding support for ON CONFLICT UPDATE.</li>
+
+<li>Peter Geoghegan sent in a patch to remove an obsolete SnapshotNow reference within snapbuild.c.</li>
+
+<li>Kyotaro HORIGUCHI sent in another revision of a patch to add regrole and regnamespace.</li>
+
+<li>Michael Paquier sent in a patch to compare primary/HS standby in tests.</li>
+
+<li>Robert Haas sent in a patch to make some fixes in tuplesort.</li>
+
+<li>Rahila Syed sent in two more revisions of a patch to allow compressing improve full-page writes.</li>
+
+<li>Fabien COELHO sent in four more revisions of a patch to improve pgbench syntax error messages.</li>
+
+<li>David Rowley sent in another revision of a patch to improve performance for joins where outer side is unique.</li>
+
+<li>Michael Paquier sent in a patch to install shared libraries in bin/ and lib/ on MSVC.</li>
+
+<li>Michael Paquier sent in a patch to add dummy pstate fixes.</li>
+
+<li>Peter Geoghegan sent in another revision of a patch to add INSERT ... ON CONFLICT IGNORE (and UPDATE).</li>
+
+<li>Andreas Karlsson sent in another revision of a patch to use 128-bit integers for sum, avg and statistics aggregates.</li>
+
+<li>Etsuro Fujita sent in another revision of a patch to make updating foreign tables in the Postgres FDW work faster.</li>
+
+<li>SAWADA Masahiko sent in another revision of a patch to add a way to see the contents of configuration files via SQL.</li>
+
+<li>Michael Paquier sent in two more revisions of a patch to add a table level log_autovacuum_min_duration.</li>
+
+<li>Michael Paquier sent in a flock of patches to move the freeze parameters of VacuumStmt into a separate spot, eliminate VacuumStmt from lower level routines of ANALYZE and VACUUM, and add wraparound control parameters in VacuumStmt.</li>
+
+<li>Bruce Momjian sent in two more revisions of a patch to help fix pg_upgrade with reference to rsync.</li>
+
+<li>Robert Haas sent in another revision of a patch to implement parallel mode and parallel contexts.</li>
+
+<li>Tom Lane sent in a patch to fix some weirdly pesimistic estimates in optimizer.</li>
+
+<li>&Aacute;lvaro Herrera sent in a flock of patches to patches add get_object_address support for user mappings, default ACLs, and operators and functions of operator families</li>
+
+<li>Kyotaro HORIGUCHI and Tom Lane traded patches to clamp row number of join product by the row number calculated from joining paths.</li>
+
+<li>Stephen Frost sent in another revision of a patch to add catalog_function_acls.</li>
+
+<li>Marco Nenciarini sent in another revision of a patch to implement file-based incremental backup.</li>
+
+<li>SAWADA Masahiko sent in a patch to fix an incorrect error message in REINDEX.</li>
+
+<li>Fabr&iacute;zio de Royes Mello sent in two revisions of a patch to fix an odd debug in walreceiver.</li>
+
+<li>Peter Eisentraut sent in another revision of a patch to speed up make check-world.</li>
+
+<li>Peter Eisentraut sent in another revision of a patch to add TRANSFORMS.</li>
+
+<li>Pavel Stehule sent in a PoC patch to enforce casting to most common type automatically.</li>
+
+<li>Dmitry Voronin sent in a patch to adds functions to sslinfo extension module: ssl_extension_names(), ssl_extension_value(text), and ssl_extension_is_critical(text).</li>
+
+<li>Tomas Vondra sent in a patch to allow merging pgbench logs.</li>
+
+<li>Tomas Vondra sent in a patch to allow logging both aggregate and transaction info in pgbench, rather having to choose one or the other.</li>
+
+<li>Tom Lane sent in a patch to rethink the parameter access hooks for plpgsql's benefit.</li>
+
+</ul>

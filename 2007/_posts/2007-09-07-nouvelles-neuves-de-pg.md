@@ -1,0 +1,218 @@
+---
+layout: post
+title: "Nouvelles neuves de PG"
+author: "NBougain"
+redirect_from: "index.php?post/drupal-410 "
+---
+
+
+
+Une discussion courtoise bien qu'animée a lieu sur -advocacy à propos d'un éventuel renommage en Postgres.
+
+<ul>
+
+<li>(l'un des) début(s)&nbsp;:
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-advocacy/2007-08/threads.php#00373">http://archives.postgresql.org/pgsql-advocacy/2007-08/threads.php</a></li>
+
+<li>la suite, ce mois-ci&nbsp;:
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-advocacy/2007-09/threads.php#00012">http://archives.postgresql.org/pgsql-advocacy/2007-09/threads.php</a></li>
+
+</ul>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>Another PostgreSQL Diff Tool (apgdiff) est sorti en version 1.0.0_beta25&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/apgdiff/">http://pgfoundry.org/projects/apgdiff/</a></li>
+
+<li>PostgreSQL Data Wizard 7.8 est disponible&nbsp;:
+
+<a target="_blank" href="http://www.sqlmaestro.com/products/postgresql/datawizard/">http://www.sqlmaestro.com/products/postgresql/datawizard/</a></li>
+
+<li>DBForms v.1.0 a été publié&nbsp;:
+
+<a target="_blank" href="http://dbconvert.com/convert-dbforms-access-to-postgresql.php">http://dbconvert.com/convert-dbforms-access-to-postgresql.php</a></li>
+
+<li>Changement de licence - Npgsql est maintenant sous BSD&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/npgsql/">http://pgfoundry.org/projects/npgsql/</a></li>
+
+<li>SE-PostgreSQL 8.2.4-1.0 est disponible&nbsp;:
+
+<a target="_blank" href="http://code.google.com/p/sepgsql/downloads/list">http://code.google.com/p/sepgsql/downloads/list</a></li>
+
+<li>Slony-I 1.2.11 est disponible&nbsp;:
+
+<a target="_blank" href="http://slony.info/">http://slony.info/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en septembre</strong></p>
+
+<p><a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2007-09/threads.php">http://archives.postgresql.org/pgsql-jobs/2007-09/threads.php</a></p>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<p>La PostgreSQL Conference Fall 2007 aura lieu le 20 octobre à l'Université d'État de Portland (Oregon, USA)&nbsp;:
+
+<a target="_blank" href="http://www.postgresqlconference.org/">http://www.postgresqlconference.org/</a></p>
+
+<p><strong>PostgreSQL dans les média</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://www.planetpostgresql.org/">http://www.planetpostgresql.org/</a></li>
+
+<li>General Bits, Archives et articles occasionels&nbsp;:
+
+<a target="_blank" href="http://www.varlena.com/GeneralBits/">http://www.varlena.com/GeneralBits/</a></li>
+
+</ul>
+
+<p><em>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. La traduction française est assurée par l'équipe PostgreSQLFr.</em></p>
+
+<p><em>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Envoyez-les en anglais à david (a) fetter.org ou en allemand à pwn (a) pgug.de.</em></p>
+
+<p><strong>Correctifs appliqués</strong></p>
+
+<p>Tatsuo Ishii a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/doc/src/sgml/textsearch.sgml, fix broken markup.</li>
+
+</ul>
+
+<p>Michael Meskes a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/interfaces/ecpg, fixed bug in Informix define handling.</li>
+
+</ul>
+
+<p>Tom Lane a commité&nbsp;:</p>
+
+<ul>
+
+<li>Fix MSVC build (I think) for recent pg_proc.h column addition. This business with two independent build systems does kinda suck.</li>
+
+<li>In pgsql/src/backend/snowball, improve stylistic consistency of descriptions of built-in objects by avoiding initcap style --- the vast majority of the existing descriptions do not use an initial cap. I didn't change places where the first word was all-cap. initdb not forced because this doesn't change any regression test results.</li>
+
+<li>Fix breakage of GIN support for varchar[] and cidr[] that I introduced in the operator-family rewrite. I had mistakenly supposed that these could use the pg_amproc entries for text[] and inet[] respectively. However, binary compatibility of the underlying types does not make two array types binary compatible (since they must differ in the header field that gives the element type OID), and so the index support code doesn't consider those entries applicable. Add back the missing pg_amproc entries, and add an opr_sanity query to try to catch such mistakes in future. Per report from Gregory Maxwell.</li>
+
+<li>Implement function-local GUC parameter settings, as per recent discussion. There are still some loose ends: I didn't do anything about the SET FROM CURRENT idea yet, and it's not real clear whether we are happy with the interaction of SET LOCAL with function-local settings. The documentation is a bit spartan, too.</li>
+
+<li>Since sort_bounded_heap makes state changes that should be made regardless of the number of tuples involved, it's incorrect to skip it when memtupcount = 1; the number of cycles saved is minuscule anyway. An alternative solution would be to pull the state changes out to the call site in tuplesort_performsort, but keeping them near the corresponding changes in make_bounded_heap seems marginally cleaner. Noticed by Greg Stark.</li>
+
+<li>Only use SGML indexterm "zone" when we want to get the entire section. Some alignment cleanups.</li>
+
+<li>Make Gin/Gist text search tertiary index entries in the documentation.</li>
+
+<li>Apply a band-aid fix for the problem that 8.2 and up completely misestimate the number of rows likely to be produced by a query such as SELECT * FROM t1 LEFT JOIN t2 USING (key) WHERE t2.key IS NULL; What this is doing is selecting for t1 rows with no match in t2, and thus it may produce a significant number of rows even if the t2.key table column contains no nulls at all. 8.2 thinks the table column's null fraction is relevant and thus may estimate no rows out, which results in terrible plans if there are more joins above this one. A proper fix for this will involve passing much more information about the context of a clause to the selectivity estimator functions than we ever have. There's no time left to write such a patch for 8.3, and it wouldn't be back-patchable into 8.2 anyway. Instead, put in an ad-hoc test to defeat the normal table-stats-based estimation when an IS NULL test is evaluated at an outer join, and just use a constant estimate instead --- I went with 0.5 for lack of a better idea. This won't catch every case but it will catch the typical ways of writing such queries, and it seems unlikely to make things worse for other queries.</li>
+
+<li>Extend whole-row Var evaluation to cope with the case that the sub-plan generating the tuples has resjunk output columns. This is not possible for simple table scans but can happen when evaluating a whole-row Var for a view. Per example from Patryk Kordylewski. The problem exists back to 8.0 but I'm not going to risk back-patching further than 8.2 because of the many changes in this area.</li>
+
+<li>Install check_stack_depth() protection in two recursive tsquery processing routines. Per Heikki.</li>
+
+<li>Rewrite make_outerjoininfo's construction of min_lefthand and min_righthand sets for outer joins, in the light of bug #3588 and additional thought and experimentation. The original methodology was fatally flawed for nests of more than two outer joins: it got the relationships between adjacent joins right, but didn't always come to the right conclusions about whether a join could be interchanged with one two or more levels below it. This was largely caused by a mistaken idea that we should use the min_lefthand + min_righthand sets of a sub-join as the minimum left or right input set of an upper join when we conclude that the sub-join can't commute with the upper one. If there's a still-lower join that the sub-join *can* commute with, this method led us to think that that one could commute with the topmost join; which it can't. Another problem (not directly connected to bug #3588) was that make_outerjoininfo's processing-order-dependent method for enforcing outer join identity #3 didn't work right: if we decided that join A could safely commute with lower join B, we dropped all information about sub-joins under B that join A could perhaps not safely commute with, because we removed B's entire min_righthand from A's. To fix, make an explicit computation of all inner join combinations that occur below an outer join, and add to that the full syntactic relsets of any lower outer joins that we determine it can't commute with. This method gives much more direct enforcement of the outer join rearrangement identities, and it turns out not to cost a lot of additional bookkeeping. Thanks to Richard Harris for the bug report and test case.</li>
+
+<li>Fix int8mul so that overflow check is applied correctly for INT64_IS_BUSTED case, per Florian Pflug. Not back-patched since it's unclear that anyone but me still cares ...</li>
+
+<li>Relax permissions checks on dbsize functions, per discussion. Revert out all checks for individual-table-size functions, since anyone in the database could get approximate values from pg_class.relpages anyway. Allow database-size to users with CONNECT privilege for the target database (note that this is granted by default). Allow tablespace-size if the user has CREATE privilege on the tablespace (which is *not* granted by default), or if the tablespace is the default tablespace for the current database (since we treat that as implicitly allowing use of the tablespace).</li>
+
+<li>Fix aboriginal bug in _tarAddFile(): when complaining that the amount of data read from the temp file didn't match the file length reported by ftello(), the wrong variable's value was printed, and so the message made no sense. Clean up a couple other coding infelicities while at it.</li>
+
+<li>Add a debug logging message when a resource manager rejects an attempted restart point. Per suggestion from Simon Riggs.</li>
+
+<li>Restrict pgstattuple functions to superusers. While the only one that's really a glaring security hole is bt_page_items, there's not a very good use-case for letting ordinary users use 'em, either.</li>
+
+<li>In pgsql/contrib/pgrowlocks/pgrowlocks.c, reduce the permissions check needed to use pgrowlocks() to having SELECT on the target table. Per discussion.</li>
+
+<li>Improve behavior of log_lock_waits patch. Ensure that something gets logged even if the "deadlock detected" ERROR message is suppressed by an exception catcher. Be clearer about the event sequence when a soft deadlock is fixed: the fixing process might or might not still have to wait, so log that separately. Fix race condition when someone releases us from the lock partway through printing all this junk --- we'd not get confused about our state, but the log message sequence could have been misleading, ie, a "still waiting" message with no subsequent "acquired" message. Greg Stark and Tom Lane.</li>
+
+</ul>
+
+<p>Bruce Momjian a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/doc/src/sgml/libpq.sgml, clean up whitespace.</li>
+
+<li>In pgsql/doc/src/sgml/libpq.sgml, properly indent SGML source of libpq.sgml.</li>
+
+<li>Only use SGML indexterm "zone" when we want to get the entire section. Some alignment cleanups.</li>
+
+<li>Make Gin/Gist text search tertiary index entries in the documentation.</li>
+
+<li>In pgsql/doc/src/sgml/Makefile, add comment on why SGML -wfully-tagged flag is needed (for older SGML tool chains).</li>
+
+<li>In text search docs, properly use indexterm _zone_ only when we want an entire section, per Peter.</li>
+
+<li>In pgsql/doc/src/sgml/textsearch.sgml, fix docs so indexes can be built by commenting out GiST/GIN index entries in textsearch.sgml.</li>
+
+<li>In pgsql/doc/src/sgml/Makefile, add openjade warning -wfully-tagged to warn about missing close tags on older SGML toolchains.</li>
+
+<li>Make more logical index sections for text search.</li>
+
+<li>Update tsearch documentation wording.</li>
+
+<li>Text search documentation word improvements; move configuration section to be more logical.</li>
+
+<li>Move full text search operators, functions, and data type sections into the main documentation, out of its own text search chapter.</li>
+
+<li>Properly indent SGML in textsearch.sgml.</li>
+
+<li>Mention configurations early in text search documentation to table/index section makes a little more sense.</li>
+
+<li>Small commit test for TODO.</li>
+
+<li>Update TODO.html.</li>
+
+<li>Update TODO with lost change, mostly completed items and whitespace corrections. Not sure why these were not in CVS. Researching.</li>
+
+<li>Batch of TODO updates, mostly completed item marking and whitespace fixes.</li>
+
+</ul>
+
+<p>Magnus Hagander a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/tools/msvc/vcregress.bat, exclude tsearch2 contrib tests in regression tests, pending decision on exactly what will happen with contrib/tsearch2 now that it's in core.</li>
+
+<li>In pgsql/src/tools/msvc/Install.pm, install stopword files.</li>
+
+<li>Fix generation of snowball_create.sql on msvc builds.</li>
+
+</ul>
+
+<p><strong>Correctifs rejetés (à ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de déception cette semaine :-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>ITAGAKI Takahiro sent in a patch which removes the unused XLogCtlData.XLogCacheByte from src/backend/access/transam/xlog.c</li>
+
+<li>Laurenz Albe sent in a patch which documents LDAP service lookup.</li>
+
+<li>Andrew Dunstan sent in a patch which allows enums to be used in binary queries.</li>
+
+<li>Brendan Jurd sent in a patch which adds links for escaping strings to appropriate parts of the documentation.</li>
+
+<li>Gregory Stark sent in two revisions of a patch which fixes a bug in the "Sort Method" code of EXPLAIN ANALYZE.</li>
+
+</ul>

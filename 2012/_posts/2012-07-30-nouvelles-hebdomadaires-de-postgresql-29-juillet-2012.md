@@ -1,0 +1,122 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 29 juillet 2012"
+author: "NBougain"
+redirect_from: "index.php?post/2012-07-30-nouvelles-hebdomadaires-de-postgresql-29-juillet-2012 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Make pgbench vacuum before building indexes. This is apparently faster than doing things the other way around when the scale factor is large. Along the way, adjust -n to suppress vacuuming during initialization as well as during test runs. Jeff Janes, with some small changes by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/46b2b7e0ff06498d51ebf08871c73e5b5e0aa050">http://git.postgresql.org/pg/commitdiff/46b2b7e0ff06498d51ebf08871c73e5b5e0aa050</a></li>
+
+<li>Log a better message when canceling autovacuum. The old message was at DEBUG2, so typically it didn't show up in the log at all. As a result, in most cases where autovacuum was canceled, the only information that was logged was the table being vacuumed, with no indication as to what problem caused the cancel. Crank up the level to LOG and add some more details to assist with debugging. Back-patch all the way, per discussion on pgsql-hackers. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d7318d43d891bd63e82dcfc27948113ed7b1db80">http://git.postgresql.org/pg/commitdiff/d7318d43d891bd63e82dcfc27948113ed7b1db80</a></li>
+
+<li>Tab complete table names after ALTER TABLE x [NO] INHERIT. Jeff Janes 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d20cdd31c0f0cd2d94ecb6a5dff4d1f183106541">http://git.postgresql.org/pg/commitdiff/d20cdd31c0f0cd2d94ecb6a5dff4d1f183106541</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Update information schema to SQL:2011. This is just a section renumbering for now. Some details might be filled in later. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d61d9aa7501f31f99ee089f8b014161254eafa89">http://git.postgresql.org/pg/commitdiff/d61d9aa7501f31f99ee089f8b014161254eafa89</a></li>
+
+<li>Document that pg_basebackup will create its output directory 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/08d715a2d48909cb5e42359e15f89927957ee3c8">http://git.postgresql.org/pg/commitdiff/08d715a2d48909cb5e42359e15f89927957ee3c8</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Change syntax of new CHECK NO INHERIT constraints. The initially implemented syntax, "CHECK NO INHERIT (expr)" was not deemed very good, so switch to "CHECK (expr) NO INHERIT" instead. This way it looks similar to SQL-standards compliant constraint attribute. Backport to 9.2 where the new syntax and feature was introduced. Per discussion. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d7b47e515530520da9564b05991bd8a8c6f52b06">http://git.postgresql.org/pg/commitdiff/d7b47e515530520da9564b05991bd8a8c6f52b06</a></li>
+
+<li>Add translator comments to module names 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/58f17dcf83dbd684613cbe8fea0886d2f81a3a14">http://git.postgresql.org/pg/commitdiff/58f17dcf83dbd684613cbe8fea0886d2f81a3a14</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix longstanding crash-safety bug with newly-created-or-reset sequences. If a crash occurred immediately after the first nextval() call for a serial column, WAL replay would restore the sequence to a state in which it appeared that no nextval() had been done, thus allowing the first sequence value to be returned again by the next nextval() call; as reported in bug #6748 from Xiangming Mei. More generally, the problem would occur if an ALTER SEQUENCE was executed on a freshly created or reset sequence. (The manifestation with serial columns was introduced in 8.2 when we added an ALTER SEQUENCE OWNED BY step to serial column creation.) The cause is that sequence creation attempted to save one WAL entry by writing out a WAL record that made it appear that the first nextval() had already happened (viz, with is_called = true), while marking the sequence's in-database state with log_cnt = 1 to show that the first nextval() need not emit a WAL record. However, ALTER SEQUENCE would emit a new WAL entry reflecting the actual in-database state (with is_called = false). Then, nextval would allocate the first sequence value and set is_called = true, but it would trust the log_cnt value and not emit any WAL record. A crash at this point would thus restore the sequence to its post-ALTER state, causing the next nextval() call to return the first sequence value again. To fix, get rid of the idea of logging an is_called status different from reality. This means that the first nextval-driven WAL record will happen at the first nextval call not the second, but the marginal cost of that is pretty negligible. In addition, make sure that ALTER SEQUENCE resets log_cnt to zero in any case where it touches sequence parameters that affect future nextval results. This will result in some user-visible changes in the contents of a sequence's log_cnt column, as reflected in the patch's regression test changes; but no application should be depending on that anyway, since it was already true that log_cnt changes rather unpredictably depending on checkpoint timing. In addition, make some basically-cosmetic improvements to get rid of sequence.c's undesirable intimacy with page layout details. It was always really trying to WAL-log the contents of the sequence tuple, so we should have it do that directly using a HeapTuple's t_data and t_len, rather than backing into it with some magic assumptions about where the tuple would be on the sequence's page. Back-patch to all supported branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/af026b5d9b8ae6ef4c75a796bdac209df6411181">http://git.postgresql.org/pg/commitdiff/af026b5d9b8ae6ef4c75a796bdac209df6411181</a></li>
+
+<li>Only allow autovacuum to be auto-canceled by a directly blocked process. In the original coding of the autovacuum cancel feature, commit acac68b2bcae818bc8803b8cb8cbb17eee8d5e2b, an autovacuum process was considered a target for cancellation if it was found to hard-block any process examined in the deadlock search. This patch tightens the test so that the autovacuum must directly hard-block the current process. This should make the behavior more predictable in general, and in particular it ensures that an autovacuum will not be canceled with less than deadlock_timeout grace period. In the old coding, it was possible for an autovacuum to be canceled almost instantly, given unfortunate timing of two or more other processes' lock attempts. This also justifies the logging methodology in the recent commit d7318d43d891bd63e82dcfc27948113ed7b1db80; without this restriction, that patch isn't providing enough information to see the connection of the canceling process to the autovacuum. Like that one, patch all the way back. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/26b438694cc4461f41f2acf54db6bb3d9c1ea940">http://git.postgresql.org/pg/commitdiff/26b438694cc4461f41f2acf54db6bb3d9c1ea940</a></li>
+
+<li>8.3 doesn't have errdetail_log(). 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d2b93bf37587323ff73c00845d6c739b0a30bcb9">http://git.postgresql.org/pg/commitdiff/d2b93bf37587323ff73c00845d6c739b0a30bcb9</a></li>
+
+<li>Improve reporting of error situations in find_other_exec(). This function suppressed any stderr output from the called program, which is unnecessary in the normal case and unhelpful in error cases. It also gave a rather opaque message along the lines of "fgets failure: Success" in case the called program failed to return anything on stdout. Since we've seen multiple reports of people not understanding what's wrong when pg_ctl reports this, improve the message. Back-patch to all active branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9ae8ebe0b221d9d547adfbfae74bd62e73e39fcd">http://git.postgresql.org/pg/commitdiff/9ae8ebe0b221d9d547adfbfae74bd62e73e39fcd</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Simplify pg_upgrade's handling when returning directory listings. Backpatch to 9.2. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4da8fc05f0a7a8b08d7ba43658bd952a54376611">http://git.postgresql.org/pg/commitdiff/4da8fc05f0a7a8b08d7ba43658bd952a54376611</a></li>
+
+<li>Document that the pg_upgrade user of rsync might want to skip some files, like postmaster.pid. Backpatch to 9.2. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/69451b09686e591468e6b7b959544974b724cbe8">http://git.postgresql.org/pg/commitdiff/69451b09686e591468e6b7b959544974b724cbe8</a></li>
+
+<li>Update doc mention of diskchecker.pl to add URL for script; retain URL for description. Patch to 9.0 and later, where script is mentioned. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c9a2532c832cdc87dfa62bfdfd247707e3906e00">http://git.postgresql.org/pg/commitdiff/c9a2532c832cdc87dfa62bfdfd247707e3906e00</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Alexander Korotkov and Heikki Linnakangas traded patches implementing SP-GiST indexing based on 2-D mapping an quad-trees.</li>
+
+<li>Marko Kreen sent in two more revisions of the row-at-a-time patch for libpq.</li>
+
+<li>KaiGai Kohei sent in another revision of the refactoring of the ALTER commands.</li>
+
+<li>Alvaro Herrera sent in a patch to clarify some file names used by pg_basebackup.</li>
+
+<li>Pavel Stehule sent in a patch to add \gset to psql, which assigns the target list of the query, which must return exactly one row, to a list of psql variables named with commas separating them after \gset.</li>
+
+<li>Fujii Masao sent in another pair of revisions of the patch to prevent restored WAL files from being archived again: one for git master; the other for 9.2.</li>
+
+</ul>

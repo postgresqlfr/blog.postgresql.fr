@@ -1,0 +1,172 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 20 mai 2012"
+author: "NBougain"
+redirect_from: "index.php?post/2012-05-22-nouvelles-hebdomadaires-de-postgresql-20-mai-2012 "
+---
+
+
+
+<p><strong>Revues de code</strong></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Update comments that became out-of-date with the PGXACT struct. When the "hot" members of PGPROC were split off to separate PGXACT structs, many PGPROC fields referred to in comments were moved to PGXACT, but the comments were neglected in the commit. Mostly this is just a search/replace of PGPROC with PGXACT, but the way the dummy PGPROC entries are created for prepared transactions changed more, making some of the comments totally bogus. Noah Misch 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9e4637bf89ef9fbc89a45dc4b421fa6740accd41">http://git.postgresql.org/pg/commitdiff/9e4637bf89ef9fbc89a45dc4b421fa6740accd41</a></li>
+
+<li>Remove unnecessary pg_verifymbstr() calls from tsvector/query in functions. The input should've been validated well before it hits the input function. Doing so again is a waste of cycles. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f15c2eae9c2f36830fae40935bd8cdcede4b75a0">http://git.postgresql.org/pg/commitdiff/f15c2eae9c2f36830fae40935bd8cdcede4b75a0</a></li>
+
+<li>Fix bug in to_tsquery(). We were using memcpy() to copy to a possibly overlapping memory region, which is a no-no. Use memmove() instead. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d2495f272cd164ff075bee5c4ce95aed11338a36">http://git.postgresql.org/pg/commitdiff/d2495f272cd164ff075bee5c4ce95aed11338a36</a></li>
+
+<li>Fix bug in freespace calculation in heap_multi_insert(). If the amount of freespace on page was less than the amount reserved by fillfactor, the calculation would underflow. This fixes bug #6643 reported by Tomonari Katsumata. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6593c5b5dc39b179b1b7a3c947df2596af3e70c9">http://git.postgresql.org/pg/commitdiff/6593c5b5dc39b179b1b7a3c947df2596af3e70c9</a></li>
+
+<li>Fix bug in gistRelocateBuildBuffersOnSplit(). When we create a temporary copy of the old node buffer, in stack, we mustn't leak that into any of the long-lived data structures. Before this patch, when we called gistPopItupFromNodeBuffer(), it got added to the array of "loaded buffers". After gistRelocateBuildBuffersOnSplit() exits, the pointer added to the loaded buffers array points to garbage. Often that goes unnotied, because when we go through the array of loaded buffers to unload them, buffers with a NULL pageBuffer are ignored, which can often happen by accident even if the pointer points to garbage. This patch fixes that by marking the temporary copy in stack explicitly as temporary, and refrain from adding buffers marked as temporary to the array of loaded buffers. While we're at it, initialize nodeBuffer-&gt;pageBlocknum to InvalidBlockNumber and improve comments a bit. This isn't strictly necessary, but makes debugging easier. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1d27dcf5781ac7baeda0584fd016efc8eab718b3">http://git.postgresql.org/pg/commitdiff/1d27dcf5781ac7baeda0584fd016efc8eab718b3</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Force pgwin32_recv into nonblock mode when called from pgstat.c. This should get rid of the usage of pgwin32_waitforsinglesocket entirely, and perhaps thereby remove the race condition that's evidently still present on some versions of Windows. The previous arrangement was a bit unsafe anyway, since waiting at the recv() would not allow pgstat to notice postmaster death. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f1ca51549e9e7045a2db95a61744334f1dbb4d64">http://git.postgresql.org/pg/commitdiff/f1ca51549e9e7045a2db95a61744334f1dbb4d64</a></li>
+
+<li>For testing purposes, reinsert a timeout in pgstat.c's wait call. Test results from buildfarm members mastodon/narwhal (Windows Server 2003) make it look like that platform just plain loses FD_READ events occasionally, and the only reason our previous coding seemed to work was that it timed out every couple of seconds and retried the whole operation. Try to verify this by reinserting a finite timeout into the pgstat loop. This isn't meant to be a permanent patch either, just to confirm or disprove a theory. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d461d0502b6e20c6d4ec326ba2faec8212fd5dee">http://git.postgresql.org/pg/commitdiff/d461d0502b6e20c6d4ec326ba2faec8212fd5dee</a></li>
+
+<li>Assert that WaitLatchOrSocket callers cannot wait only for writability. Since we have chosen to report socket EOF and error conditions via the WL_SOCKET_READABLE flag bit, it's unsafe to wait only for WL_SOCKET_WRITEABLE; the caller would never be notified of the socket condition, and in some of these implementations WaitLatchOrSocket would busy-wait until something else happens. Add this restriction to the API specification, and add Asserts to check that callers don't try to do that. At some point we might want to consider adjusting the API to relax this restriction, but until we have an actual use case for waiting on a write-only socket, it seems premature to design a solution. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e42a21b9e6c9b9e6346a34b62628d48ff2fc6ddf">http://git.postgresql.org/pg/commitdiff/e42a21b9e6c9b9e6346a34b62628d48ff2fc6ddf</a></li>
+
+<li>Put back AC_REQUIRE([AC_STRUCT_TM]). The BSD-ish members of the buildfarm all seem to think removing this was a bad idea. It looks to me like it resulted in omitting the system header inclusion necessary to detect the fields of struct tm correctly. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f667747b6d30c524c210501f5a2ca8e543a1bb67">http://git.postgresql.org/pg/commitdiff/f667747b6d30c524c210501f5a2ca8e543a1bb67</a></li>
+
+<li>Revert "Add some temporary instrumentation to pgstat.c." This reverts commit 7d88bb73f755f7fb5d847ef2319c21076054fb0e. That instrumentation has served its purpose. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5a2bb060121f574d6587e5fc6c7f1d4e3a759351">http://git.postgresql.org/pg/commitdiff/5a2bb060121f574d6587e5fc6c7f1d4e3a759351</a></li>
+
+<li>In pgstat.c, use a timeout in WaitLatchOrSocket only on Windows. We have no need for a timeout here really, but some broken products from Redmond seem to lose FD_READ events occasionally, and waking up and retrying the recv() is the only known way to work around that. Perhaps somebody will be motivated to figure out a better answer here; but not I. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9b63e9869ffaa4d6d3e8bf45086a765d8f310f1c">http://git.postgresql.org/pg/commitdiff/9b63e9869ffaa4d6d3e8bf45086a765d8f310f1c</a></li>
+
+<li>Improve error message for ALTER COLUMN TYPE coercion failure. Per recent discussion, the error message for this was actually a trifle inaccurate, since it said "cannot be cast" which might be incorrect. Adjust that wording, and add a HINT suggesting that a USING clause might be needed. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/488c6dd1708a2c4a9e9f307001f28c05c48651bd">http://git.postgresql.org/pg/commitdiff/488c6dd1708a2c4a9e9f307001f28c05c48651bd</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Remove unused AC_DEFINE symbols: ENABLE_DTRACE unused as of a7b7b07af340c73adee9959edf260695591a9496, HAVE_ERR_SET_MARK unused as of 4ed4b6c54e5fab24ab2624d80e26f7546edc88ad, HAVE_FCVT unused as of 4553e1d80f824291932cfde30aa24a76dd8f1941, HAVE_STRUCT_SOCKADDR_UN unused as of b4cea00a1fc9d2270bfe9aeeee44915378d5f733, HAVE_SYSCONF unused as of f83356c7f574bc69969f29dc7b430b286a0cd9f4, TM_IN_SYS_TIME never used, obsolescent per Autoconf documentation, 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ff4628f37a1e700d1fe716d0c271f68d8aa1e4ea">http://git.postgresql.org/pg/commitdiff/ff4628f37a1e700d1fe716d0c271f68d8aa1e4ea</a></li>
+
+<li>Remove stray nbsp character 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8afb026e57e746b8748d01798c0940ba02aaedde">http://git.postgresql.org/pg/commitdiff/8afb026e57e746b8748d01798c0940ba02aaedde</a></li>
+
+<li>Make xrefs to tables instead of assuming they appear below 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/131b4d647388cb756e5aab1f1462c8b46125d89c">http://git.postgresql.org/pg/commitdiff/131b4d647388cb756e5aab1f1462c8b46125d89c</a></li>
+
+<li>Remove whitespace from end of lines. pgindent and perltidy should clean up the rest. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c8e086795a7ffc5244e03ffc2c92a3ae915a5055">http://git.postgresql.org/pg/commitdiff/c8e086795a7ffc5244e03ffc2c92a3ae915a5055</a></li>
+
+<li>Fix a whitespace issue with the man pages. See 6ef24487967692604b07a4a54e71821a60fb729a for an explanation. This is the same for the new man pages. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/00b0c73f1f2b98a7d09de63aaa14d6498ac521ae">http://git.postgresql.org/pg/commitdiff/00b0c73f1f2b98a7d09de63aaa14d6498ac521ae</a></li>
+
+<li>Change COLLATION keyword category. It was changed from unreserved to reserved as part of the COLLATION FOR syntax, but it turns out that type_func_name_keyword is sufficient. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/be6d1c88a4e6f563adac54483f3fc07ed8d8d99e">http://git.postgresql.org/pg/commitdiff/be6d1c88a4e6f563adac54483f3fc07ed8d8d99e</a></li>
+
+<li>Update SQL features/conformance information to SQL:2011 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/939ec9b8a4cdd0c9ed9d1d85390d44942cd2edf6">http://git.postgresql.org/pg/commitdiff/939ec9b8a4cdd0c9ed9d1d85390d44942cd2edf6</a></li>
+
+<li>Update key words table for 9.2 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4ad5cbedf6ea3186a286c61a164703b107f6a138">http://git.postgresql.org/pg/commitdiff/4ad5cbedf6ea3186a286c61a164703b107f6a138</a></li>
+
+<li>file_fdw: Improve error message. The hint looked a bit confusing when there were no valid options to hint about. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8402fab4112144a039157583b7e3368b8e31db3a">http://git.postgresql.org/pg/commitdiff/8402fab4112144a039157583b7e3368b8e31db3a</a></li>
+
+<li>Realign some --help output to have better spacing between columns 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2273a50364cf4a098d7ee4b5aa7e88c5cc5777ad">http://git.postgresql.org/pg/commitdiff/2273a50364cf4a098d7ee4b5aa7e88c5cc5777ad</a></li>
+
+<li>Put back word that was mysteriously lost in man page conversion 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9c64f395578d98e6e988c378b6056ef787ff349d">http://git.postgresql.org/pg/commitdiff/9c64f395578d98e6e988c378b6056ef787ff349d</a></li>
+
+<li>Fix incorrect logic in JSON number lexer. Detectable by gcc -Wlogical-op. Add two regression test cases that would previously allow incorrect values to pass. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f1f6737e154f9d00f1565fc08fd7ac677b380822">http://git.postgresql.org/pg/commitdiff/f1f6737e154f9d00f1565fc08fd7ac677b380822</a></li>
+
+<li>Small cleanups of contrib --help output 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/510860a6a5e4b66091353e7b0d619f71f6bec789">http://git.postgresql.org/pg/commitdiff/510860a6a5e4b66091353e7b0d619f71f6bec789</a></li>
+
+<li>Some reference page improvements. initdb: Add -T option. oid2name: Put options in some non-random order. pg_dump: Put --section option in the right place. And some additional markup and terminology improvements. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fe2534e534c0572a71d6f0d2d51a2d058fc3524c">http://git.postgresql.org/pg/commitdiff/fe2534e534c0572a71d6f0d2d51a2d058fc3524c</a></li>
+
+</ul>
+
+<p>Michael Meskes a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Reworded sentence as suggested by Stephen Frost. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c1ba858c6d49ae100f6e343932aa99c7a61e3f06">http://git.postgresql.org/pg/commitdiff/c1ba858c6d49ae100f6e343932aa99c7a61e3f06</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Gilles Darold sent in another revision of the patch to add pg_is_in_backup() and pg_backup_start_time().</li>
+
+<li>Fujii Masao sent in a patch which moves the existing calls of WalSndWakeup() out of a critical section and adds new call of WalSndWakeup() to XLogBackgroundFlush().</li>
+
+<li>Alexander Shulgin sent in another revision of the patch to make libpq understand an RFC compliant URI connection string for PostgreSQL.</li>
+
+<li>Kyotaro HORIGUCHI sent in a patch to fix an infelicity in checkpointer.</li>
+
+<li>Stephen Frost sent in another revision of a patch to speed up some operations by pre-allocating ListCells.</li>
+
+<li>Robert Haas sent in a patch which provides some rough instrumentation for determining where palloc calls are coming from.</li>
+
+<li>Peter Eisentraut sent in a patch to add an aclcheck_error_type() function.</li>
+
+</ul>

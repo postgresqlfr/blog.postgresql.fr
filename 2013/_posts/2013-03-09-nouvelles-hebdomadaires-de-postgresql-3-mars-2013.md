@@ -1,0 +1,202 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 3 mars 2013"
+author: "NBougain"
+redirect_from: "index.php?post/2013-03-09-nouvelles-hebdomadaires-de-postgresql-3-mars-2013 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add -d option to pg_basebackup and pg_receivexlog, for connection string. Without this, there's no way to pass arbitrary libpq connection parameters to these applications. It's a bit strange that the option is called -d/--dbname, when in fact you can *not* pass a database name in it, but it's consistent with other client applications where a connection string is also passed using -d. Original patch by Amit Kapila, heavily modified by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/aa05c37e823a41056273e73f6b3d168009a67c3f">http://git.postgresql.org/pg/commitdiff/aa05c37e823a41056273e73f6b3d168009a67c3f</a></li>
+
+<li>Add -d/--dbname option to pg_dump. You could already pass a database name just by passing it as the last option, without -d. This is an alias for that, like the -d/--dbname option in psql and many other client applications. For consistency. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/691e595dd9c7786d37d73ccd327f8c2b6f0dace6">http://git.postgresql.org/pg/commitdiff/691e595dd9c7786d37d73ccd327f8c2b6f0dace6</a></li>
+
+<li>Add -d option to pg_dumpall, for specifying a connection string. Like with pg_basebackup and pg_receivexlog, it's a bit strange to call the option -d/--dbname, when in fact you cannot pass a database name in it. Original patch by Amit Kapila, heavily modified by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3dee636e0404885d07885d41c0d70e50c784f324">http://git.postgresql.org/pg/commitdiff/3dee636e0404885d07885d41c0d70e50c784f324</a></li>
+
+<li>Only quote libpq connection string values that need quoting. There's no harm in excessive quoting per se, but it makes the strings nicer to read. The values can get quite unwieldy, when they're first quoted within within single-quotes when included in the connection string, and then all the single-quotes are escaped when the connection string is passed as a shell argument. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2953cd6d17210935098c803c52c6df5b12a725b9">http://git.postgresql.org/pg/commitdiff/2953cd6d17210935098c803c52c6df5b12a725b9</a></li>
+
+<li>Remove the check for COPY TO STDIN and COPY FROM STDOUT from ecpg. The backend grammar treats STDIN and STDOUT completely interchangeable, so that the above accepted. Arguably that was a mistake the backend grammar, but it's not ecpg's business to second guess that. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0a4fe8a318ed37556dd019def073ccd956645e27">http://git.postgresql.org/pg/commitdiff/0a4fe8a318ed37556dd019def073ccd956645e27</a></li>
+
+<li>Add standard file header comment to quotes.c. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5ddf38f21d3f34c794de2d1c9b61ba92a7d6f39c">http://git.postgresql.org/pg/commitdiff/5ddf38f21d3f34c794de2d1c9b61ba92a7d6f39c</a></li>
+
+<li>Cannot use WL_SOCKET_WRITEABLE without WL_SOCKET_READABLE. In copy-out mode, the frontend should not send any messages until the backend has finished streaming, by sending a CopyDone message. I'm not sure if it would be legal for the client to send a new query before receiving the CopyDone message from the backend, but trying to support that would require bigger changes to the backend code structure. Fixes an assertion failure reported by Fujii Masao. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3a9e64aa0d96c8ffb6c682b082d0f72b1d373327">http://git.postgresql.org/pg/commitdiff/3a9e64aa0d96c8ffb6c682b082d0f72b1d373327</a></li>
+
+<li>Fix typo in "pg_xlogdump --help" and error message. Fujii Masao and me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/26b45dc54f379c4e7b44b308584dc14d0ed17482">http://git.postgresql.org/pg/commitdiff/26b45dc54f379c4e7b44b308584dc14d0ed17482</a></li>
+
+<li>Fix MSVC build. The new file in src/port needs to be listed in Mkvcbuild.pm as well. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f70b1b274824e5116c8e993d274629d3934b3978">http://git.postgresql.org/pg/commitdiff/f70b1b274824e5116c8e993d274629d3934b3978</a></li>
+
+<li>Remove spurious "the", and add a missing one. Thom Brown and me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7d6b8f7158f0ea2e55b42c1db1d31991e3c67572">http://git.postgresql.org/pg/commitdiff/7d6b8f7158f0ea2e55b42c1db1d31991e3c67572</a></li>
+
+<li>Add support for piping COPY to/from an external program. This includes backend "COPY TO/FROM PROGRAM '...'" syntax, and corresponding psql \copy syntax. Like with reading/writing files, the backend version is superuser-only, and in the psql version, the program is run in the client. In the passing, the psql \copy STDIN/STDOUT syntax is subtly changed: if you the stdin/stdout is quoted, it's now interpreted as a filename. For example, "\copy foo from 'stdin'" now reads from a file called 'stdin', not from standard input. Before this, there was no way to specify a filename called stdin, stdout, pstdin or pstdout. This creates a new function in pgport, wait_result_to_str(), which can be used to convert the exit status of a process, as returned by wait(3), to a human-readable string. Etsuro Fujita, reviewed by Amit Kapila. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3d009e45bde2a2681826ef549637ada76508b597">http://git.postgresql.org/pg/commitdiff/3d009e45bde2a2681826ef549637ada76508b597</a></li>
+
+</ul>
+
+<p>Andrew Dunstan a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Redo MSVC build implementation for pg_xlogdump. The previous commit didn't work on MSVC editions earlier than Visual Studio 2011, apparently. This works by copying files into the contrib directory, and making provision to clean them up, which should work on all editions. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a64e33f030f3ba379a0d3e22fe6bcda9dc3bbc60">http://git.postgresql.org/pg/commitdiff/a64e33f030f3ba379a0d3e22fe6bcda9dc3bbc60</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>doc: Fix markup typo 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8337e3b4575b1588462c2d74135516fd22f60942">http://git.postgresql.org/pg/commitdiff/8337e3b4575b1588462c2d74135516fd22f60942</a></li>
+
+<li>Exclude utils/probes.h and pg_trace.h from cpluspluscheck. They can include sys/sdt.h from SystemTap, which itself contains C++ code and so won't compile with a C++ compiler under extern "C" linkage. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1275b88f711c663e3b7a77c7526a934752efe52d">http://git.postgresql.org/pg/commitdiff/1275b88f711c663e3b7a77c7526a934752efe52d</a></li>
+
+<li>doc: A few awkward phrasing fixes. Josh Kupershmidt 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/743b73bdf57a21d39cf764d92536b4080fb2925a">http://git.postgresql.org/pg/commitdiff/743b73bdf57a21d39cf764d92536b4080fb2925a</a></li>
+
+<li>doc: Small tweak for consistency. submitted by "Lyle" 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/891869c352160e480d4afdc2a3443035c2560282">http://git.postgresql.org/pg/commitdiff/891869c352160e480d4afdc2a3443035c2560282</a></li>
+
+<li>psql: Let \l accept a pattern. reviewed by Satoshi Nagayasu 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5db5974c692b0fc68e7608dd85a6b4e6173a0f28">http://git.postgresql.org/pg/commitdiff/5db5974c692b0fc68e7608dd85a6b4e6173a0f28</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Install headers from the new src/include/common subdirectory. This got missed in commit 8396447cdbdff0b62914748de2fec04281dc9114. Andres Freund 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c153530dc10bf5ff6dc5a89249f9cb596dd71a63">http://git.postgresql.org/pg/commitdiff/c153530dc10bf5ff6dc5a89249f9cb596dd71a63</a></li>
+
+<li>Clean up "stopgap" implementation of timestamptz_to_str(). Use correct type for "result", fix bogus strftime argument, don't use unnecessary static variables, improve comments. Andres Freund and Tom Lane 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1418e6e07b69766ea1e231917601f18fcf0c2624">http://git.postgresql.org/pg/commitdiff/1418e6e07b69766ea1e231917601f18fcf0c2624</a></li>
+
+<li>Add missing .gitignore file. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/08f9728057a485edf5b3a589e70548e1f0da4e53">http://git.postgresql.org/pg/commitdiff/08f9728057a485edf5b3a589e70548e1f0da4e53</a></li>
+
+<li>Add missing error check in regexp parser. parseqatom() failed to check for an error return (NULL result) from its recursive call to parsebranch(), and in consequence could crash with a null-pointer dereference after an error return. This bug has been there since day one, but wasn't noticed before, probably because most error cases in parsebranch() didn't actually lead to returning NULL. Add the missing error check, and also tweak parsebranch() to exit in a less indirect fashion after a call to parseqatom() fails. Report by Tomasz Karlik, fix by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/73dc003beef859e0b67da463c5e28f5468d3f17f">http://git.postgresql.org/pg/commitdiff/73dc003beef859e0b67da463c5e28f5468d3f17f</a></li>
+
+<li>Eliminate memory leaks in plperl's spi_prepare() function. Careless use of TopMemoryContext for I/O function data meant that repeated use of spi_prepare and spi_freeplan would leak memory at the session level, as per report from Christian Schr&ouml;der. In addition, spi_prepare leaked a lot of transient data within the current plperl function's SPI Proc context, which would be a problem for repeated use of spi_prepare within a single plperl function call; and it wasn't terribly careful about releasing permanent allocations in event of an error, either. In passing, clean up some copy-and-pasteos in query-lookup error messages. Alex Hunsaker and Tom Lane 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a4d3a504e730c47ccee5082ee703082e42c8b5ce">http://git.postgresql.org/pg/commitdiff/a4d3a504e730c47ccee5082ee703082e42c8b5ce</a></li>
+
+<li>Fix SQL function execution to be safe with long-lived FmgrInfos. fmgr_sql had been designed on the assumption that the FmgrInfo it's called with has only query lifespan. This is demonstrably unsafe in connection with range types, as shown in bug #7881 from Andrew Gierth. Fix things so that we re-generate the function's cache data if the (sub)transaction it was made in is no longer active. Back-patch to 9.2. This might be needed further back, but it's not clear whether the case can realistically arise without range types, so for now I'll desist from back-patching further. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2b78d101d1d6b1d8533a7b7aeff4d82b10a915f8">http://git.postgresql.org/pg/commitdiff/2b78d101d1d6b1d8533a7b7aeff4d82b10a915f8</a></li>
+
+<li>Get rid of any toast table when converting a table to a view. Also make sure other fields of the view's pg_class entry are appropriate for a view; it shouldn't have relfrozenxid set for instance. This ancient omission isn't believed to have any serious consequences in versions 8.4-9.2, so no backpatch. But let's fix it before it does bite us in some serious way. It's just luck that the case doesn't cause problems for autovacuum. (It did cause problems in 8.3, but that's out of support.) Andres Freund 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b15a6da29217b14f02895af1d9271e84415a91ae">http://git.postgresql.org/pg/commitdiff/b15a6da29217b14f02895af1d9271e84415a91ae</a></li>
+
+<li>Fix map_sql_value_to_xml_value() to treat domains like their base types. This was already the case for domains over arrays, but not for domains over certain built-in types such as boolean. The special formatting rules for those types should apply to domains over them as well. Per discussion. While this is a bug fix, it's also a behavioral change that seems likely to trip up some applications. So no back-patch. Pavel Stehule 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bc61878682051678ade5f59da7bfd90ab72ce13b">http://git.postgresql.org/pg/commitdiff/bc61878682051678ade5f59da7bfd90ab72ce13b</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Improve pg_upgrade commentary on multixact change. Per gripe from Andres Freund 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cd7d00ad65fab11496ad9990cfc145c06c6ee53d">http://git.postgresql.org/pg/commitdiff/cd7d00ad65fab11496ad9990cfc145c06c6ee53d</a></li>
+
+</ul>
+
+<p>Kevin Grittner a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add a materialized view relations. A materialized view has a rule just like a view and a heap and other physical properties like a table. The rule is only used to populate the table, references in queries refer to the materialized data. This is a minimal implementation, but should still be useful in many cases. Currently data is only populated "on demand" by the CREATE MATERIALIZED VIEW and REFRESH MATERIALIZED VIEW statements. It is expected that future releases will add incremental updates with various timings, and that a more refined concept of defining what is "fresh" data will be developed. At some point it may even be possible to have queries use a materialized in place of references to underlying tables, but that requires the other above-mentioned features to be working first. Much of the documentation work by Robert Haas. Review by Noah Misch, Thom Brown, Robert Haas, Marko Tiikkaja Security review by KaiGai Kohei, with a decision on how best to implement sepgsql still pending. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3bf3ab8c563699138be02f9dc305b7b77a724307">http://git.postgresql.org/pg/commitdiff/3bf3ab8c563699138be02f9dc305b7b77a724307</a></li>
+
+<li>Remove accidentally-committed .orig file. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d63977eea3ab18fdec05e370b633d10b9fd20179">http://git.postgresql.org/pg/commitdiff/d63977eea3ab18fdec05e370b633d10b9fd20179</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Greg Smith sent in two more revisions of a patch to add page checksums.</li>
+
+<li>Andres Freund sent in an RfC patch to extend namespace of valid GUC names.</li>
+
+<li>Andrew Dunstan sent in another revision of a patch to enhance JSON generation.</li>
+
+<li>Ivan Lezhov sent in another revision of a patch to clarify the documentation on custom format pg_dump backups.</li>
+
+<li>Jonathan Rogers sent in another revision of a patch to allow using filesystem-level cloning to speed up operations like CREATE DATABASE.</li>
+
+<li>Kyotaro HORIGUCHI and Pavel Stehule traded patches to enhance the format function.</li>
+
+<li>Michael Paquier sent in another revision of a patch to add REINDEX CONCURRENTLY.</li>
+
+<li>Zoltan Boszormenyi sent in another revision of a patch to fix lock_timeout on Windows.</li>
+
+<li>Alexander Korotkov sent in another revision of a patch to improve selectivity for ranges in GIN.</li>
+
+<li>Heikki Linnakangas sent in a patch to help make the LZ compressor work faster.</li>
+
+<li>Alvaro Herrera sent in another revision of a patch to support dropped objects in event triggers.</li>
+
+<li>Heikki Linnakangas sent in a patch to make the scanner and parser more efficient by adding some flex states to help with the UESCAPE cases.</li>
+
+<li>Satoshi Nagayasu sent in another revision of a patch to fix pgstattuple/pgstatindex to use regclass-type as the argument.</li>
+
+<li>Laurenz Albe sent in a documentation patch to clarify the use of floating point.</li>
+
+<li>Greg Smith sent in another revision of a patch to catch a buffer assertion issue under certain pgbench loads.</li>
+
+</ul>

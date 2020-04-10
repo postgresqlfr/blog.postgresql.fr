@@ -1,0 +1,168 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 20 juin 2010"
+author: "NBougain"
+redirect_from: "index.php?post/2010-06-25-nouvelles-hebdomadaires-de-postgresql-20-juin-2010 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Heikki Linnakangas a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/backend/access/transam/xlog.c, if a corrupt WAL record is received by streaming replication, disconnect and retry. If the record is genuinely corrupt in the master database, there's little hope of recovering, but it's better than simply retrying to apply the corrupt WAL record in a tight loop without even trying to retransmit it, which is what we used to do.</li>
+
+</ul>
+
+<p>ITAGAKI Takahiro a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/bin/psql/po/ja.po, fix typo in Japanese translation for psql "Use \d+ to list them."</li>
+
+<li>Add new GUC categories corresponding to sections in docs, and move description for vacuum_defer_cleanup_age to the correct category. Sections in postgresql.conf are also sorted in the same order with docs. Per gripe by Fujii Masao, suggestion by Heikki Linnakangas, and patch by me.</li>
+
+<li>In pgsql/src/include/replication/walsender.h, remove prototype of GetOldestWALSendPointer(), that is marked as NOT_USED.</li>
+
+</ul>
+
+<p>Simon Riggs a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/contrib/Makefile, new contrib module for use as an archive_cleanup_command, or as a standalone utility for removing files from archive.</li>
+
+<li>Files for pg_archivecleanup.</li>
+
+<li>Docs for pg_archivecleanup.</li>
+
+</ul>
+
+<p>Bruce Momjian a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/doc/src/sgml/plperl.sgml, fix doc plperl doc with is -&gt; are change.</li>
+
+<li>Properly define pg_upgrade global variable, per bug report from Chris Ruprecht on Mac (64 bit).</li>
+
+<li>In pgsql/doc/src/sgml/ref/select.sgml, clarify SELECT FOR UPDATE behavior in docs.</li>
+
+<li>In pgsql/contrib/pg_upgrade/option.c, fix storage of getopt() return, should be 'int', for pg_upgrade. Steve Singer.</li>
+
+<li>In pgsql/doc/src/sgml/release-9.0.sgml, 9.0 release notes updates. Josh Berkus</li>
+
+<li>In pgsql/doc/src/sgml/release-9.0.sgml, update doc description for 9.0 release note item: Have SELECT and CREATE TABLE AS return row counts to the client</li>
+
+<li>In pgsql/contrib/pg_upgrade/tablespace.c, fix pg_upgrade to remove malloc(0) call.</li>
+
+</ul>
+
+<p>Tom Lane a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/contrib/dblink/dblink.c, rearrange dblink's dblink_build_sql_insert() and related routines to open and lock the target relation just once per SQL function call. The original coding obtained and released lock several times per call. Aside from saving a not-insignificant number of cycles, this eliminates possible race conditions if someone tries to modify the relation's schema concurrently. Also centralize locking and permission-checking logic. Problem noted while investigating a trouble report from Robert Voinea --- his problem is still to be fixed, though.</li>
+
+<li>Consolidate and improve checking of key-column-attnum arguments for dblink_build_sql_insert() and related functions. In particular, be sure to reject references to dropped and out-of-range column numbers. The numbers are still interpreted as physical column numbers, though, for backward compatibility. This patch replaces Joe Conway's patch of 2010-02-03, which handled only some aspects of the problem.</li>
+
+<li>Fix dblink_build_sql_insert() and related functions to handle dropped columns correctly. In passing, get rid of some dead logic in the underlying get_sql_insert() etc functions --- there is no caller that will pass null value-arrays to them. Per bug report from Robert Voinea.</li>
+
+<li>Change the interpretation of the primary_key_attnums parameter of dblink_build_sql_insert() and related functions. Now the column numbers are treated as logical not physical column numbers. This will provide saner behavior in the presence of dropped columns; furthermore, if we ever get around to allowing rearrangement of logical column ordering, the original definition would become nearly untenable from a usability standpoint. Per recent discussion of dblink's handling of dropped columns. Not back-patched for fear of breaking existing applications.</li>
+
+<li>In pgsql/doc/src/sgml/libpq.sgml, fix typo, init =&gt; int, per KOIZUMI Satoru.</li>
+
+<li>Don't allow walsender to send WAL data until it's been safely fsync'd on the master. Otherwise a subsequent crash could cause the master to lose WAL that has already been applied on the slave, resulting in the slave being out of sync and soon corrupt. Per recent discussion and an example from Robert Haas. Fujii Masao.</li>
+
+<li>In pgsql/doc/src/sgml/ref/copy.sgml, add missing close brackets in old-style COPY syntax diagram. Spotted by Evan Carroll.</li>
+
+<li>In pgsql/contrib/pg_archivecleanup/pg_archivecleanup.c, clean up pg_archivecleanup's error and logging output: put newlines in sane places, make messages follow project's message style guidelines. Also, avoid closedir(NULL). Fujii Masao and Tom Lane</li>
+
+<li>In pgsql/src/backend/access/transam/xlog.c, make RemoveOldXlogFiles's debug printout match style used elsewhere: log and seg aren't an XLogRecPtr and shouldn't be printed like one. Fujii Masao.</li>
+
+<li>Clean up some randomness associated with trace_recovery_messages: don't put the variable declaration in the middle of a bunch of externs, and do use extern where it should be used.</li>
+
+<li>Fix mishandling of whole-row Vars referencing a view or sub-select. If such a Var appeared within a nested sub-select, we failed to translate it correctly during pullup of the view, because the recursive call to replace_rte_variables_mutator was looking for the wrong sublevels_up value. Bug was introduced during the addition of the PlaceHolderVar mechanism. Per bug #5514 from Marcos Castedo.</li>
+
+</ul>
+
+<p>Andrew Dunstan a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/tools/msvc/Mkvcbuild.pm, unbreak MSVC builds for pg_archivecleanup by linking with libpgport.</li>
+
+<li>Remove perl symbol table additions for plperl functions, and mention of it in the release notes, as it is not apparently providing anything useful.</li>
+
+</ul>
+
+<p>Robert Haas a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/doc/src/sgml/ref/analyze.sgml, document new 9.0 behavior of ANALYZE on inheritance hierarchies. In particular, note that autovacuum does not yet understand that it might need to vacuum inheritance parents as a result of changes to the child tables.</li>
+
+<li>Remove hstore's text[] =&gt; text[] operator. This is not yet in any released version, so we still have the option to backtrack. Instead, document hstore(text[], text[]). Per discussion.</li>
+
+<li>In pgsql/doc/src/sgml/func.sgml, document that receive location can rewind if replication restarts. Fujii Masao, with some further wordsmithing by me.</li>
+
+</ul>
+
+<p>Peter Eisentraut a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Refactor sprintf calls with computed format strings into multiple calls with constant format strings, so that the compiler can more easily check the formats for correctness.</li>
+
+<li>Add notes that CREATE/DROP CONVERSION is similar to CREATE/DROP TRANSLATION in the SQL standard.</li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Robert Haas sent in a patch to implement --quote-all-identifiers for pg_dump and pg_dumpall, per discussion.</li>
+
+<li>KaiGai Kohei sent in two revisions of a patch to add a security hook to InitPostgres().</li>
+
+<li>KaiGai Kohei sent in a patch to rework DML permissions checks.</li>
+
+<li>KaiGai Kohei sent in a patch to add makeRangeTblEntry into makefuncs.c.</li>
+
+<li>KaiGai Kohei sent in a patch to modify the ExecutorCheckPerms() hook.</li>
+
+<li>Fujii Masao sent in a patch to fix a condition where the server crashes during streaming replication.</li>
+
+<li>Dimitri Fontaine sent in a patch to add a pg_archive_bypass command.</li>
+
+<li>Robert Haas sent in another patch for get_whatever_oid.</li>
+
+<li>Mike Lewis sent in another revision of the patch to enhance performance in array utility functions.</li>
+
+<li>ITAGAKI Takahiro sent in a patch to reorganize GUC categories.</li>
+
+<li>ITAGAKI Takahiro sent in a patch to implement foreign tables for SQL/MED.</li>
+
+<li>Robert Haas sent in a patch to turn =&gt; into &amp; for hstore.</li>
+
+<li>Florian Pflug sent in a patch to show individual statement latencies in pgbench output.</li>
+
+<li>Zoltan Boszormenyi sent in a patch to fix a performance problem in ECPG.</li>
+
+<li>ITAGAKI Takahiro sent in an update revision of the patch for table partitioning syntax.</li>
+
+<li>ITAGAKI Takahiro sent in a patch to add a view to pg_catalog for walsender activity.</li>
+
+</ul>

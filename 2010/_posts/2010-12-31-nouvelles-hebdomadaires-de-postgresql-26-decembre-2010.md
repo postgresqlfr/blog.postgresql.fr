@@ -1,0 +1,206 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 26 décembre 2010"
+author: "NBougain"
+redirect_from: "index.php?post/2010-12-31-nouvelles-hebdomadaires-de-postgresql-26-decembre-2010 "
+---
+
+
+
+<p><strong>Correctifs appliqués</strong></p>
+
+<p>Alvaro Herrera a poussé&nbsp;:</p>
+
+<ul>
+
+<li>Fix typo. Jaime Casanova.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=f9e9763b62df5415a60f30b441a73b381599e760">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=f9e9763b62df5415a60f30b441a73b381599e760</a></li>
+
+</ul>
+
+<p>Robert Haas a poussé&nbsp;:</p>
+
+<ul>
+
+<li>Allow transactions that don't write WAL to commit asynchronously. This case can arise if a transaction has written data, but only to temporary tables. Loss of the commit record in case of a crash won't matter, because the temporary tables will be lost anyway. Reviewed by Heikki Linnakangas and Simon Riggs.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=f6a0863e3cb72763490ceca2c558d5ef2dddd5f2">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=f6a0863e3cb72763490ceca2c558d5ef2dddd5f2</a></li>
+
+<li>Work around unfortunate getppid() behavior on BSD-ish systems. On MacOS X, and apparently also on other BSD-derived systems, attaching a debugger causes getppid() to return the pid of the debugging process rather than the actual parent PID. As a result, debugging the autovacuum launcher, startup process, or WAL sender on such systems causes it to exit, because the previous coding of PostmasterIsAlive() detects postmaster death by testing whether getppid() == PostmasterPid. Work around that behavior by checking the return value of getppid() more carefully. If it's PostmasterPid, the postmaster must be alive; if it's 1, assume the postmaster is dead. If it's any other value, assume we've been debugged and fall through to the less-reliable kill() test. Review by Tom Lane.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=24ecde7742cd4d7c781e6890b07571fff42b25dc">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=24ecde7742cd4d7c781e6890b07571fff42b25dc</a></li>
+
+<li>Fix typos. Andreas Karlsson.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=c5160b7eecf97a357375960b02a30317474334a3">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=c5160b7eecf97a357375960b02a30317474334a3</a></li>
+
+<li>Use memcmp() rather than strncmp() when shorter string length is known. It appears that this will be faster for all but the shortest strings; at least one some platforms, memcmp() can use word-at-a-time comparisons. Noah Misch, somewhat pared down.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=32ba2b516066688ff56e6d62a7ff4a01c88f5700">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=32ba2b516066688ff56e6d62a7ff4a01c88f5700</a></li>
+
+<li>Typo fix. Noted by Thom Brown.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=2a0f13a765befefc2658d3729f3e174b7c252125">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=2a0f13a765befefc2658d3729f3e174b7c252125</a></li>
+
+<li>Document pg_dump(all) --no-security-label instead of --security-label. The former is the option actually supported by these commands.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=a1b0035949da09bb0f19d2d9c2d54ca54ca55752">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=a1b0035949da09bb0f19d2d9c2d54ca54ca55752</a></li>
+
+<li>Correct spelling: longjump() -&gt; longjmp().
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=4ec92b05e640b0991ba67d41cbb097200200fe70">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=4ec92b05e640b0991ba67d41cbb097200200fe70</a></li>
+
+<li>Add foreign data wrapper error code values for SQL/MED. Extracted from a much larger patch by Shigeru Hanada.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=85cff3ce7f360d139d87aee836d75a6202fee066">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=85cff3ce7f360d139d87aee836d75a6202fee066</a></li>
+
+<li>Corrections to patch adding SQL/MED error codes. My previous commit, 85cff3ce7f360d139d87aee836d75a6202fee066 on 2010-12-25, failed to update errcodes.sgml or plerrcodes.h. This patch corrects that oversight, per a gripe from Tom Lane, and also corrects a typographical error.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=63676ebff402050f6b0b347188f5e857474da9e1">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=63676ebff402050f6b0b347188f5e857474da9e1</a></li>
+
+</ul>
+
+<p>Magnus Hagander a poussé&nbsp;:</p>
+
+<ul>
+
+<li>Add PQlibVersion() function to libpq. This function is like the PQserverVersion() function except it returns the version of libpq, making it possible for a client program or driver to determine which version of libpq is in use at runtime, and not just at link time. Suggested by Harald Armin Massa and several others.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=de9a4c27fefcc0d104bc9c97f4a93a49a25bf66d">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=de9a4c27fefcc0d104bc9c97f4a93a49a25bf66d</a></li>
+
+</ul>
+
+<p>Bruce Momjian a poussé&nbsp;:</p>
+
+<ul>
+
+<li>Wording improvements for pg_ctl manual page.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=28d5c565ced893366d010e6754a9fad6d0a40364">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=28d5c565ced893366d010e6754a9fad6d0a40364</a></li>
+
+<li>Document that BBU's do not allow partial page writes to be safely turned off unless they guarantee that all writes to the BBU arrive in 8kB chunks. Per discussion with Greg Smith
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=7a1ca8977fd109a86b540444f71f24bd2f38ea43">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=7a1ca8977fd109a86b540444f71f24bd2f38ea43</a></li>
+
+<li>Improve "pg_ctl -w start" server detection by writing the postmaster port and socket directory into postmaster.pid, and have pg_ctl read from that file, for use by PQping().
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=075354ad1bc0496c30dbd4dafb0f88a4d3e54cbc">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=075354ad1bc0496c30dbd4dafb0f88a4d3e54cbc</a></li>
+
+<li>Backpatch to 9.0 a doc mention that a BBU does not prevent partial page writes.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=c47458529533bc88e34778818a4ce7d5c309d7a8">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=c47458529533bc88e34778818a4ce7d5c309d7a8</a></li>
+
+<li>Remove quotes from boolean recovery.conf.sample parameters, now that the quotes are not required. This now matches postgresql.conf's specification of booleans.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=5000472112da91023bf468e57bb8ce9217426ed7">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=5000472112da91023bf468e57bb8ce9217426ed7</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a poussé&nbsp;:</p>
+
+<ul>
+
+<li>Rewrite the GiST insertion logic so that we don't need the post-recovery cleanup stage to finish incomplete inserts or splits anymore. There was two reasons for the cleanup step: 1. When a new tuple was inserted to a leaf page, the downlink in the parent needed to be updated to contain (i.e. to be consistent with) the new key. Updating the parent in turn might require recursively updating the parent of the parent. We now handle that by updating the parent while traversing down the tree, so that when we insert the leaf tuple, all the parents are already consistent with the new key, and the tree is consistent at every step. 2. When a page is split, we need to insert the downlink for the new right page(s), and update the downlink for the original page to not include keys that moved to the right page(s). We now handle that by setting a new flag, F_FOLLOW_RIGHT, on the non-rightmost pages in the split. When that flag is set, scans always follow the rightlink, regardless of the NSN mechanism used to detect concurrent page splits. That way the tree is consistent right after split, even though the downlink is still missing. This is very similar to the way B-tree splits are handled. When the downlink is inserted in the parent, the flag is cleared. To keep the insertion algorithm simple, when an insertion sees an incomplete split, indicated by the F_FOLLOW_RIGHT flag, it finishes the split before doing anything else. These changes allow removing the whole "invalid tuple" mechanism, but I retained the scan code to still follow invalid tuples correctly. While we don't create any such tuples anymore, we want to handle them gracefully in case you pg_upgrade a GiST index that has them. If we encounter any on an insert, though, we just throw an error saying that you need to REINDEX. The issue that got me into doing this is that if you did a checkpoint while an insert or split was in progress, and the checkpoint finishes quickly so that there is no WAL record related to the insert between RedoRecPtr and the checkpoint record, recovery from that checkpoint would not know to finish the incomplete insert. IOW, we have the same issue we solved with the rm_safe_restartpoint mechanism during normal operation too. It's highly unlikely to happen in practice, and this fix is far too large to backpatch, so we're just going to live with in previous versions, but this refactoring fixes it going forward. With this patch, you don't get the annoying 'index "FOO" needs VACUUM or REINDEX to finish crash recovery' notices anymore if you crash at an unfortunate moment.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=9de3aa65f01fb51cbc725e8508ea233e4e92c46c">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=9de3aa65f01fb51cbc725e8508ea233e4e92c46c</a></li>
+
+</ul>
+
+<p>Michael Meskes a poussé&nbsp;:</p>
+
+<ul>
+
+<li>Added rule to ecpg lexer to accept "Unicode surrogate pair in extended quoted string". This is not really needed because the string gets copied to the output untranslated anyway, but by adding this rule the lexer stays in sync with the backend lexer.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=727a5a1620dd9f84036f8094f99a6ea494143bef">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=727a5a1620dd9f84036f8094f99a6ea494143bef</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a poussé&nbsp;:</p>
+
+<ul>
+
+<li>Move the documentation of --no-security-label to a more sensible place. The order on the pg_dump/pg_dumpall man pages is not very strict, but surely putting it under connection options was wrong.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=4b1742a192a60b9c063fd7e93f5aed7a697bece1">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=4b1742a192a60b9c063fd7e93f5aed7a697bece1</a></li>
+
+<li>Release notes for 9.1alpha3.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=b2fd345ab9ef5857ff42e6d81d57a0f15247b430">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=b2fd345ab9ef5857ff42e6d81d57a0f15247b430</a></li>
+
+<li>Fix grammar.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=79a9decdd33c9662c0722ef1d49d8aa951739da4">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=79a9decdd33c9662c0722ef1d49d8aa951739da4</a></li>
+
+</ul>
+
+<p>Andrew Dunstan a poussé&nbsp;:</p>
+
+<ul>
+
+<li>Allow vpath builds and regression tests to succeed on Mingw. Backpatch to release 8.4 - earlier releases would require more changes and it's not worth the trouble.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=04ee0db6b287a1ff41b55cc440769a1dddc318a7">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=04ee0db6b287a1ff41b55cc440769a1dddc318a7</a></li>
+
+<li>Only build in crashdump support on Windows if there's a working dbghelp.h.
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=a534728afb7341e1ddf2df16196ed501eaa378c2">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=a534728afb7341e1ddf2df16196ed501eaa378c2</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejetés (à ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de déception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Magnus Hagander sent in another revision of the patch to allow querying the version of libpq.</li>
+
+<li>ITAGAKI Takahiro sent in another revision of the patch to export some of the functions COPY uses. This will help, among other things, the SQL/MED file-based operations.</li>
+
+<li>Dimitri Fontaine sent in two more revisions of the patch to add extensions.</li>
+
+<li>Andrew Dunstan sent in a patch to allow a vpath build to be used on MingW.</li>
+
+<li>Noah Misch sent in a patch to change strncmp to memcmp when we know the shorter length. In the tests he ran, this resulted in a 13% speed boost.</li>
+
+<li>Noah Misch sent in a patch based on the above patch to check lengths texteq, textne, byteaeq and byteane before detoasting, as unequal lengths imply inequality without further elaboration.</li>
+
+<li>Alvaro Herrera sent in a patch atop Dimitri Fontaine's extension patch.</li>
+
+<li>Sushant Sinha sent in a patch to fix an off-by-one error in ts_rank_cd.</li>
+
+<li>Shigeru HANADA sent in another revision of the file_fdw patch for SQL/MED.</li>
+
+<li>Merlin Moncure sent in a patch which makes the existence of hint bits a compile time option.</li>
+
+<li>Alex Hunsaker sent in another revision of the patch to fix an issue with PL/PerlU's handling of utf8.</li>
+
+<li>Fujii Masao sent in two more revisions of a patch to fix a bug in SignalSomeChildren.</li>
+
+<li>Bruce Momjian sent in a patch to add the port number and optionally socket directory location to postmaster.pid, and modify pg_ctl to use that information.</li>
+
+<li>Jan Urbanski sent in a flock of patches to refactor PL/PythonU.</li>
+
+<li>Tomas Vondra sent in another revisions of the patch to allow people to see the timestamp at which stats were reset by database if any table, index or function's statistics have been reset.</li>
+
+<li>Magnus Hagander sent in a patch to change walsender to require a special privilege for replication.</li>
+
+<li>KaiGai Kohei sent in SE-PostgreSQL as a contrib module.</li>
+
+<li>Shigeru HANADA sent in another revision of the patch to make file_fdw work.</li>
+
+<li>Robert Haas sent in another revision of the patch to add unlogged tables.</li>
+
+<li>Kevin Grittner sent in a patch to address issues with long-running transactions in SERIALIZABLE isolation mode.</li>
+
+<li>ITAGAKI Takahiro sent in another revision of the patch to add SQL standard MULTISETs.</li>
+
+</ul>

@@ -1,0 +1,240 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 7 mai 2017"
+author: "NBougain"
+redirect_from: "index.php?post/2017-05-19-nouvelles-hebdomadaires-de-postgresql-7-mai-2017 "
+---
+
+
+
+<h2>Correctifs appliqu&eacute;s</h2>
+
+<p>Robert Haas pushed:</p>
+
+<ul>
+
+<li>Fire per-statement triggers on partitioned tables. Even though no actual tuples are ever inserted into a partitioned table (the actual tuples are in the partitions, not the partitioned table itself), we still need to have a ResultRelInfo for the partitioned table, or per-statement triggers won't get fired. Amit Langote, per a report from Rajkumar Raghuwanshi. Reviewed by me. Discussion: <a target="_blank" href="http://postgr.es/m/CAKcux6%3DwYospCRY2J4XEFuVy0L41S%3Dfic7rmkbsU-GXhhSbmBg%40mail.gmail.com">http://postgr.es/m/CAKcux6%3DwYospCRY2J4XEFuVy0L41S%3Dfic7rmkbsU-GXhhSbmBg%40mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/e180c8aa8caf5c55a273d4a8e6092e77ff3cff10">https://git.postgresql.org/pg/commitdiff/e180c8aa8caf5c55a273d4a8e6092e77ff3cff10</a></li>
+
+<li>libpq: Fix inadvertent change in .pgpass lookup behavior. Commit 274bb2b3857cc987cfa21d14775cae9b0dababa5 caused password file lookups to use the hostaddr in preference to the host, but that was not intended and the documented behavior is the opposite. Report and patch by Kyotaro Horiguchi. Discussion: <a target="_blank" href="http://postgr.es/m/20170428.165432.60857995.horiguchi.kyotaro@lab.ntt.co.jp">http://postgr.es/m/20170428.165432.60857995.horiguchi.kyotaro@lab.ntt.co.jp</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/bdac9836d3b910c5fd592aaeaac3c2e2e1defcad">https://git.postgresql.org/pg/commitdiff/bdac9836d3b910c5fd592aaeaac3c2e2e1defcad</a></li>
+
+<li>Fix typos in comments. Etsuro Fujita Discussion: <a target="_blank" href="http://postgr.es/m/00e88999-684d-d79a-70e4-908c937a0126@lab.ntt.co.jp">http://postgr.es/m/00e88999-684d-d79a-70e4-908c937a0126@lab.ntt.co.jp</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/0d1e1f0ea45c15170c2d2ae0f0c448bc2d2b72d9">https://git.postgresql.org/pg/commitdiff/0d1e1f0ea45c15170c2d2ae0f0c448bc2d2b72d9</a></li>
+
+</ul>
+
+<p>Peter Eisentraut pushed:</p>
+
+<ul>
+
+<li>Fix logical replication launcher wake up and reset. After the logical replication launcher was told to wake up at commit (for example, by a CREATE SUBSCRIPTION command), the flag to wake up was not reset, so it would be woken up at every following commit as well. So fix that by resetting the flag. Also, we don't need to wake up anything if the transaction was rolled back. Just reset the flag in that case. Author: Masahiko Sawada &lt;sawada.mshk@gmail.com&gt; Reported-by: Fujii Masao &lt;masao.fujii@gmail.com&gt; <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/9414e41ea703ea5fcc288bcf7dc000e53306896b">https://git.postgresql.org/pg/commitdiff/9414e41ea703ea5fcc288bcf7dc000e53306896b</a></li>
+
+<li>Don't wake up logical replication launcher unnecessarily. In CREATE SUBSCRIPTION, only wake up the launcher when the subscription is enabled. Author: Fujii Masao &lt;masao.fujii@gmail.com&gt; <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/a99448ab4515aaadc17647e53633f418893f5adf">https://git.postgresql.org/pg/commitdiff/a99448ab4515aaadc17647e53633f418893f5adf</a></li>
+
+<li>doc: Update ALTER SEQUENCE claims about changes being nontransactional. Clarify that all changes except RESTART are transactional (since 1753b1b027035029c2a2a1649065762fafbf63f3). Reported-by: Michael Paquier &lt;michael.paquier@gmail.com&gt; <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/a35ac7c4e3ccf93876b4652d94a418fc82e0eda3">https://git.postgresql.org/pg/commitdiff/a35ac7c4e3ccf93876b4652d94a418fc82e0eda3</a></li>
+
+<li>Avoid unnecessary catalog updates in ALTER SEQUENCE. ALTER SEQUENCE can do nontransactional changes to the sequence (RESTART clause) and transactional updates to the pg_sequence catalog (most other clauses). When just calling RESTART, the code would still needlessly do a catalog update without any changes. This would entangle that operation in the concurrency issues of a catalog update (causing either locking or concurrency errors, depending on how that issue is to be resolved). Fix by keeping track during options parsing whether a catalog update is needed, and skip it if not. Reported-by: Jason Petersen &lt;jason@citusdata.com&gt; <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/3d092fe5409b98272ddd6e623b657308a3c5f004">https://git.postgresql.org/pg/commitdiff/3d092fe5409b98272ddd6e623b657308a3c5f004</a></li>
+
+<li>doc: Add missing markup. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/460c89f46c1fdf11baa8e76e6d04e1ff87d7e008">https://git.postgresql.org/pg/commitdiff/460c89f46c1fdf11baa8e76e6d04e1ff87d7e008</a></li>
+
+<li>doc: Improve order in ALTER PUBLICATION/SUBSCRIPTION ref pages. Move the OWNER and RENAME clauses to the end, so the interesting functionality is listed first. This is more typical on nearby reference pages, whereas the previous order was the order in which the clauses were added. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/e9500240661c03750923e6f539bfa2d75cfaa32a">https://git.postgresql.org/pg/commitdiff/e9500240661c03750923e6f539bfa2d75cfaa32a</a></li>
+
+<li>Fix cursor_to_xml in tableforest false mode. It only produced &lt;row&gt; elements but no wrapping &lt;table&gt; element. By contrast, cursor_to_xmlschema produced a schema that is now correct but did not previously match the XML data produced by cursor_to_xml. In passing, also fix a minor misunderstanding about moving cursors in the tests related to this. Reported-by: filip@jirsak.org Based-on-patch-by: Thomas Munro &lt;thomas.munro@enterprisedb.com&gt; <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/0de791ed760614991e7cb8a78fddd6874ea6919d">https://git.postgresql.org/pg/commitdiff/0de791ed760614991e7cb8a78fddd6874ea6919d</a></li>
+
+<li>Prevent panic during shutdown checkpoint. When the checkpointer writes the shutdown checkpoint, it checks afterwards whether any WAL has been written since it started and throws a PANIC if so. At that point, only walsenders are still active, so one might think this could not happen, but walsenders can also generate WAL, for instance in BASE_BACKUP and certain variants of CREATE_REPLICATION_SLOT. So they can trigger this panic if such a command is run while the shutdown checkpoint is being written. To fix this, divide the walsender shutdown into two phases. First, the postmaster sends a SIGUSR2 signal to all walsenders. The walsenders then put themselves into the "stopping" state. In this state, they reject any new commands. (For simplicity, we reject all new commands, so that in the future we do not have to track meticulously which commands might generate WAL.) The checkpointer waits for all walsenders to reach this state before proceeding with the shutdown checkpoint. After the shutdown checkpoint is done, the postmaster sends SIGINT (previously unused) to the walsenders. This triggers the existing shutdown behavior of sending out the shutdown checkpoint record and then terminating. Author: Michael Paquier &lt;michael.paquier@gmail.com&gt; Reported-by: Fujii Masao &lt;masao.fujii@gmail.com&gt; <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/086221cf6b1727c2baed4703c582f657b7c5350e">https://git.postgresql.org/pg/commitdiff/086221cf6b1727c2baed4703c582f657b7c5350e</a></li>
+
+</ul>
+
+<p>Andrew Dunstan pushed:</p>
+
+<ul>
+
+<li>Allow vcregress.pl to run an arbitrary TAP test set. Currently only provision for running the bin checks in a single step is provided for. Now these tests can be run individually, as well as tests in other locations (e.g. src.test/recover). Also provide for suppressing unnecessary temp installs by setting the NO_TEMP_INSTALL environment variable just as the Makefiles do. Backpatch to 9.4. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/fed6df486dca1b9e53d3f560031b9a236c99f4bb">https://git.postgresql.org/pg/commitdiff/fed6df486dca1b9e53d3f560031b9a236c99f4bb</a></li>
+
+<li>Fix perl thinko in commit fed6df486dca. Report and fix from Vaishnavi Prabakaran Backpatch to 9.4 like original. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/9a0d2008c3fe82c9d62a81e87cd0c4de1be09e0f">https://git.postgresql.org/pg/commitdiff/9a0d2008c3fe82c9d62a81e87cd0c4de1be09e0f</a></li>
+
+</ul>
+
+<p>Tom Lane pushed:</p>
+
+<ul>
+
+<li>Update time zone data files to tzdata release 2017b. DST law changes in Chile, Haiti, and Mongolia. Historical corrections for Ecuador, Kazakhstan, Liberia, and Spain. The IANA crew continue their campaign to replace invented time zone abbrevations with numeric GMT offsets. This update changes numerous zones in South America, the Pacific and Indian oceans, and some Asian and Middle Eastern zones. I kept these abbreviations in the tznames/ data files, however, so that we will still accept them for input. (We may want to start trimming those files someday, but I think we should wait for the upstream dust to settle before deciding what to do.) In passing, add MESZ (Mitteleuropaeische Sommerzeit) to the tznames lists; since we accept MEZ (Mitteleuropaeische Zeit) it seems rather strange not to take the other one. And fix some incorrect, or at least obsolete, comments that certain abbreviations are not traceable to the IANA data. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/74a20d0ab7c99b3efcf5dc7aac741e3b2f952a34">https://git.postgresql.org/pg/commitdiff/74a20d0ab7c99b3efcf5dc7aac741e3b2f952a34</a></li>
+
+<li>Fix mis-optimization of semijoins with more than one LHS relation. The inner-unique patch (commit 9c7f5229a) supposed that if we're considering a JOIN_UNIQUE_INNER join path, we can always set inner_unique for the join, because the inner path produced by create_unique_path should be unique relative to the outer relation. However, that's true only if we're considering joining to the whole outer relation --- otherwise we may be applying only some of the join quals, and so the inner path might be non-unique from the perspective of this join. Adjust the test to only believe that we can set inner_unique if we have the whole semijoin LHS on the outer side. There is more that can be done in this area, but this commit is only intended to provide the minimal fix needed to get correct plans. Per report from Teodor Sigaev. Thanks to David Rowley for preliminary investigation. Discussion: <a target="_blank" href="https://postgr.es/m/f994fc98-389f-4a46-d1bc-c42e05cb43ed@sigaev.ru">https://postgr.es/m/f994fc98-389f-4a46-d1bc-c42e05cb43ed@sigaev.ru</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/2057a58d1629ebffce694e3cef7f714571a88dd7">https://git.postgresql.org/pg/commitdiff/2057a58d1629ebffce694e3cef7f714571a88dd7</a></li>
+
+<li>Reduce semijoins with unique inner relations to plain inner joins. If the inner relation can be proven unique, that is it can have no more than one matching row for any row of the outer query, then we might as well implement the semijoin as a plain inner join, allowing substantially more freedom to the planner. This is a form of outer join strength reduction, but it can't be implemented in reduce_outer_joins() because we don't have enough info about the individual relations at that stage. Instead do it much like remove_useless_joins(): once we've built base relations, we can make another pass over the SpecialJoinInfo list and get rid of any entries representing reducible semijoins. This is essentially a followon to the inner-unique patch (commit 9c7f5229a) and makes use of the proof machinery that that patch created. We need only minor refactoring of innerrel_is_unique's API to support this usage. Per performance complaint from Teodor Sigaev. Discussion: <a target="_blank" href="https://postgr.es/m/f994fc98-389f-4a46-d1bc-c42e05cb43ed@sigaev.ru">https://postgr.es/m/f994fc98-389f-4a46-d1bc-c42e05cb43ed@sigaev.ru</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/92a43e4857d9682b93c9f755f453cc8fd7c66c81">https://git.postgresql.org/pg/commitdiff/92a43e4857d9682b93c9f755f453cc8fd7c66c81</a></li>
+
+<li>Improve function header comment for create_singleton_array(). Mentioning the caller is neither future-proof nor an adequate substitute for giving an API specification. Per gripe from Neha Khatri, though I changed the patch around some. Discussion: <a target="_blank" href="https://postgr.es/m/CAFO0U+_fS5SRhzq6uPG+4fbERhoA9N2+nPrtvaC9mmeWivxbsA@mail.gmail.com">https://postgr.es/m/CAFO0U+_fS5SRhzq6uPG+4fbERhoA9N2+nPrtvaC9mmeWivxbsA@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/54affb41e79cf4bec00bb5e00eb12a1715b9e278">https://git.postgresql.org/pg/commitdiff/54affb41e79cf4bec00bb5e00eb12a1715b9e278</a></li>
+
+<li>Ensure commands in extension scripts see the results of preceding DDL. Due to a missing CommandCounterIncrement() call, parsing of a non-utility command in an extension script would not see the effects of the immediately preceding DDL command, unless that command's execution ends with CommandCounterIncrement() internally ... which some do but many don't. Report by Philippe Beaudoin, diagnosis by Julien Rouhaud. Rather remarkably, this bug has evaded detection since extensions were invented, so back-patch to all supported branches. Discussion: <a target="_blank" href="https://postgr.es/m/2cf7941e-4e41-7714-3de8-37b1a8f74dff@free.fr">https://postgr.es/m/2cf7941e-4e41-7714-3de8-37b1a8f74dff@free.fr</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/9209e07605afe0349660447f20d83ef165cdd0ae">https://git.postgresql.org/pg/commitdiff/9209e07605afe0349660447f20d83ef165cdd0ae</a></li>
+
+<li>Remove create_singleton_array(), hard-coding the case in its sole caller. create_singleton_array() was not really as useful as we perhaps thought when we added it. It had never accreted more than one call site, and is only saving a dozen lines of code at that one, which is considerably less bulk than the function itself. Moreover, because of its insistence on using the caller's fn_extra cache space, it's arguably a coding hazard. text_to_array_internal() does not currently use fn_extra in any other way, but if it did it would be subtly broken, since the conflicting fn_extra uses could be needed within a single query, in the seldom-tested case that the field separator varies during the query. The same objection seems likely to apply to any other potential caller. The replacement code is a bit uglier, because it hardwires knowledge of the storage parameters of type TEXT, but it's not like we haven't got dozens or hundreds of other places that do the same. Uglier seems like a good tradeoff for smaller, faster, and safer. Per discussion with Neha Khatri. Discussion: <a target="_blank" href="https://postgr.es/m/CAFO0U+_fS5SRhzq6uPG+4fbERhoA9N2+nPrtvaC9mmeWivxbsA@mail.gmail.com">https://postgr.es/m/CAFO0U+_fS5SRhzq6uPG+4fbERhoA9N2+nPrtvaC9mmeWivxbsA@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/23c6eb03360d270051bf7dcb289ecb0cd114d29f">https://git.postgresql.org/pg/commitdiff/23c6eb03360d270051bf7dcb289ecb0cd114d29f</a></li>
+
+<li>Remove useless and rather expensive stanza in matview regression test. This removes a test case added by commit b69ec7cc9, which was intended to exercise a corner case involving the rule used at that time that materialized views were unpopulated iff they had physical size zero. We got rid of that rule very shortly later, in commit 1d6c72a55, but kept the test case. However, because the case now asks what VACUUM will do to a zero-sized physical file, it would be pretty surprising if the answer were ever anything but "nothing" ... and if things were indeed that broken, surely we'd find it out from other tests. Since the test involves a table that's fairly large by regression-test standards (100K rows), it's quite slow to run. Dropping it should save some buildfarm cycles, so let's do that. Discussion: <a target="_blank" href="https://postgr.es/m/32386.1493831320@sss.pgh.pa.us">https://postgr.es/m/32386.1493831320@sss.pgh.pa.us</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/4dd4104342068e542e865e5b0486e14600746221">https://git.postgresql.org/pg/commitdiff/4dd4104342068e542e865e5b0486e14600746221</a></li>
+
+<li>Fix pfree-of-already-freed-tuple when rescanning a GiST index-only scan. GiST's getNextNearest() function attempts to pfree the previously-returned tuple if any (that is, scan-&gt;xs_hitup in HEAD, or scan-&gt;xs_itup in older branches). However, if we are rescanning a plan node after ending a previous scan early, those tuple pointers could be pointing to garbage, because they would be pointing into the scan's pageDataCxt or queueCxt which has been reset. In a debug build this reliably results in a crash, although I think it might sometimes accidentally fail to fail in production builds. To fix, clear the pointer field anyplace we reset a context it might be pointing into. This may be overkill --- I think probably only the queueCxt case is involved in this bug, so that resetting in gistrescan() would be sufficient --- but dangling pointers are generally bad news, so let's avoid them. Another plausible answer might be to just not bother with the pfree in getNextNearest(). The reconstructed tuples would go away anyway in the context resets, and I'm far from convinced that freeing them a bit earlier really saves anything meaningful. I'll stick with the original logic in this patch, but if we find more problems in the same area we should consider that approach. Per bug #14641 from Denis Smirnov. Back-patch to 9.5 where this logic was introduced. Discussion: <a target="_blank" href="https://postgr.es/m/20170504072034.24366.57688@wrigleys.postgresql.org">https://postgr.es/m/20170504072034.24366.57688@wrigleys.postgresql.org</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/3f074845a8c190b365e68e39e39017ff70330f2a">https://git.postgresql.org/pg/commitdiff/3f074845a8c190b365e68e39e39017ff70330f2a</a></li>
+
+<li>Suppress compiler warning about unportable pointer value. Setting a pointer value to "0xdeadbeef" draws a warning from some compilers, and for good reason. Be less cute and just set it to NULL. In passing make some other cosmetic adjustments nearby. Discussion: <a target="_blank" href="https://postgr.es/m/CAJrrPGdW3EkU-CRobvVKYf3fJuBdgWyuGeAbNzAQ4yBh+bfb_Q@mail.gmail.com">https://postgr.es/m/CAJrrPGdW3EkU-CRobvVKYf3fJuBdgWyuGeAbNzAQ4yBh+bfb_Q@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/b3a47cdfd692079e36d2055d7d93759e083263ca">https://git.postgresql.org/pg/commitdiff/b3a47cdfd692079e36d2055d7d93759e083263ca</a></li>
+
+<li>First-draft release notes for 9.6.3. As usual, the release notes for other branches will be made by cutting these down, but put them up for community review first. Note there are some entries that really only apply to pre-9.6 branches. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/54dbd4dc78b045ffcc046b9a43681770c3992dd4">https://git.postgresql.org/pg/commitdiff/54dbd4dc78b045ffcc046b9a43681770c3992dd4</a></li>
+
+<li>Document current_role. This system function has been there a very long time, but somehow escaped being listed in func.sgml. Fabien Coelho and Tom Lane Discussion: <a target="_blank" href="https://postgr.es/m/alpine.DEB.2.20.1705061027580.3896@lancre">https://postgr.es/m/alpine.DEB.2.20.1705061027580.3896@lancre</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/a9c6d704354bfe91bc389742cb5d331ae4e93831">https://git.postgresql.org/pg/commitdiff/a9c6d704354bfe91bc389742cb5d331ae4e93831</a></li>
+
+<li>Second pass on 9.6.3 release notes. Improve description of logical decoding snapshot issues, per suggestion from Petr Jelinek. Mention possible need to re-sync logical replicas as a post-upgrade task. Minor copy-editing for some other items. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/334b82cd56a65e09154d9f930d35a761a9c5cfab">https://git.postgresql.org/pg/commitdiff/334b82cd56a65e09154d9f930d35a761a9c5cfab</a></li>
+
+<li>Restore fullname[] contents before falling through in pg_open_tzfile(). Fix oversight in commit af2c5aa88: if the shortcut open() doesn't work, we need to reset fullname[] to be just the name of the toplevel tzdata directory before we fall through into the pre-existing code. This failed to be exposed in my (tgl's) testing because the fall-through path is actually never taken under normal circumstances. David Rowley, per report from Amit Kapila Discussion: <a target="_blank" href="https://postgr.es/m/CAA4eK1LC7CaNhRAQ__C3ht1JVrPzaAXXhEJRnR5L6bfYHiLmWw@mail.gmail.com">https://postgr.es/m/CAA4eK1LC7CaNhRAQ__C3ht1JVrPzaAXXhEJRnR5L6bfYHiLmWw@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/5788a5670e4a58049b8adc82c4fef97a2c3be327">https://git.postgresql.org/pg/commitdiff/5788a5670e4a58049b8adc82c4fef97a2c3be327</a></li>
+
+<li>Install the "posixrules" timezone link in MSVC builds. Somehow, we'd missed ever doing this. The consequences aren't too severe: basically, the timezone library would fall back on its hardwired notion of the DST transition dates to use for a POSIX-style zone name, rather than obeying US/Eastern which is the intended behavior. The net effect would only be to obey current US DST law further back than it ought to apply; so it's not real surprising that nobody noticed. David Rowley, per report from Amit Kapila Discussion: <a target="_blank" href="https://postgr.es/m/CAA4eK1LC7CaNhRAQ__C3ht1JVrPzaAXXhEJRnR5L6bfYHiLmWw@mail.gmail.com">https://postgr.es/m/CAA4eK1LC7CaNhRAQ__C3ht1JVrPzaAXXhEJRnR5L6bfYHiLmWw@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/d4e59c5521c244e809c3d68df51fb79543578e41">https://git.postgresql.org/pg/commitdiff/d4e59c5521c244e809c3d68df51fb79543578e41</a></li>
+
+<li>Guard against null t-&gt;tm_zone in strftime.c. The upstream IANA code does not guard against null TM_ZONE pointers in this function, but in our code there is such a check in the other pre-existing use of t-&gt;tm_zone. We do have some places that set pg_tm.tm_zone to NULL. I'm not entirely sure it's possible to reach strftime with such a value, but I'm not sure it isn't either, so be safe. Per Coverity complaint. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/a54d5875fe0bc19d05236b85e1e1bf0af9fa2902">https://git.postgresql.org/pg/commitdiff/a54d5875fe0bc19d05236b85e1e1bf0af9fa2902</a></li>
+
+<li>Improve performance of timezone loading, especially pg_timezone_names view. tzparse() would attempt to load the "posixrules" timezone database file on each call. That might seem like it would only be an issue when selecting a POSIX-style zone name rather than a zone defined in the timezone database, but it turns out that each zone definition file contains a POSIX-style zone string and tzload() will call tzparse() to parse that. Thus, when scanning the whole timezone file tree as we do in the pg_timezone_names view, "posixrules" was read repetitively for each zone definition file. Fix that by caching the file on first use within any given process. (We cache other zone definitions for the life of the process, so there seems little reason not to cache this one as well.) This probably won't help much in processes that never run pg_timezone_names, but even one additional SET of the timezone GUC would come out ahead. An even worse problem for pg_timezone_names is that pg_open_tzfile() has an inefficient way of identifying the canonical case of a zone name: it basically re-descends the directory tree to the zone file. That's not awful for an individual "SET timezone" operation, but it's pretty horrid when we're inspecting every zone in the database. And it's pointless too because we already know the canonical spelling, having just read it from the filesystem. Fix by teaching pg_open_tzfile() to avoid the directory search if it's not asked for the canonical name, and backfilling the proper result in pg_tzenumerate_next(). In combination these changes seem to make the pg_timezone_names view about 3x faster to read, for me. Since a scan of pg_timezone_names has up to now been one of the slowest queries in the regression tests, this should help some little bit for buildfarm cycle times. Back-patch to all supported branches, not so much because it's likely that users will care much about the view's performance as because tracking changes in the upstream IANA timezone code is really painful if we don't keep all the branches in sync. Discussion: <a target="_blank" href="https://postgr.es/m/27962.1493671706@sss.pgh.pa.us">https://postgr.es/m/27962.1493671706@sss.pgh.pa.us</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/af2c5aa88d38573724e40fa029499b4db20b0eb2">https://git.postgresql.org/pg/commitdiff/af2c5aa88d38573724e40fa029499b4db20b0eb2</a></li>
+
+<li>Third pass on 9.6.3 release notes. Add updates for recent commits. In passing, credit Etsuro Fujita for his work on the postgres_fdw query cancel feature in 9.6; I seem to have missed that in the original drafting of the 9.6 notes. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/86713deecda4ddbf8e339ec48fafa4d8080f6079">https://git.postgresql.org/pg/commitdiff/86713deecda4ddbf8e339ec48fafa4d8080f6079</a></li>
+
+</ul>
+
+<p>Magnus Hagander pushed:</p>
+
+<ul>
+
+<li>Change hot_standby default value to 'on'. This goes together with the changes made to enable replication on the sending side by default (wal_level, max_wal_senders etc) by making the receiving stadby node also enable it by default. Huong Dangminh <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/34fc61673829f0cb63811fb63cc3c510fc2aadfc">https://git.postgresql.org/pg/commitdiff/34fc61673829f0cb63811fb63cc3c510fc2aadfc</a></li>
+
+<li>Build pgoutput.dll in MSVC build. Without this, logical replication obviously does not work on Windows MauMau, with clean.bet additions from me per note from Michael Paquier <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/28d1c8ccc87128f9b0b937eae277473027c36b7e">https://git.postgresql.org/pg/commitdiff/28d1c8ccc87128f9b0b937eae277473027c36b7e</a></li>
+
+<li>Fix wording in pg_upgrade docs. Author: Daniel Gustafsson <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/499ae5f5db99c84035e9951fd30e428adf0f40d2">https://git.postgresql.org/pg/commitdiff/499ae5f5db99c84035e9951fd30e428adf0f40d2</a></li>
+
+</ul>
+
+<p>&Aacute;lvaro Herrera pushed:</p>
+
+<ul>
+
+<li>extstats: change output functions to emit valid JSON. Manipulating extended statistics is more convenient as JSON than the current ad-hoc format, so let's change before it's too late. Discussion: <a target="_blank" href="https://postgr.es/m/20170420193828.k3fliiock5hdnehn@alvherre.pgsql">https://postgr.es/m/20170420193828.k3fliiock5hdnehn@alvherre.pgsql</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/93bbeec6a21b76612d77176a8054b41277135684">https://git.postgresql.org/pg/commitdiff/93bbeec6a21b76612d77176a8054b41277135684</a></li>
+
+<li>Add pg_dump tests for CREATE STATISTICS. CREATE STATISTICS pg_dump support code was not covered at all by previous tests. Discussion: <a target="_blank" href="https://postgr.es/m/20170503172746.rwftidszir67sgk7@alvherre.pgsql">https://postgr.es/m/20170503172746.rwftidszir67sgk7@alvherre.pgsql</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/a93077ef467138235c3f05e3ba36dfcabe3d0898">https://git.postgresql.org/pg/commitdiff/a93077ef467138235c3f05e3ba36dfcabe3d0898</a></li>
+
+<li>pg_dump/t/002: append terminating semicolon to SQL commands. It's easy to overlook the need for one, and its lack is annoying for the next developer wanting to create a new test. Rather than expect every individual command to add the semicolon, just append one automatically. Discussion: <a target="_blank" href="http://postgr.es/m/20170503172746.rwftidszir67sgk7@alvherre.pgsql">http://postgr.es/m/20170503172746.rwftidszir67sgk7@alvherre.pgsql</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/698923d6588ee15a386d26c45e5f25ee1a68cc34">https://git.postgresql.org/pg/commitdiff/698923d6588ee15a386d26c45e5f25ee1a68cc34</a></li>
+
+<li>Credit Claudio as main author of feature. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/c22b59edd26fb69661188b040ea3e8776a533685">https://git.postgresql.org/pg/commitdiff/c22b59edd26fb69661188b040ea3e8776a533685</a></li>
+
+<li>Allow MSVC to build with Tcl 8.6. Commit eaba54c20c5 added support for Tcl 8.6 for configure-supported platforms after verifying that pltcl works without further changes, but the MSVC tooling wasn't updated accordingly. Update MSVC to match, restructuring the code to avoid duplicating the logic for every Tcl version supported. Backpatch to all live branches, like eaba54c20c5. In 9.4 and previous, change the patch to use backslashes rather than forward, as in the rest of the file. Reported by Paresh More, who also tested the patch I provided. Discussion: <a target="_blank" href="https://postgr.es/m/CAAgiCNGVw3ssBtSi3ZNstrz5k00ax=UV+_ZEHUeW_LMSGL2sew@mail.gmail.com">https://postgr.es/m/CAAgiCNGVw3ssBtSi3ZNstrz5k00ax=UV+_ZEHUeW_LMSGL2sew@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/14722c69f924810ecf11769e8b9788b3f82d2a0e">https://git.postgresql.org/pg/commitdiff/14722c69f924810ecf11769e8b9788b3f82d2a0e</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas pushed:</p>
+
+<ul>
+
+<li>Add PQencryptPasswordConn function to libpq, use it in psql and createuser. The new function supports creating SCRAM verifiers, in addition to md5 hashes. The algorithm is chosen based on password_encryption, by default. This fixes the issue reported by Jeff Janes, that there was previously no way to create a SCRAM verifier with "\password". Michael Paquier and me Discussion: <a target="_blank" href="https://www.postgresql.org/message-id/CAMkU%3D1wfBgFPbfAMYZQE78p%3DVhZX7nN86aWkp0QcCp%3D%2BKxZ%3Dbg%40mail.gmail.com">https://www.postgresql.org/message-id/CAMkU%3D1wfBgFPbfAMYZQE78p%3DVhZX7nN86aWkp0QcCp%3D%2BKxZ%3Dbg%40mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/8f8b9be51fd788bb11276df89606bc653163524e">https://git.postgresql.org/pg/commitdiff/8f8b9be51fd788bb11276df89606bc653163524e</a></li>
+
+<li>Fix PQencryptPasswordConn to work with older server versions. password_encryption was a boolean before version 10, so cope with "on" and "off". Also, change the behavior with "plain", to treat it the same as "md5". We're discussing removing the password_encryption='plain' option from the server altogether, which will make this the only reasonable choice, but even if we kept it, it seems best to never send the password in cleartext. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/20bf7b2b0afcb53608ec37005ee7f831132925d2">https://git.postgresql.org/pg/commitdiff/20bf7b2b0afcb53608ec37005ee7f831132925d2</a></li>
+
+<li>Make SCRAM salts and nonces longer. The salt is stored base64-encoded. With the old 10 bytes raw length, it was always padded to 16 bytes after encoding. We might as well use 12 raw bytes for the salt, and it's still encoded into 16 bytes. Similarly for the random nonces, use a raw length that's divisible by 3, so that there's no padding after base64 encoding. Make the nonces longer while we're at it. 10 bytes was probably enough to prevent replay attacks, but there's no reason to be skimpy here. Per suggestion from &Aacute;lvaro Hern&aacute;ndez Tortosa. Discussion: <a target="_blank" href="https://www.postgresql.org/message-id/df8c6e27-4d8e-5281-96e5-131a4e638fc8@8kdata.com">https://www.postgresql.org/message-id/df8c6e27-4d8e-5281-96e5-131a4e638fc8@8kdata.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/0557a5dc2cf845639d384801b6861ebbd35dc7ee">https://git.postgresql.org/pg/commitdiff/0557a5dc2cf845639d384801b6861ebbd35dc7ee</a></li>
+
+<li>Misc cleanup of SCRAM code. * Remove is_scram_verifier() function. It was unused. * Fix sanitize_char() function, used in error messages on protocol violations, to print bytes &gt;= 0x7F correctly. * Change spelling of scram_MockSalt() function to be more consistent with the surroundings. * Change a few more references to "server proof" to "server signature" that I missed in commit d981074c24. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/e6e9c4da3a55450b120ad7e3d0be426255850914">https://git.postgresql.org/pg/commitdiff/e6e9c4da3a55450b120ad7e3d0be426255850914</a></li>
+
+<li>Don't use SCRAM-specific "e=invalid-proof" on invalid password. Instead, send the same FATAL message as with other password-based authentication mechanisms. This gives a more user-friendly message: psql: FATAL: password authentication failed for user "test" instead of: psql: error received from server in SASL exchange: invalid-proof Even before this patch, the server sent that FATAL message, after the SCRAM-specific "e=invalid-proof" message. But libpq would stop at the SCRAM error message, and not process the ErrorResponse that would come after that. We could've taught libpq to check for an ErrorResponse after failed authentication, but it's simpler to modify the server to send only the ErrorResponse. The SCRAM specification allows for aborting the authentication at any point, using an application-defined error mechanism, like PostgreSQL's ErrorResponse. Using the e=invalid-proof message is optional. Reported by Jeff Janes. Discussion: <a target="_blank" href="https://www.postgresql.org/message-id/CAMkU%3D1w3jQ53M1OeNfN8Cxd9O%2BA_9VONJivTbYoYRRdRsLT6vA@mail.gmail.com">https://www.postgresql.org/message-id/CAMkU%3D1w3jQ53M1OeNfN8Cxd9O%2BA_9VONJivTbYoYRRdRsLT6vA@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/344a113079888c9b9a81ffa3c3a7d95666347119">https://git.postgresql.org/pg/commitdiff/344a113079888c9b9a81ffa3c3a7d95666347119</a></li>
+
+<li>Fix memory leaks if random salt generation fails. In the backend, this is just to silence coverity warnings, but in the frontend, it's a genuine leak, even if extremely rare. Spotted by Coverity, patch by Michael Paquier. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/0186ded5460c4868db8c5f98ab17287c15fedd7e">https://git.postgresql.org/pg/commitdiff/0186ded5460c4868db8c5f98ab17287c15fedd7e</a></li>
+
+</ul>
+
+<p>Bruce Momjian pushed:</p>
+
+<ul>
+
+<li>doc: PG 10 release note updates for psql, GiST, and markup. Reported-by: Andrew Borodin, Fabien COELHO, Dagfinn Ilmari Manns&aring;ker <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/4f45beba7aea007cbae68eaea5d04d4cab7e4f62">https://git.postgresql.org/pg/commitdiff/4f45beba7aea007cbae68eaea5d04d4cab7e4f62</a></li>
+
+<li>doc: update PG 10 release notes. Mention vacuum verbose includes oldest xmin, BRIN index usage estimation, and multi-column statistics. Reported-by: Masahiko Sawada, Alvaro Herrera <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/5469e44ffc2077cb8371686497022cb5afd1af87">https://git.postgresql.org/pg/commitdiff/5469e44ffc2077cb8371686497022cb5afd1af87</a></li>
+
+<li>doc PG 10: adjustments to BRIN, WAL, JSON, XML items, syntax. Reported-by: Alvaro Herrera <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/628462bda908873688ce738a191b470ab769d604">https://git.postgresql.org/pg/commitdiff/628462bda908873688ce738a191b470ab769d604</a></li>
+
+</ul>
+
+<p>Stephen Frost pushed:</p>
+
+<ul>
+
+<li>Change the way pg_dump retrieves partitioning info. This gets rid of the code that issued separate queries to retrieve the partitioning parent-child relationship, parent partition key, and child partition bound information. With this patch, the information is retrieved instead using the queries issued from getTables() and getInherits(), which is both more efficient than the previous approach and doesn't require any new code. Since the partitioning parent-child relationship is now retrieved with the same old code that handles inheritance, partition attributes receive a proper flagInhAttrs() treatment (that it didn't receive before), which is needed so that the inherited NOT NULL constraints are not emitted if we already emitted it for the parent. Also, fix a bug in pg_dump's --binary-upgrade code, which caused pg_dump to emit invalid command to attach a partition to its parent. Author: Amit Langote, with some additional changes by me. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/44c528810a1eca52a7888ed74c08353d45331b00">https://git.postgresql.org/pg/commitdiff/44c528810a1eca52a7888ed74c08353d45331b00</a></li>
+
+<li>RLS: Fix ALL vs. SELECT+UPDATE policy usage. When we add the SELECT-privilege based policies to the RLS with check options (such as for an UPDATE statement, or when we have INSERT ... RETURNING), we need to be sure and use the 'USING' case if the policy is actually an 'ALL' policy (which could have both a USING clause and an independent WITH CHECK clause). This could result in policies acting differently when built using ALL (when the ALL had both USING and WITH CHECK clauses) and when building the policies independently as SELECT and UPDATE policies. Fix this by adding an explicit boolean to add_with_check_options() to indicate when the USING policy should be used, even if the policy has both USING and WITH CHECK policies on it. Reported by: Rod Taylor Back-patch to 9.5 where RLS was introduced. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/aa5d3c0b3fb906dfa910b0ca6f75ab701b2f1c09">https://git.postgresql.org/pg/commitdiff/aa5d3c0b3fb906dfa910b0ca6f75ab701b2f1c09</a></li>
+
+<li>pg_dump: Don't leak memory in buildDefaultACLCommands(). buildDefaultACLCommands() didn't destroy the string buffer created in certain cases, leading to a memory leak. Fix by destroying the buffer before returning from the function. Spotted by Coverity. Author: Michael Paquier Back-patch to 9.6 where buildDefaultACLCommands() was added. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/09f842181943b6e83b0779f2e872ff0180b66883">https://git.postgresql.org/pg/commitdiff/09f842181943b6e83b0779f2e872ff0180b66883</a></li>
+
+</ul>
+
+<p>Andres Freund pushed:</p>
+
+<ul>
+
+<li>Fix off-by-one possibly leading to skipped XLOG_RUNNING_XACTS records. Since 6ef2eba3f57f1 ("Skip checkpoints, archiving on idle systems."), GetLastImportantRecPtr() is used to avoid performing superfluous checkpoints, xlog switches, running-xact records when the system is idle. Unfortunately the check concerning running-xact records had a off-by-one error, leading to such records being potentially skipped when only a single record has been inserted since the last running-xact record. An alternative approach would have been to change GetLastImportantRecPtr()'s definition to point to the end of records, but that would make the checkpoint code more complicated. Author: Andres Freund Discussion: <a target="_blank" href="https://postgr.es/m/20170505012447.wsrympaxnfis6ojt@alap3.anarazel.de">https://postgr.es/m/20170505012447.wsrympaxnfis6ojt@alap3.anarazel.de</a> Backpatch: no, code only present in master <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/e6c44eef55cda493c759e926cecceb92186159b8">https://git.postgresql.org/pg/commitdiff/e6c44eef55cda493c759e926cecceb92186159b8</a></li>
+
+<li>Fix duplicated words in comment. Reported-By: Peter Geoghegan Discussion: <a target="_blank" href="https://postgr.es/m/CAH2-Wzn3rY2N0gTWndaApD113T+O8L6oz8cm7_F3P8y4awdoOg@mail.gmail.com">https://postgr.es/m/CAH2-Wzn3rY2N0gTWndaApD113T+O8L6oz8cm7_F3P8y4awdoOg@mail.gmail.com</a> Backpatch: no, only present in master <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/b58c433ef90be2f9752cd54561c07dae87e3819c">https://git.postgresql.org/pg/commitdiff/b58c433ef90be2f9752cd54561c07dae87e3819c</a></li>
+
+</ul>
+
+<h2>Correctifs en attente</h2>
+
+<p>Amit Langote sent in two revisions of a patch to clarify statement trigger behavior with inheritance.</p>
+
+<p>Andres Freund sent in a patch to fix initial logical decoding snapshat race condition.</p>
+
+<p>Peter Eisentraut sent in a patch to pg_ctl which makes failure to complete operation a nonzero exit and remove unnecessary pg_is_in_recovery calls in tests.</p>
+
+<p>Amit Langote sent in two revisions of a patch to emit "correct" range partition constraint expression.</p>
+
+<p>David Rowley sent in a patch to renames all wal_location functions to wal_lsn, renames all system view columns to use "lsn" instead of "location", renames function parameters to use "lsn" instead of "location", renames function parameters "wal_position" to "lsn", changes documentation to reflect the aforementioned changes, fixes a bug where docs claimed return type of pg_logical_slot_peek_changes.location was text, when it was pg_lsn, and change some places in the func.sgml where it was referring to the lsn as a "position" rather than "location".</p>
+
+<p>Amit Khandekar sent in another revision of a patch to enable UPDATEs of partition keys in declaratively partitioned tables.</p>
+
+<p>Pavel St&#283;hule sent in a patch to add a \gdesc option to psql.</p>
+
+<p>Peter Eisentraut sent in a patch to rename transaction log to write-ahead log.</p>
+
+<p>Haribabu Kommi sent in a patch to ensure that pg_basebackup treats STDOUT correctly on Windows.</p>
+
+<p>Rahila Syed sent in two more revisions of a patch to add support for default partitions in declaratively partitioned tables.</p>
+
+<p>Petr Jel&iacute;nek sent in a patch to fix statistics reporting in logical replication workers.</p>
+
+<p>Thomas Munro sent in a patch to allow transition tables in AFTER triggers in one relation only.</p>
+
+<p>Amul Sul sent in another revision of a patch to implement declarative hash partitioning.</p>
+
+<p>Marina Polyakova sent in two revisions of a patch to create the infrastructure for precalculating stable functions.</p>
+
+<p>&Aacute;lvaro Herrera sent in two more revisions of a patch to add a WITH clause to CREATE STATISTICS.</p>
+
+<p>Stas Kelvich sent in another revision of a patch to trim some logical replication ApplyContext bloat.</p>
+
+<p>Robert Haas sent in two revisions of a patch to improve PostgreSQL FDW abort behavior.</p>
+
+<p>Magnus Hagander sent in a patch to add pg_move_replication_slot().</p>
+
+<p>Nikita Glukhov sent in a patch to fix freeing of dangling IndexScanDesc.xs_hitup in GiST.</p>
+
+<p>Andres Freund sent in another revision of a patch to fix an off-by-one around GetLastImportantRecPtr.</p>
+
+<p>David Rowley sent in a patch to implement parallel nextpage batching.</p>
+
+<p>Thomas Munro sent in a patch to fix named tuplestore rescan.</p>
+
+<p>Heikki Linnakangas sent in a patch to remove support for password_encryption='off' / 'plain'.</p>
+
+<p>Dmitriy Sarafannikov sent in a patch to implement a new type of snapshot that accepts any non-vacuumable tuples.</p>
+
+<p>Petr Jel&iacute;nek sent in a patch to rework the options for logical replication.</p>
+
+<p>Alexander Korotkov sent in another revision of a patch to implement incremental sort.</p>
+
+<p>Petr Jel&iacute;nek sent in a patch to check connection info in ALTER SUBSCRIPTION.</p>
+
+<p>David Rowley sent in a doc patch to caution about CTE changes in the future, when the now-mandatory optimization fence may go away.</p>
+
+<p>Stephen Frost sent in a patch to fix ALL RLS policy using check.</p>
+
+<p>Petr Jel&iacute;nek sent in a patch to remove the NODROP SLOT option from DROP SUBSCRIPTION.</p>
+
+<p>David Rowley sent in a patch to use atomics for heap_parallelscan_nextpage().</p>
+
+<p>Bruce Momjian sent in another revision of a patch to update the release notes for PostgreSQL 10.</p>

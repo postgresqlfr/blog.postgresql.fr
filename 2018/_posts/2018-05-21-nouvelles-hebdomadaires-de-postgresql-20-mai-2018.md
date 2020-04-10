@@ -1,0 +1,196 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 20 mai 2018"
+author: "NBougain"
+redirect_from: "index.php?post/2018-05-21-nouvelles-hebdomadaires-de-postgresql-20-mai-2018 "
+---
+
+
+
+<h2>Correctifs appliqu&eacute;s</h2>
+
+<p>Tom Lane pushed:</p>
+
+<ul>
+
+<li>Doc: fix minor release-note typo. Liudmila Mantrova Discussion: <a target="_blank" href="https://postgr.es/m/d13458be-c4b9-0fd8-f333-c8de4d0c9120@postgrespro.ru">https://postgr.es/m/d13458be-c4b9-0fd8-f333-c8de4d0c9120@postgrespro.ru</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/60e2d9ab1437c8e4b12e7766198cf2e84f7d267e">https://git.postgresql.org/pg/commitdiff/60e2d9ab1437c8e4b12e7766198cf2e84f7d267e</a></li>
+
+<li>Fix type checking for support functions of parallel VARIADIC aggregates. The impact of VARIADIC on the combine/serialize/deserialize support functions of an aggregate wasn't thought through carefully. There is actually no impact, because variadicity isn't passed through to these functions (and it doesn't seem like it would need to be). However, lookup_agg_function was mistakenly told to check things as though it were passed through. The net result was that it was impossible to declare an aggregate that had both VARIADIC input and parallelism support functions. In passing, fix a runtime check in nodeAgg.c for the combine function's strictness to make its error message agree with the creation-time check. The previous message was actually backwards, and it doesn't seem like there's a good reason to have two versions of this message text anyway. Back-patch to 9.6 where parallel aggregation was introduced. Alexey Bashtanov; message fix by me Discussion: <a target="_blank" href="https://postgr.es/m/f86dde87-fef4-71eb-0480-62754aaca01b@imap.cc">https://postgr.es/m/f86dde87-fef4-71eb-0480-62754aaca01b@imap.cc</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/05ca21b878a9e483a4635ba4b23e0f45d5442fc3">https://git.postgresql.org/pg/commitdiff/05ca21b878a9e483a4635ba4b23e0f45d5442fc3</a></li>
+
+<li>Fix misprocessing of equivalence classes involving record_eq(). canonicalize_ec_expression() is supposed to agree with coerce_type() as to whether a RelabelType should be inserted to make a subexpression be valid input for the operators of a given opclass. However, it did the wrong thing with named-composite-type inputs to record_eq(): it put in a RelabelType to RECORDOID, which the parser doesn't. In some cases this was harmless because all code paths involving a particular equivalence class did the same thing, but in other cases this would result in failing to recognize a composite-type expression as being a member of an equivalence class that it actually is a member of. The most obvious bad effect was to fail to recognize that an index on a composite column could provide the sort order needed for a mergejoin on that column, as reported by Teodor Sigaev. I think there might be other, subtler, cases that result in misoptimization. It also seems possible that an unwanted RelabelType would sometimes get into an emitted plan --- but because record_eq and friends don't examine the declared type of their input expressions, that would not create any visible problems. To fix, just treat RECORDOID as if it were a polymorphic type, which in some sense it is. We might want to consider formalizing that a bit more someday, but for the moment this seems to be the only place where an IsPolymorphicType() test ought to include RECORDOID as well. This has been broken for a long time, so back-patch to all supported branches. Discussion: <a target="_blank" href="https://postgr.es/m/a6b22369-e3bf-4d49-f59d-0c41d3551e81@sigaev.ru">https://postgr.es/m/a6b22369-e3bf-4d49-f59d-0c41d3551e81@sigaev.ru</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/a11b3bd37f14386310f25e89529bd3de8cd64383">https://git.postgresql.org/pg/commitdiff/a11b3bd37f14386310f25e89529bd3de8cd64383</a></li>
+
+<li>Detoast plpgsql variables if they might live across a transaction boundary. Up to now, it's been safe for plpgsql to store TOAST pointers in its variables because the ActiveSnapshot for whatever query called the plpgsql function will surely protect such TOAST values from being vacuumed away, even if the owning table rows are committed dead. With the introduction of procedures, that assumption is no longer good in "non atomic" executions of plpgsql code. We adopt the slightly brute-force solution of detoasting all TOAST pointers at the time they are stored into variables, if we're in a non-atomic context, just in case the owning row goes away. Some care is needed to avoid long-term memory leaks, since plpgsql tends to run with CurrentMemoryContext pointing to its call-lifespan context, but we shouldn't assume that no memory is leaked by heap_tuple_fetch_attr. In plpgsql proper, we can do the detoasting work in the "eval_mcontext". Most of the code thrashing here is due to the need to add this capability to expandedrecord.c as well as plpgsql proper. In expandedrecord.c, we can't assume that the caller's context is short-lived, so make use of the short-term sub-context that was already invented for checking domain constraints. In view of this repurposing, it seems good to rename that variable and associated code from "domain_check_cxt" to "short_term_cxt". Peter Eisentraut and Tom Lane Discussion: <a target="_blank" href="https://postgr.es/m/5AC06865.9050005@anastigmatix.net">https://postgr.es/m/5AC06865.9050005@anastigmatix.net</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/2efc924180f096070d684a712d6c162b6ae0a5e7">https://git.postgresql.org/pg/commitdiff/2efc924180f096070d684a712d6c162b6ae0a5e7</a></li>
+
+<li>Make numeric power() handle NaNs according to the modern POSIX spec. In commit 6bdf1303b, we ensured that power()/^ for float8 would honor the NaN behaviors specified by POSIX standards released in this century, ie NaN ^ 0 = 1 and 1 ^ NaN = 1. However, numeric_power() was not touched and continued to follow the once-common behavior that every case involving NaN input produces NaN. For consistency, let's switch the numeric behavior to the modern spec in the same release that ensures that behavior for float8. (Note that while 6bdf1303b was initially back-patched, we later undid that, concluding that any behavioral change should appear only in v11.) Discussion: <a target="_blank" href="https://postgr.es/m/10898.1526421338@sss.pgh.pa.us">https://postgr.es/m/10898.1526421338@sss.pgh.pa.us</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/d1fc750b5199837a330c10d542191c8ab03a7dc8">https://git.postgresql.org/pg/commitdiff/d1fc750b5199837a330c10d542191c8ab03a7dc8</a></li>
+
+<li>MSVC builds must use a separate stamp file for copying generated headers. Commit bad51a49a tried to use a shortcut with just one stamp file recording the actions of generating the pg_*_d.h headers and copying them to the src/include/catalog/ directory. That doesn't work in all scenarios though, so we must use two stamp files like the Makefiles do. John Naylor Discussion: <a target="_blank" href="https://postgr.es/m/CANFyU944GdHr=puPbA78STnqr=8kgMrGF-VDHck6aO_-qNDALg@mail.gmail.com">https://postgr.es/m/CANFyU944GdHr=puPbA78STnqr=8kgMrGF-VDHck6aO_-qNDALg@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/a194106c1b4468c74dbf6e83d845be86239844aa">https://git.postgresql.org/pg/commitdiff/a194106c1b4468c74dbf6e83d845be86239844aa</a></li>
+
+<li>Small improvement for plpgsql regression test. Use DISCARD PLANS instead of a reconnect to force reconstruction of a cached plan; this corresponds more nearly to what people might actually do in practice. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/7d5b403b8d418742b734f85fda32b0eca8ee4113">https://git.postgresql.org/pg/commitdiff/7d5b403b8d418742b734f85fda32b0eca8ee4113</a></li>
+
+<li>Recognize that MSVC can support strtoll() and strtoull(). This is needed for full support of "long long" variables in ecpg, but the previous patch for bug #15080 (commits 51057feaa et al) missed it. In MSVC versions where the functions don't exist under those names, we can nonetheless use _strtoi64() and _strtoui64(). Like the previous patch, back-patch all the way. Dang Minh Huong Discussion: <a target="_blank" href="https://postgr.es/m/151935568942.1461.14623890240535309745@wrigleys.postgresql.org">https://postgr.es/m/151935568942.1461.14623890240535309745@wrigleys.postgresql.org</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/f586f8638929b54de9e7f6b65fe6916b8cee38fe">https://git.postgresql.org/pg/commitdiff/f586f8638929b54de9e7f6b65fe6916b8cee38fe</a></li>
+
+<li>Add some test coverage for ecpg's "long long" support. This will only actually exercise the "long long" code paths on platforms where "long" is 32 bits --- otherwise, the SQL bigint type maps to plain "long", and we will test that code path instead. But that's probably sufficient coverage, and anyway we weren't testing either code path before. Dang Minh Huong, tweaked a bit by me Discussion: <a target="_blank" href="https://postgr.es/m/151935568942.1461.14623890240535309745@wrigleys.postgresql.org">https://postgr.es/m/151935568942.1461.14623890240535309745@wrigleys.postgresql.org</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/dbccdd375b41618ca4ee3d1ea7109ab7f95d0865">https://git.postgresql.org/pg/commitdiff/dbccdd375b41618ca4ee3d1ea7109ab7f95d0865</a></li>
+
+<li>Hot-fix ecpg regression test for missing ecpg_config.h inclusion. I don't think this is really the best long-term answer, and in particular it doesn't fix the pre-existing hazard in sqltypes.h. But for the moment let's just try to make the buildfarm green again. Discussion: <a target="_blank" href="https://postgr.es/m/151935568942.1461.14623890240535309745@wrigleys.postgresql.org">https://postgr.es/m/151935568942.1461.14623890240535309745@wrigleys.postgresql.org</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/5e79405d82992efce15c27694f10fb4e1ac32657">https://git.postgresql.org/pg/commitdiff/5e79405d82992efce15c27694f10fb4e1ac32657</a></li>
+
+<li>Arrange to supply declarations for strtoll/strtoull if needed. Buildfarm member dromedary is still unhappy about the recently-added ecpg "long long" tests. The reason turns out to be that it includes "-ansi" in its CFLAGS, and in their infinite wisdom Apple have decided to hide the declarations of strtoll/strtoull in C89-compliant builds. (I find it pretty curious that they hide those function declarations when you can nonetheless declare a "long long" variable, but anyway that is their behavior, both on dromedary's obsolete macOS version and the newest and shiniest.) As a result, gcc assumes these functions return "int", leading naturally to wrong results. (Looking at dromedary's past build results, it's evident that this problem also breaks pg_strtouint64() on 32-bit platforms; but we evidently have no regression tests that exercise that function with values above 32 bits.) To fix, supply declarations for these functions when the platform provides the functions but not the declarations, using the same type of mechanism as we use for some other similar cases. Discussion: <a target="_blank" href="https://postgr.es/m/151935568942.1461.14623890240535309745@wrigleys.postgresql.org">https://postgr.es/m/151935568942.1461.14623890240535309745@wrigleys.postgresql.org</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/a6228128fc48c222953dfd41fd438522a184054c">https://git.postgresql.org/pg/commitdiff/a6228128fc48c222953dfd41fd438522a184054c</a></li>
+
+<li>Support platforms where strtoll/strtoull are spelled __strtoll/__strtoull. Ancient HPUX, for one, does this. We hadn't noticed due to the lack of regression tests that required a working strtoll. (I was slightly tempted to remove the other historical spelling, strto[u]q, since it seems we have no buildfarm members testing that case. But I refrained.) Discussion: <a target="_blank" href="https://postgr.es/m/151935568942.1461.14623890240535309745@wrigleys.postgresql.org">https://postgr.es/m/151935568942.1461.14623890240535309745@wrigleys.postgresql.org</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/06f66cff9e0b93db81db1595156b2aff8ba1786e">https://git.postgresql.org/pg/commitdiff/06f66cff9e0b93db81db1595156b2aff8ba1786e</a></li>
+
+<li>Assorted minor cleanups for bootstrap-data Perl scripts. FindDefinedSymbol was intended to take an array of possible include paths, but it never actually worked correctly for any but the first array element. Since there's no use-case for more than one path anyway, let's just simplify this code and its callers by redefining it as taking only one include path. Minor other code-beautification without functional effects, except that in one place we format the output as pgindent would do. John Naylor Discussion: <a target="_blank" href="https://postgr.es/m/CAJVSVGXM_n32hTTkircW4_K1LQFsJNb6xjs0pAP4QC0ZpyJfPQ@mail.gmail.com">https://postgr.es/m/CAJVSVGXM_n32hTTkircW4_K1LQFsJNb6xjs0pAP4QC0ZpyJfPQ@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/e7a808f947c66e2e2186c9495359865dadaf511a">https://git.postgresql.org/pg/commitdiff/e7a808f947c66e2e2186c9495359865dadaf511a</a></li>
+
+<li>printf("%lf") is not portable, so omit the "l". The "l" (ell) width spec means something in the corresponding scanf usage, but not here. While modern POSIX says that applying "l" to "f" and other floating format specs is a no-op, SUSv2 says it's undefined. Buildfarm experience says that some old compilers emit warnings about it, and at least one old stdio implementation (mingw's "ANSI" option) actually produces wrong answers and/or crashes. Discussion: <a target="_blank" href="https://postgr.es/m/21670.1526769114@sss.pgh.pa.us">https://postgr.es/m/21670.1526769114@sss.pgh.pa.us</a> Discussion: <a target="_blank" href="https://postgr.es/m/c085e1da-0d64-1c15-242d-c921f32e0d5c@dunslane.net">https://postgr.es/m/c085e1da-0d64-1c15-242d-c921f32e0d5c@dunslane.net</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/c6e846446d17db40883eed91fa448e65333a0ae1">https://git.postgresql.org/pg/commitdiff/c6e846446d17db40883eed91fa448e65333a0ae1</a></li>
+
+</ul>
+
+<p>&#65533;lvaro Herrera pushed:</p>
+
+<ul>
+
+<li>psql: have \d show FKs on partitioned tables. Commit 3de241dba86f missed to update psql to display foreign keys on partitioned tables. Add that. Reported-by: Amit Langote Author: Amit Langote Reviewed-by: &#65533;lvaro Herrera Discussion: <a target="_blank" href="https://postgr.es/m/a66879e5-636f-d4dd-b4a4-92bdca5a828f@lab.ntt.co.jp">https://postgr.es/m/a66879e5-636f-d4dd-b4a4-92bdca5a828f@lab.ntt.co.jp</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/93316299d6a185bed0a4be5376508fe2f7e6b2d6">https://git.postgresql.org/pg/commitdiff/93316299d6a185bed0a4be5376508fe2f7e6b2d6</a></li>
+
+<li>Don't allow partitioned index on foreign-table partitions. Creating indexes on foreign tables is already forbidden, but local partitioned indexes (commit 8b08f7d4820f) forgot to check for them. Add a preliminary check to prevent wasting time. Another school of thought says to allow the index to be created if it's not a unique index; but it's possible to do better in the future (enable indexing of foreign tables, somehow), so we avoid painting ourselves in a corner by rejecting all cases, to avoid future grief (a.k.a. backward incompatible changes). Reported-by: Arseny Sher Author: Amit Langote, &#65533;lvaro Herrera Discussion: <a target="_blank" href="https://postgr.es/m/87sh71cakz.fsf@ars-thinkpad">https://postgr.es/m/87sh71cakz.fsf@ars-thinkpad</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/4eaa53727542c39cca71b80e8ff3e1f742d64452">https://git.postgresql.org/pg/commitdiff/4eaa53727542c39cca71b80e8ff3e1f742d64452</a></li>
+
+</ul>
+
+<p>Magnus Hagander pushed:</p>
+
+<ul>
+
+<li>Fix file paths in comments. Author: Daniel Gustafsson &lt;daniel@yesql.se&gt; <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/fc2a41e23e10f2338be4907f71c277ea09526680">https://git.postgresql.org/pg/commitdiff/fc2a41e23e10f2338be4907f71c277ea09526680</a></li>
+
+<li>Fix error message on short read of pg_control. Instead of saying "error: success", indicate that we got a working read but it was too short. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/cfb758b6d9c1df58fb1dfd5d3f6e70393fb17869">https://git.postgresql.org/pg/commitdiff/cfb758b6d9c1df58fb1dfd5d3f6e70393fb17869</a></li>
+
+</ul>
+
+<p>Bruce Momjian pushed:</p>
+
+<ul>
+
+<li>doc: update PG 11 release notes with suggested changes. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/cf9c75ccea0bc15ce54c6fb017cd3edba03da743">https://git.postgresql.org/pg/commitdiff/cf9c75ccea0bc15ce54c6fb017cd3edba03da743</a></li>
+
+<li>doc: clarify SCRAM channel binding. Discussion: <a target="_blank" href="https://postgr.es/m/20180514231020.GB1600@paquier.xyz">https://postgr.es/m/20180514231020.GB1600@paquier.xyz</a> Reviewed-by: Michael Paquier <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/185f4f84d5952e5692bd2712dd32288fcbb7fa71">https://git.postgresql.org/pg/commitdiff/185f4f84d5952e5692bd2712dd32288fcbb7fa71</a></li>
+
+<li>docs: update PG 11 release notes based on feedback. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/3122e320913db0288d0b96a7eb65401962c4781b">https://git.postgresql.org/pg/commitdiff/3122e320913db0288d0b96a7eb65401962c4781b</a></li>
+
+<li>doc: adjust Extended Query PG 11 release note item. Reported-by: Tatsuo Ishii <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/3b07f6dadb359e88c5a4b8375765d2c10d9eabce">https://git.postgresql.org/pg/commitdiff/3b07f6dadb359e88c5a4b8375765d2c10d9eabce</a></li>
+
+<li>docs: PG 11 rel notes, 'ps' display/background worker item. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/7a4a37542311720e0c4e47dc0e7a94254eaf47bf">https://git.postgresql.org/pg/commitdiff/7a4a37542311720e0c4e47dc0e7a94254eaf47bf</a></li>
+
+<li>docs: add space in PG 11 release notes, huge/large. Reported-by: Tatsuo Ishii <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/6bd1b4c31b56b5d0bbd50c6df7f49c5812174a43">https://git.postgresql.org/pg/commitdiff/6bd1b4c31b56b5d0bbd50c6df7f49c5812174a43</a></li>
+
+<li>doc: PG 11 release notes adjustments. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/b2b82228ee5dc08f0341b5480546479c19e84baf">https://git.postgresql.org/pg/commitdiff/b2b82228ee5dc08f0341b5480546479c19e84baf</a></li>
+
+<li>doc: fix PG 11 attribution. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/91ff29f036349f07b4b48856667735e51ef795a1">https://git.postgresql.org/pg/commitdiff/91ff29f036349f07b4b48856667735e51ef795a1</a></li>
+
+</ul>
+
+<p>Robert Haas pushed:</p>
+
+<ul>
+
+<li>Improve comment in get_partition_dispatch_recurse. David Rowley, reviewed by Amit Langote, and revised a bit by me. Discussion: <a target="_blank" href="http://postgr.es/m/CAKJS1f9yyimYyFzbHM4EwE+tkj4jvrHqSH0H4S4Kbas=UFpc9Q@mail.gmail.com">http://postgr.es/m/CAKJS1f9yyimYyFzbHM4EwE+tkj4jvrHqSH0H4S4Kbas=UFpc9Q@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/09b12d52db1cf1a4c72d876f3fb6c9d06919e51a">https://git.postgresql.org/pg/commitdiff/09b12d52db1cf1a4c72d876f3fb6c9d06919e51a</a></li>
+
+<li>Pass the correct PlannerInfo to PlanForeignModify/PlanDirectModify. Previously, we passed the toplevel PlannerInfo, but we actually want to pass the relevant subroot. One problem with passing the toplevel PlannerInfo is that the FDW which wants to push down an UPDATE or DELETE against a join won't find the relevant joinrel there. As of commit 1bc0100d270e5bcc980a0629b8726a32a497e788, postgres_fdw tries to do exactly this and can be made to fail an assertion as a result. It's possible that this should be regarded as a bug fix and back-patched to earlier releases, but for lack of a test case that fails in earlier releases, no back-patch for now. Etsuro Fujita, reviewed by Amit Langote. Discussion: <a target="_blank" href="http://postgr.es/m/5AF43E02.30000@lab.ntt.co.jp">http://postgr.es/m/5AF43E02.30000@lab.ntt.co.jp</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/7fc7dac1a711d0dbd01d2daf6dc97d27d6c6409c">https://git.postgresql.org/pg/commitdiff/7fc7dac1a711d0dbd01d2daf6dc97d27d6c6409c</a></li>
+
+<li>Further adjust comment in get_partition_dispatch_recurse. In editing 09b12d52db1cf1a4c72d876f3fb6c9d06919e51a I made it wrong; fix that and try to more clearly explain the situation. Patch by me, reviewed by David Rowley and Amit Langote Discussion: <a target="_blank" href="http://postgr.es/m/CA+TgmobAq+mA5hzm0a5OS38qQY5758DDDGqa3sBJN4hvir-H9w@mail.gmail.com">http://postgr.es/m/CA+TgmobAq+mA5hzm0a5OS38qQY5758DDDGqa3sBJN4hvir-H9w@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/b949bbcb7eaf3719b541cbae99ef6c4b031174a1">https://git.postgresql.org/pg/commitdiff/b949bbcb7eaf3719b541cbae99ef6c4b031174a1</a></li>
+
+</ul>
+
+<p>Andrew Gierth pushed:</p>
+
+<ul>
+
+<li>doc: fix description of backward_scan. The description of the index property backward_scan was incorrect and misleading; rectify. Backpatch to 9.6 where the amutils functionality was introduced. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/93f6c6328dcf74d1e42162e8f712c23fe16a8cf8">https://git.postgresql.org/pg/commitdiff/93f6c6328dcf74d1e42162e8f712c23fe16a8cf8</a></li>
+
+</ul>
+
+<p>Peter Eisentraut pushed:</p>
+
+<ul>
+
+<li>Message wording and pluralization improvements. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/9effb63e0dd12b0704cd8e11106fe08ff5c9d685">https://git.postgresql.org/pg/commitdiff/9effb63e0dd12b0704cd8e11106fe08ff5c9d685</a></li>
+
+<li>Fix whitespace. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/6b30d1386fa37d8ae45e2d30e22771244afd13c3">https://git.postgresql.org/pg/commitdiff/6b30d1386fa37d8ae45e2d30e22771244afd13c3</a></li>
+
+</ul>
+
+<p>Andrew Dunstan pushed:</p>
+
+<ul>
+
+<li>Prevent possibly spurious error when running perl -cw. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/3dacd9bf32873c80045a2b758d64c031d70dac83">https://git.postgresql.org/pg/commitdiff/3dacd9bf32873c80045a2b758d64c031d70dac83</a></li>
+
+</ul>
+
+<p>Stephen Frost pushed:</p>
+
+<ul>
+
+<li>Fix for globals.c- c.h must come first. Commit da9b580 mistakenly put a system header before postgres.h (which includes c.h). That can cause portability issues and broke (at least) builds with older Windows compilers. Discovered by Mark Dilger. Discussion: <a target="_blank" href="https://postgr.es/m/BF04A27A-D132-4927-A80A-BAD18695E954@gmail.com">https://postgr.es/m/BF04A27A-D132-4927-A80A-BAD18695E954@gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/e2b83ff556deb9a0001bdf6b511f8cfc9189ac10">https://git.postgresql.org/pg/commitdiff/e2b83ff556deb9a0001bdf6b511f8cfc9189ac10</a></li>
+
+</ul>
+
+<h2>Correctifs en attente</h2>
+
+<p>Micha&#65533;l Paquier sent in a patch to ensure that temporary WAL segments files are cleaned up after an instance crash.</p>
+
+<p>Micha&#65533;l Paquier sent in a patch to fix a bug that manifested as a PANIC during crash recovery of a recently promoted standby.</p>
+
+<p>Ashutosh Bapat sent in another revision of a patch to improve the patition matching algorithm for partition-wise joins.</p>
+
+<p>Simon Muller sent in a patch to enable COPY ... TO to emit a HEADER row in formats other than CSV.</p>
+
+<p>Ashutosh Bapat sent in three more revisions of a patch to fix a bug which manifested as expression errors with "FOR UPDATE" and postgres_fdw with partition wise join enabled.</p>
+
+<p>Kyotaro HORIGUCHI sent in another revision of a patch to allow a wait event set to be registered to a resource owner, add infrastructure for asynchronous execution, and use same in the PostgreSQL FDW.</p>
+
+<p>Micha&#65533;l Paquier sent in another revision of a patch to extend lookup routines for FDW and foreign server with NULL handling, refactor the routines for subscription and publication lookups, and eliminate user-visible cache lookup errors for objaddr SQL functions.</p>
+
+<p>David Rowley sent in a patch to ensure that total_pages is calculated after partition pruning and constraint exclusion.</p>
+
+<p>Nikita Glukhov sent in a patch to disable backward scans on indices that do not support it.</p>
+
+<p>Takeshi Ideriha sent in a patch to ensure that log_min_messages shows log level DEBUG2 correctly.</p>
+
+<p>Aleksandr Parfenov sent in another revision of a patch to optimze usage of immutable functions as relations.</p>
+
+<p>Konstantin Knizhnik sent in another revision of a patch to add a compression option to libpq.</p>
+
+<p>Heikki Linnakangas sent in a patch to improve memory unit GUC range checks.</p>
+
+<p>Artur Zakirov sent in another revision of a patch to implement shared Ispell dictionaries.</p>
+
+<p>Alexander Kuzmenkov sent in a patch to remove unneeded self-joins.</p>
+
+<p>Amit Langote sent in a patch to normalize the spelling of things around partitioning, in particular changing things that say "partition" to "partitioned" where that makes sense.</p>
+
+<p>Daisuke Higuchi sent in a patch to fix an issue that manifested as cancellation of significant digits in ECPG.</p>
+
+<p>Andrey Borodin sent in another revision of a patch to include GiST in VACUUM.</p>
+
+<p>Paul and Richard Guo sent in a patch to fix a pg_upgrade test failure.</p>
+
+<p>Kyotaro HORIGUCHI sent in a patch to reject an invalid standby.</p>
+
+<p>Amit Langote sent in a patch to propagate child joinrels to parent root.</p>
+
+<p>Paul Guo sent in two revisions of a patch to use access() instead of BasicOpenFile() + close() to check file existence in GetNewRelFileNode().</p>
+
+<p>Peter Eisentraut sent in a patch to allow functions and procedures with the same name.</p>
+
+<p>Kyotaro HORIGUCHI sent in a patch to fix pg_logical replication slot advance.</p>
+
+<p>Sho Kato sent in a patch to add the operation of freeing output SQLDA to the ECPG documentation.</p>
+
+<p>Michael Banck sent in a patch to remove the short (-k) option from pg_basebackup, leaving in place the longer version, --no-verify-checksums.</p>
+
+<p>Andres Freund sent in a patch to fix some issues that arise in corner case failures of fsync().</p>
+
+<p>John Naylor sent in two revisions of a patch to add a pg_language lookup and replace the /ad hoc/ format for conversion functions with a more uniform one.</p>
+
+<p>John Naylor sent in a patch to generate bootstrap entries for array types.</p>
+
+<p>Micha&#65533;l Paquier sent in a patch to fix some error handling for read() and errno.</p>
+
+<p>Andrew Gierth sent in two revisions of a patch to fix some FETCH FIRST syntax issues.</p>

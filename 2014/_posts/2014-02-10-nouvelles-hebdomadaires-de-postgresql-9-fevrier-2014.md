@@ -1,0 +1,238 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 9 février 2014"
+author: "NBougain"
+redirect_from: "index.php?post/2014-02-10-nouvelles-hebdomadaires-de-postgresql-9-fevrier-2014 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Fujii Masao a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Make pg_basebackup skip temporary statistics files. The temporary statistics files don't need to be included in the backup because they are always reset at the beginning of the archive recovery. This patch changes pg_basebackup so that it skips all files located in $PGDATA/pg_stat_tmp or the directory specified by stats_temp_directory parameter. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3e8554a54a95425e93fe49025ccda499a1a93173">http://git.postgresql.org/pg/commitdiff/3e8554a54a95425e93fe49025ccda499a1a93173</a></li>
+
+<li>Fix comparison of an array of characters with zero to compare with '\0' instead. Report from Andres Freund. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/489e6ac5a1a4ca7e4ca7683a86ccd8a5d5e3eb59">http://git.postgresql.org/pg/commitdiff/489e6ac5a1a4ca7e4ca7683a86ccd8a5d5e3eb59</a></li>
+
+</ul>
+
+<p>Andrew Dunstan a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In json code, clean up temp memory contexts after processing. Craig Ringer. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d3ee45152b198ac269b1bc055927ef7aabf85a49">http://git.postgresql.org/pg/commitdiff/d3ee45152b198ac269b1bc055927ef7aabf85a49</a></li>
+
+<li>Alphabeticize list in OBJS definition in utils/adt Makefile. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/45e1b6c4c490a173208f98f4babc03b8fc69439e">http://git.postgresql.org/pg/commitdiff/45e1b6c4c490a173208f98f4babc03b8fc69439e</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Adjust pg_sleep_for/pg_sleep_until to use clock_timestamp. Otherwise, pg_sleep_until does the wrong thing in a multi-statement transaction. Julien Rouhaud 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/80353f35285f89382cea7fc543580827f0465e69">http://git.postgresql.org/pg/commitdiff/80353f35285f89382cea7fc543580827f0465e69</a></li>
+
+<li>Document a few more regression test hazards. Michael Paquier, reviewed by Christian Kruse 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/65a193ebbb5e94b87773fbcbf8909ff8044734ab">http://git.postgresql.org/pg/commitdiff/65a193ebbb5e94b87773fbcbf8909ff8044734ab</a></li>
+
+<li>Rephrase text to avoid links in regress.sgml. Otherwise, the standalone regress_README build gets unhappy. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c1fe08eb2f74d2a84e9dd48d54aa836ab74b3f94">http://git.postgresql.org/pg/commitdiff/c1fe08eb2f74d2a84e9dd48d54aa836ab74b3f94</a></li>
+
+<li>Minor improvements to replication slot documentation. Fix a thinko pointed out by Jeff Davis, and convert a couple of other references into links. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/14aa601f50edefb18f65956a4b32131b9c9ea2da">http://git.postgresql.org/pg/commitdiff/14aa601f50edefb18f65956a4b32131b9c9ea2da</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix *-qualification of named parameters in SQL-language functions. Given a composite-type parameter named x, "$1.*" worked fine, but "x.*" not so much. This has been broken since named parameter references were added in commit 9bff0780cf5be2193a5bad0d3df2dbe143085264, so patch back to 9.2. Per bug #9085 from Hardy Falk. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0def2573c5f0ff127d0c7dc12ec7da56ae6fb7fe">http://git.postgresql.org/pg/commitdiff/0def2573c5f0ff127d0c7dc12ec7da56ae6fb7fe</a></li>
+
+<li>Fix lexing of U&amp; sequences just before EOF. Commit a5ff502fceadc7c203b0d7a11b45c73f1b421f69 was a brick shy of a load in the backend lexer too, not just psql. Per further testing of bug #9068. In passing, improve related comments. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0c2338abbb17b7b319f36a73d8db77735346804f">http://git.postgresql.org/pg/commitdiff/0c2338abbb17b7b319f36a73d8db77735346804f</a></li>
+
+<li>Improve connection-failure error handling in contrib/postgres_fdw. postgres_fdw tended to say "unknown error" if it tried to execute a command on an already-dead connection, because some paths in libpq just return a null PGresult for such cases. Out-of-memory might result in that, too. To fix, pass the PGconn to pgfdw_report_error, and look at its PQerrorMessage() string if we can't get anything out of the PGresult. Also, fix the transaction-exit logic to reliably drop a dead connection. It was attempting to do that already, but it assumed that only connection cache entries with xact_depth &gt; 0 needed to be examined. The folly in that is that if we fail while issuing START TRANSACTION, we'll not have bumped xact_depth. (At least for the case I was testing, this fix masks the other problem; but it still seems like a good idea to have the PGconn fallback logic.) Per investigation of bug #9087 from Craig Lucas. Backpatch to 9.3 where this code was introduced. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/00d4f2af8bd6a1b9db2f676cc76b64d98ace99fb">http://git.postgresql.org/pg/commitdiff/00d4f2af8bd6a1b9db2f676cc76b64d98ace99fb</a></li>
+
+<li>Remove unnecessary relcache flushes after changing btree metapages. These flushes were added in my commit d2896a9ed, which added the btree logic that keeps a cached copy of the index metapage data in index relcache entries. The idea was to ensure that other backends would promptly update their cached copies after a change. However, this is not really necessary, since _bt_getroot() has adequate defenses against believing a stale root page link, and _bt_getrootheight() doesn't have to be 100% right. Moreover, if it were necessary, a relcache flush would be an unreliable way to do it, since the sinval mechanism believes that relcache flush requests represent transactional updates, and therefore discards them on transaction rollback. Therefore, we might as well drop these flush requests and save the time to rebuild the whole relcache entry after a metapage change. If we ever try to support in-place truncation of btree indexes, it might be necessary to revisit this issue so that _bt_getroot() can't get caught by trying to follow a metapage link to a page that no longer exists. A possible solution to that is to make use of an smgr, rather than relcache, inval request to force other backends to discard their cached metapages. But for the moment this is not worth pursuing. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ac8bc3b6e4a28cf7cd33fe11866d72f6deb2a38f">http://git.postgresql.org/pg/commitdiff/ac8bc3b6e4a28cf7cd33fe11866d72f6deb2a38f</a></li>
+
+<li>Assert(IsTransactionState()) in RelationIdGetRelation(). Commit 42c80c696e9c8323841180029cc62741c21bd356 added an Assert(IsTransactionState()) in SearchCatCache(), to catch any code that thought it could do a catcache lookup outside transactions. Extend the same idea to relcache lookups. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ddfc9cb054abed4d08cc2709c9b2197dab96f449">http://git.postgresql.org/pg/commitdiff/ddfc9cb054abed4d08cc2709c9b2197dab96f449</a></li>
+
+<li>In RelationClearRelation, postpone cache reload if !IsTransactionState(). We may process relcache flush requests during transaction startup or shutdown. In general it's not terribly safe to do catalog access at those times, so the code's habit of trying to immediately revalidate unflushable relcache entries is risky. Although there are no field trouble reports that are positively traceable to this, we have been able to demonstrate failure of the assertions recently added in RelationIdGetRelation() and SearchCatCache(). On the other hand, it seems safe to just postpone revalidation of the cache entry until we're inside a valid transaction. The one case where this is questionable is where we're exiting a subtransaction and the outer transaction is holding the relcache entry open --- but if we made any significant changes to the rel inside such a subtransaction, we've got problems anyway. There are mechanisms in place to prevent that (to wit, locks for cross-session cases and CheckTableNotInUse() for intra-session cases), so let's trust to those mechanisms to keep us out of trouble. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8de3e410faa06ab20ec1aa6d0abb0a2c040261ba">http://git.postgresql.org/pg/commitdiff/8de3e410faa06ab20ec1aa6d0abb0a2c040261ba</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>PL/Perl: Fix compiler warning. The code was assigning a (Datum) 0 to a void pointer. That creates a warning from clang 3.4. It was probably a thinko to begin with. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4e182361804f8688cef953c998e24134e606aea4">http://git.postgresql.org/pg/commitdiff/4e182361804f8688cef953c998e24134e606aea4</a></li>
+
+<li>Fix whitespace 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f65233755ca5d01f49137b37f6a78b46acc83484">http://git.postgresql.org/pg/commitdiff/f65233755ca5d01f49137b37f6a78b46acc83484</a></li>
+
+<li>doc: Disable indentation of XHTML output. Indenting the XHTML output can lead to incorrect rendering. This only affects the build via XSLT. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f31005e340c55948df6ab64370ce5cf202935f89">http://git.postgresql.org/pg/commitdiff/f31005e340c55948df6ab64370ce5cf202935f89</a></li>
+
+<li>Mark some more variables as static or include the appropriate header. Detected by clang's -Wmissing-variable-declarations. From: Andres Freund &lt;andres@anarazel.de&gt; 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/66c04c981dfe7c1d1e633dddcecf01982d0bde65">http://git.postgresql.org/pg/commitdiff/66c04c981dfe7c1d1e633dddcecf01982d0bde65</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix thinko in comment. Amit Langote 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e001030c2711c0fb65cf72813f16a8eb26483c16">http://git.postgresql.org/pg/commitdiff/e001030c2711c0fb65cf72813f16a8eb26483c16</a></li>
+
+<li>Speed up "rare &amp; frequent" type GIN queries. If you have a GIN query like "rare &amp; frequent", we currently fetch all the items that match either rare or frequent, call the consistent function for each item, and let the consistent function filter out items that only match one of the terms. However, if we can deduce that "rare" must be present for the overall qual to be true, we can scan all the rare items, and for each rare item, skip over to the next frequent item with the same or greater TID. That greatly speeds up "rare &amp; frequent" type queries. To implement that, introduce the concept of a tri-state consistent function, where the 3rd value is MAYBE, indicating that we don't know if that term is present. Operator classes only provide a boolean consistent function, so we simulate the tri-state consistent function by calling the boolean function several times, with the MAYBE arguments set to all combinations of TRUE and FALSE. Testing all combinations is only feasible for a small number of MAYBE arguments, but it is envisioned that we'll provide a way for operator classes to provide a native tri-state consistent function, which can be much more efficient. But that is not included in this patch. We were already using that trick to for lossy pages, calling the consistent function with the lossy entry set to TRUE and FALSE. Now that we have the tri-state consistent function, use it for lossy pages too. Alexander Korotkov, with fair amount of refactoring by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/dbc649fd773e7e16458bfbec2611bf15f4355bc4">http://git.postgresql.org/pg/commitdiff/dbc649fd773e7e16458bfbec2611bf15f4355bc4</a></li>
+
+<li>Initialize the entryRes array between each call to triConsistent. The shimTriConstistentFn, which calls the opclass's consistent function with all combinations of TRUE/FALSE for any MAYBE argument, modifies the entryRes array passed by the caller. Change startScanKey to re-initialize it between each call to accommodate that. It's actually a bad habit by shimTriConsistentFn to modify its argument. But the only caller that doesn't already re-initialize the entryRes array was startScanKey, and it's easy for startScanKey to do so. Add a comment to shimTriConsistentFn about that. Note: this does not give a free pass to opclass-provided consistent functions to modify the entryRes argument; shimTriConsistent assumes that they don't, even though it does it itself. While at it, refactor startScanKey to allocate the requiredEntries and additionalEntries after it knows exactly how large they need to be. Saves a little bit of memory, and looks nicer anyway. Per complaint by Tom Lane, buildfarm and the pg_trgm regression test. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6aa2bdf6a01ce099e315cb313396ca4b8415321b">http://git.postgresql.org/pg/commitdiff/6aa2bdf6a01ce099e315cb313396ca4b8415321b</a></li>
+
+</ul>
+
+<p>Magnus Hagander a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Avoid printing uninitialized filename variable in verbose mode. When using verbose mode for pg_basebackup, in tar format sent to stdout, we'd print an unitialized buffer as the filename. Reported by Pontus Lundkvist 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/01025d80a16c747641386e2909deb81e2f9423a6">http://git.postgresql.org/pg/commitdiff/01025d80a16c747641386e2909deb81e2f9423a6</a></li>
+
+<li>Limit pg_basebackup progress output to 1/second. This prevents pg_basebackup from generating excessive output when dumping large clusters. The status is now updated once / second, still making it possible to see that there is progress happening, but limiting the total bandwidth. Mika Eloranta, reviewed by Sawada Masahiko and Oskari Saarenmaa 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8198a321c9ea2072c5acde438f4d19638e04f6f2">http://git.postgresql.org/pg/commitdiff/8198a321c9ea2072c5acde438f4d19638e04f6f2</a></li>
+
+</ul>
+
+<p>Stephen Frost a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Focus on ftello result &lt; 0 instead of errno. Rather than reset errno (or just hope that its cleared already), check just the result of the ftello for &lt; 0 to determine if there was an issue. Oversight by me, pointed out by Tom. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5e8e794e3be9fbeddf6f2e2c0515dd0f04c784ec">http://git.postgresql.org/pg/commitdiff/5e8e794e3be9fbeddf6f2e2c0515dd0f04c784ec</a></li>
+
+<li>Minor pg_dump improvements. Improve pg_dump by checking results on various fgetc() calls which previously were unchecked, ditto for ftello. Also clean up a couple of very minor memory leaks by waiting to allocate structures until after the initial check(s). Issues spotted by Coverity. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cfa1b4a711dd03f824a9c3ab50911e61419d1eeb">http://git.postgresql.org/pg/commitdiff/cfa1b4a711dd03f824a9c3ab50911e61419d1eeb</a></li>
+
+<li>Further pg_dump / ftello improvements. Make ftello error-checking consistent to all calls and remove a bit of ftello-related code which has been #if 0'd out since 2001. Note that we are not concerned with the ftello() call under snprintf() failing as it is just building a string to call exit_horribly() with; printing -1 in such a case is fine. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/dfb1e9bdc0d0a506899b11038c7fce9631cac9fe">http://git.postgresql.org/pg/commitdiff/dfb1e9bdc0d0a506899b11038c7fce9631cac9fe</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>No one was disappointed this week</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Kyotaro HORIGUCHI sent in another revision of a patch make UNION ALL on partitioned tables use indices.</li>
+
+<li>Rajeev Rastogi sent in another revision of a patch to fix a bug where the PostgreSQL Service on Windows does not start if data directory given is relative path.</li>
+
+<li>Antonin Houska sent in another revision of a patch to allow throttling backups.</li>
+
+<li>Gurjeet Singh sent in a patch to create a pg_hibernate, which enables hibernation of PostgreSQL shared buffers.</li>
+
+<li>Bruce Momjian sent in a patch to make pg_upgrade allocate and use memory more efficiently.</li>
+
+<li>Christian Kruse sent in two more revisions of a patch to show the process IDs of processes holding a lock, and show relation and tuple info for a lock to acquire.</li>
+
+<li>Kyotaro HORIGUCHI sent in a patch to fix a bug in handling of non-supported IPv6.</li>
+
+<li>Michael Paquier sent in four revisions of a patch to add a XLogRecPtr/LSN data type.</li>
+
+<li>Alvaro Herrera sent in two more revisions of a patch to add CREATE support to event triggers.</li>
+
+<li>Christian Kruse sent in two more revisions of a patch to show xid and xmin in pg_stat_activity and pg_stat_replication.</li>
+
+<li>Alexander Korotkov and Heikki Linnakangas traded patches to add a "fast scan" option for GIN.</li>
+
+<li>MauMau sent in another revision of a patch to fix a bug where PostgreSQL fails to start on Windows if it crashes after tablespace creation.</li>
+
+<li>Ronan Dunklau sent in another revision of a patch to make it possible to create triggers on foreign tables.</li>
+
+<li>Heikki Linnakangas sent in another revision of a patch to fix an issue with failure while inserting parent tuple to B-tree.</li>
+
+<li>Amit Kapila and Heikki Linnakangas traded patches to improve performance by reducing WAL for update operations.</li>
+
+<li>Jeremy Harris sent in three revisions of a patch to improve performance in the transition to external sort.</li>
+
+<li>SAWADA Masahiko sent in a patch to add 'dml' as a possible value for log_statement.</li>
+
+<li>Emre Hasegeli sent in another revision of a patch to add GiST support for inet datatypes.</li>
+
+<li>Andrew Dunstan sent in another revision of a patch to implement jsonb and nested hstore. Erik Rijkers sent in patches to update the documentation for same.</li>
+
+<li>Laurenz Albe sent in a patch to the psql documentation to bring it into line with recent changes in how encoding is handled.</li>
+
+<li>Etsuro Fujita sent in another revision of a patch to add INHERIT support for foreign tables.</li>
+
+<li>Kaigai Kouhei sent in another revision of a patch to add cache-only scans.</li>
+
+<li>Amit Kapila sent in another revision of a patch to allow retaining dynamic shared memory segments for the postmaster lifetime.</li>
+
+<li>Andres Freund sent in another revision of a patch to support logical changeset extraction.</li>
+
+<li>Andres Freund sent in another revision of a patch to allow escaping of option values for options passed at connection start.</li>
+
+<li>Peter Eisentraut sent in another revision of a patch to add tests for client programs.</li>
+
+<li>Tom Lane sent in a patch to remove some legacy silliness from the document build.</li>
+
+<li>Craig Ringer, Tom Lane, and Marco Atzeri traded patches to fix the cygwin build.</li>
+
+<li>Hardy Falk sent in a patch to speed up duplicate elimination in NOTIFY.</li>
+
+<li>Magnus Hagander sent in a patch to ensure that the streaming xlog process of pg_basebackup dies when when the foreground process does.</li>
+
+<li>Pavel Stehule sent in another revision of a patch to enable PL/pgsql to have multiple plugins.</li>
+
+</ul>

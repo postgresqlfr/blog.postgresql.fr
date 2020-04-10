@@ -1,0 +1,158 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 4 novembre 2012"
+author: "NBougain"
+redirect_from: "index.php?post/2012-11-09-nouvelles-hebdomadaires-de-postgresql-4-novembre-2012 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Kevin Grittner a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Correct predicate locking for DROP INDEX CONCURRENTLY. For the non-concurrent case there is an AccessExclusiveLock lock on both the index and the heap at a time during which no other process is using either, before which the index is maintained and used for scans, and after which the index is no longer used or maintained. Predicate locks can safely be moved from the index to the related heap relation under the protection of these locks. This was done prior to the introductin of DROP INDEX CONCURRENTLY and continues to be done for non-concurrent index drops. For concurrent index drops, the predicate locks must be moved when there are no index scans in progress on that index and no more can subsequently start, and before heap inserts stop maintaining the index. As long as these conditions are guaranteed when the TransferPredicateLocksToHeapRelation() function is called, stronger locks are not needed for correctness. Kevin Grittner based on questions by Tom Lane in reviewing the DROP INDEX CONCURRENTLY patch and in cooperation with Andres Freund and Simon Riggs. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4c9d0901f135d724a9f3cfa4140a5afd44b10f08">http://git.postgresql.org/pg/commitdiff/4c9d0901f135d724a9f3cfa4140a5afd44b10f08</a></li>
+
+<li>Throw error if expiring tuple is again updated or deleted. This prevents surprising behavior when a FOR EACH ROW trigger BEFORE UPDATE or BEFORE DELETE directly or indirectly updates or deletes the the old row. Prior to this patch the requested action on the row could be silently ignored while all triggered actions based on the occurence of the requested action could be committed. One example of how this could happen is if the BEFORE DELETE trigger for a "parent" row deleted "children" which had trigger functions to update summary or status data on the parent. This also prevents similar surprising problems if the query has a volatile function which updates a target row while it is already being updated. There are related issues present in FOR UPDATE cursors and READ COMMITTED queries which are not handled by this patch. These issues need further evalution to determine what change, if any, is needed. Where the new error messages are generated, in most cases the best fix will be to move code from the BEFORE trigger to an AFTER trigger. Where this is not feasible, the trigger can avoid the error by re-issuing the triggering statement and returning NULL. Documentation changes will be submitted in a separate patch. Kevin Grittner and Tom Lane with input from Florian Pflug and Robert Haas, based on problems encountered during conversion of Wisconsin Circuit Court trigger logic to plpgsql triggers. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6868ed7491b7ea7f0af6133bb66566a2f5fe5a75">http://git.postgresql.org/pg/commitdiff/6868ed7491b7ea7f0af6133bb66566a2f5fe5a75</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add context info to OAT_POST_CREATE security hook ... and have sepgsql use it to determine whether to check permissions during certain operations. Indexes that are being created as a result of REINDEX, for instance, do not need to have their permissions checked; they were already checked when the index was created. Author: KaiGai Kohei, slightly revised by me 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f4c4335a4aaf5f2ee6e741cdf4f5c8e338d86a2f">http://git.postgresql.org/pg/commitdiff/f4c4335a4aaf5f2ee6e741cdf4f5c8e338d86a2f</a></li>
+
+<li>Fix ALTER EXTENSION / SET SCHEMA. In its original conception, it was leaving some objects into the old schema, but without their proper pg_depend entries; this meant that the old schema could be dropped, causing future pg_dump calls to fail on the affected database. This was originally reported by Jeff Frost as #6704; there have been other complaints elsewhere that can probably be traced to this bug. To fix, be more consistent about altering a table's subsidiary objects along the table itself; this requires some restructuring in how tables are relocated when altering an extension -- hence the new AlterTableNamespaceInternal routine which encapsulates it for both the ALTER TABLE and the ALTER EXTENSION cases. There was another bug lurking here, which was unmasked after fixing the previous one: certain objects would be reached twice via the dependency graph, and the second attempt to move them would cause the entire operation to fail. Per discussion, it seems the best fix for this is to do more careful tracking of objects already moved: we now maintain a list of moved objects, to avoid attempting to do it twice for the same object. Authors: Alvaro Herrera, Dimitri Fontaine Reviewed by Tom Lane 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/04f28bdb8477ad48c7f9987950595764eae3218e">http://git.postgresql.org/pg/commitdiff/04f28bdb8477ad48c7f9987950595764eae3218e</a></li>
+
+<li>Fix erroneous choices of segNo variables. Commit dfda6eba (which changed segment numbers to use a single 64 bit variable instead of log/seg) introduced a couple of bogus choices of exactly which log segment number variable to use in each case. This is currently pretty harmless; in one place, the bogus number was only being used in an error message for a pretty unlikely condition (failure to fsync a WAL segment file). In the other, it was using a global variable instead of the local variable; but all callsites were passing the value of the global variable anyway. No need to backpatch because that commit is not on earlier branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9b8dd7e8aa19e6145a996cfc881b5617f497632d">http://git.postgresql.org/pg/commitdiff/9b8dd7e8aa19e6145a996cfc881b5617f497632d</a></li>
+
+<li>Fix erroneous choice of timeline variable, too. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2f1692d213a90d7441fd2940f2c43d100b90c607">http://git.postgresql.org/pg/commitdiff/2f1692d213a90d7441fd2940f2c43d100b90c607</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>When converting a table to a view, remove its system columns. Views should not have any pg_attribute entries for system columns. However, we forgot to remove such entries when converting a table to a view. This could lead to crashes later on, if someone attempted to reference such a column, as reported by Kohei KaiGai. Patch in HEAD only. This bug has been there forever, but in the back branches we will have to defend against existing mis-converted views, so it doesn't seem worthwhile to change the conversion code too. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a4e8680a6c337955c021177457147f4b4d9a5df5">http://git.postgresql.org/pg/commitdiff/a4e8680a6c337955c021177457147f4b4d9a5df5</a></li>
+
+<li>Tweak genericcostestimate's fudge factor for index size. To provide some bias against using a large index when a small one would do as well, genericcostestimate adds a "fudge factor", which for a long time was random_page_cost * index_pages/10000. However, this can grow to be the dominant term in indexscan cost estimates when the index involved is large enough, a behavior that was never intended. Change to a ln(1 + n/10000) formulation, which has nearly the same behavior up to a few hundred pages but tails off significantly thereafter. (A log curve seems correct on first principles, since what we're trying to account for here is index descent costs, which are typically logarithmic.) Per bug #7619 from Niko Kiirala. Possibly this change should get back-patched, but I'm hesitant to mess with cost estimates in stable branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bf01e34b556ff37982ba2d882db424aa484c0d07">http://git.postgresql.org/pg/commitdiff/bf01e34b556ff37982ba2d882db424aa484c0d07</a></li>
+
+<li>In pg_dump, dump SEQUENCE SET items in the data not pre-data section. Represent a sequence's current value as a separate TableDataInfo dumpable object, so that it can be dumped within the data section of the archive rather than in pre-data. This fixes an undesirable inconsistency between the meanings of "--data-only" and "--section=data", and also fixes dumping of sequences that are marked as extension configuration tables, as per a report from Marko Kreen back in July. The main cost is that we do one more SQL query per sequence, but that's probably not very meaningful in most databases. Back-patch to 9.1, since it has the extension configuration issue even though not the --section switch. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5a39114fe7d19280f6477ce1eb0d88beafda13a4">http://git.postgresql.org/pg/commitdiff/5a39114fe7d19280f6477ce1eb0d88beafda13a4</a></li>
+
+<li>Prefer actual constants to pseudo-constants in equivalence class machinery. generate_base_implied_equalities_const() should prefer plain Consts over other em_is_const eclass members when choosing the "pivot" value that all the other members will be equated to. This makes it more likely that the generated equalities will be useful in constraint-exclusion proofs. Per report from Rushabh Lathia. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/17804fa71b4a4e7a099f780616a7b53ea591774d">http://git.postgresql.org/pg/commitdiff/17804fa71b4a4e7a099f780616a7b53ea591774d</a></li>
+
+<li>Document that TCP keepalive settings read as 0 on Unix-socket connections. Per bug #7631 from Rob Johnson. The code is operating as designed, but the docs didn't explain it. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e774b7649ca6b459f10e7748835eb15a096a4587">http://git.postgresql.org/pg/commitdiff/e774b7649ca6b459f10e7748835eb15a096a4587</a></li>
+
+<li>Limit the number of rel sets considered in consider_index_join_outer_rels. In bug #7626, Brian Dunavant exposes a performance problem created by commit 3b8968f25232ad09001bf35ab4cc59f5a501193e: that commit attempted to consider *all* possible combinations of indexable join clauses, but if said clauses join to enough different relations, there's an exponential increase in the number of outer-relation sets considered. In Brian's example, all the clauses come from the same equivalence class, which means it's redundant to use more than one of them in an indexscan anyway. So we can prevent the problem in this class of cases (which is probably the majority of real examples) by rejecting combinations that would only serve to add a known-redundant clause. But that still leaves us exposed to exponential growth of planning time when the query has a lot of non-equivalence join clauses that are usable with the same index. I chose to prevent such cases by setting an upper limit on the number of relation sets considered, equal to ten times the number of index clauses considered so far. (This sliding limit still allows new relsets to be added on as we move to additional index columns, which is probably more important than considering even more combinations of clauses for the previous column.) This should keep the amount of work done roughly linear rather than exponential in the apparent query complexity. This part of the fix is pretty ad-hoc; but without a clearer idea of real-world cases for which this would result in markedly inferior plans, it's hard to see how to do better. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/19e36477b383c62009361b2221cb51e9f63132d9">http://git.postgresql.org/pg/commitdiff/19e36477b383c62009361b2221cb51e9f63132d9</a></li>
+
+<li>Fix bogus handling of $(X) (i.e., ".exe") in isolationtester Makefile. I'm not sure why commit 1eb1dde049ccfffc42c80c2bcec14155c58bcc1f seems to have made this start to fail on Cygwin when it never did before --- but nonetheless, the coding was pretty bogus, and unlike the way we handle $(X) anywhere else. Per buildfarm. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ef28e05ac50a557b6c1214171c93b576a6709802">http://git.postgresql.org/pg/commitdiff/ef28e05ac50a557b6c1214171c93b576a6709802</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Preserve intermediate .c files in coverage mode. The introduction of the .y -&gt; .c pattern rule causes some .c files such as bootparse.c to be considered intermediate files in the .y -&gt; .c -&gt; .o rule chain, which make would automatically delete. But in coverage mode, the processing tools such as genhtml need those files, so mark them as "precious" so that make preserves them. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4af3dda13601d859a20425e3554533fde0549056">http://git.postgresql.org/pg/commitdiff/4af3dda13601d859a20425e3554533fde0549056</a></li>
+
+<li>Have make never delete intermediate files automatically. Several hacks in certain modes already thought this was a bad idea, so just disable it globally. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1eb1dde049ccfffc42c80c2bcec14155c58bcc1f">http://git.postgresql.org/pg/commitdiff/1eb1dde049ccfffc42c80c2bcec14155c58bcc1f</a></li>
+
+<li>Fix typo 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4bb106ef4f6924312a67768571292c6f247122de">http://git.postgresql.org/pg/commitdiff/4bb106ef4f6924312a67768571292c6f247122de</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Phil Sorber sent in three more revisions of the patch to create a pg_ping utility.</li>
+
+<li>Marko (johto) Tiikkaja sent in another revision of the patch to add a --split option to pg_dump.</li>
+
+<li>Alvaro Herrera sent in another revision of the patch to add generic background workers.</li>
+
+<li>Amit Kapila sent in three more revisions of the patch to improve update performance by writing less WAL in such cases.</li>
+
+<li>Claudio Freire and John Lumby traded performance improvements for B-Tree index scans.</li>
+
+<li>Lars Kanis sent in a patch to correct an infelicity in OpenSSL's interaction with libpq.</li>
+
+<li>Alvaro Herrera sent in another revision of the patch to split out the *_desc routines.</li>
+
+<li>Jan Wieck sent in two revisions of a patch to remove a pathological behavior in the interaction of autovacuum and removal of many rows.</li>
+
+<li>Tom Lane sent in another revision of the patch to add array ELEMENT foreign keys.</li>
+
+<li>Karl O. Pinc sent in a doc patch to distinguish sections with an empty row in error code table.</li>
+
+<li>Karl O. Pinc sent in three revisions of a patch to put the RAISE USING keywords into a table.</li>
+
+<li>Pavel Stehule sent in two more revisions of the patch to add \gset to psql.</li>
+
+<li>Satoshi Nagayasu sent in a patch to add a pg_stat_walwriter system view.</li>
+
+<li>Christian Kruse sent in three revisions of a patch to use MAP_HUGETLB for mmap() shared memory, intended to improve performance.</li>
+
+<li>Josh Kupershmidt sent in a patch to enable using multiple --table options for pg_restore, clusterdb, vacuumdb, and reindexdb.</li>
+
+<li>Jan Urbanski sent in another revision of the patch to add spidata to all spiexceptions in PL/Python.</li>
+
+<li>Etsuro Fujita sent in a patch to fix a typo in a comment in /src/backend/utils/adt/selfuncs.c.</li>
+
+<li>Alexander Korotkov sent in another revision of the patch to de-bloat gistchoose.</li>
+
+<li>Alexander Korotkov sent in two more revisions of a patch to fix incorrect behaviour when using a GiST index on points.</li>
+
+<li>Alexander Korotkov sent in another revision of the patch to implement SP-GiST for ranges based on 2d-mapping and quad-tree.</li>
+
+<li>Pavel Stehule sent in a patch to fix a corner use case of variadic functions usage.</li>
+
+<li>Dimitri Fontaine sent in another revision of the patch to extract DDL information at the appropriate spot for triggers to fire.</li>
+
+<li>Etsuro Fujita sent in a patch to change obsolete documentation in indexam.sgml.</li>
+
+</ul>

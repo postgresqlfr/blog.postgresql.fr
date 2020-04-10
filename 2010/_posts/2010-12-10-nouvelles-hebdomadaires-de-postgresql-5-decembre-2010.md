@@ -1,0 +1,174 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 5 décembre 2010"
+author: "NBougain"
+redirect_from: "index.php?post/2010-12-10-nouvelles-hebdomadaires-de-postgresql-5-decembre-2010 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Be consistent about writing "[, ...]" instead "[,...]" in the docs. Christoph Berg. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=3c42efceb21b8dfe1b5686bd914520980933fcd4">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=3c42efceb21b8dfe1b5686bd914520980933fcd4</a></li>
+
+<li>Refactor the pg_dump zlib code from pg_backup_custom.c to a separate file, to make it easier to reuse that code. There is no user-visible changes. This is in preparation for the patch to add a new archive format, a directory, to perform a custom-like dump but with each table being dumped to a separate file (that in turn is a prerequisite for parallel pg_dump). This also makes it easier to add new compression methods in the future, and makes the pg_backup_custom.c code easier to read, when the compression-related code is factored out. Joachim Wieland, with heavy editorialization by me. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=bf9aa490db24b2334b3595ee33653bf2fe39208c">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=bf9aa490db24b2334b3595ee33653bf2fe39208c</a></li>
+
+<li>Remove misleading comments. Move _Clone and _DeClone functions before the "END OF FORMAT CALLBACKS" comment, because they are format callbacks too. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=9cea52a5a354853a76b90c20d7d3bf87df45ebbf">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=9cea52a5a354853a76b90c20d7d3bf87df45ebbf</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Simplify and speed up mapping of index opfamilies to pathkeys. Formerly we looked up the operators associated with each index (caching them in relcache) and then the planner looked up the btree opfamily containing such operators in order to build the btree-centric pathkey representation that describes the index's sort order. This is quite pointless for btree indexes: we might as well just use the index's opfamily information directly. That saves syscache lookup cycles during planning, and furthermore allows us to eliminate the relcache's caching of operators altogether, which may help in reducing backend startup time. I added code to plancat.c to perform the same type of double lookup on-the-fly if it's ever faced with a non-btree amcanorder index AM. If such a thing actually becomes interesting for production, we should replace that logic with some more-direct method for identifying the corresponding btree opfamily; but it's not worth spending effort on now. There is considerably more to do pursuant to my recent proposal to get rid of sort-operator-based representations of sort orderings, but this patch grabs some of the low-hanging fruit. I'll look at the remainder of that work after the current commitfest. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=c0b5fac7010fa3468577d3a90ee8783639500fed">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=c0b5fac7010fa3468577d3a90ee8783639500fed</a></li>
+
+<li>Prevent inlining a SQL function with multiple OUT parameters. There were corner cases in which the planner would attempt to inline such a function, which would result in a failure at runtime due to loss of information about exactly what the result record type is. Fix by disabling inlining when the function's recorded result type is RECORD. There might be some sub-cases where inlining could still be allowed, but this is a simple and backpatchable fix, so leave refinements for another day. Per bug #5777 from Nate Carson. Back-patch to all supported branches. 8.1 happens to avoid a core-dump here, but it still does the wrong thing. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=225f0aa3dfef55554cbe2e6da73df5e41b9eec18">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=225f0aa3dfef55554cbe2e6da73df5e41b9eec18</a></li>
+
+<li>Create core infrastructure for KNNGIST. This is a heavily revised version of builtin_knngist_core-0.9. The ordering operators are no longer mixed in with actual quals, which would have confused not only humans but significant parts of the planner. Instead, ordering operators are carried separately throughout planning and execution. Since the API for ambeginscan and amrescan functions had to be changed anyway, this commit takes the opportunity to rationalize that a bit. RelationGetIndexScan no longer forces a premature index_rescan call; instead, callers of index_beginscan must call index_rescan too. Aside from making the AM-side initialization logic a bit less peculiar, this has the advantage that we do not make a useless extra am_rescan call when there are runtime key values. AMs formerly could not assume that the key values passed to amrescan were actually valid; now they can. Teodor Sigaev and Tom Lane. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=d583f10b7e0b9e1ed18f339f3177ed42ac2f7570">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=d583f10b7e0b9e1ed18f339f3177ed42ac2f7570</a></li>
+
+<li>Put back gistgettuple's check for backwards scan request. On reflection it's a bad idea for the KNNGIST patch to have removed that. We don't want it silently returning incorrect answers. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=04910a3ad5cd2901558da2a4fad9a2e2819348aa">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=04910a3ad5cd2901558da2a4fad9a2e2819348aa</a></li>
+
+<li>Add external documentation for KNNGIST. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=b576757d7ee064ada5351c2e6a36c2f7234aa1d4">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=b576757d7ee064ada5351c2e6a36c2f7234aa1d4</a></li>
+
+<li>Add KNNGIST support to contrib/pg_trgm. Teodor Sigaev, with some revision by Tom Lane. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=b525bf771e31a2254f28bf25c6ed7987d64c8afb">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=b525bf771e31a2254f28bf25c6ed7987d64c8afb</a></li>
+
+<li>Update comment to match later code changes. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=e194a942f98caf0b278e3ba30a85545ac790ea1d">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=e194a942f98caf0b278e3ba30a85545ac790ea1d</a></li>
+
+<li>Fix two small bugs in new gistget.c logic. 1. Complain, rather than silently doing nothing, if an "invalid" tuple is found on a leaf page. Per off-list discussion with Heikki Linnakangas. 2. Fix oversight in code that removes a GISTSearchItem from the search queue: we have to reset lastHeap if this was the last heap item in the parent GISTSearchTreeItem. Otherwise subsequent additions will do the wrong thing. This was probably masked in early testing because in typical cases the parent item would now be completely empty and would be deleted on next call. You'd need a queued non-leaf page at exactly the same distance as a heap tuple to expose the bug. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=d1f5a92e18dcfc750e9d338597e66af920aad99e">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=d1f5a92e18dcfc750e9d338597e66af920aad99e</a></li>
+
+<li>Reduce memory consumption inside inheritance_planner(). Avoid eating quite so much memory for large inheritance trees, by reclaiming the space used by temporary copies of the original parsetree and range table, as well as the workspace needed during planning. The cost is needing to copy the finished plan trees out of the child memory context. Although this looks like it ought to slow things down, my testing shows it actually is faster, apparently because fewer interactions with malloc() are needed and/or we can do the work within a more readily cacheable amount of memory. That result might be platform-dependent, but I'll take it. Per a gripe from John Papandriopoulos, in which it was pointed out that the memory consumption actually grew as O(N2) for sufficiently many child tables, since we were creating N copies of the N-element range table. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=d1001a78ce612a16ea622b558f5fc2b68c45ab4c">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=d1001a78ce612a16ea622b558f5fc2b68c45ab4c</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Remove trailing whitespace. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=0025b76f4fc52bed4e8ad2623ec6b9821a4e936c">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=0025b76f4fc52bed4e8ad2623ec6b9821a4e936c</a></li>
+
+<li>Silence compiler. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=7f4a7af2fd0991dc3ef14a63c614a7ad17b56c79">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=7f4a7af2fd0991dc3ef14a63c614a7ad17b56c79</a></li>
+
+<li>Move private struct declaration to compress_io.c. Keep only the typedef in the header file. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=d7e5d151daa2d5fe096953ae0b3530707b7c87f5">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=d7e5d151daa2d5fe096953ae0b3530707b7c87f5</a></li>
+
+<li>Remove useless struct declaration. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=d67a39c3267d1901ae9e702637cc56b16e70332a">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=d67a39c3267d1901ae9e702637cc56b16e70332a</a></li>
+
+</ul>
+
+<p>ITAGAKI Takahiro a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Remove unnecessary string null-termination in pg_convert. We can directly verify the unterminated input with pg_verify_mbstr_len. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=fd223c7407c7067ac3ec7e586f9e3d7b5afd2b2e">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=fd223c7407c7067ac3ec7e586f9e3d7b5afd2b2e</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Use GUC lexer for recovery.conf parsing. This eliminates some crufty, special-purpose code and, as a non-trivial side benefit, allows recovery.conf parameters to be unquoted. Dimitri Fontaine, with review and cleanup by Alvaro Herrera, Itagaki Takahiro, and me. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=970a18687f9b3058e89d5994a8fbf70888e79548">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=970a18687f9b3058e89d5994a8fbf70888e79548</a></li>
+
+<li>Remove now-outdated mention of quotes being required in recovery.conf. Noted by Itagaki Takahiro. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=5ef6c913836b136632adf8f4625691e4656e8c05">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=5ef6c913836b136632adf8f4625691e4656e8c05</a></li>
+
+<li>Clarify that LOCK TABLE requires a table-level privilege. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=c0a4d3e0511b4d1f7996451329deaa2acd0e18fa">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=c0a4d3e0511b4d1f7996451329deaa2acd0e18fa</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Make output width consistent for all ways of invoking a regression test. run_schedule() and run_single_test() were using different output widths, which would show up in bigcheck/bigtest, for example. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=387e468b82952776121a8d4bd409d72757edbc16">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=387e468b82952776121a8d4bd409d72757edbc16</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Dimitri Fontaine and ITAGAKI Takahiro traded revisions of the patch to add pg_execute_from_file().</li>
+
+<li>David Fetter and ITAGAKI Takahiro traded patches to add tab completion to psql for triggers on views.</li>
+
+<li>Based on a review by Andy Colson, Robert Haas sent in another revision of the patch to add unlogged tables.</li>
+
+<li>Greg Smith sent in another revision of the patch to spread out checkpoint syncs.</li>
+
+<li>Dimitri Fontaine sent in another revision of the patch to add extensions.</li>
+
+<li>Radoslaw Smogura sent in another revision of the JDBC driver.</li>
+
+<li>Heikki Linnakangas sent in two more revisions of the patch to fix the "too many KnownAssignedXids" issue on hot standby.</li>
+
+<li>Joachim Wieland sent in another flock of patches for parallel pg_dump.</li>
+
+<li>Heikki Linnakangas sent in another revision of the patch to rewrite how GiST inserts happen.</li>
+
+<li>Peter Eisentraut sent in another revision of the patch to add per-column collation.</li>
+
+<li>Boxuan Zhai sent in another revision of the patch to add MERGE.</li>
+
+<li>Andrew Dunstan sent in a patch to allow COPY routines to read arbitrary numbers of fields.</li>
+
+<li>Greg Smith sent in another revision of the patch to instrument checkpoint sync calls.</li>
+
+<li>Andrew Dunstan sent in a patch to allow COPY routines to read arbitrary numbers of fields.</li>
+
+<li>Greg Smith sent in another revision of the patch to instrument checkpoint sync calls.</li>
+
+</ul>

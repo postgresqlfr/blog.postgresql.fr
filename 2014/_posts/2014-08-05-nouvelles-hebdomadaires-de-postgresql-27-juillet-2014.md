@@ -1,0 +1,224 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 27 juillet 2014"
+author: "NBougain"
+redirect_from: "index.php?post/2014-08-05-nouvelles-hebdomadaires-de-postgresql-27-juillet-2014 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Translation updates 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cac0d5193bd56dd6ffb70b9fb5a959eedeca01d3">http://git.postgresql.org/pg/commitdiff/cac0d5193bd56dd6ffb70b9fb5a959eedeca01d3</a></li>
+
+<li>Update SQL features list 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0e819c5e98243b95f622406ab5377422758bbd1a">http://git.postgresql.org/pg/commitdiff/0e819c5e98243b95f622406ab5377422758bbd1a</a></li>
+
+<li>gitattributes: Ignore time zone data files for whitespace checks. The latest update introduced some funny whitespace, but since they are externally maintained files, we add them to the list of files to ignore. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8195e9e9c12baea983cb2aab018cda864fa2e223">http://git.postgresql.org/pg/commitdiff/8195e9e9c12baea983cb2aab018cda864fa2e223</a></li>
+
+<li>Unset some local environment variables in TAP tests. Unset environment variables that control message language, so that we can compare some program output with expected strings. This is very similar to what pg_regress does. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/24e786f056c0bf009815813de1d7f58ee09f554e">http://git.postgresql.org/pg/commitdiff/24e786f056c0bf009815813de1d7f58ee09f554e</a></li>
+
+<li>Fix TAP installcheck tests when current directory name contains spaces. This fixes the installcheck part. The check part has additional problems that will be addressed in a separate commit. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/455044d55a89d16d888f289aeaf1229a04a04b9f">http://git.postgresql.org/pg/commitdiff/455044d55a89d16d888f289aeaf1229a04a04b9f</a></li>
+
+<li>doc: Fix up ALTER TABLESPACE reference page. The documentation of ALTER TABLESPACE ... MOVE was added without any markup, not even paragraph breaks. Fix that, and clarify the text in a few places. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b0d3636c1775524c5c480510aa528ed2e9b50536">http://git.postgresql.org/pg/commitdiff/b0d3636c1775524c5c480510aa528ed2e9b50536</a></li>
+
+</ul>
+
+<p>Magnus Hagander a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Properly use DEFAULT_EVENT_SOURCE in pgevent.c. This was broken and reverted in a previous commit. The (this time verified) fix is to simly add postgres_fe.h. MauMau, review by Amit Kapila 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4c3c911d26b3944946f8d9b03dbead3ccdf73b19">http://git.postgresql.org/pg/commitdiff/4c3c911d26b3944946f8d9b03dbead3ccdf73b19</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Defend against bad relfrozenxid/relminmxid/datfrozenxid/datminmxid values. In commit a61daa14d56867e90dc011bbba52ef771cea6770, we fixed pg_upgrade so that it would install sane relminmxid and datminmxid values, but that does not cure the problem for installations that were already pg_upgraded to 9.3; they'll initially have "1" in those fields. This is not a big problem so long as 1 is "in the past" compared to the current nextMultiXact counter. But if an installation were more than halfway to the MXID wrap point at the time of upgrade, 1 would appear to be "in the future" and that would effectively disable tracking of oldest MXIDs in those tables/databases, until such time as the counter wrapped around. While in itself this isn't worse than the situation pre-9.3, where we did not manage MXID wraparound risk at all, the consequences of premature truncation of pg_multixact are worse now; so we ought to make some effort to cope with this. We discussed advising users to fix the tracking values manually, but that seems both very tedious and very error-prone. Instead, this patch adopts two amelioration rules. First, a relminmxid value that is "in the future" is allowed to be overwritten with a full-table VACUUM's actual freeze cutoff, ignoring the normal rule that relminmxid should never go backwards. (This essentially assumes that we have enough defenses in place that wraparound can never occur anymore, and thus that a value "in the future" must be corrupt.) Second, if we see any "in the future" values then we refrain from truncating pg_clog and pg_multixact. This prevents loss of clog data until we have cleaned up all the broken tracking data. In the worst case that could result in considerable clog bloat, but in practice we expect that relfrozenxid-driven freezing will happen soon enough to fix the problem before clog bloat becomes intolerable. (Users could do manual VACUUM FREEZEs if not.) Note that this mechanism cannot save us if there are already-wrapped or already-truncated-away MXIDs in the table; it's only capable of dealing with corrupt tracking values. But that's the situation we have with the pg_upgrade bug. For consistency, apply the same rules to relfrozenxid/datfrozenxid. There are not known mechanisms for these to get messed up, but if they were, the same tactics seem appropriate for fixing them. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/78db307bb238f4d2d27e62c06a246e88b92fa53b">http://git.postgresql.org/pg/commitdiff/78db307bb238f4d2d27e62c06a246e88b92fa53b</a></li>
+
+<li>Adjust cutoff points in newly-added sanity tests. Per recommendation from Andres Freund. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/87f830e0ce03063fc7f856c95fa75a719b3a8ad0">http://git.postgresql.org/pg/commitdiff/87f830e0ce03063fc7f856c95fa75a719b3a8ad0</a></li>
+
+<li>Release notes for 9.3.5, 9.2.9, 9.1.14, 9.0.18, 8.4.22. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/212825f8139abbcfe366a8f884193b5b693921de">http://git.postgresql.org/pg/commitdiff/212825f8139abbcfe366a8f884193b5b693921de</a></li>
+
+<li>Reject out-of-range numeric timezone specifications. In commit 631dc390f49909a5c8ebd6002cfb2bcee5415a9d, we started to handle simple numeric timezone offsets via the zic library instead of the old CTimeZone/HasCTZSet kluge. However, we overlooked the fact that the zic code will reject UTC offsets exceeding a week (which seems a bit arbitrary, but not because it's too tight ...). This led to possibly setting session_timezone to NULL, which results in crashes in most timezone-related operations as of 9.4, and crashes in a small number of places even before that. So check for NULL return from pg_tzset_offset() and report an appropriate error message. Per bug #11014 from Duncan Gillis. Back-patch to all supported branches, like the previous patch. (Unfortunately, as of today that no longer includes 8.4.) 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6412f3e2d09b562fafc129c134e7336c4fe790ed">http://git.postgresql.org/pg/commitdiff/6412f3e2d09b562fafc129c134e7336c4fe790ed</a></li>
+
+<li>Check block number against the correct fork in get_raw_page(). get_raw_page tried to validate the supplied block number against RelationGetNumberOfBlocks(), which of course is only right when accessing the main fork. In most cases, the main fork is longer than the others, so that the check was too weak (allowing a lower-level error to be reported, but no real harm to be done). However, very small tables could have an FSM larger than their heap, in which case the mistake prevented access to some FSM pages. Per report from Torsten Foertsch. In passing, make the bad-block-number error into an ereport not elog (since it's certainly not an internal error); and fix sloppily maintained comment for RelationGetNumberOfBlocksInFork. This has been wrong since we invented relation forks, so back-patch to all supported branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/27cef0a56111a7a44e0d9b9a7819f7e9f4980a77">http://git.postgresql.org/pg/commitdiff/27cef0a56111a7a44e0d9b9a7819f7e9f4980a77</a></li>
+
+<li>Re-enable error for "SELECT ... OFFSET -1". The executor has thrown errors for negative OFFSET values since 8.4 (see commit bfce56eea45b1369b7bb2150a150d1ac109f5073), but in a moment of brain fade I taught the planner that OFFSET with a constant negative value was a no-op (commit 1a1832eb085e5bca198735e5d0e766a3cb61b8fc). Reinstate the former behavior by only discarding OFFSET with a value of exactly 0. In passing, adjust a planner comment that referenced the ancient behavior. Back-patch to 9.3 where the mistake was introduced. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/27048980f503da22dcd289ec8342b7021c8e73e6">http://git.postgresql.org/pg/commitdiff/27048980f503da22dcd289ec8342b7021c8e73e6</a></li>
+
+<li>Rearrange documentation paragraph describing pg_relation_size(). Break the list of available options into an &lt;itemizedlist&gt; instead of inline sentences. This is mostly motivated by wanting to ensure that the cross-references to the FSM and VM docs don't cross page boundaries in PDF format; but it seems to me to read more easily this way anyway. I took the liberty of editorializing a bit further while at it. Per complaint from Magnus about 9.0.18 docs not building in A4 format. Patch all active branches so we don't get blind-sided by this particular issue again in future. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4fd9e6ffdd9aae51a935c255cbf7691c369ded1b">http://git.postgresql.org/pg/commitdiff/4fd9e6ffdd9aae51a935c255cbf7691c369ded1b</a></li>
+
+<li>Fix a performance problem in pg_dump's dump order selection logic. findDependencyLoops() was not bright about cases where there are multiple dependency paths between the same two dumpable objects. In most scenarios this did not hurt us too badly; but since the introduction of section boundary pseudo-objects in commit a1ef01fe163b304760088e3e30eb22036910a495, it was possible for this code to take unreasonable amounts of time (tens of seconds on a database with a couple thousand objects), as reported in bug #11033 from Joe Van Dyk. Joe's particular problem scenario involved "pg_dump -a" mode with long chains of foreign key constraints, but I think that similar problems could arise with other situations as long as there were enough objects. To fix, add a flag array that lets us notice when we arrive at the same object again while searching from a given start object. This simple change seems to be enough to eliminate the performance problem. Back-patch to 9.1, like the patch that introduced section boundary objects. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c8e2e0e7129276440d1806dfe4f930c7177ccaac">http://git.postgresql.org/pg/commitdiff/c8e2e0e7129276440d1806dfe4f930c7177ccaac</a></li>
+
+</ul>
+
+<p>Noah Misch a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Diagnose incompatible OpenLDAP versions during build and test. With OpenLDAP versions 2.4.24 through 2.4.31, inclusive, PostgreSQL backends can crash at exit. Raise a warning during "configure" based on the compile-time OpenLDAP version number, and test the crash scenario in the dblink test suite. Back-patch to 9.0 (all supported versions). 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d7cdf6ee36adeac9233678fb8f2a112e6678a770">http://git.postgresql.org/pg/commitdiff/d7cdf6ee36adeac9233678fb8f2a112e6678a770</a></li>
+
+<li>MSVC: Substitute $(top_builddir) in REGRESS_OPTS. Commit d7cdf6ee36adeac9233678fb8f2a112e6678a770 introduced a usage thereof. Back-patch to 9.0, like that commit. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/31f9bbf05928ed8f20b1c371df8098d8c7dddb37">http://git.postgresql.org/pg/commitdiff/31f9bbf05928ed8f20b1c371df8098d8c7dddb37</a></li>
+
+<li>Report success when Windows kill() emulation signals an exiting process. This is consistent with the POSIX verdict that kill() shall not report ESRCH for a zombie process. Back-patch to 9.0 (all supported versions). Test code from commit d7cdf6ee36adeac9233678fb8f2a112e6678a770 depends on it, and log messages about kill() reporting "Invalid argument" will cease to appear for this not-unexpected condition. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0ea1f2a3a8dfcbe8062a65a13700fc5ae83482c6">http://git.postgresql.org/pg/commitdiff/0ea1f2a3a8dfcbe8062a65a13700fc5ae83482c6</a></li>
+
+<li>Move PGAC_LDAP_SAFE to config/programs.m4. This restores the style of keeping configure.in free of AC_DEFUN. Per gripe from Tom Lane. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e565ff7553e60b3d13dde410ef96f5256c5525eb">http://git.postgresql.org/pg/commitdiff/e565ff7553e60b3d13dde410ef96f5256c5525eb</a></li>
+
+<li>Handle WAIT_IO_COMPLETION return from WaitForMultipleObjectsEx(). This return code is possible wherever we pass bAlertable = TRUE; it arises when Windows caused the current thread to run an "I/O completion routine" or an "asynchronous procedure call". PostgreSQL does not provoke either of those Windows facilities, hence this bug remaining largely unnoticed, but other local code might do so. Due to a shortage of complaints, no back-patch for now. Per report from Shiv Shivaraju Gowda, this bug can cause PGSemaphoreLock() to PANIC. The bug can also cause select() to report timeout expiration too early, which might confuse pgstat_init() and CheckRADIUSAuth(). 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/de35a9771004b9d521c9d5882db6be4fba20e80e">http://git.postgresql.org/pg/commitdiff/de35a9771004b9d521c9d5882db6be4fba20e80e</a></li>
+
+</ul>
+
+<p>Andrew Dunstan a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Allow empty string object keys in json_object(). This makes the behaviour consistent with the json parser, other json-generating functions, and the JSON standards. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4ebe3519e1c12fe02f734aa00f824833181840c7">http://git.postgresql.org/pg/commitdiff/4ebe3519e1c12fe02f734aa00f824833181840c7</a></li>
+
+</ul>
+
+<p>Fujii Masao a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix bug where pg_receivexlog goes into busy loop if -s option is set to 0. The problem is that pg_receivexlog calls select(2) with timeout=0 and goes into busy loop when --status-interval option is set to 0. This bug was introduced by the commit, 74cbe966fe2d76de1d607d933c98c144dab58769. Per report from Sawada Masahiko 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/78493b716802cbe632d36c85f0d7c3bdb708e045">http://git.postgresql.org/pg/commitdiff/78493b716802cbe632d36c85f0d7c3bdb708e045</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>docs: Improve documentation of \pset without arguments. The syntax summary previously failed to clarify that the first argument is also optional. The textual description did mention it, but all the way at the bottom. It fits better with the command overview, so move it there, and fix the summary also. Dilip Kumar, reviewed by Fabien Coelho 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/967a4e7f3107e3c5b732fe4f8e13a1f31a255e46">http://git.postgresql.org/pg/commitdiff/967a4e7f3107e3c5b732fe4f8e13a1f31a255e46</a></li>
+
+<li>Avoid access to already-released lock in LockRefindAndRelease. Spotted by Tom Lane. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/32d78894c2a92cbb2fe7b9160936fee31672e7d9">http://git.postgresql.org/pg/commitdiff/32d78894c2a92cbb2fe7b9160936fee31672e7d9</a></li>
+
+<li>Prevent shm_mq_send from reading uninitialized memory. shm_mq_send_bytes didn't invariably initialize *bytes_written before returning, which would cause shm_mq_send to read from uninitialized memory and add the value it found there to mqh-&gt;mqh_partial_bytes. This could cause the next attempt to send a message via the queue to fail an assertion (if the queue was detached) or copy data from a garbage pointer value into the queue (if non-blocking mode was in use). 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1144ea3421e4bcc24dd7402a1f21ba94638d591b">http://git.postgresql.org/pg/commitdiff/1144ea3421e4bcc24dd7402a1f21ba94638d591b</a></li>
+
+<li>Fix checkpointer crash in EXEC_BACKEND builds. Nothing in the checkpointer calls InitXLOGAccess(), so WALInsertLocks never got initialized there. Without EXEC_BACKEND, it works anyway because the correct value is inherited from the postmaster, but with EXEC_BACKEND we've got a problem. The problem appears to have been introduced by commit 68a2e52bbaf98f136a96b3a0d734ca52ca440a95. To fix, move the relevant initialization steps from InitXLOGAccess() to XLOGShmemInit(), making this more parallel to what we do elsewhere. Amit Kapila 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/250c26ba9cf247c2d5b8dbd2435a36d11382c43e">http://git.postgresql.org/pg/commitdiff/250c26ba9cf247c2d5b8dbd2435a36d11382c43e</a></li>
+
+</ul>
+
+<p>Andres Freund a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Properly remove ephemeral replication slots after a crash restart. Ephemeral slots - slots that shouldn't survive database restarts - weren't properly cleaned up after a immediate/crash restart. They were ignored in the sense that they weren't restored into memory and thus didn't cause unwanted resource retention; but they prevented a new slot with the same name from being created. Now ephemeral slots are fully removed during startup. Backpatch to 9.4 where replication slots where added. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/93a028f569232fa498279841cb61ad11c2df5c85">http://git.postgresql.org/pg/commitdiff/93a028f569232fa498279841cb61ad11c2df5c85</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>No one was disappointed this week</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Dilip Kumar sent in another revision of a patch to document correctly that all arguments to pset are optional, not just the second.</li>
+
+<li>Marko (johto) Tiikkaja sent in a patch to add plpgsql.extra_warnings='num_into_expressions'</li>
+
+<li>Anastasia Lubennikova sent in another revision of a patch to allow index-only scans for multicolumn GiST.</li>
+
+<li>Fabien COELHO and Mitsumasa KONDO traded patches to allow pgbench to use a Gaussian distribution.</li>
+
+<li>Kaigai Kouhei sent in another revision of a patch to enable the custom plan API.</li>
+
+<li>Pavel Stehule sent in another revision of a patch to enable psql unicode border line styles.</li>
+
+<li>Viswanatham Kirankumar sent in another revision of a patch to process pg_hba.conf keywords as case-insensitive.</li>
+
+<li>Fabr&iacute;zio de Royes Mello sent in two more revisions of a patch to enable ALTER TABLE ... SET LOGGED.</li>
+
+<li>Kyotaro HORIGUCHI sent in another revision of a patch to enable using unique indexes for longer pathkeys.</li>
+
+<li>Michael Paquier sent in a patch to add a facility to check Full-Page-Write consistency at WAL replay.</li>
+
+<li>Thomas Munro sent in four more revisions of a patch to implement SKIP LOCKED DATA.</li>
+
+<li>Fabr&iacute;zio de Royes Mello sent in another revision of a patch to fix an issue where the verbose output of pg_dump did not show schema names.</li>
+
+<li>Furuya Osamu sent in another revision of a patch to add a synchronous mode to pg_receivexlog.</li>
+
+<li>Kyotaro HORIGUCHI sent in a patch to introduce coarse-grained parallelism via the postgres_fdw.</li>
+
+<li>Alexey Klyukin sent in a patch to implement subject alternative names support for SSL connections.</li>
+
+<li>Robert Haas sent in a patch to implement a contrib module that lets you launch arbitrary command in a background worker, and supporting infrastructure patches for core.</li>
+
+<li>Guillaume Lelarge sent in a patch to fix the documentation for unix_socket_directory.</li>
+
+<li>Marko (johto) Tiikkaja sent in a patch to implement EXIT USING ROLLBACK.</li>
+
+<li>Marko (johto) Tiikkaja sent in a patch to make PL/pgsql throw an error during compilation (instead of runtime) if the number of parameters passed to RAISE don't match the number of placeholders in error message.</li>
+
+<li>Haribabu Kommi sent in another revision of a patch to enable min/max on inet types.</li>
+
+<li>David Rowley sent in a patch to fix an issue where get_loop_count() fails to ignore RELOPT_DEADREL rels.</li>
+
+<li>Peter Geoghegan sent in another revision of a patch to add a strxfrm() optimization for B-Trees.</li>
+
+</ul>

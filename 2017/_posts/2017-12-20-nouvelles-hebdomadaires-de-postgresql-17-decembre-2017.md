@@ -1,0 +1,210 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 17 décembre 2017"
+author: "NBougain"
+redirect_from: "index.php?post/2017-12-20-nouvelles-hebdomadaires-de-postgresql-17-decembre-2017 "
+---
+
+
+
+<h2>Correctifs appliqu&eacute;s</h2>
+
+<p>Tom Lane pushed:</p>
+
+<ul>
+
+<li>Stabilize output of new regression test case. The test added by commit 390d58135 turns out to have different output in CLOBBER_CACHE_ALWAYS builds: there's an extra CONTEXT line in the error message as a result of detecting the error at a different place. Possibly we should do something to make that more consistent. But as a stopgap measure to make the buildfarm green again, adjust the test to suppress CONTEXT entirely. We can revert this if we do something in the backend to eliminate the inconsistency. Discussion: <a target="_blank" href="https://postgr.es/m/31545.1512924904@sss.pgh.pa.us">https://postgr.es/m/31545.1512924904@sss.pgh.pa.us</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/9edc97b712e2f0ba041b40b4b2e2285d229f4fb0">https://git.postgresql.org/pg/commitdiff/9edc97b712e2f0ba041b40b4b2e2285d229f4fb0</a></li>
+
+<li>Fix corner-case coredump in _SPI_error_callback(). I noticed that _SPI_execute_plan initially sets spierrcontext.arg = NULL, and only fills it in some time later. If an error were to happen in between, _SPI_error_callback would try to dereference the null pointer. This is unlikely --- there's not much between those points except push-snapshot calls --- but it's clearly not impossible. Tweak the callback to do nothing if the pointer isn't set yet. It's been like this for awhile, so back-patch to all supported branches. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/7eb16ab17d5c01b293aad35f0843e5f3a9a64080">https://git.postgresql.org/pg/commitdiff/7eb16ab17d5c01b293aad35f0843e5f3a9a64080</a></li>
+
+<li>Rethink MemoryContext creation to improve performance. This patch makes a number of interrelated changes to reduce the overhead involved in creating/deleting memory contexts. The key ideas are: * Include the AllocSetContext header of an aset.c context in its first malloc request, rather than allocating it separately in TopMemoryContext. This means that we now always create an initial or "keeper" block in an aset, even if it never receives any allocation requests. * Create freelists in which we can save and recycle recently-destroyed asets (this idea is due to Robert Haas). * In the common case where the name of a context is a constant string, just store a pointer to it in the context header, rather than copying the string. The first change eliminates a palloc/pfree cycle per context, and also avoids bloat in TopMemoryContext, at the price that creating a context now involves a malloc/free cycle even if the context never receives any allocations. That would be a loser for some common usage patterns, but recycling short-lived contexts via the freelist eliminates that pain. Avoiding copying constant strings not only saves strlen() and strcpy() overhead, but is an essential part of the freelist optimization because it makes the context header size constant. Currently we make no attempt to use the freelist for contexts with non-constant names. (Perhaps someday we'll need to think harder about that, but in current usage, most contexts with custom names are long-lived anyway.) The freelist management in this initial commit is pretty simplistic, and we might want to refine it later --- but in common workloads that will never matter because the freelists will never get full anyway. To create a context with a non-constant name, one is now required to call AllocSetContextCreateExtended and specify the MEMCONTEXT_COPY_NAME option. AllocSetContextCreate becomes a wrapper macro, and it includes a test that will complain about non-string-literal context name parameters on gcc and similar compilers. An unfortunate side effect of making AllocSetContextCreate a macro is that one is now *required* to use the size parameter abstraction macros (ALLOCSET_DEFAULT_SIZES and friends) with it; the pre-9.6 habit of writing out individual size parameters no longer works unless you switch to AllocSetContextCreateExtended. Internally to the memory-context-related modules, the context creation APIs are simplified, removing the rather baroque original design whereby a context-type module called mcxt.c which then called back into the context-type module. That saved a bit of code duplication, but not much, and it prevented context-type modules from exercising control over the allocation of context headers. In passing, I converted the test-and-elog validation of aset size parameters into Asserts to save a few more cycles. The original thought was that callers might compute size parameters on the fly, but in practice nobody does that, so it's useless to expend cycles on checking those numbers in production builds. Also, mark the memory context method-pointer structs "const", just for cleanliness. Discussion: <a target="_blank" href="https://postgr.es/m/2264.1512870796@sss.pgh.pa.us">https://postgr.es/m/2264.1512870796@sss.pgh.pa.us</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/9fa6f00b1308dd10da4eca2f31ccbfc7b35bb461">https://git.postgresql.org/pg/commitdiff/9fa6f00b1308dd10da4eca2f31ccbfc7b35bb461</a></li>
+
+<li>Tighten configure's test for __builtin_constant_p(). Commit 9fa6f00b1 assumed that __builtin_constant_p("string literal") is TRUE, if the compiler has that function at all. Buildfarm results show that Sun Studio 12, at least, breaks that assumption. Removing that usage would leave us with no mechanical check for a very fragile coding requirement, so instead teach configure to ignore __builtin_constant_p() if it doesn't behave that way. We could complicate matters by distinguishing three cases (no such function, vs does, vs doesn't work for string literals); but for now, that seems unnecessary because our other existing uses of this function are just fairly minor optimizations of non-returning elog/ereport. We can live without that on the small population of compilers that act this way. Discussion: <a target="_blank" href="https://postgr.es/m/22997.1513264066@sss.pgh.pa.us">https://postgr.es/m/22997.1513264066@sss.pgh.pa.us</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/9220b00e57352fda988b187940f5d5ac4851a8bb">https://git.postgresql.org/pg/commitdiff/9220b00e57352fda988b187940f5d5ac4851a8bb</a></li>
+
+<li>Fix oversights in new plpgsql test suite infrastructure. Fix a couple of minor oversights in commit 632b03da3: the tests should be run in database "pl_regression" like the other PLs do, and we should clean up the tests' output cruft during "make clean". <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/997071691f66dfe92e97e6b4e3d29d153317be31">https://git.postgresql.org/pg/commitdiff/997071691f66dfe92e97e6b4e3d29d153317be31</a></li>
+
+<li>Suppress compiler warning about no function return value. Compilers that don't know that ereport(ERROR) doesn't return complained about the new coding in scanint8() introduced by commit 101c7ee3e. Tweak coding to avoid the warning. Per buildfarm. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/b31a9d7dd3bf8435fddf404c4b75236d0ea76d78">https://git.postgresql.org/pg/commitdiff/b31a9d7dd3bf8435fddf404c4b75236d0ea76d78</a></li>
+
+<li>Try harder to detect unavailability of __builtin_mul_overflow(int64). Commit c04d35f44 didn't quite do the job here, because it still allowed the compiler to deduce that the function call could be optimized away. Prevent that by putting the arguments and results in global variables. Discussion: <a target="_blank" href="https://postgr.es/m/20171213213754.pydkyjs6bt2hvsdb@alap3.anarazel.de">https://postgr.es/m/20171213213754.pydkyjs6bt2hvsdb@alap3.anarazel.de</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/c6d21d56f1a92b4762a22cbbb694b1e853165e70">https://git.postgresql.org/pg/commitdiff/c6d21d56f1a92b4762a22cbbb694b1e853165e70</a></li>
+
+</ul>
+
+<p>Robert Haas pushed:</p>
+
+<ul>
+
+<li>Improve comment about PartitionBoundInfoData. Ashutosh Bapat, per discussion with Julien Rouhaund, who also reviewed this patch. Discussion: <a target="_blank" href="http://postgr.es/m/CAFjFpReBR3ftK9C23LLCZY_TDXhhjB_dgE-L9+mfTnA=gkvdvQ@mail.gmail.com">http://postgr.es/m/CAFjFpReBR3ftK9C23LLCZY_TDXhhjB_dgE-L9+mfTnA=gkvdvQ@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/01a0ca1bed02d6a375c6565a529555eefd2b4fe8">https://git.postgresql.org/pg/commitdiff/01a0ca1bed02d6a375c6565a529555eefd2b4fe8</a></li>
+
+<li>Remove bug from OPTIMIZER_DEBUG code for partition-wise join. Etsuro Fujita, reviewed by Ashutosh Bapat Discussion: <a target="_blank" href="http://postgr.es/m/5A2A60E6.6000008@lab.ntt.co.jp">http://postgr.es/m/5A2A60E6.6000008@lab.ntt.co.jp</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/d329dc2ea4bfac84ec60ba14b96561a7508bb37b">https://git.postgresql.org/pg/commitdiff/d329dc2ea4bfac84ec60ba14b96561a7508bb37b</a></li>
+
+<li>Remove obsolete comment. Commit 8b304b8b72b0a60f1968d39f01cf817c8df863ec removed replacement selection, but left behind this comment text. The optimization to which the comment refers is not relevant without replacement selection, because if we had so few tuples as to require only one tape, we would have just completed the sort in memory. Peter Geoghegan Discussion: <a target="_blank" href="http://postgr.es/m/CAH2-WznqupLA8CMjp+vqzoe0yXu0DYYbQSNZxmgN76tLnAOZ_w@mail.gmail.com">http://postgr.es/m/CAH2-WznqupLA8CMjp+vqzoe0yXu0DYYbQSNZxmgN76tLnAOZ_w@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/95b52351fe966c93791462274dfa7af7e50d2da1">https://git.postgresql.org/pg/commitdiff/95b52351fe966c93791462274dfa7af7e50d2da1</a></li>
+
+<li>Revert "Fix accumulation of parallel worker instrumentation.". This reverts commit 2c09a5c12a66087218c7f8cba269cd3de51b9b82. Per further discussion, that doesn't seem to be the best possible fix. Discussion: <a target="_blank" href="http://postgr.es/m/CAA4eK1LW2aFKzY3=vwvc=t-juzPPVWP2uT1bpx_MeyEqnM+p8g@mail.gmail.com">http://postgr.es/m/CAA4eK1LW2aFKzY3=vwvc=t-juzPPVWP2uT1bpx_MeyEqnM+p8g@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/1d6fb35ad62968c8678d0321887e2b9ca8fe1a84">https://git.postgresql.org/pg/commitdiff/1d6fb35ad62968c8678d0321887e2b9ca8fe1a84</a></li>
+
+<li>Fix parallel index scan hang with deleted or half-dead pages. The previous coding forgot to release the scan before seizing it again, leading to a lockup. Report by Patrick Hemmer. Diagnosis by Thomas Munro. Patch by Amit Kapila. Discussion: <a target="_blank" href="http://postgr.es/m/CAEepm=2xZUcOGP9V0O_G0=2P2wwXwPrkF=upWTCJSisUxMnuSg@mail.gmail.com">http://postgr.es/m/CAEepm=2xZUcOGP9V0O_G0=2P2wwXwPrkF=upWTCJSisUxMnuSg@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/884a60840cd684dd7925e7a4f9bf10288c37694d">https://git.postgresql.org/pg/commitdiff/884a60840cd684dd7925e7a4f9bf10288c37694d</a></li>
+
+</ul>
+
+<p>Peter Eisentraut pushed:</p>
+
+<ul>
+
+<li>Fix comment. Reported-by: Noah Misch &lt;noah@leadboat.com&gt; <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/4034db215b92c68ce55cf1c658d4ef7599ccc45a">https://git.postgresql.org/pg/commitdiff/4034db215b92c68ce55cf1c658d4ef7599ccc45a</a></li>
+
+<li>PL/Python: Fix potential NULL pointer dereference. After d0aa965c0a0ac2ff7906ae1b1dad50a7952efa56, one error path in PLy_spi_execute_fetch_result() could result in the variable "result" being dereferenced after being set to NULL. Rearrange the code a bit to fix that. Also add another SPI_freetuptable() call so that that is cleared in all error paths. discovered by John Naylor &lt;jcnaylor@gmail.com&gt; via scan-build ideas and review by Tom Lane <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/4c6744ed705df6f388371d044b87d1b4a60e9f80">https://git.postgresql.org/pg/commitdiff/4c6744ed705df6f388371d044b87d1b4a60e9f80</a></li>
+
+<li>Fix crash when using CALL on an aggregate. Author: Ashutosh Bapat &lt;ashutosh.bapat@enterprisedb.com&gt; Reported-by: Rushabh Lathia &lt;rushabh.lathia@gmail.com&gt; <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/3d8874224ff25de3ca4f9da8ce3118391bd6609e">https://git.postgresql.org/pg/commitdiff/3d8874224ff25de3ca4f9da8ce3118391bd6609e</a></li>
+
+<li>Start a separate test suite for plpgsql. The plpgsql.sql test file in the main regression tests is now by far the largest after numeric_big, making editing and managing the test cases very cumbersome. The other PLs have their own test suites split up into smaller files by topic. It would be nice to have that for plpgsql as well. So, to get that started, set up test infrastructure in src/pl/plpgsql/src/ and split out the recently added procedure test cases into a new file there. That file now mirrors the test cases added to the other PLs, making managing those matching tests a bit easier too. msvc build system changes with help from Michael Paquier <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/632b03da31cbbf4d32193d35031d301bd50d2679">https://git.postgresql.org/pg/commitdiff/632b03da31cbbf4d32193d35031d301bd50d2679</a></li>
+
+</ul>
+
+<p>Teodor Sigaev pushed:</p>
+
+<ul>
+
+<li>Make pg_trgm tests independ from standard_conforming_string. Tests uses. regular expression which contains backslash. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/c28aa157b86f756d53f2a6b715e23ca56f219b4f">https://git.postgresql.org/pg/commitdiff/c28aa157b86f756d53f2a6b715e23ca56f219b4f</a></li>
+
+<li>Add approximated Zipfian-distributed random generator to pgbench. Generator helps to make close to real-world tests. Author: Alik Khilazhev Reviewed-By: Fabien COELHO Discussion: <a target="_blank" href="https://www.postgresql.org/message-id/flat/BF3B6F54-68C3-417A-BFAB-FB4D66F2B410@postgrespro.ru">https://www.postgresql.org/message-id/flat/BF3B6F54-68C3-417A-BFAB-FB4D66F2B410@postgrespro.ru</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/1fcd0adeb38d6ef36066134bb3b44acc5a249a98">https://git.postgresql.org/pg/commitdiff/1fcd0adeb38d6ef36066134bb3b44acc5a249a98</a></li>
+
+</ul>
+
+<p>Andres Freund pushed:</p>
+
+<ul>
+
+<li>Make PGAC_C_BUILTIN_OP_OVERFLOW link instead of just compiling. Otherwise the detection can spuriously detect symbol as available, because the compiler may just emits reference to non-existant symbol. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/85abb5b297c5b318738f09345ae226f780b88e92">https://git.postgresql.org/pg/commitdiff/85abb5b297c5b318738f09345ae226f780b88e92</a></li>
+
+<li>Consistently use PG_INT(16|32|64)_(MIN|MAX). Per buildfarm animal woodlouse. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/f512a6e1323eefa843a063e466babb96d7bfb4ce">https://git.postgresql.org/pg/commitdiff/f512a6e1323eefa843a063e466babb96d7bfb4ce</a></li>
+
+<li>Add float.h include to int8.c, for isnan(). port.h redirects isnan() to _isnan() on windows, which in turn is provided by float.h rather than math.h. Therefore include the latter as well. Per buildfarm. <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/8e211f5391465bddda79e17e63c79dbc8c70e6d1">https://git.postgresql.org/pg/commitdiff/8e211f5391465bddda79e17e63c79dbc8c70e6d1</a></li>
+
+<li>Add defenses against pre-crash files to BufFileOpenShared(). Crash restarts currently don't clean up temporary files, as a debugging aid. If a left-over file happens to have the same name as a segment file we're trying to create, we'll just truncate and reuse it, but there is a problem: BufFileOpenShared() determines how many segment files exist by trying to open .0, .1, .2, ... until it finds no more files. It might be confused by a junk file that has the next segment number. To defend against that, make sure we always create a gap after the end file by unlinking the following name if it exists. Also make it an error to try to open a BufFile that doesn't exist (has no segment 0), so as not to encourage the development of client code that depends on an interface that we can't reliably provide. Author: Thomas Munro Reviewed-By: Andres Freund Discussion: <a target="_blank" href="https://postgr.es/m/CAEepm%3D2jhCbC_GFQJaaDhWxLB4EXtT3vVd5czuRNaqF5CWSTog%40mail.gmail.com">https://postgr.es/m/CAEepm%3D2jhCbC_GFQJaaDhWxLB4EXtT3vVd5czuRNaqF5CWSTog%40mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/923e8dee88ada071fe41541e83f121ead4baf7f8">https://git.postgresql.org/pg/commitdiff/923e8dee88ada071fe41541e83f121ead4baf7f8</a></li>
+
+<li>Add pg_attribute_always_inline. Sometimes it is useful to be able to insist that the compiler inline a function that its normal cost analysis would not normally choose to inline. This can be useful for instantiating different variants of a function that remove branches of code by constant folding. Author: Thomas Munro Reviewed-By: Andres Freund Discussion: <a target="_blank" href="https://postgr.es/m/CAEepm=09rr65VN+cAV5FgyM_z=D77Xy8Fuc9CDDDYbq3pQUezg@mail.gmail.com">https://postgr.es/m/CAEepm=09rr65VN+cAV5FgyM_z=D77Xy8Fuc9CDDDYbq3pQUezg@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/dbb3d6f0102e0aca7575ff864450fca57ac85517">https://git.postgresql.org/pg/commitdiff/dbb3d6f0102e0aca7575ff864450fca57ac85517</a></li>
+
+<li>Allow executor nodes to change their ExecProcNode function. In order for executor nodes to be able to change their ExecProcNode function after ExecInitNode() has finished, provide ExecSetExecProcNode(). This allows any wrappers functions that only execProcnode.c knows about to be reinstalled. The motivation for wanting to change ExecProcNode after ExecInitNode() has finished is that it is not known until later whether parallel query is available, so if a parallel variant is to be installed then ExecInitNode() is too soon to decide. Author: Thomas Munro Reviewed-By: Andres Freund Discussion: <a target="_blank" href="https://postgr.es/m/CAEepm=09rr65VN+cAV5FgyM_z=D77Xy8Fuc9CDDDYbq3pQUezg@mail.gmail.com">https://postgr.es/m/CAEepm=09rr65VN+cAV5FgyM_z=D77Xy8Fuc9CDDDYbq3pQUezg@mail.gmail.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/538d114f6d72cbc94122ab522e002e63359cff5b">https://git.postgresql.org/pg/commitdiff/538d114f6d72cbc94122ab522e002e63359cff5b</a></li>
+
+<li>Fix a number of copy & paste comment errors in common/int.h. Author: Christoph Berg Discussion: <a target="_blank" href="https://postgr.es/m/20171214082808.GA5775@msg.df7cb.de">https://postgr.es/m/20171214082808.GA5775@msg.df7cb.de</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/11b8f076c02b4ff0230430fb8d82c80acc450c90">https://git.postgresql.org/pg/commitdiff/11b8f076c02b4ff0230430fb8d82c80acc450c90</a></li>
+
+<li>Fix pruning of locked and updated tuples. Previously it was possible that a tuple was not pruned during vacuum, even though its update xmax (i.e. the updating xid in a multixact with both key share lockers and an updater) was below the cutoff horizon. As the freezing code assumed, rightly so, that that's not supposed to happen, xmax would be preserved (as a member of a new multixact or xmax directly). That causes two problems: For one the tuple is below the xmin horizon, which can cause problems if the clog is truncated or once there's an xid wraparound. The bigger problem is that that will break HOT chains, which in turn can lead two to breakages: First, failing index lookups, which in turn can e.g lead to constraints being violated. Second, future hot prunes / vacuums can end up making invisible tuples visible again. There's other harmful scenarios. Fix the problem by recognizing that tuples can be DEAD instead of RECENTLY_DEAD, even if the multixactid has alive members, if the update_xid is below the xmin horizon. That's safe because newer versions of the tuple will contain the locking xids. A followup commit will harden the code somewhat against future similar bugs and already corrupted data. Author: Andres Freund, with changes by Alvaro Herrera Reported-By: Daniel Wood Analyzed-By: Andres Freund, Alvaro Herrera, Robert Haas, Peter Geoghegan, Daniel Wood, Yi Wen Wong, Michael Paquier Reviewed-By: Alvaro Herrera, Robert Haas, Michael Paquier Discussion: <a target="_blank" href="https://postgr.es/m/E5711E62-8FDF-4DCA-A888-C200BF6B5742@amazon.com">https://postgr.es/m/E5711E62-8FDF-4DCA-A888-C200BF6B5742@amazon.com</a> <a target="_blank" href="https://postgr.es/m/20171102112019.33wb7g5wp4zpjelu@alap3.anarazel.de">https://postgr.es/m/20171102112019.33wb7g5wp4zpjelu@alap3.anarazel.de</a> Backpatch: 9.3- <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/9c2f0a6c3cc8bb85b78191579760dbe9fb7814ec">https://git.postgresql.org/pg/commitdiff/9c2f0a6c3cc8bb85b78191579760dbe9fb7814ec</a></li>
+
+<li>Perform a lot more sanity checks when freezing tuples. The previous commit has shown that the sanity checks around freezing aren't strong enough. Strengthening them seems especially important because the existance of the bug has caused corruption that we don't want to make even worse during future vacuum cycles. The errors are emitted with ereport rather than elog, despite being "should never happen" messages, so a proper error code is emitted. To avoid superflous translations, mark messages as internal. Author: Andres Freund and Alvaro Herrera Reviewed-By: Alvaro Herrera, Michael Paquier Discussion: <a target="_blank" href="https://postgr.es/m/20171102112019.33wb7g5wp4zpjelu@alap3.anarazel.de">https://postgr.es/m/20171102112019.33wb7g5wp4zpjelu@alap3.anarazel.de</a> Backpatch: 9.3- <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/699bf7d05c68734f800052829427c20674eb2c6b">https://git.postgresql.org/pg/commitdiff/699bf7d05c68734f800052829427c20674eb2c6b</a></li>
+
+<li>Try to detect runtime unavailability of __builtin_mul_overflow(int64). On some systems the results of 64 bit __builtin_mul_overflow() operations can be computed at compile time, but not at runtime. The known cases are arm buildfar animals using clang where the runtime operation is implemented in a unavailable function. Try to avoid compile-time computation by using volatile arguments to __builtin_mul_overflow(). In that case we hopefully will get a link error when unavailable, similar to what buildfarm animals dangomushi and gull are reporting. Author: Andres Freund Discussion: <a target="_blank" href="https://postgr.es/m/20171213213754.pydkyjs6bt2hvsdb@alap3.anarazel.de">https://postgr.es/m/20171213213754.pydkyjs6bt2hvsdb@alap3.anarazel.de</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/c04d35f442a8c4fd5a20103b31839ec52fce3046">https://git.postgresql.org/pg/commitdiff/c04d35f442a8c4fd5a20103b31839ec52fce3046</a></li>
+
+<li>Provide overflow safe integer math inline functions. It's not easy to get signed integer overflow checks correct and fast. Therefore abstract the necessary infrastructure into a common header providing addition, subtraction and multiplication for 16, 32, 64 bit signed integers. The new macros aren't yet used, but a followup commit will convert several open coded overflow checks. Author: Andres Freund, with some code stolen from Greg Stark Reviewed-By: Robert Haas Discussion: <a target="_blank" href="https://postgr.es/m/20171024103954.ztmatprlglz3rwke@alap3.anarazel.de">https://postgr.es/m/20171024103954.ztmatprlglz3rwke@alap3.anarazel.de</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/4d6ad31257adaf8a51e1c4377d96afa656d9165f">https://git.postgresql.org/pg/commitdiff/4d6ad31257adaf8a51e1c4377d96afa656d9165f</a></li>
+
+<li>Use new overflow aware integer operations. A previous commit added inline functions that provide fast(er) and correct overflow checks for signed integer math. Use them in a significant portion of backend code. There's more to touch in both backend and frontend code, but these were the easily identifiable cases. The old overflow checks are noticeable in integer heavy workloads. A secondary benefit is that getting rid of overflow checks that rely on signed integer overflow wrapping around, will allow us to get rid of -fwrapv in the future. Which in turn slows down other code. Author: Andres Freund Discussion: <a target="_blank" href="https://postgr.es/m/20171024103954.ztmatprlglz3rwke@alap3.anarazel.de">https://postgr.es/m/20171024103954.ztmatprlglz3rwke@alap3.anarazel.de</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/101c7ee3ee847bac970c74b73b4f2858484383e5">https://git.postgresql.org/pg/commitdiff/101c7ee3ee847bac970c74b73b4f2858484383e5</a></li>
+
+</ul>
+
+<p>Andrew Dunstan pushed:</p>
+
+<ul>
+
+<li>Fix walsender timeouts when decoding a large transaction. The logical slots have a fast code path for sending data so as not to impose too high a per message overhead. The fast path skips checks for interrupts and timeouts. However, the existing coding failed to consider the fact that a transaction with a large number of changes may take a very long time to be processed and sent to the client. This causes the walsender to ignore interrupts for potentially a long time and more importantly it will result in the walsender being killed due to timeout at the end of such a transaction. This commit changes the fast path to also check for interrupts and only allows calling the fast path when the last keepalive check happened less than half the walsender timeout ago. Otherwise the slower code path will be taken. Backpatched to 9.4 Petr Jelinek, reviewed by Kyotaro HORIGUCHI, Yura Sokolov, Craig Ringer and Robert Haas. Discussion: <a target="_blank" href="https://postgr.es/m/e082a56a-fd95-a250-3bae-0fff93832510@2ndquadrant.com">https://postgr.es/m/e082a56a-fd95-a250-3bae-0fff93832510@2ndquadrant.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/0fedb4ea6946e72c5c51130446b59b083ba3dd21">https://git.postgresql.org/pg/commitdiff/0fedb4ea6946e72c5c51130446b59b083ba3dd21</a></li>
+
+</ul>
+
+<p>Noah Misch pushed:</p>
+
+<ul>
+
+<li>Avoid and detect SIGPIPE race in TAP tests. Don't write to stdin of a psql process that could have already exited with an authentication failure. Buildfarm members crake and mandrill have failed once by doing so. Ignore SIGPIPE in all TAP tests. Back-patch to v10, where these tests were introduced. Reviewed by Michael Paquier. Discussion: <a target="_blank" href="https://postgr.es/m/20171209210203.GC3362632@rfd.leadboat.com">https://postgr.es/m/20171209210203.GC3362632@rfd.leadboat.com</a> <a target="_blank" href="https://git.postgresql.org/pg/commitdiff/c757a3da0af0e5eb636eeee2af6602d279162b0a">https://git.postgresql.org/pg/commitdiff/c757a3da0af0e5eb636eeee2af6602d279162b0a</a></li>
+
+</ul>
+
+<h2>Correctifs en attente</h2>
+
+<p>Amit Langote sent in a patch to error out if the left hand side of ANY/ALL is not a scalar.</p>
+
+<p>Etsuro Fujita sent in another revision of a patch to fix a bug in the PostgreSQL FDW.</p>
+
+<p>Kyotaro HORIGUCHI sent in another revision of a patch to fix an issue with WAL.</p>
+
+<p>Kyotaro HORIGUCHI sent in another revision of a patch to implement asynchronous execution infrastructure and use same in the PostgreSQL FDW.</p>
+
+<p>Kyotaro HORIGUCHI sent in another revision of a patch to collect more stats about skipped vacuums.</p>
+
+<p>Ashutosh Bapat sent in a patch to fix a comment in partition.c.</p>
+
+<p>Alexander Korotkov sent in two more revisions of a patch to fix some infelicities in the the trigram supplied extension with respect to word similarity.</p>
+
+<p>Amit Kapila and Robert Haas traded patches to fix parallel.c obliviousness about worker startup failures.</p>
+
+<p>Masahiko Sawada and Fujii Masao traded patches to fix an assertion failure when the non-exclusive pg_stop_backup aborted.</p>
+
+<p>Masahiko Sawada and Robert Haas traded patches to move relation extension locks out of heavyweight lock manager.</p>
+
+<p>Haribabu Kommi sent in another revision of a patch to implement the infrastructure for pluggable storage.</p>
+
+<p>Kyotaro HORIGUCHI sent in another revision of a patch to fix a race between SELECT and ALTER TABLE NO INHERIT.</p>
+
+<p>Rushabh Lathia sent in another revision of a patch to implement parallel tuplesort for index creation.</p>
+
+<p>Etsuro Fujita sent in another revision of a patch to implement tuple routing to foreign partitions.</p>
+
+<p>Nikhil Sontakke sent in another revision of a patch to implement logical decoding of two-phase transactions.</p>
+
+<p>Haribabu Kommi sent in another revision of a patch to implement pg_stat_walwrites.</p>
+
+<p>Amit Langote sent in three revisions of a patch to allow boolean values in partition FOR VALUES clause.</p>
+
+<p>Amit Langote sent in another revision of a patch to make partition pruning faster.</p>
+
+<p>Thomas Munro sent in two more revisions of a patch to implement parallel hash.</p>
+
+<p>David Steele sent in a patch to exclude unlogged tables from base backups.</p>
+
+<p>Peter Eisentraut sent in two revisions of a patch to use portal pinning in PL/Perl and PL/PythonU.</p>
+
+<p>Peter Eisentraut sent in another revision of a patch to replace GrantObjectType with ObjectType.</p>
+
+<p>Beena Emerson and David Rowley traded patches to do runtime partition pruning.</p>
+
+<p>Bill Moyers sent in a patch to fix a possible NULL dereference in str_time.</p>
+
+<p>Haribabu Kommi sent in another revision of a patch to refactor handling of database attributes between pg_dump and pg_dumpall.</p>
+
+<p>Amit Langote sent in a patch to emit list partition constraint as OR expression, making it round-trippable.</p>
+
+<p>Andres Freund sent in a patch to remove out of date types.</p>
+
+<p>John Naylor sent in two more revisions of a patch to make bootstrap data easier to use.</p>
+
+<p>Ali Akbar sent in two revisions of a patch to add SET NOT NULL in inheritance children when needed.</p>
+
+<p>Amit Khandekar sent in another revision of a patch to enable UPDATEs to partitioned keys which would have the effect of moving tuples to other partitions.</p>
+
+<p>Fabien COELHO sent in another revision of a patch to add \if to pgbench.</p>
+
+<p>Ali Akbar sent in two revisions of a patch to pg_upgrade to ensure that NOT NULL in inheritance children is consistent.</p>
+
+<p>Micha&#65533;l Paquier sent in a patch to fix some infelicities in the overflow-safe integer math inline function on ARM.</p>
+
+<p>Chapman Flack sent in a patch to give worker_spi.naptime an explicit time unit.</p>
+
+<p>Konstantin Knizhnik sent in two more revisions of a patch to add a recheck_on_update property to indexes, signaling that they are non-injective.</p>
+
+<p>Fabien COELHO sent in three more revisions of a patch to add more functions and operators to pgbench.</p>
+
+<p>Amit Langote sent in a patch to teach dbsize.c functions about partitioned tables.</p>
+
+<p>Chapman Flack sent in a patch to clarify that a BGW can register a dynamic BGW.</p>
+
+<p>Kyotaro HORIGUCHI sent in a patch to fix a bug where autoprewarm is fogetting to register a tranche.</p>
+
+<p>Maksim Milyutin sent in a patch to fix a wrong t_bits alignment in pageinspect.</p>
+
+<p>Peter Geoghegan sent in a patch to promote "HOT parent tuple" elog to an ereport.</p>
+
+<p>Christoph Berg sent in a patch to ensure that genbki.pl always produces reproducible output.</p>
+
+<p>Christoph Berg sent in a patch to add support for VENDOR_VERSION to configure.</p>
+
+<p>Thomas Munro sent in a patch to fix an infelicity between top-N sorts and parallel execution.</p>
+
+<p>David Rowley sent in a patch to fix a typo in a comment in json_agg_transfn.</p>
+
+<p>David Rowley sent in a patch to parallelize string_agg and array_agg.</p>

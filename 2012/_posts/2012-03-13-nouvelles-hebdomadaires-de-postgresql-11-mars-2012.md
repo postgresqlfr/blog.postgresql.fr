@@ -1,0 +1,248 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 11 mars 2012"
+author: "NBougain"
+redirect_from: "index.php?post/2012-03-13-nouvelles-hebdomadaires-de-postgresql-11-mars-2012 "
+---
+
+
+
+<p><strong>Revues de code</strong></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add isolation test to check-world and installcheck-world 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cecdf6d4596976bb378ca194bba55a242b883d2d">http://git.postgresql.org/pg/commitdiff/cecdf6d4596976bb378ca194bba55a242b883d2d</a></li>
+
+<li>libpq: Small code clarification, and avoid casting away const 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e685a8e6651b0e55996e6eba6917302607866793">http://git.postgresql.org/pg/commitdiff/e685a8e6651b0e55996e6eba6917302607866793</a></li>
+
+<li>psql: Fix invalid memory access. Due to an apparent thinko, when printing a table in expanded mode (\x), space would be allocated for 1 slot plus 1 byte per line, instead of 1 slot per line plus 1 slot for the NULL terminator. When the line count is small, reading or writing the terminator would therefore access memory beyond what was allocated. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/561ec761332b5608a894210e00d4fee1b5c6522a">http://git.postgresql.org/pg/commitdiff/561ec761332b5608a894210e00d4fee1b5c6522a</a></li>
+
+<li>libpq: Fix memory leak. If a client encoding is specified as a connection parameter (or environment variable), internal storage allocated for it would never be freed. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f9325df0fc6dcf3c1a2540b944c00b7316754146">http://git.postgresql.org/pg/commitdiff/f9325df0fc6dcf3c1a2540b944c00b7316754146</a></li>
+
+<li>psql: Fix memory leak. In expanded auto mode, a lot of allocated memory was not cleaned up. found by Coverity 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1673122127f9f17f4ca6b214027c0806b0d502f4">http://git.postgresql.org/pg/commitdiff/1673122127f9f17f4ca6b214027c0806b0d502f4</a></li>
+
+<li>ecpg: Fix rare memory leaks. found by Coverity 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8dd4d10d481ec1da568ab424e62a3e50c069baaf">http://git.postgresql.org/pg/commitdiff/8dd4d10d481ec1da568ab424e62a3e50c069baaf</a></li>
+
+<li>ecpg: Fix off-by-one error in memory copying. In a rare case, one byte past the end of memory belonging to the sqlca_t structure would be written to. found by Coverity 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c5e073ca2deec1595e4fdd748f14fcb4122e8faf">http://git.postgresql.org/pg/commitdiff/c5e073ca2deec1595e4fdd748f14fcb4122e8faf</a></li>
+
+<li>psql: Remove useless code. Apparently a copy-and-paste mistake introduced in 8ddd22f2456af0155f9c183894f481203e86b76e. found by Coverity 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/410ee35ed095d85bf49c60ab7fd096ddbb5cb0a1">http://git.postgresql.org/pg/commitdiff/410ee35ed095d85bf49c60ab7fd096ddbb5cb0a1</a></li>
+
+<li>Add support for renaming constraints. reviewed by Josh Berkus and Dimitri Fontaine 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/39d74e346c083aa371ba64c4edb1332c40b56530">http://git.postgresql.org/pg/commitdiff/39d74e346c083aa371ba64c4edb1332c40b56530</a></li>
+
+<li>Add more detail to error message for invalid arguments for server process. It now prints the argument that was at fault. Also fix a small misbehavior where the error message issued by getopt() would complain about a program named "--single", because that's what argv[0] is in the server process. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/86947e666d39229558311d7b0be45608fd071ed8">http://git.postgresql.org/pg/commitdiff/86947e666d39229558311d7b0be45608fd071ed8</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Improve documentation around logging_collector and use of stderr. In backup.sgml, point out that you need to be using the logging collector if you want to log messages from a failing archive_command script. (This is an oversimplification, in that it will work without the collector as long as you're not sending postmaster stderr to /dev/null; but it seems like a good idea to encourage use of the collector to avoid problems with multiple processes concurrently scribbling on one file.) In config.sgml, do some wordsmithing of logging_collector discussion. Per bug #6518 from Janning Vygen 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3f47e145f1869f147a807e5a2cb80d21a13e10ae">http://git.postgresql.org/pg/commitdiff/3f47e145f1869f147a807e5a2cb80d21a13e10ae</a></li>
+
+<li>Redesign PlanForeignScan API to allow multiple paths for a foreign table. The original API specification only allowed an FDW to create a single access path, which doesn't seem like a terribly good idea in hindsight. Instead, move the responsibility for building the Path node and calling add_path() into the FDW's PlanForeignScan function. Now, it can do that more than once if appropriate. There is no longer any need for the transient FdwPlan struct, so get rid of that. Etsuro Fujita, Shigeru Hanada, Tom Lane 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6b289942bfdbbfa2955cedc591c522822a7ffbfe">http://git.postgresql.org/pg/commitdiff/6b289942bfdbbfa2955cedc591c522822a7ffbfe</a></li>
+
+<li>Add a hook for processing messages due to be sent to the server log. Use-cases for this include custom log filtering rules and custom log message transmission mechanisms (for instance, lossy log message collection, which has been discussed several times recently). As is our common practice for hooks, there's no regression test nor user-facing documentation for this, though the author did exhibit a sample module using the hook. Martin Pihlak, reviewed by Marti Raudsepp 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/19dbc3463161a142537ba5c569c8e6a073a318de">http://git.postgresql.org/pg/commitdiff/19dbc3463161a142537ba5c569c8e6a073a318de</a></li>
+
+<li>Expose an API for calculating catcache hash values. Now that cache invalidation callbacks get only a hash value, and not a tuple TID (per commits 632ae6829f7abda34e15082c91d9dfb3fc0f298b and b5282aa893e565b7844f8237462cb843438cdd5e), the only way they can restrict what they invalidate is to know what the hash values mean. setrefs.c was doing this via a hard-wired assumption but that seems pretty grotty, and it'll only get worse as more cases come up. So let's expose a calculation function that takes the same parameters as SearchSysCache. Per complaint from Marko Kreen. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d4bf3c9c94305e692349fb6fe0c67e483b72ae87">http://git.postgresql.org/pg/commitdiff/d4bf3c9c94305e692349fb6fe0c67e483b72ae87</a></li>
+
+<li>Add GetForeignColumnOptions() to foreign.c, and add some documentation. GetForeignColumnOptions provides some abstraction for accessing column-specific FDW options, on a par with the access functions that were already provided here for other FDW-related information. Adjust file_fdw.c to use GetForeignColumnOptions instead of equivalent hand-rolled code. In addition, add some SGML documentation for the functions exported by foreign.c that are meant for use by FDW authors. (This is the fdw_helper portion of the proposed pgsql_fdw patch.) Hanada Shigeru, reviewed by KaiGai Kohei 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9088d1b96504717fd589ff7eeacc96b6d1c08ead">http://git.postgresql.org/pg/commitdiff/9088d1b96504717fd589ff7eeacc96b6d1c08ead</a></li>
+
+<li>Fix indentation of \d footers for non-ASCII cases. Multi-line "Inherits:" and "Child tables:" footers were misindented when those strings' translations involved multibyte characters, because we were using strlen() instead of an appropriate display width measurement. In passing, avoid doing gettext() more than once per loop in these places. While at it, fix pg_wcswidth(), which has been entirely broken since about 8.2, but fortunately has been unused for the same length of time. Report and patch by Sergey Burladyan (bug #6480) 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1ed7f0e6b90a9b693895105a90d8b5b0eefbcd56">http://git.postgresql.org/pg/commitdiff/1ed7f0e6b90a9b693895105a90d8b5b0eefbcd56</a></li>
+
+<li>Improve estimation of IN/NOT IN by assuming array elements are distinct. In constructs such as "x IN (1,2,3,4)" and "x &lt;&gt; ALL(ARRAY[1,2,3,4])", we formerly always used a general-purpose assumption that the probability of success is independent for each comparison of "x" to an array element. But in real-world usage of these constructs, that's a pretty poor assumption; it's much saner to assume that the array elements are distinct and so the match probabilities are disjoint. Apply that assumption if the operator appears to behave as equality (for ANY) or inequality (for ALL). But fall back to the normal independent-probabilities calculation if this yields an impossible result, ie probability &gt; 1 or &lt; 0. We could protect ourselves against bad estimates even more by explicitly checking for equal array elements, but that is expensive and doesn't seem worthwhile: doing it would amount to optimizing for poorly-written queries at the expense of well-written ones. Daniele Varrazzo and Tom Lane, after a suggestion by Ants Aasma 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/66a7e6bae98592d1d98d9ef589753f0e953c5828">http://git.postgresql.org/pg/commitdiff/66a7e6bae98592d1d98d9ef589753f0e953c5828</a></li>
+
+<li>Fix some issues with temp/transient tables in extension scripts. Phil Sorber reported that a rewriting ALTER TABLE within an extension update script failed, because it creates and then drops a placeholder table; the drop was being disallowed because the table was marked as an extension member. We could hack that specific case but it seems likely that there might be related cases now or in the future, so the most practical solution seems to be to create an exception to the general rule that extension member objects can only be dropped by dropping the owning extension. To wit: if the DROP is issued within the extension's own creation or update scripts, we'll allow it, implicitly performing an "ALTER EXTENSION DROP object" first. This will simplify cases such as extension downgrade scripts anyway. No docs change since we don't seem to have documented the idea that you would need ALTER EXTENSION DROP for such an action to begin with. Also, arrange for explicitly temporary tables to not get linked as extension members in the first place, and the same for the magic pg_temp_nnn schemas that are created to hold them. This prevents assorted unpleasant results if an extension script creates a temp table: the forced drop at session end would either fail or remove the entire extension, and neither of those outcomes is desirable. Note that this doesn't fix the ALTER TABLE scenario, since the placeholder table is not temp (unless the table being rewritten is). Back-patch to 9.1. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/08dd23cec7d6b5493c83848d7568495815eda5c6">http://git.postgresql.org/pg/commitdiff/08dd23cec7d6b5493c83848d7568495815eda5c6</a></li>
+
+<li>Revise FDW planning API, again. Further reflection shows that a single callback isn't very workable if we desire to let FDWs generate multiple Paths, because that forces the FDW to do all work necessary to generate a valid Plan node for each Path. Instead split the former PlanForeignScan API into three steps: GetForeignRelSize, GetForeignPaths, GetForeignPlan. We had already bit the bullet of breaking the 9.1 FDW API for 9.2, so this shouldn't cause very much additional pain, and it's substantially more flexible for complex FDWs. Add an fdw_private field to RelOptInfo so that the new functions can save state there rather than possibly having to recalculate information two or three times. In addition, we'd not thought through what would be needed to allow an FDW to set up subexpressions of its choice for runtime execution. We could treat ForeignScan.fdw_private as an executable expression but that seems likely to break existing FDWs unnecessarily (in particular, it would restrict the set of node types allowable in fdw_private to those supported by expression_tree_walker). Instead, invent a separate field fdw_exprs which will receive the postprocessing appropriate for expression trees. (One field is enough since it can be a list of expressions; also, we assume the corresponding expression state tree(s) will be held within fdw_state, so we don't need to add anything to ForeignScanState.) Per review of Hanada Shigeru's pgsql_fdw patch. We may need to tweak this further as we continue to work on that patch, but to me it feels a lot closer to being right now. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b14953932dfdda7d915b9e276a09df8458efeec8">http://git.postgresql.org/pg/commitdiff/b14953932dfdda7d915b9e276a09df8458efeec8</a></li>
+
+<li>Restructure SPGiST opclass interface API to support whole-index scans. The original API definition was incapable of supporting whole-index scans because there was no way to invoke leaf-value reconstruction without checking any qual conditions. Also, it was inefficient for multiple-qual-condition scans because value reconstruction got done over again for each qual condition, and because other internal work in the consistent functions likewise had to be done for each qual. To fix these issues, pass the whole scankey array to the opclass consistent functions, instead of only letting them see one item at a time. (Essentially, the loop over scankey entries is now inside the consistent functions not outside them. This makes the consistent functions a bit more complicated, but not unreasonably so.) In itself this commit does nothing except save a few cycles in multiple-qual-condition index scans, since we can't support whole-index scans on SPGiST indexes until nulls are included in the index. However, I consider this a must-fix for 9.2 because once we release it will get very much harder to change the opclass API definition. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/03e56f798e365763486b03a2630fbc3190ccd29a">http://git.postgresql.org/pg/commitdiff/03e56f798e365763486b03a2630fbc3190ccd29a</a></li>
+
+<li>Teach SPGiST to store nulls and do whole-index scans. This patch fixes the other major compatibility-breaking limitation of SPGiST, that it didn't store anything for null values of the indexed column, and so could not support whole-index scans or "x IS NULL" tests. The approach is to create a wholly separate search tree for the null entries, and use fixed "allTheSame" insertion and search rules when processing this tree, instead of calling the index opclass methods. This way the opclass methods do not need to worry about dealing with nulls. Catversion bump is for pg_am updates as well as the change in on-disk format of SPGiST indexes; there are some tweaks in SPGiST WAL records as well. Heavily rewritten version of a patch by Oleg Bartunov and Teodor Sigaev. (The original also stored nulls separately, but it reused GIN code to do so; which required undesirable compromises in the on-disk format, and would likely lead to bugs due to the GIN code being required to work in two very different contexts.) 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c6a11b89e48dfb47b305cea405924333dabc20b6">http://git.postgresql.org/pg/commitdiff/c6a11b89e48dfb47b305cea405924333dabc20b6</a></li>
+
+<li>Fix documented type of t_infomask2. Per Koizumi Satoru 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1e4964478add0278a3f7ff685bc033f0f52625ad">http://git.postgresql.org/pg/commitdiff/1e4964478add0278a3f7ff685bc033f0f52625ad</a></li>
+
+<li>Make parameter name consistent with syntax summary. Thomas Hunger 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8142166162efb193b1fece5cf32afb07fe24e17e">http://git.postgresql.org/pg/commitdiff/8142166162efb193b1fece5cf32afb07fe24e17e</a></li>
+
+<li>Make INSERT/UPDATE queries depend on their specific target columns. We have always created a whole-table dependency for the target relation, but that's not really good enough, as it doesn't prevent scenarios such as dropping an individual target column or altering its type. So we have to create an individual dependency for each target column, as well. Per report from Bill MacArthur of a rule containing UPDATE breaking after such an alteration. Note that this patch doesn't try to make such cases work, only to ensure that the attempted ALTER TABLE throws an error telling you it can't cope with adjusting the rule. This is a long-standing bug, but given the lack of prior reports I'm not going to risk back-patching it. A back-patch wouldn't do anything to fix existing rules' dependency lists, anyway. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c6be1f43ab0551a95ec8ac77364e2f8558ae6345">http://git.postgresql.org/pg/commitdiff/c6be1f43ab0551a95ec8ac77364e2f8558ae6345</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pg_upgrade, only lock the old cluster if link mode is used, and do it right after we restore the schema (a common failure point), and right before we do the link operation. Per suggestions from Robert Haas and Alvaro Herrera 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2127aac6ef56df14f2fc9e91871c6e9194c52eed">http://git.postgresql.org/pg/commitdiff/2127aac6ef56df14f2fc9e91871c6e9194c52eed</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Remove extra copies of LogwrtResult. This simplifies the code a little bit. The new rule is that to update XLogCtl-&gt;LogwrtResult, you must hold both WALWriteLock and info_lck, whereas before we had two copies, one that was protected by WALWriteLock and another protected by info_lck. The code that updates them was already holding both locks, so merging the two is trivial. The third copy, XLogCtl-&gt;Insert.LogwrtResult, was not totally redundant, it was used in AdvanceXLInsertBuffer to update the backend-local copy, before acquiring the info_lck to read the up-to-date value. But the value of that seems dubious; at best it's saving one spinlock acquisition per completed WAL page, which is not significant compared to all the other work involved. And in practice, it's probably not saving even that much. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7714c6382941383514c0f1954ca831686ac4fcd2">http://git.postgresql.org/pg/commitdiff/7714c6382941383514c0f1954ca831686ac4fcd2</a></li>
+
+<li>Simplify the way changes to full_page_writes are logged. It's harmless to do full page writes even when not strictly necessary, so when turning full_page_writes on, we can set the global flag first, and then call XLogInsert. Likewise, when turning it off, we can write the WAL record first, and then clear the flag. This way XLogInsert doesn't need any special handling of the XLOG_FPW_CHANGE record type. XLogInsert is complicated enough already, so anything we can keep away from there is a good thing. Actually I don't think the atomicity of the shared memory flag matters, anyway, because we only write the XLOG_FPW_CHANGE at the end of recovery, when there are no concurrent WAL insertions going on. But might as well make it safe, in case we allow changing full_page_writes on the fly in the future. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3b682df3260aa8e020201e4b6c5cbc31fe8ecb8e">http://git.postgresql.org/pg/commitdiff/3b682df3260aa8e020201e4b6c5cbc31fe8ecb8e</a></li>
+
+<li>Make the comments more clear on the fact that UpdateFullPageWrites() is not safe to call concurrently from multiple processes. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e587e2e3e39ec54772905b8e0ac7155a03253934">http://git.postgresql.org/pg/commitdiff/e587e2e3e39ec54772905b8e0ac7155a03253934</a></li>
+
+<li>Silence warning about unused variable, when building without assertions. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d93f209f483f006534ae543667a1254b6fdec183">http://git.postgresql.org/pg/commitdiff/d93f209f483f006534ae543667a1254b6fdec183</a></li>
+
+<li>Update outdated comment. HeapTupleHeader.t_natts field doesn't exist anymore. Kevin Grittner 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/342baf4ce61f06ad3898490dc5125579d9e6bd18">http://git.postgresql.org/pg/commitdiff/342baf4ce61f06ad3898490dc5125579d9e6bd18</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Typo fix. Fujii Masao. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bc97c38115ed48c1dd27e9d534faae204427f9a5">http://git.postgresql.org/pg/commitdiff/bc97c38115ed48c1dd27e9d534faae204427f9a5</a></li>
+
+<li>psql: Avoid some spurious output if the server croaks. Fixes a regression in commit 08146775acd8bfe0fcc509c71857abb928697171. Noah Misch 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cf7026b64b3e56889f8a81194a57221500e23a0f">http://git.postgresql.org/pg/commitdiff/cf7026b64b3e56889f8a81194a57221500e23a0f</a></li>
+
+<li>Extend object access hook framework to support arguments, and DROP. This allows loadable modules to get control at drop time, perhaps for the purpose of performing additional security checks or to log the event. The initial purpose of this code is to support sepgsql, but other applications should be possible as well. KaiGai Kohei, reviewed by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/07d1edb954bc8f5d0e2c010dec8482328af38cb8">http://git.postgresql.org/pg/commitdiff/07d1edb954bc8f5d0e2c010dec8482328af38cb8</a></li>
+
+<li>sepgsql DROP support. KaiGai Kohei 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e914a144d3aaa0a09e0aab031d7e6f58389401ce">http://git.postgresql.org/pg/commitdiff/e914a144d3aaa0a09e0aab031d7e6f58389401ce</a></li>
+
+</ul>
+
+<p>Tatsuo Ishii a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add description for --no-locale and --text-search-config. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/da9e73a137871ab8ebe432ea443193c336bfc81a">http://git.postgresql.org/pg/commitdiff/da9e73a137871ab8ebe432ea443193c336bfc81a</a></li>
+
+</ul>
+
+<p>Michael Meskes a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Removed redundant "the" from ecpg's docs. Typo spotted by Erik Rijkers. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fc227a4e3b84f7bc243c4606780dde28aea257ee">http://git.postgresql.org/pg/commitdiff/fc227a4e3b84f7bc243c4606780dde28aea257ee</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Pavel Stehule and Alvaro Herrera traded patches for the CHECK FUNCTION system.</li>
+
+<li>Shigeru HANADA sent in four more revisions of the patch to add a PostgreSQL FDW.</li>
+
+<li>Kyotaro HORIGUCHI and Marko Kreen traded patches to add a new method of storing tuples to libpq and use same to make dblink more efficient.</li>
+
+<li>KaiGai Kohei and Yeb Havinga traded patches to add a new sepgsql.client_label GUC.</li>
+
+<li>Dimitri Fontaine sent in three more revisions of the patch to add command triggers.</li>
+
+<li>Tomas Vondra sent in two revisions of a patch to fix some regression test errors that appear in a Czech locale, cs_CZ.</li>
+
+<li>Robert Haas sent in a patch to speed up the creation of error messages.</li>
+
+<li>Bruce Momjian sent in two more revisions of a patch to fix the documentation for pg_upgrade --logfile.</li>
+
+<li>Alexander Shulgin sent in two more revisions of a patch to support URI connection strings in libpq.</li>
+
+<li>Pavel Stehule and Petr (PJMODOS) Jelinek traded patches to add CHECK TRIGGER and related functionality.</li>
+
+<li>Fujii Masao sent in a patch to extend pg_stat_statements so that it reports the planning time.</li>
+
+<li>Jaime Casanova and Robert Haas traded patches to extend pg_archivecleanup.</li>
+
+<li>Jaime Casanova sent in a trimmed-down version of the patch to add GIN and SP-GiST support to pgstattuple.</li>
+
+<li>Marti Raudsepp sent in a patch to optimize certain cases where IS DISTINCT FROM NULL elides to IS NOT NULL.</li>
+
+<li>Robert Haas sent in a patch to add a pg_prewarm utility.</li>
+
+<li>Fujii Masao sent in a patch to fix a bug in walsender which causes high CPU usage.</li>
+
+<li>Antonin Houska sent in a WIP patch implementing some sub-cases of LATERAL for function calls.</li>
+
+<li>Marti Raudsepp sent in another revision of the patch to refactor simplify_function.</li>
+
+</ul>

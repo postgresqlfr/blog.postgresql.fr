@@ -1,0 +1,274 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 7 octobre 2012"
+author: "NBougain"
+redirect_from: "index.php?post/2012-10-13-nouvelles-hebdomadaires-de-postgresql-7-octobre-2012 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>The max shared_buffers value that initdb will choose was raised, update docs. Jeff Janes 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2ad881f054be165d617aa67cf62513dd1437caa6">http://git.postgresql.org/pg/commitdiff/2ad881f054be165d617aa67cf62513dd1437caa6</a></li>
+
+<li>Fix access past end of string in date parsing. This affects date_in(), and a couple of other funcions that use DecodeDate(). Hitoshi Harada 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0899556e92958712cc31953497b82657cc706f94">http://git.postgresql.org/pg/commitdiff/0899556e92958712cc31953497b82657cc706f94</a></li>
+
+<li>Add #includes needed on some platforms in the new files. Hopefully this makes the *BSD buildfarm animals happy. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/93b6d78cf07cc886cd14edacc7d621ef330c513d">http://git.postgresql.org/pg/commitdiff/93b6d78cf07cc886cd14edacc7d621ef330c513d</a></li>
+
+<li>Fix typo in previous warning-silencing patch. Fujii Masao 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/779f80b75d448d61cf3388645505c9fd81000bb2">http://git.postgresql.org/pg/commitdiff/779f80b75d448d61cf3388645505c9fd81000bb2</a></li>
+
+<li>Silence compiler warning about pointer type mismatch on some platforms. timeval.t_sec is of type time_t, which is not always compatible with long. I'm not sure if this was just harmless warning or a real bug, but this fixes it, anyway. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2a4bbed7b80283200216244e98f7f004ad4d735a">http://git.postgresql.org/pg/commitdiff/2a4bbed7b80283200216244e98f7f004ad4d735a</a></li>
+
+<li>Fix two bugs introduced in the xlog.c split. The comment explaining the naming of timeline history files was wrong, and the history file was not being arhived. Pointed out by Fujii Masao. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bc1229c83238a0d71a3923cb48e53ea7ea37654c">http://git.postgresql.org/pg/commitdiff/bc1229c83238a0d71a3923cb48e53ea7ea37654c</a></li>
+
+<li>Split off functions related to timeline history files and XLOG archiving. This is just refactoring, to make the functions accessible outside xlog.c. A followup patch will make use of that, to allow fetching timeline history files over streaming replication. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d5497b95f3ca2fc50c6eef46d3394ab6e6855956">http://git.postgresql.org/pg/commitdiff/d5497b95f3ca2fc50c6eef46d3394ab6e6855956</a></li>
+
+<li>Return the number of rows processed when COPY is executed through SPI. You can now get the number of rows processed by a COPY statement in a PL/pgSQL function with "GET DIAGNOSTICS x = ROW_COUNT". Pavel Stehule, reviewed by Amit Kapila, with some editing by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7ae1815961c635fd1a6fe72acb89fdef741a45a8">http://git.postgresql.org/pg/commitdiff/7ae1815961c635fd1a6fe72acb89fdef741a45a8</a></li>
+
+<li>Add --sampling-rate option to pgbench. This allows logging only some fraction of transactions, greatly reducing the amount of log generated. Tomas Vondra, reviewed by Robert Haas and Jeff Janes. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e1be1df51facd3c25317c809fd72ecac8b93b4e7">http://git.postgresql.org/pg/commitdiff/e1be1df51facd3c25317c809fd72ecac8b93b4e7</a></li>
+
+<li>Fix typo in comment, and reword it slightly while we're at it. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1a956481baa2bb53d9510bb14cf64bb5faad29fb">http://git.postgresql.org/pg/commitdiff/1a956481baa2bb53d9510bb14cf64bb5faad29fb</a></li>
+
+<li>Use the regular main processing loop also in walsenders. The regular backend's main loop handles signal handling and error recovery better than the current WAL sender command loop does. For example, if the client hangs and a SIGTERM is received before starting streaming, the walsender will now terminate immediately, rather than hang until the connection times out. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fd5942c18f977a36fec66a8d1281092805f2a55e">http://git.postgresql.org/pg/commitdiff/fd5942c18f977a36fec66a8d1281092805f2a55e</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Remove collations from generic ALTER test. The error messages they generate are not portable enough. Also, since the only point of the alter_generic_1 expected file was to cover platforms with no collation support, it's now useless, so remove it. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ece26987c20c679edde74775ef0c56bff32bd1bc">http://git.postgresql.org/pg/commitdiff/ece26987c20c679edde74775ef0c56bff32bd1bc</a></li>
+
+<li>Refactor "ALTER some-obj SET SCHEMA" implementation. Instead of having each object type implement the catalog munging independently, centralize knowledge about how to do it and expand the existing table in objectaddress.c with enough data about each object type to support this operation. Author: KaiGai Kohei Tweaks by me Reviewed by Robert Haas 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2164f9a1254980a02ef9ca99ee3bcb8c1298b219">http://git.postgresql.org/pg/commitdiff/2164f9a1254980a02ef9ca99ee3bcb8c1298b219</a></li>
+
+<li>REASSIGN OWNED: consider grants on tablespaces, too. Apparently this was considered in the original code (see commit cec3b0a9) but I failed to notice that such entries would always be skipped by the database check at the start of the loop. Per bugs #7578 by Nikolay, #6116 by tushar.qa@gmail.com. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fe3b5eb08a16c391478e305bd9ea40f4f5979689">http://git.postgresql.org/pg/commitdiff/fe3b5eb08a16c391478e305bd9ea40f4f5979689</a></li>
+
+<li>refactor ALTER some-obj SET OWNER implementation. Remove duplicate implementation of catalog munging and miscellaneous privilege and consistency checks. Instead rely on already existing data in objectaddress.c to do the work. Author: KaiGai Kohei Tweaked by me Reviewed by Robert Haas 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/994c36e01d19dece2b0c76fb781e1d08a6e1c814">http://git.postgresql.org/pg/commitdiff/994c36e01d19dece2b0c76fb781e1d08a6e1c814</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add C comment that IsBackendPid() is called by external modules, so we don't accidentally remove it. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/dbdb2172a0940cc18985a0c2b20cdb002fdf8466">http://git.postgresql.org/pg/commitdiff/dbdb2172a0940cc18985a0c2b20cdb002fdf8466</a></li>
+
+<li>In pg_upgrade, try to convert the locale names to canonical form before comparison; also report the old/new values if they don't match. Backpatch to 9.2. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b61837a49f4b4ea12e7ced8e3039ae98908c7c0b">http://git.postgresql.org/pg/commitdiff/b61837a49f4b4ea12e7ced8e3039ae98908c7c0b</a></li>
+
+<li>Adjust pg_upgrade query so toast tables related to system catalog schema entries are not dumped. This fixes an error caused by droping/recreating the information_schema, but other failures were also possible. Backpatch to 9.2. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ac96b851ec44cbf63bf0b231e813c0ab4af08d6b">http://git.postgresql.org/pg/commitdiff/ac96b851ec44cbf63bf0b231e813c0ab4af08d6b</a></li>
+
+<li>In pg_upgrade, improve error reporting when the number of relation objects does not match between the old and new clusters. Backpatch to 9.2. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8a7598091a29ac13736ef8b70986921746648582">http://git.postgresql.org/pg/commitdiff/8a7598091a29ac13736ef8b70986921746648582</a></li>
+
+<li>In pg_upgrade, use full path name for analyze_new_cluster.sh script. Backpatch to 9.2. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ce754579491bfcfc1c83b737fa5373c2e3fc4b39">http://git.postgresql.org/pg/commitdiff/ce754579491bfcfc1c83b737fa5373c2e3fc4b39</a></li>
+
+</ul>
+
+<p>Andrew Dunstan a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Allow a few seconds for Windows to catch up with a directory rename when checking pg_upgrade. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/06623df63bc7debaad5b3239f2a4626b4c1d8855">http://git.postgresql.org/pg/commitdiff/06623df63bc7debaad5b3239f2a4626b4c1d8855</a></li>
+
+<li>Quiet a few MSC compiler warnings. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/33a7101281c6d5c3905b311ed690024ca6a673c6">http://git.postgresql.org/pg/commitdiff/33a7101281c6d5c3905b311ed690024ca6a673c6</a></li>
+
+<li>Fix typo in previous MSC commit. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ea72bb8ae527d371ccaf53647540a33224df92a6">http://git.postgresql.org/pg/commitdiff/ea72bb8ae527d371ccaf53647540a33224df92a6</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Standardize naming of malloc/realloc/strdup wrapper functions. We had a number of variants on the theme of "malloc or die", with the majority named like "pg_malloc", but by no means all. Standardize on the names pg_malloc, pg_malloc0, pg_realloc, pg_strdup. Get rid of pg_calloc entirely in favor of using pg_malloc0. This is an essentially cosmetic change, so no back-patch. (I did find a couple of places where psql and pg_dump were using plain malloc or strdup instead of the pg_ versions, but they don't look significant enough to bother back-patching.) 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a563d941803535dbd27d4191fe7729497b7fdf31">http://git.postgresql.org/pg/commitdiff/a563d941803535dbd27d4191fe7729497b7fdf31</a></li>
+
+<li>Work around unportable behavior of malloc(0) and realloc(NULL, 0). On some platforms these functions return NULL, rather than the more common practice of returning a pointer to a zero-sized block of memory. Hack our various wrapper functions to hide the difference by substituting a size request of 1. This is probably not so important for the callers, who should never touch the block anyway if they asked for size 0 --- but it's important for the wrapper functions themselves, which mistakenly treated the NULL result as an out-of-memory failure. This broke at least pg_dump for the case of no user-defined aggregates, as per report from Matthew Carrington. Back-patch to 9.2 to fix the pg_dump issue. Given the lack of previous complaints, it seems likely that there is no live bug in previous releases, even though some of these functions were in place before that. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/09ac603c36d1c865df68e5abd9dab04bd0fa5e48">http://git.postgresql.org/pg/commitdiff/09ac603c36d1c865df68e5abd9dab04bd0fa5e48</a></li>
+
+<li>Avoid planner crash/Assert failure with joins to unflattened subqueries. examine_simple_variable supposed that any RTE_SUBQUERY rel it gets pointed at must have been planned already. However, this isn't a safe assumption because we must do selectivity estimation while generating indexscan paths, and that code might look at join clauses involving a rel that the loop in set_base_rel_sizes() hasn't reached yet. The simplest fix is to play dumb in such a situation, that is give up trying to extract any stats for the Var. This could possibly be improved by making a separate pass over the RTE list to plan each unflattened subquery before we start the main planning work --- but that would be pretty invasive and it doesn't seem worth it, for now at least. (We couldn't just break set_base_rel_sizes() into two loops: the prescan would need to handle all subquery rels in the query, not only those in the current join subproblem.) This bug was introduced in commit 1cb108efb0e60d87e4adec38e7636b6e8efbeb57, although I think that subsequent changes may have exposed it more than it was originally. Per bug #7580 from Maxim Boguk. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1f91c8ca1d2edc66c688ee719eded79ecd0e8f1b">http://git.postgresql.org/pg/commitdiff/1f91c8ca1d2edc66c688ee719eded79ecd0e8f1b</a></li>
+
+<li>Support CREATE SCHEMA IF NOT EXISTS. Per discussion, schema-element subcommands are not allowed together with this option, since it's not very obvious what should happen to the element objects. Fabr&iacute;zio de Royes Mello 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fb34e94d214d6767910df47aa7c605c452d11c57">http://git.postgresql.org/pg/commitdiff/fb34e94d214d6767910df47aa7c605c452d11c57</a></li>
+
+<li>Fix permissions explanations in CREATE DATABASE and CREATE SCHEMA docs. These reference pages still claimed that you have to be superuser to create a database or schema owned by a different role. That was true before 8.1, but it was changed in commits aa1110624c08298393dfce996f7b21809d98d3fd and f91370cd2faf1fd35a1ac74d84652a85ed841919 to allow assignment of ownership to any role you are a member of. However, at the time we were thinking of that primarily as a change to the ALTER OWNER rules, so the need to touch these two CREATE ref pages got missed. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7e389f73d1556fb21487cd28fe56cba1a91126e6">http://git.postgresql.org/pg/commitdiff/7e389f73d1556fb21487cd28fe56cba1a91126e6</a></li>
+
+<li>Fix parse location tracking for lists that can be empty. The previous coding of the YYLLOC_DEFAULT macro behaved strangely for empty productions, assigning the previous nonterminal's location as the parse location of the result. The usefulness of that was (at best) debatable already, but the real problem is that in list-generating nonterminals like OptFooList: /* EMPTY */ { ... } | OptFooList Foo { ... } ; the initially-identified location would get copied up, so that even a nonempty list would be given a bogus parse location. Document how to work around that, and do so for OptSchemaEltList, so that the error condition just added for CREATE SCHEMA IF NOT EXISTS produces a sane error cursor. So far as I can tell, there are currently no other cases where the situation arises, so we don't need other instances of this coding yet. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/707263542e571c9906549e196728ad39ecc0ca84">http://git.postgresql.org/pg/commitdiff/707263542e571c9906549e196728ad39ecc0ca84</a></li>
+
+<li>Make CREATE AGGREGATE complain if the initcond is invalid for the datatype. The initial transition value is stored as a text string and not fed to the transition type's input function until runtime (so that values such as "now" don't get frozen at creation time). Previously, CREATE AGGREGATE didn't do anything with it but that, which meant that even erroneous values would be accepted and not complained of until the aggregate is used. This seems unhelpful, and it's confused at least one user, as in Rhys Stewart's recent report. It seems worth taking a few more cycles to invoke the input function and verify that the value is acceptable. We can't do this if the transition type is polymorphic, but in normal aggregates we know the actual transition type so we can call the right input function. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e1e60694b4a69786dc5ff27e340afeaad7833eb9">http://git.postgresql.org/pg/commitdiff/e1e60694b4a69786dc5ff27e340afeaad7833eb9</a></li>
+
+<li>getnameinfo_unix has to be taught not to insist on NI_NUMERIC flags, too. Per testing of previous patch. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1997f34db4687e671690ed054c8f30bb501b1168">http://git.postgresql.org/pg/commitdiff/1997f34db4687e671690ed054c8f30bb501b1168</a></li>
+
+<li>Improve documentation about large-object functions. Copy-editing for previous patch, plus fixing some longstanding markup issues and oversights (like not mentioning that failures will set the PQerrorMessage string). 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1503333f8f6fb5dcfdd4f84a9bfa7929c45aa2cc">http://git.postgresql.org/pg/commitdiff/1503333f8f6fb5dcfdd4f84a9bfa7929c45aa2cc</a></li>
+
+<li>Autoconfiscate selection of 64-bit int type for 64-bit large object API. Get rid of the fundamentally indefensible assumption that "long long int" exists and is exactly 64 bits wide on every platform Postgres runs on. Instead let the configure script select the type to use for "pg_int64". This is a bit of a pain in the rear since we do not want to pollute client namespace with all the random symbols that pg_config.h defines; instead we have to create a separate generated header file, "pg_config_ext.h". But now that the infrastructure is there, we might have the ability to add some other stuff that's long been wanting in this area. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/95d035e66d8e4371d35830d81f39face03cd4c45">http://git.postgresql.org/pg/commitdiff/95d035e66d8e4371d35830d81f39face03cd4c45</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Improve some LDAP authentication error messages 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6bd176095b59c1d7acfed3adf7648d04d7b2916f">http://git.postgresql.org/pg/commitdiff/6bd176095b59c1d7acfed3adf7648d04d7b2916f</a></li>
+
+<li>Remove redundant code for getnameinfo() replacement Our getnameinfo() replacement implementation in getaddrinfo.c failed unless NI_NUMERICHOST and NI_NUMERICSERV were given as flags, because it doesn't resolve host names, only numeric IPs. But per standard, when those flags are not given, an implementation can still degrade to not returning host names, so this restriction is unnecessary. When we remove it, we can eliminate some code in postmaster.c that apparently tried to work around that. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c424d0d1052cb4053c8712ac44123f9b9a9aa3f2">http://git.postgresql.org/pg/commitdiff/c424d0d1052cb4053c8712ac44123f9b9a9aa3f2</a></li>
+
+<li>PL/pgSQL: rename gram.y to pl_gram.y. This makes the naming inside plpgsql consistent and distinguishes the file from the backend's gram.y file. It will also allow easier refactoring of the bison make rules later on. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/05346c131a14f29f327518778811cba26444822b">http://git.postgresql.org/pg/commitdiff/05346c131a14f29f327518778811cba26444822b</a></li>
+
+<li>Improve LDAP authentication documentation. Use the terms "simple bind" and "search+bind" consistently do distinguish the two modes (better than first mode and second mode in any case). They were already used in some places, now it's just more prominent. Split up the list of options into one for common options and one for each mode, for clarity. Add configuration examples for either mode. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ae835c7d6e202e99796c58093ef781477e54c459">http://git.postgresql.org/pg/commitdiff/ae835c7d6e202e99796c58093ef781477e54c459</a></li>
+
+</ul>
+
+<p>Michael Meskes a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In ECPG, fixed test for array boundary. Instead of continuing if the next character is not an array boundary get_data() used to continue only on finding a boundary so it was not able to read any element after the first. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6e41fa2e5cd84d0970f1ee1d9c9767dbc974952a">http://git.postgresql.org/pg/commitdiff/6e41fa2e5cd84d0970f1ee1d9c9767dbc974952a</a></li>
+
+<li>In the ECPG documents, removed sentence about not being able to retrieve more than one row at a time, because it is not correct. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1045af95e7218e5713baabdbf6b960876fa3c9d2">http://git.postgresql.org/pg/commitdiff/1045af95e7218e5713baabdbf6b960876fa3c9d2</a></li>
+
+</ul>
+
+<p>Tatsuo Ishii a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add API for 64-bit large object access. Now users can access up to 4TB large objects (standard 8KB BLCKSZ case). For this purpose new libpq API lo_lseek64, lo_tell64 and lo_truncate64 are added. Also corresponding new backend functions lo_lseek64, lo_tell64 and lo_truncate64 are added. inv_api.c is changed to handle 64-bit offsets. Patch contributed by Nozomi Anzai (backend side) and Yugo Nagata (frontend side, docs, regression tests and example program). Reviewed by Kohei Kaigai. Committed by Tatsuo Ishii with minor editings. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/461ef73f0977c95c9452680495bc161618db9227">http://git.postgresql.org/pg/commitdiff/461ef73f0977c95c9452680495bc161618db9227</a></li>
+
+<li>Bump up catalog vesion due to 64-bit large object API functions addition. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b51a65f5bf4b68bc91d33d88108837d13d29df98">http://git.postgresql.org/pg/commitdiff/b51a65f5bf4b68bc91d33d88108837d13d29df98</a></li>
+
+<li>Fix compiling errors on Windows platform. Fix wrong usage of INT64CONST macro. Fix lo_hton64 and lo_ntoh64 not to use int32_t and uint32_t. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7e2f8ed2b0dcff052b8f06069e2d69f02b774f04">http://git.postgresql.org/pg/commitdiff/7e2f8ed2b0dcff052b8f06069e2d69f02b774f04</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Karl O. Pinc sent in another revision of the patch to describe the AND-mask nature of the permission system.</li>
+
+<li>Peter Eisentraut sent in a patch to fix host name lookups in hba.</li>
+
+<li>Dimitri Fontaine sent in a patch to fix a bug with EXTENSIONs.</li>
+
+<li>Alexander Korotkov sent in a patch to remove unused targets which are used only for order by when data already comes in right order.</li>
+
+<li>Karl O. Pinc sent in another revision of the patch to differentiate which catalogs use only OIDs to ensure uniqueness from those which use other groups of columns for this purpose.</li>
+
+<li>Phil Sorber sent in a patch to add a #define for the OID of UUID, having lost an argument to Thom Brown.</li>
+
+<li>Heikki Linnakangas sent in another revision of the patch to allow switching timelines over streaming replication.</li>
+
+<li>Michael Paquier sent in a patch to implement REINDEX CONCURRENTLY.</li>
+
+<li>Zoltan Boszormenyi sent in another patch for the lock timeout/common SIGALARM framework.</li>
+
+<li>Alexander Korotkov sent in another revision of the patch to remove bloat from gistchoose.</li>
+
+<li>Zoltan Boszormenyi sent in four more pairs of patches, one to refactor PQConnInfo, the other to enable pg_basebackup to configure and start a standby.</li>
+
+<li>Amit Kapila sent in two more revisions of a patch to improve update performance by reducing the WAL volume.</li>
+
+<li>Amit Kapila sent in another revision of the patch to help walreceiver detect network partition faster.</li>
+
+<li>Marc Balmer sent in two revisions of a patch to add FET (Belarus) to the default time zone abbreviations.</li>
+
+<li>Selena Deckelmann sent in another revision of the patch to fix some infelicities in the contexts where per-database and per-role parameters are checked.</li>
+
+<li>Selena Deckelmann sent in another revision of the patch to add plpgsql_check_function().</li>
+
+<li>Tomonari Katsumata sent in a patch to fix an error message when ANALYZE is run on a hot standby.</li>
+
+</ul>

@@ -1,0 +1,180 @@
+---
+layout: post
+title: "Nouvelles neuves de PG"
+author: "SAS"
+redirect_from: "index.php?post/drupal-255 "
+---
+
+
+
+<strong>Les nouveautés des produits dérivés</strong>
+
+<ul>
+
+<li>Archiveopteryx 2.0 est sorti.
+
+<a target="_blank" href="http://www.archiveopteryx.org/2.0.html">http://www.archiveopteryx.org/2.0.html</a></li>
+
+<li>PostgreSQL tablelog 0.4.4 est disponible.
+
+<a target="_blank" href="http://pgfoundry.org/projects/tablelog/">http://pgfoundry.org/projects/tablelog/</a></li>
+
+</ul>
+
+<p><strong>Jobs PostgreSQL en Juin</strong></p>
+
+<p><a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2007-06/threads.php">http://archives.postgresql.org/pgsql-jobs/2007-06/threads.php</a></p>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<p>Le prochain RV du SFPUG est programmé pour mardi 12 au Hi5 de San Francisco. Plus de details sur le site. RSVP pour manger à l'oeil.
+
+<a target="_blank" href="http://postgresql.meetup.com/1/calendar/5808330/">http://postgresql.meetup.com/1/calendar/5808330/</a></p>
+
+<p>Les inscriptions pour les pgday.it du 6 et 7 juillet sont ouvertes. L'événement aura lieu en Toscane, à Prato (Italie).</p>
+
+<p>URL à noter&nbsp;:</p>
+
+<ul>
+
+<li>... pour les inscriptions&nbsp;:
+
+<a target="_blank" href="http://www.pgday.it/en/logistica/dove_dormire">http://www.pgday.it/en/logistica/dove_dormire</a></li>
+
+<li>... pour les tee-shirts officiels&nbsp;:
+
+<a target="_blank" href="http://www.pgday.it/it/node/158">http://www.pgday.it/it/node/158</a></li>
+
+</ul>
+
+<p>Dates importantes&nbsp;:</p>
+
+<ul>
+
+<del><li>31 mai&nbsp;: date limite pour la remise des présentations,</li>
+
+<li>5 juin&nbsp;: fin des tarifs avantageux offerts par les Hôtels San Marco et Art Hotel Milano.</li>
+
+</del>
+
+</ul>
+
+<p><strong>PostgreSQL dans les média</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://www.planetpostgresql.org/">http://www.planetpostgresql.org/</a></li>
+
+<li>General Bits, Archives et articles occasionnels&nbsp;:
+
+<a target="_blank" href="http://www.varlena.com/%21GeneralBits/">http://www.varlena.com/!GeneralBits/</a></li>
+
+</ul>
+
+<p><em>Les PostgreSQL Weekly News vous sont présentées cette semaine par David Fetter. Adaptation francophone par la communauté PostgresqlFr.</em></p>
+
+<p><em>Vos propositions d'informations doivent parvenir avant dimanche minuit à david@fetter.org. Les propositions en allemand peuvent être envoyées à pwn@pgug.de.</em></p>
+
+<p><strong>Correctifs appliqués</strong></p>
+
+<p>Bruce Momjian a commité&nbsp;:</p>
+
+<ul>
+
+<li>Mark TODO as DONE: "Allow UPDATE/DELETE WHERE CURRENT OF cursor."</li>
+
+<li>Mark TODO as DONE: "Allow sequential scans to take advantage of other concurrent sequential scans, also called 'Synchronised Scanning'"</li>
+
+</ul>
+
+<p>Alvaro Herrera a commité&nbsp;:</p>
+
+<ul>
+
+<li>Disallow the cost balancing code from resulting in a zero cost limit, which causes a division-by-zero error in the vacuum code. This can happen when there are more workers than cost limit units. Per report from Galy Lee.</li>
+
+<li>Avoid passing zero as a value for vacuum_cost_limit, because it's not a valid value for the vacuum code. Instead, make zero signify getting the value from a higher level configuration facility, just like -1 in the original coding. We still document that -1 is the value that disables the feature, to avoid confusing the user unnecessarily. Reported by Galy Lee, per subsequent discussion.</li>
+
+<li>Avoid losing track of data for shared tables in pgstats. Report by Michael Fuhr, patch from Tom Lane after a messier suggestion by me.</li>
+
+</ul>
+
+<p>Magnus Hagander a commité&nbsp;:</p>
+
+<ul>
+
+<li>ITAGAKI Takahiro's patch which changes the Japanese docs in contrib/pgstattuple to reflect the fact that the functions bt_metap, bt_page_stats and bt_page_items have moved from there to pageinspect.</li>
+
+</ul>
+
+<p>Jan Wieck a commité&nbsp;:</p>
+
+<ul>
+
+<li>The session_replication_role actually can be changed at will during a session regardless of the existence of cached plans. The plancache only needs to be invalidated so that rules affected by the new setting will be reflected in the new query plans.</li>
+
+</ul>
+
+<p>Teodor Sigaev a commité&nbsp;:</p>
+
+<ul>
+
+<li>Move call of MarkBufferDirty() before XLogInsert() as required. Many thanks to Heikki Linnakangas heikki [at] enterprisedb dot com for his sharp eyes.</li>
+
+<li>Replace ReadBuffer to ReadBufferWithStrategy in all vacuum-involved places to implement limited-size "ring" of buffers for VACUUM for GIN &amp; GIST.</li>
+
+</ul>
+
+<p>Tom Lane a commité&nbsp;:</p>
+
+<ul>
+
+<li>Support UPDATE/DELETE WHERE CURRENT OF cursor_name, per SQL standard. Along the way, allow FOR UPDATE in non-WITH-HOLD cursors; there may once have been a reason to disallow that, but it seems to work now, and it's really rather necessary if you want to select a row via a cursor and then update it in a concurrent-safe fashion. Original patch by Arul Shaji, rather heavily editorialized by Tom Lane.</li>
+
+<li>Teach heapam code to know the difference between a real seqscan and the pseudo HeapScanDesc created for a bitmap heap scan. This avoids some useless overhead during a bitmap scan startup, in particular invoking the syncscan code. (We might someday want to do that, but right now it's merely useless contention for shared memory, to say nothing of possibly pushing useful entries out of syncscan's small LRU list.) This also allows elimination of ugly pgstat_discount_heap_scan() kluge.</li>
+
+<li>Insert ORDER BY into a few regression test queries that now have unstable results due to syncscan patch, when shared_buffers is small enough. Per buildfarm reports and some local testing with shared_buffers set to the lowest value considered by initdb.</li>
+
+<li>Allow numeric_fac() to be interrupted, since it can take quite a while for large inputs. Also cause it to error out immediately if the result will overflow, instead of grinding through a lot of calculation first. Per gripe from Jim Nasby.</li>
+
+<li>Add note that LIMIT without ORDER BY can produce outright nondeterministic results. Necessary due to introduction of syncscan patch.</li>
+
+<li>Arrange for large sequential scans to synchronize with each other, so that when multiple backends are scanning the same relation concurrently, each page is (ideally) read only once. Jeff Davis, with review by Heikki and Tom.</li>
+
+<li>Redefine IsTransactionState() to only return true for TRANS_INPROGRESS state, which is the only state in which it's safe to initiate database queries. It turns out that all but two of the callers thought that's what it meant; and the other two were using it as a proxy for "will GetTopTransactionId() return a nonzero XID"? Since it was in fact an unreliable guide to that, make those two just invoke GetTopTransactionId() always, then deal with a zero result if they get one.</li>
+
+<li>Rework temp_tablespaces patch so that temp tablespaces are assigned separately for each temp file, rather than once per sort or hashjoin; this allows spreading the data of a large sort or join across multiple tablespaces. (I remain dubious that this will make any difference in practice, but certain people insisted.) Arrange to cache the results of parsing the GUC variable instead of recomputing from scratch on every demand, and push usage of the cache down to the bottommost fd.c level.</li>
+
+<li>Christian Rossow's patch which fixes array_dims() example to be consistent with the data previously shown.</li>
+
+<li>Fix up text concatenation so that it accepts all the reasonable cases that were accepted by prior Postgres releases. This takes care of the loose end left by the preceding patch to downgrade implicit casts-to-text. To avoid breaking desirable behavior for array concatenation, introduce a new polymorphic pseudo-type "anynonarray" --- the added concatenation operators are actually text || anynonarray and anynonarray || text.</li>
+
+<li>Minor editorialization: don't flush plan cache without need.</li>
+
+<li>Downgrade implicit casts to text to be assignment-only, except for the ones from the other string-category types; this eliminates a lot of surprising interpretations that the parser could formerly make when there was no directly applicable operator. Create a general mechanism that supports casts to and from the standard string types (text,varchar,bpchar) for *every* datatype, by invoking the datatype's I/O functions. These new casts are assignment-only in the to-string direction, explicit-only in the other, and therefore should create no surprising behavior. Remove a bunch of thereby-obsoleted datatype-specific casting functions. The "general mechanism" is a new expression node type CoerceViaIO that can actually convert between *any* two datatypes if their external text representations are compatible. This is more general than needed for the immediate feature, but might be useful in plpgsql or other places in future. This commit does nothing about the issue that applying the concatenation operator || to non-text types will now fail, often with strange error messages due to misinterpreting the operator as array concatenation. Since it often (not always) worked before, we should either make it succeed or at least give a more user-friendly error; but details are still under debate. Peter Eisentraut and Tom Lane</li>
+
+</ul>
+
+<p><strong>Correctifs rejetés (à ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de déception cette semaine :-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Andrew Dunstan sent in a WIP patch for CSV logs.</li>
+
+<li>Simon Riggs sent in a patch to fix recent PITR bug, with proposals as discussed on -admin and -hackers. Patch implements option #3, as proposed here:
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-hackers/2007-06/msg00234.php">http://archives.postgresql.org/pgsql-hackers/2007-06/msg00234.php</a></li>
+
+<li>Magnus Hagander sent in another revision of Joachim Wieland's patch which changes some regression tests for ECPG.</li>
+
+</ul>

@@ -1,0 +1,230 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 29 novembre 2015"
+author: "NBougain"
+redirect_from: "index.php?post/2015-11-30-nouvelles-hebdomadaires-de-postgresql-29-novembre-2015 "
+---
+
+
+
+<h2>Correctifs appliqu&eacute;s</h2>
+
+<p>Tom Lane pushed:</p>
+
+<ul>
+
+<li>Speed up ruleutils' name de-duplication code, and fix overlength-name case. Since commit 11e131854f8231a21613f834c40fe9d046926387, ruleutils.c has attempted to ensure that each RTE in a query or plan tree has a unique alias name. However, the code that was added for this could be quite slow, even as bad as O(N^3) if N identical RTE names must be replaced, as noted by Jeff Janes. Improve matters by building a transient hash table within set_rtable_names. The hash table in itself reduces the cost of detecting a duplicate from O(N) to O(1), and we can save another factor of N by storing the number of de-duplicated names already created for each entry, so that we don't have to re-try names already created. This way is probably a bit slower overall for small range tables, but almost by definition, such cases should not be a performance problem. In principle the same problem applies to the column-name-de-duplication code; but in practice that seems to be less of a problem, first because N is limited since we don't support extremely wide tables, and second because duplicate column names within an RTE are fairly rare, so that in practice the cost is more like O(N^2) not O(N^3). It would be very much messier to fix the column-name code, so for now I've left that alone. An independent problem in the same area was that the de-duplication code paid no attention to the identifier length limit, and would happily produce identifiers that were longer than NAMEDATALEN and wouldn't be unique after truncation to NAMEDATALEN. This could result in dump/reload failures, or perhaps even views that silently behaved differently than before. We can fix that by shortening the base name as needed. Fix it for both the relation and column name cases. In passing, check for interrupts in set_rtable_names, just in case it's still slow enough to be an issue. Back-patch to 9.3 where this code was introduced. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8004953b5a2449c26c4e082771276b2f8629d153">http://git.postgresql.org/pg/commitdiff/8004953b5a2449c26c4e082771276b2f8629d153</a></li>
+
+<li>Fix possible internal overflow in numeric division. div_var_fast() postpones propagating carries in the same way as mul_var(), so it has the same corner-case overflow risk we fixed in 246693e5ae8a36f0, namely that the size of the carries has to be accounted for when setting the threshold for executing a carry propagation step. We've not devised a test case illustrating the brokenness, but the required fix seems clear enough. Like the previous fix, back-patch to all active branches. Dean Rasheed <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5f10b7a604c87fc61a2c20a56552301f74c9bd5f">http://git.postgresql.org/pg/commitdiff/5f10b7a604c87fc61a2c20a56552301f74c9bd5f</a></li>
+
+<li>Accept flex &gt; 2.5.x in configure. Per buildfarm member anchovy, 2.6.0 exists in the wild now. Hopefully it works with Postgres; if not, we'll have to do something about that, but in any case claiming it's "too old" is pretty silly. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/32f15d05c80044335f97347b5406f6736c06a033">http://git.postgresql.org/pg/commitdiff/32f15d05c80044335f97347b5406f6736c06a033</a></li>
+
+<li>Fix thinko: errmsg -&gt; ereport. Silly mistake in my commit 09cecdf285ea9f51, reported by Erik Rijkers. The fact that the buildfarm didn't find this implies that we are not testing Perl builds that lack MULTIPLICITY, which is a bit disturbing from a coverage standpoint. Until today I'd have said nobody cared about such configurations anymore; but maybe not. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9be3a4e24dc777e31f6358907ebefac841ea2632">http://git.postgresql.org/pg/commitdiff/9be3a4e24dc777e31f6358907ebefac841ea2632</a></li>
+
+<li>Dodge a macro-name conflict with Perl. Some versions of Perl export a macro named HS_KEY. This creates a conflict in contrib/hstore_plperl against hstore's macro of the same name. The most future-proof solution seems to be to rename our macro; I chose HSTORE_KEY. For consistency, rename HS_VAL and related macros similarly. Back-patch to 9.5. contrib/hstore_plperl doesn't exist before that so there is no need to worry about the conflict in older releases. Per reports from Marco Atzeri and Mike Blackwell. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/68c1d7d42e553682f1d2723e623b6a3a4b02c75f">http://git.postgresql.org/pg/commitdiff/68c1d7d42e553682f1d2723e623b6a3a4b02c75f</a></li>
+
+<li>Fix handling of inherited check constraints in ALTER COLUMN TYPE (again). The previous way of reconstructing check constraints was to do a separate "ALTER TABLE ONLY tab ADD CONSTRAINT" for each table in an inheritance hierarchy. However, that way has no hope of reconstructing the check constraints' own inheritance properties correctly, as pointed out in bug #13779 from Jan Dirk Zijlstra. What we should do instead is to do a regular "ALTER TABLE", allowing recursion, at the topmost table that has a particular constraint, and then suppress the work queue entries for inherited instances of the constraint. Annoyingly, we'd tried to fix this behavior before, in commit 5ed6546cf, but we failed to notice that it wasn't reconstructing the pg_constraint field values correctly. As long as I'm touching pg_get_constraintdef_worker anyway, tweak it to always schema-qualify the target table name; this seems like useful backup to the protections installed by commit 5f173040. In HEAD/9.5, get rid of get_constraint_relation_oids, which is now unused. (I could alternatively have modified it to also return conislocal, but that seemed like a pretty single-purpose API, so let's not pretend it has some other use.) It's unused in the back branches as well, but I left it in place just in case some third-party code has decided to use it. In HEAD/9.5, also rename pg_get_constraintdef_string to pg_get_constraintdef_command, as the previous name did nothing to explain what that entry point did differently from others (and its comment was equally useless). Again, that change doesn't seem like material for back-patching. I did a bit of re-pgindenting in tablecmds.c in HEAD/9.5, as well. Otherwise, back-patch to all supported branches. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/074c5cfbfb4923158be9ccdb77420d6522d77538">http://git.postgresql.org/pg/commitdiff/074c5cfbfb4923158be9ccdb77420d6522d77538</a></li>
+
+<li>Adopt the GNU convention for handling tar-archive members exceeding 8GB. The POSIX standard for tar headers requires archive member sizes to be printed in octal with at most 11 digits, limiting the representable file size to 8GB. However, GNU tar and apparently most other modern tars support a convention in which oversized values can be stored in base-256, allowing any practical file to be a tar member. Adopt this convention to remove two limitations: * pg_dump with -Ft output format failed if the contents of any one table exceeded 8GB. * pg_basebackup failed if the data directory contained any file exceeding 8GB. (This would be a fatal problem for installations configured with a table segment size of 8GB or more, and it has also been seen to fail when large core dump files exist in the data directory.) File sizes under 8GB are still printed in octal, so that no compatibility issues are created except in cases that would have failed entirely before. In addition, this patch fixes several bugs in the same area: * In 9.3 and later, we'd defined tarCreateHeader's file-size argument as size_t, which meant that on 32-bit machines it would write a corrupt tar header for file sizes between 4GB and 8GB, even though no error was raised. This broke both "pg_dump -Ft" and pg_basebackup for such cases. * pg_restore from a tar archive would fail on tables of size between 4GB and 8GB, on machines where either "size_t" or "unsigned long" is 32 bits. This happened even with an archive file not affected by the previous bug. * pg_basebackup would fail if there were files of size between 4GB and 8GB, even on 64-bit machines. * In 9.3 and later, "pg_basebackup -Ft" failed entirely, for any file size, on 64-bit big-endian machines. In view of these potential data-loss bugs, back-patch to all supported branches, even though removal of the documented 8GB limit might otherwise be considered a new feature rather than a bug fix. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/00cdd83521cfdaaff0f566ebeadecc2cad4d51cf">http://git.postgresql.org/pg/commitdiff/00cdd83521cfdaaff0f566ebeadecc2cad4d51cf</a></li>
+
+<li>Improve div_var_fast(), mostly by making comments better. The integer overflow situation in div_var_fast() is a great deal more complicated than the pre-existing comments would suggest. Moreover, the comments were also flat out incorrect as to the precise statement of the maxdiv loop invariant. Upon clarifying that, it becomes apparent that the way in which we updated maxdiv after a carry propagation pass was overly slow, complex, and conservative: we can just reset it to one, which is much easier and also reduces the number of times carry propagation occurs. Fix that and improve the relevant comments. Since this is mostly a comment fix, with only a rather marginal performance boost, no need for back-patch. Tom Lane and Dean Rasheed <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/46166197c3b3748c3266c694d7c2f5a312ea928e">http://git.postgresql.org/pg/commitdiff/46166197c3b3748c3266c694d7c2f5a312ea928e</a></li>
+
+<li>Be more paranoid about null return values from libpq status functions. PQhost() can return NULL in non-error situations, namely when a Unix-socket connection has been selected by default. That behavior is a tad debatable perhaps, but for the moment we should make sure that psql copes with it. Unfortunately, do_connect() failed to: it could pass a NULL pointer to strcmp(), resulting in crashes on most platforms. This was reported as a security issue by ChenQin of Topsec Security Team, but the consensus of the security list is that it's just a garden-variety bug with no security implications. For paranoia's sake, I made the keep_password test not trust PQuser or PQport either, even though I believe those will never return NULL given a valid PGconn. Back-patch to all supported branches. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c5ef8ce53d37e276d70593ff0f4b06dd119cd3ff">http://git.postgresql.org/pg/commitdiff/c5ef8ce53d37e276d70593ff0f4b06dd119cd3ff</a></li>
+
+<li>Fix failure to consider failure cases in GetComboCommandId(). Failure to initially palloc the comboCids array, or to realloc it bigger when needed, left combocid's data structures in an inconsistent state that would cause trouble if the top transaction continues to execute. Noted while examining a user complaint about the amount of memory used for this. (There's not much we can do about that, but it does point up that repalloc failure has a non-negligible chance of occurring here.) In HEAD/9.5, also avoid possible invocation of memcpy() with a null pointer in SerializeComboCIDState; cf commit 13bba0227. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0da3a9bef7ad36dc640aebf2d0482e18f21561f6">http://git.postgresql.org/pg/commitdiff/0da3a9bef7ad36dc640aebf2d0482e18f21561f6</a></li>
+
+<li>Improve PQhost() to return useful data for default Unix-socket connections. Previously, if no host information had been specified at connection time, PQhost() would return NULL (unless you are on Windows, in which case you got "localhost"). This is an unhelpful definition for a couple of reasons: it can cause corner-case crashes in applications (cf commit c5ef8ce53d), and there's no well-defined way for applications to find out the socket directory path that's actually in use. As an example of the latter problem, psql substituted DEFAULT_PGSOCKET_DIR for NULL in a couple of places, but this is subtly wrong because it's conceivable that psql is using a libpq shared library that was built with a different setting. Hence, change PQhost() to return DEFAULT_PGSOCKET_DIR when appropriate, and strip out the now-dead substitutions in psql. (There is still one remaining reference to DEFAULT_PGSOCKET_DIR in psql, in prompt.c, which I don't see a nice way to get rid of. But it only controls a prompt abbreviation decision, so it seems noncritical.) Also update the docs for PQhost, which had never previously mentioned the possibility of a socket directory path being returned. In passing fix the outright-incorrect code comment about PGconn.pgunixsocket. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/40cb21f70b4ef2721c38be6628298fb21fa7d2d2">http://git.postgresql.org/pg/commitdiff/40cb21f70b4ef2721c38be6628298fb21fa7d2d2</a></li>
+
+<li>Auto-generate file header comments in Unicode mapping files. Some of the Unicode/*.map files had identification comments added to them, evidently by hand. Others did not. Modify the generating scripts to produce these comments automatically, and update the generated files that lacked them. This is just minor cleanup as a by-product of trying to verify that the *.map files can indeed be reproduced from authoritative data. There are a depressingly large number that fail to reproduce from the claimed sources. I have not touched those in this commit, except for the JIS 2004-related files which required only a single comment update to match. Since this only affects comments, no need to consider a back-patch. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e17dab53ea301031bf41d27e0799b940484c7bb0">http://git.postgresql.org/pg/commitdiff/e17dab53ea301031bf41d27e0799b940484c7bb0</a></li>
+
+<li>Update UCS_to_GB18030.pl with info about origin of the reference file. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5afdfc9cbb29ffc6f6b557a06495672d3c09f688">http://git.postgresql.org/pg/commitdiff/5afdfc9cbb29ffc6f6b557a06495672d3c09f688</a></li>
+
+<li>Avoid doing encoding conversions by double-conversion via MULE_INTERNAL. Previously, we did many conversions for Cyrillic and Central European single-byte encodings by converting to a related MULE_INTERNAL coding scheme before converting to the destination. This seems unnecessarily inefficient. Moreover, if the conversion encounters an untranslatable character, the error message will confusingly complain about failure to convert to or from MULE_INTERNAL, rather than the user-visible encodings. Worse still, this approach results in some completely unnecessary conversion failures; there are cases where the chosen MULE subset lacks characters that exist in both of the user-visible encodings, causing a conversion failure that need not occur. This patch fixes the first two of those deficiencies by introducing a new local2local() conversion support subroutine for direct conversion between any two single-byte character sets, and adding new conversion tables where needed. However, I generated the new conversion tables by testing PG 9.5's behavior, so that the actual conversion behavior is bug-compatible with previous releases; the only user-visible behavior change is that the error messages for conversion failures are saner. Changes in the conversion behavior will probably ensue after discussion. Interestingly, although this approach requires more tables, the .so files actually end up smaller (at least on my x86_64 machine); the tables are smaller than the management code needed for double conversion. Per a complaint from Albe Laurenz. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8d32717b6bfaeda5b88b338dae728b47da19f4bb">http://git.postgresql.org/pg/commitdiff/8d32717b6bfaeda5b88b338dae728b47da19f4bb</a></li>
+
+</ul>
+
+<p>Robert Haas pushed:</p>
+
+<ul>
+
+<li>Remove volatile qualifiers from bufmgr.c and freelist.c. Prior to commit 0709b7ee72e4bc71ad07b7120acd117265ab51d0, access to variables within a spinlock-protected critical section had to be done through a volatile pointer, but that should no longer be necessary. Review by Andres Freund <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e93b62985f9c69dcb6f0747450809fff64b78a6e">http://git.postgresql.org/pg/commitdiff/e93b62985f9c69dcb6f0747450809fff64b78a6e</a></li>
+
+<li>Fix dumb bug in tqueue.c. When I wrote this code originally, the intention was to recompute the remapinfo only when the tupledesc changes. This presumably only happens once per query, but I copied the design pattern from other DestReceivers. However, due to a silly oversight on my part, tqueue-&gt;tupledesc never got set, leading to recomputation for every tuple. This should improve the performance of parallel scans that return a significant number of tuples. Report by Amit Kapila; patch by me, reviewed by him. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/adeee974866085db84b860c1f397dd7c6b136a0a">http://git.postgresql.org/pg/commitdiff/adeee974866085db84b860c1f397dd7c6b136a0a</a></li>
+
+<li>Avoid aggregating worker instrumentation multiple times. Amit Kapila, per design ideas from me. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/166b61a88ef8e9fb97eba7b7ab8062e214c93af8">http://git.postgresql.org/pg/commitdiff/166b61a88ef8e9fb97eba7b7ab8062e214c93af8</a></li>
+
+<li>Make a comment more precise. Remote expressions now also matter to make_foreignscan() Noted by Etsuro Fujita. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e073490457176805bc31b8f7c7829ce1b71a6e76">http://git.postgresql.org/pg/commitdiff/e073490457176805bc31b8f7c7829ce1b71a6e76</a></li>
+
+<li>Fix incomplete set_foreignscan_references handling for fdw_recheck_quals KaiGai Kohei <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7907a949abf100b5a1e1def1184ba1e6fc8b9fd7">http://git.postgresql.org/pg/commitdiff/7907a949abf100b5a1e1def1184ba1e6fc8b9fd7</a></li>
+
+<li>Make ALTER .. SET SCHEMA do nothing, instead of throwing an ERROR. This was already true for CREATE EXTENSION, but historically has not been true for other object types. Therefore, this is a backward incompatibility. Per discussion on pgsql-hackers, everyone seems to agree that the new behavior is better. Marti Raudsepp, reviewed by Haribabu Kommi and myself <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bc4996e61b98d41eacf991c18508b7a2305a68c6">http://git.postgresql.org/pg/commitdiff/bc4996e61b98d41eacf991c18508b7a2305a68c6</a></li>
+
+<li>Remove numbers from incorrectly-numbered list. Reported by Andres Freund. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fea2b642fdb1bbe0f4b1bd0a763c370dfc6fb97c">http://git.postgresql.org/pg/commitdiff/fea2b642fdb1bbe0f4b1bd0a763c370dfc6fb97c</a></li>
+
+<li>Fix typo in comment. Amit Langote <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/74d0d5f3ebed9d817ec353fb17eedb343a0ab5b4">http://git.postgresql.org/pg/commitdiff/74d0d5f3ebed9d817ec353fb17eedb343a0ab5b4</a></li>
+
+<li>Avoid server crash when worker registration fails at execution time. The previous coding attempts to destroy the DSM in this case, but child nodes might have stored data there and still be holding onto pointers in this case. So don't do that. Also, free the reader array instead of leaking it. Extracted from two different patch versions both by Amit Kapila. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6c878a7553680579f287e4659592c0b874fb2377">http://git.postgresql.org/pg/commitdiff/6c878a7553680579f287e4659592c0b874fb2377</a></li>
+
+</ul>
+
+<p>Peter Eisentraut pushed:</p>
+
+<ul>
+
+<li>doc: Fix commas and improve spacing <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/53264c7b1e0c9be7bc05289372265c768869f818">http://git.postgresql.org/pg/commitdiff/53264c7b1e0c9be7bc05289372265c768869f818</a></li>
+
+<li>Improve message <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5be5b5029f26b1723382bac185fcfa993a763234">http://git.postgresql.org/pg/commitdiff/5be5b5029f26b1723382bac185fcfa993a763234</a></li>
+
+<li>Message style fix from Euler Taveira <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c5ec4064120c12c7b8cd4772d0b9f571f5dd40b4">http://git.postgresql.org/pg/commitdiff/c5ec4064120c12c7b8cd4772d0b9f571f5dd40b4</a></li>
+
+<li>Message improvements <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5db837d3f22960c2fdc11b390ecf3984b3e0c49e">http://git.postgresql.org/pg/commitdiff/5db837d3f22960c2fdc11b390ecf3984b3e0c49e</a></li>
+
+<li>doc: Clarify some things on pg_receivexlog reference page <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/db135e834a28180e9151f12c694b07d8fc3c41a8">http://git.postgresql.org/pg/commitdiff/db135e834a28180e9151f12c694b07d8fc3c41a8</a></li>
+
+<li>doc: Add more documentation about wal_retrieve_retry_interval from Michael Paquier <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2ef7a985fb9077aabeb480a23732c4d6ddb89ce5">http://git.postgresql.org/pg/commitdiff/2ef7a985fb9077aabeb480a23732c4d6ddb89ce5</a></li>
+
+<li>doc: Some improvements on CREATE POLICY and ALTER POLICY documentation <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cbd96eff251bf92e88a13ef00df07c6caae0d411">http://git.postgresql.org/pg/commitdiff/cbd96eff251bf92e88a13ef00df07c6caae0d411</a></li>
+
+</ul>
+
+<p>Andres Freund pushed:</p>
+
+<ul>
+
+<li>Remove function names from some elog() calls in heapam.c. At least one of the names was, due to a function renaming late in the development of ON CONFLICT, wrong. Since including function names in error messages is against the message style guide anyway, remove them from the messages. Discussion: CAM3SWZT8paz=usgMVHm0XOETkQvzjRtAUthATnmaHQQY0obnGw@mail.gmail.com Backpatch: 9.5, where ON CONFLICT was introduced <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d3c8ac114f1183e54315e64ef697c6588823c4dd">http://git.postgresql.org/pg/commitdiff/d3c8ac114f1183e54315e64ef697c6588823c4dd</a></li>
+
+<li>Improve ON CONFLICT documentation. Author: Peter Geoghegan and Andres Freund. Discussion: CAM3SWZScpWzQ-7EJC77vwqzZ1GO8GNmURQ1QqDQ3wRn7AbW1Cg@mail.gmail.com Backpatch: 9.5, where ON CONFLICT was introduced <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/edf68b2ed51cb8a1c9fdf7eb13f9b2c883eb5399">http://git.postgresql.org/pg/commitdiff/edf68b2ed51cb8a1c9fdf7eb13f9b2c883eb5399</a></li>
+
+</ul>
+
+<p>Andrew Dunstan pushed:</p>
+
+<ul>
+
+<li>Improve vcregress.pl's handling of tap tests for client programs The target is now named 'bincheck' rather than 'tapcheck' so that it reflects what is checked instead of the test mechanism. Some of the logic is improved, making it easier to add further sets of TAP based tests in future. Also, the environment setting logic is imrpoved. As discussed on -hackers a couple of months ago. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d835dd6685246f0737ca42ab68242210681bb220">http://git.postgresql.org/pg/commitdiff/d835dd6685246f0737ca42ab68242210681bb220</a></li>
+
+<li>Update docs for vcregress.pl bincheck changes <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c2d5657c0f6f8ae9894205551354eca796f8b11c">http://git.postgresql.org/pg/commitdiff/c2d5657c0f6f8ae9894205551354eca796f8b11c</a></li>
+
+<li>fix a perl typo <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f11c557e92c50d3d613d1173c15feb5310ba4744">http://git.postgresql.org/pg/commitdiff/f11c557e92c50d3d613d1173c15feb5310ba4744</a></li>
+
+</ul>
+
+<p>Teodor Sigaev pushed:</p>
+
+<ul>
+
+<li>Clarify pg_rewind connection requirements. Per <a target="_blank" href="http://www.postgresql.org/message-id/flat/564C4CE6.9000509@postgrespro.ru">http://www.postgresql.org/message-id/flat/564C4CE6.9000509@postgrespro.ru</a> Pavel Luzanov &lt;p.luzanov@postgrespro.ru&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d00352573a1d5cf685397d5776c36b625c3f0c79">http://git.postgresql.org/pg/commitdiff/d00352573a1d5cf685397d5776c36b625c3f0c79</a></li>
+
+<li>Add forgotten file in commit d6061f83a166b015657fda8623c704fcb86930e9 <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0271e27c1089f104236a7fe3b3fca52e5359ae56">http://git.postgresql.org/pg/commitdiff/0271e27c1089f104236a7fe3b3fca52e5359ae56</a></li>
+
+<li>Improve pageinspect module. Now pageinspect can show data stored in the heap tuple. Nikolay Shaplov <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d6061f83a166b015657fda8623c704fcb86930e9">http://git.postgresql.org/pg/commitdiff/d6061f83a166b015657fda8623c704fcb86930e9</a></li>
+
+<li>COPY (INSERT/UPDATE/DELETE .. RETURNING ..) Attached is a patch for being able to do COPY (query) without a CTE. Author: Marko Tiikkaja Review: Michael Paquier <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/92e38182d7c8947a4ebbc1123b44f1245e232e85">http://git.postgresql.org/pg/commitdiff/92e38182d7c8947a4ebbc1123b44f1245e232e85</a></li>
+
+</ul>
+
+<p>Bruce Momjian pushed:</p>
+
+<ul>
+
+<li>pg_upgrade: fix CopyFile() on Windows to fail on file existence Also fix getErrorText() to return the right error string on failure. This behavior now matches that of other operating systems. Report by Noah Misch Backpatch through 9.1 <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/13b30c16f3164ee70599adee251256bd069fa0e4">http://git.postgresql.org/pg/commitdiff/13b30c16f3164ee70599adee251256bd069fa0e4</a></li>
+
+</ul>
+
+<h2>Correctifs rejet&eacute;s (&agrave; ce jour)</h2>
+
+<p>No one was disappointed this week :-)</p>
+
+<h2>Correctifs en attente</h2>
+
+<p>&Atilde;lvaro Herrera sent in a patch to improve cost estimates for BRIN indexes.</p>
+
+<p>&Atilde;lvaro Herrera sent in a patch to fix some misbehavior of the max_worker_processes GUC on standbys.</p>
+
+<p>Peter Geoghegan sent in a patch to speed up CREATE INDEX CONCURRENTLY's TID sort.</p>
+
+<p>Kyotaro HORIGUCHI sent in a patch to improve the documentation of floating point conversion for PL/pgsql.</p>
+
+<p>Amit Kapila sent in two more revisions of a patch to speed up CLOG access.</p>
+
+<p>Peter Eisentraut sent in a patch to play nicer with systemd.</p>
+
+<p>Vitaly Burovoy sent in another revision of a patch to make fields extracted from 'infinity' timestamp[tz]s sane.</p>
+
+<p>Victor Wagner sent in another revision of a patch to implement failover on the libpq connect level.</p>
+
+<p>Amit Kapila sent in a patch to fix ExecParallelFinish() to be idempotent.</p>
+
+<p>Ildus Kurbangaliev sent in two revisions of a patch to slice bufmgr into tranches similar to the way LWLocks are.</p>
+
+<p>Robert Haas sent in a patch to tighten up how database names get checked for in pg_basebackup.</p>
+
+<p>Nikolay Shaplov sent in two more revisions of a patch to add tuple data inspection to pageinspect.</p>
+
+<p>Kyotaro HORIGUCHI sent in two revisions of a patch to add backend regexp processing to psql's tab completion implementation.</p>
+
+<p>Ashutosh Bapat and Rushabh Lathia traded patches to get sorted data from a foreign server for merge join purposes.</p>
+
+<p>SAWADA Masahiko sent in four more revisions of a patch to add a "frozen" bit to the visibility map.</p>
+
+<p>Thomas Munro sent in another revision of a patch to add "causal reads."</p>
+
+<p>Marko Tiikkaja sent in a patch to add a scale(numeric) function.</p>
+
+<p>Marko Tiikkaja sent in a patch to add a trim(numeric) function.</p>
+
+<p>Marko Tiikkaja sent in a PoC patch to implement "LISTEN *".</p>
+
+<p>Amit Kapila sent in two revisions of a patch to fix an issue in parallel seq scan with parallel worker allocation.</p>
+
+<p>Michael Paquier and Stephen Frost traded patches to add new default roles.</p>
+
+<p>Robert Haas sent in another revision of a patch to implement parallel append.</p>
+
+<p>Nikolay Shaplov sent in a patch to add a TAP test example.</p>
+
+<p>Craig Ringer sent in another revision of a patch to implement pg_logical, a general-purpose logical output plugin.</p>
+
+<p>Marko Tiikkaja sent in two more revisions of a patch to add a num_nulls() function.</p>
+
+<p>Marko Tiikkaja sent in another revision of a patch to add a single_value() aggregate.</p>
+
+<p>Taiki Kondo and Kyotaro HORIGUCHI traded patches to improve query performance by doing join pushdowns to table partitions.</p>
+
+<p>Michael Paquier sent in two more revisions of a patch to add a dedicated WAL record forcing fsync().</p>
+
+<p>Andreas Karlsson sent in another revision of a patch to cause a SIGHUP sent to the backend to reload SSL certificates.</p>
+
+<p>Amit Langote sent in two revisions of a patch to fix some comments in nodeGather.c.</p>
+
+<p>Haribabu Kommi sent in another revision of a patch to add a pg_hba_lookup function to get all matching pg_hba.conf entries.</p>
+
+<p>Pavel St&Auml;&rsaquo;hule sent in another revision of a patch to add a custom function for converting human readable sizes to bytes.</p>
+
+<p>Michael Paquier and &Atilde;lvaro Herrera traded patches to add in-core regression tests for replication, cascading, archiving, PITR, etc.</p>
+
+<p>David Steele sent in a patch to enable client log output filtering.</p>
+
+<p>Catalin Iacob sent in a patch to update the docs for the case when psql is given multiple -c commands.</p>
+
+<p>Pavel St&Auml;&rsaquo;hule sent in another revision of a patch to implement multiple -c commands in psql.</p>
+
+<p>Robert Haas sent in a patch to allow the optimizer to generate plans where a Nested Loop or Hash Join appears below a Gather node and improve the output of EXPLAIN when parallel workers are used.</p>
+
+<p>Magnus Hagander and Michael Paquier traded patches to initialize more parts of the walsnd structure.</p>
+
+<p>Kaigai Kouhei sent in a patch to adds a Path *fdw_outerpath field to the ForeignPath node.</p>
+
+<p>Dean Rasheed sent in another revision of a patch to add trig functions which take degrees as input.</p>
+
+<p>Dmitry Ivanov sent in a patch to add a dump_stat extension which, as implied in the name, allows dumping the contents of pg_statistic in a form that lets it be reloaded.</p>
+
+<p>Peter Geoghegan sent in a patch to ensure that GatherPath is within print_path(). Not having it there prevented complete information from appearing when using OPTIMIZER_DEBUG.</p>
+
+<p>Tomas Vondra sent in some patches to fix a possible issue with fsync() not actually being issued at the appropriate times.</p>
+
+<p>Noah Misch sent in a patch to clarify some comments in src/backend/access/transam/multixact.c.</p>
+
+<p>Pavel St&Auml;&rsaquo;hule sent in another revision of a patch to add an ereport() function to PL/PythonU.</p>
+
+<p>Peter Geoghegan sent in a patch to abort C collation text abbreviation less frequently.</p>

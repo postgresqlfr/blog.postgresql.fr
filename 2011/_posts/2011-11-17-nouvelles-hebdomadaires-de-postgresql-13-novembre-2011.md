@@ -1,0 +1,240 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 13 novembre 2011"
+author: "NBougain"
+redirect_from: "index.php?post/2011-11-17-nouvelles-hebdomadaires-de-postgresql-13-novembre-2011 "
+---
+
+
+
+<p><strong>Revues de code</strong></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>On second thought, we'd better just drop these tests altogether. Further experimentation reveals that my previous change didn't fix the issue entirely: these tests would still fail at the spring-forward DST transition. There doesn't seem to be any great value in testing this specific issue for both timestamp and timestamptz, so just lose the latter tests. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f62be400c0e2369d68b4327ced721e47250dc40c">http://git.postgresql.org/pg/commitdiff/f62be400c0e2369d68b4327ced721e47250dc40c</a></li>
+
+<li>Fix assorted bugs in contrib/unaccent's configuration file parsing. Make it use t_isspace() to identify whitespace, rather than relying on sscanf which is known to get it wrong on some platform/locale combinations. Get rid of fixed-size buffers. Make it actually continue to parse the file after ignoring a line with untranslatable characters, as was obviously intended. The first of these issues is per gripe from J Smith, though not exactly either of his proposed patches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ced3a93ccbbd0a3866f2324662f7a1fa4c31909a">http://git.postgresql.org/pg/commitdiff/ced3a93ccbbd0a3866f2324662f7a1fa4c31909a</a></li>
+
+<li>Wrap appendrel member outputs in PlaceHolderVars in additional cases. Add PlaceHolderVar wrappers as needed to make UNION ALL sub-select output expressions appear non-constant and distinct from each other. This makes the world safe for add_child_rel_equivalences to do what it does. Before, it was possible for that function to add identical expressions to different EquivalenceClasses, which logically should imply merging such ECs, which would be wrong; or to improperly add a constant to an EquivalenceClass, drastically changing its behavior. Per report from Teodor Sigaev. The only currently known consequence of this bug is "MergeAppend child's targetlist doesn't match MergeAppend" planner failures in 9.1 and later. I am suspicious that there may be other failure modes that could affect older release branches; but in the absence of any hard evidence, I'll refrain from back-patching further than 9.1. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/57664ed25e5dea117158a2e663c29e60b3546e1c">http://git.postgresql.org/pg/commitdiff/57664ed25e5dea117158a2e663c29e60b3546e1c</a></li>
+
+<li>Fix random discrepancies between parallel_schedule and serial_schedule. In particular, my previous patch expected the create_index test to run before the inherit test; but this was only true in the serial schedule. Rearrange this portion of the schedules to be more consistent. Per buildfarm results. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6d295b64945cb6ff9b64f55d1e51b5e2a1bb6f84">http://git.postgresql.org/pg/commitdiff/6d295b64945cb6ff9b64f55d1e51b5e2a1bb6f84</a></li>
+
+<li>Tweak new regression test case for more portability. Ensure that same index gets selected on 32-bit and 64-bit machines. Per buildfarm results. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2c30f96103c320d4e3c8cab2807d88476f584278">http://git.postgresql.org/pg/commitdiff/2c30f96103c320d4e3c8cab2807d88476f584278</a></li>
+
+<li>Avoid platform-dependent infinite loop in pg_dump. If malloc(0) returns NULL, the binary search in findSecLabels() will probably go into an infinite loop when there are no security labels, because NULL-1 is greater than NULL after wraparound. (We've seen this pathology before ... I wonder whether there's a way to detect the class of bugs automatically?) Diagnosis and patch by Steve Singer, cosmetic adjustments by me 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cf22e851b6ae8737f3e767dffcadf1722fbb36a7">http://git.postgresql.org/pg/commitdiff/cf22e851b6ae8737f3e767dffcadf1722fbb36a7</a></li>
+
+<li>Throw nice error if server is too old to support psql's \ef or \sf command. Previously, you'd get "function pg_catalog.pg_get_functiondef(integer) does not exist", which is at best rather unprofessional-looking. Back-patch to 8.4 where \ef was introduced. Josh Kupershmidt 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6f3dc00e24aa2a8e7e2c5e5095b6223712b8204c">http://git.postgresql.org/pg/commitdiff/6f3dc00e24aa2a8e7e2c5e5095b6223712b8204c</a></li>
+
+<li>In plpgsql, allow foreign tables to define row types. This seems to have been just an oversight in previous foreign-table work. A quick grep didn't turn up any other places where RELKIND_FOREIGN_TABLE was obviously omitted. One change noted by Alexander Soudakov, the other by me. Back-patch to 9.1. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/02d88efea1f719e59ce684c2e14bad23d55fdd15">http://git.postgresql.org/pg/commitdiff/02d88efea1f719e59ce684c2e14bad23d55fdd15</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix timestamp range subdiff functions, when using float datetimes. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ffc703a891e336b9bf4b74112bd4684d1f990fab">http://git.postgresql.org/pg/commitdiff/ffc703a891e336b9bf4b74112bd4684d1f990fab</a></li>
+
+<li>Adjust range type docs for some last-minute changes I made to the patch. non_empty(anyrange) function was removed, empty(anyrange) was renamed to isempty(anyrange), and !? operators were removed. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fbf99d2f16a82f13564bbd21689d018ecc72de01">http://git.postgresql.org/pg/commitdiff/fbf99d2f16a82f13564bbd21689d018ecc72de01</a></li>
+
+<li>Make DatumGetInetP() unpack inet datums with a 1-byte header, and add a new macro, DatumGetInetPP(), that does not. This brings these macros in line with other DatumGet*P() macros. Backpatch to 8.3, where 1-byte header varlenas were introduced. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3b8161723c645853021b57330dd2ea0484ec6131">http://git.postgresql.org/pg/commitdiff/3b8161723c645853021b57330dd2ea0484ec6131</a></li>
+
+<li>In COPY, insert tuples to the heap in batches. This greatly reduces the WAL volume, especially when the table is narrow. The overhead of locking the heap page is also reduced. Reduced WAL traffic also makes it scale a lot better, if you run multiple COPY processes at the same time. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d326d9e8ea1d690cf6d968000efaa5121206d231">http://git.postgresql.org/pg/commitdiff/d326d9e8ea1d690cf6d968000efaa5121206d231</a></li>
+
+<li>Fix bugs in the COPY heap-insert batching patch. Forgot to call RestoreBkpBlocks() in the redo-function, as pointed out by Simon Riggs. In redo of a regular heap insert, it's taken care of in heap_redo(), but this new record type uses the heap2 RM, and heap2_redo() does not take care of that for you. Also, failed to reset the vmbuffer and all_visibile_cleared local variables after switching to a new buffer. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f81648cb1ee5ce8d2e479a17db512046012c77e7">http://git.postgresql.org/pg/commitdiff/f81648cb1ee5ce8d2e479a17db512046012c77e7</a></li>
+
+<li>Fix another bug in the redo of COPY batches. I got alignment wrong in the redo routine. Spotted by redoing the log generated by copy regression test. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2e02280726f5ca7a8e3c76e1491eaf5ab00fc8f4">http://git.postgresql.org/pg/commitdiff/2e02280726f5ca7a8e3c76e1491eaf5ab00fc8f4</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Minor grammar improvements. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bd2396988a1afbcb6424700e52a62f34d2951bdd">http://git.postgresql.org/pg/commitdiff/bd2396988a1afbcb6424700e52a62f34d2951bdd</a></li>
+
+<li>Make VACUUM avoid waiting for a cleanup lock, where possible. In a regular VACUUM, it's OK to skip pages for which a cleanup lock isn't immediately available; the next VACUUM will deal with them. If we're scanning the entire relation to advance relfrozenxid, we might need to wait, but only if there are tuples on the page that actually require freezing. These changes should greatly reduce the incidence of of vacuum processes getting "stuck". Simon Riggs and Robert Haas 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bbb6e559c4ea0fb4c346beda76736451dc24eb4e">http://git.postgresql.org/pg/commitdiff/bbb6e559c4ea0fb4c346beda76736451dc24eb4e</a></li>
+
+<li>Remove hstore's text =&gt; text operator. Since PostgreSQL 9.0, we've emitted a warning message when an operator named =&gt; is created, because the SQL standard now reserves that token for another use. But we've also shipped such an operator with hstore. Use of the function hstore(text, text) has been recommended in preference to =&gt;(text, text). Per discussion, it's now time to take the next step and stop shipping the operator. This will allow us to prohibit the use of =&gt; as an operator name in a future release if and when we wish to support the SQL standard use of this token. The release notes should mention this incompatibility. Patch by me, reviewed by David Wheeler, Dimitri Fontaine and Tom Lane. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b60653bc0b75b7f3b5dda0a2968a22129aafb2b2">http://git.postgresql.org/pg/commitdiff/b60653bc0b75b7f3b5dda0a2968a22129aafb2b2</a></li>
+
+<li>Rewrite comment for slightly greater accuracy. Per an observation from Thom Brown that the old version contained a typo. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0e1c4b7d974b9ff3b1cd62a9689a8560a8bab60e">http://git.postgresql.org/pg/commitdiff/0e1c4b7d974b9ff3b1cd62a9689a8560a8bab60e</a></li>
+
+<li>Fix hstore regression tests. This was an oversight in commit b60653bc0b75b7f3b5dda0a2968a22129aafb2b2. Also, fix a typo spotted by Thom Brown. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bb1afb528a9154e21fe8ffe7e5c6dbf4a753136c">http://git.postgresql.org/pg/commitdiff/bb1afb528a9154e21fe8ffe7e5c6dbf4a753136c</a></li>
+
+<li>Fix compiler warning. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/452d1d193d3b15c4ff8ef56a9b50bdb91ea0665e">http://git.postgresql.org/pg/commitdiff/452d1d193d3b15c4ff8ef56a9b50bdb91ea0665e</a></li>
+
+<li>Revert removal of trace_userlocks, because userlocks aren't gone. This reverts commit 0180bd6180511875db046bf8ddcaa633a2952dfd. contrib/userlock is gone, but user-level locking still exists, and is exposed via the pg_advisory* family of functions. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/71b2b657c034743f81ae7906d7b0fcc8e9a0a6a3">http://git.postgresql.org/pg/commitdiff/71b2b657c034743f81ae7906d7b0fcc8e9a0a6a3</a></li>
+
+<li>Correct documentation for trace_userlocks. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/788cb1c2e8c68d054b7b5bb43f659347acf09278">http://git.postgresql.org/pg/commitdiff/788cb1c2e8c68d054b7b5bb43f659347acf09278</a></li>
+
+<li>Fix psql's \dd version check for operator families. Report and patch by Josh Kupershmidt; comment revisions by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a6ce8ba2f3b280bb06cbca84a5375d42a25bea5f">http://git.postgresql.org/pg/commitdiff/a6ce8ba2f3b280bb06cbca84a5375d42a25bea5f</a></li>
+
+<li>Avoid retaining multiple relation locks in RangeVarGetRelid. If it turns out we've locked the wrong OID, release the old lock. In most cases, it's pretty harmless to retain the extra lock, but this seems tidier and avoids using lock table slots unnecessarily. Per discussion with Tom Lane. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/aa3299f25601c1a27e52c1c49e92b7f11441e76b">http://git.postgresql.org/pg/commitdiff/aa3299f25601c1a27e52c1c49e92b7f11441e76b</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>-DLINUX_OOM_ADJ=0 should be in CPPFLAGS, not CFLAGS 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6477d66780df0682e36e676fd746356bb23bf7ce">http://git.postgresql.org/pg/commitdiff/6477d66780df0682e36e676fd746356bb23bf7ce</a></li>
+
+<li>Clean gettext-files file in clean target. It used to be cleaned in maintainer-clean, but that is inconsistent with other cleaning of NLS files in nls-global.mk, and it's also wrong overall, because it's not part of the distribution tarball, which is the base definition of the maintainer-clean target. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3ad2c8e1681ba34a7b764a356489fdc580dc553c">http://git.postgresql.org/pg/commitdiff/3ad2c8e1681ba34a7b764a356489fdc580dc553c</a></li>
+
+<li>Only install the extension files for the current Python major version 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6f2efcd557bb3309e70751daf1fb7c74bbaa4061">http://git.postgresql.org/pg/commitdiff/6f2efcd557bb3309e70751daf1fb7c74bbaa4061</a></li>
+
+<li>Fix server header file installation with vpath builds. Several server header files would not be installed in vpath builds because they live in the build directory. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/409b8c75ba71fe6f3a7f9ccc094810966ef3a177">http://git.postgresql.org/pg/commitdiff/409b8c75ba71fe6f3a7f9ccc094810966ef3a177</a></li>
+
+<li>Add psql expanded auto mode. This adds the "auto" option to the \x command, which switches to the expanded mode when the normal output would be wider than the screen. reviewed by Noah Misch 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/95d2af1646080474ad3e1f1303e68dd5799f9cad">http://git.postgresql.org/pg/commitdiff/95d2af1646080474ad3e1f1303e68dd5799f9cad</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Document that PQexec() can handle a NULL res pointer just fine. Backpatch to 9.1. Mark Hills 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d5873b635989e0b780c1c9f07139dfebf0f5e546">http://git.postgresql.org/pg/commitdiff/d5873b635989e0b780c1c9f07139dfebf0f5e546</a></li>
+
+</ul>
+
+<p>Simon Riggs a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Wakeup WALWriter as needed for asynchronous commit performance. Previously we waited for wal_writer_delay before flushing WAL. Now we also wake WALWriter as soon as a WAL buffer page has filled. Significant effect observed on performance of asynchronous commits by Robert Haas, attributed to the ability to set hint bits on tuples earlier and so reducing contention caused by clog lookups. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4de82f7d7c50a81ec8e70e2cb0ab413ab9134c0b">http://git.postgresql.org/pg/commitdiff/4de82f7d7c50a81ec8e70e2cb0ab413ab9134c0b</a></li>
+
+</ul>
+
+<p>Michael Meskes a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Applied patch by Zoltan to fix copy&amp;paste bug in ecpg's sqlda handling. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5b5985e6c0733b4a2a62f808a403b4caf7463fe3">http://git.postgresql.org/pg/commitdiff/5b5985e6c0733b4a2a62f808a403b4caf7463fe3</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Peter Eisentraut sent in the first of several patches to quiet warnings generated when using -Wcast-qual.</li>
+
+<li>Thomas Munro and Kevin Grittner traded patches which const-ify functions, per TODO item.</li>
+
+<li>KaiGai Kohei sent in two more revisions of the patch to add object access hooks with argument support.</li>
+
+<li>Alexander Korotkov sent in two revisions of a patch to add GiST indexing for range types.</li>
+
+<li>Heikki Linnakangas sent in another revision of the patch to store hot members of PGPROC out of band.</li>
+
+<li>Simon Riggs sent in a patch to use a latch in WalWriter.</li>
+
+<li>Robert Haas and Simon Riggs traded patches intended to reduce contention on ProcArrayLock.</li>
+
+<li>Jaime Casanova sent in another revision of the patch to allow seeing relation free space.</li>
+
+<li>Laurenz Albe sent in a patch to allow disabling SSL compression.</li>
+
+<li>Dimitri Fontaine sent in a PoC patch to create command triggers.</li>
+
+<li>Alexander Korotkov sent in another revision of the patch to collect frequency statistics for arrays.</li>
+
+<li>Robert Haas sent in a patch to improve error messages emitted by get_object_address().</li>
+
+<li>Dimitri Fontaine sent in two revisions of a patch to add Node support in outfuncs.c and readfuncs.c</li>
+
+<li>Tomas Vondra sent in a PoC patch to allow triggers on backend startup.</li>
+
+<li>Nikhil Sontakke and Robert Haas traded patches to fix a situation where concurrent CREATE TABLE/DROP SCHEMA leaves inconsistent leftovers.</li>
+
+<li>Jos&eacute; Arthur Benetasso Villanova and Jan Kundr&aacute;t traded patches to add context in error messages where check constraints are violated.</li>
+
+<li>Kyotaro HORIGUCHI sent in a patch to allow plugging in different memory allocators into libpq.</li>
+
+<li>Andrew Dunstan sent in a patch to add finer control to pg_dump/pg_restore by making the dividing lines among pre-data, data and post-data sections explicit.</li>
+
+<li>Robert Haas sent in two revisions of a patch to reduce the number of snapshots taken per query by half.</li>
+
+<li>Simon Riggs sent in a patch to allow fast failover.</li>
+
+<li>Jan Urbanski sent in another revision of the patches to refactor PL/Python.</li>
+
+<li>Greg Smith sent in a patch which adds query normalization of pg_stat_statements, based on transforming the query tree into a series of integers and using them to match against previous queries.</li>
+
+</ul>

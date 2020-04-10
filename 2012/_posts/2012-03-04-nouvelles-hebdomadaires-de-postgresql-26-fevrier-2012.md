@@ -1,0 +1,268 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 26 février 2012"
+author: "NBougain"
+redirect_from: "index.php?post/2012-03-04-nouvelles-hebdomadaires-de-postgresql-26-fevrier-2012 "
+---
+
+
+
+<p><strong>Revues de code</strong></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Andrew Dunstan a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix a couple of cases of JSON output. First, as noted by Itagaki Takahiro, a datum of type JSON doesn't need to be escaped. Second, ensure that numeric output not in the form of a legal JSON number is quoted and escaped. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/83fcaffea2b55152e45fdcaf3fdaf4c0c89f65ce">http://git.postgresql.org/pg/commitdiff/83fcaffea2b55152e45fdcaf3fdaf4c0c89f65ce</a></li>
+
+<li>Fix typo, noticed by Will Crawford. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6b044cb810460993ad9e458a0ee8fcc9fde5a350">http://git.postgresql.org/pg/commitdiff/6b044cb810460993ad9e458a0ee8fcc9fde5a350</a></li>
+
+<li>Correctly handle NULLs in JSON output. Error reported by David Wheeler. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0c9e5d5e0d407013bf66af01942a7b2dd3342546">http://git.postgresql.org/pg/commitdiff/0c9e5d5e0d407013bf66af01942a7b2dd3342546</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Don't reject threaded Python on FreeBSD. According to Chris Rees, this has worked for awhile, and the current FreeBSD port is removing the test anyway. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c0efc2c2ab416b805ba5ccea621d7198a3f3330f">http://git.postgresql.org/pg/commitdiff/c0efc2c2ab416b805ba5ccea621d7198a3f3330f</a></li>
+
+<li>Don't clear btpo_cycleid during _bt_vacuum_one_page. When "vacuuming" a single btree page by removing LP_DEAD tuples, we are not actually within a vacuum operation, but rather in an ordinary insertion process that could well be running concurrently with a vacuum. So clearing the cycleid is incorrect, and could cause the concurrent vacuum to miss removing tuples that it needs to remove. This is a longstanding bug introduced by commit e6284649b9e30372b3990107a082bc7520325676 of 2006-07-25. I believe it explains Maxim Boguk's recent report of index corruption, and probably some other previously unexplained reports. In 9.0 and up this is a one-line fix; before that we need to introduce a flag to tell _bt_delitems what to do. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/593a9631a7947ab95903e87e24786d7e469cc988">http://git.postgresql.org/pg/commitdiff/593a9631a7947ab95903e87e24786d7e469cc988</a></li>
+
+<li>Cosmetic cleanup for commit a760893dbda9934e287789d54bbd3c4ca3914ce0. Mostly, fixing overlooked comments. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9789c99d01e7e4460b77c29b77d177f86c45a273">http://git.postgresql.org/pg/commitdiff/9789c99d01e7e4460b77c29b77d177f86c45a273</a></li>
+
+<li>Draft release notes for 9.1.3, 9.0.7, 8.4.11, 8.3.18. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/dd2954963b4da9f6e8ea759f19ca5eb0cf79010f">http://git.postgresql.org/pg/commitdiff/dd2954963b4da9f6e8ea759f19ca5eb0cf79010f</a></li>
+
+<li>Allow MinGW builds to use standardly-named OpenSSL libraries. In the Fedora variant of MinGW, the openssl libraries have their normal names, not libeay32 and libssleay32. Adjust configure probes to allow that, per bug #6486. Tomasz Ostrowski 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/74e29162a4f0ec0ad1c7224b8be936d1f9a51f7e">http://git.postgresql.org/pg/commitdiff/74e29162a4f0ec0ad1c7224b8be936d1f9a51f7e</a></li>
+
+<li>Stamp 9.1.3, 9.0.7, 8.4.11, 8.3.18. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/64c47e4542910ebbfb494bec3f8abf8733113394">http://git.postgresql.org/pg/commitdiff/64c47e4542910ebbfb494bec3f8abf8733113394</a></li>
+
+<li>Fix the general case of quantified regex back-references. Cases where a back-reference is part of a larger subexpression that is quantified have never worked in Spencer's regex engine, because he used a compile-time transformation that neglected the need to check the back-reference match in iterations before the last one. (That was okay for capturing parens, and we still do it if the regex has *only* capturing parens ... but it's not okay for backrefs.) To make this work properly, we have to add an "iteration" node type to the regex engine's vocabulary of sub-regex nodes. Since this is a moderately large change with a fair risk of introducing new bugs of its own, apply to HEAD only, even though it's a fix for a longstanding bug. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/173e29aa5deefd9e71c183583ba37805c8102a72">http://git.postgresql.org/pg/commitdiff/173e29aa5deefd9e71c183583ba37805c8102a72</a></li>
+
+<li>Avoid repeated creation/freeing of per-subre DFAs during regex search. In nested sub-regex trees, lower-level nodes created DFAs and then destroyed them again before exiting, which is a bit dumb considering that the recursive search is likely to call those nodes again later. Instead cache each created DFA until the end of pg_regexec(). This is basically a space for time tradeoff, in that it might increase the maximum memory usage. However, in most regex patterns there are not all that many subre nodes, so not that many DFAs --- and in any case, the peak usage occurs when reaching the bottom recursion level, and except for alternation cases that's going to be the same anyway. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/587359479acbbdc95c8e37da40707e37097423f5">http://git.postgresql.org/pg/commitdiff/587359479acbbdc95c8e37da40707e37097423f5</a></li>
+
+<li>Merge dissect() into cdissect() to remove a pile of near-duplicate code. The "uncomplicated" case isn't materially less complicated than the full case, certainly not enough so to justify duplicating nearly 500 lines of code. The only extra work being done in the full path is zaptreesubs, which is very cheap compared to everything else being done here, and besides that I'm less than convinced that it's not needed in some cases even without backrefs. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4dd78bf37aa29d04b3f358b08c4a2fa43cf828e7">http://git.postgresql.org/pg/commitdiff/4dd78bf37aa29d04b3f358b08c4a2fa43cf828e7</a></li>
+
+<li>Remove useless "retry memory" logic within regex engine. Apparently some primordial version of Spencer's engine needed cdissect() and child functions to be able to continue matching from a previous position when re-called. That is dead code, though, since trivial inspection shows that cdissect can never be entered without having previously done zapmem which resets the relevant retry counter. I have also verified experimentally that no case in the Tcl regression tests reaches cdissect with a nonzero retry value. Accordingly, remove that logic. This doesn't really save any noticeable number of cycles in itself, but it is one step towards making dissect() and cdissect() equivalent, which will allow removing hundreds of lines of near-duplicated code. Since struct subre's "retry" field is no longer particularly related to any kind of retry, rename it to "id". As of this commit it's only used for identifying a subre node in debug printouts, so you might think we should get rid of the field entirely; but I have a plan for another use. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3cbfe485e44d055b9e6a27e47069729375059f8c">http://git.postgresql.org/pg/commitdiff/3cbfe485e44d055b9e6a27e47069729375059f8c</a></li>
+
+<li>Fix some more bugs in GIN's WAL replay logic. In commit 4016bdef8aded77b4903c457050622a5a1815c16 I fixed a bunch of ginxlog.c bugs having to do with not handling XLogReadBuffer failures correctly. However, in ginRedoUpdateMetapage and ginRedoDeleteListPages, I unaccountably thought that failure to read the metapage would be impossible and just put in an elog(PANIC) call. This is of course wrong: failure is exactly what will happen if the index got dropped (or rebuilt) between creation of the WAL record and the crash we're trying to recover from. I believe this explains Nicholas Wilson's recent report of these errors getting reached. Also, fix memory leak in forgetIncompleteSplit. This wasn't of much concern when the code was written, but in a long-running standby server page split records could be expected to accumulate indefinitely. Back-patch to 8.4 --- before that, GIN didn't have a metapage. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1b630751d0ffef4c856bfe382889d0d187eca404">http://git.postgresql.org/pg/commitdiff/1b630751d0ffef4c856bfe382889d0d187eca404</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>pg_regress: Add application name setting. Set the PGAPPNAME environment variable in pg_regress so that it identifies itself as such instead of "psql". 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/95ca2859f45171c345d427991c1f319b5e77cc6c">http://git.postgresql.org/pg/commitdiff/95ca2859f45171c345d427991c1f319b5e77cc6c</a></li>
+
+<li>Add parameters for controlling locations of server-side SSL files. This allows changing the location of the files that were previously hard-coded to server.crt, server.key, root.crt, root.crl. server.crt and server.key continue to be the default settings and are thus required to be present by default if SSL is enabled. But the settings for the server-side CA and CRL are now empty by default, and if they are set, the files are required to be present. This replaces the previous behavior of ignoring the functionality if the files were not found. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a445cb92ef5b3a31313ebce30e18cc1d6e0bdecb">http://git.postgresql.org/pg/commitdiff/a445cb92ef5b3a31313ebce30e18cc1d6e0bdecb</a></li>
+
+<li>Fix build without OpenSSL. This is a fixup for commit a445cb92ef5b3a31313ebce30e18cc1d6e0bdecb. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8251670cb30c4e9c76a9cb8382a88109502ba583">http://git.postgresql.org/pg/commitdiff/8251670cb30c4e9c76a9cb8382a88109502ba583</a></li>
+
+<li>Remove inappropriate quotes, and adjust wording for consistency. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c9d700444007046d799cdfea2038194e56bec1f7">http://git.postgresql.org/pg/commitdiff/c9d700444007046d799cdfea2038194e56bec1f7</a></li>
+
+<li>Translation updates 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/602dd1eeaad14a4bef92045956de7e7249f8b38e">http://git.postgresql.org/pg/commitdiff/602dd1eeaad14a4bef92045956de7e7249f8b38e</a></li>
+
+<li>Add some enumeration commas, for consistency 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9cfd800aab9ee3c3b0b2b11ab41e129cc92dc15b">http://git.postgresql.org/pg/commitdiff/9cfd800aab9ee3c3b0b2b11ab41e129cc92dc15b</a></li>
+
+<li>Put Debian package list back in alphabetical order 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3aa42c25c3d1cab8dcbdff913aa60e404f67de1f">http://git.postgresql.org/pg/commitdiff/3aa42c25c3d1cab8dcbdff913aa60e404f67de1f</a></li>
+
+<li>Remove useless const qualifier. Claiming that the typevar argument to DefineCompositeType() is const was a plain lie. A similar case in DefineVirtualRelation() was already changed in passing in commit 1575fbcb. Also clean up the now unnecessary casts that used to cast away the const. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/66f0cf7da8eeaeca4b9894bfafd61789b514af4a">http://git.postgresql.org/pg/commitdiff/66f0cf7da8eeaeca4b9894bfafd61789b514af4a</a></li>
+
+<li>Remove useless cast 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b5c077c3685c1b122c10c7ef03ff4c07abe786a3">http://git.postgresql.org/pg/commitdiff/b5c077c3685c1b122c10c7ef03ff4c07abe786a3</a></li>
+
+</ul>
+
+<p>Magnus Hagander a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Avoid double close of file handle in syslogger on win32. This causes an exception when running under a debugger or in particular when running on a debug version of Windows. Patch from MauMau 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c2a2f7516bd27d4b2bcd387b2aa25a5b98d9c7b0">http://git.postgresql.org/pg/commitdiff/c2a2f7516bd27d4b2bcd387b2aa25a5b98d9c7b0</a></li>
+
+<li>Make each pg_stat_ view into it's own table in the documentation This makes it easier to match a column name with the description of it, and makes it possible to add more detailed documentation in the future. This patch does not add that extra documentation at this point, only the structure required for it. Modeled on the changes already done to pg_stat_activity. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/da9ed7dafdc49e6571d056d92f2ef67858d68946">http://git.postgresql.org/pg/commitdiff/da9ed7dafdc49e6571d056d92f2ef67858d68946</a></li>
+
+<li>Merge the list of statistics functions into the view documentation Most people won't read them individually anyway, it's an easy way to find them, and it's a lot of duplicated information if they are kept in two different places. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ddfc2d9a3705d246c7f262d1f3745d2cf64da1bd">http://git.postgresql.org/pg/commitdiff/ddfc2d9a3705d246c7f262d1f3745d2cf64da1bd</a></li>
+
+<li>Fix some typos and correct wording in the monitoring docs patch Thom Brown 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ac086d466d124337ba87c8eca9aca2417c5bb98f">http://git.postgresql.org/pg/commitdiff/ac086d466d124337ba87c8eca9aca2417c5bb98f</a></li>
+
+</ul>
+
+<p>Simon Riggs a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Correctly initialise shared recoveryLastRecPtr in recovery. Previously we used ReadRecPtr rather than EndRecPtr, which was not a serious error but caused pg_stat_replication to report incorrect replay_location until at least one WAL record is replayed. Fujii Masao 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/11c730f4122ee8677b1cfdd5647faeaabc471af8">http://git.postgresql.org/pg/commitdiff/11c730f4122ee8677b1cfdd5647faeaabc471af8</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>REASSIGN OWNED: Support foreign data wrappers and servers. This was overlooked when implementing those kinds of objects, in commit cae565e503c42a0942ca1771665243b4453c5770. Per report from Pawel Casperek. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a417f85e1da1ef241af4bf40507ca213464d7069">http://git.postgresql.org/pg/commitdiff/a417f85e1da1ef241af4bf40507ca213464d7069</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Improve wording of pg_upgrade logfile option: -l, --logfile=FILENAME log internal activity to file\n\ 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4e6092a2277e50f15d24292ac98ebca8133c881b">http://git.postgresql.org/pg/commitdiff/4e6092a2277e50f15d24292ac98ebca8133c881b</a></li>
+
+<li>Update src/tools/make_ctags to avoid Exuberant tags option that has been renamed and undocumented since 2003; instead, use the documented option. Add comments. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7c19f9d139e76529bbb94b1bde7bc4c19f1bc37a">http://git.postgresql.org/pg/commitdiff/7c19f9d139e76529bbb94b1bde7bc4c19f1bc37a</a></li>
+
+<li>Mention original ctags option name. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1fbacbf998678ae8d5868aeea3e83c915e940d0a">http://git.postgresql.org/pg/commitdiff/1fbacbf998678ae8d5868aeea3e83c915e940d0a</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix typo in comment. Sandro Santilli 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f74f9a277c37b42c570ce01019f815abbec58ba0">http://git.postgresql.org/pg/commitdiff/f74f9a277c37b42c570ce01019f815abbec58ba0</a></li>
+
+<li>Make EXPLAIN (BUFFERS) track blocks dirtied, as well as those written. Also expose the new counters through pg_stat_statements. Patch by me. Review by Fujii Masao and Greg Smith. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2254367435fcc4a31cc3b6d8324e33c5c30f265a">http://git.postgresql.org/pg/commitdiff/2254367435fcc4a31cc3b6d8324e33c5c30f265a</a></li>
+
+<li>Don't install hstore--1.0.sql any more. Since the current version is 1.1, the 1.0 file isn't really needed. We do need the 1.0--1.1 upgrade file, so people on 1.0 can upgrade. Per recent discussion on pgsql-hackers. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d4fb2f99ec86edc5c7ad11a9c7adc0d977cbb4d7">http://git.postgresql.org/pg/commitdiff/d4fb2f99ec86edc5c7ad11a9c7adc0d977cbb4d7</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Alexander Korotkov sent in another revision of the patch to fix some slowness and bugs in inserting cubes.</li>
+
+<li>Kyotaro HORIGUCHI and Marko Kreen traded patches to create a new libpq tuple store and speed up dblink using same.</li>
+
+<li>Etsuro Fujita and Shigeru HANADA traded versions of a patch to add a PostgreSQL FDW.</li>
+
+<li>Gabriele Bartolini sent in another revision of the patch to allow array elements to reference keys in another table.</li>
+
+<li>Dimitri Fontaine sent in another revision of the patch to collect and display accumulated AUTOVACUUM cost.</li>
+
+<li>Alexander Korotkov sent in a patch to fix incorrect behaviour when using a GiST index on points.</li>
+
+<li>Jan Urbanski sent in another revision of the patch to fix potential reference miscounts and segfaults in plpython.c.</li>
+
+<li>Greg Smith sent in a patch to add a pg_test_timing tool for EXPLAIN ANALYZE overhead.</li>
+
+<li>Simon Riggs sent in another revision of the patch to assess the overall level of freelist lwlock contention.</li>
+
+<li>Greg Smith and Ants Aasma traded revisions of a patch to add timing of buffer I/O requests.</li>
+
+<li>Peter Geoghegan sent in another revision of the patch to publish checkpoint timing and sync files summary data to pg_stat_bgwriter.</li>
+
+<li>Timothy Garnett sent in a patch to make it possible to ask pg_dump to dump tables in clustered index order.</li>
+
+<li>Joachim Wieland sent in another revision of the patch to make it possible to use pg_dump in parallel.</li>
+
+<li>Daniel Farina sent in another revision of the patch to move CRC tables to a separate include file and libpg.</li>
+
+<li>KaiGai Kohei sent in another revision of the patch to add a sepgsql_setcon() function to SE-pgsql.</li>
+
+<li>Peter Eisentraut sent in a patch to fix an issue with incompatible pointer types for different revisions of zlib.</li>
+
+<li>Alex Shulgin sent in another revision of a patch to add URL support to libpq.</li>
+
+<li>Daniel Farina sent in another revision of a patch inteneded to re-normalize pg_stat_statements.</li>
+
+<li>Peter Eisentraut sent in another revision of the patch to correct misleading errors on CREATE TABLE ... LIKE.</li>
+
+<li>Simon Riggs sent in a patch to speed up COPY for the case of adding committed rows.</li>
+
+<li>Dimitri Fontaine sent in three more revisions of the patch to implement command triggers.</li>
+
+<li>Sergey Burladyan sent in a patch to fix a bug in psql's indent for inherited tables names with UTF-8</li>
+
+<li>Noah Misch sent in a patch to cut down the noise in psql when there is an error in a multi-command string.</li>
+
+<li>Jeff Janes sent in a patch to reproduce and fix an issue he's been seeing around the "moving more work outside the WALInsertLock" patch.</li>
+
+<li>Magnus Hagander sent in a patch to fix xlog location arithmetic.</li>
+
+<li>Simon Riggs sent in a patch to fix certain contentions in CLOG.</li>
+
+<li>Magnus Hagander sent in a patch to create a new stylesheet, assuming the docs are built locally.</li>
+
+</ul>

@@ -1,0 +1,176 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 15 juillet 2012"
+author: "NBougain"
+redirect_from: "index.php?post/2012-07-21-nouvelles-hebdomadaires-de-postgresql-15-juillet-2012 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Refactor pattern_fixed_prefix() to avoid dealing in incomplete patterns. Previously, pattern_fixed_prefix() was defined to return whatever fixed prefix it could extract from the pattern, plus the "rest" of the pattern. That definition was sensible for LIKE patterns, but not so much for regexes, where reconstituting a valid pattern minus the prefix could be quite tricky (certainly the existing code wasn't doing that correctly). Since the only thing that callers ever did with the "rest" of the pattern was to pass it to like_selectivity() or regex_selectivity(), let's cut out the middle-man and just have pattern_fixed_prefix's subroutines do this directly. Then pattern_fixed_prefix can return a simple selectivity number, and the question of how to cope with partial patterns is removed from its API specification. While at it, adjust the API spec so that callers who don't actually care about the pattern's selectivity (which is a lot of them) can pass NULL for the selectivity pointer to skip doing the work of computing a selectivity estimate. This patch is only an API refactoring that doesn't actually change any processing, other than allowing a little bit of useless work to be skipped. However, it's necessary infrastructure for my upcoming fix to regex prefix extraction, because after that change there won't be any simple way to identify the "rest" of the regex, not even to the low level of fidelity needed by regex_selectivity. We can cope with that if regex_fixed_prefix and regex_selectivity communicate directly, but not if we have to work within the old API. Hence, back-patch to all active branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/00dac6000d422033c3e8d191f01ee0e6525794c2">http://git.postgresql.org/pg/commitdiff/00dac6000d422033c3e8d191f01ee0e6525794c2</a></li>
+
+<li>Re-implement extraction of fixed prefixes from regular expressions. To generate btree-indexable conditions from regex WHERE conditions (such as WHERE indexed_col ~ '^foo'), we need to be able to identify any fixed prefix that a regex might have; that is, find any string that must be a prefix of all strings satisfying the regex. We used to do that with entirely ad-hoc code that looked at the source text of the regex. It didn't know very much about regex syntax, which mostly meant that it would fail to identify some optimizable cases; but Viktor Rosenfeld reported that it would produce actively wrong answers for quantified parenthesized subexpressions, such as '^(foo)?bar'. Rather than trying to extend the ad-hoc code to cover this, let's get rid of it altogether in favor of identifying prefixes by examining the compiled form of a regex. To do this, I've added a new entry point "pg_regprefix" to the regex library; hopefully it is defined in a sufficiently general fashion that it can remain in the library when/if that code gets split out as a standalone project. Since this bug has been there for a very long time, this fix needs to get back-patched. However it depends on some other recent commits (particularly the addition of wchar-to-database-encoding conversion), so I'll commit this separately and then go to work on back-porting the necessary fixes. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/628cbb50ba80c83917b07a7609ddec12cda172d0">http://git.postgresql.org/pg/commitdiff/628cbb50ba80c83917b07a7609ddec12cda172d0</a></li>
+
+<li>Fix ASCII case in pg_wchar2mule_with_len. Also some cosmetic improvements for wchar-to-mblen patch. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/60e9c224a197aa37abb1aa3aefa3aad42da61f7f">http://git.postgresql.org/pg/commitdiff/60e9c224a197aa37abb1aa3aefa3aad42da61f7f</a></li>
+
+<li>Back-patch addition of pg_wchar-to-multibyte conversion functionality. Back-patch of commits 72dd6291f216440f6bb61a8733729a37c7e3b2d2, f6a05fd973a102f7e66c491d3f854864b8d24844, and 60e9c224a197aa37abb1aa3aefa3aad42da61f7f. This is needed to support fixing the regex prefix extraction bug in back branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f12960d8c9ce454a37c2082549b7766ce36627d2">http://git.postgresql.org/pg/commitdiff/f12960d8c9ce454a37c2082549b7766ce36627d2</a></li>
+
+<li>Back-patch fix for extraction of fixed prefixes from regular expressions. Back-patch of commits 628cbb50ba80c83917b07a7609ddec12cda172d0 and c6aae3042be5249e672b731ebeb21875b5343010. This has been broken since 7.3, so back-patch to all supported branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/18c8dc32ce6759a8837f01e3dd0036cd19ee8683">http://git.postgresql.org/pg/commitdiff/18c8dc32ce6759a8837f01e3dd0036cd19ee8683</a></li>
+
+<li>Fix bogus macro definition. Per buildfarm complaints. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/01215d61a7b162ca441c5bc0312550f2d88fddb2">http://git.postgresql.org/pg/commitdiff/01215d61a7b162ca441c5bc0312550f2d88fddb2</a></li>
+
+<li>Add array_remove() and array_replace() functions. These functions support removing or replacing array element value(s) matching a given search value. Although intended mainly to support a future array-foreign-key feature, they seem useful in their own right. Marco Nenciarini and Gabriele Bartolini, reviewed by Alex Hunsaker 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/84a42560c82aeb9f3690d93a0d03cf544f53b89b">http://git.postgresql.org/pg/commitdiff/84a42560c82aeb9f3690d93a0d03cf544f53b89b</a></li>
+
+<li>Fix walsender processes to establish a SIGALRM handler. Walsenders must have working SIGALRM handling during InitPostgres, but they set the handler to SIG_IGN so that nothing would happen if a timeout was reached. This could result in two failure modes: 1. If a walsender participated in a deadlock during its authentication transaction, and was the last to wait in the deadly embrace, the deadlock would not get cleared automatically. This would require somebody to be trying to take out AccessExclusiveLock on multiple system catalogs, so it's not very probable. 2. If a client failed to respond to a walsender's authentication challenge, the intended disconnect after AuthenticationTimeout wouldn't happen, and the walsender would wait indefinitely for the client. For the moment, fix in back branches only, since this is fixed in a different way in the timeout-infrastructure patch that's awaiting application to HEAD. If we choose not to apply that, then we'll need to do this in HEAD as well. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0bf8eb2a15875bc3f4d5638da73cb34ee9ca868e">http://git.postgresql.org/pg/commitdiff/0bf8eb2a15875bc3f4d5638da73cb34ee9ca868e</a></li>
+
+<li>Skip text-&gt;binary conversion of unnecessary columns in contrib/file_fdw. When reading from a text- or CSV-format file in file_fdw, the datatype input routines can consume a significant fraction of the runtime. Often, the query does not need all the columns, so we can get a useful speed boost by skipping I/O conversion for unnecessary columns. To support this, add a "convert_selectively" option to the core COPY code. This is undocumented and not accessible from SQL (for now, anyway). Etsuro Fujita, reviewed by KaiGai Kohei 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a36088bcfae85eeeb55e85c3f06c61cb2f0621c6">http://git.postgresql.org/pg/commitdiff/a36088bcfae85eeeb55e85c3f06c61cb2f0621c6</a></li>
+
+<li>Cosmetic cleanup of ginInsertValue(). Make it clearer that the passed stack mustn't be empty, and that we are not supposed to fall off the end of the stack in the main loop. Tighten the loop that extracts the root block number, too. Markus Wanner and Tom Lane 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1a9405d26537c6d95269bf48f5ea80fbf7967260">http://git.postgresql.org/pg/commitdiff/1a9405d26537c6d95269bf48f5ea80fbf7967260</a></li>
+
+<li>Add fsync capability to initdb, and use sync_file_range() if available. Historically we have not worried about fsync'ing anything during initdb (in fact, initdb intentionally passes -F to each backend launch to prevent it from fsync'ing). But with filesystems getting more aggressive about caching data, that's not such a good plan anymore. Make initdb do a pass over the finished data directory tree to fsync everything. For testing purposes, the -N/--nosync flag can be used to restore the old behavior. Also, testing shows that on Linux, sync_file_range() is much faster than posix_fadvise() for hinting to the kernel that an fsync is coming, apparently because the latter blocks on a rather small request queue while the former doesn't. So use this function if available in initdb, and also in the backend's pg_flush_data() (where it currently will affect only the speed of CREATE DATABASE's cloning step). We will later make pg_regress invoke initdb with the --nosync flag to avoid slowing down cases such as "make check" in contrib. But let's not do so until we've shaken out any portability issues in this patch. Jeff Davis, reviewed by Andres Freund 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b966dd6c4228d696b291c1cdcb5ab8c8475fefa8">http://git.postgresql.org/pg/commitdiff/b966dd6c4228d696b291c1cdcb5ab8c8475fefa8</a></li>
+
+<li>Prevent corner-case core dump in rfree(). rfree() failed to cope with the case that pg_regcomp() had initialized the regex_t struct but then failed to allocate any memory for re-&gt;re_guts (ie, the first malloc call in pg_regcomp() failed). It would try to touch the guts struct anyway, and thus dump core. This is a sufficiently narrow corner case that it's not surprising it's never been seen in the field; but still a bug is a bug, so patch all active branches. Noted while investigating whether we need to call pg_regfree after a failure return from pg_regcomp. Other than this bug, it turns out we don't, so adjust comments appropriately. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/54fd196ffc6432b62fe075e564f457db64fb288c">http://git.postgresql.org/pg/commitdiff/54fd196ffc6432b62fe075e564f457db64fb288c</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>perltidy adjustments to new file 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fc4a8a6d748ee213f49deb2d090febbdae3121c7">http://git.postgresql.org/pg/commitdiff/fc4a8a6d748ee213f49deb2d090febbdae3121c7</a></li>
+
+<li>plperl: Skip setting UTF8 flag when in SQL_ASCII encoding. When in SQL_ASCII encoding, strings passed around are not necessarily UTF8-safe. We had already fixed this in some places, but it looks like we missed some. I had to backpatch Peter Eisentraut's a8b92b60 to 9.1 in order for this patch to cherry-pick more cleanly. Patch from Alex Hunsaker, tweaked by Kyotaro HORIGUCHI and myself. Some desultory cleanup and comment addition by me, during patch review. Per bug report from Christoph Berg in 20120209102116.GA14429@msgid.df7cb.de 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/379607c9e83dcfaccf6ccda47615e7f90c3c0b0c">http://git.postgresql.org/pg/commitdiff/379607c9e83dcfaccf6ccda47615e7f90c3c0b0c</a></li>
+
+</ul>
+
+<p>Tatsuo Ishii a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add comments about additional mule-internal charsets from emacs's source code(lisp/international/mule-conf.el). These charsets have not been supported up to now anyway, so this is just for adding commentary. Also add mention that we follow emacs's implementation, not xemacs's. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1c7a7faa5b74042dc3b3726296a17ff913dcd84c">http://git.postgresql.org/pg/commitdiff/1c7a7faa5b74042dc3b3726296a17ff913dcd84c</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Document that Log-Shipping Standby Servers cannot be upgraded by pg_upgrade. Backpatch to 9.2. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f9951252dbd86391ab3a9bcba99f4e9f13e311a6">http://git.postgresql.org/pg/commitdiff/f9951252dbd86391ab3a9bcba99f4e9f13e311a6</a></li>
+
+<li>Remove 'x =- 1' check for pgindent, not needed, per report from Andrew Dunstan. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/76720bdf1a817d999b9a8c3478a136793e5abec6">http://git.postgresql.org/pg/commitdiff/76720bdf1a817d999b9a8c3478a136793e5abec6</a></li>
+
+</ul>
+
+<p>Magnus Hagander a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix memory and file descriptor leaks in pg_receivexlog/pg_basebackup. When the internal loop mode was added, freeing memory and closing filedescriptors before returning became important, and a few cases in the code missed that. Fujii Masao 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/058a050ec769fb1431220d822f00b0a442293514">http://git.postgresql.org/pg/commitdiff/058a050ec769fb1431220d822f00b0a442293514</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Avoid extra newlines in XML mapping in table forest mode. Found by P. Broennimann 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a84bf4922e566f047536112a2aaf488559ee62dd">http://git.postgresql.org/pg/commitdiff/a84bf4922e566f047536112a2aaf488559ee62dd</a></li>
+
+<li>Add link to PEP 394 regarding python2 vs python3 naming 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8e708e5e36d8a0295780a9aa1d99f01f5acb6182">http://git.postgresql.org/pg/commitdiff/8e708e5e36d8a0295780a9aa1d99f01f5acb6182</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Print the name of the WAL file containing latest REDO ptr in pg_controldata. This makes it easier to determine how far back you need to keep archived WAL files, to restore from a backup. Fujii Masao 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6c349a565abf1e5ddf68971c62afff14947bcfa2">http://git.postgresql.org/pg/commitdiff/6c349a565abf1e5ddf68971c62afff14947bcfa2</a></li>
+
+<li>Don't initialize TLI variable to -1, as TimeLineID is unsigned. This was causing a compiler warning with Solaris compiler. Use 0 instead. The variable is initialized just for the sake of tidyness and/or debugging, it's not used for anything before setting it to a real value. Per report and suggestion from Peter Eisentraut. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2686da9db2aec19763ff2dfe5c034da8fb5eb382">http://git.postgresql.org/pg/commitdiff/2686da9db2aec19763ff2dfe5c034da8fb5eb382</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Alexander Korotkov sent in another revision of the patch to use a 2-D map for range indexing.</li>
+
+<li>Dimitri Fontaine sent in three more revisions of the patch to add event triggers.</li>
+
+<li>Honza Horak sent in another revision of the patch to allow listening on more than one UNIX domain socket.</li>
+
+<li>Alexander Korotkov sent in three more revisions of a patch to add 2-D mapping and quad-tree SP-GiST indexing.</li>
+
+<li>Etsuro Fujita sent in another revision of the patch to add a pgsql_fdw to contrib.</li>
+
+<li>Ryan Kelly sent in another revision of the patch to allow breaking out of hung connection attempts.</li>
+
+<li>Peter Eisentraut sent in another revision of the elog/ereport noreturn decoration patch.</li>
+
+<li>Jan Urbanski sent in a patch which fixes encoding translation between PostgreSQL and PL/PythonU encoding always to encode Python unicode objects using UTF-8 and then use Postgres's internal functions to produce bytes in the server encoding.</li>
+
+<li>Jeff Janes sent in a patch to fix an issue where TRUNCATE was taking more time than the equivalent DELETE.</li>
+
+<li>Tom Lane sent in a patch to get rid of pre-assignment of index names in CREATE TABLE LIKE, which can cause a race condition in pg_catalog.</li>
+
+<li>KaiGai Kohei sent in another revision of the patch to implement row-level access control.</li>
+
+</ul>

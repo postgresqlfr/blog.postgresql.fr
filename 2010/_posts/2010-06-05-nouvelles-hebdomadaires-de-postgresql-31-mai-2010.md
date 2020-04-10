@@ -1,0 +1,190 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 31 mai 2010"
+author: "NBougain"
+redirect_from: "index.php?post/2010-06-05-nouvelles-hebdomadaires-de-postgresql-31-mai-2010 "
+---
+
+
+
+<p><strong>Correctifs appliqués</strong></p>
+
+<p>Bruce Momjian a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/contrib/pg_upgrade/option.c, split apart pg_upgrade user lookup and root check so '--help' shows proper default username.</li>
+
+<li>In pgsql/doc/src/sgml/pgupgrade.sgml, update pg_upgrade docs to show options in alphabetical order, and improve 8.3 doc limitations paragraph.</li>
+
+<li>In pgsql/contrib/pg_upgrade/info.c, in pg_upgrade, test for datallowconn instead of hardcoding template0.</li>
+
+<li>In pgsql/contrib/pg_upgrade/option.c, re-order pg_upgrade 'help' options to be alphabetical.</li>
+
+<li>In pgsql/contrib/pg_upgrade/IMPLEMENTATION.jp, add Japanese Implementation file to CVS.</li>
+
+<li>In /doc/src/sgml/pgupgrade.sgml, add pg_upgrade docs about binary compatibility, per Robert Haas.</li>
+
+<li>Modify pg_standby, pgbench, and pg_upgrade manual pages to be consistent in their display of command-line options with other client applications.</li>
+
+<li>In pgsql/contrib/pg_upgrade/IMPLEMENTATION, update pg_upgrade IMPLEMENTATION doc file to match current 9.0 behavior.</li>
+
+<li>Remove IMPLEMENTATION.jp file from pg_upgrade docs; still in pgFoundry for pg_migrator, per suggestion from Magnus Hagander.</li>
+
+<li>In pgsql/doc/src/sgml/maintenance.sgml, document pgFouine and check_postgres as log analysis options.</li>
+
+<li>In pgsql/doc/src/sgml/maintenance.sgml, fix SGML markup.</li>
+
+<li>In pgsql/doc/src/sgml/installation.sgml, document use of VPATH builds. David Fetter.</li>
+
+<li>In pgsql/src/backend/executor/execUtils.c, add C comment that we will have to remove an exclusion constraint check if we ever implement '&lt;&gt;' index opclasses. Jeff Davis.</li>
+
+<li>In pgsql/doc/src/sgml/ref/create_domain.sgml, document that NOT NULL domain constraints are not always honored.</li>
+
+<li>Clarify the meaning of "trusted language" in the documentation.</li>
+
+</ul>
+
+<p>Michael Meskes a commité&nbsp;:</p>
+
+<ul>
+
+<li>Added a configure test for "long long" datatypes. So far this is only used in ecpg and replaces the old test that was kind of hackish.</li>
+
+<li>Replace self written 'long long int' configure test by standard 'AC_TYPE_LONG_LONG_INT' macro call.</li>
+
+</ul>
+
+<p>Tom Lane a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/backend/optimizer/plan/createplan.c, fix oversight in construction of sort/unique plans for UniquePaths. If the original IN operator is cross-type, for example int8 = int4, we need to use int4 &lt; int4 to sort the inner data and int4 = int4 to unique-ify it. We got the first part of that right, but tried to use the original IN operator for the equality checks. Per bug #5472 from Vlad Romascanu. Backpatch to 8.4, where the bug was introduced by the patch that unified SortClause and GroupClause. I was able to take out a whole lot of on-the-fly calls of get_equality_op_for_ordering_op(), but failed to realize that I needed to put one back in right here :-(</li>
+
+<li>In pgsql/src/interfaces/libpq/fe-secure.c, add missing newlines to some SSL-related error messages. Noted while testing.</li>
+
+<li>In pgsql/src/backend/libpq/be-secure.c, tell openssl to include the names of the root certs the server trusts in requests for client certs. This lets a client with a keystore select the appropriate client certificate to send. In particular, this is necessary to get Java clients to work in all but the most trivial configurations. Per discussion of bug #5468. Craig Ringer</li>
+
+<li>In pgsql/src/backend/libpq/be-secure.c, minor editorialization for be-secure.c: fix comments and some formatting infelicities.</li>
+
+<li>In pgsql/src/backend/libpq/hba.c, the message style police pay a visit to hba.c.</li>
+
+<li>In pgsql/src/backend/libpq/auth.c, fix bogus error message for SSL-cert authentication, due to lack of a uaCert entry in auth_failed(). Put the switch entries into a sane order, namely the one the enum is declared in.</li>
+
+<li>Rearrange libpq's SSL initialization to simplify it and make it handle some additional cases correctly. The original coding failed to load additional (chain) certificates from the client cert file, meaning that indirectly signed client certificates didn't work unless one hacked the server's root.crt file to include intermediate CAs (not the desired approach). Another problem was that everything got loaded into the shared SSL_context object, which meant that concurrent connections trying to use different sslcert settings could well fail due to conflicting over the single available slot for a keyed certificate. To fix, get rid of the use of SSL_CTX_set_client_cert_cb(), which is deprecated anyway in the OpenSSL documentation, and instead just unconditionally load the client cert and private key during connection initialization. This lets us use SSL_CTX_use_certificate_chain_file(), which does the right thing with additional certs, and is lots simpler than the previous hacking about with BIO-level access. A small disadvantage is that we have to load the primary client cert a second time with SSL_use_certificate_file, so that that one ends up in the correct slot within the connection's SSL object where it can get paired with the key. Given the other overhead of making an SSL connection, that doesn't seem worth worrying about. Per discussion ensuing from bug #5468.</li>
+
+<li>Improve SSL-related documentation. Explain how to deal with certificate chains, do assorted wordsmithing.</li>
+
+<li>In pgsql/src/backend/commands/indexcmds.c, make CREATE INDEX run expression preprocessing on a proposed index expression before it checks whether the expression is immutable. This covers two cases that were previously handled poorly: 1. SQL function inlining could reduce the apparent volatility of the expression, allowing an expression to be accepted where it previously would not have been. As an example, polymorphic functions must be marked with the worst-case volatility they have for any argument type, but for specific argument types they might not be so volatile, so indexing could be allowed. (Since the planner will refuse to inline functions in cases where the apparent volatility of the expression would increase, this won't break any cases that were accepted before.) 2. A nominally immutable function could have default arguments that are volatile expressions. In such a case insertion of the defaults will increase both the apparent and actual volatility of the expression, so it is *necessary* to check this before allowing the expression to be indexed. Back-patch to 8.4, where default arguments were introduced.</li>
+
+<li>In pgsql/src/include/catalog/pg_proc.h, fix the volatility marking of textanycat() and anytextcat(): they were marked immutable, but that is wrong in general because the cast from the polymorphic argument to text could be stable or even volatile. Mark them volatile for safety. In the typical case where the cast isn't volatile, the planner will deduce the correct expression volatility after inlining the function, so performance is not lost. The just-committed fix in CREATE INDEX also ensures this won't break any indexing cases that ought to be allowed. Per discussion, I'm not bumping catversion for this change, as it doesn't seem critical enough to force an initdb on beta testers.</li>
+
+<li>In pgsql/src/backend/utils/misc/ps_status.c, change ps_status.c to explicitly track the current logical length of ps_buffer. This saves cycles in get_ps_display() on many popular platforms, and more importantly ensures that get_ps_display() will correctly return an empty string if init_ps_display() hasn't been called yet. Per trouble report from Ray Stell, in which log_line_prefix %i produced junk early in backend startup. Back-patch to 8.0. 7.4 doesn't have %i and its version of get_ps_display() makes no pretense of avoiding pad junk anyhow.</li>
+
+<li>In pgsql/src/backend/executor/nodeMergejoin.c, rejigger mergejoin logic so that a tuple with a null in the first merge column is treated like end-of-input, if nulls sort last in that column and we are not doing outer-join filling for that input. In such a case, the tuple cannot join to anything from the other input (because we assume mergejoinable operators are strict), and neither can any tuple following it in the sort order. If we're not interested in doing outer-join filling we can just pretend the tuple and its successors aren't there at all. This can save a great deal of time in situations where there are many nulls in the join column, as in a recent example from Scott Marlowe. Also, since the planner tends to not count nulls in its mergejoin scan selectivity estimates, this is an important fix to make the runtime behavior more like the estimate. I regard this as an omission in the patch I wrote years ago to teach mergejoin that tuples containing nulls aren't joinable, so I'm back-patching it. But only to 8.3 --- in older versions, we didn't have a solid notion of whether nulls sort high or low, so attempting to apply this optimization could break things.</li>
+
+<li>Rewrite LIKE's %-followed-by-_ optimization so it really works (this time for sure ;-)). It now also optimizes more cases, such as %_%_. Improve comments too. Per bug #5478. In passing, also rename the TCHAR macro to GETCHAR, because pgindent is messing with the formatting of the former (apparently it now thinks TCHAR is a typedef name). Back-patch to 8.3, where the bug was introduced.</li>
+
+<li>In pgsql/src/backend/utils/adt/like_match.c, fix oversight in the previous patch that made LIKE throw error for \ at the end of the pattern: the code path that handles \ just after % should throw error too. As in the previous patch, not back-patching for fear of breaking apps that worked before.</li>
+
+<li>In pgsql/src/bin/psql/common.c, abort a FETCH_COUNT-controlled query if we observe any I/O error on the output stream. This typically indicates that the user quit out of $PAGER, or that we are writing to a file and ran out of disk space. In either case we shouldn't bother to continue fetching data. Stephen Frost.</li>
+
+<li>In pgsql/doc/src/sgml/perform.sgml, add text to "Populating a Database" pointing out that bulk data load into a table with foreign key constraints eats memory. Per off-line discussion of bug #5480 with its reporter. Also do some minor wordsmithing elsewhere in the same section.</li>
+
+<li>Change the notation for calling functions with named parameters from "val AS name" to "name := val", as per recent discussion. This patch catches everything in the original named-parameters patch, but I'm not certain that no other dependencies snuck in later (grepping the source tree for all uses of AS soon proved unworkable). In passing I note that we've dropped the ball at least once on keeping ecpg's lexer (as opposed to parser) in sync with the backend. It would be a good idea to go through all of pgc.l and see if it's in sync now. I didn't attempt that at the moment.</li>
+
+<li>In pgsql/src/backend/tsearch/ts_typanalyze.c, fix misuse of Lossy Counting (LC) algorithm in compute_tsvector_stats(). We must filter out hashtable entries with frequencies less than those specified by the algorithm, else we risk emitting junk entries whose actual frequency is much less than other lexemes that did not get tabulated. This is bad enough by itself, but even worse is that tsquerysel() believes that the minimum frequency seen in pg_statistic is a hard upper bound for lexemes not included, and was thus underestimating the frequency of non-MCEs. Also, set the threshold frequency to something with a little bit of theory behind it, to wit assume that the input distribution is approximately Zipfian. This might need adjustment in future, but some preliminary experiments suggest that it's not too unreasonable. Back-patch to 8.4, where this code was introduced. Jan Urbanski, with some editorialization by Tom Lane.</li>
+
+</ul>
+
+<p>Robert Haas a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/backend/postmaster/postmaster.c, more fixes for shutdown during recovery. 1. If we receive a fast shutdown request while in the PM_STARTUP state, process it just as we would in PM_RECOVERY, PM_HOT_STANDBY, or PM_RUN. Without this change, an early fast shutdown followed by Hot Standby causes the database to get stuck in a state where a shutdown is pending (so no new connections are allowed) but the shutdown request is never processed unless we end Hot Standby and enter normal running. 2. Avoid removing the backup label file when a smart or fast shutdown occurs during recovery. It makes sense to do this once we've reached normal running, since we must be taking a backup which now won't be valid. But during recovery we must be recovering from a previously taken backup, and any backup label file is needed to restart recovery from the right place. Fujii Masao and Robert Haas</li>
+
+<li>In pgsql/src/bin/psql/help.c, fix psql help: \da+ is same as \da, but \daS is not. Noted by Stephen Frost.</li>
+
+<li>In pgsql/src/backend/postmaster/postmaster.c, avoid starting walreceiver in states where it shouldn't be running. In particular, it's bad to start walreceiver when in state PM_WAIT_BACKENDS, because we have no provision to kill walreceiver when in that state. Fujii Masao.</li>
+
+</ul>
+
+<p>Simon Riggs a commité&nbsp;:</p>
+
+<ul>
+
+<li>Hot Standby Defer buffer pin deadlock check until deadlock_timeout has expired. During Hot Standby we need to check for buffer pin deadlocks when the Startup process begins to wait, in case it never wakes up again. We previously made the deadlock check immediately on the basis it was cheap, though clearer thinking and prima facie evidence shows that was too simple. Refactor existing code to make it easy to add in deferral of deadlock check until deadlock_timeout allowing a good reduction in deadlock checks since far few buffer pins are held for that duration. It's worth doing anyway, though major goal is to prevent further reports of context switching with high numbers of users on occasional tests.</li>
+
+</ul>
+
+<p>Heikki Linnakangas a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/backend/replication/walsender.c, in walsender, don't sleep if there's outstanding WAL waiting to be sent, otherwise we effectively rate-limit the streaming as pointed out by Simon Riggs. Also, send the WAL in smaller chunks, to respond to signals more promptly.</li>
+
+<li>In pgsql/src/backend/replication/walsender.c, thinko in previous commit: ensure that MAX_SEND_SIZE is always greater than XLOG_BLCKSZ, by defining it as 16 * XLOG_BLCKSZ rather than directly as 128k bytes.</li>
+
+<li>In pgsql/src/backend/access/transam/xlog.c, adjust comment to reflect that we now have Hot Standby. Pointed out by Robert Haas.</li>
+
+<li>In pgsql/doc/src/sgml/ref/savepoint.sgml, make it more clear that you need to release savepoint with RELEASE SAVEPOINT to make an older savepoint with the same name accessible. It's also possible to implicitly release the savepoint by rolling back to an earlier savepoint, but mentioning that too would make the note just more verbose and confusing. Florian Pflug.</li>
+
+<li>In pgsql/doc/src/sgml/high-availability.sgml, update High Availability docs. Clarify terms master/primary standby/slave, move two paragraphs that apply to log shipping in general from the "Alternative method for log shipping" section to the earlier sections. Add varname tags where missing. Some small wording changes.</li>
+
+<li>In pgsql/doc/src/sgml/high-availability.sgml, fix typos in recent doc patch. Fujii Masao.</li>
+
+</ul>
+
+<p>ITAGAKI Takahiro a commité&nbsp;:</p>
+
+<ul>
+
+<li>Mark PG_MODULE_MAGIC and PG_FUNCTION_INFO_V1 with PGDLLEXPORT independently from BUILDING_DLL. It is always __declspec(dllexport).</li>
+
+<li>In pgsql/src/include/port/cygwin.h and pgsql/src/include/port/win32.h PGDLLEXPORT is __declspec (dllexport) only on MSVC, but is __declspec (dllimport) on other compilers because cygwin and mingw don't like dllexport.</li>
+
+</ul>
+
+<p>Peter Eisentraut a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/doc/src/sgml/syntax.sgml, small correction/clarification in discussion of Unicode literals.</li>
+
+</ul>
+
+<p><strong>Correctifs rejetés (à ce jour)</strong></p>
+
+<ul>
+
+<li>Stephen Frost's in a patch to move a "long long" check to c.h. The actual problem, if it needs fixing, needs to be fixed in autoconf.</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>KaiGai Kohei sent in six revisions of a patch to rework Robert Haas's patch to add an ExecutorCheckPerms() hook.</li>
+
+<li>Fujii Masao sent in two more revisions of the patch to fix smart shutdown during recovery.</li>
+
+<li>Craig Ringer sent in two revisions of a patch to fix an issue with SSL certificates.</li>
+
+<li>Simon Riggs sent in a patch to fix the sporadically reduced speed and context switch storm issues in Hot Standby.</li>
+
+<li>Mike Fowler sent in three revisions of a patch to add XMLEXISTS from the SQL/XML section of the SQL standard.</li>
+
+<li>Jonathan Leto and Josh Tolley traded patches to document the PL template handler better.</li>
+
+<li>Stephen Frost sent in a patch to do regression tests on psql's backslash commands.</li>
+
+<li>ITAGAKI Takahiro sent in a patch to fix an issue where fillfactor in TOAST tables is set to 0, which is not always right.</li>
+
+<li>Robert Haas sent in a patch to add a get_whatever_oid() function. This factors out much code duplication.</li>
+
+<li>Simon Riggs sent in another revision of the patch to fix keepalive issues in max_standby_delay.</li>
+
+<li>Peter Eisentraut sent in a patch for 9.1 that adds functions pg_stat_get_backend_client_addr and pg_stat_get_backend_client_port.</li>
+
+</ul>

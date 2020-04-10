@@ -1,0 +1,230 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 24 octobre 2010"
+author: "NBougain"
+redirect_from: "index.php?post/2010-10-29-nouvelles-hebdomadaires-de-postgresql-24-octobre-2010 "
+---
+
+
+
+<p><strong>Revues</strong></p>
+
+<p>Jeff Davis reviewed the patch to implement a truly SERIALIAZABLE isolation level.</p>
+
+<p>ITAGAKI Takahiro reviewed several versions of the patch to add EXTENSIONs.</p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Change example pg_hba.conf in docs to match altered pg_hba.conf.sample Peter Eisentraut's recent patch to allow host names in pg_hba.conf changed the contents of pg_hba.conf.sample Fujii Masao. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=9c73e20f38e21f68d92f45238cd6314b241dd96e">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=9c73e20f38e21f68d92f45238cd6314b241dd96e</a></li>
+
+<li>Unbreak comments on composite type attributes. Report and diagnosis by Peter Eisentraut. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=262c1a42dcd36831a964099659026fb9cec0eecc">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=262c1a42dcd36831a964099659026fb9cec0eecc</a></li>
+
+<li>Add levenshtein_less_equal, optimized version for small distances. Alexander Korotkov, heavily revised by me. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=604ab08145d0dde91279c430e08d570717c12b30">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=604ab08145d0dde91279c430e08d570717c12b30</a></li>
+
+<li>Add some caveats to the contrib/isn docs. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=4b6623a7e8f0f0116ff68ebfd4c98830fe59419d">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=4b6623a7e8f0f0116ff68ebfd4c98830fe59419d</a></li>
+
+<li>Updates to contrib/isn ISBN tables. Jan Otto, reviewed by Peter Geoghegan. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=6d1af7b2180719102a907bd3e35d218b43e76ad1">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=6d1af7b2180719102a907bd3e35d218b43e76ad1</a></li>
+
+<li>Correct a mistake in levenshtein_less_equal() multibyte character handling. Spotted by Alexander Korotkov. Along the way, remove a misleading comment line. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=dd1587089c3dadd4bc1c85e8e75edf3a24686934">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=dd1587089c3dadd4bc1c85e8e75edf3a24686934</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Document the tablespace directory "should" be empty, rather than "must" be empty. Because of binary migration usage, it might not be empty. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=433c7a654556cc43b8f4e5c4c1b175480b266ba5">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=433c7a654556cc43b8f4e5c4c1b175480b266ba5</a></li>
+
+<li>In pg_upgrade, rename macro EXEC_EXT to SHELL_EXT for clarity. Backpatch to 9.0.X. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=9df96f9bb1cb8bc0350f02bbd0a113480e84224a">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=9df96f9bb1cb8bc0350f02bbd0a113480e84224a</a></li>
+
+<li>Add mention of using tools/fsync to test fsync methods. Restructure recent wal_sync_method doc paragraph to be clearer. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=f75d6a1b19ec334a9b1455c4b8030a09d582581d">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=f75d6a1b19ec334a9b1455c4b8030a09d582581d</a></li>
+
+<li>Add removal of PG_VERSION to optional old cluster deletion script. Backpatch to 9.0.X. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=51eeccd6cc2e0fcb95112e0e4a7a20d0f95c181a">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=51eeccd6cc2e0fcb95112e0e4a7a20d0f95c181a</a></li>
+
+<li>In pg_upgrade, rename SHELL_EXT to SCRIPT_EXT, for clarity. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=722d5beeb266ae83f548fc3953df700a71f30134">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=722d5beeb266ae83f548fc3953df700a71f30134</a></li>
+
+<li>Restructure the pg_upgrade code to use several global structures rather than packing everything into 'ctx' and passing that to every function. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=e13f7e9a711c9117e438516537066bbe61df6455">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=e13f7e9a711c9117e438516537066bbe61df6455</a></li>
+
+<li>Pgindent run on pg_upgrade source after restructuring. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=07456b45e6359e8a15807e3f71c0f2e6a76fa4e9">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=07456b45e6359e8a15807e3f71c0f2e6a76fa4e9</a></li>
+
+<li>In pg_upgrade, use cached copy of directory listing, rather than calling scandir() with a pattern for every table. Optimization after report of pg_upgrade slowness with 150k tables. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=ad06db2610f479d559ee4a3b9e3241d40be07440">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=ad06db2610f479d559ee4a3b9e3241d40be07440</a></li>
+
+<li>Cache most recent relfilenode lookups, for speed, after report of pg_upgrade slowness for 150k tables. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=333b4a45f1d984bd7f32aecb1ba551feed088ec4">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=333b4a45f1d984bd7f32aecb1ba551feed088ec4</a></li>
+
+<li>Fix for new pg_upgrade cache code. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=1c72614be710127b198411f49301a56453e3abc4">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=1c72614be710127b198411f49301a56453e3abc4</a></li>
+
+<li>Further speed up pg_upgrade lookups. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=3325c9bddb332487914c5c96d838286350044814">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=3325c9bddb332487914c5c96d838286350044814</a></li>
+
+<li>Rename pg_upgrade 'log' to 'log_opts', to avoid platform naming conflict. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=691a67b922f2e8374356215228700958165e7d44">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=691a67b922f2e8374356215228700958165e7d44</a></li>
+
+<li>Clean up pg_upgrade cache lookup code; remove useless NULL pointer tests. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=a52aa6c6db13155bc0b1b1b18fedf2310d9e7a84">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=a52aa6c6db13155bc0b1b1b18fedf2310d9e7a84</a></li>
+
+<li>Mention limited usefulness of .pgpass database field. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=71be8db5dfada851c45d6f4d1d7364456fd40be5">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=71be8db5dfada851c45d6f4d1d7364456fd40be5</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Support key word 'all' in host column of pg_hba.conf 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=bc8624b15d8055cdead310352e5943da18500d16">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=bc8624b15d8055cdead310352e5943da18500d16</a></li>
+
+<li>Support suffix matching of host names in pg_hba.conf. A name starting with a dot can be used to match a suffix of the actual host name (e.g., .example.com matches foo.example.com). 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=24b29ca8f9dc4a5e5f873f0fcb56438c526700f6">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=24b29ca8f9dc4a5e5f873f0fcb56438c526700f6</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix incorrect generation of whole-row variables in planner. A couple of places in the planner need to generate whole-row Vars, and were cutting corners by setting vartype = RECORDOID in the Vars, even in cases where there's an identifiable named composite type for the RTE being referenced. While we mostly got away with this, it failed when there was also a parser-generated whole-row reference to the same RTE, because the two Vars weren't equal() due to the difference in vartype. Fix by providing a subroutine the planner can call to generate whole-row Vars the same way the parser does. Per bug #5716 from Andrew Tipton. Back-patch to 9.0 where one of the bogus calls was introduced (the other one is new in HEAD). 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=6e74a91b2bf0e0032ccd60dd99d6cf47c190c428">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=6e74a91b2bf0e0032ccd60dd99d6cf47c190c428</a></li>
+
+<li>Update storage.sgml to describe the 9.0 tablespace directory layout. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=c33bfb8b9b0d955b813d99e8f9f5c62c31f7387c">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=c33bfb8b9b0d955b813d99e8f9f5c62c31f7387c</a></li>
+
+<li>Fix ecpg test building process to not generate *.dSYM junk on Macs. The trick is to not try to build executables directly from .c files, but to always build the intermediate .o files. For obscure reasons, Darwin's version of gcc will leave debug cruft behind in the first case but not the second. Per complaint from Robert Haas. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=c75e1436467f32a06b5ab9d594d2a390e7f4594d">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=c75e1436467f32a06b5ab9d594d2a390e7f4594d</a></li>
+
+<li>Don't try to fetch database name when SetTransactionIdLimit() is executed outside a transaction. This repairs brain fade in my patch of 2009-08-30: the reason we had been storing oldest-database name, not OID, in ShmemVariableCache was of course to avoid having to do a catalog lookup at times when it might be unsafe. This error explains why Aleksandr Dushein is having trouble getting out of an XID wraparound state in bug #5718, though not how he got into that state in the first place. I suspect pg_upgrade is at fault there. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=def30e84c41389225ee9e56cb7c722980bab9746">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=def30e84c41389225ee9e56cb7c722980bab9746</a></li>
+
+<li>Remove obsolete comment, per Josh Kupershmidt. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=572ab1a542c170ddd2e4c30ef472e13f531b64a4">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=572ab1a542c170ddd2e4c30ef472e13f531b64a4</a></li>
+
+<li>Improve handling of domains over arrays. This patch eliminates various bizarre behaviors caused by sloppy thinking about the difference between a domain type and its underlying array type. In particular, the operation of updating one element of such an array has to be considered as yielding a value of the underlying array type, *not* a value of the domain, because there's no assurance that the domain's CHECK constraints are still satisfied. If we're intending to store the result back into a domain column, we have to re-cast to the domain type so that constraints are re-checked. For similar reasons, such a domain can't be blindly matched to an ANYARRAY polymorphic parameter, because the polymorphic function is likely to apply array-ish operations that could invalidate the domain constraints. For the moment, we just forbid such matching. We might later wish to insert an automatic downcast to the underlying array type, but such a change should also change matching of domains to ANYELEMENT for consistency. To ensure that all such logic is rechecked, this patch removes the original hack of setting a domain's pg_type.typelem field to match its base type; the typelem will always be zero instead. In those places where it's really okay to look through the domain type with no other logic changes, use the newly added get_base_element_type function in place of get_element_type. catversion bumped due to change in pg_type contents. Per bug #5717 from Richard Huxton and subsequent discussion. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=529cb267a6843a6a8190c86b75d091771d99d6a9">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=529cb267a6843a6a8190c86b75d091771d99d6a9</a></li>
+
+<li>Allow new values to be added to an existing enum type. After much expenditure of effort, we've got this to the point where the performance penalty is pretty minimal in typical cases. Andrew Dunstan, reviewed by Brendan Jurd, Dean Rasheed, and Tom Lane. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=84c123be1de8a9955741e20c9f945571e40c545e">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=84c123be1de8a9955741e20c9f945571e40c545e</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Remove AtStart_Cache() call in CommandCounterIncrement(). This call was present in the aboriginal code from Berkeley, and has never been touched; it may very well be that it was there to mask effects of bugs in other places and it may no longer be necessary. The removal has been foreseen in a code comment since 2007; this seems to be a good time to test this hypothesis. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=17a16663d0c1c70c5c70ba97de6fe2c9c6a3bc07">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=17a16663d0c1c70c5c70ba97de6fe2c9c6a3bc07</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>If pk is NULL, the backend would segfault when accessing -&gt;algo and the following NULL check was never reached. This problem was found by Coccinelle (null_ref.cocci from coccicheck). Marti Raudsepp. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=18e752f226300292c6182b68b2568dc2d66db8bd">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=18e752f226300292c6182b68b2568dc2d66db8bd</a></li>
+
+<li>Make OFF keyword unreserved. It's not hard to imagine wanting to use 'off' as a variable or column name, and it's not reserved in recent versions of the SQL spec either. This became particularly annoying in 9.0, before that PL/pgSQL replaced variable names in queries with parameter markers, so it was possible to use OFF and many other backend parser keywords as variable names. Because of that, backpatch to 9.0. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=5c84fe4607907b22e45433195fec800d23ac1f49">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=5c84fe4607907b22e45433195fec800d23ac1f49</a></li>
+
+<li>Add semicolon, missed in previous patch. And update the keyword list in the docs to reflect that OFF is now unreserved. Spotted by Tom Lane. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=57b80b4c466f224b6623e38081cea6e6d2fe0744">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=57b80b4c466f224b6623e38081cea6e6d2fe0744</a></li>
+
+</ul>
+
+<p>Andrew Dunstan a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Remove unnecessary use of trigger flag to hash plperl functions. 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=2d01ec0708d571eef926f3f5795aa73759df5d9a">http://git.postgresql.org/gitweb?p=postgresql.git;a=commitdiff;h=2d01ec0708d571eef926f3f5795aa73759df5d9a</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Dimitri Fontaine sent in eleven more revisions of the patch to add EXTENSIONs.</li>
+
+<li>Zoltan Boszormenyi sent in a patch to make the process of planning execution of queries over large numbers of faster.</li>
+
+<li>Marko (johto) Tiikkaja and Alvaro Herrera traded patches to fix an issue with taking snapshots.</li>
+
+<li>Josh Kupershmidt sent in a patch to add tab completion for \z and \dg to psql.</li>
+
+<li>Marti Raudsepp sent in a patch to keep psql's ON_ERROR_STOP from leaking file descriptors based on a coccicheck run.</li>
+
+<li>Alvaro Herrera sent in a patch to fix an issue with the interaction of a crashing plancache with subtransactions.</li>
+
+<li>Robert Haas sent in another revision of the patch to make truly SERIALIZABLE locks.</li>
+
+<li>Pavel Stehule sent in another revision of the patch to add a format() function.</li>
+
+<li>Jesper Krogh sent in a patch to clarify the docs on the behavior of windowing functions with LIMIT.</li>
+
+<li>Robert Haas sent in another WIP patch for K-nearest-neighbor GiST.</li>
+
+<li>Peter Eisentraut sent in a WIP patch to refactor the type and typmod lookups. This will support, among other things, collations.</li>
+
+</ul>

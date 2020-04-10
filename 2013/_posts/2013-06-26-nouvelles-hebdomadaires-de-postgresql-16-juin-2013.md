@@ -1,0 +1,228 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 16 juin 2013"
+author: "NBougain"
+redirect_from: "index.php?post/2013-06-26-nouvelles-hebdomadaires-de-postgresql-16-juin-2013 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Fujii Masao a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix pg_isready to handle conninfo properly. pg_isready displays the host name and the port number that it uses to connect to the server. So far, pg_isready didn't use the conninfo specified in -d option for calculating those host name and port number. This can lead to wrong display to a user. This commit changes pg_isready so that it uses the conninfo for that calculation. Original patch by Phil Sorber, modified by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/941c4ece98d08113b557bc8e7dbd8a9ac0ffac3e">http://git.postgresql.org/pg/commitdiff/941c4ece98d08113b557bc8e7dbd8a9ac0ffac3e</a></li>
+
+<li>Fix pg_restore -l with the directory archive to display the correct format name. Back-patch to 9.1 where the directory archive was introduced. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f69aece6f475b08a6ec60f80531eefc0005d9e9b">http://git.postgresql.org/pg/commitdiff/f69aece6f475b08a6ec60f80531eefc0005d9e9b</a></li>
+
+<li>Fix description of archive format which pg_restore -j supports. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2bc4ab4f9c2ed8d94c22c41fce05f97838f2fc42">http://git.postgresql.org/pg/commitdiff/2bc4ab4f9c2ed8d94c22c41fce05f97838f2fc42</a></li>
+
+</ul>
+
+<p>Tatsuo Ishii a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add description that loread()/lowrite() are corresponding to lo_read()/lo_write() in libpq to avoid confusion. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ecdec470e7a39316df185d387aeaeceab7155ada">http://git.postgresql.org/pg/commitdiff/ecdec470e7a39316df185d387aeaeceab7155ada</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix cache flush hazard in cache_record_field_properties(). We need to increment the refcount on the composite type's cached tuple descriptor while we do lookups of its column types. Otherwise a cache flush could occur and release the tuple descriptor before we're done with it. This fails reliably with -DCLOBBER_CACHE_ALWAYS, but the odds of a failure in a production build seem rather low (since the pfree'd descriptor typically wouldn't get scribbled on immediately). That may explain the lack of any previous reports. Buildfarm issue noted by Christian Ullrich. Back-patch to 9.1 where the bogus code was added. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e262755bfc97f31442cc0def8098b1a7d2913355">http://git.postgresql.org/pg/commitdiff/e262755bfc97f31442cc0def8098b1a7d2913355</a></li>
+
+<li>Improve updatability checking for views and foreign tables. Extend the FDW API (which we already changed for 9.3) so that an FDW can report whether specific foreign tables are insertable/updatable/deletable. The default assumption continues to be that they're updatable if the relevant executor callback function is supplied by the FDW, but finer granularity is now possible. As a test case, add an "updatable" option to contrib/postgres_fdw. This patch also fixes the information_schema views, which previously did not think that foreign tables were ever updatable, and fixes view_is_auto_updatable() so that a view on a foreign table can be auto-updatable. initdb forced due to changes in information_schema views and the functions they rely on. This is a bit unfortunate to do post-beta1, but if we don't change this now then we'll have another API break for FDWs when we do change it. Dean Rasheed, somewhat editorialized on by Tom Lane 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/dc3eb5638349e74a6628130a5101ce866455f4a3">http://git.postgresql.org/pg/commitdiff/dc3eb5638349e74a6628130a5101ce866455f4a3</a></li>
+
+<li>Only install a portal's ResourceOwner if it actually has one. In most scenarios a portal without a ResourceOwner is dead and not subject to any further execution, but a portal for a cursor WITH HOLD remains in existence with no ResourceOwner after the creating transaction is over. In this situation, if we attempt to "execute" the portal directly to fetch data from it, we were setting CurrentResourceOwner to NULL, leading to a segfault if the datatype output code did anything that required a resource owner (such as trying to fetch system catalog entries that weren't already cached). The case appears to be impossible to provoke with stock libpq, but psqlODBC at least is able to cause it when working with held cursors. Simplest fix is to just skip the assignment to CurrentResourceOwner, so that any resources used by the data output operations will be managed by the transaction-level resource owner instead. For consistency I changed all the places that install a portal's resowner as current, even though some of them are probably not reachable with a held cursor's portal. Per report from Joshua Berry (with thanks to Hiroshi Inoue for developing a self-contained test case). Back-patch to all supported versions. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/629b3e96dd64fa081d8b4610c5a723ef68af09d7">http://git.postgresql.org/pg/commitdiff/629b3e96dd64fa081d8b4610c5a723ef68af09d7</a></li>
+
+<li>Refactor checksumming code to make it easier to use externally. pg_filedump and other external utility programs are likely to want to be able to check Postgres page checksums. To avoid messy duplication of code, move the checksumming functionality into an exported header file, much as we did awhile back for the CRC code. In passing, get rid of an unportable assumption that a static char[] array will be word-aligned, and do some other minor code beautification. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f04216341dd1cc235e975f93ac806d9d3729a344">http://git.postgresql.org/pg/commitdiff/f04216341dd1cc235e975f93ac806d9d3729a344</a></li>
+
+<li>Remove special-case treatment of LOG severity level in standalone mode. elog.c has historically treated LOG messages as low-priority during bootstrap and standalone operation. This has led to confusion and even masked a bug, because the normal expectation of code authors is that elog(LOG) will put something into the postmaster log, and that wasn't happening during initdb. So get rid of the special-case rule and make the priority order the same as it is in normal operation. To keep from cluttering initdb's output and the behavior of a standalone backend, tweak the severity level of three messages routinely issued by xlog.c during startup and shutdown so that they won't appear in these cases. Per my proposal back in December. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c62866eeafd52822ec61a0d2db9428c05e97d3cc">http://git.postgresql.org/pg/commitdiff/c62866eeafd52822ec61a0d2db9428c05e97d3cc</a></li>
+
+<li>Avoid deadlocks during insertion into SP-GiST indexes. SP-GiST's original scheme for avoiding deadlocks during concurrent index insertions doesn't work, as per report from Hailong Li, and there isn't any evident way to make it work completely. We could possibly lock individual inner tuples instead of their whole pages, but preliminary experimentation suggests that the performance penalty would be huge. Instead, if we fail to get a buffer lock while descending the tree, just restart the tree descent altogether. We keep the old tuple positioning rules, though, in hopes of reducing the number of cases where this can happen. Teodor Sigaev, somewhat edited by Tom Lane 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e472b921406407794bab911c64655b8b82375196">http://git.postgresql.org/pg/commitdiff/e472b921406407794bab911c64655b8b82375196</a></li>
+
+<li>Stamp HEAD as 9.4devel. Let the hacking begin ... 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/58ae1f457708205e3ea29eb99bde65402a0fcfa7">http://git.postgresql.org/pg/commitdiff/58ae1f457708205e3ea29eb99bde65402a0fcfa7</a></li>
+
+<li>Stamp shared-library minor version numbers for 9.4. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8a3f0894a477c09c626abed273be80afdc6b13ac">http://git.postgresql.org/pg/commitdiff/8a3f0894a477c09c626abed273be80afdc6b13ac</a></li>
+
+<li>Update RELEASE_CHANGES to describe library version bumping more fully. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/46e1434f3db21cdc05dea42b4e060d2078ff5b87">http://git.postgresql.org/pg/commitdiff/46e1434f3db21cdc05dea42b4e060d2078ff5b87</a></li>
+
+<li>Be consistent about #define'ing configure symbols as "1" not empty. This is just neatnik-ism, since all the tests in the code are #ifdefs, but we shouldn't specify symbols as "Define to 1 ..." and then not actually define them that way. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5242fefb471d1fb2d0f35a33bde3570e19acd4b1">http://git.postgresql.org/pg/commitdiff/5242fefb471d1fb2d0f35a33bde3570e19acd4b1</a></li>
+
+<li>Use SA_RESTART for all signals, including SIGALRM. The exclusion of SIGALRM dates back to Berkeley days, when Postgres used SIGALRM in only one very short stretch of code. Nowadays, allowing it to interrupt kernel calls doesn't seem like a very good idea, since its use for statement_timeout means SIGALRM could occur anyplace in the code, and there are far too many call sites where we aren't prepared to deal with EINTR failures. When third-party code is taken into consideration, it seems impossible that we ever could be fully EINTR-proof, so better to use SA_RESTART always and deal with the implications of that. One such implication is that we should not assume pg_usleep() will be terminated early by a signal. Therefore, long sleeps should probably be replaced by WaitLatch operations where practical. Back-patch to 9.3 so we can get some beta testing on this change. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/873ab97219caabeb2f7b390268a4fe01e2b7518c">http://git.postgresql.org/pg/commitdiff/873ab97219caabeb2f7b390268a4fe01e2b7518c</a></li>
+
+<li>Use WaitLatch, not pg_usleep, for delaying in pg_sleep(). This avoids platform-dependent behavior wherein pg_sleep() might fail to be interrupted by statement timeout, query cancel, SIGTERM, etc. Also, since there's no reason to wake up once a second any more, we can reduce the power consumption of a sleeping backend a tad. Back-patch to 9.3, since use of SA_RESTART for SIGALRM makes this a bigger issue than it used to be. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a64ca63e59c11d8fe6db24eee3d82b61db7c2c83">http://git.postgresql.org/pg/commitdiff/a64ca63e59c11d8fe6db24eee3d82b61db7c2c83</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Improve description of loread/lowrite. Patch by me, reviewed by Tatsuo Ishii. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c1d729b419ee876c32ddf4ac3a85fa89a6b4a89b">http://git.postgresql.org/pg/commitdiff/c1d729b419ee876c32ddf4ac3a85fa89a6b4a89b</a></li>
+
+</ul>
+
+<p>Andrew Dunstan a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix unescaping of JSON Unicode escapes, especially for non-UTF8. Per discussion on -hackers. We treat Unicode escapes when unescaping them similarly to the way we treat them in PostgreSQL string literals. Escapes in the ASCII range are always accepted, no matter what the database encoding. Escapes for higher code points are only processed in UTF8 databases, and attempts to process them in other databases will result in an error. \u0000 is never unescaped, since it would result in an impermissible null byte. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/78ed8e03c67d7333708f5c1873ec1d239ae2d7e0">http://git.postgresql.org/pg/commitdiff/78ed8e03c67d7333708f5c1873ec1d239ae2d7e0</a></li>
+
+</ul>
+
+<p>Noah Misch a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Avoid reading past datum end when parsing JSON. Several loops in the JSON parser examined a byte in memory just before checking whether its address was in-bounds, so they could read one byte beyond the datum's allocation. A SIGSEGV is possible. New in 9.3, so no back-patch. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/66008564f8ce570f7ad6368fbde2138e946d328b">http://git.postgresql.org/pg/commitdiff/66008564f8ce570f7ad6368fbde2138e946d328b</a></li>
+
+<li>Don't use ordinary NULL-terminated strings as Name datums. Consumers are entitled to read the full 64 bytes pertaining to a Name; using a shorter NULL-terminated string leads to reading beyond the end its allocation; a SIGSEGV is possible. Use the frequent idiom of copying to a NameData on the stack. New in 9.3, so no back-patch. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ff53890f687c7f6b2a10db6661e9c32faf832636">http://git.postgresql.org/pg/commitdiff/ff53890f687c7f6b2a10db6661e9c32faf832636</a></li>
+
+<li>Avoid reading below the start of a stack variable in tokenize_file(). We would wrongly overwrite the prior stack byte if it happened to contain '\n' or '\r'. New in 9.3, so no back-patch. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3a5d0c55338e6beb4c01ed5fadb1462e90db7545">http://git.postgresql.org/pg/commitdiff/3a5d0c55338e6beb4c01ed5fadb1462e90db7545</a></li>
+
+<li>Observe array length in HaveVirtualXIDsDelayingChkpt(). Since commit f21bb9cfb5646e1793dcc9c0ea697bab99afa523, this function ignores the caller-provided length and loops until it finds a terminator, which GetVirtualXIDsDelayingChkpt() never adds. Restore the previous loop control logic. In passing, revert the addition of an unused variable by the same commit, presumably a debugging relic. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fb435f40d5e34f85076a0af56b2f3bf7b86122b8">http://git.postgresql.org/pg/commitdiff/fb435f40d5e34f85076a0af56b2f3bf7b86122b8</a></li>
+
+<li>Don't pass oidvector by value. Since the structure ends with a flexible array, doing so truncates any vector having more than one element. New in 9.3, so no back-patch. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/813895e4acfa646c6c0405a0a8c5d05637f42865">http://git.postgresql.org/pg/commitdiff/813895e4acfa646c6c0405a0a8c5d05637f42865</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>PL/Python: Fix type mixup. Memory was allocated based on the sizeof a type that was not the type of the pointer that the result was being assigned to. The types happen to be of the same size, but it's still wrong. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fa2fc066f34f1b631b5f92f11e7cda9f60a25330">http://git.postgresql.org/pg/commitdiff/fa2fc066f34f1b631b5f92f11e7cda9f60a25330</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add :client_id automatic variable for custom pgbench scripts. This makes it easier to write custom scripts that have different logic for each client. Gurjeet Singh, with some changes by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b23160889c963dfe23d8cf1f9be64fb3c535a2d6">http://git.postgresql.org/pg/commitdiff/b23160889c963dfe23d8cf1f9be64fb3c535a2d6</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>No one was disappointed this week</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Marco Atzeri sent in another revision of a patch to make compiling on Cygwin work again.</li>
+
+<li>Heikki Linnakangas sent in a WIP patch to allow for freezing without write I/O.</li>
+
+<li>Fabien COELHO sent in four more revisions of a patch to add a --throttle option to pgbench.</li>
+
+<li>KONDO Mitsumasa sent in two revisions of a patch to improve the checkpoint IO scheduler to make transaction response times more stable.</li>
+
+<li>Fujii Masao sent in two revisions of a patch to make it easier and surer to do a clean switchover in replication.</li>
+
+<li>Peter Eisentraut sent in a patch to add a session_preload_libraries configuration parameter.</li>
+
+<li>Peter Eisentraut sent in a patch to remove USE_PGXS support in contrib.</li>
+
+<li>Fabr&iacute;zio de Royes Mello sent in a patch to add support of "IF NOT EXISTS" to other "CREATE" statements.</li>
+
+<li>Dean Rasheed sent in another revision of a patch to add WITH CHECK OPTION to VIEWs.</li>
+
+<li>KaiGai Kohei sent in another revision of a patch to add row-level access controls.</li>
+
+<li>Alexander Korotkov sent in another revision of a patch to add information for storing GIN indexes.</li>
+
+<li>Alexander Korotkov sent in a patch to allow GIN indexing to help searches on DFA regexes execute much faster.</li>
+
+<li>Amit Kapila sent in another revision of a patch to create ALTER SYSTEM, which persists changes to configuration parameters across restarts of the server by saving those configuration changes to files read on (re)start.</li>
+
+<li>Peter Eisentraut sent in a patch to update the recommended .emacs file with support for the aforementioned changes.</li>
+
+<li>Peter Eisentraut sent in another revision of a patch to add TRANSFORMS.</li>
+
+<li>Dean Rasheed sent in a patch to add an md5 aggregate called md5_agg().</li>
+
+<li>Kyotaro HORIGUCHI sent in a patch to reduce the maximum error in tuples estimation after vacuum.</li>
+
+<li>Andres Freund sent in another revision of a patch to implement logical changeset generation.</li>
+
+<li>Alexander Korotkov sent in a patch to add a "fast scan" technique for GIN indexes.</li>
+
+<li>Andres Freund sent in another revision of a patch to add support for extensible external toast tuples.</li>
+
+<li>Fujii Masao sent in a patch to fix an issue where pg_dump output in directory archive form was falsely being reported as unknown in pg_restore -l.</li>
+
+<li>Kyotaro HORIGUCHI sent in a patch to add visibility map information to the pg_freespace system view.</li>
+
+<li>Andres Freund sent in a patch to add pluggable compression support along with one implementing same using the snappy algorithm.</li>
+
+<li>Robert Haas sent in a patch to implement dynamic background workers. This is intended to be infrastructure for parallelizing operations.</li>
+
+<li>Samrat Revagade and Jeff Davis traded patches to enable fail-back without fresh backup.</li>
+
+<li>Kevin Grittner sent in a patch to implement REFRESH MATERIALIZED VIEW CONCURRENTLY.</li>
+
+<li>Fabien COELHO sent in another revision of a patch to add CREATE CAST ... AS EXPLICIT.</li>
+
+<li>Jon Nelson sent in another revision of a patch to use fallocate / posix_fallocate for new WAL file creation, etc., when the aforementioned facilities are available.</li>
+
+</ul>

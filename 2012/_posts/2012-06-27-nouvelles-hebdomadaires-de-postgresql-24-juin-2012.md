@@ -1,0 +1,214 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 24 juin 2012"
+author: "NBougain"
+redirect_from: "index.php?post/2012-06-27-nouvelles-hebdomadaires-de-postgresql-24-juin-2012 "
+---
+
+
+
+<p><strong>Revues de code</strong></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Change ON UPDATE SET NULL/SET DEFAULT referential actions to meet SQL spec. Previously, when executing an ON UPDATE SET NULL or SET DEFAULT action for a multicolumn MATCH SIMPLE foreign key constraint, we would set only those referencing columns corresponding to referenced columns that were changed. This is what the SQL92 standard said to do --- but more recent versions of the standard say that all referencing columns should be set to null or their default values, no matter exactly which referenced columns changed. At least for SET DEFAULT, that is clearly saner behavior. It's somewhat debatable whether it's an improvement for SET NULL, but it appears that other RDBMS systems read the spec this way. So let's do it like that. This is a release-notable behavioral change, although considering that our documentation already implied it was done this way, the lack of complaints suggests few people use such cases. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c75be2ad6013684f2c118eea3ad8498f8d129c59">http://git.postgresql.org/pg/commitdiff/c75be2ad6013684f2c118eea3ad8498f8d129c59</a></li>
+
+<li>Update SQL spec references in ri_triggers code to match SQL:2008. Now that what we're implementing isn't SQL92, we probably shouldn't cite chapter and verse in that spec anymore. Also fix some comments that talked about MATCH FULL but in fact were in code that's also used for MATCH SIMPLE. No code changes in this commit, just comments. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f9429746c970b5e46a843a5cd0387fb0081b8f55">http://git.postgresql.org/pg/commitdiff/f9429746c970b5e46a843a5cd0387fb0081b8f55</a></li>
+
+<li>Remove derived fields from RI_QueryKey, and do a bit of other cleanup. We really only need the foreign key constraint's OID and the query type code to uniquely identify each plan we are caching for FK checks. The other stuff that was in the struct had no business being used as part of a hash key, and was all just being copied from struct RI_ConstraintInfo anyway. Get rid of the unnecessary fields, and readjust various function APIs to make them use RI_ConstraintInfo not RI_QueryKey as info source. I'd be surprised if this makes any measurable performance difference, but it certainly feels cleaner. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/03a5ba24b096a9acbbc9682adc0a27d1db31c570">http://git.postgresql.org/pg/commitdiff/03a5ba24b096a9acbbc9682adc0a27d1db31c570</a></li>
+
+<li>Allow ON UPDATE/DELETE SET DEFAULT plans to be cached. Once upon a time, somebody was worried that cached RI plans wouldn't get remade with new default values after ALTER TABLE ... SET DEFAULT, so they didn't allow caching of plans for ON UPDATE/DELETE SET DEFAULT actions. That time is long gone, though (and even at the time I doubt this was the greatest hazard posed by ALTER TABLE...). So allow these triggers to cache their plans just like the others. The cache_plan argument to ri_PlanCheck is now vestigial, since there are no callers that don't pass "true"; but I left it alone in case there is any future need for it. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e8c9fd5fdf768323911f7088e8287f63b513c3c6">http://git.postgresql.org/pg/commitdiff/e8c9fd5fdf768323911f7088e8287f63b513c3c6</a></li>
+
+<li>Improve comments about why SET DEFAULT triggers must recheck for matches. I was confused about this, so try to make it clearer for the next person. (This seems like a fairly inefficient way of dealing with a corner case, but I don't have a better idea offhand. Maybe if there were a way to turn off the RI_FKey_keyequal_upd_fk event filter temporarily?) 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/48756be9cf31c37a936eecff051bf143d5866551">http://git.postgresql.org/pg/commitdiff/48756be9cf31c37a936eecff051bf143d5866551</a></li>
+
+<li>Share RI trigger code between NO ACTION and RESTRICT cases. These triggers are identical except for whether ri_Check_Pk_Match is to be called, so factor out the common code to save a couple hundred lines. Also, eliminate null-column checks in ri_Check_Pk_Match, since they're duplicate with the calling functions and require unnecessary complication in its API statement. Simplify the way code is shared between RI_FKey_check_ins and RI_FKey_check_upd, too. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fe3db740025d80f70ceccb33b2bf3c085a2fca80">http://git.postgresql.org/pg/commitdiff/fe3db740025d80f70ceccb33b2bf3c085a2fca80</a></li>
+
+<li>Add pgbench option to add foreign key constraints to the standard scenario. The option --foreign-keys, used at initialization time, will create foreign key constraints for the columns that represent references to other tables' primary keys. This can help in benchmarking FK performance. Jeff Janes 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/afe1c51c9d65c67c7474c60d64bceefe9953dde6">http://git.postgresql.org/pg/commitdiff/afe1c51c9d65c67c7474c60d64bceefe9953dde6</a></li>
+
+<li>Improve tests for whether we can skip queueing RI enforcement triggers. During an update of a PK row, we can skip firing the RI trigger if any old key value is NULL, because then the row could not have had any matching rows in the FK table. Conversely, during an update of an FK row, the outcome is determined if any new key value is NULL. In either case it becomes unnecessary to compare individual key values. This patch was inspired by discussion of Vik Reykja's patch to use IS NOT DISTINCT semantics for the key comparisons. In the event there is no need for that and so this patch looks nothing like his, but he should still get credit for having re-opened consideration of the trigger skip logic. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cfa0f4255bb0f5550d37a01c4d8fe2966d20040c">http://git.postgresql.org/pg/commitdiff/cfa0f4255bb0f5550d37a01c4d8fe2966d20040c</a></li>
+
+<li>Cache the results of ri_FetchConstraintInfo in a backend-local cache. Extracting data from pg_constraint turned out to take as much as 10% of the runtime in a bulk-update case where the foreign key column wasn't changing, because we did it over again for each tuple. Fix that by maintaining a backend-local cache of the results. This is really a pretty small patch, but converting the trigger functions to work with pointers rather than local struct variables requires a lot of mechanical changes. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/45ba424f332a7eaa685a4e23f142a43114c65811">http://git.postgresql.org/pg/commitdiff/45ba424f332a7eaa685a4e23f142a43114c65811</a></li>
+
+<li>Increase MAX_SYSCACHE_CALLBACKS from 20 to 32. By my count there are 18 callers of CacheRegisterSyscacheCallback in the core code in HEAD, so we are potentially leaving as few as 2 slots for any add-on code to use (though possibly not all these callers would actually activate in any particular session). That doesn't seem like a lot of headroom, so let's pump it up a little. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0ce4459a366def5173a59a74ba1b81e8449b8df1">http://git.postgresql.org/pg/commitdiff/0ce4459a366def5173a59a74ba1b81e8449b8df1</a></li>
+
+<li>Remove incomplete/incorrect support for zero-column foreign keys. The original coding in ri_triggers.c had partial support for the concept of zero-column foreign key constraints. But this is not defined in the SQL standard, nor was it ever allowed by any other part of Postgres, nor was it very fully implemented even here (eg there was no support for preventing PK-table deletions that would violate the constraint). Doesn't seem very useful to carry 100-plus lines of code for a corner case that no one is interested in making work. Instead, just add a check that the column list read from pg_constraint is non-empty. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/dfd9c116cc3ebaf42f895b9b16a9ff69bb21664b">http://git.postgresql.org/pg/commitdiff/dfd9c116cc3ebaf42f895b9b16a9ff69bb21664b</a></li>
+
+<li>Fix memory leak in ARRAY(SELECT ...) subqueries. Repeated execution of an uncorrelated ARRAY_SUBLINK sub-select (which I think can only happen if the sub-select is embedded in a larger, correlated subquery) would leak memory for the duration of the query, due to not reclaiming the array generated in the previous execution. Per bug #6698 from Armando Miraglia. Diagnosis and fix idea by Heikki, patch itself by me. This has been like this all along, so back-patch to all supported versions. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d14241c2cf72966c09c1acece5cb44b5c84204b4">http://git.postgresql.org/pg/commitdiff/d14241c2cf72966c09c1acece5cb44b5c84204b4</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Remove confusing half sentence from legal notice. Pointed out by Stefan Kaltenbrunner 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c521665bd725448a333e1b2c693f460c63789f5c">http://git.postgresql.org/pg/commitdiff/c521665bd725448a333e1b2c693f460c63789f5c</a></li>
+
+<li>Make placeholders in SQL command help more consistent and precise. To avoid divergent names on related pages, avoid ambiguities, and reduce translation work a little. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6753ced3104046340659db15626580bc49df617d">http://git.postgresql.org/pg/commitdiff/6753ced3104046340659db15626580bc49df617d</a></li>
+
+<li>Replace int2/int4 in C code with int16/int32. The latter was already the dominant use, and it's preferable because in C the convention is that intXX means XX bits. Therefore, allowing mixed use of int2, int4, int8, int16, int32 is obviously confusing. Remove the typedefs for int2 and int4 for now. They don't seem to be widely used outside of the PostgreSQL source tree, and the few uses can probably be cleaned up by the time this ships. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b8b2e3b2deeaab19715af063fc009b7c230b2336">http://git.postgresql.org/pg/commitdiff/b8b2e3b2deeaab19715af063fc009b7c230b2336</a></li>
+
+<li>- Update copyright year in forgotten places. Found by Stefan Kaltenbrunner 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d117d23b1ac25dd2d5663f7e5682a61dbd36de8f">http://git.postgresql.org/pg/commitdiff/d117d23b1ac25dd2d5663f7e5682a61dbd36de8f</a></li>
+
+<li>pg_dump: Add missing newlines at end of messages 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e1e97e93134a8b52861ae801117f94a15da410a4">http://git.postgresql.org/pg/commitdiff/e1e97e93134a8b52861ae801117f94a15da410a4</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>pg_dump: Fix verbosity level in LO progress messages. In passing, reword another instance of the same message that was gratuitously different. Author: Josh Kupershmidt after a bug report by Bosco Rama 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/11b335ac4cc895db8c1b27455281fa36f97c53ff">http://git.postgresql.org/pg/commitdiff/11b335ac4cc895db8c1b27455281fa36f97c53ff</a></li>
+
+<li>Repair comment mangled by a pgindent run long ago. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/68d0e3cbf9c4b5981679668ebb554a4ec050fc72">http://git.postgresql.org/pg/commitdiff/68d0e3cbf9c4b5981679668ebb554a4ec050fc72</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add a small cache of locks owned by a resource owner in ResourceOwner. This speeds up reassigning locks to the parent owner, when the transaction holds a lot of locks, but only a few of them belong to the current resource owner. This is particularly helps pg_dump when dumping a large number of objects. The cache can hold up to 15 locks in each resource owner. After that, the cache is marked as overflowed, and we fall back to the old method of scanning the whole local lock table. The tradeoff here is that the cache has to be scanned whenever a lock is released, so if the cache is too large, lock release becomes more expensive. 15 seems enough to cover pg_dump, and doesn't have much impact on lock release. Jeff Janes, reviewed by Amit Kapila and Heikki Linnakangas. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/eeb6f37d89fc60c6449ca12ef9e91491069369cb">http://git.postgresql.org/pg/commitdiff/eeb6f37d89fc60c6449ca12ef9e91491069369cb</a></li>
+
+<li>Move WAL continuation record information to WAL page header. The continuation record only contained one field, xl_rem_len, so it makes things simpler to just include it in the WAL page header. This wastes four bytes on pages that don't begin with a continuation from previos page, plus four bytes on every page, because of padding. The motivation of this is to make it easier to calculate how much space a WAL record needs. Before this patch, it depended on how many page boundaries the record crosses. The motivation of that, in turn, is to separate the allocation of space in the WAL from the copying of the record data to the allocated space. Keeping the calculation of space required simple helps to keep the critical section of allocating the space from WAL short. But that's not included in this patch yet. Bump WAL version number again, as this is an incompatible change. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/20ba5ca64c7c858400f845f8ded330604e2c8d61">http://git.postgresql.org/pg/commitdiff/20ba5ca64c7c858400f845f8ded330604e2c8d61</a></li>
+
+<li>Don't waste the last segment of each 4GB logical log file. The comments claimed that wasting the last segment made it easier to do calculations with XLogRecPtrs, because you don't have problems representing last-byte-position-plus-1 that way. In my experience, however, it only made things more complicated, because the there was two ways to represent the boundary at the beginning of a logical log file: logid = n+1 and xrecoff = 0, or as xlogid = n and xrecoff = 4GB - XLOG_SEG_SIZE. Some functions were picky about which representation was used. Also, use a 64-bit segment number instead of the log/seg combination, to point to a certain WAL segment. We assume that all platforms have a working 64-bit integer type nowadays. This is an incompatible change in WAL format, so bumping WAL version number. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/dfda6ebaec6763090fb78b458a979b558c50b39b">http://git.postgresql.org/pg/commitdiff/dfda6ebaec6763090fb78b458a979b558c50b39b</a></li>
+
+<li>Replace XLogRecPtr struct with a 64-bit integer. This simplifies code that needs to do arithmetic on XLogRecPtrs. To avoid changing on-disk format of data pages, the LSN on data pages is still stored in the old format. That should keep pg_upgrade happy. However, we have XLogRecPtrs embedded in the control file, and in the structs that are sent over the replication protocol, so this changes breaks compatibility of pg_basebackup and server. I didn't do anything about this in this patch, per discussion on -hackers, the right thing to do would to be to change the replication protocol to be architecture-independent, so that you could use a newer version of pg_receivexlog, for example, against an older server version. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0ab9d1c4b31622e9176472b4276f3e9831e3d6ba">http://git.postgresql.org/pg/commitdiff/0ab9d1c4b31622e9176472b4276f3e9831e3d6ba</a></li>
+
+<li>Allow WAL record header to be split across pages. This saves a few bytes of WAL space, but the real motivation is to make it predictable how much WAL space a record requires, as it no longer depends on whether we need to waste the last few bytes at end of WAL page because the header doesn't fit. The total length field of WAL record, xl_tot_len, is moved to the beginning of the WAL record header, so that it is still always found on the first page where a WAL record begins. Bump WAL version number again as this is an incompatible change. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/061e7efb1b4c5b8a5d02122b7780531b8d5bf23d">http://git.postgresql.org/pg/commitdiff/061e7efb1b4c5b8a5d02122b7780531b8d5bf23d</a></li>
+
+<li>Use LL suffix for 64-bit constants. Per warning from buildfarm member 'locust'. At least I think this what's making it upset. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/96ff85e2dd64e7987ee6d69f306e3b8f54cc72c0">http://git.postgresql.org/pg/commitdiff/96ff85e2dd64e7987ee6d69f306e3b8f54cc72c0</a></li>
+
+<li>Oops. Remove stray paren. I didn't notice this on my laptop as I don't HAVE_FSYNC_WRITETHROUGH. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a218e23a08519d525d09565bbeddbf682f76d4dd">http://git.postgresql.org/pg/commitdiff/a218e23a08519d525d09565bbeddbf682f76d4dd</a></li>
+
+<li>Use UINT64CONST for 64-bit integer constants. Peter Eisentraut advised me that UINT64CONST is the proper way to do that, not LL suffix. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0687a26002c86e3115783d75f212358ef348525f">http://git.postgresql.org/pg/commitdiff/0687a26002c86e3115783d75f212358ef348525f</a></li>
+
+<li>I missed some references to xlogid/xrecoff in Win32-only code. Fix. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7eb8c7851458eb88def80c290a4b5bc37cc321f3">http://git.postgresql.org/pg/commitdiff/7eb8c7851458eb88def80c290a4b5bc37cc321f3</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Document that &amp;&amp; can be used to search arrays. Also, add some cross-links to the indexing documentation, so it's easier to notice that &amp;&amp; and other array operators have index support. Ryan Kelly, edited by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6ef5baf8b1cb609218b2fafb378b3f190a6f90f9">http://git.postgresql.org/pg/commitdiff/6ef5baf8b1cb609218b2fafb378b3f190a6f90f9</a></li>
+
+<li>Make pgbench -i emit only one-tenth as many status messages. These days, even a wimpy system can insert 10000 tuples in the blink of an eye, so there's no real need for this much verbosity. Per complaint from Tatsuo Ishii. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/47c7365e794a0a57382efefbf1f2b062c7a3e3d3">http://git.postgresql.org/pg/commitdiff/47c7365e794a0a57382efefbf1f2b062c7a3e3d3</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Joachim Wieland sent in another revision of the patch to implement parallel pg_dump.</li>
+
+<li>Robert Haas sent in another revision of the patch to avoid heavyweight locking on hash metapages.</li>
+
+<li>Kyotaro HORIGUCHI sent in another revision of the patch to skip checkpoint on promoting from streaming replication.</li>
+
+<li>Jeff Davis sent in two more revisions of the patch to fix fsync behavior on initdb.</li>
+
+<li>Alexander Korotkov sent in a patch to reduce gistchoose index bloat.</li>
+
+<li>Zoltan Boszormenyi sent in four more revisions of the patch to implement lock_timeout and SIGALARM framework.</li>
+
+<li>Peter Eisentraut sent in another revision of the patch to prevent sub-main functions in the backend from returning anything.</li>
+
+<li>Honza Horak sent in another revision of the patch to allow PostgreSQL to answer on more than one Unix socket.</li>
+
+<li>Alvaro Herrera and Kyotaro HORIGUCHI traded patches to fix PL/Perl in SQL_ASCII-encoded databases.</li>
+
+<li>Greg Smith sent in a patch to try to avoid running with a full fsync request queue.</li>
+
+<li>Robert Haas sent in a patch to make pgbench less yappy.</li>
+
+<li>Peter Eisentraut sent in a patch to revive AC_PROG_INSTALL.</li>
+
+<li>John Lumby sent in a patch intended to enable using INSERT ... RETURNING in a RULE on a partitioned table.</li>
+
+<li>Alexander Korotkov sent in a patch to fix an issue with GiST indexing on points.</li>
+
+<li>Alexander Korotkov sent in another revision of the patch for SP-GiST for ranges, this time using a k-d tree instead of quad-tree.</li>
+
+<li>Kevin Grittner and Alvaro Herrera traded patches to implement foreign key locks.</li>
+
+<li>Tom Lane sent in another revision of the patch to fix pg_dump dependencies in the --section case.</li>
+
+<li>Dimitri Fontaine sent in another revision of the event trigger patch.</li>
+
+<li>David Kerr sent in a patch to allow using an empty backup_label in streaming replication.</li>
+
+</ul>

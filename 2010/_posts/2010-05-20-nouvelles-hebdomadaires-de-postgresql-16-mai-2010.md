@@ -1,0 +1,220 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 16 mai 2010"
+author: "NBougain"
+redirect_from: "index.php?post/2010-05-20-nouvelles-hebdomadaires-de-postgresql-16-mai-2010 "
+---
+
+
+
+<p><strong>Correctifs appliqués</strong></p>
+
+<p>Tom Lane a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/backend/optimizer/plan/planagg.c, when adding a "target IS NOT NULL" indexqual to the plan for an index-optimized MIN or MAX, we must take care to insert the added qual in a legal place among the existing indexquals, if any. The btree index AM requires the quals to appear in index-column order. We didn't have to worry about this before because "target IS NOT NULL" was just treated as a plain scan filter condition; but as of 9.0 it can be an index qual and then it has to follow the rule. Per report from Ian Barwick.</li>
+
+<li>In pgsql/src/backend/optimizer/prep/prepunion.c, fix incorrect patch that removed permission checks on inheritance child tables --- the parent table no longer got checked, either. Per bug #5458 from Takahiro Itagaki.</li>
+
+<li>In pgsql/src/backend/postmaster/pgarch.c, cause the archiver process to adopt new postgresql.conf settings (particularly archive_command) as soon as possible, namely just before issuing a new call of archive_command, even when there is a backlog of files to be archived. The original coding would only absorb new settings after clearing the backlog and returning to the outer loop. Per discussion. Back-patch to 8.3. The logic in prior versions is a bit different and it doesn't seem worth taking any risks of breaking it.</li>
+
+<li>Add PKST to the default set of timezone abbreviations. Per discussion, if we have PKT in there then PKST should be too. Also, fix mistaken claim that these abbrevs are not known to zic.</li>
+
+<li>Update time zone data files to tzdata release 2010j: DST law changes in Argentina, Australian Antarctic, Bangladesh, Mexico, Morocco, Pakistan, Palestine, Russia, Syria, Tunisia. Historical corrections for Taiwan.</li>
+
+<li>Clean up unnecessary unportability and compiler warnings by removing the cmp parameter for pg_scandir(). The code failed to support this anyway for Sun/Windows, so pretending we could accept a parameter other than NULL was just asking for trouble.</li>
+
+<li>Hook pg_upgrade into the contrib makefile structure so it gets built on the buildfarm.</li>
+
+<li>Preliminary release notes for releases 8.4.4, 8.3.11, 8.2.17, 8.1.21, 8.0.25, 7.4.29.</li>
+
+<li>In pgsql/contrib/pg_upgrade_support/Makefile, fix wrong subdir. Per buildfarm.</li>
+
+<li>Use "TOAST table" in place of the vague, not-used-elsewhere phrase "supplementary storage table".</li>
+
+<li>In pgsql/doc/src/sgml/rules.sgml, use an entity instead of non-ASCII letter. Thom Brown.</li>
+
+<li>Fix up lame idea of not using autoconf to determine if platform has scandir(). Should fix buildfarm failures.</li>
+
+<li>In pgsql/contrib/pg_upgrade/file.c, spell __darwin__ correctly, to suppress compiler warning on OSX.</li>
+
+<li>In pg_upgrade, get rid of unsafe sprintf and snprintf usages. Per compiler warnings.</li>
+
+<li>In pgsql/contrib/pg_upgrade/controldata.c, remove another unsafe use of random data as a format string.</li>
+
+<li>In pgsql/contrib/pg_upgrade/info.c, fix another obvious bug pointed out by a compiler warning.</li>
+
+<li>In pgsql/src/include/port.h, spell __NetBSD__ the same way everywhere. Per Giles Lean.</li>
+
+<li>In pgsql/doc/src/sgml/ref/pg_restore.sgml, improve documentation of pg_restore's -l and -L switches to point out their interactions with filtering switches, such as -n and -t. Per a complaint from Russell Smith.</li>
+
+<li>Ensure that pg_restore -l will output DATABASE entries whether or not -C is specified. Per bug report from Russell Smith and ensuing discussion. Since this is a corner case behavioral change, I'm going to be conservative and not back-patch it. In passing, also rename the RestoreOptions field for the -C switch to something less generic than "create".</li>
+
+</ul>
+
+<p>ITAGAKI Takahiro a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/backend/catalog/pg_proc.c, set per-function GUC settings during validating the function. Now validators work properly even when the settings contain parameters that affect behavior of the function, like search_path. Reported by Erwin Brandstetter.</li>
+
+<li>In pgsql/src/backend/po/ja.po, remove CRs.</li>
+
+</ul>
+
+<p>Robert Haas a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/doc/src/sgml/ref/cluster.sgml, mention related ALTER TABLE variants in documentation for CLUSTER. As suggested by Andy Lester.</li>
+
+<li>In pgsql/src/include/utils/rbtree.h, change typedef for rb_appendator to avoid conflict with C++ reserved words. Fixes a complaint from src/tools/pginclude/cpluspluscheck reported by Peter Eisentraut.</li>
+
+<li>In pgsql/src/backend/postmaster/postmaster.c, we now accept read-only connections in state PM_RECOVERY_CONSISTENT.</li>
+
+<li>Rename PM_RECOVERY_CONSISTENT and PMSIGNAL_RECOVERY_CONSISTENT. The new names PM_HOT_STANDBY and PMSIGNAL_BEGIN_HOT_STANDBY more accurately reflect their actual function.</li>
+
+<li>In pgsql/doc/src/sgml/xfunc.sgml, fix longstanding typo in V1 calling conventions documentation. Erik Rijkers</li>
+
+<li>In pgsql/doc/src/sgml/xfunc.sgml, insert line breaks in two places in SQL functions documentation. This avoids a formatting problem in the PDF output. In the HTML output this isn't necessary, but we've done similar things elsewhere in the documentation so I think it's OK to do it here, too. I've refrained from breaking a longish error message which also causes problems for the PDF output, because that would make the HTML output look wrong. Erik Rijkers.</li>
+
+</ul>
+
+<p>Bruce Momjian a commité&nbsp;:</p>
+
+<ul>
+
+<li>Add pg_upgrade to /contrib; will be in 9.0 beta2. Add documentation. Supports migration from PG 8.3 and 8.4.</li>
+
+<li>Add pgsql/contrib/pg_upgrade/TODO file to CVS.</li>
+
+<li>Add pgsql/contrib/pg_upgrade/IMPLEMENTATION file to CVS.</li>
+
+<li>In pgsql/contrib/pg_upgrade/info.c, small formatting adjustment.</li>
+
+<li>Add PGFILEDESC description to Makefiles for all /contrib executables. Add PGAPPICON to all executable makefiles.</li>
+
+<li>Move pg_upgrade TODO to TODO wiki.</li>
+
+<li>In pgsql/src/backend/Makefile, remove Makefile PGFILEDESC tag that the postmaster is an executable.</li>
+
+<li>In pgsql/src/backend/Makefile, update comment about why postmaster doesn't get an icon.</li>
+
+<li>Move pg_upgrade shared library out into its own /contrib directory (pg_upgrade_support).</li>
+
+<li>In pgsql/doc/src/sgml/release-9.0.sgml, update release notes to current.</li>
+
+<li>In pgsql/doc/src/sgml/release-9.0.sgml, fix HISTORY.html build using , not &lt;/&gt;.</li>
+
+<li>In pgsql/doc/src/sgml/pgupgrade.sgml, comment out EnterpriseDB Advanced Server mention in SGML docs.</li>
+
+<li>Remove all mentions of EnterpriseDB Advanced Server from pg_upgrade; EDB must maintain their own patch set for this.</li>
+
+<li>Use NAMEDATALEN instead of local define. Modify path separators for Win32. Per ideas from Takahiro Itagaki.</li>
+
+<li>In pgsql/contrib/pg_upgrade/file.c, change bsdi define to __bsdi__.</li>
+
+<li>Use __bsdi__ consistently.</li>
+
+<li>In pgsql/contrib/pg_upgrade/file.c, adjust pg_upgrade BSD defines for scandir(), per report from Giles Lean.</li>
+
+</ul>
+
+<p>Peter Eisentraut a commité&nbsp;:</p>
+
+<ul>
+
+<li>Update config.guess and config.sub.</li>
+
+<li>Translation update</li>
+
+<li>Fix vpath installation from distribution tarball (bug #5447)</li>
+
+<li>In pgsql/src/nls-global.mk, avoid error from mkdir if no languages are to be installed mkinstalldirs used to handle no arguments, but mkdir doesn't. Also remove the .SILENT setting, that was previously removed from Makefile.global as well.</li>
+
+<li>Translation update</li>
+
+</ul>
+
+<p>Simon Riggs a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/backend/tcop/postgres.c, give most recovery conflict errors a retryable error code. From recent requests and discussions with Yeb Havinga and Kevin Grittner.</li>
+
+<li>Cleanup initialization of Hot Standby. Clarify working with reanalysis of requirements and documentation on LogStandbySnapshot(). Fixes two minor bugs reported by Tom Lane that would lead to an incorrect snapshot after transaction wraparound. Also fix two other problems discovered that would give incorrect snapshots in certain cases. ProcArrayApplyRecoveryInfo() substantially rewritten. Some minor refactoring of xact_redo_apply() and ExpireTreeKnownAssignedTransactionIds().</li>
+
+<li>In pgsql/src/backend/access/transam/xact.c, ensure that top level aborts call XLogSetAsyncCommit(). Not doing so simply leads to data waiting in wal_buffers which then causes later commits to potentially do emergency writes and for all forms of replication to be potentially delayed without need or benefit. Issue pointed out exactly by Fujii Masao, following bug report by Robert Haas on a separate though related topic.</li>
+
+<li>Add many new Asserts in code and fix simple bug that slipped through without them, related to previous commit. Report by Bruce Momjian.</li>
+
+<li>In pgsql/src/backend/access/transam/xlog.c, fix bug in processing of checkpoint time for max_standby_delay. Latest log time was incorrectly set, typically leading to dates in the past, which would cause more cancellations in Hot Standby on a quiet server.</li>
+
+</ul>
+
+<p>Andrew Dunstan a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/tools/msvc/Mkvcbuild.pm, add missing library and include support for pg_upgrade to MSVC build system.</li>
+
+</ul>
+
+<p>Magnus Hagander a commité&nbsp;:</p>
+
+<ul>
+
+<li>Fix some spelling errors. Thom Brown.</li>
+
+<li>In pgsql/src/tools/msvc/Mkvcbuild.pm, properly support multi-line entires (such as OBJS=) when building PROGRAM, not just MODULE, in contrib.</li>
+
+<li>Assorted fixes to make pg_upgrade build on MSVC. 1. There is no chmod() on Windows. 2. Must always use the 3-parameter version of open(). 3. There is no dynloader.h - but it also appears unnecessary on all platforms. 4. Don't include shlobj.h because it causes compile errors, and from what I can see it's not actually used. This may need to be added back for mingw and/or cygwin in the worst case.</li>
+
+</ul>
+
+<p>Marc Fournier a commité&nbsp;:</p>
+
+<ul>
+
+<li>Tag 8.4.4, 8.3.11, 8.2.17, 8.1.21, 8.0.25, 7.4.29.</li>
+
+</ul>
+
+<p>Heikki Linnakangas a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/contrib/pg_standby/pg_standby.c, fix typos in comments, spotted by Josh Kupershmidt.</li>
+
+</ul>
+
+<p><strong>Correctifs rejetés (à ce jour)</strong></p>
+
+<ul>
+
+<li>Greg Sabino Mullane's patch to change pg_dump not to use CREATE OR REPLACE LANGUAGE when talking to pre-9.0 databases. There never was a guarantee that the output of pg_dump would be backward-compatible.</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>ITAGAKI Takahiro sent in a patch to change the search_path check for function bodies to the current search_path, where they had been using the one at create time.</li>
+
+<li>Mike Fowler sent in a patch to add a function xpath_exists() for 9.1.</li>
+
+<li>Alexander Korotkov sent in two revisions of a patch to make the levenshtein distance function in contrib/fuzzystrmatch work with multibyte character sets in 9.1.</li>
+
+<li>Simon Riggs sent in a patch to change the startup code for Hot Standby.</li>
+
+<li>Stephen Frost sent in a patch to add a handler for SIGCHLD to psql. This is for 9.1.</li>
+
+<li>Simon Riggs sent in a patch to add a keepalive message to ensure max_standby_delay is useful. Heikki Linnakangas responded with one which rearranges the walsender loops slightly so that XLogSend() now only sends up to MAX_SEND_SIZE bytes (== XLOG_SEG_SIZE / 2) in one round and returns to the main loop after that even if there's unsent WAL, and the main loop no longer sleeps if there's unsent WAL. Simon Riggs sent in another with wait processing cleanup.</li>
+
+<li>Joachim Wieland sent in a patch to fix some locking behavior for 9.1 in the case of SERIALIZABLE transactions.</li>
+
+<li>Robert Haas sent in a patch to implement a fix for smart shutdown in recovery.</li>
+
+</ul>

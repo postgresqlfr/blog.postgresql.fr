@@ -1,0 +1,182 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 11 octobre 2015"
+author: "NBougain"
+redirect_from: "index.php?post/2015-10-15-nouvelles-hebdomadaires-de-postgresql-11-octobre-2015 "
+---
+
+
+
+<h2>Correctifs appliqu&eacute;s</h2>
+
+<p>Stephen Frost pushed:</p>
+
+<ul>
+
+<li>ALTER TABLE .. FORCE ROW LEVEL SECURITY. To allow users to force RLS to always be applied, even for table owners, add ALTER TABLE .. FORCE ROW LEVEL SECURITY. row_security=off overrides FORCE ROW LEVEL SECURITY, to ensure pg_dump output is complete (by default). Also add SECURITY_NOFORCE_RLS context to avoid data corruption when ALTER TABLE .. FORCE ROW SECURITY is being used. The SECURITY_NOFORCE_RLS security context is used only during referential integrity checks and is only considered in check_enable_rls() after we have already checked that the current user is the owner of the relation (which should always be the case during referential integrity checks). Back-patch to 9.5 where RLS was added. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/088c83363a11200f2225f279d4a5c6cc6f9db3d2">http://git.postgresql.org/pg/commitdiff/088c83363a11200f2225f279d4a5c6cc6f9db3d2</a></li>
+
+<li>Do not write out WCOs in Query. The WithCheckOptions list in Query are only populated during rewrite and do not need to be written out or read in as part of a Query structure. Further, move WithCheckOptions to the bottom and add comments to clarify that it is only populated during rewrite. Back-patch to 9.5 with a catversion bump, as we are still in alpha. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4158cc3793fe0e074dcb58e91103344c8ffcd6df">http://git.postgresql.org/pg/commitdiff/4158cc3793fe0e074dcb58e91103344c8ffcd6df</a></li>
+
+<li>Apply SELECT policies in INSERT/UPDATE+RETURNING. Similar to 7d8db3e, given that INSERT+RETURNING requires SELECT rights on the table, apply the SELECT policies as WCOs to the tuples being inserted. Apply the same logic to UPDATE+RETURNING. Back-patch to 9.5 where RLS was added. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2ca9d5445c35db8956e4abbf1e653373820e8c0a">http://git.postgresql.org/pg/commitdiff/2ca9d5445c35db8956e4abbf1e653373820e8c0a</a></li>
+
+<li>Add regression tests for INSERT/UPDATE+RETURNING. This adds regressions tests which are specific to INSERT+RETURNING and UPDATE+RETURNING to ensure that the SELECT policies are added as WithCheckOptions (and should therefore throw an error when the policy is violated). Per suggestion from Andres. Back-patch to 9.5 as the prior commit was. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/be400cd25c7f407111b9617dbf6a5fae761754cb">http://git.postgresql.org/pg/commitdiff/be400cd25c7f407111b9617dbf6a5fae761754cb</a></li>
+
+<li>Handle append_rel_list in expand_security_qual. During expand_security_quals, we take the security barrier quals on an RTE and create a subquery which evaluates the quals. During this, we have to replace any variables in the outer query which refer to the original RTE with references to the columns from the subquery. We need to also perform that replacement for any Vars in the append_rel_list. Only backpatching to 9.5 as we only go through this process in 9.4 for auto-updatable security barrier views, which UNION ALL queries aren't. Discovered by Haribabu Kommi Patch by Dean Rasheed <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b7aac36245261eba9eb7d18561ce44220b361959">http://git.postgresql.org/pg/commitdiff/b7aac36245261eba9eb7d18561ce44220b361959</a></li>
+
+</ul>
+
+<p>Andres Freund pushed:</p>
+
+<ul>
+
+<li>Re-Align *_freeze_max_age reloption limits with corresponding GUC limits. In 020235a5754 I lowered the autovacuum_*freeze_max_age minimums to allow for easier testing of wraparounds. I did not touch the corresponding per-table limits. While those don't matter for the purpose of wraparound, it seems more consistent to lower them as well. It's noteworthy that the previous reloption lower limit for autovacuum_multixact_freeze_max_age was too high by one magnitude, even before 020235a5754. Discussion: 26377.1443105453@sss.pgh.pa.us Backpatch: back to 9.0 (in parts), like the prior patch <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2596d705bdc4ac886a12720b19ef65b3e67b55f7">http://git.postgresql.org/pg/commitdiff/2596d705bdc4ac886a12720b19ef65b3e67b55f7</a></li>
+
+<li>Remove outdated comment about relation level autovacuum freeze limits. The documentation for the autovacuum_multixact_freeze_max_age and autovacuum_freeze_max_age relation level parameters contained: "Note that while you can set autovacuum_multixact_freeze_max_age very small, or even zero, this is usually unwise since it will force frequent vacuuming." which hasn't been true since these options were made relation options, instead of residing in the pg_autovacuum table (834a6da4f7). Remove the outdated sentence. Even the lowered limits from 2596d70 are high enough that this doesn't warrant calling out the risk in the CREATE TABLE docs. Per discussion with Tom Lane and Alvaro Herrera Discussion: 26377.1443105453@sss.pgh.pa.us Backpatch: 9.0- (in parts) <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/10cfd6f8544ea658c3d87821ab8525296363bbdf">http://git.postgresql.org/pg/commitdiff/10cfd6f8544ea658c3d87821ab8525296363bbdf</a></li>
+
+</ul>
+
+<p>Bruce Momjian pushed:</p>
+
+<ul>
+
+<li>docs: update guidelines on when to use GIN and GiST indexes. Report by Tomas Vondra. Backpatch through 9.5 <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6d8b2aa83af70e20323caf23961667dc4c149276">http://git.postgresql.org/pg/commitdiff/6d8b2aa83af70e20323caf23961667dc4c149276</a></li>
+
+<li>to_char(): Do not count negative sign as a digit for time values. For time masks, like HH24, MI, SS, CC, MM, do not count the negative sign as part of the zero-padding length specified by the mask, e.g. have to_char('-4 years'::interval, 'YY') return '-04', not '-4'. Report by Craig Ringer <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2d87eedc1d4468d331035bbe55f140f180d20144">http://git.postgresql.org/pg/commitdiff/2d87eedc1d4468d331035bbe55f140f180d20144</a></li>
+
+<li>psql: allow \pset C in setting the title, matches \C. Report by David G. Johnston <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2145a766044b4de32ab154a074ade0bf78d021df">http://git.postgresql.org/pg/commitdiff/2145a766044b4de32ab154a074ade0bf78d021df</a></li>
+
+<li>to_number(): allow 'V' to divide by 10^(the number of digits) to_char('V') already multiplied in a similar manner. Report by Jeremy Lowery <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/28b3a3d41a8b72841a3f5067217f639a7d337c0e">http://git.postgresql.org/pg/commitdiff/28b3a3d41a8b72841a3f5067217f639a7d337c0e</a></li>
+
+<li>Have CREATE TABLE LIKE add OID column if any LIKEd table has one Also, process constraints for LIKEd tables at the end so an OID column can be referenced in a constraint. Report by Tom Lane <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b943f502b788a3708ca660785fd14a4ee938fdcd">http://git.postgresql.org/pg/commitdiff/b943f502b788a3708ca660785fd14a4ee938fdcd</a></li>
+
+<li>docs: clarify JSONB operator descriptions No catalog bump as the catalog changes are for SQL operator comments. Backpatch through 9.5 <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b852dc4cbd09156e2c74786d5b265f03d45bc404">http://git.postgresql.org/pg/commitdiff/b852dc4cbd09156e2c74786d5b265f03d45bc404</a></li>
+
+<li>docs: Map operator @&gt; to the proper SGML escape for '&gt;' Backpatch through 9.5 <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/23d29cef93ea8d060ceae42146154e45c5a4f862">http://git.postgresql.org/pg/commitdiff/23d29cef93ea8d060ceae42146154e45c5a4f862</a></li>
+
+<li>docs: add JSONB containment example of a key and empty object. Backpatch through 9.5 <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b292ee79a6bc8a1a6610181fcdc2c4092c82eaf2">http://git.postgresql.org/pg/commitdiff/b292ee79a6bc8a1a6610181fcdc2c4092c82eaf2</a></li>
+
+</ul>
+
+<p>Tom Lane pushed:</p>
+
+<ul>
+
+<li>Docs: explain contrib/pg_stat_statements' handling of GC failure. Failure to perform garbage collection now has a user-visible effect, so explain that and explain that reducing pgss_max is the way to prevent it. Per gripe from Andrew Dunstan. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f8a5e579d18b268f287d81b8a4bd54955ca90c37">http://git.postgresql.org/pg/commitdiff/f8a5e579d18b268f287d81b8a4bd54955ca90c37</a></li>
+
+<li>Perform an immediate shutdown if the postmaster.pid file is removed. The postmaster now checks every minute or so (worst case, at most two minutes) that postmaster.pid is still there and still contains its own PID. If not, it performs an immediate shutdown, as though it had received SIGQUIT. The original goal behind this change was to ensure that failed buildfarm runs would get fully cleaned up, even if the test scripts had left a postmaster running, which is not an infrequent occurrence. When the buildfarm script removes a test postmaster's $PGDATA directory, its next check on postmaster.pid will fail and cause it to exit. Previously, manual intervention was often needed to get rid of such orphaned postmasters, since they'd block new test postmasters from obtaining the expected socket address. However, by checking postmaster.pid and not something else, we can provide additional robustness: manual removal of postmaster.pid is a frequent DBA mistake, and now we can at least limit the damage that will ensue if a new postmaster is started while the old one is still alive. Back-patch to all supported branches, since we won't get the desired improvement in buildfarm reliability otherwise. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7e2a18a9161fee7e67642863f72b51d77d3e996f">http://git.postgresql.org/pg/commitdiff/7e2a18a9161fee7e67642863f72b51d77d3e996f</a></li>
+
+<li>Improve documentation of the role-dropping process. In general one may have to run both REASSIGN OWNED and DROP OWNED to get rid of all the dependencies of a role to be dropped. This was alluded to in the REASSIGN OWNED man page, but not really spelled out in full; and in any case the procedure ought to be documented in a more prominent place than that. Add a section to the "Database Roles" chapter explaining this, and do a bit of wordsmithing in the relevant commands' man pages. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1ea0c73c2b112911fb2ef297121be92d3b0ca35e">http://git.postgresql.org/pg/commitdiff/1ea0c73c2b112911fb2ef297121be92d3b0ca35e</a></li>
+
+<li>Last-minute updates for release notes. Add entries for security and not-quite-security issues. Security: CVE-2015-5288, CVE-2015-5289 <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/272ede71a66892e68d4de285a82f117ce23e10ba">http://git.postgresql.org/pg/commitdiff/272ede71a66892e68d4de285a82f117ce23e10ba</a></li>
+
+<li>Fix insufficiently-portable regression test case. Some of the buildfarm members are evidently miserly enough of stack space to pass the originally-committed form of this test. Increase the requirement 10X to hopefully ensure that it fails as-expected everywhere. Security: CVE-2015-5289 <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9e36c91b468d7d821b77214337ff891811b4b337">http://git.postgresql.org/pg/commitdiff/9e36c91b468d7d821b77214337ff891811b4b337</a></li>
+
+<li>Fix uninitialized-variable bug. For some reason, neither of the compilers I usually use noticed the uninitialized-variable problem I introduced in commit 7e2a18a9161fee7e. That's hardly a good enough excuse though. Committing with brown paper bag on head. In addition to putting the operations in the right order, move the declaration of "now" inside the loop; there's no need for it to be outside, and that does wake up older gcc enough to notice any similar future problem. Back-patch to 9.4; earlier versions lack the time-to-SIGKILL stanza so there's no bug. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/94f5246ce1cac2b3fb976bed5792f39e01a28d08">http://git.postgresql.org/pg/commitdiff/94f5246ce1cac2b3fb976bed5792f39e01a28d08</a></li>
+
+</ul>
+
+<p>Noah Misch pushed:</p>
+
+<ul>
+
+<li>Prevent stack overflow in container-type functions. A range type can name another range type as its subtype, and a record type can bear a column of another record type. Consequently, functions like range_cmp() and record_recv() are recursive. Functions at risk include operator family members and referents of pg_type regproc columns. Treat as recursive any such function that looks up and calls the same-purpose function for a record column type or the range subtype. Back-patch to 9.0 (all supported versions). An array type's element type is never itself an array type, so array functions are unaffected. Recursion depth proportional to array dimensionality, found in array_dim_to_jsonb(), is fine thanks to MAXDIM. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/30cb12881de55bc91a2cbde29d836bd3332612c3">http://git.postgresql.org/pg/commitdiff/30cb12881de55bc91a2cbde29d836bd3332612c3</a></li>
+
+<li>Prevent stack overflow in query-type functions. The tsquery, ltxtquery and query_int data types have a common ancestor. Having acquired check_stack_depth() calls independently, each was missing at least one call. Back-patch to 9.0 (all supported versions). <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5976097c0fce03f8cc201aefc4445ad57e09bb75">http://git.postgresql.org/pg/commitdiff/5976097c0fce03f8cc201aefc4445ad57e09bb75</a></li>
+
+<li>Prevent stack overflow in json-related functions. Sufficiently-deep recursion heretofore elicited a SIGSEGV. If an application constructs PostgreSQL json or jsonb values from arbitrary user input, application users could have exploited this to terminate all active database connections. That applies to 9.3, where the json parser adopted recursive descent, and later versions. Only row_to_json() and array_to_json() were at risk in 9.2, both in a non-security capacity. Back-patch to 9.2, where the json type was introduced. Oskari Saarenmaa, reviewed by Michael Paquier. Security: CVE-2015-5289 <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/08fa47c4850cea32c3116665975bca219fbf2fe6">http://git.postgresql.org/pg/commitdiff/08fa47c4850cea32c3116665975bca219fbf2fe6</a></li>
+
+<li>pgcrypto: Detect and report too-short crypt() salts. Certain short salts crashed the backend or disclosed a few bytes of backend memory. For existing salt-induced error conditions, emit a message saying as much. Back-patch to 9.0 (all supported versions). Josh Kupershmidt Security: CVE-2015-5288 <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1d812c8b059d0b9b1fba4a459c9876de0f6259b6">http://git.postgresql.org/pg/commitdiff/1d812c8b059d0b9b1fba4a459c9876de0f6259b6</a></li>
+
+<li>Make prove_installcheck remove the old log directory, if any. prove_check already has been doing this. Back-patch to 9.4, like the commit that introduced this logging. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/03a22f8b1d68754f3ba1fcad977ca44471d21ec1">http://git.postgresql.org/pg/commitdiff/03a22f8b1d68754f3ba1fcad977ca44471d21ec1</a></li>
+
+<li>Avoid scan-build warning about uninitialized htonl() arguments. Josh Kupershmidt <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/dfa1cddc4c92cce0c35f926d813894a2b3632c27">http://git.postgresql.org/pg/commitdiff/dfa1cddc4c92cce0c35f926d813894a2b3632c27</a></li>
+
+</ul>
+
+<p>Robert Haas pushed:</p>
+
+<ul>
+
+<li>Remove more volatile qualifiers. Prior to commit 0709b7ee72e4bc71ad07b7120acd117265ab51d0, access to variables within a spinlock-protected critical section had to be done through a volatile pointer, but that should no longer be necessary. This continues work begun in df4077cda2eae3eb4a5cf387da0c1e7616e73204 and 6ba4ecbf477e0b25dd7bde1b0c4e07fc2da19348. Thomas Munro and Michael Paquier <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8f6bb851bdb75d741b3a7543bbf681e3cd7e65dc">http://git.postgresql.org/pg/commitdiff/8f6bb851bdb75d741b3a7543bbf681e3cd7e65dc</a></li>
+
+<li>Correct pg_indent to pgindent in various comments. David Christensen <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fd5eaad71529d508a1b1e411b3dc16e0b2d33da5">http://git.postgresql.org/pg/commitdiff/fd5eaad71529d508a1b1e411b3dc16e0b2d33da5</a></li>
+
+<li>Hyphenate variable-length for consistency. We hyphenate "fixed-length" earlier in the same sentence, and overall we more often use "variable-length" rather than "variable length". Nikolay Shaplov <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1e353198612586befd44fe5e87304d08ebfac552">http://git.postgresql.org/pg/commitdiff/1e353198612586befd44fe5e87304d08ebfac552</a></li>
+
+<li>Add BSWAP64 macro. This is like BSWAP32, but for 64-bit values. Since we've got two of them now and they have use cases (like sortsupport) beyond CRCs, move the definitions to their own header file. Peter Geoghegan <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c171818b275b9dbd6a1f1cf1666e9e72237f75e6">http://git.postgresql.org/pg/commitdiff/c171818b275b9dbd6a1f1cf1666e9e72237f75e6</a></li>
+
+<li>Fix typo in docs. Pallavi Sontakke <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/41562b14bb9085378957f9a08de4518ae049ffca">http://git.postgresql.org/pg/commitdiff/41562b14bb9085378957f9a08de4518ae049ffca</a></li>
+
+<li>Remove set_latch_on_sigusr1 flag. This flag has proven to be a recipe for bugs, and it doesn't seem like it can really buy anything in terms of performance. So let's just *always* set the process latch when we receive SIGUSR1 instead of trying to do it only when needed. Per my recent proposal on pgsql-hackers. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/db0f6cad4884bd4c835156d3a720d9a79dbd63a9">http://git.postgresql.org/pg/commitdiff/db0f6cad4884bd4c835156d3a720d9a79dbd63a9</a></li>
+
+<li>Make abbreviated key comparisons for text a bit cheaper. If we do some byte-swapping while abbreviating, we can do comparisons using integer arithmetic rather than memcmp. Peter Geoghegan, reviewed and slightly revised by me. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bfb54ff15a447fb22e9deae096e0d45b3e4bd56f">http://git.postgresql.org/pg/commitdiff/bfb54ff15a447fb22e9deae096e0d45b3e4bd56f</a></li>
+
+<li>Speed up text sorts where the same strings occur multiple times. Cache strxfrm() blobs across calls made to the text SortSupport abbreviation routine. This can speed up sorting if the same string needs to be abbreviated many times in a row. Also, cache the result of the previous strcoll() comparison, so that if we're asked to compare the same strings agin, we do need to call strcoll() again. Perhaps surprisingly, these optimizations don't seem to hurt even when they don't help. memcmp() is really cheap compared to strcoll() or strxfrm(). Peter Geoghegan, reviewed by me. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0e57b4d8bd9674adaf5747421b3255b85e385534">http://git.postgresql.org/pg/commitdiff/0e57b4d8bd9674adaf5747421b3255b85e385534</a></li>
+
+</ul>
+
+<p>Andrew Dunstan pushed:</p>
+
+<ul>
+
+<li>Factor out encoding specific tests for json. This lets us remove the large alternative results files for the main json and jsonb tests, which makes modifying those tests simpler for committers and patch submitters. Backpatch to 9.4 for jsonb and 9.3 for json. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b6363772fd5f07dcfff2b4869765705ac9633950">http://git.postgresql.org/pg/commitdiff/b6363772fd5f07dcfff2b4869765705ac9633950</a></li>
+
+</ul>
+
+<p>Peter Eisentraut pushed:</p>
+
+<ul>
+
+<li>Fix whitespace <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f20b26960ae62a3ffd12782eea09e0e9c23a2ac1">http://git.postgresql.org/pg/commitdiff/f20b26960ae62a3ffd12782eea09e0e9c23a2ac1</a></li>
+
+</ul>
+
+<h2>Correctifs rejet&eacute;s (&agrave; ce jour)</h2>
+
+<p>No one was disappointed this week :-)</p>
+
+<h2>Correctifs en attente</h2>
+
+<p>Heikki Linnakangas sent in a patch to use EVP API pgcrypto encryption, dropping support for OpenSSL 0.9.6 and older.</p>
+
+<p>Stas Kelvich sent in a patch to add tsvector editing functions.</p>
+
+<p>Kyotaro HORIGUCHI sent in two more revisions of a patch to enable index-only scans with partial indexes.</p>
+
+<p>Haribabu Kommi sent in another revision of a patch to implement multi-tenancy with RLS.</p>
+
+<p>SAWADA Masahiko sent in two more revisions of a patch to add a "frozen" bit to the visibility bitmap.</p>
+
+<p>Alexander Korotkov sent in another revision of a patch to refactor the access method interface.</p>
+
+<p>Amit Kapila sent in another revision of a patch to implement parallel seq scan.</p>
+
+<p>Rahila Syed sent in two more revisions of a patch to implement a vacuum progress checker.</p>
+
+<p>Paul Ramsey sent in three more revisions of a patch to add remote extension support to the PostgreSQL FDW.</p>
+
+<p>Nikolay Shaplov sent in a patch to fix a documentation mistake around CREATE TYPE.</p>
+
+<p>Ashutosh Bapat sent in a patch to allow PostgreSQL to request and assume it has gotten sorted data from a foreign server.</p>
+
+<p>David Christensen sent in a patch to teach Catalog.pm how many attributes there should be per DATA() line.</p>
+
+<p>Michael Paquier sent in three more revisions of a patch to add recovery regression tests.</p>
+
+<p>Michael Paquier sent in another revision of a patch to fix pl_ctl start on AIX.</p>
+
+<p>Andreas 'ads' Scherbaum sent in a patch to fix an infelicity in src/bin/initdb/po/zh_CN.po.</p>
+
+<p>Peter Geoghegan sent in another revision of a patch to add SortSupport routine for UUID data type.</p>
+
+<p>Anastasia Lubennikova sent in two revisions of a patch to combine covering and unique functionality for btree indexes.</p>
+
+<p>Pavel St&Auml;&rsaquo;hule sent in another revision of a patch to add an ereport function to PL/PythonU.</p>
+
+<p>Andrei Asyakin sent in a patch to process pg_hba.conf keywords as case-insensitive.</p>
+
+<p>Peter Geoghegan sent in a patch to prefetch from memtuples array in tuplesort.</p>
+
+<p>Peter Geoghegan sent in another revision of a patch to reuse abbreviated keys in ordered [set] aggregates.</p>
+
+<p>Peter Geoghegan sent in another revision of a patch to do some minor copy-editing of the INSERT documentation.</p>

@@ -1,0 +1,154 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 22 août 2010"
+author: "NBougain"
+redirect_from: "index.php?post/2010-08-28-nouvelles-hebdomadaires-de-postgresql-22-aout-2010 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Tom Lane a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/backend/utils/init/miscinit.c, arrange to fsync the contents of lockfiles (both postmaster.pid and the socket lockfile) when writing them. The lack of an fsync here may well explain two different reports we've seen of corrupted lockfile contents, which doesn't particularly bother the running server but can prevent a new server from starting if the old one crashes. Per suggestion from Alvaro Herrera. Back-patch to all supported versions.</li>
+
+<li>Add missing handling of PlannedStmt.transientPlan in copyfuncs/outfuncs. _outPlannedStmt is only debug support, so the omission there was not very serious, but the omission in _copyPlannedStmt is a real bug. The consequence would be that a copied plan tree would never be marked as a transient plan, so that we would forget we ought to replan it after some not-yet-ready index becomes ready for use. This might explain some past complaints about indexes created with CREATE INDEX CONCURRENTLY not being used right away. Problem spotted by Yeb Havinga. Back-patch to 8.3, where the field was added.</li>
+
+<li>Fix failure of "ALTER TABLE t ADD COLUMN c serial" when done by non-owner. The implicitly created sequence was created as owned by the current user, who could be different from the table owner, eg if current user is a superuser or some member of the table's owning role. This caused sanity checks in the SEQUENCE OWNED BY code to spit up. Although possibly we don't need those sanity checks, the safest fix seems to be to make sure the implicit sequence is assigned the same owner role as the table has. (We still do all permissions checks as the current user, however.) Per report from Josh Berkus. Back-patch to 9.0. The bug goes back to the invention of SEQUENCE OWNED BY in 8.2, but the fix requires an API change for DefineRelation(), which seems to have potential for breaking third-party code if done in a minor release. Given the lack of prior complaints, it's probably not worth fixing in the stable branches.</li>
+
+<li>Rename utf2ucs() to utf8_to_unicode(), and export it so it can be used elsewhere. Similarly rename the version in mbprint.c, not because this affects anything but just to keep the two copies in exact sync. There was some discussion of having only one copy in src/port/ instead, but this function is so small and unlikely to change that that seems like overkill. Slightly editorialized version of a patch by Joseph Adams. (The bug-fix aspect of his patch was applied separately, and back-patched.)</li>
+
+<li>In pgsql/src/backend/executor/nodeModifyTable.c, reset the per-output-tuple exprcontext each time through the main loop in ExecModifyTable(). This avoids memory leakage when trigger functions leave junk behind in that context (as they more or less must). Problem and solution identified by Dean Rasheed. I'm a bit concerned about the longevity of this solution --- once a plan can have multiple ModifyTable nodes, we are very possibly going to have to do something different. But it should hold up for 9.0.</li>
+
+<li>In pgsql/src/backend/commands/trigger.c, fix possible corruption of AfterTriggerEventLists in subtransaction rollback. afterTriggerInvokeEvents failed to adjust events-&gt;tailfree when truncating the last chunk of an event list. This could result in the data being "de-truncated" by afterTriggerRestoreEventList during a subsequent subtransaction abort. Even that wouldn't kill us, because the re-added data would just be events marked DONE --- unless the data had been partially overwritten by new events. Then we might crash, or in any case misbehave (perhaps fire triggers twice, or fire triggers with the wrong event data). Per bug #5622 from Thue Janus Kristensen. Back-patch to 8.4 where the current trigger list representation was introduced.</li>
+
+<li>In pgsql/src/backend/storage/buffer/localbuf.c, allocate local buffers in a context of their own, rather than dumping them into TopMemoryContext. This makes no functional difference, but makes it easier to see what the space is being used for in MemoryContextStats dumps. Per a recent example in which I was surprised by the size of TopMemoryContext.</li>
+
+<li>In pgsql/src/pl/plpgsql/src/pl_exec.c, be a bit less cavalier with both the code and the comment for UNKNOWN fix.</li>
+
+<li>In pgsql/src/pl/plpgsql/src/pl_exec.c, keep exec_simple_check_plan() from thinking "SELECT foo INTO bar" is simple. It's not clear if this situation can occur in plpgsql other than via the EXECUTE USING case Heikki illustrated, which I will shortly close off. However, ignoring the intoClause if it's there is surely wrong, so let's patch it for safety. Backpatch to 8.3, which is as far back as this code has a PlannedStmt to deal with. There might be another way to make an equivalent test before that, but since this is just preventing hypothetical bugs, I'm not going to obsess about it.</li>
+
+<li>In pgsql/src/pl/plpgsql/src/gram.y, allow USING and INTO clauses of plpgsql's EXECUTE to appear in either order. Aside from being more forgiving, this prevents a rather surprising misbehavior when the "wrong" order was used: the old code didn't throw a syntax error, but absorbed the INTO clause into the last USING expression, which then did strange things downstream. Intentionally not changing the documentation; we'll continue to advertise only the "standard" clause order. Backpatch to 8.4, where the USING clause was added to EXECUTE.</li>
+
+<li>Bring some sanity to the trace_recovery_messages code and docs. Per gripe from Fujii Masao, though this is not exactly his proposed patch. Categorize as DEVELOPER_OPTIONS and set context PGC_SIGHUP, as per Fujii, but set the default to LOG because higher values aren't really sensible (see the code for trace_recovery()). Fix the documentation to agree with the code and to try to explain what the variable actually does. Get rid of no-op calls trace_recovery(LOG), which accomplish nothing except to demonstrate that this option confuses even its author.</li>
+
+<li>Avoid saying "random" when randomness is not actually meant. Per Thom Brown.</li>
+
+<li>In pgsql/src/backend/parser/gram.y, add missing processing of OptTemp in CREATE IF NOT EXISTS variant for typed tables. Noted by Robert Haas.</li>
+
+<li>In pgsql/src/bin/pg_dump/pg_backup_archiver.c, improve parallel restore's ability to cope with selective restore (-L option). The original coding tended to break down in the face of modified restore orders, as shown in bug #5626 from Albert Ullrich, because it would flip over into parallel-restore operation too soon. That causes problems because we don't have sufficient dependency information in dump archives to allow safe parallel processing of SECTION_PRE_DATA items. Even if we did, it's probably undesirable to allow that to override the commanded restore order. To fix the problem of omitted items causing unexpected changes in restore order, tweak SortTocFromFile so that omitted items end up at the head of the list not the tail. This ensures that they'll be examined and their dependencies will be marked satisfied before we get to any interesting items. In HEAD and 9.0, we can easily change restore_toc_entries_parallel so that all SECTION_PRE_DATA items are guaranteed to be processed in the initial serial-restore loop, and hence in commanded order. Only DATA and POST_DATA items are candidates for parallel processing. For them there might be variations from the commanded order because of parallelism, but we should do it in a safe order thanks to dependencies. In 8.4 it's much harder to make such a guarantee. I settled for not letting the initial loop break out into parallel processing mode if it sees a DATA/POST_DATA item that's not to be restored; this at least prevents a non-restorable item from causing premature exit from the loop. This means that 8.4 will be more likely to fail given a badly-ordered -L list than 9.x, but we don't really promise any such thing will work anyway.</li>
+
+<li>In pgsql/src/backend/utils/adt/arrayfuncs.c, use a non-locale-dependent definition of isspace() in array_in/array_out. array_in discards unquoted leading and trailing whitespace in array values, while array_out is careful to quote array elements that contain whitespace. This is problematic when the definition of "whitespace" varies between locales: array_in could drop characters that were meant to be part of the value. To avoid that, lock down "whitespace" to mean only the traditional six ASCII space characters. This change also works around a bug in OS X and some older BSD systems, in which isspace() could return true for character fragments in UTF8 locales. (There may be other places in PG where that bug could cause problems, but this is the only one complained of so far; see recent report from Steven Schlansker.) Back-patch to 9.0, but not further. Given the lack of previous reports of trouble, changing this behavior in stable branches seems to offer more risk of breaking applications than reward of avoiding problems.</li>
+
+</ul>
+
+<p>Peter Eisentraut a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Spell and markup checking for docs.</li>
+
+<li>In pgsql/doc/src/sgml/lo.sgml, revert: looks like Binary Large OBject[sic] wasn't a misspelling</li>
+
+<li>Backpatch some blatant spelling mistakes in the docs.</li>
+
+<li>Remove extra newlines at end and beginning of files, add missing newlines at end of files.</li>
+
+</ul>
+
+<p>Michael Meskes a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Applied Zoltan Boszormenyi's patch to fix a few memleaks in ecpg's pgtypeslib.</li>
+
+</ul>
+
+<p>Heikki Linnakangas a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/backend/parser/parse_param.c, coerce 'unknown' type parameters to the right type in the fixed-params parse_analyze() function. That case occurs e.g with PL/pgSQL EXECUTE ... USING 'stringconstant'. The coercion with a CoerceViaIO node. The result is similar to the coercion via input function performed for unknown constants in coerce_type(), except that this happens at runtime. Backpatch to 9.0. The issue is present in 8.4 as well, but the coerce param hook infrastructure this patch relies on was introduced in 9.0. Given the lack of user reports and harmlessness of the bug, it's not worth attempting a different fix just for 8.4.</li>
+
+<li>Revert patch to coerce 'unknown' type parameters in the backend. As Tom Lane pointed out, it would need a 2nd pass after the whole query is processed to correctly check that an unknown Param is coerced to the same target type everywhere. Adding the 2nd pass would add a lot more code, which doesn't seem worth the risk given that there isn't much of a use case for passing unknown Params in the first place. The code would work without that check, but it might be confusing and the behavior would be different from the varparams case. Instead, just coerce all unknown params in a PL/pgSQL USING clause to text. That's simple, and is usually what users expect. Revert the patch in CVS HEAD and master, and backpatch the new solution to 8.4. Unlike the previous solution, this applies easily to 8.4 too.</li>
+
+</ul>
+
+<p>Robert Haas a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Tidy up a few calls to smrgextend(). In the new API introduced by my patch to include the backend ID in temprel filenames, the last argument to smrgextend() became skipFsync rather than isTemp, but these calls didn't get the memo. It's not really a problem to pass rel-&gt;rd_istemp rather than just plain false, because smgrextend() now automatically skips the fsync for temprels anyway, but this seems cleaner and saves some minute number of cycles.</li>
+
+<li>In pgsql/src/backend/storage/buffer/bufmgr.c, remove the isLocalBuf argument from ReadBuffer_common. Since an SMgrRelation now knows whether or not the underlying relation is temporary, there's no point in also passing that information via an additional argument.</li>
+
+</ul>
+
+<p>Magnus Hagander a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add vacuum and analyze counters to pg_stat_*_tables views.</li>
+
+<li>In pgsql/src/test/regress/expected/rules.out, adjust regression tests for previous commit, that I forgot to include...</li>
+
+</ul>
+
+<p>Bruce Momjian a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/doc/src/sgml/config.sgml, document that autovacuum_freeze_max_age is used for pg_clog recycling. We already mentioned xid wraparound.</li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Pavel Stehule sent in two revisions of a patch to extend psql's tab completion to more entities.</li>
+
+<li>KaiGai Kohei sent in a patch to implement preload libraries for single-user mode.</li>
+
+<li>Peter Eisentraut sent in a prototype query progress indicator.</li>
+
+<li>Quan Zongliang sent in a patch to enable pg_ctl on Windows to select a service start type (auto or on-demand), then a follow-up patch to add the docs. David Fetter unified these into standard format.</li>
+
+<li>Robert Haas and Alex Hunsaker traded patches to create a new tool for git histories.</li>
+
+<li>Peter Eisentraut sent in a patch to fix an issue in PL/PythonU with Python 2.7.</li>
+
+<li>Heikki Linnakangas sent in a WIP patch to fix an issue with type coercion in PL/pgsql's EXECUTE ... USING construct.</li>
+
+<li>Pavel Stehule sent in two revisions of a patch to add MEDIAN() and PERCENTILE() as contrib modules.</li>
+
+<li>Boxuan Zhai sent in another revision of the MERGE patch.</li>
+
+<li>Robert Haas sent in another refactor of comment.c.</li>
+
+<li>Martin Pitt sent in a patch to add a system-wide fallback directory for SSL root certificates.</li>
+
+<li>KaiGai Kohei sent in a patch to add a security hook at authorization time.</li>
+
+<li>Robert Haas sent in a patch to clean up smgr, which kicked off a discussion of the design of the abstraction layers nearby.</li>
+
+<li>Magnus Hagander sent in a patch to add columns the pg_stat_*_tables which record the number of [auto]vacuum and [auto]analyze runs.</li>
+
+<li>Peter Eisentraut sent in a patch to refactor makeVar in the back end.</li>
+
+<li>Erik Rijkers sent in two revisions of a patch to make the debug messages in pg_archivecleanup more consistent.</li>
+
+<li>Magnus Hagander sent in a patch to track more vacuum stats.</li>
+
+</ul>

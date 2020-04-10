@@ -1,0 +1,168 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 22 avril 2012"
+author: "NBougain"
+redirect_from: "index.php?post/2012-04-24-nouvelles-hebdomadaires-de-postgresql-22-avril-2012 "
+---
+
+
+
+<p><strong>Revues de code</strong></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>PL/Python: Improve documentation of nrows() method. Clarify that nrows() is the number of rows processed, versus the number of rows returned, which can be obtained using len. Also add tests about that. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0f48e0675134eccd905eaf696a03c1e8cc85eab4">http://git.postgresql.org/pg/commitdiff/0f48e0675134eccd905eaf696a03c1e8cc85eab4</a></li>
+
+<li>Fix typo. Kyotaro HORIGUCHI 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a33fcd7e79d7e1544030160de177aee847bb7648">http://git.postgresql.org/pg/commitdiff/a33fcd7e79d7e1544030160de177aee847bb7648</a></li>
+
+<li>Add compatibility information for prepared transaction commands 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cf714c81086a85b7558a84ebd024f6a5eec2a5ee">http://git.postgresql.org/pg/commitdiff/cf714c81086a85b7558a84ebd024f6a5eec2a5ee</a></li>
+
+<li>psql: Add tab completion for CREATE/ALTER ROLE name WITH. Previously, the use of the optional key word WITH was not supported. Josh Kupershmidt 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1fd832ddffe83a07f82939bd9e5787a61aeba1ef">http://git.postgresql.org/pg/commitdiff/1fd832ddffe83a07f82939bd9e5787a61aeba1ef</a></li>
+
+<li>Untabify DSSSL and XSL files and add to check-tabs target. Like with SGML files, using tabs in these files is confusing and unnecessary. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cd1f4db4aec0c4b71d2ed0d29bbe388dfcd11527">http://git.postgresql.org/pg/commitdiff/cd1f4db4aec0c4b71d2ed0d29bbe388dfcd11527</a></li>
+
+<li>Fix some typos. Josh Kupershmidt 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/48658a1b818060fcfb3c91704943c5fbcf10088e">http://git.postgresql.org/pg/commitdiff/48658a1b818060fcfb3c91704943c5fbcf10088e</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Install plpgsql.h to to include/server at "make install". The header file is needed by any module that wants to use the PL/pgSQL instrumentation plugin interface. Most notably, the pldebugger plugin needs this. With this patch, it can be built using pgxs, without having the full server source tree available. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/49440fff08590cf1a764ab4b4c5342cd9e445991">http://git.postgresql.org/pg/commitdiff/49440fff08590cf1a764ab4b4c5342cd9e445991</a></li>
+
+<li>Don't wait for the commit record to be replicated if we wrote no WAL. When using synchronous replication, we waited for the commit record to be replicated, but if we our transaction didn't write any other WAL records, that's not required because we don't even flush the WAL locally to disk in that case. This lead to long waits when committing a transaction that only modified a temporary table. Bug spotted by Thom Brown. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fe546f3da6a5ff1d879f587728f74ec457f0ee5f">http://git.postgresql.org/pg/commitdiff/fe546f3da6a5ff1d879f587728f74ec457f0ee5f</a></li>
+
+</ul>
+
+<p>Andrew Dunstan a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Don't override arguments set via options with positional arguments. A number of utility programs were rather careless about paremeters that can be set via both an option argument and a positional argument. This leads to results which can violate the Principal Of Least Astonishment. These changes refuse to use positional arguments to override settings that have been made via positional arguments. The changes are backpatched to all live branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1b37a8c3cc4f0615f80d6007e2bbd47c6bd7e1e3">http://git.postgresql.org/pg/commitdiff/1b37a8c3cc4f0615f80d6007e2bbd47c6bd7e1e3</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Doc clarification for synchronous_commit. Fujii Masao 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/37e666b8b5999fddd556138edd17a5f26384460f">http://git.postgresql.org/pg/commitdiff/37e666b8b5999fddd556138edd17a5f26384460f</a></li>
+
+<li>Fix various infelicities in node functions. Mostly, this consists of adding support for fields which exist in the structure but aren't handled by copy/equal/outfuncs; but the create foreign table case can actually produce garbage output. Noah Misch 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/53bbc681ca97650a4b8ea59d8f1710196654fca5">http://git.postgresql.org/pg/commitdiff/53bbc681ca97650a4b8ea59d8f1710196654fca5</a></li>
+
+<li>Fix copyfuncs/equalfuncs support for ReassignOwnedStmt. Noah Misch 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b5eccaef2c05fd0c17f4510001528232b242a88e">http://git.postgresql.org/pg/commitdiff/b5eccaef2c05fd0c17f4510001528232b242a88e</a></li>
+
+<li>Fix incorrect comment in SetBufferCommitInfoNeedsSave(). Noah Misch spotted the fact that the old comment is in fact incorrect, due to memory ordering hazards. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ab77b2da8bf2cd1c8068f2f90e95c42d426aba3c">http://git.postgresql.org/pg/commitdiff/ab77b2da8bf2cd1c8068f2f90e95c42d426aba3c</a></li>
+
+<li>After PageSetAllVisible, use MarkBufferDirty. Previously, we used SetBufferCommitInfoNeedsSave, but that's really intended for dirty-marks we can theoretically afford to lose, such as hint bits. As for 9.2, the PD_ALL_VISIBLE mustn't be lost in this way, since we could then end up with a heap page that isn't all-visible and a visibility map page that is all visible, causing index-only scans to return wrong answers. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e93c0b820f03e96ae0549cd30805ae734e5d5e2f">http://git.postgresql.org/pg/commitdiff/e93c0b820f03e96ae0549cd30805ae734e5d5e2f</a></li>
+
+<li>Tighten up error recovery for fast-path locking. The previous code could cause a backend crash after BEGIN; SAVEPOINT a; LOCK TABLE foo (interrupted by ^C or statement timeout); ROLLBACK TO SAVEPOINT a; LOCK TABLE foo, and might have leaked strong-lock counts in other situations. Report by Zolt&aacute;n B&ouml;sz&ouml;rm&eacute;nyi; patch review by Jeff Davis. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/53c5b869b464d567c3b8f617201b49a395f437ab">http://git.postgresql.org/pg/commitdiff/53c5b869b464d567c3b8f617201b49a395f437ab</a></li>
+
+<li>Finish rename of FastPathStrongLocks to FastPathStrongRelationLocks. Commit 8e5ac74c1249820ca55481223a95b9124b4a4f95 tried to do this renaming, but I relied on gcc to tell me where I needed to make changes, instead of grep. Noted by Jeff Davis. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4a6fab03f23ed15f33e607b321c339d0c96c6b58">http://git.postgresql.org/pg/commitdiff/4a6fab03f23ed15f33e607b321c339d0c96c6b58</a></li>
+
+<li>Remove bogus comment from HeapTupleSatisfiesNow. This has been wrong for a really long time. We don't use two-phase locking to protect against serialization anomalies. Per discussion on pgsql-hackers about 2011-03-07; original report by Dan Ports. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/293ec33c32e8e20fcb5859885a4b37ff6d855240">http://git.postgresql.org/pg/commitdiff/293ec33c32e8e20fcb5859885a4b37ff6d855240</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Revise parameterized-path mechanism to fix assorted issues. This patch adjusts the treatment of parameterized paths so that all paths with the same parameterization (same set of required outer rels) for the same relation will have the same rowcount estimate. We cache the rowcount estimates to ensure that property, and hopefully save a few cycles too. Doing this makes it practical for add_path_precheck to operate without a rowcount estimate: it need only assume that paths with different parameterizations never dominate each other, which is close enough to true anyway for coarse filtering, because normally a more-parameterized path should yield fewer rows thanks to having more join clauses to apply. In add_path, we do the full nine yards of comparing rowcount estimates along with everything else, so that we can discard parameterized paths that don't actually have an advantage. This fixes some issues I'd found with add_path rejecting parameterized paths on the grounds that they were more expensive than not-parameterized ones, even though they yielded many fewer rows and hence would be cheaper once subsequent joining was considered. To make the same-rowcounts assumption valid, we have to require that any parameterized path enforce *all* join clauses that could be obtained from the particular set of outer rels, even if not all of them are useful for indexing. This is required at both base scans and joins. It's a good thing anyway since the net impact is that join quals are checked at the lowest practical level in the join tree. Hence, discard the original rather ad-hoc mechanism for choosing parameterization joinquals, and build a better one that has a more principled rule for when clauses can be moved. The original rule was actually buggy anyway for lack of knowledge about which relations are part of an outer join's outer side; getting this right requires adding an outer_relids field to RestrictInfo. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5b7b5518d0ea56c422a197875f7efa5deddbb388">http://git.postgresql.org/pg/commitdiff/5b7b5518d0ea56c422a197875f7efa5deddbb388</a></li>
+
+<li>Adjust join_search_one_level's handling of clauseless joins. For an initial relation that lacks any join clauses (that is, it has to be cartesian-product-joined to the rest of the query), we considered only cartesian joins with initial rels appearing later in the initial-relations list. This creates an undesirable dependency on FROM-list order. We would never fail to find a plan, but perhaps we might not find the best available plan. Noted while discussing the logic with Amit Kapila. Improve the comments a bit in this area, too. Arguably this is a bug fix, but given the lack of complaints from the field I'll refrain from back-patching. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1f0363001166ef6a43619846e44cfb9dbe7335ed">http://git.postgresql.org/pg/commitdiff/1f0363001166ef6a43619846e44cfb9dbe7335ed</a></li>
+
+<li>Use fuzzy not exact cost comparison for the final tie-breaker in add_path. Instead of an exact cost comparison, use a fuzzy comparison with 1e-10 delta after all other path metrics have proved equal. This is to avoid having platform-specific roundoff behaviors determine the choice when two paths are really the same to our cost estimators. Adjust the recently-added test case that made it obvious we had a problem here. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/33e99153e93b9accfa51ac036828144e1c2507b7">http://git.postgresql.org/pg/commitdiff/33e99153e93b9accfa51ac036828144e1c2507b7</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Recast "ONLY" column CHECK constraints as NO INHERIT. The original syntax wasn't universally loved, and it didn't allow its usage in CREATE TABLE, only ALTER TABLE. It now works everywhere, and it also allows using ALTER TABLE ONLY to add an uninherited CHECK constraint, per discussion. The pg_constraint column has accordingly been renamed connoinherit. This commit partly reverts some of the changes in 61d81bd28dbec65a6b144e0cd3d0bfe25913c3ac, particularly some pg_dump and psql bits, because now pg_get_constraintdef includes the necessary NO INHERIT within the constraint definition. Author: Nikhil Sontakke. Some tweaks by me 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/09ff76fcdb275769ac4d1a45a67416735613d04b">http://git.postgresql.org/pg/commitdiff/09ff76fcdb275769ac4d1a45a67416735613d04b</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Heikki Linnakangas sent in a patch to fix some infelicities in localized error context messages.</li>
+
+<li>Etsuro Fujita sent in another revision of the patch to validate file_fdw tables for not-NULL constraints.</li>
+
+<li>Kyotaro HORIGUCHI sent in three revisions of a fix for a bug where the checkpointer on hot standbys runs without looking checkpoint_segments. Fujii Masao sent in another fixing an infelicity in the last.</li>
+
+<li>Noah Misch sent in a patch to fix an issue where {ts,array}_typanalyze consumed much more memory than needed.</li>
+
+<li>Jameison Martin sent in a patch to optimize the case of tables with large numbers of columns, truncating the NULL bitmap at the last non-NULL column.</li>
+
+<li>Alexander Shulgin sent in two more revisions of a patch to add libpq URIs to the regression tests.</li>
+
+<li>Alvaro Herrera sent in a patch to add ALTER EXTENSION ... OWNED.</li>
+
+<li>Robert Haas sent in a patch to fix a bug in lazy_scan_heap() that could cause index-only scans to give wrong results.</li>
+
+<li>Laurenz Albe sent in a patch to fix a place where foreign table scan estimates were frozen at 1000 rows, independent of statistics gathered on same.</li>
+
+<li>Noah Misch sent in a patch to fix an issue in B-tree page deletion.</li>
+
+<li>Jan Urbanski sent in a patch to fix an issue with PL/PythonU triggers on composite-type columns. columns</li>
+
+</ul>

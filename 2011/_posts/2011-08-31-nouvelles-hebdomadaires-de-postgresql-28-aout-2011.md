@@ -1,0 +1,340 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 28 août 2011"
+author: "NBougain"
+redirect_from: "index.php?post/2011-08-31-nouvelles-hebdomadaires-de-postgresql-28-aout-2011 "
+---
+
+
+
+<p><strong>Revues de code</strong></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix trigger WHEN conditions when both BEFORE and AFTER triggers exist. Due to tuple-slot mismanagement, evaluation of WHEN conditions for AFTER ROW UPDATE triggers could crash if there had been a BEFORE ROW trigger fired for the same update. Fix by not trying to overload the use of estate-&gt;es_trig_tuple_slot. Per report from Yoran Heling. Back-patch to 9.0, when trigger WHEN conditions were introduced. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b33f78df17c32364d51f6e5128f8d81d7d3013a2">http://git.postgresql.org/pg/commitdiff/b33f78df17c32364d51f6e5128f8d81d7d3013a2</a></li>
+
+<li>Fix handling of extension membership when filling in a shell operator. The previous coding would result in deleting and not re-creating the extension membership pg_depend rows, since there was no CommandCounterIncrement that would allow recordDependencyOnCurrentExtension to see that the deletion had happened. Make it work like the shell type case, ie, keep the existing entries (and then throw an error if they're for the wrong extension). Per bug #6172 from Hitoshi Harada. Investigation and fix by Dimitri Fontaine. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/660a081c3f6892dae353136fa0883cd3c69813d4">http://git.postgresql.org/pg/commitdiff/660a081c3f6892dae353136fa0883cd3c69813d4</a></li>
+
+<li>Fix overoptimistic assumptions in column width estimation for subqueries. set_append_rel_pathlist supposed that, while computing per-column width estimates for the appendrel, it could ignore child rels for which the translated reltargetlist entry wasn't a Var. This gave rise to completely silly estimates in some common cases, such as constant outputs from some or all of the arms of a UNION ALL. Instead, fall back on get_typavgwidth to estimate from the value's datatype; which might be a poor estimate but at least it's not completely wacko. That problem was exposed by an Assert in set_subquery_size_estimates, which unfortunately was still overoptimistic even with that fix, since we don't compute attr_widths estimates for appendrels that are entirely excluded by constraints. So remove the Assert; we'll just fall back on get_typavgwidth in such cases. Also, since set_subquery_size_estimates calls set_baserel_size_estimates which calls set_rel_width, there's no need for set_subquery_size_estimates to call get_typavgwidth; set_rel_width will handle it for us if we just leave the estimate set to zero. Remove the unnecessary code. Per report from Erik Rijkers and subsequent investigation. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/43f0c20839aa82705700e4de5bb452b7f044c838">http://git.postgresql.org/pg/commitdiff/43f0c20839aa82705700e4de5bb452b7f044c838</a></li>
+
+<li>Make CREATE EXTENSION check schema creation permissions. When creating a new schema for a non-relocatable extension, we neglected to check whether the calling user has permission to create schemas. That didn't matter in the original coding, since we had already checked superuserness, but in the new dispensation where users need not be superusers, we should check it. Use CreateSchemaCommand() rather than calling NamespaceCreate() directly, so that we also enforce the rules about reserved schema names. Per complaint from KaiGai Kohei, though this isn't the same as his patch. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d4aa491493e6cfa7542d16deba4018c2fd7af9fd">http://git.postgresql.org/pg/commitdiff/d4aa491493e6cfa7542d16deba4018c2fd7af9fd</a></li>
+
+<li>Fix multiple bugs in extension dropping. When we implemented extensions, we made findDependentObjects() treat EXTENSION dependency links similarly to INTERNAL links. However, that logic contained an implicit assumption that an object could have at most one INTERNAL dependency, so it did not work correctly for objects having both INTERNAL and DEPENDENCY links. This led to failure to drop some extension member objects when dropping the extension. Furthermore, we'd never actually exercised the case of recursing to an internally-referenced (owning) object from anything other than a NORMAL dependency, and it turns out that passing the incoming dependency's flags to the owning object is the Wrong Thing. This led to sometimes dropping a whole extension silently when we should have rejected the drop command for lack of CASCADE. Since we obviously were under-testing extension drop scenarios, add some regression test cases. Unfortunately, such test cases require some extensions (duh), so we can't test for problems in the core regression tests. I chose to add them to the earthdistance contrib module, which is a good test case because it has a dependency on the cube contrib module. Back-patch to 9.1. Arguably these are pre-existing bugs in INTERNAL dependency handling, but since it appears that the cases can never arise pre-9.1, I'll refrain from back-patching the logic changes further than that. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cb5c2ba2d82688d29b5902d86b993a54355cad4d">http://git.postgresql.org/pg/commitdiff/cb5c2ba2d82688d29b5902d86b993a54355cad4d</a></li>
+
+<li>Avoid locale dependency in expected output. We'll have to settle for just listing the extensions' data types, since function arguments seem to sort differently in different locales. Per buildfarm results. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ba69b419a8015986d018e25173f8cf4233a3c2d9">http://git.postgresql.org/pg/commitdiff/ba69b419a8015986d018e25173f8cf4233a3c2d9</a></li>
+
+<li>Fix pgxs.mk to always add --dbname=$(CONTRIB_TESTDB) to REGRESS_OPTS. The previous coding resulted in contrib modules unintentionally overriding the use of CONTRIB_TESTDB. There seems no particularly good reason to allow that (after all, the makefile can set CONTRIB_TESTDB if that's really what it intends). In passing, document REGRESS_OPTS where the other pgxs.mk options are documented. Back-patch to 9.1 --- in prior versions, there were no cases of contrib modules setting REGRESS_OPTS without including the --dbname switch, so while the coding was fragile there was no actual bug. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d1d388603e4f9233d3e01847405b239972a54fdf">http://git.postgresql.org/pg/commitdiff/d1d388603e4f9233d3e01847405b239972a54fdf</a></li>
+
+<li>Fix pgstatindex() to give consistent results for empty indexes. For an empty index, the pgstatindex() function would compute 0.0/0.0 for its avg_leaf_density and leaf_fragmentation outputs. On machines that follow the IEEE float arithmetic standard with any care, that results in a NaN. However, per report from Rushabh Lathia, Microsoft couldn't manage to get this right, so you'd get a bizarre error on Windows. Fix by forcing the results to be NaN explicitly, rather than relying on the division operator to give that or the snprintf function to print it correctly. I have some doubts that this is really the most useful definition, but it seems better to remain backward-compatible with those platforms for which the behavior wasn't completely broken. Back-patch to 8.2, since the code is like that in all current releases. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/af7d181298fbcd4eb225ee349598edd4611c652d">http://git.postgresql.org/pg/commitdiff/af7d181298fbcd4eb225ee349598edd4611c652d</a></li>
+
+<li>Add a regression test for pgstattuple. This is mainly to prove that the NaN fix actually works cross-platform. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bd165757f4e0914efb808927482c46f719adcbc5">http://git.postgresql.org/pg/commitdiff/bd165757f4e0914efb808927482c46f719adcbc5</a></li>
+
+<li>Add "%option warn" to all flex input files that lacked it. This is recommended in the flex manual, and there seems no good reason not to use it everywhere. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2e95f1f002bc3f0504dffa6d9ffed0dc914ecec1">http://git.postgresql.org/pg/commitdiff/2e95f1f002bc3f0504dffa6d9ffed0dc914ecec1</a></li>
+
+<li>Fix psql lexer to avoid use of backtracking. Per previous experimentation, backtracking slows down lexing performance significantly (by about a third). It's usually pretty easy to avoid, just need to have rules that accept an incomplete construct and do whatever the lexer would have done otherwise. The backtracking was introduced by the patch that added quoted variable substitution. Back-patch to 9.0 where that was added. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/77ce50a40364a3605f775d3f0efca2e1caa70291">http://git.postgresql.org/pg/commitdiff/77ce50a40364a3605f775d3f0efca2e1caa70291</a></li>
+
+<li>Add makefile rules to check for backtracking in backend and psql lexers. Per discussion, we should enforce the policy of "no backtracking" in these performance-sensitive scanners. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ecf248737a4c0705bf7d79fdd52b5271618f7103">http://git.postgresql.org/pg/commitdiff/ecf248737a4c0705bf7d79fdd52b5271618f7103</a></li>
+
+<li>Support non-ASCII letters in psql variable names. As in the backend, the implementation actually accepts any non-ASCII character, but we only document that you can use letters. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e86fdb0ab224eaa73d907ab16a2dd0e0058699e0">http://git.postgresql.org/pg/commitdiff/e86fdb0ab224eaa73d907ab16a2dd0e0058699e0</a></li>
+
+<li>Clean up weird corner cases in lexing of psql meta-command arguments. These changes allow backtick command evaluation and psql variable interpolation to happen on substrings of a single meta-command argument. Formerly, no such evaluations happened at all if the backtick or colon wasn't the first character of the argument, and we considered an argument completed as soon as we'd processed one backtick, variable reference, or quoted substring. A string like 'FOO'BAR was thus taken as two arguments not one, not exactly what one would expect. In the new coding, an argument is considered terminated only by unquoted whitespace or backslash. Also, clean up a bunch of omissions, infelicities and outright errors in the psql documentation of variables and metacommand argument syntax. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/928311a463d480ca566e2905a369ac6aa0c3e210">http://git.postgresql.org/pg/commitdiff/928311a463d480ca566e2905a369ac6aa0c3e210</a></li>
+
+<li>Fix potential memory clobber in tsvector_concat(). tsvector_concat() allocated its result workspace using the "conservative" estimate of the sum of the two input tsvectors' sizes. Unfortunately that wasn't so conservative as all that, because it supposed that the number of pad bytes required could not grow. Which it can, as per test case from Jesper Krogh, if there's a mix of lexemes with positions and lexemes without them in the input data. The fix is to assume that we might add a not-previously-present pad byte for each and every lexeme in the two inputs; which really is conservative, but it doesn't seem worthwhile to try to be more precise. This is an aboriginal bug in tsvector_concat, so back-patch to all versions containing it. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/00eb036c111b8f72a34ca729efccd785761d977e">http://git.postgresql.org/pg/commitdiff/00eb036c111b8f72a34ca729efccd785761d977e</a></li>
+
+<li>Improve comments describing tsvector data structure. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/40271811cb9c4906041afc21a3b2c2f31f534fd8">http://git.postgresql.org/pg/commitdiff/40271811cb9c4906041afc21a3b2c2f31f534fd8</a></li>
+
+<li>Ensure we discard unread/unsent data when abandoning a connection attempt. There are assorted situations wherein PQconnectPoll() will abandon a connection attempt and try again with different parameters (eg, SSL versus not SSL). However, the code forgot to discard any pending data in libpq's I/O buffers when doing this. In at least one case (server returns E message during SSL negotiation), there is unread input data which bollixes the next connection attempt. I have not checked to see whether this is possible in the other cases where we close the socket and retry, but it seems like a matter of good defensive programming to add explicit buffer-flushing code to all of them. This is one of several issues exposed by Daniel Farina's report of misbehavior after a server-side fork failure. This has been wrong since forever, so back-patch to all supported branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/724e30c9f886efd852f714d47c56336ffa6916ec">http://git.postgresql.org/pg/commitdiff/724e30c9f886efd852f714d47c56336ffa6916ec</a></li>
+
+<li>Don't assume that "E" response to NEGOTIATE_SSL_CODE means pre-7.0 server. These days, such a response is far more likely to signify a server-side problem, such as fork failure. Reporting "server does not support SSL" (in sslmode=require) could be quite misleading. But the results could be even worse in sslmode=prefer: if the problem was transient and the next connection attempt succeeds, we'll have silently fallen back to protocol version 2.0, possibly disabling features the user needs. Hence, it seems best to just eliminate the assumption that backing off to non-SSL/2.0 protocol is the way to recover from an "E" response, and instead treat the server error the same as we would in non-SSL cases. I tested this change against a pre-7.0 server, and found that there was a second logic bug in the "prefer" path: the test to decide whether to make a fallback connection attempt assumed that we must have opened conn-&gt;ssl, which in fact does not happen given an "E" response. After fixing that, the code does indeed connect successfully to pre-7.0, as long as you didn't set sslmode=require. (If you did, you get "Unsupported frontend protocol", which isn't completely off base given the server certainly doesn't support SSL.) Since there seems no reason to believe that pre-7.0 servers exist anymore in the wild, back-patch to all supported branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a49fbaaf8d461ff91912c30b3563d54649474c80">http://git.postgresql.org/pg/commitdiff/a49fbaaf8d461ff91912c30b3563d54649474c80</a></li>
+
+<li>Include $cc_string in the info reported by a configure run. Without this, it's not very easy to tell which compiler version a buildfarm animal is actually using at the moment. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2c5d6f1fb570db1a287532d3291d284710e756bf">http://git.postgresql.org/pg/commitdiff/2c5d6f1fb570db1a287532d3291d284710e756bf</a></li>
+
+<li>Be more user-friendly about unsupported cases for parallel pg_restore. If we are unable to do a parallel restore because the input file is stdin or is otherwise unseekable, we should complain and fail immediately, not after having done some of the restore. Complaining once per thread isn't so cool either, and the messages should be worded to make it clear this is an unsupported case not some weird race-condition bug. Per complaint from Lonni Friedman. Back-patch to 8.4, where parallel restore was introduced. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d6e7abe45a64378113c1c717a831b7aac9c451df">http://git.postgresql.org/pg/commitdiff/d6e7abe45a64378113c1c717a831b7aac9c451df</a></li>
+
+<li>Actually, all of parallel restore's limitations should be tested earlier. On closer inspection, whining in restore_toc_entries_parallel is really much too late for any user-facing error case. The right place to do it is at the start of RestoreArchive(), before we've done anything interesting (such as trying to DROP all the targets ...) Back-patch to 8.4, where parallel restore was introduced. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6e1f1fee97839599cf59f37f7051786a09f3b240">http://git.postgresql.org/pg/commitdiff/6e1f1fee97839599cf59f37f7051786a09f3b240</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Simplify errno generating in thread testing program. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e319ec4b7378e047e6bb92bd1bb7ff7d515d64a3">http://git.postgresql.org/pg/commitdiff/e319ec4b7378e047e6bb92bd1bb7ff7d515d64a3</a></li>
+
+<li>Properly call strerror() in thread test; add comments. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5473f283f501ff9f5e38e89d3a2e89f738a7e76f">http://git.postgresql.org/pg/commitdiff/5473f283f501ff9f5e38e89d3a2e89f738a7e76f</a></li>
+
+<li>Mark cpluspluscheck as excutable in git. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/034dda61ddf83a2f976271ecb0cc5ee0151a0639">http://git.postgresql.org/pg/commitdiff/034dda61ddf83a2f976271ecb0cc5ee0151a0639</a></li>
+
+<li>Add missing include so include file compiles cleanly on its own. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2ab15afcdd28ce3d52a9b01d41f67687ac7170d8">http://git.postgresql.org/pg/commitdiff/2ab15afcdd28ce3d52a9b01d41f67687ac7170d8</a></li>
+
+<li>In pg_upgrade, limit schema name filter to include toast tables. Bug introduced recently when trying to filter out temp tables. Backpatch to 9.0 and 9.1. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/eb013ede590dc62ca5b52144ff41e7fd6e4c2251">http://git.postgresql.org/pg/commitdiff/eb013ede590dc62ca5b52144ff41e7fd6e4c2251</a></li>
+
+<li>In pgrminclude, make skipped include names constent and skip files with #if/#ifdefs. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4399e817492222623c5e7541ca8488ae460c2d54">http://git.postgresql.org/pg/commitdiff/4399e817492222623c5e7541ca8488ae460c2d54</a></li>
+
+<li>In pgrminclude, add code to skip includes with a marker comment. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6f9afc351b81a46ce9dc0f48c8a4c0af3de924e9">http://git.postgresql.org/pg/commitdiff/6f9afc351b81a46ce9dc0f48c8a4c0af3de924e9</a></li>
+
+<li>Fix pgrminclude regex pattern. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/910725b49ddf5c827658717f458fb14d0044f251">http://git.postgresql.org/pg/commitdiff/910725b49ddf5c827658717f458fb14d0044f251</a></li>
+
+<li>do include files first 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/987214b4d5118a6adf51945d6e266bb464cdd3ec">http://git.postgresql.org/pg/commitdiff/987214b4d5118a6adf51945d6e266bb464cdd3ec</a></li>
+
+<li>Modify pgrminclude to include all code, even in #if blocks. Process .h include files before .c files. Mark some includes as needed to be ignored by pgrminclude. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f8e41abd8a11d562c3ed97427d6dec9b383f628a">http://git.postgresql.org/pg/commitdiff/f8e41abd8a11d562c3ed97427d6dec9b383f628a</a></li>
+
+<li>Cleanup of script. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c6e9da17a1820bde0c51c8a23b24dff6b8b96c6b">http://git.postgresql.org/pg/commitdiff/c6e9da17a1820bde0c51c8a23b24dff6b8b96c6b</a></li>
+
+<li>Add another marker. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/455d08b2855af0e7748bbc7602605ceb48492b3a">http://git.postgresql.org/pg/commitdiff/455d08b2855af0e7748bbc7602605ceb48492b3a</a></li>
+
+<li>Fix #if blocks. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ac5f11e0ec23e70a5749c5caee890f0b9addfc85">http://git.postgresql.org/pg/commitdiff/ac5f11e0ec23e70a5749c5caee890f0b9addfc85</a></li>
+
+<li>Add markers. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/48423d949f6bf8f21505a00571aa2f9559952016">http://git.postgresql.org/pg/commitdiff/48423d949f6bf8f21505a00571aa2f9559952016</a></li>
+
+<li>Add markers for skips. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f8fc37b337982fb97de9504f00381d1a54566c5f">http://git.postgresql.org/pg/commitdiff/f8fc37b337982fb97de9504f00381d1a54566c5f</a></li>
+
+<li>Add missing includes after pgrminclude run. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f261deb4b41e73f612705c0f852fdb132d74bf4e">http://git.postgresql.org/pg/commitdiff/f261deb4b41e73f612705c0f852fdb132d74bf4e</a></li>
+
+<li>Fix missing pgdefine detection in pgrminclude. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8b0f0822fd5111118a7d147344ee1253acb601f2">http://git.postgresql.org/pg/commitdiff/8b0f0822fd5111118a7d147344ee1253acb601f2</a></li>
+
+<li>Add postgres.h to *.c files for pg_upgrade, ltree, and btree_gist, and remove from local *.h files. Per suggestion from Alvaro Herrera. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f1312b5ed32630ae479e61e2a58cfac56ae46dd8">http://git.postgresql.org/pg/commitdiff/f1312b5ed32630ae479e61e2a58cfac56ae46dd8</a></li>
+
+<li>Change references of CVS to .git. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e7088713cd2bb6ce2ce630d07feb45b011308932">http://git.postgresql.org/pg/commitdiff/e7088713cd2bb6ce2ce630d07feb45b011308932</a></li>
+
+<li>Add another pgdefine path check, and a cvs-git change. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/68c019a5383bae89794b8a37001a7b8801e9a19b">http://git.postgresql.org/pg/commitdiff/68c019a5383bae89794b8a37001a7b8801e9a19b</a></li>
+
+<li>Add support for #elif to pgrminclude. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d010391ac8f706e17998671534ca1230f68d2f38">http://git.postgresql.org/pg/commitdiff/d010391ac8f706e17998671534ca1230f68d2f38</a></li>
+
+<li>Allow more include files to be compiled in their own by adding missing include dependencies. Modify pgcompinclude to skip a common fcinfo error. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4bd7333b14786a2d757195e907709d2aee116809">http://git.postgresql.org/pg/commitdiff/4bd7333b14786a2d757195e907709d2aee116809</a></li>
+
+<li>Modify pgrminclude -v to report include files that can't be compiled on their own. Avoid compile problems with defines being redefined after the removal of the #if blocks. Change script to use shell functions for simplicity. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/94db6664e2238c4f3879be67bcded085d5a1b872">http://git.postgresql.org/pg/commitdiff/94db6664e2238c4f3879be67bcded085d5a1b872</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Typo fix. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7488936478cbe2de19a94cb9fbde78e6cd6db947">http://git.postgresql.org/pg/commitdiff/7488936478cbe2de19a94cb9fbde78e6cd6db947</a></li>
+
+<li>Adjust CREATE DOMAIN example for standard_conforming_strings=on. Noted by Hitoshi Harada. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6fc726adac3001f8e1f3215ad4c874f58cd7f445">http://git.postgresql.org/pg/commitdiff/6fc726adac3001f8e1f3215ad4c874f58cd7f445</a></li>
+
+<li>Tweak postgresql.conf.sample's comments on listen_addresess. This makes it slightly more clear that '*' is not part of the default value, in case that wasn't obvious. As requested by Dougal Sutherland. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/48bc57657dc9a6e1091ee0dc837caccfb32a2eba">http://git.postgresql.org/pg/commitdiff/48bc57657dc9a6e1091ee0dc837caccfb32a2eba</a></li>
+
+<li>Properly quote SQL/MED generic options in pg_dump output. Shigeru Hanada 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0a803d65e4ae1f6817dcc196f7e59f36e438df52">http://git.postgresql.org/pg/commitdiff/0a803d65e4ae1f6817dcc196f7e59f36e438df52</a></li>
+
+<li>Change format of SQL/MED generic options in psql backslash commands. Rather than dumping out the raw array as PostgreSQL represents it internally, we now print it out in a format similar to the one in which the user input it, which seems a lot more user friendly. Shigeru Hanada 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0371d4d0632221957a60d4cdb70a898caf7ce6cf">http://git.postgresql.org/pg/commitdiff/0371d4d0632221957a60d4cdb70a898caf7ce6cf</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add recovery.conf to the index in the user manual. Fujii Masao 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6c6a4153338c2b2e33203bfb02a26ff8e3d2abd4">http://git.postgresql.org/pg/commitdiff/6c6a4153338c2b2e33203bfb02a26ff8e3d2abd4</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Use consistent format for reporting GetLastError(). Use something like "error code %lu" for reporting GetLastError() values on Windows. Previously, a mix of different wordings and formats were in use. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1af55e2751cdf3bf3bf25993c34be1fa9ad1e342">http://git.postgresql.org/pg/commitdiff/1af55e2751cdf3bf3bf25993c34be1fa9ad1e342</a></li>
+
+<li>Build src/ before contrib/ in make world. This fixes failures under parallel make when contrib modules use a generated backend header file (such as errcodes.h). 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4803de6f8932e2f2b96bb1243ba07a05cd2c3ae5">http://git.postgresql.org/pg/commitdiff/4803de6f8932e2f2b96bb1243ba07a05cd2c3ae5</a></li>
+
+<li>Spelling improvement 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3104cc89be65614ef3d0748e1cc19fb5394969e9">http://git.postgresql.org/pg/commitdiff/3104cc89be65614ef3d0748e1cc19fb5394969e9</a></li>
+
+<li>Implement the information schema with_hierarchy column. In PostgreSQL, this is included in the SELECT privilege, so show YES or NO depending on whether SELECT is granted. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fd5b397ca4963bf91a54678be51207bf827e512a">http://git.postgresql.org/pg/commitdiff/fd5b397ca4963bf91a54678be51207bf827e512a</a></li>
+
+<li>Document minimum required version of DocBook XSL stylesheets 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f44d275b6df71281a8a4068aa8f468f4d2b733d2">http://git.postgresql.org/pg/commitdiff/f44d275b6df71281a8a4068aa8f468f4d2b733d2</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Update FK alternative test output to new whitespace rules. With these changes, the isolation tests pass again on isolation levels serializable and repeatable read. Author: Kevin Grittner 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f18795e7b74c3c67fb65f253562f241f26f405c8">http://git.postgresql.org/pg/commitdiff/f18795e7b74c3c67fb65f253562f241f26f405c8</a></li>
+
+<li>Add expected isolationtester output when prepared xacts are disabled. This was deemed unnecessary initially but in later discussion it was agreed otherwise. Original file from Kevin Grittner, allegedly from Dan Ports. I had to clean up whitespace a bit per changes from Heikki Linnakangas. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/28190bacfd4657954c2cd594cc1c3e6b691538b9">http://git.postgresql.org/pg/commitdiff/28190bacfd4657954c2cd594cc1c3e6b691538b9</a></li>
+
+</ul>
+
+<p>Andrew Dunstan a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Port backup check on psql lexer to MSVC. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7327cb6420106d60d3a1a817648b145d602fbc52">http://git.postgresql.org/pg/commitdiff/7327cb6420106d60d3a1a817648b145d602fbc52</a></li>
+
+<li>Unbreak MSVC build broken by my port of flex check. flex puts lex.backup in the current working directory regardless of where the input and output are. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6a56a38f017718f23b001050e3a69662b83373da">http://git.postgresql.org/pg/commitdiff/6a56a38f017718f23b001050e3a69662b83373da</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Pavan Deolasse sent in another revisions of the patch to track the vacuum generation number in the line pointer itself.</li>
+
+<li>Alexander Korotkov and Heikki Linnakangas traded patches to speed up GiST index builds.</li>
+
+<li>David Gould and Robert Haas traded patches to diagnose and fix an issue with locking.</li>
+
+<li>Pavel Stehule sent in a patch for PL/pgsql to plan SQL statements early.</li>
+
+<li>Sushant Sinha sent in a patch to limit the number of words generated in a headline in text search.</li>
+
+<li>Jeff Davis sent in another revision of the patch to implement range types.</li>
+
+<li>Steve Singer sent in a patch to allow skipping WAL on COPY.</li>
+
+<li>Andrew Dunstan sent in a patch to implement a --no-table-date option for pg_dump. This is useful when only some tables' data is relevant to a dump.</li>
+
+<li>Andrew Dunstan sent in patches to allow pg_dump and pg_restore to omit or use exclusively post-data items.</li>
+
+<li>Dougal Sutherland sent in a patch to clarify postgresql.conf.sample.</li>
+
+<li>KaiGai Kohei sent in another revision of the patch intended to fix some leaks in views.</li>
+
+<li>Tomas Vondra sent in a patch to enable regular logging of checkpoint progress.</li>
+
+<li>KaiGai Kohei sent in another revision of the patch to allow access to the userspace access vector cache.</li>
+
+<li>Bruce Momjian sent in a patch intended to remove redundant #include references.</li>
+
+<li>Dean Rasheed sent in two patches intended to allow relative timestamps as input, e.g. 'tomorrow 10:30'. 'Christmas plus three fortnights' will need to wait for a later patch.</li>
+
+<li>Greg Smith sent in two more revisions of a patch to allow finer-grained tracking of vacuums.</li>
+
+<li>YAMAMOTO Takashi sent in a patch to remove tab characters from a README.</li>
+
+<li>KaiGai Kohei sent in a patch to enable object access hooks with arguments.</li>
+
+</ul>

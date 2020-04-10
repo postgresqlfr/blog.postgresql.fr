@@ -1,0 +1,224 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 25 janvier 2015"
+author: "NBougain"
+redirect_from: "index.php?post/2015-02-05-nouvelles-hebdomadaires-de-postgresql-25-janvier-2015 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>BRIN typo fix. Amit Langote 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9d54b93239040dab49111b6d7e9d6bfe9c71f419">http://git.postgresql.org/pg/commitdiff/9d54b93239040dab49111b6d7e9d6bfe9c71f419</a></li>
+
+<li>Typo fix. Etsuro Fujita 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1605291b6c14be92915948d17f5509191632c97f">http://git.postgresql.org/pg/commitdiff/1605291b6c14be92915948d17f5509191632c97f</a></li>
+
+<li>Use abbreviated keys for faster sorting of text datums. This commit extends the SortSupport infrastructure to allow operator classes the option to provide abbreviated representations of Datums; in the case of text, we abbreviate by taking the first few characters of the strxfrm() blob. If the abbreviated comparison is insufficent to resolve the comparison, we fall back on the normal comparator. This can be much faster than the old way of doing sorting if the first few bytes of the string are usually sufficient to resolve the comparison. There is the potential for a performance regression if all of the strings to be sorted are identical for the first 8+ characters and differ only in later positions; therefore, the SortSupport machinery now provides an infrastructure to abort the use of abbreviation if it appears that abbreviation is producing comparatively few distinct keys. HyperLogLog, a streaming cardinality estimator, is included in this commit and used to make that determination for text. Peter Geoghegan, reviewed by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4ea51cdfe85ceef8afabceb03c446574daa0ac23">http://git.postgresql.org/pg/commitdiff/4ea51cdfe85ceef8afabceb03c446574daa0ac23</a></li>
+
+<li>Add strxfrm_l to list of functions where Windows adds an underscore. Per buildfarm failure on bowerbird after last night's commit 4ea51cdfe85ceef8afabceb03c446574daa0ac23. Peter Geoghegan 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f32a1fa462c88676105445f26885d7a0656b6806">http://git.postgresql.org/pg/commitdiff/f32a1fa462c88676105445f26885d7a0656b6806</a></li>
+
+<li>Disable abbreviated keys on Windows. Most of the Windows buildfarm members (bowerbird, hamerkop, currawong, jacana, brolga) are unhappy with yesterday's abbreviated keys patch, although there are some (narwhal, frogmouth) that seem OK with it. Since there's no obvious pattern to explain why some are working and others are failing, just disable this across-the-board on Windows for now. This is a bit unfortunate since the optimization will be a big win in some cases, but we can't leave the buildfarm broken. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1be4eb1b2d436d1375899c74e4c74486890d8777">http://git.postgresql.org/pg/commitdiff/1be4eb1b2d436d1375899c74e4c74486890d8777</a></li>
+
+<li>Heavily refactor btsortsupport_worker. Prior to commit 4ea51cdfe85ceef8afabceb03c446574daa0ac23, this function only had one job, which was to decide whether we could avoid trampolining through the fmgr layer when performing sort comparisons. As of that commit, it has a second job, which is to decide whether we can use abbreviated keys. Unfortunately, those two tasks are somewhat intertwined in the existing coding, which is likely why neither Peter Geoghegan nor I noticed prior to commit that this calls pg_newlocale_from_collation() in cases where it didn't previously. The buildfarm noticed, though. To fix, rewrite the logic so that the decision as to which comparator to use is more cleanly separated from the decision about abbreviation. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b529b65d1bf8537ca7fa024760a9782d7c8b66e5">http://git.postgresql.org/pg/commitdiff/b529b65d1bf8537ca7fa024760a9782d7c8b66e5</a></li>
+
+<li>More fixes for abbreviated keys infrastructure. First, when LC_COLLATE = C, bttext_abbrev_convert should use memcpy() rather than strxfrm() to construct the abbreviated key, because the authoritative comparator uses memcpy(). If we do anything else here, we might get inconsistent answers, and the buildfarm says this risk is not theoretical. It should be faster this way, too. Second, while I'm looking at bttext_abbrev_convert, convert a needless use of goto into the loop it's trying to implement into an actual loop. Both of the above problems date to the original commit of abbreviated keys, commit 4ea51cdfe85ceef8afabceb03c446574daa0ac23. Third, fix a bogus assignment to tss-&gt;locale before tss is set up. That's a new goof in commit b529b65d1bf8537ca7fa024760a9782d7c8b66e5. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b181a91981203f6ec9403115a2917bd3f9473707">http://git.postgresql.org/pg/commitdiff/b181a91981203f6ec9403115a2917bd3f9473707</a></li>
+
+<li>Repair brain fade in commit b181a91981203f6ec9403115a2917bd3f9473707. The split between which things need to happen in the C-locale case and which needed to happen in the locale-aware case was a few bricks short of a load. Try to fix that. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d060e07fa919e0eb681e2fa2cfbe63d6c40eb2cf">http://git.postgresql.org/pg/commitdiff/d060e07fa919e0eb681e2fa2cfbe63d6c40eb2cf</a></li>
+
+<li>Add an explicit cast to Size to hyperloglog.c. MSVC generates a warning here; we hope this will make it happy. Report by Michael Paquier. Patch by David Rowley. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6a3c6ba0ba2bf86254d43b40569cdf3012cf12aa">http://git.postgresql.org/pg/commitdiff/6a3c6ba0ba2bf86254d43b40569cdf3012cf12aa</a></li>
+
+<li>Don't use abbreviated keys for the final merge pass. When we write tuples out to disk and read them back in, the abbreviated keys become non-abbreviated, because the readtup routines don't know anything about abbreviation. But without this fix, the rest of the code still thinks the abbreviation-aware compartor should be used, so chaos ensues. Report by Andrew Gierth; patch by Peter Geoghegan. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5cefbf5a6c4466ac6b1cc2a4316b4eba9108c802">http://git.postgresql.org/pg/commitdiff/5cefbf5a6c4466ac6b1cc2a4316b4eba9108c802</a></li>
+
+<li>Fix typos, update README. Peter Geoghegan 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d1747571b63444615730ca17474e9e89974c48ad">http://git.postgresql.org/pg/commitdiff/d1747571b63444615730ca17474e9e89974c48ad</a></li>
+
+</ul>
+
+<p>&Aacute;lvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>doc: Fix typos in make_timestamp{,tz} examples. Pointed out by Alan Mogi (bug #12571) 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/412f604adbf025618f1338ea6fed0330bc6a610d">http://git.postgresql.org/pg/commitdiff/412f604adbf025618f1338ea6fed0330bc6a610d</a></li>
+
+<li>reinit.h: Fix typo in identification comment. Author: Sawada Masahiko 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/813ffc0ef9f3c19dc01de19b1a718f2dda495f4f">http://git.postgresql.org/pg/commitdiff/813ffc0ef9f3c19dc01de19b1a718f2dda495f4f</a></li>
+
+<li>Tweak BRIN minmax operator class. In the union support proc, we were not checking the hasnulls flag of value A early enough, so it could be skipped if the "allnulls" flag in value B is set. Also, a check on the allnulls flag of value "B" was redundant, so remove it. Also change inet_minmax_ops to not be the default opclass for type inet, as a future inclusion operator class would be more useful and it's pretty difficult to change default opclass for a datatype later on. (There is no catversion bump for this catalog change; this shouldn't be a problem.) Extracted from a larger patch to add an "inclusion" operator class. Author: Emre Hasegeli 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/972bf7d6f13005dfe89ae3f8a3b937a4a0580c85">http://git.postgresql.org/pg/commitdiff/972bf7d6f13005dfe89ae3f8a3b937a4a0580c85</a></li>
+
+<li>vacuumdb: enable parallel mode. This mode allows vacuumdb to open several server connections to vacuum or analyze several tables simultaneously. Author: Dilip Kumar. Some reworking by &Aacute;lvaro Herrera Reviewed by: Jeff Janes, Amit Kapila, Magnus Hagander, Andres Freund 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a17923204736d8842eade3517d6a8ee81290fca4">http://git.postgresql.org/pg/commitdiff/a17923204736d8842eade3517d6a8ee81290fca4</a></li>
+
+<li>Fix assignment operator thinko. Pointed out by Michael Paquier 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f2789ab84ea0f731d97006c3ea91c656415c0fe5">http://git.postgresql.org/pg/commitdiff/f2789ab84ea0f731d97006c3ea91c656415c0fe5</a></li>
+
+</ul>
+
+<p>Andres Freund a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix various shortcomings of the new PrivateRefCount infrastructure. As noted by Tom Lane the improvements in 4b4b680c3d6 had the problem that in some situations we searched, entered and modified entries in the private refcount hash while holding a spinlock. I had tried to keep the logic entirely local to PinBuffer_Locked(), but that's not really possible given it's called with a spinlock held... Besides being disadvantageous from a performance point of view, this also has problems with error handling safety. If we failed inserting an entry into the hashtable due to an out of memory error, we'd error out with a held spinlock. Not good. Change the way private refcounts are manipulated: Before a buffer can be tracked an entry has to be reserved using ReservePrivateRefCountEntry(); then, if a entry is not found using GetPrivateRefCountEntry(), it can be entered with NewPrivateRefCountEntry(). Also take advantage of the fact that PinBuffer_Locked() currently is never called for buffers that already have been pinned by the current backend and don't search the private refcount entries for preexisting local pins. That results in a small, but measurable, performance improvement. Additionally make ReleaseBuffer() always call UnpinBuffer() for shared buffers. That avoids duplicating work in an eventual UnpinBuffer() call that already has been done in ReleaseBuffer() and also saves some code. Per discussion with Tom Lane. Discussion: 15028.1418772313@sss.pgh.pa.us 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2d115e47c861878669ba0814b3d97a4e4c347e8b">http://git.postgresql.org/pg/commitdiff/2d115e47c861878669ba0814b3d97a4e4c347e8b</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Adjust "pgstat wait timeout" message to be a translatable LOG message. Per discussion, change the log level of this message to be LOG not WARNING. The main point of this change is to avoid causing buildfarm run failures when the stats collector is exceptionally slow to respond, which it not infrequently is on some of the smaller/slower buildfarm members. This change does lose notice to an interactive user when his stats query is looking at out-of-date stats, but the majority opinion (not necessarily that of yours truly) is that WARNING messages would probably not get noticed anyway on heavily loaded production systems. A LOG message at least ensures that the problem is recorded somewhere where bulk auditing for the issue is possible. Also, instead of an untranslated "pgstat wait timeout" message, provide a translatable and hopefully more understandable message "using stale statistics instead of current ones because stats collector is not responding". The original text was written hastily under the assumption that it would never really happen in practice, which we now know to be unduly optimistic. Back-patch to all active branches, since we've seen the buildfarm issue in all branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/75b48e1fff8a4dedd3ddd7b76f6360b5cc9bb741">http://git.postgresql.org/pg/commitdiff/75b48e1fff8a4dedd3ddd7b76f6360b5cc9bb741</a></li>
+
+<li>In pg_regress, remove the temporary installation upon successful exit. This results in a very substantial reduction in disk space usage during "make check-world", since that sequence involves creation of numerous temporary installations. It should also help a bit in the buildfarm, even though the buildfarm script doesn't create as many temp installations, because the current script misses deleting some of them; and anyway it seems better to do this once in one place rather than expecting that script to get it right every time. In 9.4 and HEAD, also undo the unwise choice in commit b1aebbb6a86e96d7 to report strerror(errno) after a rmtree() failure. rmtree has already reported that, possibly for multiple failures with distinct errnos; and what's more, by the time it returns there is no good reason to assume that errno still reflects the last reportable error. So reporting errno here is at best redundant and at worst badly misleading. Back-patch to all supported branches, so that future revisions of the buildfarm script can rely on this behavior. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/aa719391d5537d30068109e1f96991d0e2c7dfc5">http://git.postgresql.org/pg/commitdiff/aa719391d5537d30068109e1f96991d0e2c7dfc5</a></li>
+
+<li>Prevent duplicate escape-string warnings when using pg_stat_statements. contrib/pg_stat_statements will sometimes run the core lexer a second time on submitted statements. Formerly, if you had standard_conforming_strings turned off, this led to sometimes getting two copies of any warnings enabled by escape_string_warning. While this is probably no longer a big deal in the field, it's a pain for regression testing. To fix, change the lexer so it doesn't consult the escape_string_warning GUC variable directly, but looks at a copy in the core_yy_extra_type state struct. Then, pg_stat_statements can change that copy to disable warnings while it's redoing the lexing. It seemed like a good idea to make this happen for all three of the GUCs consulted by the lexer, not just escape_string_warning. There's not an immediate use-case for callers to adjust the other two AFAIK, but making it possible is easy enough and seems like good future-proofing. Arguably this is a bug fix, but there doesn't seem to be enough interest to justify a back-patch. We'd not be able to back-patch exactly as-is anyway, for fear of breaking ABI compatibility of the struct. (We could perhaps back-patch the addition of only escape_string_warning by adding it at the end of the struct, where there's currently alignment padding space.) 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/eb213acfe2a51ab3dc6d9bbe02d5d8a903366779">http://git.postgresql.org/pg/commitdiff/eb213acfe2a51ab3dc6d9bbe02d5d8a903366779</a></li>
+
+<li>Remove no-longer-referenced src/port/gethostname.c. This file hasn't been part of any build since 2005, and even before that wasn't used unless you configured --with-krb4 (and had a machine without gethostname(2), obviously). What's more, we haven't actually called gethostname anywhere since then, either (except in thread_test.c, whose testing of this function is probably pointless). So we don't need it. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9222cd84b0f227287f65df395d52dc7973a62d29">http://git.postgresql.org/pg/commitdiff/9222cd84b0f227287f65df395d52dc7973a62d29</a></li>
+
+<li>Replace a bunch more uses of strncpy() with safer coding. strncpy() has a well-deserved reputation for being unsafe, so make an effort to get rid of nearly all occurrences in HEAD. A large fraction of the remaining uses were passing length less than or equal to the known strlen() of the source, in which case no null-padding can occur and the behavior is equivalent to memcpy(), though doubtless slower and certainly harder to reason about. So just use memcpy() in these cases. In other cases, use either StrNCpy() or strlcpy() as appropriate (depending on whether padding to the full length of the destination buffer seems useful). I left a few strncpy() calls alone in the src/timezone/ code, to keep it in sync with upstream (the IANA tzcode distribution). There are also a few such calls in ecpg that could possibly do with more analysis. AFAICT, none of these changes are more than cosmetic, except for the four occurrences in fe-secure-openssl.c, which are in fact buggy: an overlength source leads to a non-null-terminated destination buffer and ensuing misbehavior. These don't seem like security issues, first because no stack clobber is possible and second because if your values of sslcert etc are coming from untrusted sources then you've got problems way worse than this. Still, it's undesirable to have unpredictable behavior for overlength inputs, so back-patch those four changes to all active branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/586dd5d6a5d59e406bc8032bb52625ffb904311c">http://git.postgresql.org/pg/commitdiff/586dd5d6a5d59e406bc8032bb52625ffb904311c</a></li>
+
+<li>Fix unsafe coding in ReorderBufferCommit(). "iterstate" must be marked volatile since it's changed inside the PG_TRY block and then used in the PG_CATCH stanza. Noted by Mark Wilding of Salesforce. (We really need to see if we can't get the C compiler to warn about this.) Also, reset iterstate to NULL after the mainline ReorderBufferIterTXNFinish call, to ensure the PG_CATCH block doesn't try to do that a second time. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f8a4dd2e141a12e349882edecc683504acb82ec8">http://git.postgresql.org/pg/commitdiff/f8a4dd2e141a12e349882edecc683504acb82ec8</a></li>
+
+<li>Clean up some mess in row-security patches. Fix unsafe coding around PG_TRY in RelationBuildRowSecurity: can't change a variable inside PG_TRY and then use it in PG_CATCH without marking it "volatile". In this case though it seems saner to avoid that by doing a single assignment before entering the TRY block. I started out just intending to fix that, but the more I looked at the row-security code the more distressed I got. This patch also fixes incorrect construction of the RowSecurityPolicy cache entries (there was not sufficient care taken to copy pass-by-ref data into the cache memory context) and a whole bunch of sloppiness around the definition and use of pg_policy.polcmd. You can't use nulls in that column because initdb will mark it NOT NULL --- and I see no particular reason why a null entry would be a good idea anyway, so changing initdb's behavior is not the right answer. The internal value of '\0' wouldn't be suitable in a "char" column either, so after a bit of thought I settled on using '*' to represent ALL. Chasing those changes down also revealed that somebody wasn't paying attention to what the underlying values of ACL_UPDATE_CHR etc really were, and there was a great deal of lackadaiscalness in the catalogs.sgml documentation for pg_policy and pg_policies too. This doesn't pretend to be a complete code review for the row-security stuff, it just fixes the things that were in my face while dealing with the bugs in RelationBuildRowSecurity. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fd496129d160950ed681c1150ea8f627b292c511">http://git.postgresql.org/pg/commitdiff/fd496129d160950ed681c1150ea8f627b292c511</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>tools/ccsym: update for modern versions of gcc. This dumps the predefined preprocessor macros 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f259e71dbe98f653182f0c710143487a0188fbc5">http://git.postgresql.org/pg/commitdiff/f259e71dbe98f653182f0c710143487a0188fbc5</a></li>
+
+<li>djust ACL owners for REASSIGN and ALTER OWNER TO. When REASSIGN and ALTER OWNER TO are used, both the object owner and ACL list should be changed from the old owner to the new owner. This patch fixes types, foreign data wrappers, and foreign servers to change their ACL list properly; they already changed owners properly. BACKWARD INCOMPATIBILITY? Report by Alexey Bashtanov 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/59367fdf97cc1875b053ebf87cd1e071dc7f3640">http://git.postgresql.org/pg/commitdiff/59367fdf97cc1875b053ebf87cd1e071dc7f3640</a></li>
+
+<li>docs: update libpq's PQputCopyData and PQputCopyEnd. Clarify the meaning of libpq return values for PQputCopyData and PQputCopyEnd, particularly in non-blocking mode. Report by Robert Haas 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b04d69161354f7cfc3d8153b67145dbebc4a4698">http://git.postgresql.org/pg/commitdiff/b04d69161354f7cfc3d8153b67145dbebc4a4698</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix whitespace 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f5f2c2de163352849879fd40e9793a0195fd6594">http://git.postgresql.org/pg/commitdiff/f5f2c2de163352849879fd40e9793a0195fd6594</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>No one was disappointed this week</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Etsuro Fujita sent in another revision of a patch to fix some odd behavior in EvalQualPlan in the PostgreSQL FDW.</li>
+
+<li>Pavel Stehule sent in another revision of a patch to disallow the deprecated =&gt; operator.</li>
+
+<li>Michael Paquier sent in a patch to install shared libraries in bin and lib with MSVC.</li>
+
+<li>Dean Rasheed sent in two revisions of a patch to make RLS checks run before attempting to insert/update any data rather than afterwards.</li>
+
+<li>Michael Paquier sent in two more revisions of a patch to add recovery_timeout option to control timeout of restore_command nonzero status code.</li>
+
+<li>Michael Paquier sent in a patch to remove some useless checks for NULL pointers.</li>
+
+<li>Stephen Frost sent in four more revisions of a patch to fix a column-privilege leak in error-message paths.</li>
+
+<li>Gilles Darold sent in another revision of a patch to fix a bug in pg_dump which gets table dependencies in extensions wrong.</li>
+
+<li>Andrew (RhodiumToad) Gierth sent in another revision of a patch to implement GROUPING SETS.</li>
+
+<li>Kyotaro HORIGUCHI sent in two more revisions of a patch to implement asynchronous execution of postgres_fdw.</li>
+
+<li>Peter Geoghegan sent in a patch to fix the spill-to-disk behavior for abbreviated keys.</li>
+
+<li>Amit Kapila sent in two more revisions of a patch to implement parallel sequential scan.</li>
+
+<li>Pavel Stehule sent in two more revisions of a patch to implement array_position().</li>
+
+<li>Michael Paquier sent in a patch to clean up the tablefunc contrib extension.</li>
+
+<li>Kyotaro HORIGUCHI sent in a PoC patch to implement limiting FETCH in CURSORs by the number of bytes.</li>
+
+<li>Robert Haas sent in a patch to fix a collate failure reported by Kevin Grittner.</li>
+
+<li>Pavel Stehule sent in another revision of a patch to implement assert in PL/pgsql.</li>
+
+<li>Andreas Karlsson sent in two more revisions of a patch to reduce the lock strength of trigger and foreign key DDL.</li>
+
+<li>Petr (PJMODOS) Jelinek sent in another revision of a patch to implemetn TABLESAMPLE.</li>
+
+<li>Petr (PJMODOS) Jelinek sent in another revision of a patch to implement a sequence access method.</li>
+
+<li>Andreas Karlsson sent in another revision of a patch to use 128-bit integers for sum, avg and statistics aggregates.</li>
+
+<li>Peter Geoghegan sent in a patch to fix some minor issues with code comments related to abbreviated keys.</li>
+
+<li>Bruce Momjian sent in two revisions of a patch to recommend using wal_log_hints to make hint bits on the standby match the master for pg_upgrade in the rsync case.</li>
+
+<li>&Aacute;lvaro Herrera sent in another revision of a patch to track TRUNCATE via pgstat.</li>
+
+<li>Tomas Vondra sent in another revision of a patch to implement multivariate statistics.</li>
+
+<li>Pavel Stehule sent in another revision of a patch to implement row_to_array.</li>
+
+</ul>

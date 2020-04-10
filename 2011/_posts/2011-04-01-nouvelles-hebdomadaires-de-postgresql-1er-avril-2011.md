@@ -1,0 +1,154 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 1er avril 2011"
+author: "NBougain"
+redirect_from: "index.php?post/2011-04-01-nouvelles-hebdomadaires-de-postgresql-1er-avril-2011 "
+---
+
+
+
+<p><strong>Revues de code</strong></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Larry Ellison a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Remove NSA back doors 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3858f62230ac3c915f300c664312c63f">http://git.postgresql.org/pg/commitdiff/3858f62230ac3c915f300c664312c63f</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add missing #include 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e5948e3504c72fb2b8b32af26bfbb016e7c71bf6">http://git.postgresql.org/pg/commitdiff/e5948e3504c72fb2b8b32af26bfbb016e7c71bf6</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Mark up release notes using &lt;link&gt;. Unlike &lt;xref&gt;, this actually works. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7c7fd882a5275bf40cd5ac72c6118916f7802aa4">http://git.postgresql.org/pg/commitdiff/7c7fd882a5275bf40cd5ac72c6118916f7802aa4</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add 9.1 release note link for synchronous replication. We already had links to the GUC variables that control it. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5c22c0eda14594b5962aed7165a012067b33ab7d">http://git.postgresql.org/pg/commitdiff/5c22c0eda14594b5962aed7165a012067b33ab7d</a></li>
+
+<li>In pg_upgrade, add C comment about how autovacuum is disabled. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d67b0bf471ba4e88aa3ed50871924efc91d7a27e">http://git.postgresql.org/pg/commitdiff/d67b0bf471ba4e88aa3ed50871924efc91d7a27e</a></li>
+
+<li>Expand comment on how pg_upgrade is turning off autovacuum. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d609b08ead450d78d4a567c48111aca6857ec59c">http://git.postgresql.org/pg/commitdiff/d609b08ead450d78d4a567c48111aca6857ec59c</a></li>
+
+<li>Mention pg_upgrade sets autovacuum_freeze_max_age to maximum. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/da3418cea9bd10e9ea3489b42f6278772942e745">http://git.postgresql.org/pg/commitdiff/da3418cea9bd10e9ea3489b42f6278772942e745</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add maintainer-check target. This can do various source code checks that are not appropriate for either the build or the regression tests. Currently: duplicate_oids, SGML syntax and tabs check, NLS syntax check. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6c0dfc035670240cddf0092a4aa22e5815b6583d">http://git.postgresql.org/pg/commitdiff/6c0dfc035670240cddf0092a4aa22e5815b6583d</a></li>
+
+<li>Make duplicate_oids return nonzero exit status if duplicates were found. Automatic detection of errors is easier that way. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/aa6fdd186cf2c29e04d3cc8ca19783fb904a5a33">http://git.postgresql.org/pg/commitdiff/aa6fdd186cf2c29e04d3cc8ca19783fb904a5a33</a></li>
+
+<li>Update SQL features list. Feature F692 "Extended collation support" is now also supported. This refers to allowing the COLLATE clause anywhere in a column or domain definition instead of just directly after the type. Also correct the name of the feature in accordance with the latest SQL standard. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f564e65cda32fd14f6f7cdd85d116c421af731f2">http://git.postgresql.org/pg/commitdiff/f564e65cda32fd14f6f7cdd85d116c421af731f2</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Adjust error message, now that we expect other message types than connection close at this point. Fix PQsetnonblocking() comment. Fujii Masao 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bc03c5937d103952ef4f40a3fa4514c154538d25">http://git.postgresql.org/pg/commitdiff/bc03c5937d103952ef4f40a3fa4514c154538d25</a></li>
+
+<li>Automatically terminate replication connections that are idle for more than replication_timeout (a new GUC) milliseconds. The TCP timeout is often too long, you want the master to notice a dead connection much sooner. People complained about that in 9.0 too, but with synchronous replication it's even more important to notice dead connections promptly. Fujii Masao and Heikki Linnakangas 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/754baa21f723255272c24dc5f9ab456858e361e3">http://git.postgresql.org/pg/commitdiff/754baa21f723255272c24dc5f9ab456858e361e3</a></li>
+
+<li>Check that we've reached end-of-backup also when we're not performing archive recovery. It's possible to restore an online backup without recovery.conf, by simply copying all the necessary WAL files to pg_xlog. "pg_basebackup -x" does that too. That's the use case where this cross-check is useful. Backpatch to 9.0. We used to do this in earlier versins, but in 9.0 the code was inadvertently changed so that the check is only performed after archive recovery. Fujii Masao. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/acf47401321ce55f06026a2f5d5512b404da3e55">http://git.postgresql.org/pg/commitdiff/acf47401321ce55f06026a2f5d5512b404da3e55</a></li>
+
+<li>Improve error message when WAL ends before reaching end of online backup. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1f0bab8494f7734e26b76fe34599c7763c8753a1">http://git.postgresql.org/pg/commitdiff/1f0bab8494f7734e26b76fe34599c7763c8753a1</a></li>
+
+<li>Reword the phrase on zero replication_timeout in the docs. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/647f8b3dbaa68662f54aa762e9467874282c563d">http://git.postgresql.org/pg/commitdiff/647f8b3dbaa68662f54aa762e9467874282c563d</a></li>
+
+<li>Don't leak the temporary PLyProcedure struct we create for inline plpython blocks. Investigation by Jan Urba&#324;ski, though I didn't use his patch. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ec7626504f0fc8cca46d0f2a460e4b76177f79b3">http://git.postgresql.org/pg/commitdiff/ec7626504f0fc8cca46d0f2a460e4b76177f79b3</a></li>
+
+<li>Increase SHMEM_INDEX_SIZE from 32 to 64. We're currently at 40 entries in ShmemIndex, so 64 leaves some headroom. Kevin Grittner 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c8ae318cbeceadac172aa6b9cfa43734b0836e5e">http://git.postgresql.org/pg/commitdiff/c8ae318cbeceadac172aa6b9cfa43734b0836e5e</a></li>
+
+<li>Fix a tiny race condition in predicate locking. Need to hold the lock while examining the head of predicate locks list. Also, fix the comment of RemoveTargetIfNoLongerUsed, it was neglected when we changed the way update chains are handled. Kevin Grittner. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/60b142b9a6f413a92665766a1f265b361f68c20b">http://git.postgresql.org/pg/commitdiff/60b142b9a6f413a92665766a1f265b361f68c20b</a></li>
+
+</ul>
+
+<p>Andrew Dunstan a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Attempt to unbreak windows builds broken by commit 754baa2. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/382fb6a08f524327b5e3084b3652fba2e12f1ba2">http://git.postgresql.org/pg/commitdiff/382fb6a08f524327b5e3084b3652fba2e12f1ba2</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Tous le monde en a pris pour son grade, cette semaine&nbsp;:-(</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Heikki Linnakangas sent in a variant patch to prevent memory leaks in DO blocks.</li>
+
+<li>Heikki Linnakangas sent in another revision of the patch to add a replication server timeout.</li>
+
+<li>Bernd Helmle sent in another revision of the patch to use a more reasonable size for \dt in psql.</li>
+
+<li>Simon Riggs sent in a patch which adds 5 more levels of durability to sync rep.</li>
+
+<li>Joseph Adams sent in five more revisions of the patch to add JSON as a data type.</li>
+
+</ul>

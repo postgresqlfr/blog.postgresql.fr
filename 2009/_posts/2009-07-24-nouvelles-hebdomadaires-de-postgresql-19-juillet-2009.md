@@ -1,0 +1,224 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 19 juillet 2009"
+author: "NBougain"
+redirect_from: "index.php?post/2009-07-24-nouvelles-hebdomadaires-de-postgresql-19-juillet-2009 "
+---
+
+
+
+<p><strong>Offres d'emplois autour de PostgreSQL en juillet</strong></p>
+
+<ul>
+
+<li><a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2009-07/threads.php">http://archives.postgresql.org/pgsql-jobs/2009-07/threads.php</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>L'"OpenSQL Camp" aura lieu les 22 &amp; 23 ao&ucirc;t &agrave; S<sup>t</sup> Augustin (All.), pr&egrave;s de Bonn et de Cologne. La date limite pour les propositions de conf&eacute;rences est le 19 juillet 2009&nbsp;: 
+
+<a target="_blank" href="http://opensqlcamp.org/Events/2009/Call_for_Participation">http://opensqlcamp.org/Events/2009/Call_for_Participation</a></li>
+
+<li>Le PUG allemand a obtenu un emplacement d&eacute;veloppeur au FrOSCon le dimanche 23 ao&ucirc;t 2009. L'appel &agrave; conf&eacute;rences est ouvert&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/573-Call-for-Papers-fuer-den-PostgreSQL-Devroom-auf-der-FrOSCon-2009.html">http://andreas.scherbaum.la/blog/archives/573-Call-for-Papers-fuer-den-PostgreSQL-Devroom-auf-der-FrOSCon-2009.html</a></li>
+
+<li>L'appel &agrave; conf&eacute;rences pour la "PyCon Argentina" est lanc&eacute; jusqu'&agrave; la date du 29 juin 2009, 23h59 ART [ndt: UTC-3 ?]. La conf&eacute;rence elle-m&ecirc;me aura lieu &agrave; Buenos Aires les 4 &amp; 5 septembre 2009&nbsp;: 
+
+<a target="_blank" href="http://ar.pycon.org/2009/rfp/">http://ar.pycon.org/2009/rfp/</a></li>
+
+<li>Andreas (ads) Scherbaum enseignera au centre pour adultes de Magdeburg (All.) du 7 au 11 septembre 2009 sur le sujet "PostgreSQL for Corporate Use". D&eacute;tails ci-dessous&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/574-PostgreSQL-als-Bildungsurlaub.html">http://andreas.scherbaum.la/blog/archives/574-PostgreSQL-als-Bildungsurlaub.html</a></li>
+
+<li>Il y aura une conf&eacute;rence &agrave; Athens (Georgie, &Eacute;tats-Unis) le 19 septembre 2009. L'appel aux conf&eacute;rences est ouvert&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org/2009/pgday/athens">http://www.postgresqlconference.org/2009/pgday/athens</a></li>
+
+<li>Une suite de conf&eacute;rences est organis&eacute;e &agrave; Seattle (&Eacute;tat de Washington, &Eacute;tats-Unis) du 16 au 18 octobre 2009. L'appel &agrave; conf&eacute;rences est ouvert&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org/2009/west">http://www.postgresqlconference.org/2009/west</a></li>
+
+<li>La "PGCon Brazil" prendra place &agrave; l'Unicamp de Campinas (&Eacute;tat de S&atilde;o Paulo) les 23 &amp; 24 octobre 2009. L'appel &agrave; conf&eacute;rences est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://pgcon.postgresql.org.br/2009/chamadas.en.php">http://pgcon.postgresql.org.br/2009/chamadas.en.php</a></li>
+
+<li>Le PGDay.EU 2009 est programm&eacute; pour les 6 &amp; 7 novembre 2009 &agrave; Telecom ParisTech [ndt: ENST ?]&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.eu/">http://www.pgday.eu/</a></li>
+
+<li>Vos propositions de conf&eacute;rences sont attendues pour le 10<sup>&egrave;me</sup> anniversaire du JPUG. Le rassemblement aura lieu les 20 &amp; 21 novembre 2009 &agrave; Tokyo, Japan&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2009-05/msg00018.php">http://archives.postgresql.org/pgsql-announce/2009-05/msg00018.php</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter et Josh Berkus. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org.</i></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Peter Eisentraut a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Update information schema to SQL:2008: Add yes_or_no domain for "boolean" data. Add new columns for VIEWS view. Slight section renumbering.</li>
+
+<li>Rearrangement of the HTML docs build rules. Set up proper makefile dependencies in the documentation build rules, especially around the HTML/index build. The problem we've had with all previous solutions is that we have used the same file name, such as HTML.index or bookindex.sgml, to mean different things at different stages of the build, and make can't distinguish that. The solution here is that the first jade run produces HTML.index, but does not require bookindex.sgml at all, and produces no other html output (the latter an idea from Alvaro). The second jade run includes bookindex.sgml, but does not recreate HTML.index. That way, when you change an sgml file, jade is run twice and at the end all dependencies are satisfied. Omitting the html output in the first stage also makes the full build a lot faster. When you run one of the print format targets, only the first jade run is run, then the print target-specific commands. If an HTML build has completed previously, the first jade run is skipped because the dependencies have already been satisfied. The draft and check targets for quick builds and syntax verification are still there.</li>
+
+<li>Make backend header files C++ safe. This alters various incidental uses of C++ key words to use other similar identifiers, so that a C++ compiler won't choke outright. You still (probably) need extern "C" { }; around the inclusion of backend headers. Based on a patch by Kurt Harriman. Also add a script cpluspluscheck to check for C++ compatibility in the future. As of right now, this passes without error for me.</li>
+
+</ul>
+
+<p>Bruce Momjian a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/contrib/vacuumlo/vacuumlo.c, vacuumlo query cleanups. No need for VACUUM ANAYZE of newly created/populated temp table, just use analyze. No need to apologize for using subquery in DELETE anymore.</li>
+
+</ul>
+
+<p>Tom Lane a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/backend/utils/cache/plancache.c, do a conditional SPI_push/SPI_pop when replanning a query in RevalidateCachedPlan. This is to avoid a "SPI_ERROR_CONNECT" failure when the planner calls a SPI-using function and we are already inside one. The alternative fix is to expect callers of RevalidateCachedPlan to do this, which seems likely to result in additional hard-to-detect bugs of omission. Per reports from Frank van Vugt and Marek Lewczuk. Back-patch to 8.3. It's much harder to trigger the bug in 8.3, due to a smaller set of cases in which plans can be invalidated, but it could happen. (I think perhaps only a SI reset event could make 8.3 fail here, but that's certainly within the realm of possibility.)</li>
+
+<li>Tweak the core scanner so that it can be used by plpgsql too. Changes: Pass in the keyword lookup array instead of having it be hardwired. (This incidentally allows elimination of some duplicate coding in ecpg.) Re-order the token declarations in gram.y so that non-keyword tokens have numbers that won't change when keywords are added or removed. Add ".." and ":=" to the set of tokens recognized by scan.l. (Since these combinations are nowhere legal in core SQL, this does not change anything except the precise wording of the error you get when you write this.)</li>
+
+<li>In pgsql/src/interfaces/ecpg/preproc/ecpg.tokens, remove duplicate definition of TYPECAST token. (Apparently, some but not all versions of Bison will warn about this.)</li>
+
+<li>Add erand48() to the set of functions supported by our src/port/ library, and extend configure to test for it properly instead of hard-wiring an assumption that everybody but Windows has the rand48 functions. (We do cheat to the extent of assuming that probing for erand48 will do for the entire rand48 family.) erand48() is unused as of this commit, but a followon patch will cause GEQO to depend on it. Andres Freund, additional hacking by Tom Lane.</li>
+
+<li>Make GEQO's planning deterministic by having it start from a predictable random number seed each time. This is how it used to work years ago, but we got rid of the seed reset because it was resetting the main random() sequence and thus having undesirable effects on the rest of the system. To fix, establish a private random number state for each execution of geqo(), and initialize the state using the new GUC variable geqo_seed. People who want to experiment with different random searches can do so by changing geqo_seed, but you'll always get the same plan for the same value of geqo_seed (if holding all other planner inputs constant, of course). The new state is kept in PlannerInfo by adding a "void *" field reserved for use by join_search hooks. Most of the rather bulky code changes in this commit are just arranging to pass PlannerInfo around to all the GEQO functions (many of which formerly didn't receive it). Andres Freund, with some editorialization by Tom Lane.</li>
+
+<li>Repair bug #4926 "too few pathkeys for mergeclauses". This example shows that the sanity checking I added to create_mergejoin_plan() in 8.3 was a few bricks shy of a load: the mergeclauses could reference pathkeys in a noncanonical order such as x,y,x, not only cases like x,x,y which is all that the code had allowed for. The odd cases only turn up when using redundant clauses in an outer join condition, which is why no one had noticed before.</li>
+
+<li>Fix error cleanup failure caused by 8.4 changes in plpgsql to try to avoid memory leakage in error recovery. We were calling FreeExprContext, and therefore invoking ExprContextCallback callbacks, in both normal and error exits from subtransactions. However this isn't very safe, as shown in recent trouble report from Frank van Vugt, in which releasing a tupledesc refcount failed. It's also unnecessary, since the resources that callbacks might wish to release should be cleaned up by other error recovery mechanisms (ie the resource owners). We only really want FreeExprContext to release memory attached to the exprcontext in the error-exit case. So, add a bool parameter to FreeExprContext to tell it not to call the callbacks. A more general solution would be to pass the isCommit bool parameter on to the callbacks, so they could do only safe things during error exit. But that would make the patch significantly more invasive and possibly break third-party code that registers ExprContextCallback callbacks. We might want to do that later in HEAD, but for now I'll just do what seems reasonable to back-patch.</li>
+
+<li>Fix a thinko in join_is_legal: when we decide we can implement a semijoin by unique-ifying the RHS and then inner-joining to some other relation, that is not grounds for violating the RHS of some other outer join. Noticed while regression-testing new GEQO code, which will blindly follow any path that join_is_legal says is legal, and then complain later if that leads to a dead end. I'm not certain that this can result in any visible failure in 8.4: the mistake may always be masked by the fact that subsequent attempts to join the rest of the RHS of the other join will fail. But I'm not certain it can't, either, and it's definitely not operating as intended. So back-patch. The added regression test depends on the new no-failures-allowed logic that I'm about to commit in GEQO, so no point back-patching that.</li>
+
+<li>Rewrite GEQO's gimme_tree function so that it always finds a legal join sequence, even when the input "tour" doesn't lead directly to such a sequence. The stack logic that was added in 2004 only supported cases where relations that had to be joined to each other (due to join order restrictions) were adjacent in the tour. However, relying on a random search to figure that out is tremendously inefficient in large join problems, and could even fail completely (leading to "failed to make a valid plan" errors) if random_init_pool ran out of patience. It seems better to make the tour-to-plan transformation a little bit fuzzier so that every tour can form a legal plan, even though this means that apparently different tours will sometimes yield the same plan. In the same vein, get rid of the logic that knew that tours (a,b,c,d,...) are the same as tours (b,a,c,d,...), and therefore insisted the latter are invalid. The chance of generating two tours that differ only in this way isn't that high, and throwing out 50% of possible tours to avoid such duplication seems more likely to waste valuable genetic- refinement generations than to do anything useful. This leaves us with no cases in which geqo_eval will deem a tour invalid, so get rid of assorted kluges that tried to deal with such cases, in particular the undocumented assumption that DBL_MAX is an impossible plan cost. This is all per testing of Robert Haas' lets-remove-the-collapse-limits patch. That idea has crashed and burned, at least for now, but we still got something useful out of it. It's possible we should back-patch this change, since the "failed to make a valid plan" error can happen in existing releases; but I'd rather not until it has gotten more testing.</li>
+
+<li>Teach simplify_boolean_equality to simplify the forms foo &lt;&gt; true and foo &lt;&gt; false, along with its previous duties of simplifying foo = true and foo = false. (All of these are equivalent to just foo or NOT foo as the case may be.) It's not clear how often this is really useful; but it costs almost nothing to do, and it seems some people think we should be smart about such cases. Per recent bug report.</li>
+
+<li>In pgsql/src/bin/psql/describe.c, remove unnecessary and version-sensitive dependence on the exact set of column names to be found in a sequence. Per gripe from Bruce Momjian.</li>
+
+</ul>
+
+<p>Heikki Linnakangas a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/contrib/pg_standby/Makefile, pg_standby doesn't need to be linked with libpq. Fujii Masao.</li>
+
+</ul>
+
+<p>Andrew Dunstan a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>DROP IF EXISTS for columns and constraints. Andres Freund.</li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Heikki Linnakangas sent in two revisions of a patch which helps set up index-only scans.</li>
+
+<li>Robert Haas sent in an updated patch for Hot Standby.</li>
+
+<li>Petr (PJMODOS) Jelinek sent in three revisions of a patch to add DefaultACLs 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/DefaultACL">http://wiki.postgresql.org/wiki/DefaultACL</a></li>
+
+<li>ITAGAKI Takahiro sent in two revisions of a patch to add FORCE QUOTE to COPY...CSV.</li>
+
+<li>KaiGai Kohei sent in three more revisions of his SE-PostgreSQL patch.</li>
+
+<li>Jeff Davis sent in another revision of his patch to make more generalized constraints.</li>
+
+<li>Andres Freund sent in a patch to refactor *_collapse_limit and geqo_threshold.</li>
+
+<li>Jaime Casanova sent in a revision of Taro (higepon) Minowa's patch to allow pg_dump* to dump comments on commposite-type and index columns.</li>
+
+<li>ITAGAKI Takahiro sent in an update for the sampling profiler patch.</li>
+
+<li>Tsutomu Yamada sent in two revisions of a patch to fix the ""could not reattach to shared memory" bug on Windows.</li>
+
+<li>Fujii Masao sent in two more revisions of the Synchronous Replication patch.</li>
+
+<li>Oleg Bartunov sent in a patch which adds prefix support for synonym dictionaries in full-text search.</li>
+
+<li>Oleg Bartunov sent in a patch to add filtering dictionaries and a new contrib module, unaccent, which removes accents, using same.</li>
+
+<li>Sergey V. Karpov sent in a patch which extends the functionality of dict_xsyn extended synonym dictionary.</li>
+
+<li>Fernando Ike de Oliveira sent in two revisions of a patch to add \dL for PL languages to psql.</li>
+
+<li>Zoltan Boszormenyi sent in another revision of his patch set to improve ECPG's Informix compatibility layer.</li>
+
+<li>Tom Lane sent in a WIP patch to make PL/pgsql use the core lexer.</li>
+
+<li>Caleb Welton sent in another revision of his patch to add bytea to PL/PythonU.</li>
+
+<li>Andrew (RhodiumToad) Gierth sent in another revision of the hstore patch with fixes and new tests for some edge case bugs.</li>
+
+<li>Kevin Grittner sent in a patch to revise parallel pg_restore's scheduling heuristic.</li>
+
+<li>Steve Prentice sent in another revision of the patch to make PL/pgsql treat any word following AS as a label.</li>
+
+<li>Petr (PJMODOS) Jelinek sent in two revisions of a patch to implement GRANT ON ALL IN schema.</li>
+
+<li>Richard Huxton sent in a patch to create a navigation menu for the documentation.</li>
+
+<li>Fujii Masao sent in another revision of the patch to multiplex SIGUSR1, which is infrastructure for the Synchronous Replication feature.</li>
+
+<li>Zoltan Boszormenyi sent in a patch to add struct support for SELECT INTO to ECPG.</li>
+
+<li>Peter Eisentraut sent in a patch to make PL/Python use errcontext() instead of passing the function names around to use in error messages.</li>
+
+<li>Alan Li sent in a patch to optimize MIN and MAX queries on partitioned tables.</li>
+
+<li>Andreas Wenk sent in a patch to include the \du+ option in \? output in psql.</li>
+
+<li>Bernd Helmle sent in a revision of Pavel Stehule's patch to allow mixed and named notation support for PL/pgsql functions.</li>
+
+<li>Dean Rasheed sent in another revision of the deferrable UNIQUE constraints patch.</li>
+
+<li>Jeremy Kerr sent in another revision of the patch to avoid manual shift-and-test logic in AllocSetFreeIndex.</li>
+
+<li>Andreas Freund sent in another revision of his patch to allow machine-readable EXPLAIN output.</li>
+
+<li>Andreas Freund sent in two more revisions of his generic EXPLAIN options patch.</li>
+
+</ul>

@@ -1,0 +1,244 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 3 avril 2011"
+author: "NBougain"
+redirect_from: "index.php?post/2011-04-06-nouvelles-hebdomadaires-de-postgresql-3-avril-2011 "
+---
+
+
+
+<p><strong>Revues de code</strong></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Get rid of links that don't work when building HISTORY. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a720c28f0af3185f7d40788a78867a36bff36bc7">http://git.postgresql.org/pg/commitdiff/a720c28f0af3185f7d40788a78867a36bff36bc7</a></li>
+
+<li>Prevent a rowtype from being included in itself. Eventually we might be able to allow that, but it's not clear how many places need to be fixed to prevent infinite recursion when there's a direct or indirect inclusion of a rowtype in itself. One such place is CheckAttributeType(), which will recurse to stack overflow in cases such as those exhibited in bug #5950 from Alex Perepelica. If we were sure it was the only such place, we could easily modify the code added by this patch to stop the recursion without a complaint ... but it probably isn't the only such place. Hence, throw error until such time as someone is excited enough about this type of usage to put work into making it safe. Back-patch as far as 8.3. 8.2 doesn't have the recursive call in CheckAttributeType in the first place, so I see no need to add code there in the absence of clear evidence of a problem elsewhere. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/eb51af71f241e8cb199790dee9ad246bb36b3287">http://git.postgresql.org/pg/commitdiff/eb51af71f241e8cb199790dee9ad246bb36b3287</a></li>
+
+<li>Fix typo in PQconnectStartParams(). This would lead to leaking the PGconn structure after an error detected by conninfo_array_parse(), as well as failing to return a useful error message in such cases. Backpatch to 9.0 where the error was introduced. Joseph Adams 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d518d6a168797c2e3b9cf03a3b5cfa335be735bb">http://git.postgresql.org/pg/commitdiff/d518d6a168797c2e3b9cf03a3b5cfa335be735bb</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add missing #include 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e5948e3504c72fb2b8b32af26bfbb016e7c71bf6">http://git.postgresql.org/pg/commitdiff/e5948e3504c72fb2b8b32af26bfbb016e7c71bf6</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Mark up release notes using &lt;link&gt;. Unlike &lt;xref&gt;, this actually works. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7c7fd882a5275bf40cd5ac72c6118916f7802aa4">http://git.postgresql.org/pg/commitdiff/7c7fd882a5275bf40cd5ac72c6118916f7802aa4</a></li>
+
+<li>Fix compiler warning. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7fcc75dd26ff0fee0b02f1b8b4215c298ca974ca">http://git.postgresql.org/pg/commitdiff/7fcc75dd26ff0fee0b02f1b8b4215c298ca974ca</a></li>
+
+<li>Support comments on FOREIGN DATA WRAPPER and SERVER objects. This mostly involves making it work with the objectaddress.c framework, which does most of the heavy lifting. In that vein, change GetForeignDataWrapperOidByName to get_foreign_data_wrapper_oid and GetForeignServerOidByName to get_foreign_server_oid, to match the pattern we use for other object types. Robert Haas and Shigeru Hanada 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/50533a6dc515cc3182f52838275c9d2a1f587604">http://git.postgresql.org/pg/commitdiff/50533a6dc515cc3182f52838275c9d2a1f587604</a></li>
+
+<li>pg_dump support for comments on FOREIGN DATA WRAPPER and SERVER objects. Shigeru Hanada, with some corrections. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/dd095b623ec4b41e8c5728f9c576375985554fd3">http://git.postgresql.org/pg/commitdiff/dd095b623ec4b41e8c5728f9c576375985554fd3</a></li>
+
+<li>Tab completion for COMMENT ON FOREIGN DATA WRAPPER / SERVER. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e49ad77ff958b380ea6fa08c72e2dce97ac56c6b">http://git.postgresql.org/pg/commitdiff/e49ad77ff958b380ea6fa08c72e2dce97ac56c6b</a></li>
+
+<li>Avoid possible hang during smart shutdown. If a smart shutdown occurs just as a child is starting up, and the child subsequently becomes a walsender, there is a race condition: the postmaster might count the exstant backends, determine that there is one normal backend, and wait for it to die off. Had the walsender transition already occurred before the postmaster counted, it would have proceeded with the shutdown. To fix this, have each child that transforms into a walsender kick the postmaster just after doing so, so that the state machine is certain to advance. Fujii Masao 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/38b27792eae99f5b4db2411f5c57ef70f850df5f">http://git.postgresql.org/pg/commitdiff/38b27792eae99f5b4db2411f5c57ef70f850df5f</a></li>
+
+<li>Remove mention of using "man" from the tutorial. This isn't applicable on Windows, and the internal link to the psql documentation should be more than sufficient. Susanne Ebrecht 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1981fb73136433579cae9a34fb3a12f1fcc519fc">http://git.postgresql.org/pg/commitdiff/1981fb73136433579cae9a34fb3a12f1fcc519fc</a></li>
+
+<li>Improve documentation on the range of the numeric data type. Gianni Ciolli, reviewed by Noah Misch. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cabf5d84b6d1a92ab97492d7e3d650548a9992cd">http://git.postgresql.org/pg/commitdiff/cabf5d84b6d1a92ab97492d7e3d650548a9992cd</a></li>
+
+<li>Rearrange "add column" logic to merge columns at exec time. The previous coding set attinhcount too high in some cases, resulting in an undumpable, undroppable column. Per bug #5856, reported by Naoya Anzai. See also commit 31b6fc06d83c6de3644c8f2921eb7de0eb92fac3, which fixes a similar bug in ALTER TABLE .. ADD CONSTRAINT. Patch by Noah Misch. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6c5723998594dffa5d47c3cf8c96ccf89c033aae">http://git.postgresql.org/pg/commitdiff/6c5723998594dffa5d47c3cf8c96ccf89c033aae</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add 9.1 release note link for synchronous replication. We already had links to the GUC variables that control it. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5c22c0eda14594b5962aed7165a012067b33ab7d">http://git.postgresql.org/pg/commitdiff/5c22c0eda14594b5962aed7165a012067b33ab7d</a></li>
+
+<li>In pg_upgrade, add C comment about how autovacuum is disabled. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d67b0bf471ba4e88aa3ed50871924efc91d7a27e">http://git.postgresql.org/pg/commitdiff/d67b0bf471ba4e88aa3ed50871924efc91d7a27e</a></li>
+
+<li>Expand comment on how pg_upgrade is turning off autovacuum. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d609b08ead450d78d4a567c48111aca6857ec59c">http://git.postgresql.org/pg/commitdiff/d609b08ead450d78d4a567c48111aca6857ec59c</a></li>
+
+<li>Mention pg_upgrade sets autovacuum_freeze_max_age to maximum. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/da3418cea9bd10e9ea3489b42f6278772942e745">http://git.postgresql.org/pg/commitdiff/da3418cea9bd10e9ea3489b42f6278772942e745</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Add maintainer-check target. This can do various source code checks that are not appropriate for either the build or the regression tests. Currently: duplicate_oids, SGML syntax and tabs check, NLS syntax check. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6c0dfc035670240cddf0092a4aa22e5815b6583d">http://git.postgresql.org/pg/commitdiff/6c0dfc035670240cddf0092a4aa22e5815b6583d</a></li>
+
+<li>Make duplicate_oids return nonzero exit status if duplicates were found. Automatic detection of errors is easier that way. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/aa6fdd186cf2c29e04d3cc8ca19783fb904a5a33">http://git.postgresql.org/pg/commitdiff/aa6fdd186cf2c29e04d3cc8ca19783fb904a5a33</a></li>
+
+<li>Update SQL features list. Feature F692 "Extended collation support" is now also supported. This refers to allowing the COLLATE clause anywhere in a column or domain definition instead of just directly after the type. Also correct the name of the feature in accordance with the latest SQL standard. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f564e65cda32fd14f6f7cdd85d116c421af731f2">http://git.postgresql.org/pg/commitdiff/f564e65cda32fd14f6f7cdd85d116c421af731f2</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Adjust error message, now that we expect other message types than connection close at this point. Fix PQsetnonblocking() comment. Fujii Masao 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bc03c5937d103952ef4f40a3fa4514c154538d25">http://git.postgresql.org/pg/commitdiff/bc03c5937d103952ef4f40a3fa4514c154538d25</a></li>
+
+<li>Automatically terminate replication connections that are idle for more than replication_timeout (a new GUC) milliseconds. The TCP timeout is often too long, you want the master to notice a dead connection much sooner. People complained about that in 9.0 too, but with synchronous replication it's even more important to notice dead connections promptly. Fujii Masao and Heikki Linnakangas 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/754baa21f723255272c24dc5f9ab456858e361e3">http://git.postgresql.org/pg/commitdiff/754baa21f723255272c24dc5f9ab456858e361e3</a></li>
+
+<li>Check that we've reached end-of-backup also when we're not performing archive recovery. It's possible to restore an online backup without recovery.conf, by simply copying all the necessary WAL files to pg_xlog. "pg_basebackup -x" does that too. That's the use case where this cross-check is useful. Backpatch to 9.0. We used to do this in earlier versins, but in 9.0 the code was inadvertently changed so that the check is only performed after archive recovery. Fujii Masao. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/acf47401321ce55f06026a2f5d5512b404da3e55">http://git.postgresql.org/pg/commitdiff/acf47401321ce55f06026a2f5d5512b404da3e55</a></li>
+
+<li>Improve error message when WAL ends before reaching end of online backup. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1f0bab8494f7734e26b76fe34599c7763c8753a1">http://git.postgresql.org/pg/commitdiff/1f0bab8494f7734e26b76fe34599c7763c8753a1</a></li>
+
+<li>Reword the phrase on zero replication_timeout in the docs. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/647f8b3dbaa68662f54aa762e9467874282c563d">http://git.postgresql.org/pg/commitdiff/647f8b3dbaa68662f54aa762e9467874282c563d</a></li>
+
+<li>Don't leak the temporary PLyProcedure struct we create for inline plpython blocks. Investigation by Jan Urba&#324;ski, though I didn't use his patch. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ec7626504f0fc8cca46d0f2a460e4b76177f79b3">http://git.postgresql.org/pg/commitdiff/ec7626504f0fc8cca46d0f2a460e4b76177f79b3</a></li>
+
+<li>Increase SHMEM_INDEX_SIZE from 32 to 64. We're currently at 40 entries in ShmemIndex, so 64 leaves some headroom. Kevin Grittner 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c8ae318cbeceadac172aa6b9cfa43734b0836e5e">http://git.postgresql.org/pg/commitdiff/c8ae318cbeceadac172aa6b9cfa43734b0836e5e</a></li>
+
+<li>Fix a tiny race condition in predicate locking. Need to hold the lock while examining the head of predicate locks list. Also, fix the comment of RemoveTargetIfNoLongerUsed, it was neglected when we changed the way update chains are handled. Kevin Grittner. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/60b142b9a6f413a92665766a1f265b361f68c20b">http://git.postgresql.org/pg/commitdiff/60b142b9a6f413a92665766a1f265b361f68c20b</a></li>
+
+<li>Fix two missing spaces in error messages. Josh Kupershmidt. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9d56886112d8307dcd28ce49048a770c5d26acf9">http://git.postgresql.org/pg/commitdiff/9d56886112d8307dcd28ce49048a770c5d26acf9</a></li>
+
+<li>Escape greater than and less than characters in docs. Susanne Ebrecht and me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d420ba2a2d4ea4831f89a3fd7ce86b05eff932ff">http://git.postgresql.org/pg/commitdiff/d420ba2a2d4ea4831f89a3fd7ce86b05eff932ff</a></li>
+
+</ul>
+
+<p>Andrew Dunstan a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Attempt to unbreak windows builds broken by commit 754baa2. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/382fb6a08f524327b5e3084b3652fba2e12f1ba2">http://git.postgresql.org/pg/commitdiff/382fb6a08f524327b5e3084b3652fba2e12f1ba2</a></li>
+
+</ul>
+
+<p>Magnus Hagander a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Avoid palloc before CurrentMemoryContext is set up on win32. Instead, write the unconverted output - it will be in the wrong encoding, but at least we don't crash. Rushabh Lathia 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5735efee15540765315aa8c1a230575e756037f7">http://git.postgresql.org/pg/commitdiff/5735efee15540765315aa8c1a230575e756037f7</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Heikki Linnakangas sent in a variant patch to prevent memory leaks in DO blocks.</li>
+
+<li>Heikki Linnakangas sent in another revision of the patch to add a replication server timeout.</li>
+
+<li>Bernd Helmle sent in another revision of the patch to use a more reasonable size for \dt in psql.</li>
+
+<li>Simon Riggs sent in a patch which adds 5 more levels of durability to sync rep.</li>
+
+<li>Joseph Adams sent in five more revisions of the patch to add JSON as a data type.</li>
+
+<li>Kevin Grittner sent in a patch to prevent large tables from breaking SSI by overflowing predicate lock hash buckets.</li>
+
+<li>Peter Eisentraut sent in a patch to fix complaints from gcc 4.6.</li>
+
+<li>Peter Eisentraut sent in a patch to fix a case where typed tables broke pg_upgrade.</li>
+
+<li>Robert Haas and Shigeru HANADA traded patches to allow commenting on SQL/MED objects.</li>
+
+<li>Peter Eisentraut sent in a patch to fix how exit_nicely() works.</li>
+
+<li>Radoslaw Smogura sent in another revision of the patch to add a second level buffer cache.</li>
+
+<li>Jan Wieck sent in a patch to fix an issue with autovacuum performance.</li>
+
+<li>Merlin Moncure sent in a patch to fix an issue with the hint bit cache.</li>
+
+<li>Alexey Klyukin sent in a patch to help build the infrastructure for a validator for configuration files.</li>
+
+<li>Bruce Momjian sent in a patch to adjust a comment in autovacuum.c.</li>
+
+<li>Joseph Adams sent in a patch to allow casting int2, int4 and int8 to money.</li>
+
+<li>Shigeru HANADA sent in two revisions of a patch to fix the foreign table docs.</li>
+
+<li>Brendan Jurd sent in a patch to rationalize parsing of pg_hba.conf.</li>
+
+<li>Rushabh Lathia sent in a patch to fix a crash on Windows.</li>
+
+<li>Dan Ports sent in a patch to display the pid of the holding transaction in SSI.</li>
+
+<li>Dan Ports sent in a patch to fix an issue in SSI where a lock could be taken but never cleared.</li>
+
+</ul>

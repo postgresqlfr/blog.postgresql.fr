@@ -1,0 +1,186 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 28 avril 2013"
+author: "NBougain"
+redirect_from: "index.php?post/2013-05-09-nouvelles-hebdomadaires-de-postgresql-28-avril-2013 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>9.3 release notes: update streaming replication speedups. Andres Freund 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/beaa823bea8663779b12ce896e40038dd4796eaa">http://git.postgresql.org/pg/commitdiff/beaa823bea8663779b12ce896e40038dd4796eaa</a></li>
+
+<li>9.3 release notes: apply fixes suggested by Alvaro Herrera 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4f8799a948a6b701e23de692237094c83146d3b6">http://git.postgresql.org/pg/commitdiff/4f8799a948a6b701e23de692237094c83146d3b6</a></li>
+
+<li>9.3 release notes: adjustments per Alvaro Herrera and Robert Haas 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e35388451bb7c32be2783d700bd8076e08514c2c">http://git.postgresql.org/pg/commitdiff/e35388451bb7c32be2783d700bd8076e08514c2c</a></li>
+
+<li>9.3 release notes: add diacritics. Alvaro Herrera 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/98a1e7a735886b38bb0cc3bac5e96cffbf245de1">http://git.postgresql.org/pg/commitdiff/98a1e7a735886b38bb0cc3bac5e96cffbf245de1</a></li>
+
+<li>9.3 release note updates from Dean Rasheed, Jov, Heikki Linnakangas, Erikjan Rijkers 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2d3edce6b32b6c9a37c14684d63e457f1bd5c55a">http://git.postgresql.org/pg/commitdiff/2d3edce6b32b6c9a37c14684d63e457f1bd5c55a</a></li>
+
+<li>9.3 release notes: adjustments per Alvaro 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/173c252bb2d9549fa091f606264e8da65672d5f4">http://git.postgresql.org/pg/commitdiff/173c252bb2d9549fa091f606264e8da65672d5f4</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Mention in docs that you can create SP-GiST indexes on range types. This is new in 9.3devel. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ae7363999ff36a6857b968ffee8487519273709b">http://git.postgresql.org/pg/commitdiff/ae7363999ff36a6857b968ffee8487519273709b</a></li>
+
+<li>Remove prototype for cube(text) function that doesn't exist anymore. Adrian Schreyer 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cc7b0c2553a69eee914783a1cf0f34a2cbbf9afe">http://git.postgresql.org/pg/commitdiff/cc7b0c2553a69eee914783a1cf0f34a2cbbf9afe</a></li>
+
+<li>Add missing #include. On non-Windows systems, sys/time.h was pulled in by portability/instr_time.h, which pulled in time.h. We certainly should include time.h directly, since we're using time(2), but the indirect include masked the problem on most platforms. Andres Freund 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0c1a160a68b89f5b2c31eac458ca2d62a622a524">http://git.postgresql.org/pg/commitdiff/0c1a160a68b89f5b2c31eac458ca2d62a622a524</a></li>
+
+<li>Fix typo in comment. Peter Geoghegan 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/447b3174f58be808e81408b2166b41d898292ab3">http://git.postgresql.org/pg/commitdiff/447b3174f58be808e81408b2166b41d898292ab3</a></li>
+
+</ul>
+
+<p>Simon Riggs a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Make fast promotion the default promotion mode. Continue to allow a request for synchronous checkpoints as a mechanism in case of problems. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2317a63328cd9d1c22d02218c6959f340b63d98f">http://git.postgresql.org/pg/commitdiff/2317a63328cd9d1c22d02218c6959f340b63d98f</a></li>
+
+</ul>
+
+<p>Kevin Grittner a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix assertion failure for REFRESH MATERIALIZED VIEW in PL. This was due to incomplete implementation of rowcount reporting for RMV, which was due to initial waffling on whether it should be provided. It seems unlikely to be a useful or universally available number as more sophisticated techniques for maintaining matviews are added, so remove the partial support rather than completing it. Per report of Jeevan Chalke, but with a different fix 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/63e20041a2b5f98fdfe6b32af9550ca54ff8649f">http://git.postgresql.org/pg/commitdiff/63e20041a2b5f98fdfe6b32af9550ca54ff8649f</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>PL/pgSQL doc: Add example for RETURN QUERY. Erwin Brandstetter and Pavel St&#283;hule 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4d67961110d17768021bac2c00fd395942d03170">http://git.postgresql.org/pg/commitdiff/4d67961110d17768021bac2c00fd395942d03170</a></li>
+
+<li>pg_basebackup: Add missing newlines at end of lines 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6cf84628342ca859a15c9b1576fdbebc3575a0d2">http://git.postgresql.org/pg/commitdiff/6cf84628342ca859a15c9b1576fdbebc3575a0d2</a></li>
+
+<li>initdb: Improve some messages 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4c0343d4af716813388a585390f5660c17a848f9">http://git.postgresql.org/pg/commitdiff/4c0343d4af716813388a585390f5660c17a848f9</a></li>
+
+<li>Update config.guess and config.sub 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b53b603c919dd37444da0f15e8867c707ce1a03a">http://git.postgresql.org/pg/commitdiff/b53b603c919dd37444da0f15e8867c707ce1a03a</a></li>
+
+<li>Improve message about failed transaction log archiving. The old phrasing appeared to imply that the failure was terminal. Improve that by indicating that archiving will be tried again later. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f5d576c6d278a61beec282b9b276a3a3cb2aec50">http://git.postgresql.org/pg/commitdiff/f5d576c6d278a61beec282b9b276a3a3cb2aec50</a></li>
+
+<li>pg_dump: Improve message formatting 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bbb4db4e04d4691d7bc42fa19995aee3e80fe2dc">http://git.postgresql.org/pg/commitdiff/bbb4db4e04d4691d7bc42fa19995aee3e80fe2dc</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Avoid deadlock between concurrent CREATE INDEX CONCURRENTLY commands. There was a high probability of two or more concurrent C.I.C. commands deadlocking just before completion, because each would wait for the others to release their reference snapshots. Fix by releasing the snapshot before waiting for other snapshots to go away. Per report from Paul Hinze. Back-patch to all active branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c3d09b3bd23f5f65b5eb8124a3c7592dad85a50c">http://git.postgresql.org/pg/commitdiff/c3d09b3bd23f5f65b5eb8124a3c7592dad85a50c</a></li>
+
+<li>Incidental cleanup of matviews code. Move checking for unscannable matviews into ExecOpenScanRelation, which is a better place for it first because the open relation is already available (saving a relcache lookup cycle), and second because this eliminates the problem of telling the difference between rangetable entries that will or will not be scanned by the query. In particular we can get rid of the not-terribly-well-thought-out-or-implemented isResultRel field that the initial matviews patch added to RangeTblEntry. Also get rid of entirely unnecessary scannability check in the rewriter, and a bogus decision about whether RefreshMatViewStmt requires a parse-time snapshot. catversion bump due to removal of a RangeTblEntry field, which changes stored rules. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5194024d72f33fb209e10f9ab0ada7cc67df45b7">http://git.postgresql.org/pg/commitdiff/5194024d72f33fb209e10f9ab0ada7cc67df45b7</a></li>
+
+<li>Fix collation assignment for aggregates with ORDER BY. ORDER BY expressions were being treated the same as regular aggregate arguments for purposes of collation determination, but really they should not affect the aggregate's collation at all; only collations of the aggregate's regular arguments should affect it. In many cases this mistake would lead to incorrectly throwing a "collation conflict" error; but in some cases the corrected code will silently assign a different collation to the aggregate than before, for example agg(foo ORDER BY bar COLLATE "x") which will now use foo's collation rather than "x" for the aggregate. Given this risk and the lack of field complaints about the issue, it doesn't seem prudent to back-patch. In passing, rearrange code in assign_collations_walker so that we don't need multiple copies of the standard logic for computing collation of a node with children. (Previously, CaseExpr duplicated the standard logic, and we would have needed a third copy for Aggref without this change.) Andrew Gierth and David Fetter 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/41a2760f611d1b3c1e67f755baf0a052b5cec9af">http://git.postgresql.org/pg/commitdiff/41a2760f611d1b3c1e67f755baf0a052b5cec9af</a></li>
+
+<li>Fix unsafe event-trigger coding in ProcessUtility(). We mustn't run any of the event-trigger support code when handling utility statements like START TRANSACTION or ABORT, because that code may need to refresh event-trigger cache data, which requires being inside a valid transaction. (This mistake explains the consistent build failures exhibited by the CLOBBER_CACHE_ALWAYS buildfarm members, as well as some irreproducible failures on other members.) The least messy fix seems to be to break standard_ProcessUtility into two functions, one that handles all the statements not supported by event triggers, and one that contains the event-trigger support code and handles the statements that are supported by event triggers. This change also fixes several inconsistencies, such as four cases where support had been installed for "ddl_event_start" but not "ddl_event_end" triggers, plus the fact that InvokeDDLCommandEventTriggersIfSupported() paid no mind to isCompleteQuery. Dimitri Fontaine and Tom Lane 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5525e6c40bbda351a19b48317eba0f79aa32e447">http://git.postgresql.org/pg/commitdiff/5525e6c40bbda351a19b48317eba0f79aa32e447</a></li>
+
+<li>Editorialize a bit on new ProcessUtility() API. Choose a saner ordering of parameters (adding a new input param after the output params seemed a bit random), update the function's header comment to match reality (cmon folks, is this really that hard?), get rid of useless and sloppily-defined distinction between PROCESS_UTILITY_SUBCOMMAND and PROCESS_UTILITY_GENERATED. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f8db76e875099e5e49f5cd729a673e84c0b0471b">http://git.postgresql.org/pg/commitdiff/f8db76e875099e5e49f5cd729a673e84c0b0471b</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>libpq: Fix a few bits that didn't get the memo about COPY BOTH. There's probably no real bug here at present, so not backpatching. But it seems good to make these bits consistent with the rest of libpq, so as to avoid future surprises. Patch by me. Review by Tom Lane. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5eb7c4d364c8733d20d7fc8a453a145ee6da10cf">http://git.postgresql.org/pg/commitdiff/5eb7c4d364c8733d20d7fc8a453a145ee6da10cf</a></li>
+
+</ul>
+
+<p>Joe Conway a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Ensure that user created rows in extension tables get dumped if the table is explicitly requested, either with a -t/--table switch of the table itself, or by -n/--schema switch of the schema containing the extension table. Patch reviewed by Vibhor Kumar and Dimitri Fontaine. Backpatched to 9.1 when the extension management facility was added. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b42ea7981ce1e7484951a22662937541066d8647">http://git.postgresql.org/pg/commitdiff/b42ea7981ce1e7484951a22662937541066d8647</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Ashutosh Bapat's patch to infer GROUP BY dependencies through views. To Tom Lane, this looked like an impossible job to do correctly.</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Ants Aasma, Jeff Davis, and Simon Riggs traded more patches to implement checksums.</li>
+
+<li>Timothy Garnett sent in two different approaches to allowing pg_restore in parallel from a pipe.</li>
+
+<li>KONDO Mitsumasa and Heikki Linnakangas traded patches to fix an issue in standby recovery.</li>
+
+<li>Andres Freund sent in a patch to re-add missing time.h include in psql/command.c which had been removed upon the addition of the \watch psql command.</li>
+
+<li>Kevin Grittner sent in a patch to fix a statistics problem related to vacuum truncation termination.</li>
+
+<li>David Fetter sent in another revision of a patch to implent FILTER clauses pursuant to a COLLATE-related bug fix in master.</li>
+
+<li>Tom Lane sent in a patch to fix bug 8049.</li>
+
+</ul>

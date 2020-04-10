@@ -1,0 +1,268 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 20 juillet 2014"
+author: "NBougain"
+redirect_from: "index.php?post/2014-07-22-nouvelles-hebdomadaires-de-postgresql-20-juillet-2014 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Fujii Masao a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Remove incorrect comment from postgres_fdw.c. Etsuro Fujita 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ab774859456eb441ef049bf66af38b259cbdacce">http://git.postgresql.org/pg/commitdiff/ab774859456eb441ef049bf66af38b259cbdacce</a></li>
+
+<li>Prevent bitmap heap scans from showing unnecessary block info in EXPLAIN ANALYZE. EXPLAIN ANALYZE shows the information of the numbers of exact/lossy blocks which bitmap heap scan processes. But, previously, when those numbers were both zero, it displayed only the prefix "Heap Blocks:" in TEXT output format. This is strange and would confuse the users. So this commit suppresses such unnecessary information. Backpatch to 9.4 where EXPLAIN ANALYZE was changed so that such information was displayed. Etsuro Fujita 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d4635b16fe3d0fae65d7735d9e926a1b20a90781">http://git.postgresql.org/pg/commitdiff/d4635b16fe3d0fae65d7735d9e926a1b20a90781</a></li>
+
+</ul>
+
+<p>Noah Misch a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>MSVC: Apply icons to all binaries having them in a MinGW build. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c4a448eb55f35a7f582e30d15ee0ea10b67b70a2">http://git.postgresql.org/pg/commitdiff/c4a448eb55f35a7f582e30d15ee0ea10b67b70a2</a></li>
+
+<li>MSVC: Process Makefile line continuations more like "make" does. Unlike "make" itself, the MSVC build process recognized a continuation even with whitespace after the backslash. (Due to a typo, some code sites accepted the letter "s" instead of whitespace). Also, it would consume any number of newlines following a single backslash. This is mere cleanup; those behaviors were unlikely to cause bugs. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/35d19a9a37c245ff7c640743f37b8df227fd24dc">http://git.postgresql.org/pg/commitdiff/35d19a9a37c245ff7c640743f37b8df227fd24dc</a></li>
+
+<li>MSVC: Recognize PGFILEDESC in contrib and conversion_procs modules. Achieve this by consistently using four-argument Solution::AddProject() calls. Remove ad hoc Makefile parsing made redundant by doing that. Michael Paquier and Noah Misch, reviewed by MauMau. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/91f03ba5cf88b393bf2509f3f00dd00437a5bd54">http://git.postgresql.org/pg/commitdiff/91f03ba5cf88b393bf2509f3f00dd00437a5bd54</a></li>
+
+<li>Add file version information to most installed Windows binaries. Prominent binaries already had this metadata. A handful of minor binaries, such as pg_regress.exe, still lack it; efforts to eliminate such exceptions are welcome. Michael Paquier, reviewed by MauMau. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0ffc201a51395ca71fe429ef86c872850a5850ee">http://git.postgresql.org/pg/commitdiff/0ffc201a51395ca71fe429ef86c872850a5850ee</a></li>
+
+<li>Fix warnings added in 8d9a0e85bd6ab4fe5268a1d759a787f72ff9333e. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/52be3aae5bfe84346b7ce202eae3447a07dfc882">http://git.postgresql.org/pg/commitdiff/52be3aae5bfe84346b7ce202eae3447a07dfc882</a></li>
+
+<li>contrib/test_decoding/Makefile sets MODULES, so omit OBJS. Michael Paquier 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c0e8fb6148ce9c539f6fbde71faa955cab85f214">http://git.postgresql.org/pg/commitdiff/c0e8fb6148ce9c539f6fbde71faa955cab85f214</a></li>
+
+<li>Limit pg_upgrade authentication advice to always-secure techniques. ~/.pgpass is a sound choice everywhere, and "peer" authentication is safe on every platform it supports. Cease to recommend "trust" authentication, the safety of which is deeply configuration-specific. Back-patch to 9.0, where pg_upgrade was introduced. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/85f95739ec0c2d9c6afb10d9a0b42732191fbbde">http://git.postgresql.org/pg/commitdiff/85f95739ec0c2d9c6afb10d9a0b42732191fbbde</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>doc: small fixes for REINDEX reference page From: Josh Kupershmidt &lt;schmiddy@gmail.com&gt; 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f162fb75b329bc5370b3ece59f5ef0d5ba0f15d6">http://git.postgresql.org/pg/commitdiff/f162fb75b329bc5370b3ece59f5ef0d5ba0f15d6</a></li>
+
+<li>Add missing serial commas. Also update one place where the wal_level "logical" was not added to an error message. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d38228fe4029cce3af396bf5b1728d8000ab32c8">http://git.postgresql.org/pg/commitdiff/d38228fe4029cce3af396bf5b1728d8000ab32c8</a></li>
+
+<li>Small spelling fix 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d90ad5d8abe7947520686239a7547f2eb8cc9a8d">http://git.postgresql.org/pg/commitdiff/d90ad5d8abe7947520686239a7547f2eb8cc9a8d</a></li>
+
+<li>Add missing source files to nls.mk. These are files under common/ that have been moved around. Updating these manually is not satisfactory, but it's the only solution at the moment. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f9ddcf75430467493aa6c2b07a45776e4ae8b416">http://git.postgresql.org/pg/commitdiff/f9ddcf75430467493aa6c2b07a45776e4ae8b416</a></li>
+
+<li>doc: Put new options in right order on reference pages 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9a218c02b8f10bc5aa3a9227b0a30ad0b6bdf6a6">http://git.postgresql.org/pg/commitdiff/9a218c02b8f10bc5aa3a9227b0a30ad0b6bdf6a6</a></li>
+
+<li>pg_basebackup: Add more information about --max-rate option to help output. It was previously not clear what unit the option argument should have. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e806da6bdbe9544e061b635f33b8ee561094b4d0">http://git.postgresql.org/pg/commitdiff/e806da6bdbe9544e061b635f33b8ee561094b4d0</a></li>
+
+<li>pg_upgrade: Fix spacing in help output 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e0da6ec618a3890d7d5d8b8342645e6683848d67">http://git.postgresql.org/pg/commitdiff/e0da6ec618a3890d7d5d8b8342645e6683848d67</a></li>
+
+<li>doc: Spell checking 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/aa688725615a4fb55c460f072fb144900a59582d">http://git.postgresql.org/pg/commitdiff/aa688725615a4fb55c460f072fb144900a59582d</a></li>
+
+<li>Replace "internationalize" with "localize" where appropriate 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2ee4efc4081e0487d70607ca0d0d4abdbb85106f">http://git.postgresql.org/pg/commitdiff/2ee4efc4081e0487d70607ca0d0d4abdbb85106f</a></li>
+
+</ul>
+
+<p>Magnus Hagander a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Remove dependency on wsock32.lib in favor of ws2_32. ws2_32 is the new version of the library that should be used, as it contains the require functionality from wsock32 as well as some more (which is why some binaries were already using ws2_32). Michael Paquier, reviewed by MauMau 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a16bac36eca8158cbf78987e95376f610095f792">http://git.postgresql.org/pg/commitdiff/a16bac36eca8158cbf78987e95376f610095f792</a></li>
+
+<li>Include SSL compression status in psql banner and connection logging. Both the psql banner and the connection logging already included SSL status, cipher and bitlength, this adds the information about compression being on or off. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c93bf8c6ccf7ef1cec6b01fec1888f84831295ee">http://git.postgresql.org/pg/commitdiff/c93bf8c6ccf7ef1cec6b01fec1888f84831295ee</a></li>
+
+<li>Detect presence of SSL_get_current_compression. Apparently we still build against OpenSSL so old that it doesn't have this function, so add an autoconf check for it to make the buildfarm happy. If the function doesn't exist, always return that compression is disabled, since presumably the actual compression functionality is always missing. For now, hardcode the function as present on MSVC, since we should hopefully be well beyond those old versions on that platform. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c9e1ad7faf75aeda633e27ba6c042dabe4aa353d">http://git.postgresql.org/pg/commitdiff/c9e1ad7faf75aeda633e27ba6c042dabe4aa353d</a></li>
+
+<li>Move check for SSL_get_current_compression to run on mingw. Mingw uses a different header file than msvc, so we don't get the hardcoded value, so we need the configure test to run. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5571caf42d62ea30c452b0ae5f1748289ae613b4">http://git.postgresql.org/pg/commitdiff/5571caf42d62ea30c452b0ae5f1748289ae613b4</a></li>
+
+<li>Add option to pg_ctl to choose event source for logging. pg_ctl will log to the Windows event log when it is running as a service, which is the primary way of running PostgreSQL on Windows. This option makes it possible to specify which event source to use for this, in order to separate different instances. The server logging itself is still controlled by the regular logging parameters, including a separate setting for the event source. The parameter to pg_ctl only controlls the logging from pg_ctl itself. MauMau, review in many iterations by Amit Kapila and me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c0e4520b1667279389bb0dce8d867df2ac25042a">http://git.postgresql.org/pg/commitdiff/c0e4520b1667279389bb0dce8d867df2ac25042a</a></li>
+
+<li>Revert broken change to pgevent.c. pgevent doesn't include the global PostgreSQL headers, for a reason, and therefor cannot rely on defines in it... 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6cd471a6d46b463e5222e5bb2d859311ddc1d86a">http://git.postgresql.org/pg/commitdiff/6cd471a6d46b463e5222e5bb2d859311ddc1d86a</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>psql: Show tablespace size in \db+. Fabr&iacute;zio de Royes Mello 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ee80f043bc9b92dbbb1ff9577c3c601746124092">http://git.postgresql.org/pg/commitdiff/ee80f043bc9b92dbbb1ff9577c3c601746124092</a></li>
+
+<li>Move view reloptions into their own varlena struct. Per discussion after a gripe from me in 
+
+<a target="_blank" href="http://www.postgresql.org/message-id/20140611194633.GH18688@eldon.alvh.no-ip.org">http://www.postgresql.org/message-id/20140611194633.GH18688@eldon.alvh.no-ip.org</a> Jaime Casanova <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/346d7be184a617ca9f64bdf5c25fd6bcd5231293">http://git.postgresql.org/pg/commitdiff/346d7be184a617ca9f64bdf5c25fd6bcd5231293</a></li>
+
+<li>Fix REASSIGN OWNED for text search objects. Trying to reassign objects owned by a user that had text search dictionaries or configurations used to fail with: ERROR: unexpected classid 3600 or ERROR: unexpected classid 3602 Fix by adding cases for those object types in a switch in pg_shdepend.c. Both REASSIGN OWNED and text search objects go back all the way to 8.1, so backpatch to all supported branches. In 9.3 the alter-owner code was made generic, so the required change in recent branches is pretty simple; however, for 9.2 and older ones we need some additional reshuffling to enable specifying objects by OID rather than name. Text search templates and parsers are not owned objects, so there's no change required for them. Per bug #9749 reported by Michal Novotn&yacute; 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6bdf4b9c7dde84902a0cc19c27c51c016485b8e6">http://git.postgresql.org/pg/commitdiff/6bdf4b9c7dde84902a0cc19c27c51c016485b8e6</a></li>
+
+<li>Add missing doc changes for ee80f043bc9b. Per note from Tom Lane 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/da6ac4a6683788ed7042a46568f2b040210830f8">http://git.postgresql.org/pg/commitdiff/da6ac4a6683788ed7042a46568f2b040210830f8</a></li>
+
+</ul>
+
+<p>Andrew Dunstan a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>json_build_object and json_build_array are stable, not immutable. These functions indirectly invoke output functions, so they can't be immutable. Backpatch to 9.4 where they were introduced. Catalog version bumped. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0f43a55331c5697caa2054189ad8d1e717ccb192">http://git.postgresql.org/pg/commitdiff/0f43a55331c5697caa2054189ad8d1e717ccb192</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Allow join removal in some cases involving a left join to a subquery. We can remove a left join to a relation if the relation's output is provably distinct for the columns involved in the join clause (considering only equijoin clauses) and the relation supplies no variables needed above the join. Previously, the join removal logic could only prove distinctness by reference to unique indexes of a table. This patch extends the logic to consider subquery relations, wherein distinctness might be proven by reference to GROUP BY, DISTINCT, etc. We actually already had some code to check that a subquery's output was provably distinct, but it was hidden inside pathnode.c; which was a pretty bad place for it really, since that file is mostly boilerplate Path construction and comparison. Move that code to analyzejoins.c, which is arguably a more appropriate location, and is certainly the site of the new usage for it. David Rowley, reviewed by Simon Riggs 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f15821eefd70941d4ec5bd77d75c1da5534ba6b2">http://git.postgresql.org/pg/commitdiff/f15821eefd70941d4ec5bd77d75c1da5534ba6b2</a></li>
+
+<li>Fix two low-probability memory leaks in regular expression parsing. If pg_regcomp failed after having invoked markst/cleanst, it would leak any "struct subre" nodes it had created. (We've already detected all regex syntax errors at that point, so the only likely causes of later failure would be query cancel or out-of-memory.) To fix, make sure freesrnode knows the difference between the pre-cleanst and post-cleanst cleanup procedures. Add some documentation of this less-than-obvious point. Also, newlacon did the wrong thing with an out-of-memory failure from realloc(), so that the previously allocated array would be leaked. Both of these are pretty low-probability scenarios, but a bug is a bug, so patch all the way back. Per bug #10976 from Arthur O'Dwyer. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1567e659a877d35ab4b85dafff41b2845d50990f">http://git.postgresql.org/pg/commitdiff/1567e659a877d35ab4b85dafff41b2845d50990f</a></li>
+
+<li>Partial fix for dropped columns in functions returning composite. When a view has a function-returning-composite in FROM, and there are some dropped columns in the underlying composite type, ruleutils.c printed junk in the column alias list for the reconstructed FROM entry. Before 9.3, this was prevented by doing get_rte_attribute_is_dropped tests while printing the column alias list; but that solution is not currently available to us for reasons I'll explain below. Instead, check for empty-string entries in the alias list, which can only exist if that column position had been dropped at the time the view was made. (The parser fills in empty strings to preserve the invariant that the aliases correspond to physical column positions.) While this is sufficient to handle the case of columns dropped before the view was made, we have still got issues with columns dropped after the view was made. In particular, the view could contain Vars that explicitly reference such columns! The dependency machinery really ought to refuse the column drop attempt in such cases, as it would do when trying to drop a table column that's explicitly referenced in views. However, we currently neglect to store dependencies on columns of composite types, and fixing that is likely to be too big to be back-patchable (not to mention that existing views in existing databases would not have the needed pg_depend entries anyway). So I'll leave that for a separate patch. Pre-9.3, ruleutils would print such Vars normally (with their original column names) even though it suppressed their entries in the RTE's column alias list. This is certainly bogus, since the printed view definition would fail to reload, but at least it didn't crash. However, as of 9.3 the printed column alias list is tightly tied to the names printed for Vars; so we can't treat columns as dropped for one purpose and not dropped for the other. This is why we can't just put back the get_rte_attribute_is_dropped test: it results in an assertion failure if the view in fact contains any Vars referencing the dropped column. Once we've got dependencies preventing such cases, we'll probably want to do it that way instead of relying on the empty-string test used here. This fix turned up a very ancient bug in outfuncs/readfuncs, namely that T_String nodes containing empty strings were not dumped/reloaded correctly: the node was printed as "&lt;&gt;" which is read as a string value of &lt;&gt;. Since (per SQL) we disallow empty-string identifiers, such nodes don't occur normally, which is why we'd not noticed. (Such nodes aren't used for literal constants, just identifiers.) Per report from Marc Schablewski. Back-patch to 9.3 which is where the rule printing behavior changed. The dangling-variable case is broken all the way back, but that's not what his complaint is about. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9b35ddce93a2ef336498baa15581b9d10f01db9c">http://git.postgresql.org/pg/commitdiff/9b35ddce93a2ef336498baa15581b9d10f01db9c</a></li>
+
+<li>Update time zone data files to tzdata release 2014e. DST law changes in Crimea, Egypt, Morocco. New zone Antarctica/Troll for Norwegian base in Queen Maud Land. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b1864fabf93f23e4eaa5ec4599a143ac8f7647e5">http://git.postgresql.org/pg/commitdiff/b1864fabf93f23e4eaa5ec4599a143ac8f7647e5</a></li>
+
+<li>Fix xreflabel for hot_standby_feedback. Rather remarkable that this has been wrong since 9.1 and nobody noticed. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4cbe3abb3162d14a86bc8ec73fd9331638ec18a0">http://git.postgresql.org/pg/commitdiff/4cbe3abb3162d14a86bc8ec73fd9331638ec18a0</a></li>
+
+<li>First-draft release notes for 9.3.5. As usual, the release notes for older branches will be made by cutting these down, but put them up for community review first. Note: a few of these items actually don't apply to 9.3, but only to older branches. I'll sort that out when copying the text into the older release-X.Y.sgml files. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ddc41fd2f4756b529814ad03fa32e8ba10253996">http://git.postgresql.org/pg/commitdiff/ddc41fd2f4756b529814ad03fa32e8ba10253996</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix bugs in SP-GiST search with range type's -|- (adjacent) operator. The consistent function contained several bugs: * The "if (which2) { ... }" block was broken. It compared the * argument's lower bound against centroid's upper bound, while it was supposed to compare the argument's upper bound against the centroid's lower bound (the comment was correct, code was wrong). Also, it cleared bits in the "which1" variable, while it was supposed to clear bits in "which2". * If the argument's upper bound was equal to the centroid's lower * bound, we descended to both halves (= all quadrants). That's unnecessary, searching the right quadrants is sufficient. This didn't lead to incorrect query results, but was clearly wrong, and slowed down queries unnecessarily. * In the case that argument's lower bound is adjacent to the * centroid's upper bound, we also don't need to visit all quadrants. Per similar reasoning as previous point. * The code where we compare the previous centroid with the current * centroid should match the code where we compare the current centroid with the argument. The point of that code is to redo the calculation done in the previous level, to see if we were supposed to traverse left or right (or up or down), and if we actually did. If we moved in the different direction, then we know there are no matches for bound. Refactor the code and adds comments to make it more readable and easier to reason about. Backpatch to 9.3 where SP-GiST support for range types was introduced. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1264ef31a399927f9fe02212e10980bf4ba7b9f2">http://git.postgresql.org/pg/commitdiff/1264ef31a399927f9fe02212e10980bf4ba7b9f2</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>No one was disappointed this week</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Christoph Moench-Tegeder sent in a patch to correct an example in logical decoding.</li>
+
+<li>Steve Singer sent in a patch to fix a bug in walsender keepalives.</li>
+
+<li>Etsuro Fujita sent in a patch to remove some redundant words from a comment in src/backend/commands/explain.c.</li>
+
+<li>Fabr&iacute;zio de Royes Mello sent in four more revisions of a patch to implement ALTER TABLE ... SET LOGGED.</li>
+
+<li>Shigeru HANADA and Kaigai Kouhei traded patches to implement the custom plan API.</li>
+
+<li>Amit Kapila sent in a patch to fix an issue with pg_basebackup on Windows with symlinks.</li>
+
+<li>Fujii Masao sent in a patch to fix an issue with pg_receivexlog --status-interval. It checked for positive numbers, but should have checked for nonzero ones.</li>
+
+<li>Dilip Kumar sent in a patch to ensure that \pset correctly shows both arguments are optional, not just the second.</li>
+
+<li>David Rowley sent in another revision of a patch to allow NOT IN to use ANTI JOINs in certain cases.</li>
+
+<li>Rajeev Rastogi sent in a patch to fix an issue where there was an unwanted LOG during recovery of DROP TABLESPACE.</li>
+
+<li>Jeff Janes sent in another revision of a patch to fix issues that manifested as "Could not open file "pg_multixact/members/xxxx".</li>
+
+<li>Dilip Kumar sent in two more revisions of a patch to enable vacuumdb to use &gt;1 core in parallel.</li>
+
+<li>Kyotaro HORIGUCHI sent in another revision of a patch to enable using a UNIQUE index for longer pathkeys.</li>
+
+<li>Kyotaro HORIGUCHI sent in a patch to fix an issue where xmin and xmax for FDWs give strange results.</li>
+
+<li>Kyotaro HORIGUCHI sent in a patch to change a couple of instances of BUFFER_LOCK_EXCLUSIVE in src/backend/access/gin/gininsert.c to GIN_EXCLUSIVE.</li>
+
+<li>Viswanatham Kirankumar sent in a patch to process pg_hba.conf keywords as case-insensitive.</li>
+
+<li>Fabien COELHO sent in two more revisions of a patch to allow using a Gaussian distribution in pgbench.</li>
+
+<li>Amit Kapila sent in a patch to fix the fact that pg_basebackup -T doesn't work on Windows.</li>
+
+<li>Michael Paquier sent in two more revisions of a patch to do better at HINTing an appropriate column within errorMissingColumn().</li>
+
+<li>Dmitry Voronin sent in another revision of a patch to augment the sslinfo contrib extension.</li>
+
+<li>Petr (PJMODOS) Jelinek sent in another revision of a patch to allow setting a new system identifier via pg_resetxlog.</li>
+
+<li>Michael Paquier sent in another revision of a patch to fix some WAL replay bugs.</li>
+
+<li>MauMau sent in a patch to suppress "autovacuum: found orphan temp table" messages.</li>
+
+<li>Tomas Vondra sent in another revision of a patch to tweak NTUP_PER_BUCKET.</li>
+
+<li>Tomas Vondra sent in another revision of a patch to fix an issue where bad estimation together with large work_mem generates terrible slow hash joins.</li>
+
+<li>Fabien COELHO sent in two revisions of a patch to fix an issue where pg_stat_statements is cluttered with "DEALLOCATE dbdpg_p*".</li>
+
+</ul>

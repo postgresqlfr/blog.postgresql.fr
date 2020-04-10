@@ -1,0 +1,222 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 9 octobre 2011"
+author: "NBougain"
+redirect_from: "index.php?post/2011-10-16-nouvelles-hebdomadaires-de-postgresql-9-octobre-2011 "
+---
+
+
+
+<p><strong>Revues de code</strong></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>ProcedureCreate neglected to record dependencies on default expressions. Thus, an object referenced in a default expression could be dropped while the function remained present. This was unaccountably missed in the original patch to add default parameters for functions. Reported by Pavel Stehule. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/76074fcaa04fb5d35e8cf7716587440e3d075d50">http://git.postgresql.org/pg/commitdiff/76074fcaa04fb5d35e8cf7716587440e3d075d50</a></li>
+
+<li>Remove the custom_variable_classes parameter. This variable provides only marginal error-prevention capability (since it can only check the prefix of a qualified GUC name), and the consensus is that that isn't worth the amount of hassle that maintaining the setting creates for DBAs. So, let's just remove it. With this commit, the system will silently accept a value for any qualified GUC name at all, whether it has anything to do with any known extension or not. (Unqualified names still have to match known built-in settings, though; and you will get a WARNING at extension load time if there's an unrecognized setting with that extension's prefix.) There's still some discussion ongoing about whether to tighten that up and if so how; but if we do come up with a solution, it's not likely to look anything like custom_variable_classes. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1a00c0ef5368bb7b8ddcb3cf279df36577918ac4">http://git.postgresql.org/pg/commitdiff/1a00c0ef5368bb7b8ddcb3cf279df36577918ac4</a></li>
+
+<li>Remember the source GucContext for each GUC parameter. We used to just remember the GucSource, but saving GucContext too provides a little more information --- notably, whether a SET was done by a superuser or regular user. This allows us to rip out the fairly dodgy code that define_custom_variable used to use to try to infer the context to re-install a pre-existing setting with. In particular, it now works for a superuser to SET a extension's SUSET custom variable before loading the associated extension, because GUC can remember whether the SET was done as a superuser or not. The plperl regression tests contain an example where this is useful. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9f5836d224e876399dfdd7d6d4343300dbc2f664">http://git.postgresql.org/pg/commitdiff/9f5836d224e876399dfdd7d6d4343300dbc2f664</a></li>
+
+<li>Add sourcefile/sourceline data to EXEC_BACKEND GUC transmission files. This oversight meant that on Windows, the pg_settings view would not display source file or line number information for values coming from postgresql.conf, unless the backend had received a SIGHUP since starting. In passing, also make the error detection in read_nondefault_variables a tad more thorough, and fix it to not lose precision on float GUCs (these changes are already in HEAD as of my previous commit). 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4bcb82a7d590afa16507f9089bd68ef4bcebebb1">http://git.postgresql.org/pg/commitdiff/4bcb82a7d590afa16507f9089bd68ef4bcebebb1</a></li>
+
+<li>Fix uninitialized-variable bug. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fa56a0c3e01c175695e932e6cdc2c6915df5adc6">http://git.postgresql.org/pg/commitdiff/fa56a0c3e01c175695e932e6cdc2c6915df5adc6</a></li>
+
+<li>Improve define_custom_variable's handling of pre-existing settings. Arrange for any problems with pre-existing settings to be reported as WARNING not ERROR, so that we don't undesirably abort the loading of the incoming add-on module. The bad setting is just discarded, as though it had never been applied at all. (This requires a change in the API of set_config_option. After some thought I decided the most potentially useful addition was to allow callers to just pass in a desired elevel.) Arrange to restore the complete stacked state of the variable, rather than cheesily reinstalling only the active value. This ensures that custom GUCs will behave unsurprisingly even when the module loading operation occurs within nested subtransactions that have changed the active value. Since a module load could occur as a result of, eg, a PL function call, this is not an unlikely scenario. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/41e461d36fb1ef78494429f28ea4b72c759f419d">http://git.postgresql.org/pg/commitdiff/41e461d36fb1ef78494429f28ea4b72c759f419d</a></li>
+
+<li>Improve and simplify CREATE EXTENSION's management of GUC variables. CREATE EXTENSION needs to transiently set search_path, as well as client_min_messages and log_min_messages. We were doing this by the expedient of saving the current string value of each variable, doing a SET LOCAL, and then doing another SET LOCAL with the previous value at the end of the command. This is a bit expensive though, and it also fails badly if there is anything funny about the existing search_path value, as seen in a recent report from Roger Niederland. Fortunately, there's a much better way, which is to piggyback on the GUC infrastructure previously developed for functions with SET options. We just open a new GUC nesting level, do our assignments with GUC_ACTION_SAVE, and then close the nesting level when done. This automatically restores the prior settings without a re-parsing pass, so (in principle anyway) there can't be an error. And guc.c still takes care of cleanup in event of an error abort. The CREATE EXTENSION code for this was modeled on some much older code in ri_triggers.c, which I also changed to use the better method, even though there wasn't really much risk of failure there. Also improve the comments in guc.c to reflect this additional usage. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ba6f629326be365a3124dc80aa5d303e2b0bf46b">http://git.postgresql.org/pg/commitdiff/ba6f629326be365a3124dc80aa5d303e2b0bf46b</a></li>
+
+<li>Support index-only scans using the visibility map to avoid heap fetches. When a btree index contains all columns required by the query, and the visibility map shows that all tuples on a target heap page are visible-to-all, we don't need to fetch that heap page. This patch depends on the previous patches that made the visibility map reliable. There's a fair amount left to do here, notably trying to figure out a less chintzy way of estimating the cost of an index-only scan, but the core functionality seems ready to commit. Robert Haas and Ibrar Ahmed, with some previous work by Heikki Linnakangas. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a2822fb9337a21f98ac4ce850bb4145acf47ca27">http://git.postgresql.org/pg/commitdiff/a2822fb9337a21f98ac4ce850bb4145acf47ca27</a></li>
+
+<li>Fix brain fade in cost estimation for index-only scans. visibility_fraction should not be applied to regular indexscans. Noted by C&eacute;dric Villemain. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b324384f6bd5d661efeddb83d7f607781e96947d">http://git.postgresql.org/pg/commitdiff/b324384f6bd5d661efeddb83d7f607781e96947d</a></li>
+
+<li>Note that index-only scans can affect idx_tup_fetch. An index-only scan that avoids heap fetches will increment idx_tup_read but not idx_tup_fetch. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c78d8cd1464bc6b69fdc72f9ce51407c89554ece">http://git.postgresql.org/pg/commitdiff/c78d8cd1464bc6b69fdc72f9ce51407c89554ece</a></li>
+
+<li>Prevent index-only scans in stats regression test. This bollixes the test because it's expecting to see the idx_tup_fetch counter increase, which won't happen if heap fetches were avoided by use of an index-only scan. Per buildfarm results. While at it, let's just make sure that enable_seqscan and enable_indexscan are ON for this test ... 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/45401c1c25fe1ef14bf68089de86bcb5cce9f453">http://git.postgresql.org/pg/commitdiff/45401c1c25fe1ef14bf68089de86bcb5cce9f453</a></li>
+
+<li>Improve index-only scans to avoid repeated access to the index page. We copy all the matched tuples off the page during _bt_readpage, instead of expensively re-locking the page during each subsequent tuple fetch. This costs a bit more local storage, but not more than 2*BLCKSZ worth, and the reduction in LWLock traffic is certainly worth that. What's more, this lets us get rid of the API wart in the original patch that said an index AM could randomly decline to supply an index tuple despite having asserted pg_am.amcanreturn. That will be important for future improvements in the index-only-scan feature, since the executor will now be able to rely on having the index data available. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/cbfa92c23c3924d53889320cdbe26f23ee23e40c">http://git.postgresql.org/pg/commitdiff/cbfa92c23c3924d53889320cdbe26f23ee23e40c</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Use callbacks in SlruScanDirectory for the actual action. Previously, the code assumed that the only possible action to take was to delete files behind a certain cutoff point. The async notify code was already a crock: it used a different "pagePrecedes" function for truncation than for regular operation. By allowing it to pass a callback to SlruScanDirectory it can do cleanly exactly what it needs to do. The clog.c code also had its own use for SlruScanDirectory, which is made a bit simpler with this. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/09e196e4539a70c51e828abcfe48dee3efd312d8">http://git.postgresql.org/pg/commitdiff/09e196e4539a70c51e828abcfe48dee3efd312d8</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Explain COALESCE example in the docs. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9d23d7cdafb3540aa2de9310c7f1afee87dfc2f2">http://git.postgresql.org/pg/commitdiff/9d23d7cdafb3540aa2de9310c7f1afee87dfc2f2</a></li>
+
+<li>Change wording for COALESCE docs to use "otherwise". Per Tom Lane 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3919ad864d7040361fd4b44719acaa1ec0f87bbd">http://git.postgresql.org/pg/commitdiff/3919ad864d7040361fd4b44719acaa1ec0f87bbd</a></li>
+
+<li>Add postmaster -C option to query configuration parameters, and have pg_ctl use that to query the data directory for config-only installs. This fixes awkward or impossible pg_ctl operation for config-only installs. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/aaa6e1def292cdacb6b27088898793b1b879fedf">http://git.postgresql.org/pg/commitdiff/aaa6e1def292cdacb6b27088898793b1b879fedf</a></li>
+
+<li>Simplify new pg_ctl newline termination code. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/416e82ce9f0c8c4ec6d377368d670b8ca74097a6">http://git.postgresql.org/pg/commitdiff/416e82ce9f0c8c4ec6d377368d670b8ca74097a6</a></li>
+
+<li>Move pg_upgrade doc mention of the port numbers to the same place. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/981e5acd24cc63fa4f27dac3b35e5d0bf3921efc">http://git.postgresql.org/pg/commitdiff/981e5acd24cc63fa4f27dac3b35e5d0bf3921efc</a></li>
+
+<li>In pg_upgrade, improve popen() failure detection by checking for fgets() failures. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a3996754cc0281293cc5bfb90bf594fef41aff5b">http://git.postgresql.org/pg/commitdiff/a3996754cc0281293cc5bfb90bf594fef41aff5b</a></li>
+
+<li>In pg_upgrade, use the new postmaster -C option to get the real data directory, for config-only directory installs. Only works for PG 9.2+ servers. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/caa1054df8408b165e5f66ff25c87b6dd0a0a1e7">http://git.postgresql.org/pg/commitdiff/caa1054df8408b165e5f66ff25c87b6dd0a0a1e7</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Replace the "New Linear" GiST split algorithm for boxes and points with a new double-sorting algorithm. The new algorithm produces better quality trees, making searches faster. Alexander Korotkov 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7f3bd86843e5aad84585a57d3f6b80db3c609916">http://git.postgresql.org/pg/commitdiff/7f3bd86843e5aad84585a57d3f6b80db3c609916</a></li>
+
+<li>Don't let transform_null_equals=on affect CASE foo WHEN NULL ... constructs. transform_null_equals is only supposed to affect "foo = NULL" expressions given directly by the user, not the internal "foo = NULL" expression generated from CASE-WHEN. This fixes bug #6242, reported by Sergey. Backpatch to all supported branches. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1ef60dab7049ffac52dee60b5788b6c7bc1f9d67">http://git.postgresql.org/pg/commitdiff/1ef60dab7049ffac52dee60b5788b6c7bc1f9d67</a></li>
+
+<li>Clean up a couple of box gist helper functions. The original idea of this patch was to make box picksplit run faster, by eliminating unnecessary palloc() overhead, but that was obsoleted by the new double-sorting split algorithm that doesn't call these functions so heavily anymore. Nevertheless, the code looks better this way. Original patch by me, reviewed and tidied up after the double-sorting patch by Kevin Grittner. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d50e1251946a6e59092f0a84fc903532eb599a4f">http://git.postgresql.org/pg/commitdiff/d50e1251946a6e59092f0a84fc903532eb599a4f</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Make pgstatindex respond to cancel interrupts. A similar problem for pgstattuple() was fixed in April of 2010 by commit 33065ef8bc52253ae855bc959576e52d8a28ba06, but pgstatindex() seems to have been overlooked. Back-patch all the way, as with that commit, though not to 7.4 through 8.1, since those are now EOL. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1cb018dd09268cab7f4ac1e8ab59b2277e7709f1">http://git.postgresql.org/pg/commitdiff/1cb018dd09268cab7f4ac1e8ab59b2277e7709f1</a></li>
+
+<li>Try to fix memory barriers on x86_64. %esp is no good; must use %rsp there. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6a6082c27c148eb452d804af306e8745f6e49b36">http://git.postgresql.org/pg/commitdiff/6a6082c27c148eb452d804af306e8745f6e49b36</a></li>
+
+<li>Add missing space. Dickson S. Guedes 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/13168ae4ebb6eac6f668a4a157e7fe3ffae22d85">http://git.postgresql.org/pg/commitdiff/13168ae4ebb6eac6f668a4a157e7fe3ffae22d85</a></li>
+
+<li>Fix typo. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/041dceb2590081c397daeda84ff28ffc71a51fb0">http://git.postgresql.org/pg/commitdiff/041dceb2590081c397daeda84ff28ffc71a51fb0</a></li>
+
+<li>Revert accidental change to pg_config_manual.h. This was broken in commit 53dbc27c62d8e1b6c5253feba04a5094cb8fe046, which introduced unlogged tables. Fortunately, as debugging tools go, this one is pretty cheap, which is probably why it took nine months for someone to notice, but it's not intended to be enabled by default, so revert. Noted by Fujii Masao. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c980426c69ae76b04aa9de010027438457aeaa7f">http://git.postgresql.org/pg/commitdiff/c980426c69ae76b04aa9de010027438457aeaa7f</a></li>
+
+<li>Fix ALTER TABLE ONLY .. DROP CONSTRAINT. When I consolidated two copies of the HOT-chain search logic in commit 4da99ea4231e3d8bbf28b666748c1028e7b7d665, I introduced a behavior change: the old code wouldn't necessarily traverse the entire chain, if the most recently returned tuple were updated while the HOT chain traversal is in progress. The new behavior seems more correct, but unfortunately, the code here relies on a scan with SnapshotNow failing to see its own updates. That seems pretty shaky even with the old HOT chain traversal behavior, since there's no guarantee that these updates will always be HOT, but it's trivial to broke a failure with the new HOT search logic. Fix by updating just the first matching pg_constraint tuple, rather than all of them, since there should be only one anyway. But since nobody has reproduced this failure on older versions, no back-patch for now. Report and test case by Alex Hunsaker; tablecmds.c changes by me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c0f03aae0469e758964faac0fb741685170c39a5">http://git.postgresql.org/pg/commitdiff/c0f03aae0469e758964faac0fb741685170c39a5</a></li>
+
+</ul>
+
+<p>Magnus Hagander a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Ensure walsenders can be SIGTERMed while in non-walsender code. In order to exit on SIGTERM when in non-walsender code, such as do_pg_stop_backup(), we need to set the interrupt variables that are used there, and not just the walsender local ones. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7aeff9f4a4e57dca5727828bf95f12cf63003270">http://git.postgresql.org/pg/commitdiff/7aeff9f4a4e57dca5727828bf95f12cf63003270</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Simon Riggs sent in two more revisions of the patch to separate checkpointing and background writing into distinct components.</li>
+
+<li>Royce Ausburn sent in two revisions of a patch to enable monitoring unremovable tuples.</li>
+
+<li>Heikki Linnakangas sent in another revision of a patch to fix some socket issues on HP-UX.</li>
+
+<li>Fujii Masao sent in another revision of a patch to fix a bug in recovery.</li>
+
+<li>Fujii Masao sent in another revision of a patch to add a pg_last_xact_insert_timestamp column.</li>
+
+<li>Alex Hunsaker sent in two more revisions of a patch to do some encoding checking for PL/Perl inputs.</li>
+
+<li>Pavel Stehule sent in a patch which returns the number of rows processed by COPY.</li>
+
+<li>KaiGai Kohei sent in two more revisions of the patch to rework DROP into a single framework.</li>
+
+<li>Pavel Stehule sent in two revisions of a patch to implement CHECK FUNCTION and CHECK TRIGGER.</li>
+
+<li>Alex Hunsaker sent in two more revisions of a patch to allow non-inheritable CHECK constraints.</li>
+
+<li>Alex Hunsaker and Robert Haas traded revisions of a patch to fix ALTER TABLE ONLY ... DROP CONSTRAINT.</li>
+
+<li>Marti Raudsepp sent in another revision of a patch to log crashed backends.</li>
+
+<li>Kyotaro HORIGUCHI sent in a patch to endure that make_greater_string() returns a string.</li>
+
+<li>Simon Riggs sent in two revisions of a patch to prevent duplicate checkpoints.</li>
+
+<li>Etsuro Fujita sent in another revision of a patch to collect statistics on foreign tables.</li>
+
+<li>Yeb Havinga sent in another revision of a patch that enables cursors with named parameters.</li>
+
+<li>Julien Tachoires sent in a WIP patch which enables moving TOAST tables to a different tablespace.</li>
+
+<li>Kevin Grittner sent in another revision of the patch to optimize box_penalty.</li>
+
+<li>KaiGai Kohei sent in another revision of the patch to fix some leaks in VIEWs.</li>
+
+<li>Jun Ishiduka sent in another revision of the patch to allow creating a backup from a hot standby.</li>
+
+</ul>

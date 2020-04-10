@@ -1,0 +1,234 @@
+---
+layout: post
+title: "Nouvelles neuves de PostgreSQL"
+author: "NBougain"
+redirect_from: "index.php?post/drupal-414 "
+---
+
+
+
+<strong>Les nouveautés des produits dérivés</strong>
+
+<ul>
+
+<li>DBI-Link a été "empaqueté" pour Debian&nbsp;:
+
+<a target="_blank" href="http://packages.debian.org/dbi-link">http://packages.debian.org/dbi-link</a></li>
+
+<li>PL/Proxy a été "empaqueté" pour Debian&nbsp;:
+
+<a target="_blank" href="http://packages.debian.org/postgresql-8.2-plproxy">http://packages.debian.org/postgresql-8.2-plproxy</a></li>
+
+<li>PostgreSQL Maestro 7.12 est disponible&nbsp;:
+
+<a target="_blank" href="http://www.sqlmaestro.com/products/postgresql/maestro/">http://www.sqlmaestro.com/products/postgresql/maestro/</a></li>
+
+<li>PgBouncer 1.1.2 est sorti&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgbouncer/">http://pgfoundry.org/projects/pgbouncer/</a></li>
+
+<li>Continuent uni/cluster pour PostgreSQL 2007.1 a été publié&nbsp;:
+
+<a target="_blank" href="http://www.continuent.com">http://www.continuent.com</a></li>
+
+<li>Viewalyzer 1.0.0 est disponible&nbsp;:
+
+<a target="_blank" href="http://sourceforge.net/project/showfiles.php?group_id=211124">http://sourceforge.net/project/showfiles.php?group_id=211124</a></li>
+
+</ul>
+
+<!--break-->
+
+<p><strong>Offres d'emplois autour de Postgres en décembre</strong></p>
+
+<p><a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2007-12/threads.php">http://archives.postgresql.org/pgsql-jobs/2007-12/threads.php</a></p>
+
+<p><strong>Postgres Local</strong></p>
+
+<ul>
+
+<li>La chasse aux propositions pour les PGCon 2008 ouvre le 19 décembre. Faites chauffer vos stylos&nbsp;:
+
+<a target="_blank" href="http://www.pgcon.org/2008/papers.php">http://www.pgcon.org/2008/papers.php</a></li>
+
+<li>Les équipes BSD et PostgreSQL partageront un espace développeurs au FOSDEM 2008 de Bruxelles. Si vous souhaitez donner une conférence ou aider sur le stand, contactez fosdem (a) pgug (.) eu. Pour plus d'informations, jetez un œil sur&nbsp;:
+
+<a target="_blank" href="http://fosdem.org/2008/schedule/devroom/bsdpostgresql">http://fosdem.org/2008/schedule/devroom/bsdpostgresql</a></li>
+
+<li>La PostgreSQL Conference East '08 est programmée pour les 28 et 29 mars de l'année prochaine&nbsp;:
+
+<a target="_blank" href="http://www.postgresqlconference.org/">http://www.postgresqlconference.org/</a></li>
+
+<li>FISL 9.0 will be happening April 17-19, 2008 at PUCRS in Porto Alegre, Brazil. Talk proposals are due by January 11, 2008.
+
+<a target="_blank" href="https://fisl.softwarelivre.org/9.0/">https://fisl.softwarelivre.org/9.0/</a></li>
+
+</ul>
+
+<p><strong>Postgres dans les média</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL:
+
+<a target="_blank" href="http://www.planetpostgresql.org/">http://www.planetpostgresql.org/</a></li>
+
+<li>General Bits, Archives and occasional new articles:
+
+<a target="_blank" href="http://www.varlena.com/GeneralBits/">http://www.varlena.com/GeneralBits/</a></li>
+
+</ul>
+
+<p><em>Postgres Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter et Fernando Ike de Oliveira. La traduction française est effectuée par l'équipe PostgreSQLFr.</em></p>
+
+<p><em>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais à david (a) fetter.org, en allemand à pwn (a) pgug.de, en italien à pwn (a) itpug.org.</em></p>
+
+<p><strong>Correctifs appliqués</strong></p>
+
+<p>Andrew Dunstan a commité&nbsp;:</p>
+
+<ul>
+
+<li>Fix example archive_command for standalone backups so it doesn't return spurious non-zero.</li>
+
+</ul>
+
+<p>Peter Eisentraut a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/backend/postmaster/pgarch.c, provide a more accurate, detailed log message when the archive command fails.</li>
+
+<li>Clarify log messages in pgsql/src/backend/postmaster/postmaster.c and pgsql/src/backend/storage/file/fd.c</li>
+
+<li>In pgsql/doc/src/sgml/Makefile, make error message more accurate.</li>
+
+</ul>
+
+<p>Alvaro Herrera a commité&nbsp;:</p>
+
+<ul>
+
+<li>Extend the format of CSV logs to include the additional information supplied with the logged event. CSV logs are now a first-class citizen along plain text logs in that they carry much of the same information. Per complaint from depesz on bug #3799.</li>
+
+<li>Correct result type of convert_to, per Pavel Stehule.</li>
+
+</ul>
+
+<p>Magnus Hagander a commité&nbsp;:</p>
+
+<ul>
+
+<li>Use _USE_32BIT_TIME_T when building with MSVC. Also, enforce that it's used when building addons. Dave Page</li>
+
+<li>Typo pointed out by Erwin Brandstetter. Remove the whole makes it even better, per JD.</li>
+
+<li>In pgsql/src/bin/pgevent/Makefile, get dllwrap name from variable instead of hardcoded. Per complaint from Richard Evans.</li>
+
+</ul>
+
+<p>Bruce Momjian a commité&nbsp;:</p>
+
+<ul>
+
+<li>Document how to turn off disk write cache on popular operating systems.</li>
+
+<li>In pgsql/doc/src/sgml/wal.sgml, write cache doc cleanups. Greg Smith.</li>
+
+<li>In pgsql/doc/src/sgml/wal.sgml, wording improvement for write-cache disabling instructions.</li>
+
+<li>In pgsql/doc/src/sgml/release.sgml, Mention Stefan Kaltenbrunner as contributor for text search because of psql work.</li>
+
+<li>Add release note introduction.</li>
+
+<li>Remove Stefan Kaltenbrunner mention from full text release note item.</li>
+
+<li>In pgsql/doc/src/sgml/release.sgml, adjust release notes for HISTORY.html generation.</li>
+
+<li>Remove item "Allow free-behind capability for large sequential scans to avoid kernel cache spoiling" from TODO. Fixed in a different way.</li>
+
+<li>Add random I/O URL to TODO.</li>
+
+<li>Mark items needing updating for beta stamping.</li>
+
+<li>Add default error rules for making postgres.pdf and postgres.ps, suggesting proper target names.</li>
+
+<li>In pgsql/doc/src/sgml/Makefile, use clearer error message for gmake postgres.pdf: "Makefile:171: * Invalid target; use postgres-A4.pdf or postgres-US.pdf as targets. Stop."</li>
+
+<li>In pgsql/doc/src/sgml/release.sgml, mark 8.3 as likely now January, 2008 in release notes.</li>
+
+<li>In pgsql/doc/src/sgml/high-availability.sgml, update pgpool-II mention.</li>
+
+<li>In pgsql/doc/src/sgml/runtime.sgml, mention pg_ctl kill for Win32 in docs.</li>
+
+<li>In pgsql/doc/src/sgml/runtime.sgml, add docs about OOM killer. lst_hoe01 AT kwsoft.de</li>
+
+<li>Update OOM wording.</li>
+
+<li>Mention that HOT helps with DELETE space reuse.</li>
+
+<li>In pgsql/doc/src/sgml/wal.sgml, update write-cache docs to mention windows behavior for various fsync_methods. Magnus Hagander.</li>
+
+<li>In pgsql/doc/src/sgml/wal.sgml, Windows write-cache wording improvement.</li>
+
+<li>In TODO, update item description to read: "Consider having the background writer update the transaction status hint bits before writing out the page. Implementing this requires the background writer to have access to system catalogs and the transaction status log."</li>
+
+<li>In pgsql/src/tools/pgindent/README, mention installing /contrib libraries for pgindent.</li>
+
+<li>In pgsql/src/tools/pgindent/README, mention use all configure options when getting pgindent typedefs.</li>
+
+</ul>
+
+<p>Tom Lane a commité&nbsp;:</p>
+
+<ul>
+
+<li>Make an editorial pass over the newly SGML-ified contrib documentation. Fix lots of bad markup, bad English, bad explanations. Second round of commits. pgcrypto and pgstandby still to go...</li>
+
+<li>In pgsql/contrib/vacuumlo/vacuumlo.c, make vacuumlo prompt for password when needed, thus making its -W switch optional, as is the case for every other one of our programs. I had already documented its -W as being optional, so this is bringing the code into line with the docs ...</li>
+
+<li>Remove the -P options of oid2name and pgbench, as they are security hazards. Instead teach these programs to prompt for a password when necessary, just like all our other programs. I did not bother to invent -W switches for them, since the return on investment seems so low.</li>
+
+<li>Remove the long-deprecated -u option from psql, since it does nothing very useful and confuses people who think it is the same as -U. (Eventually we might want to re-introduce it as being an alias for -U, but that should not happen until the switch has actually not been there for a few releases.) Likewise in pg_dump and pg_restore. Per gripe from Robert Treat and subsequent discussion.</li>
+
+<li>Make documentation of -W options more accurate and uniform.</li>
+
+<li>In pgsql/doc/src/sgml/arch-dev.sgml, change 'merge sort join', a phrase we use nowhere else, to the more usual 'merge join'.</li>
+
+<li>In pgsql/src/backend/postmaster/pgarch.c, clean up unportable attempt to use #if inside a macro call, also faulty code in third arm of #if. Per buildfarm reports.</li>
+
+<li>Improve the method of localizing column names and other fixed strings in psql's \d commands and other uses of printQuery(). Previously we would pass these strings through gettext() and then send them to the server as literals in the SQL query. But the code was not set up to handle doubling of quotes in the strings, causing failure if a translation attempted to use the wrong kind of quote marks, as indeed is now the case for (at least) the French translation of \dFp. Another hazard was that gettext() would translate to whatever encoding was implied by the client's LC_CTYPE setting, which might be different from the client_encoding setting, which would probably cause the server to reject the query as mis-encoded. The new arrangement is to send the untranslated ASCII strings to the server, and do the translations inside printQuery() after the query results come back. Per report from Guillaume Lelarge and subsequent discussion.</li>
+
+<li>In pgsql/doc/src/sgml/textsearch.sgml, change a couple of examples to say ALTER MAPPING instead of ADD MAPPING, per Oleg.</li>
+
+<li>Improve documentation about Julian dates; in particular, point out the difference between Julian and Gregorian reckoning of when JD 0 was.</li>
+
+<li>Make an editorial pass over the newly SGML-ified contrib documentation. Fix lots of bad markup, bad English, bad explanations. Last ones ... whew. Man, that was tedious.</li>
+
+</ul>
+
+<p><strong>Correctifs rejetés (à ce jour)</strong></p>
+
+<ul>
+
+<li>Mark Kirkwood's patch to create tablespaces automatically. This feature was previously removed on grounds of foot-gun-itude.</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Alvaro Herrera sent in a patch to fix the CSV logging gap from Bug #3799.</li>
+
+<li>Dave Page sent in a patch to introduce a delay between client connection setup and the start of the benchmark itself in pgbenchmark.</li>
+
+<li>Tom Lane sent in a patch which disallows sending passwords in libpq.</li>
+
+<li>Zdenek Kotala sent in a patch to pgsql/doc/src/sgml/wal.sgml which explains how write cache works on Solaris.</li>
+
+<li>Tom Lane sent in a patch which chagnes the way psql deals with localization of column names and other fixed strings in the output of \d and related commands, per gripe from Guillaume LeLarge.</li>
+
+<li>Simon Riggs sent in a patch which changes the display of the archiver under ps so that it can be monitored during archiving.</li>
+
+</ul>

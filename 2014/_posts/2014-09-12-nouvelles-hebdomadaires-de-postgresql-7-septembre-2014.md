@@ -1,0 +1,234 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 7 septembre 2014"
+author: "NBougain"
+redirect_from: "index.php?post/2014-09-12-nouvelles-hebdomadaires-de-postgresql-7-septembre-2014 "
+---
+
+
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Andres Freund a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix s/pluggins/plugins/ typo in two comments. Michael Paquier 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5a64cb740dc7de868a1395a53778686c0a72f6a7">http://git.postgresql.org/pg/commitdiff/5a64cb740dc7de868a1395a53778686c0a72f6a7</a></li>
+
+<li>Add valgrind suppression for padding bytes in twophase records. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/9a0a12f683235d3e10b873baba974f6414297a7e">http://git.postgresql.org/pg/commitdiff/9a0a12f683235d3e10b873baba974f6414297a7e</a></li>
+
+<li>Add skip-empty-xacts option to test_decoding for use in the regression tests. The regression tests for contrib/test_decoding regularly failed on postgres instances that were very slow. Either because the hardware itself was slow or because very expensive debugging options like CLOBBER_CACHE_ALWAYS were used. The reason they failed was just that some additional transactions were decoded. Analyze and vacuum, triggered by autovac. To fix just add a option to test_decoding to only display transactions in which a change was actually displayed. That's not pretty because it removes information from the tests; but better than constantly failing tests in very likely harmless ways. Backpatch to 9.4 where logical decoding was introduced. Discussion: 20140629142511.GA26930@awork2.anarazel.de 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d6fa44fce7c27459e2d7a46cca18779b765c8b15">http://git.postgresql.org/pg/commitdiff/d6fa44fce7c27459e2d7a46cca18779b765c8b15</a></li>
+
+<li>Add psql PROMPT variable showing which line of a statement is being edited. The new %l substitution shows the line number inside a (potentially multi-line) statement starting from one. Author: Sawada Masahiko, heavily editorialized by me. Reviewed-By: Jeevan Chalke, Alvaro Herrera 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/51bb79569f934ad2135c2ff859c61b9ab8d51750">http://git.postgresql.org/pg/commitdiff/51bb79569f934ad2135c2ff859c61b9ab8d51750</a></li>
+
+</ul>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix unportable use of isspace(). Introduced in commit 11a020eb6. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/01b6976c13a9cf87f3c6767c9722576166c1b081">http://git.postgresql.org/pg/commitdiff/01b6976c13a9cf87f3c6767c9722576166c1b081</a></li>
+
+<li>Documentation fix: sum(float4) returns float4, not float8. The old claim is from my commit d06ebdb8d3425185d7e641d15e45908658a0177d of 2000-07-17, but it seems to have been a plain old thinko; sum(float4) has been distinct from sum(float8) since Berkeley days. Noted by KaiGai Kohei. While at it, mention the existence of sum(money), which is also of embarrassingly ancient vintage. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0640c1bfc09138f136fc1239d2c27b6d37f7d1af">http://git.postgresql.org/pg/commitdiff/0640c1bfc09138f136fc1239d2c27b6d37f7d1af</a></li>
+
+</ul>
+
+<p>Fujii Masao a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Support ALTER SYSTEM RESET command. This patch allows us to execute ALTER SYSTEM RESET command to remove the configuration entry from postgresql.auto.conf. Vik Fearing, reviewed by Amit Kapila and me. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bd3b7a9eef6fd8d71ad9aa5eaf1f90e904e96f0b">http://git.postgresql.org/pg/commitdiff/bd3b7a9eef6fd8d71ad9aa5eaf1f90e904e96f0b</a></li>
+
+<li>Allow \watch to display query execution time if \timing is enabled. Previously \watch could not display the query execution time even when \timing was enabled because it used PSQLexec instead of SendQuery and that function didn't support \timing. This patch introduces PSQLexecWatch and changes \watch so as to use it, instead. PSQLexecWatch is the function to run the query, print its results and display how long it took (only when \timing is enabled). This patch also changes --echo-hidden so that it doesn't print the query that \watch executes. Since \watch cannot execute backslash command queries, they should not be printed even when --echo-hidden is set. Patch by me, review by Heikki Linnakangas and Michael Paquier 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f6f654ff12c527310ddbeaf53d463d22ab46ee2c">http://git.postgresql.org/pg/commitdiff/f6f654ff12c527310ddbeaf53d463d22ab46ee2c</a></li>
+
+<li>Fix segmentation fault that an empty prepared statement could cause. Back-patch to all supported branches. Per bug #11335 from Haruka Takatsuka 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a73c9dbab0165b3395dfe8a44a7dfd16166963c4">http://git.postgresql.org/pg/commitdiff/a73c9dbab0165b3395dfe8a44a7dfd16166963c4</a></li>
+
+<li>Add tab-completion for reloptions like user_catalog_table. Back-patch to 9.4 where user_catalog_table was added. Review by Michael Paquier 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d85e7fac415722bccc83dc96baccdb398ea5a2f4">http://git.postgresql.org/pg/commitdiff/d85e7fac415722bccc83dc96baccdb398ea5a2f4</a></li>
+
+</ul>
+
+<p>Heikki Linnakangas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Silence warning on new versions of clang. Andres Freund 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/26f8b99b248aae989e63ca0969a746f30b0c8c21">http://git.postgresql.org/pg/commitdiff/26f8b99b248aae989e63ca0969a746f30b0c8c21</a></li>
+
+<li>Refactor per-page logic common to all redo routines to a new function. Every redo routine uses the same idiom to determine what to do to a page: check if there's a backup block for it, and if not read, the buffer if the block exists, and check its LSN. Refactor that into a common function, XLogReadBufferForRedo, making all the redo routines shorter and more readable. This has no user-visible effect, and makes no changes to the WAL format. Reviewed by Andres Freund, Alvaro Herrera, Michael Paquier. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f8f4227976a2cdb8ac7c611e49da03aa9e65e0d2">http://git.postgresql.org/pg/commitdiff/f8f4227976a2cdb8ac7c611e49da03aa9e65e0d2</a></li>
+
+<li>Check number of parameters in RAISE statement at compile time. The number of % parameter markers in RAISE statement should match the number of parameters given. We used to check that at execution time, but we have all the information needed at compile time, so let's check it at compile time instead. It's generally better to find mistakes earlier. Marko Tiikkaja, reviewed by Fabien Coelho 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c1008f0037ec9c738127c2fa6d7f6c88d885f45f">http://git.postgresql.org/pg/commitdiff/c1008f0037ec9c738127c2fa6d7f6c88d885f45f</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Issue clearer notice when inherited merged columns are moved. CREATE TABLE INHERIT moves user-specified columns to the location of the inherited column. Report by Fatal Majid 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4011f8c98bd8bb67715449d2db5fc97dffa6a41f">http://git.postgresql.org/pg/commitdiff/4011f8c98bd8bb67715449d2db5fc97dffa6a41f</a></li>
+
+<li>Document use of partial indexes for partial unique constraints. Report by Tom&aacute;&scaron; Greif Backpatch through 9.4 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4b224011751d1d4a300a0a179fc006658c6868a3">http://git.postgresql.org/pg/commitdiff/4b224011751d1d4a300a0a179fc006658c6868a3</a></li>
+
+<li>Update URL reference material in /contrib/isn docs. Report by Peter Eisentraut 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4b91ade41fcda805a50e136edad7f95d8f35a7a9">http://git.postgresql.org/pg/commitdiff/4b91ade41fcda805a50e136edad7f95d8f35a7a9</a></li>
+
+<li>Rename C variables in formatting.c, for clarity. Also add C comments. This should help future debugging of this notorious file. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a9c22d1480aa8e6d97a000292d05ef2b31bbde4e">http://git.postgresql.org/pg/commitdiff/a9c22d1480aa8e6d97a000292d05ef2b31bbde4e</a></li>
+
+<li>Clarify documentation about "peer" rows in window functions. Peer rows are matching rows when ORDER BY is specified. Report by arnaud.mouronval@gmail.com, David G Johnston 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1f4d1074c5d83a682e71104114211f6ddee129a5">http://git.postgresql.org/pg/commitdiff/1f4d1074c5d83a682e71104114211f6ddee129a5</a></li>
+
+<li>pg_upgrade: preserve the timestamp epoch. This is useful for replication tools like Slony and Skytools. Report by Sergey Konoplev 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a74a4aa23bb95b590ff01ee564219d2eacea3706">http://git.postgresql.org/pg/commitdiff/a74a4aa23bb95b590ff01ee564219d2eacea3706</a></li>
+
+<li>Report timezone offset in pg_dump/pg_dumpall. Use consistent format for all such displays. Report by Gavin Flower 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ad5d46a4494b0b480a3af246bb4227d9bdadca37">http://git.postgresql.org/pg/commitdiff/ad5d46a4494b0b480a3af246bb4227d9bdadca37</a></li>
+
+<li>Properly document that -r is only honored from the command-line. This is for postgres/postmaster options. Report by Tom Lane Backpatch through 9.4 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d42f67c52af19c4301561608f8f5dba6ae504c67">http://git.postgresql.org/pg/commitdiff/d42f67c52af19c4301561608f8f5dba6ae504c67</a></li>
+
+<li>docs: Improve pg_isready details about username/dbname. Report by Erik Rijkers. Backpatch through 9.4 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/465b52e74ca1994d6ee2d5d345a4c09ca3d02f18">http://git.postgresql.org/pg/commitdiff/465b52e74ca1994d6ee2d5d345a4c09ca3d02f18</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Update comment to reflect commit 1d41739e5a04b0e93304d24d864b6bfa3efc45f2. Peter Geoghegan 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d8d4965dc29263462932be03d4206aa694e2cd7e">http://git.postgresql.org/pg/commitdiff/d8d4965dc29263462932be03d4206aa694e2cd7e</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>doc: Remove dead link. The link to the NIST web page about DES standards leads to nowhere, and according to archive.org has been forwarded to an unrelated page for many years. Therefore, just remove that link. More up to date information can be found via Wikipedia, for example. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8b896abe8eb5ff85ba92710e4a1f0f28097d3ac3">http://git.postgresql.org/pg/commitdiff/8b896abe8eb5ff85ba92710e4a1f0f28097d3ac3</a></li>
+
+<li>Assorted message fixes and improvements 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/303f4d1012a20102d9fec6f486da0b381184a718">http://git.postgresql.org/pg/commitdiff/303f4d1012a20102d9fec6f486da0b381184a718</a></li>
+
+</ul>
+
+<p>Stephen Frost a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Tab completion for ALTER .. ALL IN TABLESPACE. Update the tab completion for the changes made in 3c4cf080879b386d4ed1814667aca025caafe608, which rework 'MOVE ALL' to be 'ALTER .. ALL IN TABLESPACE'. Fujii Masao Back-patch to 9.4, as the original change was. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b2de2a1172d52b9a9596d4366e758749cc586f2b">http://git.postgresql.org/pg/commitdiff/b2de2a1172d52b9a9596d4366e758749cc586f2b</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>No one was disappointed this week</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Kyotaro HORIGUCHI sent in a patch to make the local_preload_libraries GUC PGC_USERSET.</li>
+
+<li>Kyotaro HORIGUCHI sent in two revisions of a patch to fix some odd behavior in the PostgreSQL FDW.</li>
+
+<li>Michael Paquier sent in two related patches: one to refactor the IDENTIFY_SYSTEM and replslot create/drop APIs, the other to add support for --create and --drop in pg_receivexlog.</li>
+
+<li>Peter Geoghegan sent in another revision of a patch to add INSERT ... ON CONFLICT {UPDATE | IGNORE}.</li>
+
+<li>Alexey Klyukin sent in two more revisions of a patch to implement subject alternative names support for SSL connections.</li>
+
+<li>Stepan Rutz and Tom Lane traded patches to help support psql better on OSX and other libedit-based platforms.</li>
+
+<li>Petr (PJMODOS) Jelinek sent in two more revisions of a patch to add built-in binning functions.</li>
+
+<li>Tomonari Katsumata sent in another revision of a patch to allow rounding up time value less than its unit.</li>
+
+<li>David Johnston sent in a patch to reorganize the documentation for server configuration settings.</li>
+
+<li>Kyotaro HORIGUCHI and Heikki Linnakangas traded patches to escape from blocked send().</li>
+
+<li>Amit Kapila sent in two more revisions of a patch to scale shared buffer eviction.</li>
+
+<li>Peter Geoghegan sent in another flock of patches to add B-Tree support function number 3 (strxfrm() optimization).</li>
+
+<li>Pavel Stehule and Stephen Frost traded patches to allow row_to_json to ignore nulls.</li>
+
+<li>Tomas Vondra sent in two more revisions of a patch to create a memory-bounded HashAgg.</li>
+
+<li>Pavel Stehule sent in two more revisions of a patch to add --help=variables to psql.</li>
+
+<li>Peter Eisentraut sent in a patch to fix analyze in stages.</li>
+
+<li>Bruce Momjian sent in two revisions of a patch to display timestamp in pg_dump custom format.</li>
+
+<li>Euler Taveira de Oliveira sent in a patch to treat unset units and empty space units as equivalent for GUCs.</li>
+
+<li>Kaigai Kouhei sent in another revision of a patch to create a custom scan API.</li>
+
+<li>Furuya Osamu sent in another revision of a patch to add --reply-fsync to pg_receivexlog --status-interval.</li>
+
+<li>Marko (johto) Tiikkaja sent in another revision of a patch to add PGP signatures to the pgcrypto contrib extension.</li>
+
+<li>Joachim Wieland sent in another revision of a patch to eliminate global variables in pg_dump.</li>
+
+<li>Pavel Stehule sent in a WIP patch to allow EXPLAINing a running query.</li>
+
+<li>Oskari Saarenmaa sent in a patch to optionally emit warnings when column or table aliases are used without the AS keyword.</li>
+
+<li>Adam Brightwell sent in another revision of a patch to implement row-level access controls.</li>
+
+<li>Marko (johto) Tiikkaja sent in a patch to allow adding a a nullable DOMAIN column with a CHECK constraint in it.</li>
+
+<li>Peter Geoghegan sent in another revision of a patch to state the significance of Lehman &amp; Yao in the nbtree README.</li>
+
+<li>Emre Hasegeli sent in another revision of a patch to add selectivity estimation for inet operators.</li>
+
+<li>Kostya Kuznetzov sent in a patch to recode vacuum in order to accommodate GiST indexes.</li>
+
+</ul>

@@ -1,0 +1,202 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 7 août 2016"
+author: "NBougain"
+redirect_from: "index.php?post/2016-08-10-nouvelles-hebdomadaires-de-postgresql-7-aout-2016 "
+---
+
+
+
+<h2>Correctifs appliqu&eacute;s</h2>
+
+<p>Fujii Masao pushed:</p>
+
+<ul>
+
+<li>Fix pg_basebackup so that it accepts 0 as a valid compression level. The help message for pg_basebackup specifies that the numbers 0 through 9 are accepted as valid values of -Z option. But, previously -Z 0 was rejected as an invalid compression level. Per discussion, it's better to make pg_basebackup treat 0 as valid compression level meaning no compression, like pg_dump. Back-patch to all supported versions. Reported-By: Jeff Janes Reviewed-By: Amit Kapila Discussion: CAMkU=1x+GwjSayc57v6w87ij6iRGFWt=hVfM0B64b1_bPVKRqg@mail.gmail.com <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/74d8c95b7456faefdd4244acf854361711fb42ce">http://git.postgresql.org/pg/commitdiff/74d8c95b7456faefdd4244acf854361711fb42ce</a></li>
+
+<li>Remove unused arguments from pg_replication_origin_xact_reset function. The document specifies that pg_replication_origin_xact_reset function doesn't have any argument variables. But previously it was actually defined so as to have two argument variables, though they were not used at all. That is, the pg_proc entry for that function was incorrect. This patch fixes the pg_proc entry and removes those two arguments from the function definition. No back-patch because this change needs a catalog version bump although the issue exists in 9.5 as well. Instead, a note about those unused argument variables will be added to 9.5 document later. Catalog version bumped due to the change of pg_proc. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/dd5eb805d5e5384963f09c9986845a544ef41810">http://git.postgresql.org/pg/commitdiff/dd5eb805d5e5384963f09c9986845a544ef41810</a></li>
+
+</ul>
+
+<p>Michael Meskes pushed:</p>
+
+<ul>
+
+<li>Fixed array checking code for "unsigned long long" datatypes in libecpg. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3ebc88e568053fa16766e05155eb005cc72978db">http://git.postgresql.org/pg/commitdiff/3ebc88e568053fa16766e05155eb005cc72978db</a></li>
+
+</ul>
+
+<p>Bruce Momjian pushed:</p>
+
+<ul>
+
+<li>pg_rewind docs: clarify handling of remote servers <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/878bd9accb553f6eee32af8acdb7ee3e54a74e23">http://git.postgresql.org/pg/commitdiff/878bd9accb553f6eee32af8acdb7ee3e54a74e23</a></li>
+
+<li>doc: OS collation changes can break indexes. Discussion: 20160702155517.GD18610@momjian.us Reviewed-by: Christoph Berg Backpatch-through: 9.1 <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a253a88594f6805168261ea1986df1cd6b9b25e0">http://git.postgresql.org/pg/commitdiff/a253a88594f6805168261ea1986df1cd6b9b25e0</a></li>
+
+<li>C comment: fix typo Author: Amit Langote <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6eb5b05d225006adaf38adc9f30637ee22521881">http://git.postgresql.org/pg/commitdiff/6eb5b05d225006adaf38adc9f30637ee22521881</a></li>
+
+<li>docs: mention rsync of temp and unlogged tables. This happens when using rsync to pg_upgrade slaves. Reported-by: Jerry Sievers Discussion: 20160726161946.GA3511@momjian.us <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4eb4b3f24561cb115b24984c755b2a75155afedf">http://git.postgresql.org/pg/commitdiff/4eb4b3f24561cb115b24984c755b2a75155afedf</a></li>
+
+<li>docs: re-add spaces before units removed. This reverts the spaces before k/M/G/TB units removed for consistency in commit ca0c37b56f4a80ad758774e34c86cc4335583d29. Discussion: 20160802165116.GC32575@momjian.us <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5ebad9a580d8f80943fd7095db14621278cc009c">http://git.postgresql.org/pg/commitdiff/5ebad9a580d8f80943fd7095db14621278cc009c</a></li>
+
+</ul>
+
+<p>Tom Lane pushed:</p>
+
+<ul>
+
+<li>Don't CHECK_FOR_INTERRUPTS between WaitLatch and ResetLatch. This coding pattern creates a race condition, because if an interesting interrupt happens after we've checked InterruptPending but before we reset our latch, the latch-setting done by the signal handler would get lost, and then we might block at WaitLatch in the next iteration without ever noticing the interrupt condition. You can put the CHECK_FOR_INTERRUPTS before WaitLatch or after ResetLatch, but not between them. Aside from fixing the bugs, add some explanatory comments to latch.h to perhaps forestall the next person from making the same mistake. In HEAD, also replace gather_readnext's direct call of HandleParallelMessages with CHECK_FOR_INTERRUPTS. It does not seem clean or useful for this one caller to bypass ProcessInterrupts and go straight to HandleParallelMessages; not least because that fails to consider the InterruptPending flag, resulting in useless work both here (if InterruptPending isn't set) and in the next CHECK_FOR_INTERRUPTS call (if it is). This thinko seems to have been introduced in the initial coding of storage/ipc/shm_mq.c (commit ec9037df2), and then blindly copied into all the subsequent parallel-query support logic. Back-patch relevant hunks to 9.4 to extirpate the error everywhere. Discussion: &lt;1661.1469996911@sss.pgh.pa.us&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/887feefe87b9099eeeec2967ec31ce20df4dfa9b">http://git.postgresql.org/pg/commitdiff/887feefe87b9099eeeec2967ec31ce20df4dfa9b</a></li>
+
+<li>Minor cleanup for access/transam/parallel.c. ParallelMessagePending *must* be marked volatile, because it's set by a signal handler. On the other hand, it's pointless for HandleParallelMessageInterrupt to save/restore errno; that must be, and is, done at the outer level of the SIGUSR1 signal handler. Calling CHECK_FOR_INTERRUPTS() inside HandleParallelMessages, which itself is called from CHECK_FOR_INTERRUPTS(), seems both useless and hazardous. The comment claiming that this is needed to handle the error queue going away is certainly misguided, in any case. Improve a couple of error message texts, and use ERRCODE_OBJECT_NOT_IN_PREREQUISITE_STATE to report loss of parallel worker connection, since that's what's used in e.g. tqueue.c. (Maybe it would be worth inventing a dedicated ERRCODE for this type of failure? But I do not think ERRCODE_INTERNAL_ERROR is appropriate.) Minor stylistic cleanups. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a5fe473ad79d8d2c85a625621c165e8c601274e4">http://git.postgresql.org/pg/commitdiff/a5fe473ad79d8d2c85a625621c165e8c601274e4</a></li>
+
+<li>Fix pg_dump's handling of public schema with both -c and -C options. Since -c plus -C requests dropping and recreating the target database as a whole, not dropping individual objects in it, we should assume that the public schema already exists and need not be created. The previous coding considered only the state of the -c option, so it would emit "CREATE SCHEMA public" anyway, leading to an unexpected error in restore. Back-patch to 9.2. Older versions did not accept -c with -C so the issue doesn't arise there. (The logic being patched here dates to 8.0, cf commit 2193121fa, so it's not really wrong that it didn't consider the case at the time.) Note that versions before 9.6 will still attempt to emit REVOKE/GRANT on the public schema; but that happens without -c/-C too, and doesn't seem to be the focus of this complaint. I considered extending this stanza to also skip the public schema's ACL, but that would be a misfeature, as it'd break cases where users intentionally changed that ACL. The real fix for this aspect is Stephen Frost's work to not dump built-in ACLs, and that's not going to get back-ported. Per bugs #13804 and #14271. Solution found by David Johnston and later rediscovered by me. Report: &lt;20151207163520.2628.95990@wrigleys.postgresql.org&gt; Report: &lt;20160801021955.1430.47434@wrigleys.postgresql.org&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e2e95f5ef3c17197e319e4bbee70486f6a33e7d1">http://git.postgresql.org/pg/commitdiff/e2e95f5ef3c17197e319e4bbee70486f6a33e7d1</a></li>
+
+<li>Block interrupts during HandleParallelMessages(). As noted by Alvaro, there are CHECK_FOR_INTERRUPTS() calls in the shm_mq.c functions called by HandleParallelMessages(). I believe they're all unreachable since we always pass nowait = true, but it doesn't seem like a great idea to assume that no such call will ever be reachable from HandleParallelMessages(). If that did happen, there would be a risk of a recursive call to HandleParallelMessages(), which it does not appear to be designed for --- for example, there's nothing that would prevent out-of-order processing of received messages. And certainly such cases cannot easily be tested. So let's prevent it by holding off interrupts for the duration of the function. Back-patch to 9.5 which contains identical code. Discussion: &lt;14869.1470083848@sss.pgh.pa.us&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b6a97b91ffe8e0c6b6557eb4aef85bcbd423ad5f">http://git.postgresql.org/pg/commitdiff/b6a97b91ffe8e0c6b6557eb4aef85bcbd423ad5f</a></li>
+
+<li>Remove duplicate InitPostmasterChild() call while starting a bgworker. This is apparently harmless on Windows, but on Unix it results in an assertion failure. We'd not noticed because this code doesn't get used on Unix unless you build with -DEXEC_BACKEND. Bug was evidently introduced by sloppy refactoring in commit 31c453165. Thomas Munro Discussion: &lt;CAEepm=1VOnbVx4wsgQFvj94hu9jVt2nVabCr7QiooUSvPJXkgQ@mail.gmail.com&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c6ea616ff702862fc6923323a49dd24a0e0ae2d9">http://git.postgresql.org/pg/commitdiff/c6ea616ff702862fc6923323a49dd24a0e0ae2d9</a></li>
+
+<li>Do not let PostmasterContext survive into background workers. We don't want postmaster child processes to contain a copy of the postmaster's PostmasterContext. That would be a waste of memory at least, and at worst a security issue, since there are copies of the semi-sensitive pg_hba and pg_ident data in there. All other child process types delete the PostmasterContext after forking, but the original coding of the background worker patch (commit da07a1e85) did not do so. It appears that the only reason for that was to avoid copying the bgworker's MyBgworkerEntry out of that context; but the couple of additional statements needed to do so are hardly good justification for it. Hence, copy that data and then clear the context as other child processes do. Because this patch changes the memory context in which a bgworker function gains control, back-patching it would be a bit risky, so we won't fix this in back branches. The "security" complaint is pretty thin anyway for generic bgworkers; only with the introduction of parallel query is there any question of running untrusted code in a bgworker process. Discussion: &lt;14111.1470082717@sss.pgh.pa.us&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ef1b5af82339a49564037be656a3ff657fb2a246">http://git.postgresql.org/pg/commitdiff/ef1b5af82339a49564037be656a3ff657fb2a246</a></li>
+
+<li>Make INSERT-from-multiple-VALUES-rows handle targetlist indirection better. Previously, if an INSERT with multiple rows of VALUES had indirection (array subscripting or field selection) in its target-columns list, the parser handled that by applying transformAssignedExpr() to each element of each VALUES row independently. This led to having ArrayRef assignment nodes or FieldStore nodes in each row of the VALUES RTE. That works for simple cases, but in bug #14265 Nuri Boardman points out that it fails if there are multiple assignments to elements/fields of the same target column. For such cases to work, rewriteTargetListIU() has to nest the ArrayRefs or FieldStores together to produce a single expression to be assigned to the column. But it failed to find them in the top-level targetlist and issued an error about "multiple assignments to same column". We could possibly fix this by teaching the rewriter to apply rewriteTargetListIU to each VALUES row separately, but that would be messy (it would change the output rowtype of the VALUES RTE, for example) and inefficient. Instead, let's fix the parser so that the VALUES RTE outputs are just the user-specified values, cast to the right type if necessary, and then the ArrayRefs or FieldStores are applied in the top-level targetlist to Vars representing the RTE's outputs. This is the same parsetree representation already used for similar cases with INSERT/SELECT syntax, so it allows simplifications in ruleutils.c, which no longer needs to treat INSERT-from-multiple-VALUES as its own special case. This implementation works by applying transformAssignedExpr to the VALUES entries as before, and then stripping off any ArrayRefs or FieldStores it adds. With lots of VALUES rows it would be noticeably more efficient to not add those nodes in the first place. But that's just an optimization not a bug fix, and there doesn't seem to be any good way to do it without significant refactoring. (A non-invasive answer would be to apply transformAssignedExpr + stripping to just the first VALUES row, and then just forcibly cast remaining rows to the same data types exposed in the first row. But this way would lead to different, not-INSERT-specific errors being reported in casting failure cases, so it doesn't seem very nice.) So leave that for later; this patch at least isn't making the per-row parsing work worse, and it does make the finished parsetree smaller, saving rewriter and planner work. Catversion bump because stored rules containing such INSERTs would need to change. Because of that, no back-patch, even though this is a very long-standing bug. Report: &lt;20160727005725.7438.26021@wrigleys.postgresql.org&gt; Discussion: &lt;9578.1469645245@sss.pgh.pa.us&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a3c7a993d5eb29df4d33075b83c75ae25f257897">http://git.postgresql.org/pg/commitdiff/a3c7a993d5eb29df4d33075b83c75ae25f257897</a></li>
+
+<li>Fix bogus coding in WaitForBackgroundWorkerShutdown(). Some conditions resulted in "return" directly out of a PG_TRY block, which left the exception stack dangling, and to add insult to injury failed to restore the state of set_latch_on_sigusr1. This is a bug only in 9.5; in HEAD it was accidentally fixed by commit db0f6cad4, which removed the surrounding PG_TRY block. However, I (tgl) chose to apply the patch to HEAD as well, because the old coding was gratuitously different from WaitForBackgroundWorkerStartup(), and there would indeed have been no bug if it were done like that to start with. Dmitry Ivanov Discussion: &lt;1637882.WfYN5gPf1A@abook&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8d498a5c8a4c702ca71463a5c76bb4f319872378">http://git.postgresql.org/pg/commitdiff/8d498a5c8a4c702ca71463a5c76bb4f319872378</a></li>
+
+<li>Update time zone data files to tzdata release 2016f. DST law changes in Kemerovo and Novosibirsk. Historical corrections for Azerbaijan, Belarus, and Morocco. Asia/Novokuznetsk and Asia/Novosibirsk now use numeric time zone abbreviations instead of invented ones. Zones for Antarctic bases and other locations that have been uninhabited for portions of the time span known to the tzdata database now report "-00" rather than "zzz" as the zone abbreviation for those time spans. Also, I decided to remove some of the timezone/data/ files that we don't use. At one time that subdirectory was a complete copy of what IANA distributes in the tzdata tarballs, but that hasn't been true for a long time. There seems no good reason to keep shipping those specific files but not others; they're just bloating our tarballs. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a629330b2990c2e76cc8e45a78ede0920c16e0bf">http://git.postgresql.org/pg/commitdiff/a629330b2990c2e76cc8e45a78ede0920c16e0bf</a></li>
+
+<li>Re-pgindent tsvector_op.c. Messed up by recent commits --- this is annoying me while trying to fix some bugs here. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/33fe7360afdc0bb1820743ea5bfe3fc7d522f6c4">http://git.postgresql.org/pg/commitdiff/33fe7360afdc0bb1820743ea5bfe3fc7d522f6c4</a></li>
+
+<li>Fix ts_delete(tsvector, text[]) to cope with duplicate array entries. Such cases either failed an Assert, or produced a corrupt tsvector in non-Assert builds, as reported by Andreas Seltenreich. The reason is that tsvector_delete_by_indices() just assumed that its input array had no duplicates. Fix by explicitly de-duping. In passing, improve some comments, and fix a number of tests for null values to use ERRCODE_NULL_VALUE_NOT_ALLOWED not ERRCODE_INVALID_PARAMETER_VALUE. Discussion: &lt;87invhoj6e.fsf@credativ.de&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c50d192ce33c10fa06411306f8644b4f47ce9a06">http://git.postgresql.org/pg/commitdiff/c50d192ce33c10fa06411306f8644b4f47ce9a06</a></li>
+
+<li>Make array_to_tsvector() sort and de-duplicate the given strings. This is required for the result to be a legal tsvector value. Noted while fooling with Andreas Seltenreich's ts_delete() crash. Discussion: &lt;87invhoj6e.fsf@credativ.de&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f10eab73df2b94c860dea4a906c54e3c903f42e2">http://git.postgresql.org/pg/commitdiff/f10eab73df2b94c860dea4a906c54e3c903f42e2</a></li>
+
+<li>Fix copy-and-pasteo in 81c766b3fd41c78c634d78ebae8d316808dfc630. Report: &lt;57A4E6DF.8070209@dunslane.net&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fc509cd82443a4cf338032492f6b1bd6e8698f8d">http://git.postgresql.org/pg/commitdiff/fc509cd82443a4cf338032492f6b1bd6e8698f8d</a></li>
+
+<li>Teach libpq to decode server version correctly from future servers. Beginning with the next development cycle, PG servers will report two-part not three-part version numbers. Fix libpq so that it will compute the correct numeric representation of such server versions for reporting by PQserverVersion(). It's desirable to get this into the field and back-patched ASAP, so that older clients are more likely to understand the new server version numbering by the time any such servers are in the wild. (The results with an old client would probably not be catastrophic anyway for a released server; for example "10.1" would be interpreted as 100100 which would be wrong in detail but would not likely cause an old client to misbehave badly. But "10devel" or "10beta1" would result in sversion==0 which at best would result in disabling all use of modern features.) Extracted from a patch by Peter Eisentraut; comments added by me Patch: &lt;802ec140-635d-ad86-5fdf-d3af0e260c22@2ndquadrant.com&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/69dc5ae408f68c302029a6b43912a2cc16b1256c">http://git.postgresql.org/pg/commitdiff/69dc5ae408f68c302029a6b43912a2cc16b1256c</a></li>
+
+<li>In B-tree page deletion, clean up properly after page deletion failure. In _bt_unlink_halfdead_page(), we might fail to find an immediate left sibling of the target page, perhaps because of corruption of the page sibling links. The code intends to cope with this by just abandoning the deletion attempt; but what actually happens is that it fails outright due to releasing the same buffer lock twice. (And error recovery masks a second problem, which is possible leakage of a pin on another page.) Seems to have been introduced by careless refactoring in commit efada2b8e. Since there are multiple cases to consider, let's make releasing the buffer lock in the failure case the responsibility of _bt_unlink_halfdead_page() not its caller. Also, avoid fetching the leaf page's left-link again after we've dropped lock on the page. This is probably harmless, but it's not exactly good coding practice. Per report from Kyotaro Horiguchi. Back-patch to 9.4 where the faulty code was introduced. Discussion: &lt;20160803.173116.111915228.horiguchi.kyotaro@lab.ntt.co.jp&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e89526d4f3567c58c2a69fa1b1d9e44df89349fb">http://git.postgresql.org/pg/commitdiff/e89526d4f3567c58c2a69fa1b1d9e44df89349fb</a></li>
+
+<li>First-draft release notes for 9.5.4. As usual, the release notes for other branches will be made by cutting these down, but put them up for community review first. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3676631c687009c2fadcb35e7d312e9eb8a98182">http://git.postgresql.org/pg/commitdiff/3676631c687009c2fadcb35e7d312e9eb8a98182</a></li>
+
+<li>Don't propagate a null subtransaction snapshot up to parent transaction. This oversight could cause logical decoding to fail to decode an outer transaction containing changes, if a subtransaction had an XID but no actual changes. Per bug #14279 from Marko Tiikkaja. Patch by Marko based on analysis by Andrew Gierth. Discussion: &lt;20160804191757.1430.39011@wrigleys.postgresql.org&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bcbecbce2fde3c6dfa9080db11663877808a007d">http://git.postgresql.org/pg/commitdiff/bcbecbce2fde3c6dfa9080db11663877808a007d</a></li>
+
+<li>Avoid crashing in GetOldestSnapshot() if there are no known snapshots. The sole caller expects NULL to be returned in such a case, so make it so and document it. Per reports from Andreas Seltenreich and Regina Obe. This doesn't really fix their problem, as now their RETURNING queries will say "ERROR: no known snapshots", but in any case this function should not dump core in a reasonably-foreseeable situation. Report: &lt;87vazemeda.fsf@credativ.de&gt; Report: &lt;20160807051854.1427.32414@wrigleys.postgresql.org&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/07a601eedab7c5fa4d62055fa3efacef2f38e446">http://git.postgresql.org/pg/commitdiff/07a601eedab7c5fa4d62055fa3efacef2f38e446</a></li>
+
+</ul>
+
+<p>Peter Eisentraut pushed:</p>
+
+<ul>
+
+<li>Consistently capitalize names of recovery tests <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f6ced51f9188ad5806219471a0b40a91dde923aa">http://git.postgresql.org/pg/commitdiff/f6ced51f9188ad5806219471a0b40a91dde923aa</a></li>
+
+<li>doc: Whitespace fixes in man pages <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e9888c2a48d490ae75d8692db1b1f12c3740c21b">http://git.postgresql.org/pg/commitdiff/e9888c2a48d490ae75d8692db1b1f12c3740c21b</a></li>
+
+<li>Change minimum max_worker_processes from 1 to 0. Setting it to 0 is probably not useful in practice, but it allows testing of situations without available background worker slots. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c4d3a039f0ea735c4c21831a74b753678c0e6794">http://git.postgresql.org/pg/commitdiff/c4d3a039f0ea735c4c21831a74b753678c0e6794</a></li>
+
+<li>doc: Remove slightly confusing xreflabels. It seems clearer to refer to these tables in the normal way. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/0a4d67b16cd6a0d435169e66a1b4911007cb6aef">http://git.postgresql.org/pg/commitdiff/0a4d67b16cd6a0d435169e66a1b4911007cb6aef</a></li>
+
+<li>Small wording tweaks. Dmitry Igrishin <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/071049919566c22a276ae6441097c436e382a679">http://git.postgresql.org/pg/commitdiff/071049919566c22a276ae6441097c436e382a679</a></li>
+
+<li>doc: Change recommendation to put NOTIFY into a rule. Suggest a statement trigger instead. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/69bdfc4090816d77a3d08684a30bfb05f8b1e104">http://git.postgresql.org/pg/commitdiff/69bdfc4090816d77a3d08684a30bfb05f8b1e104</a></li>
+
+<li>doc: Remove documentation of nonexistent information schema columns. These were probably copied in by accident. From: Cl&eacute;ment Pr&eacute;vost &lt;prevostclement@gmail.com&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/2b8fd4fa67693b0b07c412eed34c6b6da6c74d43">http://git.postgresql.org/pg/commitdiff/2b8fd4fa67693b0b07c412eed34c6b6da6c74d43</a></li>
+
+<li>Add missing casts in information schema. From: Cl&eacute;ment Pr&eacute;vost &lt;prevostclement@gmail.com&gt; <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6a9e09c49e1405c47b0870de73fec5748302f92d">http://git.postgresql.org/pg/commitdiff/6a9e09c49e1405c47b0870de73fec5748302f92d</a></li>
+
+<li>doc: Move indexterms to avoid whitespace issue in man pages <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/81568a971f2634bc447af2788eafee899f2db2a1">http://git.postgresql.org/pg/commitdiff/81568a971f2634bc447af2788eafee899f2db2a1</a></li>
+
+</ul>
+
+<p>Kevin Grittner pushed:</p>
+
+<ul>
+
+<li>Add OldSnapshotTimeMapLock to wait_event table in docs. Ashutosh Sharma with minor fixes by me. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/c93d8737be47667091b36f5852fd706146514008">http://git.postgresql.org/pg/commitdiff/c93d8737be47667091b36f5852fd706146514008</a></li>
+
+</ul>
+
+<p>&Aacute;lvaro Herrera pushed:</p>
+
+<ul>
+
+<li>Fix assorted problems in recovery tests. In test 001_stream_rep we're using pg_stat_replication.write_location to determine catch-up status, but we care about xlog having been applied not just received, so change that to apply_location. In test 003_recovery_targets, we query the database for a recovery target specification and later for the xlog position supposedly corresponding to that recovery specification. If for whatever reason more WAL is written between the two queries, the recovery specification is earlier than the xlog position used by the query in the test harness, so we wait forever, leading to test failures. Deal with this by using a single query to extract both items. In 2a0f89cd717 we tried to deal with it by giving them more tests to run, but in hindsight that was obviously doomed to failure (no revert of that, though). Per hamster buildfarm failures. Author: Micha&euml;l Paquier <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b26f7fa6ae2b4e5d64525b3d5bc66a0ddccd9e24">http://git.postgresql.org/pg/commitdiff/b26f7fa6ae2b4e5d64525b3d5bc66a0ddccd9e24</a></li>
+
+</ul>
+
+<p>Robert Haas pushed:</p>
+
+<ul>
+
+<li>Prevent "snapshot too old" from trying to return pruned TOAST tuples. Previously, we tested for MVCC snapshots to see whether they were too old, but not TOAST snapshots, which can lead to complaints about missing TOAST chunks if those chunks are subject to early pruning. Ideally, the threshold lsn and timestamp for a TOAST snapshot would be that of the corresponding MVCC snapshot, but since we have no way of deciding which MVCC snapshot was used to fetch the TOAST pointer, use the oldest active or registered snapshot instead. Reported by Andres Freund, who also sketched out what the fix should look like. Patch by me, reviewed by Amit Kapila. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3e2f3c2e423b3ae906668c186bac79522b8e3e29">http://git.postgresql.org/pg/commitdiff/3e2f3c2e423b3ae906668c186bac79522b8e3e29</a></li>
+
+<li>Change InitToastSnapshot to a macro. tqual.h is included in some front-end compiles, and a static inline breaks on buildfarm member castoroides. Since the macro is never referenced, it should dodge that problem, although this doesn't seem like the cleanest way of hiding things from front-end compiles. Report and review by Tom Lane; patch by me. <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/81c766b3fd41c78c634d78ebae8d316808dfc630">http://git.postgresql.org/pg/commitdiff/81c766b3fd41c78c634d78ebae8d316808dfc630</a></li>
+
+</ul>
+
+<p>Andres Freund pushed:</p>
+
+<ul>
+
+<li>Fix hard to hit race condition in heapam's tuple locking code. As mentioned in its commit message, eca0f1db left open a race condition, where a page could be marked all-visible, after the code checked PageIsAllVisible() to pin the VM, but before the page is locked. Plug that hole. Reviewed-By: Robert Haas, Andres Freund Author: Amit Kapila Discussion: CAEepm=3fWAbWryVW9swHyLTY4sXVf0xbLvXqOwUoDiNCx9mBjQ@mail.gmail.com Backpatch: - <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e7caacf733f3ee77a555aa715ab6fbf4434e6b52">http://git.postgresql.org/pg/commitdiff/e7caacf733f3ee77a555aa715ab6fbf4434e6b52</a></li>
+
+</ul>
+
+<h2>Correctifs en attente</h2>
+
+<p>Etsuro Fujita sent in a patch to clarify the documentation around PlanForeignModify.</p>
+
+<p>Karan Sikka sent in a patch to implement Boyer-Moore searching in LIKE queries.</p>
+
+<p>Vladimir Sitnikov sent in a WIP patch to try CreateOneShotCachedPlan for unnamed statements in exec_parse_message.</p>
+
+<p>Peter Geoghegan sent in a patch to implement parallel tuplesort.</p>
+
+<p>Bruce Momjian sent in a patch to change usages of prefixes (k- to K, for example).</p>
+
+<p>Tomas Vondra sent in a patch to add two slab-like memory allocators.</p>
+
+<p>Masahiko Sawada sent in a patch to add a quorum commit for multiple synchronous replication.</p>
+
+<p>Etsuro Fujita sent in two revisions of a patch to fix an oddity in EXPLAIN for foreign/custom join pushdown plans.</p>
+
+<p>Tomas Vondra sent in another revision of a patch to add multivariate statistics.</p>
+
+<p>Alexey Grishchenko sent in a patch to add upport for multi-dimensional arrays to PL/PythonU.</p>
+
+<p>Andres Freund sent in a PoC patch to fix some messed-up-ness in SRF handling in target lists.</p>
+
+<p>Masahiko Sawada sent in a patch to ensure that lazy_scan_heap accesses the visibility map only once.</p>
+
+<p>Peter Eisentraut sent in a WIP patch to stamp version 10 for development.</p>
+
+<p>Peter Eisentraut sent in another revision of a patch to add a -w (wait) pg_ctl promote option.</p>
+
+<p>Ildar Musin sent in a patch to remove a now-unused argument in the PinBuffer function.</p>
+
+<p>Mithun Cy sent in a patch to add coverage tests for hash indexes.</p>
+
+<p>Micha&euml;l Paquier sent in two revisions of a patch to fix a crash in pg_basebackup uncovered by Andreas Seltenreich's sqlsmith.</p>
+
+<p>Peter Eisentraut sent in a patch to improve DefElem list processing.</p>
+
+<p>Aleksander Alekseev sent in another revision of a patch add a "fast" variant of temp tables which don't bloat the catalog.</p>
+
+<p>Tom Lane sent in two revisions of a patch to fix an issue that resulted in bogus ANALYZE results for an otherwise-unique column with many nulls.</p>
+
+<p>Amit Kapila sent in another revision of a patch to implement WAL-logged hash indexes.</p>
+
+<p>Jeff Janes sent in a patch to add a new GUC, notice_lock_waits, which acts like log_lock_waits but sends the message as NOTICE so it will show up on interactive connections like psql.</p>
+
+<p>Petr Jelinek sent in WIP a patch to add logical replication, and there was much rejoicing.</p>
+
+<p>Peter Eisentraut sent in a patch to fix an overflow in the MONEY type.</p>
+
+<p>Anastasia Lubennikova sent in a patch to refactor the heapam code.</p>
+
+<p>Thomas Munro sent in a patch to consolidate the 'unique array values' logic into a reusable function.</p>
+
+<p>Pavel Stehule sent in a PoC patch to add an xmltable function.</p>
+
+<p>Andreas Seltenreich sent in a patch to fix a crash in pg_get_viewdef_name_ext().</p>

@@ -1,0 +1,214 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 8 mai 2011"
+author: "NBougain"
+redirect_from: "index.php?post/2011-05-14-nouvelles-hebdomadaires-de-postgresql-8-mai-2011 "
+---
+
+
+
+<p><strong>Revues de code</strong></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Tom Lane a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Improve aset.c's space management in contexts with small maxBlockSize. The previous coding would allow requests up to half of maxBlockSize to be treated as "chunks", but when that actually did happen, we'd waste nearly half of the space in the malloc block containing the chunk, if no smaller requests came along to fill it. Avoid this scenario by limiting the maximum size of a chunk to 1/8th maxBlockSize, so that we can waste no more than 1/8th of the allocated space. This will not change the behavior at all for the default context size parameters (with large maxBlockSize), but it will change the behavior when using ALLOCSET_SMALL_MAXSIZE. In particular, there's no longer a need for spell.c to be overly concerned about the request size parameters it uses, so remove a rather unhelpful comment about that. Merlin Moncure, per an idea of Tom Lane's 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/6755558b92748287e961fed518c14be375630464">http://git.postgresql.org/pg/commitdiff/6755558b92748287e961fed518c14be375630464</a></li>
+
+<li>Fix pull_up_sublinks' failure to handle nested pull-up opportunities. After finding an EXISTS or ANY sub-select that can be converted to a semi-join or anti-join, we should recurse into the body of the sub-select. This allows cases such as EXISTS-within-EXISTS to be optimized properly. The original coding would leave the lower sub-select as a SubLink, which is no better and often worse than what we can do with a join. Per example from Wayne Conrad. Back-patch to 8.4. There is a related issue in older versions' handling of pull_up_IN_clauses, but they're lame enough anyway about the whole area that it seems not worth the extra work to try to fix. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/dcc685debb02c507b88aa8052f9e6334a7c3f830">http://git.postgresql.org/pg/commitdiff/dcc685debb02c507b88aa8052f9e6334a7c3f830</a></li>
+
+<li>Include unary plus in the Operator Precedence table. Per gripe from Grzegorz Szpetkowski. Also, change the subsection heading from "Lexical Precedence" (which is a contradiction in terms) to "Operator Precedence". 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/671322751add80f3368cd9ef17134fb9f73cf747">http://git.postgresql.org/pg/commitdiff/671322751add80f3368cd9ef17134fb9f73cf747</a></li>
+
+<li>Remove precedence labeling of keywords TRUE, FALSE, UNKNOWN, and ZONE. These were labeled with precedences just to avoid attaching explicit precedences to the productions in which they were the last terminal symbol. Since a terminal symbol precedence marking can affect many other things too, it seems like better practice to attach precedence labels to the productions, and not mark the terminal symbols. Ideally we'd also remove the precedence attached to NULL_P, but it turns out that we are actually depending on that having a precedence higher than POSTFIXOP, else we get a shift/reduce conflict for postfix operators in b_expr. (Which more or less proves my point about these markings having a high risk of unexpected consequences.) For the moment, move NULL_P into the set of keywords grouped with IDENT, so that at least it will act similarly to non-keywords; and document the interaction. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/12b7164578e73abb065a835c588c1e0c44670ed3">http://git.postgresql.org/pg/commitdiff/12b7164578e73abb065a835c588c1e0c44670ed3</a></li>
+
+<li>Move RegisterPredicateLockingXid() call to a safer place. The SSI patch inserted a call of RegisterPredicateLockingXid into GetNewTransactionId, which was a bad idea on a couple of grounds. First, it's not necessary to hold XidGenLock while manipulating that shared memory, and doing so is bad because XidGenLock is a high-contention lock that should be held for as short a time as possible. (Not to mention that it adds an entirely unnecessary deadlock hazard, since we must take SerializableXactHashLock as well.) Second, the specific place where it was put was between extending CLOG and advancing nextXid, which could result in unpleasant behavior in case of a failure there. Pull the call out to AssignTransactionId, which is much safer and arguably better from a modularity standpoint too. There is more work to do to clean up the failure-before-advancing-nextXid issue, but that is a separate change that will need to be back-patched. So for the moment I just want to make GetNewTransactionId look the same as it did in prior versions. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d2088ae949993ad8e3aabc3b6a9cd77aa5cac957">http://git.postgresql.org/pg/commitdiff/d2088ae949993ad8e3aabc3b6a9cd77aa5cac957</a></li>
+
+<li>Fix some portability issues in isolation regression test driver. Remove random system #includes in favor of using postgres_fe.h. (The alternative to that is letting this module grow its own configuration testing ability...) Also fix the "make clean" target to actually clean things up. Per local testing. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/eff223ffd74eed268f35d693462969f7f75632d2">http://git.postgresql.org/pg/commitdiff/eff223ffd74eed268f35d693462969f7f75632d2</a></li>
+
+</ul>
+
+<p>Peter Eisentraut a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Small cleanup of spacing in verbatim DocBook elements 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/4b08bf8ce7a7515f669ce0a1ce1946c6492b65ed">http://git.postgresql.org/pg/commitdiff/4b08bf8ce7a7515f669ce0a1ce1946c6492b65ed</a></li>
+
+<li>Fix alignment of --help output. Tabs replaced by spaces. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/ce2fc20071a6ae68e63bd675b147818669cd83b4">http://git.postgresql.org/pg/commitdiff/ce2fc20071a6ae68e63bd675b147818669cd83b4</a></li>
+
+<li>Message style cleanup 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/bff074b1ab0dfed7a7822dcc8942f877efa3b914">http://git.postgresql.org/pg/commitdiff/bff074b1ab0dfed7a7822dcc8942f877efa3b914</a></li>
+
+<li>Remove redundant port number check. pg_basebackup doesn't need to police the format of port numbers. libpq already does that. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/7f1f1bfdbb199a003b9bef5dc946eb2c1c38e4c2">http://git.postgresql.org/pg/commitdiff/7f1f1bfdbb199a003b9bef5dc946eb2c1c38e4c2</a></li>
+
+<li>Link some tables into the surrounding text by their id 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/a3b681f0bc46de6ae89c7e17c1704329ffc3ba76">http://git.postgresql.org/pg/commitdiff/a3b681f0bc46de6ae89c7e17c1704329ffc3ba76</a></li>
+
+<li>Improve pg_archivecleanup and pg_standby --help output. For consistency with other tools, put the options before further usage information. In pg_standby, remove the supposedly deprecated -l option from the given example invocation. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/b24181b26fc90758370e475088be4ef2497d3cc3">http://git.postgresql.org/pg/commitdiff/b24181b26fc90758370e475088be4ef2497d3cc3</a></li>
+
+<li>Improve formatting of pg_upgrade --help output. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d6d823c8b0e6878cf532120c0c019c7704b27be3">http://git.postgresql.org/pg/commitdiff/d6d823c8b0e6878cf532120c0c019c7704b27be3</a></li>
+
+<li>Improve compiler string shown in version(). With some compilers such as Clang and ICC emulating GCC, using a version string of the form "GCC $version" can be quite misleading. Also, a great while ago, the version output from gcc --version started including the string "gcc", so it is redundant to repeat that. In order to support ancient GCC versions, we now prefix the result with "GCC " only if the version output does not start with a letter. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/8dd2ede3f82505c3fd041c1953524305df0732d1">http://git.postgresql.org/pg/commitdiff/8dd2ede3f82505c3fd041c1953524305df0732d1</a></li>
+
+</ul>
+
+<p>Alvaro Herrera a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Update some ALTER USER cross-references to ALTER ROLE. Greg Smith 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/52897e54db1000f2fa45b31e02eb252dd0573516">http://git.postgresql.org/pg/commitdiff/52897e54db1000f2fa45b31e02eb252dd0573516</a></li>
+
+<li>Add ID attribute to some sect2's missing it. David Fetter 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/155743ad3108cd586d56e864d1209b82f9a716f0">http://git.postgresql.org/pg/commitdiff/155743ad3108cd586d56e864d1209b82f9a716f0</a></li>
+
+<li>Update obsolete mention of Sequoia, now known as Tungsten. Per 
+
+<a target="_blank" href="http://joomla.aws.continuent.com/community/lab-projects/sequoia">http://joomla.aws.continuent.com/community/lab-projects/sequoia</a> Greg Smith <a target="_blank" href="http://git.postgresql.org/pg/commitdiff/04be7ac271c4b6db6ba518225f58f936b3b4435c">http://git.postgresql.org/pg/commitdiff/04be7ac271c4b6db6ba518225f58f936b3b4435c</a></li>
+
+<li>Improve description of read/write traffic scalability. Greg Smith, after a suggestion of James Bruce 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/561485709673f4bc05240e891dd9056bdedbbcbc">http://git.postgresql.org/pg/commitdiff/561485709673f4bc05240e891dd9056bdedbbcbc</a></li>
+
+</ul>
+
+<p>Bruce Momjian a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Improve style of generate_history.pl Perl script. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/fb3ad7895ece674fc5298df754253f70cda6a02e">http://git.postgresql.org/pg/commitdiff/fb3ad7895ece674fc5298df754253f70cda6a02e</a></li>
+
+<li>Adjust pg_upgrade FATAL error messages to have consistent newlines. Also adjust some error message capitalization for consistency. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5c5f83507cb697e436f8f9d20d62787c1a66d19c">http://git.postgresql.org/pg/commitdiff/5c5f83507cb697e436f8f9d20d62787c1a66d19c</a></li>
+
+<li>Check that the pg_upgrade user specified is a super-user. Also report the error message when the post-pg_ctl connection fails. Per private bug report from EnterpriseDB. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/81301b85781245676f874ae3908015f05d3aaaa2">http://git.postgresql.org/pg/commitdiff/81301b85781245676f874ae3908015f05d3aaaa2</a></li>
+
+<li>In pg_upgrade, report non-super-user username in error message. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/1609ca5adb5c8b55076435094532dfbb2a2aea43">http://git.postgresql.org/pg/commitdiff/1609ca5adb5c8b55076435094532dfbb2a2aea43</a></li>
+
+<li>Add missing documention connecting word. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/5293de580734bb16c57de51142354d76347a3336">http://git.postgresql.org/pg/commitdiff/5293de580734bb16c57de51142354d76347a3336</a></li>
+
+<li>Add xreflabels to /contrib manuals so links appear correct. Also update README.links to explain xref properly. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e567c9ff3409203a3ab50a2ff87cdab73bef6313">http://git.postgresql.org/pg/commitdiff/e567c9ff3409203a3ab50a2ff87cdab73bef6313</a></li>
+
+<li>Add C comment why client encoding can be set in pg_upgrade. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/e6a740284291d1ebaca42b2954eb20e09daac9b9">http://git.postgresql.org/pg/commitdiff/e6a740284291d1ebaca42b2954eb20e09daac9b9</a></li>
+
+<li>Add C comment about the fact that the autovacuum limit can go backwards by 3, but that is it OK. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/76e5b4c85d5d4830888044fc885b1da0d781aed0">http://git.postgresql.org/pg/commitdiff/76e5b4c85d5d4830888044fc885b1da0d781aed0</a></li>
+
+</ul>
+
+<p>Magnus Hagander a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Clarify error message when attempting to create index on foreign table. Instead of just saying "is not a table", specifically state that indexes aren't supported on *foreign* tables. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/d76a149c955a6525c8d42425c57e32d74d2c2eed">http://git.postgresql.org/pg/commitdiff/d76a149c955a6525c8d42425c57e32d74d2c2eed</a></li>
+
+<li>Unbreak the regression tests from my previous commit 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/27525b183189487c674f24620e608298ac0c8e29">http://git.postgresql.org/pg/commitdiff/27525b183189487c674f24620e608298ac0c8e29</a></li>
+
+</ul>
+
+<p>Robert Haas a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Fix typos in SECURITY LABEL documentation. KaiGai Kohei 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/3ef5b2df9738fd0795c1ffcaada93c3c5df7cd49">http://git.postgresql.org/pg/commitdiff/3ef5b2df9738fd0795c1ffcaada93c3c5df7cd49</a></li>
+
+<li>Add comment about memory reordering to PredicateLockTupleRowVersionLink. Dan Ports, per head-scratching from Simon Riggs and myself. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/71932ecc2b6ca0d748176a7e8b11d3575bf4caf3">http://git.postgresql.org/pg/commitdiff/71932ecc2b6ca0d748176a7e8b11d3575bf4caf3</a></li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Gabriele Bartolini sent in another revision of the patch to smooth replication during VACUUM FULL.</li>
+
+<li>Joe Conway sent in a patch to fix clog redos under high load.</li>
+
+<li>Johann 'Myrkraverk' Oskarsson sent in a patch to fix an issue on mingw-w64 where the PGDLLEXPORT macro is blank.</li>
+
+<li>Alvaro Herrera updated the "preferred types" patch to HEAD.</li>
+
+<li>Jaime Casanova sent in a patch to add an xlogversion column to IDENTIFY_SYSTEM. This is one of the infrastructure pieces which will make on-line upgrades possible.</li>
+
+<li>Hitoshi Harada sent in a patch to allow the optimizer to pull up aggregate subqueries.</li>
+
+<li>Bruce Momjian sent in patches to adjust the comments on system tables.</li>
+
+<li>Magnus Hagander sent in a patch to fix the error for attempting to index a foreign table.</li>
+
+<li>Tom Lane sent in a patch to fix a some suprising precedence in PostgreSQL's SQL grammar.</li>
+
+<li>Dan Ports sent in two revisions of a patch to fix a race condition in SSI's ChecTargetForConflictsIn.</li>
+
+<li>Peter Geoghegan sent in a WIP patch to help save energy by waking up less frequently.</li>
+
+<li>Merlin Moncure sent in another revision of the patch to fix an issue between the visibility map and hint bits.</li>
+
+<li>Robert Haas sent in another revision of the patch to make visibility maps more crash-safe.</li>
+
+<li>Josh Kupershmidt sent in a patch to clean up psql's decribe.c.</li>
+
+<li>Andrew Dunstan sent in another revision of the patch to fix an issue where invalid characters were allowed in XML.</li>
+
+<li>Greg Smith sent in a patch exemplifying the idea of moving some contrib modules to being default, but still using the EXTENSION infrastructure.</li>
+
+</ul>

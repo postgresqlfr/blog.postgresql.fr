@@ -1,0 +1,130 @@
+---
+layout: post
+title: "Nouvelles neuves de PostgreSQL"
+author: "NBougain"
+redirect_from: "index.php?post/2009-01-04-nouvelles-neuves-de-postgresql "
+---
+
+
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>GNUmed 0.3.8&nbsp;: 
+
+<a target="_blank" href="http://wiki.gnumed.de/bin/view/Gnumed">http://wiki.gnumed.de/bin/view/Gnumed</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en d&eacute;cembre</strong></p>
+
+<ul>
+
+<li><a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2008-12/threads.php">http://archives.postgresql.org/pgsql-jobs/2008-12/threads.php</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La premi&egrave;re r&eacute;union de l'ArPug est programm&eacute;e le 30 d&eacute;cembre 2008 &agrave; 19:00 au "Globant Costa Salguero Office" et sur irc://irc.freenode.net/arpug&nbsp;: 
+
+<a target="_blank" href="http://www.arpug.com.ar/trac/wiki/Reunion1">http://www.arpug.com.ar/trac/wiki/Reunion1</a></li>
+
+<li>"L'appel aux conf&eacute;renciers" est lanc&eacute; pour le FOSDEM 2009 [ndt: 7-8 f&eacute;vrier 2009, Bruxelles]. Il y aura une rencontre PostgreSQL et nous y partagerons une salle "d&eacute;veloppeurs" avec les groupes BSD. Proposez vos expos&eacute;s &agrave; l'adresse _fosdem (a) postgresql (point) eu_ avant le 2 janvier 2009.</li>
+
+<li>Le SYDPUG se r&eacute;unira le 3 f&eacute;vrier 2009 &agrave; 18h30. Suivez le lien pour les d&eacute;tails&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/sydpug/">http://archives.postgresql.org/sydpug/</a></li>
+
+<li>Conf&eacute;rence d'Andreas 'ads' Scherbaum lors du "Perl Workshop 2009" le 25 f&eacute;vrier &agrave; Francfort-sur-le-Main, en Allemagne&nbsp;: 
+
+<a target="_blank" href="http://www.perl-workshop.de/talks/151/view">http://www.perl-workshop.de/talks/151/view</a></li>
+
+<li>La PGCon 2009 se tiendra &agrave; l'Universit&eacute; d'Ottawa les 21 et 22 mai 2009. Elle sera pr&eacute;c&eacute;d&eacute;e de deux jours de tutoriels les 19 &amp; 20 mai&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2009/papers.php">http://www.pgcon.org/2009/papers.php</a></li>
+
+<li>La "PGCon Brazil" prendra place &agrave; l'Unicamp de Campinas (&Eacute;tat de S&atilde;o Paulo) les 23 &amp; 24 octobre 2009.</li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. La traduction en est assur&eacute;e par l'&eacute;quipe PostgreSQLFr.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org.</i></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Bruce Momjian a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Change the name of dtrace wal tracepoints to TRACE_POSTGRESQL_WAL_BUFFER_WRITE_DIRTY. Robert Lor.</li>
+
+</ul>
+
+<p>Tom Lane a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Remove unused include file pgsql/src/include/storage itempos.h, per ITAGAKI Takahiro. AFAICT this has been dead code since Postgres95.</li>
+
+<li>Make a couple of small changes to the tuplestore API, for the benefit of the upcoming window-functions patch. First, tuplestore_trim is now an exported function that must be explicitly invoked by callers at appropriate times, rather than something that tuplestore tries to do behind the scenes. Second, a read pointer that is marked as allowing backward scan no longer prevents truncation. This means that a read pointer marked as having BACKWARD but not REWIND capability can only safely read backwards as far as the oldest other read pointer. (The expected use pattern for this involves having another read pointer that serves as the truncation fencepost.)</li>
+
+<li>Support window functions a la SQL:2008. Hitoshi Harada, with some kibitzing from Heikki and Tom.</li>
+
+<li>Tighten up a couple of regression test cases that can have platform-dependent results due to underspecified ordering. Per report from buildfarm member pika.</li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>No one was disappointed this week :-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Alvaro Herrera sent in another revision of his patch to improve reloption handling.</li>
+
+<li>Robert Lor sent in a patch atop his DTrace probes patch to change some names.</li>
+
+<li>Bernd Helmle sent in another revision of his writable views patch.</li>
+
+<li>Heikki Linnakangas sent in a patch to fix some issues around the new visibility map and VACUUM.</li>
+
+<li>Kenneth Marshall sent in another revision of his internal hash function patch.</li>
+
+<li>Heikki Linnakangas sent in another revision of his infrastructure patch for recovery.</li>
+
+<li>Fujii Masao sent in three revisions of a patch to skip checkpoint at pg_start_backup.</li>
+
+<li>KaiGai Kohei sent in another revision of his SE-PostgreSQL patches.</li>
+
+<li>Fujii Masao sent in a patch to support archive control for synchronous replication.</li>
+
+<li>ITAGAKI Takahiro sent in another revision of his pg_stat_statements patch.</li>
+
+<li>Hiroshi Inoue sent in a patch intended to fix bug 4186 (set lc_messages does not work).</li>
+
+<li>Koichi Suzuki sent in another revision of his patch to improve PITR performance.</li>
+
+<li>Erik Rijkers sent in a patch which clarifies the --help message for the -c option in pg_restore.</li>
+
+</ul>

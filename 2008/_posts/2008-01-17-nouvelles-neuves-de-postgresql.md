@@ -1,0 +1,220 @@
+---
+layout: post
+title: "Nouvelles neuves de PostgreSQL"
+author: "NBougain"
+redirect_from: "index.php?post/drupal-416 "
+---
+
+
+
+<!--break-->
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>Open Technology Group propose maintenant une formation PostGIS et UMN Mapserver&nbsp;:
+
+<a target="_blank" href="http://www.otg-nc.com">http://www.otg-nc.com</a></li>
+
+<li>PGCluster 1.7.0rc8 est disponible&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgcluster/">http://pgfoundry.org/projects/pgcluster/</a></li>
+
+<li>pg_proboscis et pg_typical 0.9.2 ont été publiés&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/python/">http://pgfoundry.org/projects/python/</a></li>
+
+<li>PL/Lua 0.2 est disponible&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/pllua/">http://pgfoundry.org/projects/pllua/</a></li>
+
+<li>PL/Proxy 2.0.4 a été publié&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/plproxy/">http://pgfoundry.org/projects/plproxy/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de Postgres en janvier</strong></p>
+
+<p><a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2008-01/threads.php">http://archives.postgresql.org/pgsql-jobs/2008-01/threads.php</a></p>
+
+<p><strong>Postgres Local</strong></p>
+
+<ul>
+
+<li>"Quoi de neuf dans PostgreSQL 8.3 ?" - Petit déjeuner avec Bruce Momjian le 24 janvier 2008 à Londres. Envoyez un mail pour l'invitation&nbsp;: info.emea (a) enterprisedb (.) com</li>
+
+<li>Les PGCon 2008 auront lieu du 20 au 23 mai à Ottawa - propositions acceptées dès à présent&nbsp;:
+
+<a target="_blank" href="http://www.pgcon.org/2008/papers.php">http://www.pgcon.org/2008/papers.php</a></li>
+
+<li>Les équipes BSD et PostgreSQL partageront un espace développeurs au FOSDEM 2008 de Bruxelles (23-24 février). Si vous souhaitez donner une conférence ou aider sur le stand, contactez fosdem (a) pgug (.) eu. Pour plus d'informations, jetez un œil sur&nbsp;:
+
+<a target="_blank" href="http://fosdem.org/2008/schedule/devroom/bsdpostgresql">http://fosdem.org/2008/schedule/devroom/bsdpostgresql</a></li>
+
+<li>La PostgreSQL Conference East '08 est programmée les 28 et 29 mars 2008 à l'Université du Maryland, College Park&nbsp;. L'appel aux propositions a été lancé&nbsp;:
+
+<a target="_blank" href="http://www.postgresqlconference.org/">http://www.postgresqlconference.org/</a></li>
+
+</ul>
+
+<p><strong>Postgres dans les média</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL:
+
+<a target="_blank" href="http://www.planetpostgresql.org/">http://www.planetpostgresql.org/</a></li>
+
+<li>General Bits, Archives et ses manchettes occasionnelles&nbsp;:
+
+<a target="_blank" href="http://www.varlena.com/GeneralBits/">http://www.varlena.com/GeneralBits/</a></li>
+
+</ul>
+
+<p><em>Postgres Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. La traduction française est effectuée par l'équipe PostgreSQLFr.</em></p>
+
+<p><em>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais à david (a) fetter.org, en allemand à pwn (a) pgug.de, en italien à pwn (a) itpug.org.</em></p>
+
+<p><strong>Correctifs appliqués</strong></p>
+
+<p>Michael Meskes a commité&nbsp;:</p>
+
+<ul>
+
+<li>In ecpg, fixed lexer to parse C quotes correctly.</li>
+
+<li>In ecpg, changed prototype for ECPGdo because some compilers don't like int/enum aliasing in there.</li>
+
+</ul>
+
+<p>Magnus Hagander a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/include/port/win32.h, don't enforce 32-bit time_t for FRONTEND apps. Fixes standalone builds of libpq in both 32 and 64-bit. Per gripe from Hiroshi Saito.</li>
+
+<li>In pgsql/src/interfaces/libpq/win32.mak, generate and include manifest in standalone libpq build on Windows. Hiroshi Saito</li>
+
+</ul>
+
+<p>Alvaro Herrera a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/doc/src/sgml/protocol.sgml, add index entry for frontend-backend protocol.</li>
+
+</ul>
+
+<p>Bruce Momjian a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/tools/RELEASE_CHANGES, mention use of src/tools/major_release_split for creating back-branch release notes.</li>
+
+<li>Add URLs to two excellent web pages about SSL API and certificate usage.</li>
+
+<li>In pgsql/doc/src/sgml/info.sgml, remove mention of /contrib README files from documentation because files are moved to SGML.</li>
+
+<li>In pgsql/src/backend/utils/misc/postgresql.conf.sample, vacuum_cost_limit has a minimum value of 1, not zero; update postgresql.conf comment to match.</li>
+
+<li>Add to TODO: "Add ability to trigger on TRUNCATE."</li>
+
+<li>In pgsql/doc/src/sgml/datatype.sgml, update documentation for tsvector duplicate elimination.</li>
+
+</ul>
+
+<p>Neil Conway a commité&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/backend/nodes/outfuncs.c, fix a minor bug in outfuncs support for SetOp: dupOperators is an array of Oid, and therefore should use the "%u" escape sequence rather than "%d".</li>
+
+<li>In pgsql/src/backend/nodes/outfuncs.c, fix an omission in the outfuncs.c support for Agg nodes: the grpColIdx and grpOperators fields were not emitted by _outAgg().</li>
+
+<li>In pgsql/src/backend/utils/adt/xml.c, minor perf tweak for _SPI_strdup(): if we're going to call strlen() anyway, it is faster to memcpy() than to strcpy().</li>
+
+<li>Fix two places in xml.c that neglected to check the return values of SPI_prepare() and SPI_cursor_open(), to silence a Coverity warning.</li>
+
+</ul>
+
+<p>Tom Lane a commité&nbsp;:</p>
+
+<ul>
+
+<li>Fix assorted security-grade bugs in the regex engine. All of these problems are shared with Tcl, since it's their code to begin with, and the patches have been copied from Tcl 8.5.0. Problems: CVE-2007-4769: Inadequate check on the range of backref numbers allows crash due to out-of-bounds read. CVE-2007-4772: Infinite loop in regex optimizer for pattern '($|^)*'. CVE-2007-6067: Very slow optimizer cleanup for regex with a large NFA representation, as well as crash if we encounter an out-of-memory condition during NFA construction. Part of the response to CVE-2007-6067 is to put a limit on the number of states in the NFA representation of a regex. This seems needed even though the within-the-code problems have been corrected, since otherwise the code could try to use very large amounts of memory for a suitably-crafted regex, leading to potential DOS by driving the system into swap, activating a kernel OOM killer, etc. Although there are certainly plenty of ways to drive the system into effective DOS with poorly-written SQL queries, these problems seem worth treating as security issues because many applications might accept regex search patterns from untrustworthy sources. Thanks to Will Drewry of Google for reporting these problems. Patches by Will Drewry and Tom Lane. Security: CVE-2007-4769, CVE-2007-4772, CVE-2007-6067</li>
+
+<li>Make standard maintenance operations (including VACUUM, ANALYZE, REINDEX, and CLUSTER) execute as the table owner rather than the calling user, using the same privilege-switching mechanism already used for SECURITY DEFINER functions. The purpose of this change is to ensure that user-defined functions used in index definitions cannot acquire the privileges of a superuser account that is performing routine maintenance. While a function used in an index is supposed to be IMMUTABLE and thus not able to do anything very interesting, there are several easy ways around that restriction; and even if we could plug them all, there would remain a risk of reading sensitive information and broadcasting it through a covert channel such as CPU usage. To prevent bypassing this security measure, execution of SET SESSION AUTHORIZATION and SET ROLE is now forbidden within a SECURITY DEFINER context. Thanks to Itagaki Takahiro for reporting this vulnerability. Security: CVE-2007-6600</li>
+
+<li>The original patch to disallow non-passworded connections to non-superusers failed to cover all the ways in which a connection can be initiated in dblink. Plug the remaining holes. Also, disallow transient connections in functions for which that feature makes no sense (because they are only sensible as part of a sequence of operations on the same connection). Joe Conway Security: CVE-2007-6601</li>
+
+<li>Update release notes for security releases. Security: CVE-2007-4769, CVE-2007-4772, CVE-2007-6067, CVE-2007-6600, CVE-2007-6601</li>
+
+<li>Stamp release 8.3RC1. Security: CVE-2007-4769, CVE-2007-4772, CVE-2007-6067, CVE-2007-6600, CVE-2007-6601</li>
+
+<li>Stamp release 8.2.6. Security: CVE-2007-4769, CVE-2007-4772, CVE-2007-6067, CVE-2007-6600, CVE-2007-6601</li>
+
+<li>Stamp release 8.1.11. Security: CVE-2007-4769, CVE-2007-4772, CVE-2007-6067, CVE-2007-6600, CVE-2007-6601</li>
+
+<li>Stamp release 8.0.15. Security: CVE-2007-4769, CVE-2007-4772, CVE-2007-6067, CVE-2007-6600, CVE-2007-6601</li>
+
+<li>Stamp release 7.4.19. Security: CVE-2007-4769, CVE-2007-4772, CVE-2007-6067, CVE-2007-6600, CVE-2007-6601</li>
+
+<li>Stamp release 7.3.21. Security: CVE-2007-4769, CVE-2007-4772, CVE-2007-6067, CVE-2007-6600, CVE-2007-6601</li>
+
+<li>- In pgsql/src/backend/utils/adt/tsquery.c, remove unnecessary comma in enum definition ... some C compilers don't like that. Per report from J6M?</li>
+
+<li>- informix.c was violating the coding rule about not including any system headers before c.h. Per report from J6M?</li>
+
+<li>lmgr.c:DescribeLockTag was never taught about virtual xids, per Greg Stark. Also a couple of minor tweaks to try to future-proof the code a bit better against future locktag additions.</li>
+
+<li>Fix some planner issues found while investigating Kevin Grittner's report of poorer planning in 8.3 than 8.2: 1. After pushing a constant across an outer join --- ie, given "a LEFT JOIN b ON (a.x = b.y) WHERE a.x = 42", we can deduce that b.y is sort of equal to 42, in the sense that we needn't fetch any b rows where it isn't 42 --- loop to see if any additional deductions can be made. Previous releases did that by recursing, but I had mistakenly thought that this was no longer necessary given the EquivalenceClass machinery. 2. Allow pushing constants across outer join conditions even if the condition is outerjoin_delayed due to a lower outer join. This is safe as long as the condition is strict and we re-test it at the upper join. 3. Keep the outer-join clause even if we successfully push a constant across it. This is *necessary* in the outerjoin_delayed case, but even in the simple case, it seems better to do this to ensure that the join search order heuristics will consider the join as reasonable to make. Mark such a clause as having selectivity 1.0, though, since it's not going to eliminate very many rows after application of the constant condition. 4. Tweak have_relevant_eclass_joinclause to report that two relations are joinable when they have vars that are equated to the same constant. We won't actually generate any joinclause from such an EquivalenceClass, but again it seems that in such a case it's a good idea to consider the join as worth costing out. 5. Fix a bug in select_mergejoin_clauses that was exposed by these changes: we have to reject candidate mergejoin clauses if either side was equated to a constant, because we can't construct a canonical pathkey list for such a clause. This is an implementation restriction that might be worth fixing someday, but it doesn't seem critical to get it done for 8.3.</li>
+
+<li>Fix a bug in 8.2.x that was exposed while investigating Kevin Grittner's report of poor planning in 8.3: it's unsafe to push a constant across an outer join when the outer-join condition is delayed by lower outer joins, unless we recheck the outer-join condition at the upper outer join. 8.2.x doesn't really have the ability to tell whether this is the case or not, but fortunately it doesn't matter --- it seems most desirable to keep the join condition whether it's entirely redundant or not. However, it's usually mostly redundant, so force its selectivity to 1.0. It might be a good idea to back-patch this into 8.1 as well, but I'll refrain until/unless there's evidence that 8.1 actually fails on any cases that this would fix.</li>
+
+<li>Fix CREATE INDEX CONCURRENTLY to not deadlock against an automatic or manual VACUUM that is blocked waiting to get lock on the table being indexed. Per report and fix suggestion from Greg Stark.</li>
+
+<li>In pgsql/src/backend/utils/mb/mbutils.c, remove incorrect (and ill-advised anyway) pfree's in pg_convert_from and pg_convert_to. Per bug #3866 from Andrew Gilligan.</li>
+
+<li>Restructure the shutdown procedure for the archiver process to allow it to finish archiving everything (when there's no error), and to eliminate various hazards as best we can. This fixes a previous 8.3 patch that caused the postmaster to kill and then restart the archiver during shutdown (!?). The new behavior is that the archiver is allowed to run unmolested until the bgwriter has exited; then it is sent SIGUSR2 to tell it to do a final archiving cycle and quit. We only SIGQUIT the archiver if we want a panic stop; this is important since SIGQUIT will also be sent to any active archive_command. The postmaster also now doesn't SIGQUIT the stats collector until the bgwriter is done, since the bgwriter can send stats messages in 8.3. The postmaster will not exit until both the archiver and stats collector are gone; this provides some defense (not too bulletproof) against conflicting archiver or stats collector processes being started by a new postmaster instance. We continue the prior practice that the archiver will check for postmaster death immediately before issuing any archive_command; that gives some additional protection against conflicting archivers. Also, modify the archiver process to notice SIGTERM and refuse to issue any more archive commands if it gets it. The postmaster doesn't ever send it SIGTERM; we assume that any such signal came from init and is a notice of impending whole-system shutdown. In this situation it seems imprudent to try to start new archive commands --- if they aren't extremely quick they're likely to get SIGKILL'd by init. All per discussion.</li>
+
+<li>Fix a conceptual error in my patch of 2007-10-26 that avoided considering clauseless joins of relations that have unexploited join clauses. Rather than looking at every other base relation in the query, the correct thing is to examine the other relations in the "initial_rels" list of the current make_rel_from_joinlist() invocation, because those are what we actually have the ability to join against. This might be a subset of the whole query in cases where join_collapse_limit or from_collapse_limit or full joins have prevented merging the whole query into a single join problem. This is a bit untidy because we have to pass those rels down through a new PlannerInfo field, but it's necessary. Per bug #3865 from Oleg Kharin.</li>
+
+<li>Fix an old error in clause_selectivity: the default selectivity estimate for unhandled clause types ought to be 0.5, not 1.0. I fear I introduced this silliness due to misreading the intent of the very-poorly-structured code that was there when we inherited the file from Berkeley. The lack of sanity in this behavior was exposed by an example from Sim Zacks. (Arguably this is a bug fix and should be back-patched, but I'm a bit hesitant to introduce a possible planner behavior change in the back branches; it might detune queries that worked acceptably in the past.) While at it, make estimation for DistinctExpr do something marginally realistic, rather than just defaulting.</li>
+
+<li>The original implementation of polymorphic aggregates didn't really get the checking of argument compatibility right; although the problem is only exposed with multiple-input aggregates in which some arguments are polymorphic and some are not. Per bug #3852 from Sokolov Yura.</li>
+
+<li>Fix logical errors in constraint exclusion: we cannot assume that a CHECK constraint yields TRUE for every row of its table, only that it does not yield FALSE (a NULL result isn't disallowed). This breaks a couple of implications that would be true in two-valued logic. I had put in one such mistake in an 8.2.5 patch: foo IS NULL doesn't refute a strict operator on foo. But there was another in the original 8.2 release: NOT foo doesn't refute an expression whose truth would imply the truth of foo. Per report from Rajesh Kumar Mallah. To preserve the ability to do constraint exclusion with one partition holding NULL values, extend relation_excluded_by_constraints() to check for attnotnull flags, and add col IS NOT NULL expressions to the set of constraints we hope to refute.</li>
+
+<li>In pgsql/src/backend/utils/adt/xml.c, it turns out the LIBXML_TEST_VERSION macro calls xmlInitParser(). Therefore we must xmlCleanupParser(), or we risk leaving behind dangling pointers to whatever memory context is current when xml_init() is called. This seems to fix bug #3860, though we might still want the more invasive solution being worked on by Alvaro.</li>
+
+<li>In pgsql/doc/src/sgml/ddl.sgml, add note pointing out that read-only commands no longer consume command IDs.</li>
+
+<li>Fix a regression test that fails if default_text_search_config isn't 'english'.</li>
+
+<li>Fix CREATE INDEX CONCURRENTLY so that it won't use synchronized scan for its second pass over the table. It has to start at block zero, else the "merge join" logic for detecting which TIDs are already in the index doesn't work. Hence, extend heapam.c's API so that callers can enable or disable syncscan. (I put in an option to disable buffer access strategy, too, just in case somebody needs it.) Per report from Hannes Dorbath.</li>
+
+<li>Use an indexscan not a heapscan to search pg_index in get_pkey_attnames. Noted while looking for heapscans that might need to start from block zero.</li>
+
+<li>Fix pgstat_heap() to not be broken by syncscans starting from a block higher than zero. Same problem as just detected in CREATE INDEX CONCURRENTLY.</li>
+
+</ul>
+
+<p><strong>Correctifs rejetés (à ce jour)</strong></p>
+
+<ul>
+
+<li>Erik Rijkers's doc patch for textsearch.sgml on grounds of not including the tables referred to in the patch.</li>
+
+<li>Alvaro Herrera's patch to fix BUG #3860. The fix should use the palloc infrastructure instead.</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Tom Lane sent in 3 revisions of a patch intended to fix archiver shutdown behavior.</li>
+
+</ul>

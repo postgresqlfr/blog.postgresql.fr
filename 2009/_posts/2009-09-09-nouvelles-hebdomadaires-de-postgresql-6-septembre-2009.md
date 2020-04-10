@@ -1,0 +1,216 @@
+---
+layout: post
+title: "Nouvelles hebdomadaires de PostgreSQL - 6 septembre 2009"
+author: "NBougain"
+redirect_from: "index.php?post/2009-09-09-nouvelles-hebdomadaires-de-postgresql-6-septembre-2009 "
+---
+
+
+
+<p><strong>Offres d'emplois autour de PostgreSQL en September</strong></p>
+
+<ul>
+
+<li><a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2009-09/threads.php">http://archives.postgresql.org/pgsql-jobs/2009-09/threads.php</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>SFPUG pr&eacute;sente&nbsp;: Nathan Boley, &laquo;&nbsp;Statistiques et Postgres.&raquo; 8 septembre 2009. D&eacute;tails et webcast en direct&nbsp;: 
+
+<a target="_blank" href="http://postgresql.meetup.com/1/calendar/11030245/">http://postgresql.meetup.com/1/calendar/11030245/</a></li>
+
+<li>Une suite de conf&eacute;rences est organis&eacute;e &agrave; Seattle (&Eacute;tat de Washington, &Eacute;tats-Unis) du 16 au 18 octobre 2009. L'appel &agrave; conf&eacute;rences est ouvert&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org/2009/west">http://www.postgresqlconference.org/2009/west</a></li>
+
+<li>La "PGCon Brazil" prendra place &agrave; l'Unicamp de Campinas (&Eacute;tat de S&atilde;o Paulo) les 23 &amp; 24 octobre 2009. L'appel &agrave; conf&eacute;rences est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://pgcon.postgresql.org.br/2009/chamadas.en.php">http://pgcon.postgresql.org.br/2009/chamadas.en.php</a></li>
+
+<li>Le PGDay.EU 2009 est programm&eacute; pour les 6 &amp; 7 novembre 2009 &agrave; Telecom ParisTech [ndt: ENST ?]&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.eu/">http://www.pgday.eu/</a></li>
+
+<li>L'OpenSQL Camp de Portland est &agrave; la recherche de sponsors. Pensez &agrave; votre voyage d&egrave;s maintenant&nbsp;!&nbsp;:) 
+
+<a target="_blank" href="http://www.chesnok.com/daily/2009/07/29/opensql-camp-comes-to-portland-november-14-15-2009/">http://www.chesnok.com/daily/2009/07/29/opensql-camp-comes-to-portland-november-14-15-2009/</a></li>
+
+<li>Le rassemblement &agrave; l'occasion du 10<sup>&egrave;me</sup> anniversaire du JPUG est programm&eacute; pour les 20 &amp; 21 novembre 2009 &agrave; Tokyo, Japon&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2009-05/msg00018.php">http://archives.postgresql.org/pgsql-announce/2009-05/msg00018.php</a></li>
+
+<li>Le FOSDEM 2010 aura lieu &agrave; Bruxelles les 6 &amp; 7 f&eacute;vrier 2010&nbsp;: 
+
+<a target="_blank" href="http://www.fosdem.org/">http://www.fosdem.org/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter, Josh Berkus et Devrim Gunduz. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org.</i></p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Tom Lane a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Track the current XID wrap limit (or more accurately, the oldest unfrozen XID) in checkpoint records. This eliminates the need to recompute the value from scratch during database startup, which is one of the two remaining reasons for the flatfile code to exist. It should also simplify life for hot-standby operation. To avoid bloating the checkpoint records unreasonably, I switched from tracking the oldest database by name to tracking it by OID. This turns out to save cycles in general (everywhere but the warning-generating paths, which we hardly care about) and also helps us deal with the case that the oldest database got dropped instead of being vacuumed. The prior coding might go for a long time without updating the wrap limit in that case, which is bad because it might result in a lot of useless autovacuum activity.</li>
+
+<li>Change the autovacuum launcher to read pg_database directly, rather than via the "flat files" facility. This requires making it enough like a backend to be able to run transactions; it's no longer an "auxiliary process" but more like the autovacuum worker processes. Also, its signal handling has to be brought into line with backends/workers. In particular, since it now has to handle procsignal.c processing, the special autovac-launcher-only signal conditions are moved to SIGUSR2. Alvaro Herrera, with some cleanup from Tom Lane.</li>
+
+<li>Move processing of startup-packet switches and GUC settings into InitPostgres, to fix the problem that SetClientEncoding needs to be done before InitializeClientEncoding, as reported by Zdenek Kotala. We get at least the small consolation of being able to remove the bizarre API detail that had InitPostgres returning whether user is a superuser.</li>
+
+<li>Bump catversion for flat-file-ectomy. Also remove a missed dead extern declaration.</li>
+
+<li>In pgsql/src/backend/access/transam/twophase.c, actually, we need to bump the format identifier on twophase files because of readjustment of 2PC rmgr IDs for flatfile removal.</li>
+
+<li>Force VACUUM to recalculate oldestXmin even when we haven't changed our own database's datfrozenxid, if the current value is old enough to be forcing autovacuums or warning messages. This ensures that a bogus value is replaced as soon as possible. Per a comment from Heikki.</li>
+
+<li>Fix pg_ctl's readfile() to not go into infinite loop on an empty file (could happen if either postgresql.conf or postmaster.opts is empty). It's been broken since the C version was written for 8.0, so patch all the way back. initdb's copy of the function is broken in the same way, but it's less important there since the input files should never be empty. Patch that in HEAD only, and also fix some cosmetic differences that crept into that copy of the function. Per report from Corry Haines and Jeff Davis.</li>
+
+<li>Fix subquery pullup to wrap a PlaceHolderVar around the entire RowExpr that's generated for a whole-row Var referencing the subquery, when the subquery is in the nullable side of an outer join. The previous coding instead put PlaceHolderVars around the elements of the RowExpr. The effect was that when the outer join made the subquery outputs go to null, the whole-row Var produced ROW(NULL,NULL,...) rather than just NULL. There are arguments afoot about whether those things ought to be semantically indistinguishable, but for the moment they are not entirely so, and the planner needs to take care that its machinations preserve the difference. Per bug #5025. Making this feasible required refactoring ResolveNew() to allow more caller control over what is substituted for a Var. I chose to make ResolveNew() a wrapper around a new general-purpose function replace_rte_variables(). I also fixed the ancient bogosity that ResolveNew might fail to set a query's hasSubLinks field after inserting a SubLink in it. Although all current callers make sure that happens anyway, we've had bugs of that sort before, and it seemed like a good time to install a proper solution. Back-patch to 8.4. The problem can be demonstrated clear back to 8.0, but the fix would be too invasive in earlier branches; not to mention that people may be depending on the subtly-incorrect behavior. The 8.4 series is new enough that fixing this probably won't cause complaints, but it might in older branches. Also, 8.4 shows the incorrect behavior in more cases than older branches do, because it is able to flatten subqueries in more cases.</li>
+
+<li>In pgsql/src/bin/initdb/initdb.c, remove initdb's rather gratuitous check to see if the backend created a flat password file, because it never will anymore. We had managed to miss this during the recent flat-file-ectomy because it only happens if --pwfile or --pwprompt is specified to initdb. Apparently, few hackers use those. Reported by Erik Rijkers.</li>
+
+<li>Update time zone data files to tzdata release 2009l: DST law changes in Egypt, Mauritius, Bangladesh.</li>
+
+<li>Install a workaround for a longstanding gcc bug that allows SIGFPE traps to occur for division by zero, even though the code is carefully avoiding that. All available evidence is that the only functions affected are int24div, int48div, and int28div, so patch just those three functions to include a "return" after the ereport() call. Backpatch to 8.4 so that the fix can be tested in production builds. For older branches our recommendation will continue to be to use -O1 on affected platforms (which are mostly non-mainstream anyway).</li>
+
+<li>Final updates of release notes for 8.4.1, 8.3.8, 8.2.14, 8.1.18, 8.0.22, 7.4.26.</li>
+
+<li>In pgsql/src/backend/postmaster/pgstat.c, remove pgstat's discrimination against MsgVacuum and MsgAnalyze messages. Formerly, these message types would be discarded unless there was already a stats hash table entry for the target table. However, the intent of saving hash table space for unused tables was subverted by the fact that the physical I/O done by the vacuum or analyze would result in an immediately following tabstat message, which would create the hash table entry anyway. All that we had left was surprising loss of statistical data, as in a recent complaint from Jaime Casanova. It seems unlikely that a real database would have many tables that go totally untouched over the long haul, so the consensus is that this "optimization" serves little purpose anyhow. Remove it, and just create the hash table entry on demand in all cases.</li>
+
+<li>In pgsql/src/backend/Makefile, revert ill-considered restriction of dtrace support to Solaris only.</li>
+
+<li>In pgsql/src/backend/Makefile, put back "ifeq ($(PORTNAME), solaris)", this time with some documentation of why it's not as broken as it appears on first glance.</li>
+
+<li>In pgsql/doc/src/sgml/ref/copy.sgml, add a note warning that COPY BINARY is very datatype-specific. Per a complaint from Gordon Shannon.</li>
+
+<li>Update the tznames reference files, and add IDT (Israel Daylight Time) to the Default timezone abbreviation set. Back-port the the current file set to all branches that contain tznames. This includes adding SGT to the Default set in pre-8.4 releases. Joachim Wieland.</li>
+
+</ul>
+
+<p>Alvaro Herrera a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>This patch removes flatfiles.c for good. It doesn't change the keeping of locks in dbcommands.c and user.c, because at least some of them are still required. Regarding sync commits that previously happen and now won't, I think the only case worth worrying about is the one in vacuum.c. Do we need a ForceSyncCommit() in there? I'm not sure if vacuum itself already forces sync commit.</li>
+
+<li>Remove flatfiles.c, which is now obsolete. Recent commits have removed the various uses it was supporting. It was a performance bottleneck, according to bug report #4919 by Lauris Ulmanis; seems it slowed down user creation after a billion users.</li>
+
+</ul>
+
+<p>Peter Eisentraut a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/backend/access/gist/gist.c, improve picksplit debug message. Missed this earlier because the translation site was broken for the 7.4 branch.</li>
+
+<li>Translation updates</li>
+
+</ul>
+
+<p>Magnus Hagander a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/interfaces/ecpg/preproc/Makefile, revert Makefile modification that broke the MSVC build.</li>
+
+</ul>
+
+<p>Michael Meskes a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/interfaces/ecpg/ecpglib/misc.c, do not set connection values if no connection is open.</li>
+
+<li>In ECPG, removed some variables no longer needed.</li>
+
+<li>In pgsql/src/interfaces/ecpg/ecpglib/execute.c, fixed incorrect memory management.</li>
+
+</ul>
+
+<p>Marc Fournier a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Tag 8.4.1, 8.3.8, 8.2.14, 8.1.18, 8.0.22, and 7.4.26.</li>
+
+</ul>
+
+<p>Heikki Linnakangas a commit&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>In pgsql/src/backend/utils/adt/xml.c, fix encoding handling in xml binary input function. If the XML header didn't specify an encoding explicitly, we used to treat it as being in database encoding when we parsed it, but then perform a UTF-8 -&gt; database encoding conversion on it, which was completely bogus. It's now consistently treated as UTF-8.</li>
+
+<li>Tighten binary receive functions so that they reject values that the text input functions don't accept either. While the backend can handle such values fine, they can cause trouble in clients and in pg_dump/restore. This is followup to the original issue on time datatype reported by Andrew McNamara a while ago. Like that one, none of these seem worth back-patching.</li>
+
+</ul>
+
+<p><strong>Correctifs rejet&eacute;s (&agrave; ce jour)</strong></p>
+
+<ul>
+
+<li>Pas de d&eacute;ception cette semaine&nbsp;:-)</li>
+
+</ul>
+
+<p><strong>Correctifs en attente</strong></p>
+
+<ul>
+
+<li>Heikki Linnakangas sent in a patch to make some of the binary recv functions stricter.</li>
+
+<li>KaiGai Kohei sent in another revision of the patch to add access controls for large objects.</li>
+
+<li>Greg Sabino Mullane sent in another revision of the patch to add YAML as a formatting option for EXPLAIN output.</li>
+
+<li>Kevin Grittner sent in two more revisions of the patch to add a LSB conformant init script to contrib/start-scripts.</li>
+
+<li>Peter Eisentraut sent in another patch to help with PL/PythonU data type conversion improvements.</li>
+
+<li>Jeff Janes sent in a patch to rearrange pgbench's handling of #define'd constants.</li>
+
+<li>Sam Mason sent in a patch which throws an error when anything but a one-byte char is sent to the "char" type.</li>
+
+<li>ITAGAKI Takahiro sent in a patch to add column-level triggers.</li>
+
+<li>KaiGai Kohei sent in another revision of the patch to refactor ACL facilities in PostgreSQL.</li>
+
+<li>Zoltan Boszormenyi sent in another revision of the patch to implement SELECT...FOR UPDATE [WAIT integer | NOWAIT].</li>
+
+<li>Zoltan Boszormenyi sent in new revisions of the ECPG patches for dynamic cursor name, sqlda, describe, and fixes for cursor scope error handling in Informix compatibility mode.</li>
+
+<li>Alvaro Herrera sent in a doc patch for logging at high loads.</li>
+
+<li>Simon Riggs sent in a patch to skip SignalAutoVacuumWorkers(SIGTERM) during recovery.</li>
+
+<li>Zoltan Boszormenyi sent in another revision of the cursor-handling patch for ECPG.</li>
+
+<li>Robert Haas sent in another revision of the join removal patch.</li>
+
+<li>Marko (johto) Tiikkaja sent in another revision of the patch to make DML nodes in support of writeable CTEs.</li>
+
+<li>KaiGai Kohei sent in another revision of the patch to add access controls to large objects.</li>
+
+</ul>
