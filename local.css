@@ -113,7 +113,7 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 }
 
 .post-list { margin-left: 0; list-style: none; }
-.post-list > li { margin-bottom: 30px; }
+.post-list > li { margin-bottom: 120px; }
 
 .post-meta { font-size: 14px; color: #828282; }
 
@@ -132,6 +132,7 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 @media screen and (max-width: 800px) { .post-content h3 { font-size: 22px; } }
 .post-content h4 { font-size: 20px; }
 @media screen and (max-width: 800px) { .post-content h4 { font-size: 18px; } }
+
 
 /** Syntax highlighting styles */
 .highlight { background: #fff; }
@@ -196,3 +197,236 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 .highlight .vi { color: #008080; }
 .highlight .il { color: #099; }
 
+
+/**/
+.pagination a:hover {
+    text-decoration: none
+}
+
+.pagination a:hover .username {
+    text-decoration: underline
+}
+
+
+.site-nav {
+    position: absolute;
+    top: 9px;
+    right: 15px;
+    background-color: #fdfdfd;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    text-align: right
+}
+
+.site-nav .nav-trigger {
+    display: none
+}
+
+.site-nav .menu-icon {
+    float: right;
+    width: 36px;
+    height: 26px;
+    line-height: 0;
+    padding-top: 10px;
+    text-align: center
+}
+
+.site-nav .menu-icon>svg path {
+    fill: #424242
+}
+
+.site-nav label[for="nav-trigger"] {
+    display: block;
+    float: right;
+    width: 36px;
+    height: 36px;
+    z-index: 2;
+    cursor: pointer
+}
+
+.site-nav input ~ .trigger {
+    clear: both;
+    display: none
+}
+
+.site-nav input:checked ~ .trigger {
+    display: block;
+    padding-bottom: 5px
+}
+
+.site-nav .page-link {
+    color: #111;
+    line-height: 1.5;
+    display: block;
+    padding: 5px 10px;
+    margin-left: 20px
+}
+
+.site-nav .page-link:not(:last-child) {
+    margin-right: 0
+}
+
+@media screen and (min-width: 600px) {
+    .site-nav {
+        position: static;
+        float: right;
+        border: none;
+        background-color: inherit
+    }
+    .site-nav label[for="nav-trigger"] {
+        display: none
+    }
+    .site-nav .menu-icon {
+        display: none
+    }
+    .site-nav input ~ .trigger {
+        display: block
+    }
+    .site-nav .page-link {
+        display: inline;
+        padding: 0;
+        margin-left: auto
+    }
+    .site-nav .page-link:not(:last-child) {
+        margin-right: 20px
+    }
+}
+
+.site-footer {
+    border-top: 1px solid #e8e8e8;
+    padding: 30px 0
+}
+
+.footer-heading {
+    font-size: 1.125rem;
+    margin-bottom: 15px
+}
+
+.feed-subscribe .svg-icon {
+    padding: 5px 5px 2px 0
+}
+
+.contact-list,
+.social-media-list,
+.pagination {
+    list-style: none;
+    margin-left: 0
+}
+
+.footer-col-wrapper,
+.social-links {
+    font-size: .9375rem;
+    color: #828282
+}
+
+.footer-col {
+    margin-bottom: 15px
+}
+
+.footer-col-1,
+.footer-col-2 {
+    width: calc(50% - (30px / 2))
+}
+
+.footer-col-3 {
+    width: calc(100% - (30px / 2))
+}
+
+@media screen and (min-width: 800px) {
+    .footer-col-1 {
+        width: calc(35% - (30px / 2))
+    }
+    .footer-col-2 {
+        width: calc(20% - (30px / 2))
+    }
+    .footer-col-3 {
+        width: calc(45% - (30px / 2))
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .footer-col-wrapper {
+        display: flex
+    }
+    .footer-col {
+        width: calc(100% - (30px / 2));
+        padding: 0 15px
+    }
+    .footer-col:first-child {
+        padding-right: 15px;
+        padding-left: 0
+    }
+    .footer-col:last-child {
+        padding-right: 0;
+        padding-left: 15px
+    }
+}
+
+
+.social-media-list,
+.pagination {
+    display: table;
+    margin: 0 auto
+}
+
+.social-media-list li,
+.pagination li {
+    float: left;
+    margin: 5px 10px 5px 0
+}
+
+.social-media-list li:last-of-type,
+.pagination li:last-of-type {
+    margin-right: 0
+}
+
+.social-media-list li a,
+.pagination li a {
+  font-size: 1.8em; 
+  background-color: #bfd7f6;
+  color: white;
+  display: block;
+  padding: 7.5px;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+}
+
+.social-media-list li a:hover,
+.pagination li a:hover {
+    border-color: #dbdbdb
+}
+
+.pagination {
+    margin-bottom: 30px
+}
+
+.pagination li a,
+.pagination li div {
+    min-width: 41px;
+    text-align: center;
+    box-sizing: border-box
+}
+
+.pagination li div {
+    display: block;
+    padding: 7.5px;
+    border: 1px solid transparent
+}
+
+.pagination li div.current-page {
+    font-size: 1.8em;
+    background-color: #2a7ae2;
+    color: white; 
+}
+
+.pagination li div.pager-edge {
+    font-size: 1.8em;
+    color: #e8e8e8;
+    border: 1px dashed
+}
+
+@media screen and (min-width: 800px) {
+    .one-half {
+        width: calc(50% - (30px / 2))
+    }
+}

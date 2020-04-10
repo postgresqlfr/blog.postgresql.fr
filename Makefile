@@ -1,8 +1,8 @@
-BASEURL?=
-DOCKER_IMAGE=jekyll/jekyll:pages
+
+DOCKER_IMAGE=jekyll/jekyll:3.8
 PORT=4444
-SERVE=jekyll serve --baseurl=$(BASEURL) --watch
-BUILD=jekyll build --baseurl=$(BASEURL)
+SERVE=jekyll serve --watch
+BUILD=jekyll build
 
 serve:
 	$(SERVE)
