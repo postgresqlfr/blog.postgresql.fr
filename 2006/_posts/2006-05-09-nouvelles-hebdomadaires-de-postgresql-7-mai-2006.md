@@ -6,6 +6,56 @@ redirect_from: "index.php?post/drupal-182 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 7 mai 2006</strong></p>
+
+<p>
+
+Heikki Linnakangas et Tom Lane ont réécrit la lecture des index séquentiels btree (arbres binaires) afin de traiter une page à chaque fois quel que soit le cas. En plus de simplifier et (parfois) améliorer les la vitesse du code de parcours de l'index, cette réécriture nous permettra de réimplanter btbulkdelete comme un  une grosse lecture séquentielle à la place d'un parcours transverse comme on le ferait pour un index. Celà permettra de réduire le coût d'un VACUUM. <a target="_blank" href="http://archives.postgresql.org/pgsql-committers/2006-05/msg00050.php">http://archives.postgresql.org/pgsql-committers/2006-05/msg00050.php</a>
+
+</p>
+
+<p>
+
+Bruce Momjian a ajouté le suppore de SSL CRL à la libpq.  <a target="_blank" href="http://archives.postgresql.org/pgsql-committers/2006-05/msg00039.php">http://archives.postgresql.org/pgsql-committers/2006-05/msg00039.php</a>
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-committers/2006-05/msg00044.php">http://archives.postgresql.org/pgsql-committers/2006-05/msg00044.php</a>
+
+</p>
+
+<p>
+
+Larry Rosenman de  Pervasive a soumis un patch pour CVS TIP qui ajoute une nouveau champ de type estampille (<em>timestamp</em>)
+
+à la vue pg_stat_all_tables : last_vacuum, last_autovacuum,
+
+last_analyze et last_autoanalyze. Cela rendra les choses plus simples
+
+pour les gens te les outils de suivi des actions de «&nbsp;maintenance sur
+
+les tables&nbsp;». </p>
+
+<p>
+
+Teodor Sigaev a ajouté les Index Inversé Généralisés (<em>Generalized Inverted Indexes (GIN)</em>) au CVS TIP. Celà aidera au développement du futur tsearch3, entre autres choses. </p>
+
+<p>
+
+Comment lire des métadonnées : un tutoriel («&nbsp;<em>How to get metadata: a tutorial</em>&nbsp;»).  <a target="_blank" href="http://www.alberton.info/postgresql_meta_info.html">http://www.alberton.info/postgresql_meta_info.html</a>
+
+</p>
+
+<p>
+
+Les inscriptions au «&nbsp;<em>PostgreSQL Anniversary</em>&nbsp;» sont ouvertes  <a target="_blank" href="http://conference.postgresql.org/Registration">http://conference.postgresql.org/Registration</a>
+
+</p>
+
+<p>
+
+Le «&nbsp;<em>PostgreSQL Anniversary Summit</em>&nbsp;» est sponsorisé par Afilias, EnterpriseDB, GreenPlum, Pervasive et Sun Microsystems. </p>
+
+<!--more-->
+
 
 <p><strong>Nouvelles des produits autour de PostgreSQL</strong></p>
 

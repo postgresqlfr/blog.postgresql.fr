@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2019-04-08-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgpool-II versions 4.0.4, 3.7.9, 3.6.16, 3.5.20 et 3.4.23 publi&eacute;es. <a target="_blank" href="http://pgpool.net/mediawiki/index.php/Downloads">http://pgpool.net/mediawiki/index.php/Downloads</a></li>
+
+<li>padnag 1.2.4, un outil de synchronisation des r&ocirc;les PostgreSQL avec les utilisateurs et groupes Active Directory&nbsp;: <a target="_blank" href="https://padnag.io/">https://padnag.io/</a></li>
+
+<li>pg_activity 1.5 un utilitaire similaire &agrave; Top pour l'activit&eacute; d'un serveur PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/julmon/pg_activity/releases/tag/v1.5.0">https://github.com/julmon/pg_activity/releases/tag/v1.5.0</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en mars</h2>
 

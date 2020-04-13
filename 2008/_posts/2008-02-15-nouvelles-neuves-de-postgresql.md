@@ -6,6 +6,24 @@ redirect_from: "index.php?post/drupal-205 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 10 février 2008</strong></p>
+
+<ul>
+
+<li>PostgreSQL 8.3.0 est disponible&nbsp;!</li>
+
+<li>Hommage à la "SCALE team" et au LAPUG pour avoir fait de la réunion un succès [ndt: plus d'infos
+
+<a target="_blank" href="http://pugs.postgresql.org/taxonomy/term/5">ici</a>]</li>
+
+<li>PGDG en RPMs pour PostgreSQL 8.3.0 est à présent disponible&nbsp;:
+
+<a target="_blank" href="http://yum.pgsqlrpms.org">http://yum.pgsqlrpms.org</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

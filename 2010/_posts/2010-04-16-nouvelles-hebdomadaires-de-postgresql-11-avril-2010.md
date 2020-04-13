@@ -6,6 +6,106 @@ redirect_from: "index.php?post/2010-04-16-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Versions 1.2.21 et 2.0.3 de Slony1, un syst&egrave;me de r&eacute;plication ma&icirc;tre-esclave en cascade pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.slony.info/">http://www.slony.info/</a></li>
+
+<li>Postgre-XC, un cluster synchrone multi-ma&icirc;tres pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="https://sourceforge.net/projects/postgres-xc/">https://sourceforge.net/projects/postgres-xc/</a></li>
+
+<li>py-postgresql version 1.0, un pilote en pur Python 3 pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://python.projects.postgresql.org/docs/1.0/changes.html">http://python.projects.postgresql.org/docs/1.0/changes.html</a></li>
+
+<li>ODBC-Link 1.0, et ODBC-based database link system&nbsp;: 
+
+<a target="_blank" href="http://www.cybertec.at/en/postgresql_downloads">http://www.cybertec.at/en/postgresql_downloads</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 9.0 de la semaine</strong></p>
+
+<p>En une seule commande, GRANT et REVOKE peuvent maintenant op&eacute;rer sur les objets avec une port&eacute;e li&eacute;e au sch&eacute;ma. [ndt-exemple&nbsp;: GRANT ... ON ALL TABLES IN SCHEMA monschema TO ...]</p>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en avril</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-04/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-04/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>L'appel aux conf&eacute;renciers a &eacute;t&eacute; lanc&eacute; pour CHAR(10) &agrave; Oxford, Angleterre, du 1er au 3 juillet 2010. Les propositions sont attendues avant le 20 avril. 
+
+<a target="_blank" href="http://www.char10.org">http://www.char10.org</a></li>
+
+<li>Bruce Momjian parlera des solutions de r&eacute;plications dans/avec PostgreSQL lors du rassemblement du PUG de New-York le 20 avril de 18h30 &agrave; 20h30 au Penn Plaza. D&eacute;tails et inscriptions ci-apr&egrave;s&nbsp;: 
+
+<a target="_blank" href="http://postgresql.meetup.com/3/calendar/12788352/">http://postgresql.meetup.com/3/calendar/12788352/</a></li>
+
+<li>La "Linuxfest Northwest 2010" aura lieu &agrave; Bellingham, Washington, &Eacute;tats-Unis les 24 et 25 avril. Conf&eacute;rences, r&eacute;unions et m&eacute;c&eacute;nat sont possibles&nbsp;: 
+
+<a target="_blank" href="http://linuxfestnorthwest.org/">http://linuxfestnorthwest.org/</a></li>
+
+<li>Andreas (ads) Scherbaum enseignera au centre pour adultes de Magdeburg (All.) du 3 au 7 mai 2010 sur le sujet "PostgreSQL for Corporate Use". D&eacute;tails ci-apr&egrave;s&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/650-PostgreSQL-Schulung-als-Bildungsurlaub-03.-07.05.2010-in-Magdeburg.html">http://andreas.scherbaum.la/blog/archives/650-PostgreSQL-Schulung-als-Bildungsurlaub-03.-07.05.2010-in-Magdeburg.html</a></li>
+
+<li>La PgCon 2010 aura lieu les 20 &amp; 21 mai 2010 &agrave; Ottawa avec des tutoriels les 18 et 19&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2010/registration.php">http://www.pgcon.org/2010/registration.php</a></li>
+
+<li>L'appel aux conf&eacute;renciers pour l'OSBridge est lanc&eacute;&nbsp;! L'&eacute;v&eacute;nement aura lieu du 1er au 4 juin 2010 &agrave; Portland (Oregon)&nbsp;: 
+
+<a target="_blank" href="http://opensourcebridge.org/events/2010/proposals/">http://opensourcebridge.org/events/2010/proposals/</a></li>
+
+<li>La "Southeast Linuxfest 2010" aura lieu &agrave; Spartanburg (Caroline du Sud, &Eacute;tats-Unis) les 12 &amp; 13 juin. Participations/r&eacute;unions et m&eacute;c&eacute;nats encore proposables&nbsp;: 
+
+<a target="_blank" href="http://southeastlinuxfest.org/">http://southeastlinuxfest.org/</a></li>
+
+<li>L'OSCON aura lieu &agrave; Portland (Oregon) du 19 au 23 juillet 2010&nbsp;: 
+
+<a target="_blank" href="http://www.oscon.com/oscon2010">http://www.oscon.com/oscon2010</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20100411">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

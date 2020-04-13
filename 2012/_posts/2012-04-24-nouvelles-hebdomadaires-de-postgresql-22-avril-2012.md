@@ -6,6 +6,84 @@ redirect_from: "index.php?post/2012-04-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La <em>PostgreSQL Conference Europe</em> 2012 aura lieu &agrave; Prague, R&eacute;publique Tch&egrave;que, du 23 au 26 octobre. L'appel &agrave; sponsors est ouvert&nbsp;: 
+
+<a target="_blank" href="http://2012.pgconf.eu/">http://2012.pgconf.eu/</a></p>
+
+<p><em>PGNext</em> a &eacute;t&eacute; annul&eacute;.</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>pgbouncer 1.5.1, un distributeur de connexions pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/frs/shownotes.php?release_id=1936">http://pgfoundry.org/frs/shownotes.php?release_id=1936</a></li>
+
+<li>pgpool-II 3.1.3 et 3.0.7, un middleware pouvant servir de distributeur de connexions, de syst&egrave;me de r&eacute;plication, de r&eacute;partition de charges, de parall&egrave;lisation et d'avantage&nbsp;: 
+
+<a target="_blank" href="http://www.pgpool.net/download.php?f=pgpool-II-3.1.3.tar.gz">http://www.pgpool.net/download.php?f=pgpool-II-3.1.3.tar.gz</a> <a target="_blank" href="http://www.pgpool.net/download.php?f=pgpool-II-3.0.7.tar.gz">http://www.pgpool.net/download.php?f=pgpool-II-3.0.7.tar.gz</a></li>
+
+<li>Skytools 3.0.1, un ensemble d'outils d&eacute;velopp&eacute; par Skype pour la r&eacute;plication et le failover, incluant PgQ, un framework g&eacute;n&eacute;rique de mise en queue, et Londiste, un syst&egrave;me de r&eacute;plication ma&icirc;tre-esclave au niveau enregistrement&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/skytools">http://pgfoundry.org/projects/skytools</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en avril</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2012-04/threads.php">http://archives.postgresql.org/pgsql-jobs/2012-04/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La seconde r&eacute;union du PUG de l'Arizona est programm&eacute;e pour le mercredi 25 avril &agrave; 18h30 et d&eacute;butera avec pizzas et rafraichissements. Vous pouvez rejoindre la mailing-list, et RSVP &agrave;&nbsp;: 
+
+<a target="_blank" href="https://www.bigtent.com/groups/azpug">https://www.bigtent.com/groups/azpug</a></li>
+
+<li>La <em>PGCon 2012</em> sera tenue &agrave; l'Universit&eacute; d'Ottawa, les 17 et 18 mai 2012. Elle sera pr&eacute;c&eacute;d&eacute;e par deux jours de tutoriels les 15 &amp; 16 mai 2012&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2012/">http://www.pgcon.org/2012/</a></li>
+
+<li>Le <em>PGDay France</em> aura lieu &agrave; Lyon, le 7 juin 2012&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.fr">http://www.pgday.fr</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2012-04/msg00017.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

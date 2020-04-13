@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-436 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 27 juillet 2008</strong></p>
+
+<p>La "commit fest" de juillet, pratiquement terminée, a vu s'ajouter un grand nombre de fonctionnalités.</p>
+
+<p>[ndt: Guillaume Lelarge est en train d'intégrer la recherche plein texte à pgAdmin. Série à suivre&nbsp;:
+
+<a target="_blank" href="http://blog.guillaume.lelarge.info/index.php/post/2008/07/28/Ajout-de-la-recherche-plein-texte-sur-pgAdmin3">lundi</a>, <a target="_blank" href="http://blog.guillaume.lelarge.info/index.php/post/2008/07/29/Ajout-de-la-recherche-plein-texte-sur-pgAdmin3-2eme-jour">mardi</a>,...]</p>
+
+<p>(<a href="http://people.planetpostgresql.org/dfetter/index.php?/archives/184-PostgreSQL-Weekly-News-July-27-2008.html">lire l'article original</a>)</p>
+
+<!--more-->
+
 
 <!--break-->
 

@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-307 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 24 août 2008</strong></p>
+
+<p>(<a href="http://people.planetpostgresql.org/dfetter/index.php?/archives/188-PostgreSQL-Weekly-News-August-24-2008.html">lire l'article original</a>)</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

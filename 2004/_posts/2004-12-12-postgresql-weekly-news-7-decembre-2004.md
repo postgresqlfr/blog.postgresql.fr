@@ -6,6 +6,40 @@ redirect_from: "index.php?post/drupal-54 "
 ---
 
 
+<p>
+
+Le 7 décembre dernier, Robert Treat nous annonçait sur la liste pgsql-announce:
+
+</p>
+
+<p>
+
+Après bien des conversations et des débats, la core team a décidé de sortir
+
+PostgreSQL 8.0.0 RC1 la semaine dernière, en nous mettant de fait dans la
+
+phase finale du cycle de développement de la version 8.0. <strong>Le but étant de sortir
+
+la version finale autour du 15 décembre si tout se passe bien</strong>. Tous les rapports
+
+sur les portages, les traductions et les améliorations de dernière minute de la documentation
+
+devraient être livrées rapidement. (La documentation actualisée sur les
+
+portages peut être consultée sur le site
+
+<a href="http://developer.postgresql.org/docs/postgres/supported-platforms.html">
+
+http://developer.postgresql.org/docs/postgres/supported-platforms.html</a>).
+
+Il y aura au moins une Release Candidate de plus avant la sortie finale, aussi
+
+gardez un oeuil là dessus, les choses vont aller très vite à présent.
+
+</p>
+
+<!--more-->
+
 
 Ainsi, qu'apporte cette RC1 en termes de corrections? Le code de sélection entre
 

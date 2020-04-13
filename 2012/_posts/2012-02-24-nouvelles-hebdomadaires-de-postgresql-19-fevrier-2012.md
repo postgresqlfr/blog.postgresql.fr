@@ -6,6 +6,74 @@ redirect_from: "index.php?post/2012-02-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>PostgreSQL Data Sync 12.2, un outil permettant de comparer et synchroniser les contenus de bases PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.sqlmaestro.com/products/postgresql/datasync/">http://www.sqlmaestro.com/products/postgresql/datasync/</a></li>
+
+<li>Quick Application Suite et Quick Application Builder 3.0 pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.quickapplicationsuite.com/post_dload.php">http://www.quickapplicationsuite.com/post_dload.php</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2012-02/threads.php">http://archives.postgresql.org/pgsql-jobs/2012-02/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le <em>PGDay NYC</em> aura lieu le 2 avril 2012 au <em>Lighthouse International</em> &agrave; New-York&nbsp;: 
+
+<a target="_blank" href="http://pgday.nycpug.org">http://pgday.nycpug.org</a></li>
+
+<li>La <em>PGCon 2012</em> sera tenue &agrave; l'Universit&eacute; d'Ottawa, les 17 et 18 mai 2012. Elle sera pr&eacute;c&eacute;d&eacute;e par deux jours de tutoriels les 15 &amp; 16 mai 2012&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2012/">http://www.pgcon.org/2012/</a></li>
+
+<li>Le <em>PGDay France</em> aura lieu &agrave; Lyon, le 7 juin 2012&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.fr">http://www.pgday.fr</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2012-02/msg00009.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

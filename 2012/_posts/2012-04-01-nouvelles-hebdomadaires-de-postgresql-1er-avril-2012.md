@@ -6,6 +6,72 @@ redirect_from: "index.php?post/2012-04-01-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Au terme d'une campagne éclair, Oracle a pris le contrôle de toutes les entreprises offrant un support de PostgreSQL&nbsp;: Bull, Command Prompt, Dalibo, EMC, EnterpriseDB, OmniTI, PostgreSQL Experts, Second Quadrant et VMware. Larry Ellison, PDG, a déclaré que ces aquisitions étaient nécessaires à la construction de son prochain yacht, lui permettant d'être encore plus grand que le précédent.</p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>psycopg2 2.4.5, un connecteur Boa pour PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://initd.org/psycopg/articles/2012/03/29/psycopg-245-released/">http://initd.org/psycopg/articles/2012/03/29/psycopg-245-released/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en avril</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;:
+
+<a target="_blank" href="http://jobs.oracle.com/">http://jobs.oracle.com/</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le <em>PGDay NYC</em> aura lieu le 2 avril 2012 au <em>Lighthouse International</em> à New-York&nbsp;:
+
+<a target="_blank" href="http://pgday.nycpug.org">http://pgday.nycpug.org</a></li>
+
+<li>Réunion du groupe londonien, le 17 avril 2012&nbsp;:
+
+<a target="_blank" href="http://www.meetup.com/London-PostgreSQL-Meetup-Group/">http://www.meetup.com/London-PostgreSQL-Meetup-Group/</a></li>
+
+<li>La <em>PGCon 2012</em> sera tenue à l'Université d'Ottawa, les 17 et 18 mai 2012. Elle sera précédée par deux jours de tutoriels les 15 &amp; 16 mai 2012&nbsp;:
+
+<a target="_blank" href="http://www.pgcon.org/2012/">http://www.pgcon.org/2012/</a></li>
+
+<li>Le <em>PGDay France</em> aura lieu à Lyon, le 7 juin 2012&nbsp;:
+
+<a target="_blank" href="http://www.pgday.fr">http://www.pgday.fr</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les média</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;:
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><em>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'équipe PostgreSQLFr sous licence CC BY-NC-SA.</em></p>
+
+<p><em>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais à david (a) fetter.org, en allemand à pwn (a) pgug.de, en italien à pwn (a) itpug.org et en espagnol à pwn (a) arpug.com.ar.</em></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2012-04/msg00000.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

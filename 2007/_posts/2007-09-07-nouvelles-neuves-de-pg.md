@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-410 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 3 Septembre 2007</strong></p>
+
+<p>Les vidéos (en italien) des mini-cours du PGDay 2007 sont disponibles&nbsp;:
+
+<a target="_blank" href="http://www.pghost.eu/node/36">http://www.pghost.eu/node/36</a></p>
+
+<!--more-->
+
 
 Une discussion courtoise bien qu'animée a lieu sur -advocacy à propos d'un éventuel renommage en Postgres.
 

@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-28 "
 
 
 
+
+<!--more-->
+
+
 <p>
 
 Sur la liste pgsql-announce, Radim Kolar <hsn@netmag.cz>, nous annonçait le 1er

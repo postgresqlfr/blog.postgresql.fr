@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2012-09-10-publication-de-postgresql-9-2 "
 
 
 
+
+<!--more-->
+
+
 Le PostgreSQL Global Development Group annonce la sortie de PostgreSQL 9.2, dernière version en date du système de gestion de bases de données libre de référence.<br />Depuis l'annonce de la version bêta en mai, les développeurs et les intégrateurs louent les avancées en terme de performance, de flexibilité et d'extensibilité.<br />Une adoption massive de cette version est attendue.<br /><br />« PostgreSQL 9.2 intègre le support natif de JSON, les index couvrants, des performances et une réplication encore améliorées, et beaucoup d'autres fonctionnalités. Nous attendons cette version avec impatience. Elle sera disponible en "Early Access" dès sa publication par la communauté, » déclare Ines Sombra, Lead Data Engineer, EngineYard.<br /><br /><br /><h2>Performances et extensibilité accrues</h2>
 
 <br />Grâce aux améliorations apportées à l'extensibilité verticale, PostgreSQL exploite mieux les ressources matérielles de serveurs plus puissants.<br />Les avancées dans la gestion des verrous, l'efficacité d'écriture, les accès aux données par les index couvrants, et autres opérations de bas niveau permettent à PostgreSQL de gérer des volumes conséquents. <br />En chiffres, cela donne :<br /><br /><ul><li>jusqu’à 350.000 requêtes en lecture par seconde (plus de 4x plus rapide) ;</li>

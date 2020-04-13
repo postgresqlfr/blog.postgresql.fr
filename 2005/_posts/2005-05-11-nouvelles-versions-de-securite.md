@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-94 "
 
 
 
+
+<!--more-->
+
+
 <p>Dans un mail sur -announce Marc G. Fournier nous annonce la sortie de version de sécurité pour les versions <strong>7.2.x</strong> à <strong>8.0.x</strong> : 7.2.8, 7.3.10, 7.4.8 et 8.0.3.<br />
 
 Les problèmes relatifs à la sécurité ont déjà été reportés par Tom Lane ainsi qu'une méthode permettant de les circonvenir rapidement (dans la liste -hackers). Il est fortement conseillé de mettre à jour les plates-formes PostgreSQL ne disposant pas de ces numéro de version. Ces versions ont été créées uniquement dans le but de permettre une installation ou une mies à jour automatique tenant compte de ces correctifs.<br />

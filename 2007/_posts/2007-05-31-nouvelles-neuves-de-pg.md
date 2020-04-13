@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-170 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 28 Mai 2007</strong></p>
+
+<p>La semaine passée, les <em>PgCon</em> furent un brillant succès.</p>
+
+<br />
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

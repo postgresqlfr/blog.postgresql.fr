@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2018-10-01-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le <em>PGDay.IT 2019</em> aura lieu les 16 et 17 mai &agrave; Bologne en Italie. L'appel &agrave; conf&eacute;renciers est g&eacute;r&eacute; par ici&nbsp;: <a target="_blank" href="https://2019.pgday.it/en/blog/cfp">https://2019.pgday.it/en/blog/cfp</a> tandis que l'appel &agrave; ateliers se fait par l&agrave;&nbsp;: <a target="_blank" href="https://2019.pgday.it/en/blog/cfw">https://2019.pgday.it/en/blog/cfw</a> avec comme date limite commune le 15 janvier 2019&nbsp;: <a target="_blank" href="https://2019.pgday.it/en/">https://2019.pgday.it/en/</a></p>
+
+<p>Le <em>pgDay Paris 2019</em> se tiendra &agrave; Paris le 12 mars au 199bis rue Saint Martin. L'appel &agrave; conf&eacute;renciers court jusqu'au 30 novembre 2018&nbsp;: <a target="_blank" href="http://2019.pgday.paris/callforpapers/">http://2019.pgday.paris/callforpapers/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>Ora2PG 19.1, un outil de migration de bases Oracle vers PostgreSQL&nbsp;: <a target="_blank" href="http://ora2pg.darold.net/">http://ora2pg.darold.net/</a></li>
+
+<li>PostGIS 2.5.0 le syst&egrave;me d'information g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL&nbsp;: <a target="_blank" href="http://postgis.net/2018/09/23/postgis-2.5.0/">http://postgis.net/2018/09/23/postgis-2.5.0/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en septembre</h2>
 

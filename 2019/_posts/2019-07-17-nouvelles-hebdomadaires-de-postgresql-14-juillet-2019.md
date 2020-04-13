@@ -6,6 +6,10 @@ redirect_from: "index.php?post/2019-07-17-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le PGDay nordique 2020 se tiendra &agrave; Helsinki (Finlande) au Hilton Helsinki Strand Hotel le 24 mars 2020. L'appel &agrave; conf&eacute;renciers court jusqu'au 31 d&eacute;cembre 2019 &agrave; l'adresse&nbsp;: <a target="_blank" href="https://2020.nordicpgday.org/cfp/">https://2020.nordicpgday.org/cfp/</a></p>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en juillet</h2>
 

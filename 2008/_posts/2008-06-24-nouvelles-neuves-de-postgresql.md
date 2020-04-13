@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-432 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 22 juin 2008</strong></p>
+
+<p>Sondage&nbsp;: quelle nouvelle fonctionnalité désirez-vous le plus&nbsp;?
+
+<a target="_blank" href="http://www.postgresql.org/community/">http://www.postgresql.org/community/</a></p>
+
+<p>[ndt: à ce propos <a href="http://www.vimeo.com/1081680">une jolie animation</a> sur la frénésie des devs PostgreSQL]</p>
+
+<p>(<a href="http://people.planetpostgresql.org/dfetter/index.php?/archives/178-PostgreSQL-Weekly-News-June-22-2008.html">lire l'article original</a>)</p>
+
+<!--more-->
+
 
 <!--break-->
 

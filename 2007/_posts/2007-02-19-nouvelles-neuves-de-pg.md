@@ -6,6 +6,26 @@ redirect_from: "index.php?post/drupal-238 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 18 février 2007</strong></p>
+
+<p>
+
+PostgreSQL offre une meilleure extensibilité à la version 3.4 du programme australien open source de comptabilité SYMBOL&nbsp;:
+
+<a target="_blank" href="http://www.pcworld.idg.com.au/index.php/id;1504289875">http://www.pcworld.idg.com.au/index.php/id;1504289875</a>
+
+</p>
+
+<p>
+
+L'IGN, Institut Géographique National, a choisi PostgreSQL et PostGIS pour son extensibilité, sa vitesse et son intégrité transactionnelle.
+
+<a target="_blank" href="http://postgis.refractions.net/documentation/casestudies/ign/">http://postgis.refractions.net/documentation/casestudies/ign/</a>
+
+</p>
+
+<!--more-->
+
 
 <p><strong>Les nouveautés des produits dérivés</strong></p>
 

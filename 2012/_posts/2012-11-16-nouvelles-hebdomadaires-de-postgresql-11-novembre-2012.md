@@ -6,6 +6,64 @@ redirect_from: "index.php?post/2012-11-16-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p><strong>Offres d'emplois autour de PostgreSQL en novembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2012-11/threads.php">http://archives.postgresql.org/pgsql-jobs/2012-11/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>[ndt] Le PgDay 2012 argentin, programm&eacute; pour le 13 novembre &agrave; Buenos Aires, a &eacute;t&eacute; d&eacute;m&eacute;nag&eacute; dans un nouvel endroit, plus proche du centre ville, afin de pouvoir satisfaire le grand nombre d'inscrits&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.com.ar/buenosaires2012/venue/index?lang=en">http://www.pgday.com.ar/buenosaires2012/venue/index?lang=en</a></li>
+
+<li>Le PgDay argentin 2012 se tiendra &agrave; l'Universit&eacute; Nationale de Quilmes, &agrave; Bernal pr&egrave;s de Buenos Aires, le 13 novembre. Les sujets couverts concerneront aussi bien les utilisateurs, d&eacute;veloppeurs et contributeurs, que les d&eacute;cideurs et hauts responsables. Pour plus d'informations &agrave; propos de la conf&eacute;rence, consultez le site suivant&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.com.ar/quilmes2012?lang=en">http://www.pgday.com.ar/quilmes2012?lang=en</a></li>
+
+<li>Le PGDay &eacute;quatorien de cette ann&eacute;e se tiendra &agrave; Quito le 17 novembre. L'appel &agrave; conf&eacute;renciers est lanc&eacute; jusqu'au 10 octobre. Envoyez vos propositions &agrave; Jaime Casanova&nbsp;: jaime &lt;AT&gt; 2ndquadrant &lt;DOT&gt; com&nbsp;: 
+
+<a target="_blank" href="https://wiki.postgresql.org/wiki/PGDay_Ecuador_2012">https://wiki.postgresql.org/wiki/PGDay_Ecuador_2012</a></li>
+
+<li>La sixi&egrave;me &eacute;dition du PGDay italien aura lieu &agrave; Prato, Toscane, le 23 novembre 2012. Un appel international &agrave; conf&eacute;renciers est lanc&eacute;, conf&eacute;rences et pr&eacute;sentations en anglais sont accept&eacute;es. Informations anglophones sur le processus de candidature disponibles ci-apr&egrave;s&nbsp;: 
+
+<a target="_blank" href="http://2012.pgday.it/call-for-papers/international-call-for-papers/">http://2012.pgday.it/call-for-papers/international-call-for-papers/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2012-11/msg00004.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

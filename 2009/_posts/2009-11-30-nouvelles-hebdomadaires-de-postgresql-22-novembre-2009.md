@@ -6,6 +6,72 @@ redirect_from: "index.php?post/2009-11-30-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Un compte-rendu de la conférence "PGCon Brasil 2009" est disponible en portugais&nbsp;:
+
+<a target="_blank" href="http://pgcon.postgresql.org.br/2009/asl/pgcconbr-2009_prest_contas.pdf">http://pgcon.postgresql.org.br/2009/asl/pgcconbr-2009_prest_contas.pdf</a>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>pgstat 1.1&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgstat2/">http://pgfoundry.org/projects/pgstat2/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en novembre</strong></p>
+
+<ul>
+
+<li><a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2009-11/threads.php">http://archives.postgresql.org/pgsql-jobs/2009-11/threads.php</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La troisième édition du PGday italien sera tenue à l'université de Pise, le 4 décembre. Entrée libre, sponsors bienvenus&nbsp;:
+
+<a target="_blank" href="http://www.pgday.it/">http://www.pgday.it/</a></li>
+
+<li>Stefan Keller, de l'université des sciences appliquées de Rapperswil (HSR), animera un séminaire intitulé "Introduction à PostGIS/PostgreSQL" le 14 janvier 2010 à Zurich (Suisse)&nbsp;:
+
+<a target="_blank" href="http://www.gis.hsr.ch/wiki/Agenda">http://www.gis.hsr.ch/wiki/Agenda</a></li>
+
+<li>Le FOSDEM 2010 aura lieu à Bruxelles les 6 &amp; 7 février 2010&nbsp;:
+
+<a target="_blank" href="http://www.fosdem.org/">http://www.fosdem.org/</a></li>
+
+<li>Le "Chemnitzer Linuxtage" aura lieu à Chemnitz (All.) les 13 &amp; 14 mars 2010&nbsp;:
+
+<a target="_blank" href="http://chemnitzer.linux-tage.de/">http://chemnitzer.linux-tage.de/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les média</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;:
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><em>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'équipe PostgreSQLFr sous licence CC BY-NC-SA.</em></p>
+
+<p><em>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais à david (a) fetter.org, en allemand à pwn (a) pgug.de, en italien à pwn (a) itpug.org.</em></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20091122">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqués</strong></p>
 

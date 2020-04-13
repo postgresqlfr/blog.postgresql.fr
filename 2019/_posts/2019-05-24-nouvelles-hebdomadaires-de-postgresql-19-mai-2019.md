@@ -6,6 +6,16 @@ redirect_from: "index.php?post/2019-05-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgpool-II versions 4.0.5, 3.7.10, 3.6.17, 3.5.21 et 3.4.24 publi&eacute;es. <a target="_blank" href="http://pgpool.net/mediawiki/index.php/Downloads">http://pgpool.net/mediawiki/index.php/Downloads</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en mai</h2>
 

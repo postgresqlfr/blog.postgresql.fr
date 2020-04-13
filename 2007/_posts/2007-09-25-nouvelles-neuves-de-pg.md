@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-228 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 16 Septembre 2007</strong></p>
+
+<p>Postgres 8.2.5, 8.1.10, 8.0.14, 7.4.18 et 7.3.20 seront bientôt disponibles. Soyez prêts à mettre à jour !</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

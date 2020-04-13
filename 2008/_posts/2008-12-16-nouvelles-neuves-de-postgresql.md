@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2008-12-16-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 14 décembre 2008</strong></p>
+
+<p>Bienvenue à notre tout nouveau membre&nbsp;: Pascal Scherbaum&nbsp;:)
+
+<a target="_blank" href="http://pascal.scherbaum.la/index.en.php">http://pascal.scherbaum.la/index.en.php</a></p>
+
+<p>Mark Wong et quelques autres personnes ont lancé une série de conférences mensuelles à propos des performances de PostgreSQL. La première aura lieu le 8 janvier à 19h à l'Université d'État de Portland, "Fourth Ave Building", salle 86-01. RSVP sur la liste du PDXPUG.</p>
+
+<p>L'ARPUG a mis sur pied un serveur Pootle pour la traduction&nbsp;:
+
+<a target="_blank" href="http://pootle.arpug.com.ar/">http://pootle.arpug.com.ar/</a></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20081214">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Les nouveautés des produits dérivés</strong></p>
 

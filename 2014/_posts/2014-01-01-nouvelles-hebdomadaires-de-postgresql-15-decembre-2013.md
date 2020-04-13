@@ -6,6 +6,78 @@ redirect_from: "index.php?post/2014-01-01-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>L'appel &agrave; conf&eacute;renciers pour le PGCon 2014 est lanc&eacute;. Date limite&nbsp;: 19 janvier 2014&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2014/">http://www.pgcon.org/2014/</a></p>
+
+<p>La premi&egrave;re r&eacute;union du PUGS, le groupe des utilisateurs de PostgreSQL de Singapour, aura lieu le 19 d&eacute;cembre 2013&nbsp;: 
+
+<a target="_blank" href="http://www.meetup.com/PUGS-Postgres-Users-Group-Singapore/events/154707822/">http://www.meetup.com/PUGS-Postgres-Users-Group-Singapore/events/154707822/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>devart dotConnect 7.2 pour PostgreSQL, un fournisseur de donn&eacute;es ADO.NET&nbsp;: 
+
+<a target="_blank" href="http://www.devart.com/dotconnect/postgresql/">http://www.devart.com/dotconnect/postgresql/</a></li>
+
+<li>Npgsql2 2.0.14, un connecteur .Net pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://fxjr.blogspot.com/2013/12/npgsql-2014-released.html">http://fxjr.blogspot.com/2013/12/npgsql-2014-released.html</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en d&eacute;cembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2013-12/threads.php">http://archives.postgresql.org/pgsql-jobs/2013-12/threads.php</a></li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>FOSDEM PGDay, une conf&eacute;rence d'une journ&eacute;e, tenue avant le FOSDEM &agrave; Bruxelles, aura lieu le 31 janvier 2014. D&eacute;tails&nbsp;: 
+
+<a target="_blank" href="http://fosdem2014.pgconf.eu/">http://fosdem2014.pgconf.eu/</a></li>
+
+<li>La 7<sup>&egrave;me</sup> conf&eacute;rence annuelle "<em>Prague PostgreSQL Developers Day</em>" (P2D2) aura lieu le 6 f&eacute;vrier 2014 &agrave; la Facult&eacute; des Sciences Math&eacute;matiques &amp; Physiques de l'Universit&eacute; Charles (Malostranske namesti 25, Prague). Infos en langue tch&egrave;que ci-apr&egrave;s. L'appel &agrave; conf&eacute;renciers court jusqu'au 3 janvier 2014&nbsp;: 
+
+<a target="_blank" href="http://www.p2d2.cz/">http://www.p2d2.cz/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20131216063951.GD15585@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

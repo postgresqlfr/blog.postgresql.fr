@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2016-01-06-pg-day-france-2016-a-lille-appel-a-ora
 
 
 
+
+<!--more-->
+
+
 Le PGDay France est la conférence annuelle de la communauté francophone de PostgreSQL. Cette année, l’événement se tiendra le 31 mai à Lille. Une centaine de visiteurs sont attendus pour une journée d'échanges autour de PostgreSQL et de ses projets associés. Retrouvez plus d'informations sur le site de l’événement : http://www.pgday.fr
 
 

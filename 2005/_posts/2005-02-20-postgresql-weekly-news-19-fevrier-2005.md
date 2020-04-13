@@ -6,6 +6,30 @@ redirect_from: "index.php?post/drupal-77 "
 ---
 
 
+<p><em>Dans son message du 19 février, David Fetter nous annonçait sur pg-annouce</em></p>
+
+<p><strong>== PostgreSQL Weekly News - 19 février 2005 ==</strong></p>
+
+<p>Une grande discussion autour du rebouclage des identifiants de transactions (Transaction ID ou TID) a eu lieu cette semaine. Il semble que pg_autovacuum soit intégré dans la version 8.1 de PostgreSQL.</p>
+
+<p>Les soumissions à OSCON sont maintenant en cours. Si c'est le cas de l'une des votre, sachez que des discussions ont encore lieu à ce sujet en ce moment.</p>
+
+<p>Sean Chittenden a utilisé l'outil d'audit de code de Coverity sur le code de base de PostgreSQL et a trouvé quelques bugs.
+
+<a href="http://www.coverity.com/">http://www.coverity.com/<br />
+
+</a></p>
+
+<p>Abhijit Menon-Sen a trouvé un cas où INSERT ... SELECT ... peut
+
+faire planter le moteur du serveur PostgreSQL. Cependant ce crash ne
+
+corrompt pas les données et Tom Lane a corrigé ce point en moins de 4
+
+heures.</p>
+
+<!--more-->
+
 
 <strong>== Nouvelles de produits autour de PostgreSQL ==</strong>
 

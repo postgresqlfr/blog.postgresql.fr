@@ -6,6 +6,86 @@ redirect_from: "index.php?post/2012-03-07-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Publication des mises &agrave; jour de s&eacute;curit&eacute;&nbsp;: 9.1.3, 9.0.7, 8.4.11 et 8.3.18. Mettez &agrave; jour imm&eacute;diatement si les vuln&eacute;rabilit&eacute;s vous concernent, &agrave; la prochaine occasion sinon. 
+
+<a target="_blank" href="http://www.postgresql.org/about/news/1377/">http://www.postgresql.org/about/news/1377/</a></p>
+
+<p>[ndt: 
+
+<a target="_blank" href="http://blog.postgresql.fr/index.php?post/2012/02/27/Mise-%C3%A0-jour-mineures-de-PostgreSQL-%3A-9.1.3%2C-9.0.7%2C-8.4.11%2C-8.3.18">annonce en fran&ccedil;ais</a> (fr)]</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>pgAdmin III v1.14.2, un outil graphique d'administration pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.pgadmin.org/development/changelog.php">http://www.pgadmin.org/development/changelog.php</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en mars</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2012-03/threads.php">http://archives.postgresql.org/pgsql-jobs/2012-03/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le PGDay Austin 2012 est programm&eacute; pour le 28 mars&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/about/event/1379/">http://www.postgresql.org/about/event/1379/</a></li>
+
+<li>Le PGDay DC 2012 est programm&eacute; pour le 30 mars&nbsp;: 
+
+<a target="_blank" href="http://pgday.bwpug.org">http://pgday.bwpug.org</a></li>
+
+<li>Le <em>PGDay NYC</em> aura lieu le 2 avril 2012 au <em>Lighthouse International</em> &agrave; New-York&nbsp;: 
+
+<a target="_blank" href="http://pgday.nycpug.org">http://pgday.nycpug.org</a></li>
+
+<li>La <em>PGCon 2012</em> sera tenue &agrave; l'Universit&eacute; d'Ottawa, les 17 et 18 mai 2012. Elle sera pr&eacute;c&eacute;d&eacute;e par deux jours de tutoriels les 15 &amp; 16 mai 2012&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2012/">http://www.pgcon.org/2012/</a></li>
+
+<li>Le <em>PGDay France</em> aura lieu &agrave; Lyon, le 7 juin 2012&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.fr">http://www.pgday.fr</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2012-03/msg00001.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

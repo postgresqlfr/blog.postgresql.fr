@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-150 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p><strong>Intervention à la faculté de Dijon</strong></p>
 

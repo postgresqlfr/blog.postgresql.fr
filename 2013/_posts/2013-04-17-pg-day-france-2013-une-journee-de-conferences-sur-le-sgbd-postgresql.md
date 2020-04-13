@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2013-04-17-pg-day-france-2013-une-journee-de-conf
 
 
 
+
+<!--more-->
+
+
 Le 13 juin à Nantes se tiendra le PG Day France 2013, une journée de
 
 conférences et d'échanges sur le thème du SGBDR open source PostgreSQL.

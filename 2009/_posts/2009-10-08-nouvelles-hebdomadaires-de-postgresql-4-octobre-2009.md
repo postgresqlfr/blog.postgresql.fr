@@ -6,6 +6,32 @@ redirect_from: "index.php?post/2009-10-08-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Bucardo 4.2.1, un syst&egrave;me de r&eacute;plication capable de g&eacute;rer deux instances "ma&icirc;tres"&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/wiki/Bucardo">http://bucardo.org/wiki/Bucardo</a></li>
+
+<li>pgpool-II 2.2.5, un gestionnaire de connexions et bien d'avantage&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+<li>Marc Balmer a mis en place un wiki (en allemand)&nbsp;: 
+
+<a target="_blank" href="http://www.postgres-support.com/">http://www.postgres-support.com/</a></li>
+
+<li>Un plugin Wordpress rend ce dernier compatible avec PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://wordpress.org/extend/plugins/postgresql-for-wordpress/">http://wordpress.org/extend/plugins/postgresql-for-wordpress/</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20091004">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en octobre</strong></p>
 

@@ -6,6 +6,16 @@ redirect_from: "index.php?post/2018-09-03-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pspg 1.6.0, un paginateur con&ccedil;u pour PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/okbob/pspg/releases/tag/1.6.0">https://github.com/okbob/pspg/releases/tag/1.6.0</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>PostgreSQL Local</h2>
 

@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2020-01-26-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>[ndt: Meetup PostgreSQL à Lille le 28 janvier à 18h45 chez SFEIR Lille&nbsp;: <a target="_blank" href="https://www.meetup.com/fr-FR/Meetup-PostgreSQL-Lille/">https://www.meetup.com/fr-FR/Meetup-PostgreSQL-Lille/</a>]</p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pg_probackup 2.2.7, un utilitaire pour g&eacute;rer les sauvegardes et les restaurations de clusters PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/postgrespro/pg_probackup">https://github.com/postgrespro/pg_probackup</a></li>
+
+<li>pitrery 3.0, un ensemble de scripts Bash permettant de g&eacute;rer les sauvegardes PITR de PostgreSQL&nbsp;: <a target="_blank" href="http://dalibo.github.io/pitrery/">http://dalibo.github.io/pitrery/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en janvier</h2>
 

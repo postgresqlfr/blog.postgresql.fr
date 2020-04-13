@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2019-11-05-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgpool-II versions 4.1, 4.0.7, 3.7.12, 3.6.19, 3.5.23, et 3.4.26 publi&eacute;es. <a target="_blank" href="http://www.pgpool.net/docs/latest/en/html/release.html">http://www.pgpool.net/docs/latest/en/html/release.html</a> <a target="_blank" href="https://www.pgpool.net/docs/41/en/html/">https://www.pgpool.net/docs/41/en/html/</a></li>
+
+<li>pgCluu 3.1, un programme en Perl pour auditer les performances de PostgreSQL&nbsp;: <a target="_blank" href="http://pgcluu.darold.net/">http://pgcluu.darold.net/</a></li>
+
+<li>pg_probackup 2.2.4, un utilitaire pour g&eacute;rer les sauvegardes et les restaurations de clusters PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/postgrespro/pg_probackup">https://github.com/postgrespro/pg_probackup</a></li>
+
+<li>datasketches 1.3.0, une extension permettant d'utiliser les algorithmes approximatifs de la biblioth&egrave;que Datasketches&nbsp;: <a target="_blank" href="https://pgxn.org/dist/datasketches/">https://pgxn.org/dist/datasketches/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en novembre</h2>
 

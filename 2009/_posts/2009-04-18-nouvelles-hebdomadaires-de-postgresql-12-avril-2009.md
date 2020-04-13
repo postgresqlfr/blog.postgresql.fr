@@ -6,6 +6,36 @@ redirect_from: "index.php?post/2009-04-18-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le PUG italien pr&eacute;sentera un aper&ccedil;u de PostgreSQL aux &eacute;tudiants informaticiens de l'universit&eacute; de Pise, le vendredi 8 mai&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/about/event.856">http://www.postgresql.org/about/event.856</a></p>
+
+<p>Le PgDay de Florianopolis aura lieu le 22 mai. Contactez Dickson S. Guedes (guedes AROBASE guedesoft DOT net) pour participer ou proposer une conf&eacute;rence&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org.br/eventos/pgday/sc">http://www.postgresql.org.br/eventos/pgday/sc</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>py-postgresql 0.8, un ensemble de programmes Python pour utilisation dans et hors du moteur de PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://python.projects.postgresql.org/docs/0.8/">http://python.projects.postgresql.org/docs/0.8/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 8.4 de la semaine</strong></p>
+
+<p>psql est &agrave; pr&eacute;sent "multi-version", ce qui signifie que vos commandes en "backslash" fonctionneront m&ecirc;me si vous vous connectez, avec cette nouvelle version de psql, &agrave; un vieux serveur.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Le moyen le plus simple d'&eacute;liminer les doublons dans une table dont la clef naturelle est manquante est de lancer un CREATE TABLE AS ... GROUP BY vers une nouvelle table, TRUNCATE, puis recopier les donn&eacute;es vers la table d'origine. Et, bien s&ucirc;r, ne pas oublier de configurer la clef naturelle&nbsp;!</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090412">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en avril</strong></p>
 

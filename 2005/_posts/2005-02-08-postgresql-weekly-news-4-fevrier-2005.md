@@ -6,6 +6,56 @@ redirect_from: "index.php?post/drupal-73 "
 ---
 
 
+<p><em>Dans son mail sur pg-announce, David Fetter annonçait</em></p>
+
+<p><strong>== PostgreSQL Weekly News - 4 Février 2005 ==</strong></p>
+
+<p>
+
+Versions de sécurité de PostgreSQL<br />
+
+PostgreSQL 8.0.1, 7.4.7, 7.3.9 et 7.2.7 sont sortis cette semaine afin de corriger une vulnérabilité dans LOAD. Veuillez mettre à jour vos logiciels en cours de fonctionnement à cette dernière version dès que celà vous sera possible.
+
+</p>
+
+<p>Stephen Frost a soumis un patch jetant les bases de conception pour l'appartenance des objets de la base à des groupes avec l'idée sous-jacente d'implémenter la notion de rôles dans la base. Matthias Schmidt a demandé de l'aide pour définir une syntaxe permettant de définir des permission à tous les objets d'un schéma.
+
+</p>
+
+<p>
+
+Victor Y. Yegorov et plusieurs autres personnes ont discuté de l'implémentation des index bitmaps.
+
+</p>
+
+<p>Josh Berkus a proposé d'étendre les vues systèmes pour couvrir
+
+l'ensemble des objets de la base de données. D'autres ont poursuivi en
+
+proposant des améliorations et des commentaires.
+
+</p>
+
+<p>Peter Eisentraut a mis en évidence un point d'incompatibilité entre
+
+la version 8.0 et la version 7.4 de la libpq. Surveillez donc la liste
+
+-hackers pour savoir comment ce point sera résolu.
+
+</p>
+
+<p>Le trés discuté code ARC se trouve maintenant dans freelist.c. Qu'il
+
+soit modifié ou retiré, tout se trouve maintenant au même endroit.
+
+</p>
+
+<p>John Hansen a contributé en fournissant des patches afin de faire marcher upper() et lower() avec Unicode. Prière de tester.
+
+</p>
+
+<!--more-->
+
 
 <strong>== Nouvelles des produits autour de PostgreSQL ==</strong>
 

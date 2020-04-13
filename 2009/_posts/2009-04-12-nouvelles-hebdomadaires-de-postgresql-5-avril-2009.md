@@ -6,6 +6,48 @@ redirect_from: "index.php?post/2009-04-12-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les inscriptions sont &agrave; pr&eacute;sent ouvertes pour le pgCon &agrave; Ottawa&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2009/registration.php">http://www.pgcon.org/2009/registration.php</a></p>
+
+<p>Ouverture des inscriptions pour l'OSCON &eacute;galement. Il y aura un pgDay la veille, soit dimanche&nbsp;: 
+
+<a target="_blank" href="https://en.oreilly.com/oscon2009/public/register">https://en.oreilly.com/oscon2009/public/register</a></p>
+
+<p>Le PgDay de Florianopolis aura lieu le 22 mai. Contactez Dickson S. Guedes (guedes AROBASE guedesoft DOT net) pour participer ou proposer une conf&eacute;rence&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org.br/eventos/pgday/sc">http://www.postgresql.org.br/eventos/pgday/sc</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Archiveopteryx 3.0.7 et 3.1.0, un gestionnaire d'e-mail bas&eacute; sur PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.archiveopteryx.org/3.0.7">http://www.archiveopteryx.org/3.0.7</a>, <a target="_blank" href="http://www.archiveopteryx.org/3.1.0">http://www.archiveopteryx.org/3.1.0</a></li>
+
+<li>PGORM 0.09, un corr&eacute;lateur objet-relationnel .NET pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://pgorm.googlecode.com">http://pgorm.googlecode.com</a></li>
+
+<li>PostgreDAC ver. 2.5.1&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/connectivity/postgresdac/download/">http://microolap.com/products/connectivity/postgresdac/download/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL 8.4 Feature of the Week</strong></p>
+
+<p>CIText&nbsp;: David Wheeler a ajout&eacute; un nouveau module &agrave; "contrib" qui impl&eacute;mente, avec toutes les options, un type de donn&eacute;es textes insensibles &agrave; la casse.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>\h &lt;COMMAND&gt; dans psql vous fournira une documentation compl&egrave;te sur un grand &eacute;ventail de commandes SQL.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090405">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en April</strong></p>
 

@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-412 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 28 Octobre 2007</strong></p>
+
+<p>Grâce à vos retours, une bêta 2 de la version 8.3 sortira sous peu. Soyez prêts à tester un peu plus encore&nbsp;!</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

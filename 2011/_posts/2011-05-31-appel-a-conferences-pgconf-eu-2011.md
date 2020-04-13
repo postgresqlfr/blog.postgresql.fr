@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2011-05-31-appel-a-conferences-pgconf-eu-2011 "
 
 
 
+
+<!--more-->
+
+
 L'événement PostgreSQL Conference Europe 2011 se tiendra du 18 au 21 Octobre à Amsterdam (Hollande) au sein de l’hôtel Casa 400. La conférence s'adresse aux utilisateurs de PostgreSQL, aux développeurs et aux contributeurs de la communauté, mais aussi aux décideurs et aux politiques. 
 
 Pour plus d'informations sur la conférence, consultez le site web de l'événement : http://2011.pgconf.eu/.

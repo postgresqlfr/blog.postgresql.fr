@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2011-05-08-sortie-de-postgresql-9-1-beta-1 "
 
 
 
+
+<!--more-->
+
+
 Le projet PostgreSQL vient de mettre en ligne la première version beta de PostgreSQL 9.1. Cette version beta contient toutes les fonctionnalités qui seront présente dans la version finale, qui est attendue d'ici 2 à 4 mois. Tous les utilisateurs sont invités à aider le projet en téléchargeant et en testant PostgreSQL 9.1beta1 dès que possible.
 
 

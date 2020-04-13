@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-301 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 On le sait depuis plusieurs années, la NASA est un organisme qui utilise PostgreSQL de manière intensive... Cette fois, on lit dans <a href="http://searchstorage.techtarget.com/news/article/0,289142,sid5_gci1323564,00.html">cet article</a> que « d'ici 4 ans, la NASA s'attend à ce que la base Open Source PostgreSQL atteigne les 20 téraoctets ou 42 milliards de tuples ».
 

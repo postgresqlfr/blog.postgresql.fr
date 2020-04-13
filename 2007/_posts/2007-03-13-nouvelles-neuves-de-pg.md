@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-168 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 11 mars 2007</strong></p>
+
+<p>
+
+Une discussion est en cours sur -hackers au sujet de la création automatique de partitions.</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

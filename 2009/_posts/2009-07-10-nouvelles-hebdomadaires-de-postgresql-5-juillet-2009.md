@@ -6,6 +6,40 @@ redirect_from: "index.php?post/2009-07-10-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Publication de PostgreSQL 8.4.0&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/about/press/features84.html">http://www.postgresql.org/about/press/features84.html</a></p>
+
+<p>Relecteurs de patchs demand&eacute;s de toute urgence&nbsp;! Mail &agrave; robertmhaas (chez) gmail [point] com pour se porter volontaire&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/Reviewing_a_Patch">http://wiki.postgresql.org/wiki/Reviewing_a_Patch</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>PostgreSQL + Replication 8.3-1.8 Beta 6, anciennement Mammoth Replicator&nbsp;: 
+
+<a target="_blank" href="https://projects.commandprompt.com/public/replicator">https://projects.commandprompt.com/public/replicator</a></li>
+
+<li>pgAdmin 1.10, une interface de gestion pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.pgadmin.org/">http://www.pgadmin.org/</a></li>
+
+<li>pgloader 2.3.2, un chargeur de donn&eacute;es en masse pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgloader/">http://pgfoundry.org/projects/pgloader/</a></li>
+
+<li>pgSphere 1.1.0, un module permettant de travailler en coordonn&eacute;es sph&eacute;riques&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgsphere/">http://pgfoundry.org/projects/pgsphere/</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090705">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en juillet</strong></p>
 

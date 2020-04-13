@@ -6,6 +6,28 @@ redirect_from: "index.php?post/2009-08-13-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La date de fin de l'appel &agrave; conf&eacute;rence pour le PGDay.EU 2009 est fix&eacute;e au 15 ao&ucirc;t. Ce samedi est donc votre derni&egrave;re chance de faire partie de l'aventure&nbsp;; soumettez au plus t&ocirc;t&nbsp;! 
+
+<a target="_blank" href="http://www.pgday.eu/">http://www.pgday.eu/</a></p>
+
+<p>Nouveau sondage&nbsp;: par quel biais avez-vous d&eacute;couvert PostgreSQL&nbsp;? 
+
+<a target="_blank" href="http://www.postgresql.org/community">http://www.postgresql.org/community</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>DBD::Pg 2.15.0, un connecteur Perl pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://search.cpan.org/dist/DBD-Pg/">http://search.cpan.org/dist/DBD-Pg/</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090809">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en ao&ucirc;t</strong></p>
 

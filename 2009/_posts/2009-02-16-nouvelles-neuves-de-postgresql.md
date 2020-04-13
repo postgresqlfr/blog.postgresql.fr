@@ -6,6 +6,38 @@ redirect_from: "index.php?post/2009-02-16-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 15 f&eacute;vrier 2009</strong></p>
+
+<p>Lors du P2D2 ("Prague PostgreSQL Developer Day"), les Tch&egrave;ques et les Slovaques se sont r&eacute;unis pour former le PUG tch&eacute;co-slovaque. D'autres nouvelles bient&ocirc;t.</p>
+
+<p>Notez la date&nbsp;: pgDay San Jose, dimanche 19 juillet juste avant l'OSCON. Appel &agrave; conf&eacute;renciers, plus d'infos sous peu&nbsp;!</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Benetl 2.5, un extracto-chargeur (ETL) pour PostgreSQL, est disponible&nbsp;: 
+
+<a target="_blank" href="http://www.benetl.net">http://www.benetl.net</a></li>
+
+<li>pgpool-II 2.2 RC1, un gestionnaire de connexions et bien plus, a &eacute;t&eacute; publi&eacute;&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; PostgreSQL 8.4 de la semaine</strong></p>
+
+<p>La restauration parall&egrave;lis&eacute;e&nbsp;: Andrew Dunstan a rendu pg_restore multi-processus ce qui permet de charger l'ensemble de vos processeurs pour charger (ou mettre &agrave; jour) une base de donn&eacute;e. En version de test, ceci permet de diminuer le temps de chargement de 50% sur 4 c&oelig;urs et 75% sur 8. Mieux encore, le nouveau pg_restore fonctionnera sur les bases 8.3.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>N'indexez pas les colonnes de faible cardinalit&eacute;, sauf &agrave; faire partie d'un index multi-colonnes.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090215">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</strong></p>
 

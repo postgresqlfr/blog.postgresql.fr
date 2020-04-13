@@ -6,6 +6,46 @@ redirect_from: "index.php?post/2009-10-14-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La commitfest en cours se terminera cette semaine, et la version alpha 2 devrait appara&icirc;tre peu apr&egrave;s. Soyez pr&ecirc;ts &agrave; tester&nbsp;!</p>
+
+<p>Josh Berkus pr&eacute;sente&nbsp;: "The Mighty GUCS" au SFPUG (San Francisco) le 13 octobre &agrave; 19h (heure du Pacifique). D&eacute;tails sur le webcast et autres ci-dessous&nbsp;: 
+
+<a target="_blank" href="http://postgresql.meetup.com/1/calendar/11052731/">http://postgresql.meetup.com/1/calendar/11052731/</a></p>
+
+<p>Federico Campoli fera une pr&eacute;sentation PostgreSQL lors de la journ&eacute;es Linux de Pise organis&eacute;e par le GULP, le 24 octobre 2009. Informations en italien ci-dessous&nbsp;: 
+
+<a target="_blank" href="http://linuxday2009.gulp.linux.it/">http://linuxday2009.gulp.linux.it/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>PGLogAnalysis 0.5, un analyseur de log pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://code.google.com/p/pgloganalysis/">http://code.google.com/p/pgloganalysis/</a></li>
+
+<li>Oleg Bartunov a cr&eacute;&eacute; un nouveau module "contrib" pour PostgreSQL&nbsp;: Plantuner 
+
+<a target="_blank" href="http://www.sai.msu.su/~megera/wiki/plantuner">http://www.sai.msu.su/~megera/wiki/plantuner</a></li>
+
+<li>PostgreDAC ver. 2.5.3, un "builder Delphi/C++" pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/connectivity/postgresdac/download/">http://microolap.com/products/connectivity/postgresdac/download/</a></li>
+
+<li>Prefix 1.0.0, un module pour des recherches rapides sur les pr&eacute;fixes&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/prefix/">http://pgfoundry.org/projects/prefix/</a></li>
+
+<li>Mark Kirkwood a corrig&eacute; un bogue majeur concernant les performances de PDO_pgsql, un module PHP pour se connecter &agrave; une base PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://bugs.php.net/bug.php?id=48764">http://bugs.php.net/bug.php?id=48764</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20091011">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en octobre</strong></p>
 

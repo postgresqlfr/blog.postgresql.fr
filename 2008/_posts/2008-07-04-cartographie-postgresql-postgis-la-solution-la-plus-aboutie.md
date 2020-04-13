@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-6 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Une fois n'est pas coutume, nous relayons aujourd'hui un article à propos de Microsoft et SQL Server 2008 qui intègre des fonctions SIG.
 

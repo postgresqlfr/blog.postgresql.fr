@@ -6,6 +6,26 @@ redirect_from: "index.php?post/2020-02-13-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgresLondon 2020 aura lieu les 7 et 8 juillet 2020 avec, en option, un journ&eacute;e de formation le 6. L'appel &agrave; conf&eacute;renciers est lanc&eacute; depuis <a target="_blank" href="https://forms.gle/5m8ybUt9YDZG4gVU7">https://forms.gle/5m8ybUt9YDZG4gVU7</a> jusqu'au 27 mars 2020&nbsp;: <a target="_blank" href="http://postgreslondon.org">http://postgreslondon.org</a></p>
+
+<p>Le pgDay autrichien aura lieu le 18 septembre 2020 au <em>Schloss Schoenbrunn (Apothekertrakt)</em> &agrave; Vienne. L'appel &agrave; conf&eacute;renciers court jusqu'au 19 avril 2020 via <a target="_blank" href="https://pgday.at/en/talk-commitee/">https://pgday.at/en/talk-commitee/</a> : <a target="_blank" href="https://pgday.at/en/">https://pgday.at/en/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pg_sqlog 1.0, une extension procurant une interface SQL aux logs de PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/kouber/pg_sqlog">https://github.com/kouber/pg_sqlog</a></li>
+
+<li>Database Lab 0.2.0, un outil pour cloner rapidement de grosses bases de donn&eacute;es PostgreSQL en vue de monter des environnements hors production&nbsp;: <a target="_blank" href="https://gitlab.com/postgres-ai/database-lab">https://gitlab.com/postgres-ai/database-lab</a></li>
+
+<li>pgAdmin4 4.18, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_18.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_18.html</a></li>
+
+<li>pgspider, un moteur de cluster pour des donn&eacute;es distribu&eacute;es, bas&eacute; sur les wrappers de donn&eacute;es distantes&nbsp;: <a target="_blank" href="https://github.com/pgspider/pgspider">https://github.com/pgspider/pgspider</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</h2>
 

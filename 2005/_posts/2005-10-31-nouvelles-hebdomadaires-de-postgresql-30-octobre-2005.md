@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-129 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 30 octobre 2005</strong></p>
+
+<p>
+
+PostgreSQL 8.1 rc1 est sorti. S'il vous plaît, testez-le.  <a target="_blank" href="http://www.postgresql.org/developer/beta">http://www.postgresql.org/developer/beta</a></p>
+
+<!--more-->
+
 
 <strong>Nouvelles des produits autour de PostgreSQL</strong>
 

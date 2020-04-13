@@ -6,6 +6,22 @@ redirect_from: "index.php?post/drupal-271 "
 ---
 
 
+<p>Vu la qualité de <a href="http://people.planetpostgresql.org/greg/index.php?/authors/1-Greg-Sabino-Mullane">l'article de Greg Sabino Mulane «Postgres is not for sale»</a>, je vous en propose une traduction (libre) ci-dessous.</p>
+
+<p>
+
+Il est au sujet du rachat par Sun de MySQL, une base de données Open-Source bien connue de tous.
+
+</p>
+
+<p>
+
+Il ne s'agit pas pour nous de polémiquer sur cela, ni de décrier cette base de données, qui a ses qualités.
+
+</p>
+
+<!--more-->
+
 
 Voici la traduction de l'article:
 

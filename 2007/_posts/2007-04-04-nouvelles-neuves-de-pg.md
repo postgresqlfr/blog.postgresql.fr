@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-245 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 31 mars 2007</strong></p>
+
+<p>
+
+Comme toujours avant de figer les fonctionnalités, le flot de correctifs et de discussions les accompagnant se poursuit.</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

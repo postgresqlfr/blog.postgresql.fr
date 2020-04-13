@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-262 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 12 Août 2007</strong></p>
+
+<p>Pour avoir rendu possibles les participations très professionnelles de la LinuxWorldExpo et de l'OSCON, le fond de soutien à PostgreSQL chez SPI tient à remercier les sponsors industriels suivants&nbsp;: Continuent, Open Technology Group, Truviso, CommandPrompt, EnterpriseDB et Once Technologies.</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

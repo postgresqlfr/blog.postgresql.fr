@@ -6,6 +6,64 @@ redirect_from: "index.php?post/2017-03-14-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le PostgresOpen aura lieu &agrave; San Francisco du 6 au 8 septembre&nbsp;: <a target="_blank" href="https://2017.postgresopen.org/">https://2017.postgresopen.org/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>psqlODBC 09.06.0200&nbsp;: <a target="_blank" href="https://odbc.postgresql.org/docs/release.html">https://odbc.postgresql.org/docs/release.html</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en mars</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2017-03/">http://archives.postgresql.org/pgsql-jobs/2017-03/</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>PgConf.Russia 2017 se d&eacute;roulera du 15 au 17 mars 2017 &agrave; Moscou&nbsp;: <a target="_blank" href="https://pgconf.ru/en">https://pgconf.ru/en</a></li>
+
+<li>Le PGDay Asia 2017 est programm&eacute; les 17 et 18 mars &agrave; Singapour&nbsp;: <a target="_blank" href="http://2017.pgday.asia/">http://2017.pgday.asia/</a></li>
+
+<li>Le PGDay nordique se tiendra &agrave; Stockholm (Su&egrave;de) au Sheraton Hotel, le 21 mars 2017&nbsp;: <a target="_blank" href="https://2017.nordicpgday.org/">https://2017.nordicpgday.org/</a></li>
+
+<li>Le pgDay Paris 2017 aura lieu &agrave; Paris (France) le 23 mars 2017&nbsp;: <a target="_blank" href="http://2017.pgday.paris/">http://2017.pgday.paris/</a></li>
+
+<li>La <em>PGConf US 2017</em> aura lieu &agrave; Jersey City (New Jersey, USA) du 28 au 31 mars&nbsp;: <a target="_blank" href="http://www.pgconf.us/2017/">http://www.pgconf.us/2017/</a></li>
+
+<li>PGCon 2017 aura lieu &agrave; Ottawa du 23 au 26 mai&nbsp;: <a target="_blank" href="http://www.pgcon.org/2017/papers.php">http://www.pgcon.org/2017/papers.php</a></li>
+
+<li>Postgres Vision aura lieu &agrave; Boston du 26 au 28 juin 2017&nbsp;: <a target="_blank" href="http://postgresvision.com/">http://postgresvision.com/</a></li>
+
+<li>Le PGDay suisse se tiendra &agrave; Rapperwil le 30 juin 2017. L'appel &agrave; conf&eacute;renciers court jusqu'au 14 avril&nbsp;: <a target="_blank" href="http://www.pgday.ch/2017/">http://www.pgday.ch/2017/</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20170312234158.GB31409@fetter.org">http://www.postgresql.org/message-id/20170312234158.GB31409@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-280 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - February 03 2008</strong></p>
+
+<p>Attendez-vous à une 8.3 finale cette semaine&nbsp;!
+
+[ndt&nbsp;: à présent publiée, un article la présente sur PostgreSQLFr&nbsp;:
+
+<a target="_blank" href="http://www.postgresqlfr.org/?q=node/1547">http://www.postgresqlfr.org/?q=node/1547</a>]</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2019-04-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La conf&eacute;rence PostgreSQL sud-africaine 2019 aura lieu &agrave; Johannesburg les 8 & 9 octobre 2018. L'appel &agrave; conf&eacute;renciers court jusqu'au 30 juin 2019&nbsp;: <a target="_blank" href="https://postgresconf.org/conferences/SouthAfrica2019">https://postgresconf.org/conferences/SouthAfrica2019</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgMustard, une UI pour 'explain analyze' proposant des conseils performances&nbsp;: <a target="_blank" href="https://www.pgmustard.com/">https://www.pgmustard.com/</a></li>
+
+<li>repods, une plateforme cloud de stockage/analyse de donn&eacute;es bas&eacute;e sur PostgreSQL&nbsp;: <a target="_blank" href="https://repods.io">https://repods.io</a></li>
+
+<li>pgAdmin4 4.5, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_5.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_5.html</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en avril</h2>
 

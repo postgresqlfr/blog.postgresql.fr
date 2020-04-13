@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-269 "
 ---
 
 
+<p>Sun a annoncé aujourd'hui son intention de racheter MySQL.</p>
+
+<p>Espérons que SUN n'en oubliera pas PostgreSQL pour autant&nbsp;!</p>
+
+<!--more-->
+
 
 Quelques liens, en anglais&nbsp;:
 

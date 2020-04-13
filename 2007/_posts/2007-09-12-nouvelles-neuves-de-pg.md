@@ -6,6 +6,28 @@ redirect_from: "index.php?post/drupal-409 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 9 Septembre 2007</strong></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>Another PostgreSQL Diff Tool 1.0.0_beta26 est disponible&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/apgdiff/">http://pgfoundry.org/projects/apgdiff/</a></li>
+
+<li>PSQL-Query 0.01 est disponible&nbsp;:
+
+<a target="_blank" href="http://search.cpan.org/%7Eecarroll/PSQL-Query-0.01_01/bin/psql-plus">http://search.cpan.org/~ecarroll/PSQL-Query-0.01_01/bin/psql-plus</a></li>
+
+<li>OpenMFG 2.2 et PostBooks 2.2 ont été publiés&nbsp;:
+
+<a target="_blank" href="http://www.xtuple.com/">http://www.xtuple.com/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <!--break-->
 

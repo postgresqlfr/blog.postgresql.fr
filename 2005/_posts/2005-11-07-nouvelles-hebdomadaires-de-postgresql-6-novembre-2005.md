@@ -6,6 +6,34 @@ redirect_from: "index.php?post/drupal-131 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 6 Novembre 2005</strong></p>
+
+<p>
+
+La sortie de PostgreSQL 8.1.0 est imminente.  Surveillez la liste Announce! </p>
+
+<p>
+
+Qingqing Zhou, Magnus Hagander, Merline Moncure, Andrew Dunstan et Tom Lane found, on testé et implanté un grosse amélioration de performances sur les systèmes Win32 en ré-arrangeant la manière dont win32 attend les « signaux simulés » utilisé pour émuler le comportement d'Unix et en éliminant des appels aux noyaux dans une branche de code très utilisée. </p>
+
+<p>Il y a eu une discussion animée sur -hackers au sujet de la proposition
+
+de Simon Riggs visant à créer un type NUMERIC dont l'occupation mémoire
+
+serait optimisée.
+
+</p>
+
+<p>
+
+Également, une discussion animée et très large sur la manière
+
+d'implanter les énumérations. Bravo à Andrew Dunstan pour son
+
+implantation exemplaire. </p>
+
+<!--more-->
+
 
 <strong>Nouvelles des produits autour de PostgreSQL</strong>
 

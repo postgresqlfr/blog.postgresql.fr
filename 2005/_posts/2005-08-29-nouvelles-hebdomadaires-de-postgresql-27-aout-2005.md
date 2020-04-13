@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-107 "
 ---
 
 
+<p><strong>== Nouvelles hebdomadaires de PostgreSQL  - 27 Août 2005 ==</strong></p>
+
+<p><em>PostgreSQL Weekly News a été rédigé par David Fetter et Josh Berkus (posté sur pg-announce)</em></p>
+
+<p>La version 8.1 beta 1 de PostgreSQL est sortie. Félicitations à tous ceux qui y ont participé et qui ont permis cet évènement.</p>
+
+<center><a target="_blank" href="http://www.postgresql.org/developer/beta">http://www.postgresql.org/developer/beta</a>
+
+</center>
+
+<!--more-->
+
 
 Veuillez donc tester cette nouvelle bétâ. Quelques-unes des nouvelles fonctionnalités sont listées sur :
 

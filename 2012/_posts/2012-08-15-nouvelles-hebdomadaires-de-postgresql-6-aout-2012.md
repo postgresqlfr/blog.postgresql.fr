@@ -6,6 +6,82 @@ redirect_from: "index.php?post/2012-08-15-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 9.2 Beta 3 disponible&amp;nsbp;: 
+
+<a target="_blank" href="http://www.postgresql.org/developer/beta">http://www.postgresql.org/developer/beta</a></p>
+
+<p>La date limite des candidatures des conf&eacute;renciers pour le pgconf.eu 2012 a &eacute;t&eacute; report&eacute;e. Plut&ocirc;t que demain, il s'agit maintenant du mardi 7 ao&ucirc;t, minuit CET&nbsp;: 
+
+<a target="_blank" href="http://2012.pgconf.eu/">http://2012.pgconf.eu/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>pgpool-II 3.2.0, un <em>middleware</em> multi-forme, pouvant servir au pooling de connexions, &agrave; la r&eacute;plication, &agrave; la r&eacute;partition de charge, au parall&egrave;lisme et d'avantage, est disponible&nbsp;: 
+
+<a target="_blank" href="http://www.pgpool.net/download.php?f=pgpool-II-3.2.0.tar.gz">http://www.pgpool.net/download.php?f=pgpool-II-3.2.0.tar.gz</a></li>
+
+<li>pgpoolAdmin 3.2.0, une interface graphique pour pgpool&nbsp;: 
+
+<a target="_blank" href="http://www.pgpool.net/download.php?f=pgpoolAdmin-3.2.0.tar.gz">http://www.pgpool.net/download.php?f=pgpoolAdmin-3.2.0.tar.gz</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en ao&ucirc;t</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2012-08/threads.php">http://archives.postgresql.org/pgsql-jobs/2012-08/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La 4<sup>&egrave;me</sup> Session PostgreSQL aura lieu le 4 octobre 2012 &agrave; Paris. Plus d'informations sur&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/en/4/">http://www.postgresql-sessions.org/en/4/</a></li>
+
+<li>La <em>PostgreSQL Conference Europe 2012</em> aura lieu &agrave; Prague, R&eacute;publique Tch&egrave;que, du 23 au 26 octobre. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2012.pgconf.eu/">http://2012.pgconf.eu/</a></li>
+
+<li>Le PgDay argentin 2012 se tiendra &agrave; l'Universit&eacute; Nationale de Quilmes, &agrave; Bernal pr&egrave;s de Buenos Aires, le 13 novembre. Les sujets couverts concerneront aussi bien les utilisateurs, d&eacute;veloppeurs et contributeurs, que les d&eacute;cideurs et hauts responsables. Pour plus d'informations &agrave; propos de la conf&eacute;rence, consultez le site suivant&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.com.ar/quilmes2012?lang=en">http://www.pgday.com.ar/quilmes2012?lang=en</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2012-08/msg00002.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

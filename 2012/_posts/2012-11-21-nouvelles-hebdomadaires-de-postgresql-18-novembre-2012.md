@@ -6,6 +6,70 @@ redirect_from: "index.php?post/2012-11-21-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La conf&eacute;rence PGDay du FOSDEM sera tenue juste avant l'ouverture du meeting, le 1er f&eacute;vrier &agrave; Bruxelles, Belgique. Les appels &agrave; conf&eacute;renciers, pour cette conf&eacute;rence et pour le cursus PostgreSQL du FOSDEM, sont lanc&eacute;s&nbsp;: 
+
+<a target="_blank" href="http://fosdem2013.pgconf.eu/callforpapers/">http://fosdem2013.pgconf.eu/callforpapers/</a></p>
+
+<p>Le PGDay 2013 de New-York City aura lieu le 22 mars. La date limite de candidature des conf&eacute;renciers est fix&eacute;e au 7 janvier 2013, midi (heure de New-York). Envois &agrave; l'adresse papers AT nycpug DOT org&nbsp;: 
+
+<a target="_blank" href="http://pgday.nycpug.org/speakers">http://pgday.nycpug.org/speakers</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>pgBadger 2.2, un analyseur de logs PostgreSQL &eacute;crit en Perl&nbsp;: 
+
+<a target="_blank" href="https://github.com/dalibo/pgbadger/downloads">https://github.com/dalibo/pgbadger/downloads</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en novembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2012-11/threads.php">http://archives.postgresql.org/pgsql-jobs/2012-11/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La sixi&egrave;me &eacute;dition du PGDay italien aura lieu &agrave; Prato, Toscane, le 23 novembre 2012. Un appel international &agrave; conf&eacute;renciers est lanc&eacute;, conf&eacute;rences et pr&eacute;sentations en anglais sont accept&eacute;es. Informations anglophones sur le processus de candidature disponibles ci-apr&egrave;s&nbsp;: 
+
+<a target="_blank" href="http://2012.pgday.it/call-for-papers/international-call-for-papers/">http://2012.pgday.it/call-for-papers/international-call-for-papers/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2012-11/msg00009.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

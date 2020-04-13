@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2018-07-09-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>PostGIS 2.5.0beta1 le syst&egrave;me d'information g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL&nbsp;: <a target="_blank" href="https://git.osgeo.org/gitea/postgis/postgis/raw/tag/2.5.0beta1/NEWS">https://git.osgeo.org/gitea/postgis/postgis/raw/tag/2.5.0beta1/NEWS</a></li>
+
+<li>pgquarrel 0.4.0, un outil comparant des sch&eacute;mas de BD PostgreSQL et produisant un ensemble de commandes pour convertir l'un des sch&eacute;mas vers le second&nbsp;: <a target="_blank" href="http://eulerto.github.io/pgquarrel">http://eulerto.github.io/pgquarrel</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en juillet</h2>
 

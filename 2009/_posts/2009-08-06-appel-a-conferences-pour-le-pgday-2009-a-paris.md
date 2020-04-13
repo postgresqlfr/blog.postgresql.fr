@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2009-08-06-appel-a-conferences-pour-le-pgday-2009
 ---
 
 
+[PostgreSQLFr|http://www.postgresql.fr|fr], en partenariat avec [PostgreSQL Europe|http://www.postgresql.eu|en], est fière d'accueillir la deuxième conférence européenne dédiée à PostgreSQL.
+
+
+
+Cet événement, constitué de conférences et de présentations, se déroulera sur 2 jours, les 6 et 7 novembre 2009, dans les locaux de Telecom Paristech, à Paris.
+
+
+
+Les sujets couverts intéresseront les utilisateurs, les développeurs et les contributeurs à PostgreSQL. Pour plus d'informations, n'hésitez pas à parcourir le [site web de l'événement|http://2009.pgday.eufr:start|fr].
+
+
+
+__L'appel à conférences touche à sa fin le 15 août 2009. Si vous souhaitez participer, faites-le rapidement !__
+
+<!--more-->
+
 
 Nous acceptons dès maintenant toute proposition de conférence.
 

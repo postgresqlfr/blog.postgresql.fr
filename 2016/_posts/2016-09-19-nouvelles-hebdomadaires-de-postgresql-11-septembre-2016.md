@@ -6,6 +6,70 @@ redirect_from: "index.php?post/2016-09-19-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le groupe d'utilisateurs cor&eacute;ens tiendra son premier PGDay le 15 octobre &agrave; S&eacute;oul&nbsp;: <a target="_blank" href="http://pgday.postgresql.kr/">http://pgday.postgresql.kr/</a></p>
+
+<p>Le PGDay 2016 &agrave; Austin aura lieu le 12 novembre 2016. Date limite de candidature au 21 septembre 2016 minuit CST. D&eacute;tails et formulaire de candidature&nbsp;: <a target="_blank" href="https://www.postgresql.us/events/2016/austin">https://www.postgresql.us/events/2016/austin</a></p>
+
+<p>Le PGDay.IT 2016 aura lieu &agrave; Prato le 13 d&eacute;cembre 2016&nbsp;: <a target="_blank" href="http://pgday.it">http://pgday.it</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgloader 3.3.1, un chargeur en masse pour PostgreSQL&nbsp;: <a target="_blank" href="http://pgloader.io/">http://pgloader.io/</a></li>
+
+<li>pgBadger v9.0, un analyseur de log PostgreSQL et un g&eacute;n&eacute;rateur de graphe en Perl&nbsp;: <a target="_blank" href="https://github.com/dalibo/pgbadger/releases/">https://github.com/dalibo/pgbadger/releases/</a></li>
+
+<li>PostGIS 2.3.0beta1, the industry standard geographic information system package for PostgreSQL, released. <a target="_blank" href="http://postgis.net/">http://postgis.net/</a></li>
+
+<li>PGroonga 1.1.1, a full text search platform for all languages, released. <a target="_blank" href="http://groonga.org/en/blog/2016/08/31/pgroonga-1.1.1.html">http://groonga.org/en/blog/2016/08/31/pgroonga-1.1.1.html</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en septembre</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2016-09/threads.php">http://archives.postgresql.org/pgsql-jobs/2016-09/threads.php</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>Le PostgresOpen 2016 aura lieu &agrave; Dallas (Texas, USA) du 13 au 16 septembre&nbsp;: <a target="_blank" href="https://2016.postgresopen.org/">https://2016.postgresopen.org/</a></li>
+
+<li>Session PostgreSQL le 22 septembre 2016 &agrave; Lyon (France)&nbsp;: <a target="_blank" href="http://blog.dalibo.com/2016/05/13/CFP-pgsession-lyon.html">http://blog.dalibo.com/2016/05/13/CFP-pgsession-lyon.html</a></li>
+
+<li><em>Postgres Vision 2016</em> aura lieu &agrave; San Francisco du 11 au 13 octobre 2016&nbsp;: <a target="_blank" href="http://postgresvision.com/">http://postgresvision.com/</a></li>
+
+<li>La <em>PostgreSQL Conference Europe 2016</em> aura lieu &agrave; Tallin, Estonie, du 1er au 4 novembre 2016. Les inscriptions sp&eacute;ciales &laquo;&nbsp;l&egrave;ve-t&ocirc;t&nbsp;&raquo; sont ouvertes jusqu'au 14 septembre&nbsp;: <a target="_blank" href="http://2016.pgconf.eu/registration/">http://2016.pgconf.eu/registration/</a></li>
+
+<li>La <em>PgConf Silicon Valley 2016</em> aura lieu du 14 au 16 novembre 2016&nbsp;: <a target="_blank" href="http://www.pgconfsv.com/">http://www.pgconfsv.com/</a></li>
+
+<li>CHAR(16) aura lieu &agrave; New York le 6 d&eacute;cembre 2016. L'appel &agrave; conf&eacute;renciers court jusqu'au 13 septembre, minuit (EDT)&nbsp;: <a target="_blank" href="http://charconference.org/">http://charconference.org/</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20160911220711.GA25430@fetter.org">http://www.postgresql.org/message-id/20160911220711.GA25430@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

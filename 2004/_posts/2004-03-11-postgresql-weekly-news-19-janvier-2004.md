@@ -6,6 +6,56 @@ redirect_from: "index.php?post/drupal-7 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires de PostgreSQL - 19 janvier 2004 ==</h2>
+
+<p>Cette semaine s'est passée sans qu'il y ait eu de grandes nouvelles, ce
+
+qui va nous faire des nouvelles hebdomadaires courtes mais sympathiques. J'ai
+
+remarqué que beaucoup de changements concernaient des soucis de performance,
+
+mais je pense qu'il s'agissait plus d'accidents que de problèmes de conception.
+
+</p>
+
+<p>Les besoins en mémoires partagées pour la stratégie de remplacement du
+
+tampon ARC ont été ajustés. Une mauvaise estimation des coûts CPU des parcours
+
+d'index lors de l'évaluation d'expressions non constantes comparé à la variable
+
+d'indexage a été corrigé. Construite sur une précédente optimisation avec des
+
+sous-requêtes IN renvoyant des résultats DISTINCT, l'optimiseur reconnaitra
+
+maintenant aussi l'utilisation de UNION/INTERSECT/EXCEPT (sans ALL). Les
+
+fonctions C chargées dynamiquement accélèreront les recherches en cache. Les
+
+tests initiaux indiquent que ceci devrait être mis sur des fonctions externes
+
+avec les fonctions intégrées.</p>
+
+<p>Au niveau de la documentation, nous avons maintenant expérimenté la
+
+configuration de la génération de la documentation via XSLT sur le CVS. L'idée
+
+est de tester cette configuration pour s'assurer que les résultats et
+
+performance sont intéressants puis de n'utiliser que cette méthode pour
+
+construire les documentations.</p>
+
+<p>Une dernière note, PyGreSQL 3.4 est sorti cette semaine. PyGreSQL est le
+
+module d'interface Python pour PostgreSQL. Vous pouvez lire l'annonce complète
+
+sur <a href="http://archives.postgresql.org/pgsql-announce/2004-01/msg00012.php">http://archives.postgresql.org/pgsql-announce/2004-01/msg00012.php</a>.
+
+</p>
+
+<!--more-->
+
 
 <h2>== Nouvelles des produits PostgreSQL ==</h2>
 

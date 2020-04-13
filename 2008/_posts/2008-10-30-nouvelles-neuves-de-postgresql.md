@@ -6,6 +6,14 @@ redirect_from: "index.php?post/2008-10-30-nouvelles-neuves-de-postgresql2 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 26 octobre 2008</strong></p>
+
+<p>De nouvelles versions correctives : 8.3.5, etc... seront bientôt disponibles. Prenez soin de vos serveurs ;)</p>
+
+<p>La "commitfest" de novembre commencera cette semaine. Attendez-vous à de grandes nouveautés. [ndt: <a href="http://wiki.postgresql.org/wiki/CommitFest_2008-11" target="_blank">wiki par ici</a>]</p>
+
+<!--more-->
+
 
 <p><strong>Les nouveautés des produits dérivés</strong></p>
 

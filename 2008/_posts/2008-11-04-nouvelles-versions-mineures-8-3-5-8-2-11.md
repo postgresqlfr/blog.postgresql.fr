@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2008-11-04-nouvelles-versions-mineures-8-3-5-8-2-
 
 
 
+
+<!--more-->
+
+
 De nouvelles versions mineures sont apparues aujourd'hui pour toutes les branches actives de PostgreSQL : cela nous donne donc les versions 8.3.5, 8.2.11, 8.1.15, 8.0.19 et 7.4.23. Ces mises à jour sont critiques pour les utilisateurs d'[index GiST|http://docs.postgresqlfr.org/8.3/gist.html|fr] et pour ceux qui ont des bases de données en langue autre que l'anglais. Mettez à jour dès que possible.
 
 

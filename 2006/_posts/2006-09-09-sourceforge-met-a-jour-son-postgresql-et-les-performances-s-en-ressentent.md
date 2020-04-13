@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-206 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Le site bien connu de la communauté du libre, <a href="http://sourceforge.net/" target="_blank">SourceForge.net</a> a mis à jour récemment sa version de PostgreSQL, ainsi que le matériel dédié à la base de données, aidé par les consultants de Command Prompt (us).</p>
 

@@ -6,6 +6,26 @@ redirect_from: "index.php?post/2020-01-21-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le <em>PGDay.IT 2020</em> aura lieu les 11 et 12 juin &agrave; Bergame en Italie. L'appel &agrave; conf&eacute;renciers court jusqu'au 8 f&eacute;vrier 2020 minuit, tout comme celui pour les ateliers&nbsp;: <a target="_blank" href="https://2020.pgday.it/en/">https://2020.pgday.it/en/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>gbouncer_fdw 0.2.0&nbsp;: <a target="_blank" href="https://info.crunchydata.com/blog/making-pgbouncer-easier-to-monitor">https://info.crunchydata.com/blog/making-pgbouncer-easier-to-monitor</a></li>
+
+<li>check_pgbackrest 1.7, une sonde compatible Nagios pour pgBackRest&nbsp;: <a target="_blank" href="https://github.com/dalibo/check_pgbackrest/releases">https://github.com/dalibo/check_pgbackrest/releases</a></li>
+
+<li>PostgreSQL TDE 12, un d&eacute;riv&eacute; de PostgreSQL qui offre le chiffrement des donn&eacute;es de fa&ccedil;on transparente&nbsp;: <a target="_blank" href="https://www.cybertec-postgresql.com/en/products/postgresql-transparent-data-encryption">https://www.cybertec-postgresql.com/en/products/postgresql-transparent-data-encryption</a></li>
+
+<li>pgbouncer_fdw 0.2.0, un wrapper de donn&eacute;es distantes autour de pgbouncer&nbsp;: <a target="_blank" href="https://info.crunchydata.com/blog/making-pgbouncer-easier-to-monitor">https://info.crunchydata.com/blog/making-pgbouncer-easier-to-monitor</a></li>
+
+<li>pgbouncer_wrapper 1.1.0, un syst&egrave;me permettant un acc&egrave;s bas&eacute; sur SQL &agrave; pgbouncer&nbsp;: <a target="_blank" href="https://github.com/davidfetter/pgbouncer_wrapper">https://github.com/davidfetter/pgbouncer_wrapper</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en janvier</h2>
 

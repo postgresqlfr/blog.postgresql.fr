@@ -6,6 +6,78 @@ redirect_from: "index.php?post/2012-08-25-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>MAJ de s&eacute;curit&eacute;&nbsp;: version 9.1.5, 9.0.9, 8.4.13 et 8.3.20 publi&eacute;es. Mettez &agrave; jour d&egrave;s que possible&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/about/news/1407/">http://www.postgresql.org/about/news/1407/</a></p>
+
+<p>Le <em>Postgres Open 2012</em> aura lieu &agrave; Chicago (USA, Illinois) du 17 au 19 septembre 2012. Le programme est publi&eacute; et les inscriptions sont ouvertes&nbsp;: 
+
+<a target="_blank" href="http://postgresopen.org/2012/tickets">http://postgresopen.org/2012/tickets</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Pyrseas 0.6.0beta, une bo&icirc;te &agrave; outils pour la gestion de versions sous PostgreSQL, publi&eacute; sur PGXN&nbsp;: 
+
+<a target="_blank" href="https://github.com/jmafc/Pyrseas">https://github.com/jmafc/Pyrseas</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en ao&ucirc;t</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2012-08/threads.php">http://archives.postgresql.org/pgsql-jobs/2012-08/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La 4<sup>&egrave;me</sup> Session PostgreSQL aura lieu le 4 octobre 2012 &agrave; Paris. Plus d'informations sur&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/en/4/">http://www.postgresql-sessions.org/en/4/</a></li>
+
+<li>La <em>PostgreSQL Conference Europe 2012</em> aura lieu &agrave; Prague, R&eacute;publique Tch&egrave;que, du 23 au 26 octobre. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2012.pgconf.eu/">http://2012.pgconf.eu/</a></li>
+
+<li>Le PgDay argentin 2012 se tiendra &agrave; l'Universit&eacute; Nationale de Quilmes, &agrave; Bernal pr&egrave;s de Buenos Aires, le 13 novembre. Les sujets couverts concerneront aussi bien les utilisateurs, d&eacute;veloppeurs et contributeurs, que les d&eacute;cideurs et hauts responsables. Pour plus d'informations &agrave; propos de la conf&eacute;rence, consultez le site suivant&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.com.ar/quilmes2012?lang=en">http://www.pgday.com.ar/quilmes2012?lang=en</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2012-08/msg00009.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-255 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 10 Juin 2007</strong></p>
+
+<p>Michael Glaesemann a mis en ligne ses photos des PGCon 2007&nbsp;:
+
+<a target="_blank" href="http://flickr.com/photos/grzm/sets/72157600270827416/.">http://flickr.com/photos/grzm/sets/72157600270827416/.</a><br />
+
+Elles sont marquées "pgcon" et "pgcon2007". Si vous aussi, vous avez uploadé des photos des conférences, vous êtes encouragé à faire de même pour qu'elles soient facilement retrouvables. En cas d'erreurs dans les descriptions, n'hésitez pas à en informer Michael à l'adresse grzm [at] seespotcode [dot] net. Profitez&nbsp;!</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

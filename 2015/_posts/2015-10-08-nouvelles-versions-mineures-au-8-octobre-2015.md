@@ -6,6 +6,28 @@ redirect_from: "index.php?post/2015-10-08-nouvelles-versions-mineures-au-8-octob
 ---
 
 
+<p>Le PostgreSQL Global Development Group a publié une mise à jour de
+
+toutes les versions maintenues du système de gestion de bases de
+
+données.<br />
+
+Cette mise à jour inclut les versions 9.4.5, 9.3.10, 9.2.14, 9.1.19 et 9.0.23. <br />
+
+Elle corrige deux failles de sécurité, et les bogues découverts au cours des 4 derniers mois.<br />
+
+Les utilisateurs vulnérables aux failles de sécurité doivent procéder à la mise à jour le plus vite possible.<br />
+
+Les autres peuvent utiliser la prochaine fenêtre de maintenance programmée pour procéder à la mise à jour.<br />
+
+<br />
+
+Il s'agit également de la dernière version corrective pour la branche 9.0.
+
+</p>
+
+<!--more-->
+
 
 <h2>2015-10-08 Correctif de sécurité</h2>
 

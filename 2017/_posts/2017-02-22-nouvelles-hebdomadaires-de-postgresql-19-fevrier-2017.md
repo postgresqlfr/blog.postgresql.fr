@@ -6,6 +6,76 @@ redirect_from: "index.php?post/2017-02-22-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>Ora2PG 18.1, un outil de migration de bases Oracle vers PostgreSQL&nbsp;: <a target="_blank" href="http://ora2pg.darold.net/">http://ora2pg.darold.net/</a></li>
+
+<li>psycopg2 2.7 beta2, un connecteur python pour PostgreSQL&nbsp;: <a target="_blank" href="http://initd.org/psycopg/docs/news.html#what-s-new-in-psycopg-2-7">http://initd.org/psycopg/docs/news.html#what-s-new-in-psycopg-2-7</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2017-02/">http://archives.postgresql.org/pgsql-jobs/2017-02/</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>[ndt: Meetup &agrave; Toulouse le 2 mars&nbsp;:<a href="https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Toulouse/">https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Toulouse/</a>]</li>
+
+<li>Le premier pgDay Israel 2017 aura lieu le 2 mars 2017. Les inscriptions sont ouvertes&nbsp;: <a target="_blank" href="http://pgday.org.il/">http://pgday.org.il/</a></li>
+
+<li>La <em>PGConf India 2017</em> aura lieu les 2 &amp; 3 mars 2017 &agrave; Bengalore (&Eacute;tat du Karnataka en Inde)&nbsp;: <a target="_blank" href="http://pgconf.in/">http://pgconf.in/</a></li>
+
+<li>PostgreSQL@SCaLE aura lieu les 2 &amp; 3 mars 2017 au centre des conventions de Pasadena, comme partie du SCaLE 15X&nbsp;: <a target="_blank" href="http://www.socallinuxexpo.org/scale/15x/">http://www.socallinuxexpo.org/scale/15x/</a></li>
+
+<li>[ndt: Meetup &agrave; Nantes le 8 mars&nbsp;:<a href="https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Nantes/">https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Nantes/</a>]</li>
+
+<li>[ndt: Meetup &agrave; Paris le 9 mars&nbsp;:<a href="https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Paris/">https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Paris/</a>]</li>
+
+<li>PgConf.Russia 2017 se d&eacute;roulera du 15 au 17 mars 2017 &agrave; Moscou&nbsp;: <a target="_blank" href="https://pgconf.ru/en">https://pgconf.ru/en</a></li>
+
+<li>Le PGDay Asia 2017 est programm&eacute; les 17 et 18 mars &agrave; Singapour&nbsp;: <a target="_blank" href="http://2017.pgday.asia/">http://2017.pgday.asia/</a></li>
+
+<li>Le PGDay nordique se tiendra &agrave; Stockholm (Su&egrave;de) au Sheraton Hotel, le 21 mars 2017&nbsp;: <a target="_blank" href="https://2017.nordicpgday.org/">https://2017.nordicpgday.org/</a></li>
+
+<li>Le pgDay Paris 2017 aura lieu &agrave; Paris (France) le 23 mars 2017&nbsp;: <a target="_blank" href="http://2017.pgday.paris/">http://2017.pgday.paris/</a></li>
+
+<li>La <em>PGConf US 2017</em> aura lieu &agrave; Jersey City (New Jersey, USA) du 28 au 31 mars&nbsp;: <a target="_blank" href="http://www.pgconf.us/2017/">http://www.pgconf.us/2017/</a></li>
+
+<li>PGCon 2017 aura lieu &agrave; Ottawa du 23 au 26 mai&nbsp;: <a target="_blank" href="http://www.pgcon.org/2017/papers.php">http://www.pgcon.org/2017/papers.php</a></li>
+
+<li>Postgres Vision aura lieu &agrave; Boston du 26 au 28 juin 2017. L'appel &agrave; conf&eacute;renciers court jusqu'au 24 f&eacute;vrier 2017 : &eacute;crire &agrave; CFP AT PostgresVision DOT com&nbsp;: <a target="_blank" href="http://postgresvision.com/">http://postgresvision.com/</a></li>
+
+<li>Le PGDay suisse se tiendra &agrave; Rapperwil le 30 juin 2017. L'appel &agrave; conf&eacute;renciers court jusqu'au 14 avril&nbsp;: <a target="_blank" href="http://www.pgday.ch/2017/">http://www.pgday.ch/2017/</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20170219235135.GA1213@fetter.org">http://www.postgresql.org/message-id/20170219235135.GA1213@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

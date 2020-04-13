@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-434 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 6 juillet 2008</strong></p>
+
+<p>La "commit fest" de juillet a débuté. Passez en revue :)
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/CommitFest:2008-07">http://wiki.postgresql.org/wiki/CommitFest:2008-07</a></p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

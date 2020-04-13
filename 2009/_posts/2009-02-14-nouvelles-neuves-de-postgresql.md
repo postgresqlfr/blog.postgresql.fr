@@ -6,6 +6,38 @@ redirect_from: "index.php?post/2009-02-14-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 8 f&eacute;vrier 2009</strong></p>
+
+<p>PostgreSQL 8.3.6, 8.2.12, 8.1.16, 8.0.20 et 7.4.24 sont disponibles. Mettez &agrave; jour&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/docs/current/static/release.html">http://www.postgresql.org/docs/current/static/release.html</a></p>
+
+<p>Le second appel &agrave; conf&eacute;renciers pour la "PostgreSQL Conference East" arrive &agrave; &eacute;ch&eacute;ance le 23 f&eacute;vrier 2009&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org/">http://www.postgresqlconference.org/</a></p>
+
+<p>Si vous &ecirc;tes motiv&eacute; pour pr&eacute;parer les sacoches PG en pr&eacute;vision du SCALE, le LAPUG offre les pizzas le vendredi 20 f&eacute;vrier au Westin de Los Angeles. &Eacute;crivez &agrave; lapug (a) postgresql (point) org pour vous signaler.</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>pgpool-II 2.2 beta2&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+</ul>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>En attendant que la version 8.4 en offre une impl&eacute;mentation native et super-efficace, vous pouvez ajouter la fonction array_accum() (cf. documentation) pour "&eacute;taler" une colonne dans un tableau&nbsp;; tableau qui pourra ensuite &ecirc;tre utilis&eacute; au niveau de l'application, ou bien combin&eacute; avec array_to_string() pour le formater comme une liste&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/docs/current/static/xaggr.html">http://www.postgresql.org/docs/current/static/xaggr.html</a></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090208">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</strong></p>
 

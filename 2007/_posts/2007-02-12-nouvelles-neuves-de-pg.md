@@ -6,6 +6,30 @@ redirect_from: "index.php?post/drupal-189 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 11 février 2007</strong></p>
+
+<p>
+
+Magnus Hagander et Joachim Wieland ont mis en place un site doxygen pour le code de PostgreSQL.
+
+<a target="_blank" href="http://doxygen.postgresql.org/">http://doxygen.postgresql.org/</a>
+
+</p>
+
+<p>
+
+Magnus Hagander est désormais committer. Félicitations&nbsp;!
+
+</p>
+
+<p>
+
+Simon Riggs a démarré une nouvelle discussion concernant les «&nbsp;HOT tables&nbsp;» --tables optimisées pour les actualisations très fréquentes-- à partir de sa proposition simplifiée de conception et d'implantation.
+
+</p>
+
+<!--more-->
+
 
 <p><strong>Les nouveautés des produits dérivés</strong></p>
 

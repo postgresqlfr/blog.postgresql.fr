@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-251 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 6 mai 2007</strong></p>
+
+<p>La première des conférences road2pgday a eu lieu cette semaine. La page suivante (en italien) présente quelques slides&nbsp;:
+
+<a target="_blank" href="http://www.pghost.eu/node/9">http://www.pghost.eu/node/9</a><br />
+
+Suivez le lien pour une vidéo :
+
+<a target="_blank" href="http://www.youtube.com/profile?user=neothezion">http://www.youtube.com/profile?user=neothezion</a></p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

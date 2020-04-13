@@ -6,6 +6,28 @@ redirect_from: "index.php?post/drupal-152 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 15 Janvier 2006</strong></p>
+
+<p>
+
+Tom Lane a trouvé un bug de longue date  ([HACKERS] lookup_rowtype_tupdesc considered harmful) qui aurait été à la  source de dysfonctionnements dans certains cas particuliers très rares. Une discussion animée s'est poursuivie sur le sujet et sur ce qui devait être fait à ce sujet. </p>
+
+<p>
+
+L'appel à contribution pour l'OSCON2006 : OSCON est à la recherche de personne avec de bonnes présentations sur les bases de données à destination de personnes n'étant pas des administrateurs de base de données. Implémentations complètes, études de cas et nouvelles applications Open Source sont particulièrement les bienvenues. Prenez contact avec <a href="mailto:josh%20at%20postgresql%20dot%20org">Josh</a> pour toute question et/ou enregistrez vous sur : <a target="_blank" href="http://conferences.oreillynet.com/cs/os2006/create/e_sess/">http://conferences.oreillynet.com/cs/os2006/create/e_sess/</a>
+
+</p>
+
+<p>
+
+Le dixième anniversaire de PostgreSQL et une mini-conférence sont
+
+imminiants. Notez la date du 8-9 juillet 2006 sur vos calendrier. Celà
+
+se passera à Toronto au Canada. </p>
+
+<!--more-->
+
 
 <strong>Nouvelles des produits autour de PostgreSQL</strong>
 

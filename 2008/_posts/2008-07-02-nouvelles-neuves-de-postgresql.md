@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-433 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 29 juin 2008</strong></p>
+
+<p>La "Commit Fest" de juillet commence bientôt.</p>
+
+<p>[ndt: les RMLL '08 battent leur plein&nbsp;: plus d'infos <a href="http://www.postgresqlfr.org/?q=node/1674">ici</a> et un premier compte-rendu <a href="http://blog.guillaume.lelarge.info/index.php/post/2008/07/02/RMLL-2009-les-deux-premiers-jours">là</a>]</p>
+
+<p>(<a href="http://people.planetpostgresql.org/dfetter/index.php?/archives/179-PostgreSQL-Weekly-News-June-29-2008.html">lire l'article original</a>)</p>
+
+<!--more-->
+
 
 <strong>PostgreSQL Product News</strong>
 

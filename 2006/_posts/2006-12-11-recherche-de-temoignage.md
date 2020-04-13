@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-226 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <h2>Entrepôts de données sous PostgreSQL</h2>
 

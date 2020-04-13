@@ -6,6 +6,26 @@ redirect_from: "index.php?post/2018-12-09-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgCluu 2.8, un programme en Perl pour auditer les performances de PostgreSQL&nbsp;: <a target="_blank" href="http://pgcluu.darold.net/">http://pgcluu.darold.net/</a></li>
+
+<li>postgres_dba 4.0, la trousse &agrave; outils manquante pour les DBA PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/NikolayS/postgres_dba/releases/tag/4.0">https://github.com/NikolayS/postgres_dba/releases/tag/4.0</a></li>
+
+<li>VOPS-2.0, une extension PostgreSQL pour les op&eacute;rations vectorielles&nbsp;: <a target="_blank" href="https://github.com/postgrespro/vops.git">https://github.com/postgrespro/vops.git</a></li>
+
+<li>pgAdmin4 3.6, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_3_6.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_3_6.html</a></li>
+
+<li>pg_probackup 2.0.25, un utilitaire pour g&eacute;rer les sauvegardes et les restaurations de clusters PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/postgrespro/pg_probackup">https://github.com/postgrespro/pg_probackup</a></li>
+
+<li>pgbitmap, un type bitmap &eacute;conome en stockage&nbsp;: <a target="_blank" href="https://github.com/marcmunro/pgbitmap">https://github.com/marcmunro/pgbitmap</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>PostgreSQL Local</h2>
 

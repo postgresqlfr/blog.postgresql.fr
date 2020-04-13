@@ -6,6 +6,78 @@ redirect_from: "index.php?post/2010-09-29-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Nouveau sondage&nbsp;: Quand passerez-vous en production sur la 9.0&nbsp;?
+
+<a target="_blank" href="http://www.postgresql.org/community">http://www.postgresql.org/community</a></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>MyJSQLView 3.23, une interface graphique qui peut être utilisée avec PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://dandymadeproductions.com/projects/MyJSQLView/index.html">http://dandymadeproductions.com/projects/MyJSQLView/index.html</a></li>
+
+<li>pgAdmin III 1.12.0, une interface graphique de gestion pour PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://www.pgadmin.org/download/">http://www.pgadmin.org/download/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en septembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;:
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-09/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-09/threads.php</a>;</li>
+
+<li>Francophones&nbsp;:
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Surge 2010, le salon sur l'évolutivité et la performance, aura lieu à Baltimore (Maryland, États-Unis) du 30 septembre au 1<sup>er</sup> octobre 2010&nbsp;:
+
+<a target="_blank" href="http://omniti.com/surge/2010">http://omniti.com/surge/2010</a></li>
+
+<li>Les inscriptions spéciales "lève-tôt" pour la JDCon West 2010 [ndt: 2-4 nov.] sont ouvertes&nbsp;:
+
+<a target="_blank" href="https://www.postgresqlconference.org/content/pgwest-2010-registration">https://www.postgresqlconference.org/content/pgwest-2010-registration</a></li>
+
+<li>L'appel à conférenciers pour le PGDay.EU 2010, tenu du 6 au 8 décembre à Stuttgart (All.), est lancé&nbsp;:
+
+<a target="_blank" href="http://2010.pgday.eu/callforpapers">http://2010.pgday.eu/callforpapers</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les média</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;:
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><em>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'équipe PostgreSQLFr sous licence CC BY-NC-SA.</em></p>
+
+<p><em>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais à david (a) fetter.org, en allemand à pwn (a) pgug.de, en italien à pwn (a) itpug.org et en espagnol à pwn (a) arpug.com.ar.</em></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20100926">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues</strong></p>
 

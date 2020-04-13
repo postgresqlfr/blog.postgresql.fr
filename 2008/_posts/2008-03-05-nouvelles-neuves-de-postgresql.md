@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-285 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 2 mars 2008</strong></p>
+
+<p>La première "commit fest" a débuté ce samedi 1er mars&nbsp;:
+
+<a target="_blank" href="http://developer.postgresql.org/index.php/PostgreSQL_8.4_Development_Plan">http://developer.postgresql.org/index.php/PostgreSQL_8.4_Development_Plan</a></p>
+
+<p>Il y a eu une rencontre PostgreSQL aux Linuxdays de Chemnitz (All.) avec de nombreuses participations et cinq merveilleux organisateurs&nbsp;:
+
+<a target="_blank" href="http://chemnitzer.linux-tage.de/2008/live/detail.html?idx=58">http://chemnitzer.linux-tage.de/2008/live/detail.html?idx=58</a></p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

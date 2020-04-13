@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-147 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 1er Janvier 2006</strong></p>
+
+<p>
+
+Bonne année à tous!</p>
+
+<!--more-->
+
 
 <strong>Nouvelles des produits autour de PostgreSQL</strong>
 

@@ -6,6 +6,98 @@ redirect_from: "index.php?post/2014-06-15-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>F&eacute;licitations &agrave; Andres Freund pour son nouveau statut de commiteur PostgreSQL.</p>
+
+<p>Les <em>Commitfests</em> pour la 9.5 commenceront les 15 juin, 15 ao&ucirc;t, 15 octobre, 15 d&eacute;cembre et 15 f&eacute;vrier. La Beta sera disponible en juin 2015.</p>
+
+<p>La premi&egrave;re PgConf suisse aura lieu le 24 juin 2014 au HSR Hochschule f&uuml;r Technik Rapperswil. 
+
+<a target="_blank" href="http://www.postgres-conference.ch/">http://www.postgres-conference.ch/</a></p>
+
+<p>Le deuxi&egrave;me Hangout singapourien aura lieu le 28 mai 2014 &agrave; 16h30(SGT). RSVP&nbsp;: 
+
+<a target="_blank" href="https://plus.google.com/u/0/events/cvpgsaauh8i1l8a7k22jqu5t0jo">https://plus.google.com/u/0/events/cvpgsaauh8i1l8a7k22jqu5t0jo</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>DBD::Pg version 3.2.1 (driver Postgres pour Perl): 
+
+<a target="_blank" href="http://search.cpan.org/dist/DBD-Pg/">http://search.cpan.org/dist/DBD-Pg/</a></li>
+
+<li>pg_repack 1.2, un utilitaire pour retirer les r&eacute;sidus et r&eacute;ordonner physiquement les <em>clustered index</em> en ligne&nbsp;: 
+
+<a target="_blank" href="http://reorg.github.io/pg_repack/">http://reorg.github.io/pg_repack/</a></li>
+
+<li>MAJ de s&eacute;curit&eacute; 2.0.6 et 2.1.13 pour PostGIS, le syst&egrave;me g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://postgis.net/2014/05/19/postgis-2.0.6_and_2.1.3">http://postgis.net/2014/05/19/postgis-2.0.6_and_2.1.3</a></li>
+
+<li>tds_fdw 1.0.0, un <em>foreign data wrapper</em> pour MS-SQL Server et Sybase&nbsp;: 
+
+<a target="_blank" href="https://github.com/GeoffMontee/tds_fdw/releases">https://github.com/GeoffMontee/tds_fdw/releases</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en mai</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2014-05/threads.php">http://archives.postgresql.org/pgsql-jobs/2014-05/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Char(14) et le PGday UK auront lieu les 8 &amp; 9 juillet 2014&nbsp;: 
+
+<a target="_blank" href="http://www.char14.info">http://www.char14.info</a> <a target="_blank" href="http://postgresqlusergroup.org.uk/">http://postgresqlusergroup.org.uk/</a></li>
+
+<li>Le sixi&egrave;me PGDay cubain aura lieu les 13 et 14 octobre 2014 &agrave; la Havane&nbsp;: 
+
+<a target="_blank" href="https://postgresql.uci.cu/?p=380">https://postgresql.uci.cu/?p=380</a></li>
+
+<li>Postgres Open 2014 aura lieu &agrave; Chicago, Illinois - USA, du 17 au 19 septembre. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://postgresopen.org/2014/callforpapers/">http://postgresopen.org/2014/callforpapers/</a></li>
+
+<li>La PGConf europ&eacute;enne 2014 se tiendra &agrave; Madrid (Espagne) du 21 au 24 octobre, &agrave; l'h&ocirc;tel Miguel Angel&nbsp;: 
+
+<a target="_blank" href="http://2014.pgconf.eu/">http://2014.pgconf.eu/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20140526041842.GB18543@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

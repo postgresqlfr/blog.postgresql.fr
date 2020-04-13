@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-178 "
 ---
 
 
+<h1>Nouvelles hebdomadaires de PostgreSQL - 2 avril 2006</h1>
+
+<p>Les inscriptions pour l'anniversaire de PostgreSQL Anniversary sont ouvertes <a href="http://conference.postgresql.org/Registration">http://conference.postgresql.org/Registration</a>
+
+</p>
+
+<p>L'anniversaire de PostgreSQL est sponsorisé par Afilias, EnterpriseDB, GreenPlum, Pervasive et Sun Microsystems.</p>
+
+<!--more-->
+
 
 <h2>Nouvelles des produits autour de PostgreSQL</h2>
 

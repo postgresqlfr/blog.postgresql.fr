@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-268 "
 
 
 
+
+<!--more-->
+
+
 <p>
 
 À l'occasion de SolutionsLinux, 01net rappelle la robustesse de PostgreSQL et souligne le dynamisme de la communauté.

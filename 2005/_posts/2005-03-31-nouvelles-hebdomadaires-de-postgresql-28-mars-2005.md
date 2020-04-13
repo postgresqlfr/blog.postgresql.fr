@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-87 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Le 28 mars 2005, David Fetter écrivait&nbsp;:<br /><br />== PostgreSQL Weekly News - 28 Mars 2005 ==<br /><br />Palle Girgensohn a rassemblé un patch pour la bibliothèque d'interclassement <acronym title="International Components for Unicode">ICU</acronym> d'IBM.
 

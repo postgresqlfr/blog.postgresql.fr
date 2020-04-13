@@ -6,6 +6,48 @@ redirect_from: "index.php?post/2009-06-01-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>1&deg;) Publication de la beta 2 de la version 8.4 de PostgreSQL, 2&deg;) Tests&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/developer/beta">http://www.postgresql.org/developer/beta</a></p>
+
+<p>PgCon fut un nouveau succ&egrave;s, avec une affluence accrue &agrave; contre-pied des autres conf&eacute;rences. Publication prochaine des vid&eacute;os des pr&eacute;sentations&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2009/">http://www.pgcon.org/2009/</a></p>
+
+<p>La vid&eacute;o de la r&eacute;union SFPUG du 23 mai 2009&nbsp;: "BIRT &amp; PostgreSQL" est &agrave; pr&eacute;sent disponible en lecture et t&eacute;l&eacute;chargement sur le serveur media.postgresql.org&nbsp;: 
+
+<a target="_blank" href="http://media.postgresql.org/sfpug/sfpug-birt-20090512.mov">http://media.postgresql.org/sfpug/sfpug-birt-20090512.mov</a></p>
+
+<p>La conf&eacute;rence-anniversaire (10&egrave;me) du JPUG a lanc&eacute; son appel &agrave; participation&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2009-05/msg00018.php">http://archives.postgresql.org/pgsql-announce/2009-05/msg00018.php</a></p>
+
+<p>La communaut&eacute; PostgreSQL/PostGIS se r&eacute;unira &agrave; Zurich le 6 juin 2009. D&eacute;tails (de_CH)&nbsp;: 
+
+<a target="_blank" href="http://gis.hsr.ch/wiki/PostgreSQL-PostGIS-H%C3%B6ck">http://gis.hsr.ch/wiki/PostgreSQL-PostGIS-H&ouml;ck</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>MicroOLAP Database Designer 1.2.8beta1, un syst&egrave;me de conception de BD pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/database/postgresql-designer/">http://microolap.com/products/database/postgresql-designer/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 8.4 de la semaine</strong></p>
+
+<p>Warm Standby&nbsp;: si, auparavant, configurer une reprise &agrave; chaud vous effrayait&nbsp;: re-tentez avec la 8.4, la prise en main est &agrave; pr&eacute;sent facilit&eacute;e.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>En attendant que les expressions de tables communes de la 8.4 et que le SQL/MED de la 8.5 soient disponibles, vous pouvez respectivement utiliser le module 'tablefunc' dans "contrib" et les fonctions d'inclusion pour, respectivement, des jointures via connectby() et consulter une base de donn&eacute;es depuis une autre.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090524">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en mai</strong></p>
 

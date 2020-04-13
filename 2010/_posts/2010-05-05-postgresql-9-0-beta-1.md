@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2010-05-05-postgresql-9-0-beta-1 "
 
 
 
+
+<!--more-->
+
+
 !!!!3 Mai 2010 :  La première version bêta de PostgreSQL 9.0 est disponible.
 
 

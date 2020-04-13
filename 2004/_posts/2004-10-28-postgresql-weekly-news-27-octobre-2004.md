@@ -6,6 +6,56 @@ redirect_from: "index.php?post/drupal-46 "
 ---
 
 
+<em>Traduction d'un article posté sur pgsql-annouce par Robert Treat</em>
+
+<p>
+
+La première chose frappante cette semaine a été un correctif de sécurité pour les versions 7.2.6, 7.3.8 et 7.4.6. Les modifications se sont concentrées sur une vulnérabilité potentielle dans pg_ctl. Il est donc fortement conseillé de lire des notes de versions pour la version qui vous concerne et pour les autres correctifs qui y ont été inclus. Actuellement les téléchargements doivent pouvoir être réalisés sur les sites habituels ainsi que sur les miroirs FTP et sur Bittorrent.
+
+</p>
+
+<p>Tout d'abord, il y a eu une nouvelle version beta qui est sortie lundi. Il s'agit de PostgreSQL 8.0 Beta 4 et cette version doit être disponible sur tous les sites miroirs FTP et sur Bittorrent. Il y a un grand nombre de corrections par rapport aux betas précédentes. Vous pouvez en vérifier la liste complète sur le message d'annonce. Quelques éclaircissements sur les corrections de la semaine passée : le manque d'un index sur le contrôle d'accès  sur les vacuums oisifs (lazy vacuums), la suppression des transtypages qui n'étaient pas nécessaires, la labellisation de pg_tablespace en tant que catalogue partagé, l'écriture correcte des fichiers de configuration pour la plate-forme win32 sous la forme de fichiers textes à la place de fichiers binaires, la suppression du débordement dans cost_sort lorsque work_mem est supérieur à 1GO et la prévention de la perte de la synchronisation de la communication lorsqu'un message surdimensionné est envoyé au serveur.
+
+</p>
+
+<p>
+
+Les autres modifications incluent la synchronisation des fuseaux
+
+horaires avec la dernière base de données zic, l'ajout d'un drapeau
+
+GUC_SUPERUSER_ONLY dans le code afin d'identifier les variable qui ne
+
+doivent pas être visibles des autres utilisateurs, le remaniement du
+
+code de ALTER COLUMN TYPE afin d'y supprimer les opérations de
+
+coercition apparaissant au premier niveau de l'ancienne expression
+
+d'une colonne avant l'ajout d'une coercition implicite à un nouveau
+
+type de colonne, la résolution de quelques points concernant des
+
+valeurs par défaut et n'ayant plus cours dans des types de données
+
+comparables. L'utilisation des macros Min, Max et Abs dans leur version
+
+<em>ad hoc</em>
+
+a été supprimée dans les modules de contribution au profit de
+
+l'utilisation de macros standards inclues dans les traitements centraux
+
+du serveurs. Les actions d'intégrité référentielle ne sont plus
+
+autorisées à être différées (seule la vérification NO ACTION est encore
+
+différable). Enfin, nous nous sommes encore rapprochés de la
+
+compatibilité avec le standard SQL</p>
+
+<!--more-->
+
 
 <h3>== Nouvelles des produits PostgreSQL==</h3>
 

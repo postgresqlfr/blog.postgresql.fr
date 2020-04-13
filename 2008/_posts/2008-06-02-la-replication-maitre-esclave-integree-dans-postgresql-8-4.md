@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-294 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Via une <a href="http://archives.postgresql.org/pgsql-hackers/2008-05/msg00913.php">annonce</a> faite sur la mailing listes des core-hackers et le <a href="http://momjian.us/main/blogs/pgblog.html#May_30_2008">blog de Bruce Momjian</a>, la communauté des développeurs ("core-hackers") de PostgreSQL vient de déclarer officiellement que des travaux sont en cours pour intégrer un mécanisme de réplication Maître/Esclave au sein du coeur du SGBD.
 

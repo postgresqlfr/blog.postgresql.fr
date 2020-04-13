@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-61 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <h1>== Nouvelles hebdomadaires de PostgreSQL  - 4 janvier 2005 ==</h1>
 

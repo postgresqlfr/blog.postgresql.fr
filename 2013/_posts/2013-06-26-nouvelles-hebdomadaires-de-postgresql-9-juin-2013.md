@@ -6,6 +6,102 @@ redirect_from: "index.php?post/2013-06-26-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La premi&egrave;re <em>Commitfest</em> de la prochaine version de PostgreSQL va d&eacute;buter sous peu. &Eacute;poussetez vos patchs et aidez les autres &agrave; &eacute;pousseter les leurs&nbsp;! 
+
+<a target="_blank" href="https://commitfest.postgresql.org/action/commitfest_view?id=18">https://commitfest.postgresql.org/action/commitfest_view?id=18</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Slony-I 2.2.0 beta 4&nbsp;: 
+
+<a target="_blank" href="http://www.slony.info/">http://www.slony.info/</a></li>
+
+<li>psqlODBC 09.02.0100&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/ftp/odbc/versions/">http://www.postgresql.org/ftp/odbc/versions/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en juin</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2013-06/threads.php">http://archives.postgresql.org/pgsql-jobs/2013-06/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le PgDay Fr est l'&eacute;v&eacute;nement majeur de la communaut&eacute; francophone. Il aura lieu le 13 juin 2013 &agrave; Nantes (France)&nbsp;: 
+
+<a target="_blank" href="http://pgday.fr/">http://pgday.fr/</a></li>
+
+<li>Nous aurons un stand lors de l'OSCON cette ann&eacute;e. N'h&eacute;sitez pas &agrave; vous inscrire et y passer une heure ou deux&nbsp;: 
+
+<a target="_blank" href="https://wiki.postgresql.org/wiki/Oscon_2013_signup">https://wiki.postgresql.org/wiki/Oscon_2013_signup</a></li>
+
+<li>Le <em>PGDay UK 2013</em> aura lieu le 12 juillet 2013. Les inscriptions sont ouvertes&nbsp;: 
+
+<a target="_blank" href="http://postgresqlusergroup.org.uk">http://postgresqlusergroup.org.uk</a></li>
+
+<li><em>PostgreSQL Brazil</em> aura lieu du 15 au 17 ao&ucirc;t 2013 &agrave; Porto Velho, &Eacute;tat du Rond&ocirc;nia au Br&eacute;sil&nbsp;: 
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/2013/chamada.en.php">http://pgbr.postgresql.org.br/2013/chamada.en.php</a></li>
+
+<li>Notez la date&nbsp;! <em>Postgres Open 2013</em> aura lieu &agrave; Chicago (Illinois, USA) du 16 au 18 septembre. Hotel Sax&nbsp;: 
+
+<a target="_blank" href="https://reservations.ihotelier.com/crs/g_reservation.cfm?groupID=888761&amp;hotelID=6865">https://reservations.ihotelier.com/crs/g_reservation.cfm?groupID=888761&amp;hotelID=6865</a><br>
+
+Inscriptions pour les l&egrave;ve-t&ocirc;t&nbsp;: 
+
+<a target="_blank" href="http://postgresopen-eac2.eventbrite.com/">http://postgresopen-eac2.eventbrite.com/</a><br>
+
+Les pr&eacute;sentations sont attendues avant le 1<sup>er</sup> juillet 2013&nbsp;: 
+
+<a target="_blank" href="http://www.postgresopen.org/2013/speaker/">http://www.postgresopen.org/2013/speaker/</a></li>
+
+<li>La <em>PGConf.EU 2013</em> sera tenue du 29 octobre au 1<sup>er</sup> novembre au Conrad Hotel dans le centre-ville de Dublin en Irlande. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2013.pgconf.eu/">http://2013.pgconf.eu/</a></li>
+
+<li><em>PGConf.DE 2013</em> aura lieu le 8 novembre 2013 au mus&eacute;e industriel de la Rh&eacute;nanie &agrave; Oberhausen. L'appel &agrave; conf&eacute;renciers porte jusqu'au 15 septembre&nbsp;: 
+
+<a target="_blank" href="http://2013.pgconf.de/">http://2013.pgconf.de/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20130610065014.GB1586@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

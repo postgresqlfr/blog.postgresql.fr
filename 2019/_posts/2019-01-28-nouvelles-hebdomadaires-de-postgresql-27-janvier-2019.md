@@ -6,6 +6,16 @@ redirect_from: "index.php?post/2019-01-28-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>datasketches 1.0.0, une extension permettant d'utiliser les algorithmes approximatifs de la biblioth&egrave;que Datasketches&nbsp;: <a target="_blank" href="https://pgxn.org/dist/datasketches/1.0.0/">https://pgxn.org/dist/datasketches/1.0.0/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en janvier</h2>
 

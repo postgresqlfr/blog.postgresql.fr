@@ -6,6 +6,28 @@ redirect_from: "index.php?post/drupal-306 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 7 septembre 2008</strong></p>
+
+<p>Les RPMs des instantanés CVS de la future version 8.4 sont prêts aux tests&nbsp;:
+
+<a target="_blank" href="http://people.planetpostgresql.org/devrim/index.php?/archives/121-Testers-8.4-snapshot-RPMs-are-available.html">http://people.planetpostgresql.org/devrim/index.php?/archives/121-Testers-8.4-snapshot-RPMs-are-available.html</a></p>
+
+<p>La "CommitFest" de septembre a débuté&nbsp;! Les nouveautés passées en revue incluent&nbsp;: permissions par colonnes, index par hachage, fonctions d'encadrement [ndt: "windowing", OVER... <a target="_blank" href="http://umitanuki.net/pgsql/wfv04/design.html">explications et exemples (en)</a>], MAJ en sans réimport et d'autres...
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/CommitFest:2008-09">http://wiki.postgresql.org/wiki/CommitFest:2008-09</a>
+
+[ndt: également parmi les nouveautés bien pratiques&nbsp;: <a target="_blank" href="http://www.depesz.com/index.php/2008/09/06/waiting-for-84-ef-in-psql/">l'édition de fonction</a> directement depuis psql.]</p>
+
+<p>Ce que vous pouvez faire&nbsp;:
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/Reviewing_a_Patch">http://wiki.postgresql.org/wiki/Reviewing_a_Patch</a></p>
+
+<p>Nous avons en fait désespérément besoin de relecteurs de patchs&nbsp;! Êtes-vous à l'aise avec le C&nbsp;? Êtes-vous familier avec PostgreSQL&nbsp;? Vous désirez améliorer vos compétences de programmation sur PG et récolter fortune et gloire&nbsp;? Devenez un relecteur de patchs&nbsp;! Contactez josh (chez) postgresql.org.</p>
+
+<p>(<a target="_blank" href="http://people.planetpostgresql.org/dfetter/index.php?/archives/190-PostgreSQL-Weekly-News-September-07-2008.html">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <!--break-->
 

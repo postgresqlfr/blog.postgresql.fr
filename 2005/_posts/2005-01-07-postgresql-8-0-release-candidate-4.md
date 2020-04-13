@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-62 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Bienvenue à tous dans cette nouvelle année et dans les derniers jours de test de la version 8.0.0.</p>
 

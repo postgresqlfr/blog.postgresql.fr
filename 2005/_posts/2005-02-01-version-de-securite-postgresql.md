@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-70 "
 
 
 
+
+<!--more-->
+
+
 <p><em>Dans son annonce du premier février, Marc G. Fournier nous annonçait :</em></p>
 
 <p>Afin de circonvenir un trou de sécurité potentiel récemment identifié dans l'option "LOAD", le groupe de développement global de PostgreSQL (PostgreSQL Global Development Group) annonce une nouvelle publication de version jusqu'aux version 7.2.x.</p>

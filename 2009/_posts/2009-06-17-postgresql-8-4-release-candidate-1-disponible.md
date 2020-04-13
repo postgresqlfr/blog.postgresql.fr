@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2009-06-17-postgresql-8-4-release-candidate-1-dis
 
 
 
+
+<!--more-->
+
+
 La version finale de PostgreSQL 8.4 se rapproche encore aujourd'hui, avec la publication de la première Release Candidate. 
 
 

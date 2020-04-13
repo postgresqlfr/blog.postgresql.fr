@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-246 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <h1>Nous avons besoin de vous&nbsp;!</h1>
 

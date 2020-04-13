@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2019-01-22-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL@SCaLE est un &eacute;v&eacute;nement de 2 jours &agrave; double programmes qui aura lieu les 7 & 8 mars 2019 au centre de convention de Pasadena, int&eacute;gr&eacute; au SCaLE 17X&nbsp;: <a target="_blank" href="https://www.socallinuxexpo.org/scale/17x/postgresscale">https://www.socallinuxexpo.org/scale/17x/postgresscale</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>Ora2PG 20.0, un outil de migration de bases Oracle vers PostgreSQL&nbsp;: <a target="_blank" href="http://ora2pg.darold.net/">http://ora2pg.darold.net/</a></li>
+
+<li>pg_probackup 2.0.26, un utilitaire pour g&eacute;rer les sauvegardes et les restaurations de clusters PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/postgrespro/pg_probackup">https://github.com/postgrespro/pg_probackup</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en janvier</h2>
 

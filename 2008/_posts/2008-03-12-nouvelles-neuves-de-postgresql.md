@@ -6,6 +6,36 @@ redirect_from: "index.php?post/drupal-286 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 9 mars 2008</strong></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>Benetl 1.6 pour Windows est disponible&nbsp;:
+
+<a target="_blank" href="http://www.benetl.net">http://www.benetl.net</a></li>
+
+<li>Continuent uni/cluster pour PostgreSQL 2007.1 Update 2 a été publié&nbsp;:
+
+<a target="_blank" href="http://www.continuent.com">http://www.continuent.com</a></li>
+
+<li>Image2db 2.2 a été publié&nbsp;:
+
+<a target="_blank" href="http://www.vive.net/products/image2db.htm">http://www.vive.net/products/image2db.htm</a></li>
+
+<li>PL/Ruby 0.5.3 est disponible&nbsp;:
+
+<a target="_blank" href="http://raa.ruby-lang.org/project/pl-ruby/">http://raa.ruby-lang.org/project/pl-ruby/</a></li>
+
+<li>ptop 3.6.1 est disponible&nbsp;:
+
+<a target="_blank" href="http://ptop.projects.postgresql.org/">http://ptop.projects.postgresql.org/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <strong>Offres d'emplois autour de PostgreSQL en mars</strong>
 

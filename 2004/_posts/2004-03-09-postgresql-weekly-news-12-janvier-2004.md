@@ -6,6 +6,100 @@ redirect_from: "index.php?post/drupal-349 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires PostgreSQL - 12 janvier 2004 ==</h2>
+
+<p>Les affaires ont recommencé cette semaine alors que les gens revenaient de vacances. De gros progrès ont été effectué sur le portage win32. Cette semaine a vu l'arrivée de l'implémentation d'un tube ainsi que la correction de plusieurs problèmes sur fork/exec. J'ai demandé à Claudio Natoli, un des principaux développeurs du
+
+portage win32, ce qu'il pensait des derniers correctifs. Il semblait
+
+assez content que la grosse majorité du travail sur fork/exec ait été
+
+effectuée. Bien sûr, dans le style des vrais développeurs, il a ajouté
+
+ce commentaire : "il existe encore des points à règler qui seront pris
+
+en charge dans les prochaines semaines". Mais de fait, une étape
+
+importante a été franchie par le portage win32 et ceux qui s'en sont
+
+chargés devraient en être fiers.
+
+</p>
+
+<p>Les autres nouvelles du développement pour cette semaine concernent
+
+un certain nombre d'améliorations sur les optimiseurs IQ. Ces
+
+améliorations ont permis d'extraire les conditions de parcours d'index
+
+OR des conditions OR-of-AND (un AND entouré de OR) où chaque
+
+sous-clause OR inclut une contrainte sur la même relation. Il détecte
+
+aussi d'une meilleure manière les cas où les
+
+entrées, telle qu'une sous-requête utilisant SELECT DISTINCT, est déjà
+
+unique pour prévenir des unifications redondantes. L'intelligence du
+
+testeur de prédicat de l'index partiel a aussi été amélioré pour gérer
+
+les clauses commutées (4<x implique="" x="">3),
+
+les sous-clauses plus compliquées qu'une simple variable (upper(x) =
+
+'t' implique upper(x)&gt;'a') et les opérateurs &lt;&gt; (x&lt;3
+
+implique x&lt;&gt;4).</x></p>
+
+<p>Un ensemble d'améliorations sur psql a été réalisé, ceci incluant
+
+psql \dn pour afficher uniquement les schémas temporaires visibles en
+
+utilisant current_schemas() et psql '\i ~/<tab><tab>' pour récupérer
+
+les fichiers à afficher dans le répertoire personnel de l'utilisateur.
+
+Quelques pièces initiales du correctif de Dennis Bjorklund ont été
+
+intégrées pour permettre de
+
+déclarer les paramètres des fonctions avec des noms. Il reste encore
+
+quelques points concernant la documentation, l'interaction avec psql et
+
+les langages de procédures autres que plpgsql qui demandent encore du
+
+travail mais les bases pour cela sont définies. Un bogue du programme
+
+createuser, générant un code SQL
+
+incorrect lorsque l'option -E est utilisé sans -P, a été corrigé grâce
+
+à Martin Pitt, qui est à l'origine du rapport et du correctif.
+
+WITH/WITHOUT OIDS a été ajouté pour la commande CREATE TABLE AS. Cette
+
+fonctionnalité doit permettre aux auteurs d'applications de
+
+s'affranchir eux-même des modifications de la
+
+valeur par défaut de 'default_with_oids' dans les futures versions de
+
+PostgreSQL. Dernier point, mais pas le moindre, CREATE TRIGGER, CREATE
+
+INDEX et CREATE SEQUENCE ont été ajoutés à la liste des expressions
+
+supportées par CREATE SCHEMA.</tab></tab></p>
+
+<p>Une dernière note, après bien des discussions sur plusieurs listes
+
+de diffusion, une nouvelle version de pljava est disponible sur gborg
+
+depuis la semaine dernière. Sur la page du projet (<a href="http://gborg.postgresql.org/project/pljava/projdisplay.php">http://gborg.postgresql.org/project/pljava/projdisplay.php</a>), vous trouverez des liens vers des explications techniques ainsi que sur la manière de débuter.</p>
+
+<!--more-->
+
 
 <p><!--break--></p>
 

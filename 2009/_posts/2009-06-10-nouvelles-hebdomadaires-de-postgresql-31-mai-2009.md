@@ -6,6 +6,28 @@ redirect_from: "index.php?post/2009-06-10-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>La version 1.0 de Sonar, une plate-forme open-source de gestion qualité de développement, supporte à présent PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://sonar.codehaus.org/">http://sonar.codehaus.org/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 8.4 de la semaine</strong></p>
+
+<p>array_agg(): La procédure standard SQL pour aggréger des valeurs dans un tableau. C'est maintenant officiel... et plus rapide.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Si vos requêtes avec agrégats sont lentes, essayez d'augmenter work_mem.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090531">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en juin</strong></p>
 

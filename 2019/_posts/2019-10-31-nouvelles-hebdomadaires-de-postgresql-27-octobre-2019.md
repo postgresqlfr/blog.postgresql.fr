@@ -6,6 +6,24 @@ redirect_from: "index.php?post/2019-10-31-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le pgDay isra&eacute;lien 2020 aura lieu le 19 mars 2020 &agrave; Tel Aviv. L'appel &agrave; conf&eacute;renciers court jusqu'au 15 janvier 2020&nbsp;: <a target="_blank" href="http://pgday.org.il/">http://pgday.org.il/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>PostGIS 3.0.0, le syst&egrave;me d'information g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL&nbsp;: <a target="_blank" href="https://postgis.net/2019/10/20/postgis-3.0.0/">https://postgis.net/2019/10/20/postgis-3.0.0/</a></li>
+
+<li>pgMustard 2.0, une UI pour 'explain analyze' proposant des conseils performances&nbsp;: <a target="_blank" href="https://www.pgmustard.com/">https://www.pgmustard.com/</a></li>
+
+<li>psycopg2 2.8.4, un connecteur python pour PostgreSQL&nbsp;: <a target="_blank" href="http://initd.org/psycopg/articles/2019/10/20/psycopg-284-released/">http://initd.org/psycopg/articles/2019/10/20/psycopg-284-released/</a></li>
+
+<li>pg_checksums 1.0, un utilitaire pour v&eacute;rifier, activer ou d&eacute;sactiver les checksums de donn&eacute;es dans les instances PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/credativ/pg_checksums">https://github.com/credativ/pg_checksums</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en octobre</h2>
 

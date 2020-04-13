@@ -6,6 +6,82 @@ redirect_from: "index.php?post/2010-10-15-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La date limite de l'appel &agrave; conf&eacute;renciers pour la <em>MySQL Conf</em> est le 25 octobre. Mail &agrave; Selena Deckelman (selenamarie &lt;AT&gt; gmail &lt;DOT&gt; com) pour un retour, une conseil &agrave; la candidature, ou une aide pour trouver des id&eacute;es&nbsp;: 
+
+<a target="_blank" href="http://en.oreilly.com/mysql2011/public/cfp/126">http://en.oreilly.com/mysql2011/public/cfp/126</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Another PostgreSQL Diff Tool 2.2.2, un outil de comparaison de base de donn&eacute;es&nbsp;: 
+
+<a target="_blank" href="http://apgdiff.startnet.biz/">http://apgdiff.startnet.biz/</a></li>
+
+<li>Slony-I 2.0.5, un syst&egrave;me de r&eacute;plication "ma&icirc;tre vers esclaves en cascade" pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.slony.info/">http://www.slony.info/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en octobre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-10/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-09/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Michael Renner parlera de r&eacute;plication de base de donn&eacute;es avec PostgreSQL 9.0 le 12 octobre au Metalab de Vienne (Autriche). Lien et infos. (de_AT)&nbsp;: 
+
+<a target="_blank" href="http://metalab.at/wiki/PostgreSQL_repliziert_9.0">http://metalab.at/wiki/PostgreSQL_repliziert_9.0</a></li>
+
+<li>PgDay.IT 2010 aura lieu &agrave; Rome le 10 d&eacute;cembre de cette ann&eacute;e. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.it/">http://www.pgday.it/</a></li>
+
+<li>Les inscriptions sp&eacute;ciales "l&egrave;ve-t&ocirc;t" pour la JDCon West 2010 [ndt: 2-4 nov.] sont ouvertes&nbsp;: 
+
+<a target="_blank" href="https://www.postgresqlconference.org/content/pgwest-2010-registration">https://www.postgresqlconference.org/content/pgwest-2010-registration</a></li>
+
+<li>L'appel &agrave; conf&eacute;renciers pour le PGDay.EU 2010, tenu du 6 au 8 d&eacute;cembre &agrave; Stuttgart (All.), est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2010.pgday.eu/callforpapers">http://2010.pgday.eu/callforpapers</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20101010">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues</strong></p>
 

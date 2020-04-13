@@ -6,6 +6,40 @@ redirect_from: "index.php?post/drupal-175 "
 ---
 
 
+<h1>Nouvelles Hebdomadaires de PostgreSQL - 19 mars 2006</h1>
+
+<p>GITEX, le <a href="http://www.gitex.com/">Gulf Information Technology Exhibition</a>,
+
+aura lieu du 18 au 22 novembre 2006 au World Trade Center Building à
+
+Dubai. Tous ceux qui seraient interressé pour participer à une présence
+
+de PostgreSQL presence là-bas, devraient contacté Rajesh (Luckys)
+
+Sharma à l'adresse luckysharma <at> gmail.com. Rajesh est en train de créer un groupe d'utilisateur de PostgreSQL dans cette région.</at></p>
+
+<p>Les informations sur le sommet-anniversaire de PostgreSQL sont disponibles : <a href="http://conference.postgresql.org/">http://conference.postgresql.org</a>. Le sommet recherche aussi des entreprises sponsors. Consultez pour cela la page Sponsors : <a href="http://conference.postgresql.org/Sponsors/">http://conference.postgresql.org/Sponsors/</a>.</p>
+
+<p>Fujitsu sponsorise le stand PostgreSQL pour <a href="http://www.linuxworldexpo.com.au/">LinuxWorld Australia 2006</a>,
+
+qui aura lieu les 28, 29 et 30 mars à Sydney. Le stand est le C21.
+
+Gavin Sherry et Omar Kilani montreront des cas d'études, des brochures,
+
+et feront beaucoup de démonstrations. will be handing out
+
+case studies, brochures and giving lots of demonstrations. Ceux qui
+
+souhaitent distribuer des brochures, ou juste passer, contactez Gavin
+
+Sherry à l'adresse <swm><at> alcove.com.au&gt;. Ou venez juste les retrouver !</at></swm></p>
+
+<p>Commandprompt héberge maintenant : <a href="http://search.postgresql.org/">http://search.postgresql.org/</a></p>
+
+<p>Des patches pour la version 7.4 venant de la version 8.1 arrivent bientôt.</p>
+
+<!--more-->
+
 
 <h2>Nouvelles des produits autour de PostgreSQL</h2>
 

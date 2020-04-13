@@ -6,6 +6,104 @@ redirect_from: "index.php?post/2010-11-12-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Publication de PostgreSQL 9.1alpha2, disponible &agrave; cette adresse&nbsp;: 
+
+<a target="_blank" href="http://developer.postgresql.org/pgdocs/postgres/release-9-1-alpha.html">http://developer.postgresql.org/pgdocs/postgres/release-9-1-alpha.html</a><br>
+
+...et voici comment la tester&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/HowToBetaTest">http://wiki.postgresql.org/wiki/HowToBetaTest</a></p>
+
+<p>BuildFarm client 4.4 disponible. N'h&eacute;sitez pas &agrave; rejoindre la <em>buildfarm</em>, surtout si vous avez une combinaison mat&eacute;riel/OS/compilateur inhabituelle&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgbuildfarm/">http://pgfoundry.org/projects/pgbuildfarm/</a></p>
+
+<p>Le FOSDEM est l'un des plus grand &eacute;v&eacute;nements autour du Libre et de l'Open Source&nbsp;; il a lieu annuellement &agrave; Bruxelles et rassemble environ 4000 personnes. La prochaine &eacute;dition est programm&eacute;e pour les 5 &amp; 6 f&eacute;vrier 2011. Envoyez vos propositions &agrave; l'adresse fosdem AT postgresql POINT eu. 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/749-PostgreSQLFOSDEM-2011-Call-for-talks.html">http://andreas.scherbaum.la/blog/archives/749-PostgreSQLFOSDEM-2011-Call-for-talks.html</a></p>
+
+<p>Le PUG de New-York pr&eacute;sente Mladen Gogala, qui parlera de migration d'Oracle vers PostgreSQL le mardi 9 novembre. D&eacute;tails ci-apr&egrave;s&nbsp;: 
+
+<a target="_blank" href="http://www.meetup.com/postgresql-3/calendar/15273949/">http://www.meetup.com/postgresql-3/calendar/15273949/</a></p>
+
+<p>Pour les "l&egrave;ves-t&ocirc;ts", les inscriptions au PGDay.IT, qui aura lieu le 10 d&eacute;cembre 2010 &agrave; Rome, sont ouvertes et le programme a &eacute;t&eacute; publi&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2010.pgday.it/">http://2010.pgday.it/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Npgsql 2.0.11, un provider .NET pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.npgsql.org">http://www.npgsql.org</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en novembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-11/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-11/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Stand et discussions autour de PostgreSQL lors de l'<em>Usenix LISA</em>, les 10 &amp; 11 novembre 2010 &agrave; San Jose (Californie)&nbsp;: 
+
+<a target="_blank" href="http://www.usenix.org/event/lisa10/">http://www.usenix.org/event/lisa10/</a></li>
+
+<li>Le PUG allemand organise une rencontre pour l'<em>OpenRheinRuhr 2010</em> les 13 &amp; 14 novembre &agrave; Oberhausen (All.). Andreas Scherbaum y parlera des nouvelles fonctionnalit&eacute;s de PostgreSQL 9.0&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/744-PostgreSQL-OpenRheinRuhr-2010.html">http://andreas.scherbaum.la/blog/archives/744-PostgreSQL-OpenRheinRuhr-2010.html</a></li>
+
+<li>Le PUG allemand sera pr&eacute;sent avec stand, conf&eacute;rence et atelier lors du <em>Brandenburger Linux-Infotag 2010</em> &agrave; Potsdam (All.) le 6 novembre&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/746-PostgreSQL-Brandenburger-Linux-Infotag-2010.html">http://andreas.scherbaum.la/blog/archives/746-PostgreSQL-Brandenburger-Linux-Infotag-2010.html</a></li>
+
+<li>Les inscriptions pour le PGDay.EU 2010 tenu du 6 au 8 d&eacute;cembre &agrave; Stuttgart sont ouvertes&nbsp;: 
+
+<a target="_blank" href="http://2010.pgday.eu/register">http://2010.pgday.eu/register</a></li>
+
+<li>Le PgDay.IT 2010 aura lieu cette ann&eacute;e &agrave; Rome, le 10 d&eacute;cembre. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.it/">http://www.pgday.it/</a></li>
+
+<li>Le <em>PGDay</em> est programm&eacute; lors du "<em>Southern California Linux Exposition</em>" (SCALE) de cette ann&eacute;e, tenu au <em>LAX Hilton Hotel</em> de la ville de Los Angeles en Californie le vendredi 25 f&eacute;vrier 2011. Envoyez vos propositions de conf&eacute;rences &agrave; l'adresse pgday-submissions &lt;CHEZ&gt; googlegroups &lt;POINT&gt; com.</li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20101107">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

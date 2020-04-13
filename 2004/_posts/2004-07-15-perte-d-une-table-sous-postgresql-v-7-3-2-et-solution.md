@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-19 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <h3>L'histoire initiale</h3>
 

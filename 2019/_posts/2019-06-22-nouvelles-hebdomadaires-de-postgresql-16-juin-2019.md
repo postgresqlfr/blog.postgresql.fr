@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2019-06-22-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les mises &agrave; jour de s&eacute;curit&eacute; 11.4, 10.9, 9.6.14, 9.5.18, 9.4.23 seront bient&ocirc;t publi&eacute;es. Pr&eacute;parez-vous &agrave; mettre &agrave; jour&nbsp;! <a target="_blank" href="https://www.postgresql.org/message-id/98EFF6DC-805B-4309-AD89-6F3223CBDA7F%40postgresql.org">https://www.postgresql.org/message-id/98EFF6DC-805B-4309-AD89-6F3223CBDA7F%40postgresql.org</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>psycopg2 2.8.3, un connecteur python pour PostgreSQL&nbsp;: <a target="_blank" href="http://initd.org/psycopg/articles/2019/06/14/psycopg-283-released/">http://initd.org/psycopg/articles/2019/06/14/psycopg-283-released/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en juin</h2>
 

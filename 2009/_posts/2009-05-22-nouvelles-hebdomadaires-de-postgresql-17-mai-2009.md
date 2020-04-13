@@ -6,6 +6,32 @@ redirect_from: "index.php?post/2009-05-22-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 17 mai 2009</strong></p>
+
+<p>Le PgDay de San Jose aura lieu le dimanche 19 juin, annon&ccedil;ant l'ouverture de l'OSCON. Soumettez vos propositions avant le 8 juin &agrave; conference-sf-speakers AT pgfoundry DOT org, les r&eacute;sultats seront donn&eacute;s le 20 juin&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/about/news.1082">http://www.postgresql.org/about/news.1082</a></p>
+
+<p>"Yet Another Perl Conference 10" est programm&eacute;e &agrave; Pittsburgh du 22 au 24 juin avec des conf&eacute;rences donn&eacute;es par David Fetter et suivie de cours par le fameux professeur Joe Celko&nbsp;: 
+
+<a target="_blank" href="http://yapc10.org">http://yapc10.org</a></p>
+
+<p>Les "PGCon 2009" ont lieu cette semaine &agrave; Ottawa. Attendez-vous apr&egrave;s coup &agrave; un afflux de nouvelles.</p>
+
+<p><strong>La fonctionnalit&eacute; 8.4 de la semaine</strong></p>
+
+<p>Les expressions de tables communes (CTE). Avec une syntaxe facile d'acc&egrave;s, vous pouvez configurer, &agrave; la vol&eacute;e, vos propres vues &agrave; usage unique. Et elles sont r&eacute;cursives, ce qui place les structures hi&eacute;rarchiques &agrave; port&eacute;e de main. [ndt: 
+
+<a target="_blank" href="http://docs.postgresql.fr/8.4/queries-with.html]">http://docs.postgresql.fr/8.4/queries-with.html</a>]</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>N'utilisez jamais <tt>fsync=off</tt> &agrave; moins que vous puissiez vous permettre de reconstruire tout votre cluster BDD &agrave; partir de rien. Si le log de transaction (WAL) fait trop baisser les performances, utilisez plut&ocirc;t <tt>synchronous_commit=false</tt>.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090517">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en May</strong></p>
 

@@ -6,6 +6,98 @@ redirect_from: "index.php?post/2010-07-18-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 9.0 beta 3 sera bient&ocirc;t disponible [ndt: <a href="http://blog.postgresql.fr/index.php?post/2010/07/13/Sortie-de-la-verion-beta-3-de-PostgreSQL-9.0">article d&eacute;di&eacute;</a>].Pr&eacute;parez-vous &agrave; tester&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/developer/beta">http://www.postgresql.org/developer/beta</a></p>
+
+<p>Rassemblement PostgreSQL/PostGIS le 14 juillet 2010 &agrave; 18h, &agrave; Zurich (Suisse) au bOm kultur caf&eacute; &amp; bar &agrave; l'ETH [ndt: institut f&eacute;d&eacute;ral technologique] Zurich. Informations et inscriptions (informelles)&nbsp;: 
+
+<a target="_blank" href="http://www.gis.hsr.ch/wiki/Agenda">http://www.gis.hsr.ch/wiki/Agenda</a></p>
+
+<p>Reuven Lerner donnera un cours de 5 jours sur PostgreSQL du 1er au 5 ao&ucirc;t au "Hi-Tech College" de Herzliya (Isra&euml;l)&nbsp;: 
+
+<a target="_blank" href="http://www.hi-tech.co.il/college/default.asp?PageID=12&amp;CourseNum=4288">http://www.hi-tech.co.il/college/default.asp?PageID=12&amp;CourseNum=4288</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Benetl 3.5, un ETL pour fichiers utilisant PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.benetl.net">http://www.benetl.net</a></li>
+
+<li>DataArchitect 4.2, un outil de dessin de diagramme relationnel et d'ing&eacute;nierie inverse compatible PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.thekompany.com/products/dataarchitect/">http://www.thekompany.com/products/dataarchitect/</a></li>
+
+<li>PostgreSQL Maestro 10.7, un outil d'administration graphique pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.sqlmaestro.com/products/postgresql/maestro/">http://www.sqlmaestro.com/products/postgresql/maestro/</a></li>
+
+<li>Muldis-D 0.130.0, une sp&eacute;cification pour un langage objet-relationnel pr&eacute;vu pour utiliser, entre autres syst&egrave;mes, PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://muldis.com/Muldis_D.html">http://muldis.com/Muldis_D.html</a></li>
+
+<li>RHQ 3.0.0, une application de gestion et de surveillance&nbsp;: 
+
+<a target="_blank" href="http://rhq-project.org/">http://rhq-project.org/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en juillet</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-07/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-07/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le PDXPUG Day est programm&eacute; pour le 18 juillet 2010 &agrave; "l'Oregon Convention Center" &agrave; Portland. D'avantage d'informations&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/PDXPUGDay2010">http://wiki.postgresql.org/wiki/PDXPUGDay2010</a></li>
+
+<li>L'OSCON aura lieu &agrave; Portland (Oregon) du 19 au 23 juillet 2010&nbsp;: 
+
+<a target="_blank" href="http://www.oscon.com/oscon2010">http://www.oscon.com/oscon2010</a></li>
+
+<li>La FrOSCon 2010 aura lieu &agrave; St. Augustin, Allemagne les 21 &amp; 22 ao&ucirc;t 2010. Le PUG allemand a obtenu sa propre salle de dev. et est &agrave; la recherche de conf&eacute;renciers. Plus de d&eacute;tails&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/711-FrOSCon-2010-PostgreSQL-devroom-Call-for-papers.html">http://andreas.scherbaum.la/blog/archives/711-FrOSCon-2010-PostgreSQL-devroom-Call-for-papers.html</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20100711">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues</strong></p>
 

@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-103 "
 ---
 
 
+<p><strong>== Nouvelles hebdomadaires de PostgreSQL -  21 Août 2005 ==</strong></p>
+
+<p><em>PostgreSQL Weekly News a été rédigé par  David Fetter et Andrew Dunstan et posté sur la liste pg-announce</em></p>
+
+<p>
+
+Greg Sabino Mullane a trouvé un bug tordu dans PL/Perl, et la correction est encore plus tordue.
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-bugs/2005-08/msg00133.php">http://archives.postgresql.org/pgsql-bugs/2005-08/msg00133.php</a></p>
+
+<!--more-->
+
 
 Andrew Dunstan a trouvé un bug dans IPv6 sur Windows et Chuck McDevitt de
 

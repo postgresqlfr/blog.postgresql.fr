@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2019-08-08-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>barman 2.9, un gestionnaire de sauvegarde et restauration pour PostgreSQL&nbsp;: <a target="_blank" href="https://www.pgbarman.org/barman-2-9-released/">https://www.pgbarman.org/barman-2-9-released/</a></li>
+
+<li>pg_probackup 2.1.5, un utilitaire pour g&eacute;rer les sauvegardes et les restaurations de clusters PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/postgrespro/pg_probackup">https://github.com/postgrespro/pg_probackup</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en ao&ucirc;t</h2>
 

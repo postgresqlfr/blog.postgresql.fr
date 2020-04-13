@@ -6,6 +6,70 @@ redirect_from: "index.php?post/2016-03-08-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La <em>PgConf Silicon Valley 2016</em> aura lieu du 14 au 16 novembre 2016&nbsp;: <a target="_blank" href="http://www.pgconfsv.com/">http://www.pgconfsv.com/</a></p>
+
+<p>[ndt: meetup à Nantes le jeudi 17 mars&nbsp;: <a target="_blank" href="http://www.meetup.com/fr-FR/PostgreSQL-User-Group-Nantes/">http://www.meetup.com/fr-FR/PostgreSQL-User-Group-Nantes/</a>]</p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>barman 1.6.0, un gestionnaire de sauvegarde et restauration pour PostgreSQL&nbsp;: <a target="_blank" href="http://www.pgbarman.org/barman-1-6-0-released/">http://www.pgbarman.org/barman-1-6-0-released/</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en mars</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2016-03/">http://archives.postgresql.org/pgsql-jobs/2016-03/</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>La premi&egrave;re conf&eacute;rence PostgreSQL pan-asiatique se tiendra les 17 et 19 mars 2016 &agrave; Singapour. Les inscriptions sont ouvertes&nbsp;: <a target="_blank" href="http://2016.pgday.asia/">http://2016.pgday.asia/</a></li>
+
+<li>Le PGDay nordique, une s&eacute;rie de conf&eacute;rences sur une seule journ&eacute;e, aura lieu &agrave; Helsinki (Finlande) le 17 mars 2016. Les inscriptions sont encore ouvertes&nbsp;: <a target="_blank" href="http://2016.nordicpgday.org/">http://2016.nordicpgday.org/</a></li>
+
+<li>Les inscriptions pour le PGDay Paris 2016, pr&eacute;vu pour le 31 mars, sont ouvertes&nbsp;: <a target="_blank" href="http://www.pgday.paris/registration/">http://www.pgday.paris/registration/</a></li>
+
+<li>La 8<sup>&egrave;me</sup> Session PostgreSQL aura lieu le 6 avril 2016 &agrave; Lyon (France).</li>
+
+<li>La <em>PGConf US 2016</em> aura lieu les 18, 19 et 20 avril &agrave; New-York City. Les inscriptions sont ouvertes&nbsp;: <a target="_blank" href="http://www.pgconf.us/2016/">http://www.pgconf.us/2016/</a></li>
+
+<li>La <em>LinuxFest Northwest</em> aura lieu les 23 et 24 avril 2016 au Coll&egrave;ge Technique de Bellingham (Washington, USA). L'appel &agrave; conf&eacute;renciers est maintenant lanc&eacute;&nbsp;: <a target="_blank" href="http://www.linuxfestnorthwest.org/2016/present">http://www.linuxfestnorthwest.org/2016/present</a></li>
+
+<li>FOSS4G NA (<em>Free and Open Source Software for Geospatial - North America</em>) se tiendra &agrave; Raleigh, en Caroline du Nord, du 2 au 5 mai 2016. Les candidatures de conf&eacute;renciers sont encore accept&eacute;es&nbsp;: <a target="_blank" href="https://2016.foss4g-na.org/cfp">https://2016.foss4g-na.org/cfp</a></li>
+
+<li>La <em>PGCon 2016</em> se tiendra du 17 au 21 mai 2016 &agrave; Ottawa&nbsp;: <a target="_blank" href="http://www.pgcon.org/">http://www.pgcon.org/</a></li>
+
+<li>Le PGDay suisse sera, cette ann&eacute;e, tenue &agrave; l'Universit&eacute; des Sciences Appliqu&eacute;es (HSR) de Rapperswil le 24 juin 2016. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: <a target="_blank" href="http://www.pgday.ch/">http://www.pgday.ch/</a></li>
+
+<li>"5432 ... Meet us!" aura lieu &agrave; Milan (Italie) les 28 &amp; 29 juin 2016. L'appel &agrave; conf&eacute;renciers court jusqu'au 14 mars&nbsp;: <a target="_blank" href="http://5432meet.us/">http://5432meet.us/</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20160306234210.GE28543@fetter.org">http://www.postgresql.org/message-id/20160306234210.GE28543@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-259 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 29 juillet 2007</strong></p>
+
+<p>
+
+"L'armée de <em>schtroumpfs</em>" de PostgreSQL était sortie en force pour l'OSCON 2007, et beaucoup de personnes sont venues pour poser des questions spécifiques ce qui contraste avec les années précédentes où les questions habituelles étaient de l'ordre "Et pourquoi pas MySQL?". Un des grands moments fut lorsqu'un vigile est arrivé au stand en disant en substance, "ne prétez pas attention à mon badge. J'ai installé Postgres sur ma machine et je voudrais savoir comment je pourrais mieux l'utiliser."
+
+</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

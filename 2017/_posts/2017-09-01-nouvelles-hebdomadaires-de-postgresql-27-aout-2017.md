@@ -6,6 +6,68 @@ redirect_from: "index.php?post/2017-09-01-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>[ndt: Meetup le 25 septembre &agrave; Toulouse&nbsp;: <a target="_blank" href="https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Toulouse/">https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Toulouse/</a>]</p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>OmniDB, un outil de gestion de BDD via navigateur web&nbsp;: <a target="_blank" href="https://www.2ndquadrant.com/en/resources/omnidb">https://www.2ndquadrant.com/en/resources/omnidb</a></li>
+
+<li>PostgreSQL Maestro 17.8, un outil de gestion bas&eacute; sur ODBC, compatible avec PostgreSQL&nbsp;: <a target="_blank" href="https://www.sqlmaestro.com/products/postgresql/maestro/">https://www.sqlmaestro.com/products/postgresql/maestro/</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en ao&ucirc;t</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2017-08/">http://archives.postgresql.org/pgsql-jobs/2017-08/</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>Le PostgresOpen aura lieu &agrave; San Francisco du 6 au 8 septembre&nbsp;: <a target="_blank" href="https://2017.postgresopen.org/">https://2017.postgresopen.org/</a></li>
+
+<li>PGBR2017 (La PgConf br&eacute;silienne) aura lieu &agrave; Porto Alegre (&Eacute;tat du Rio Grande do Sul) du 14 au 16 septembre 2017&nbsp;: <a target="_blank" href="https://pgbr.postgresql.org.br/2017/">https://pgbr.postgresql.org.br/2017/</a></li>
+
+<li>[ndt: Meetup le 20 septembre &agrave; Lyon sur PostgreSQL 10&nbsp;: <a target="_blank" href="https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/">https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/</a>]</li>
+
+<li>PGDay.IT 2017 aura lieu &agrave; Milan (Italie) le 13 octobre&nbsp;: <a target="_blank" href="http://pgday.it">http://pgday.it</a></li>
+
+<li>La <em>PostgreSQL Conference Europe 2017</em> aura lieu du 24 au 27 octobre 2017 au Warsaw Marriott Hotel, &agrave; Varsovie (Pologne)&nbsp;: <a target="_blank" href="https://2017.pgconf.eu/">https://2017.pgconf.eu/</a></li>
+
+<li><em>PGConf Local&nbsp;: Seattle</em> aura lieu les 13 et 14 novembre 2017&nbsp;: <a target="_blank" href="https://www.pgconf.us/#Seattle2017">https://www.pgconf.us/#Seattle2017</a></li>
+
+<li>Le <em>PGDay Australia 2017</em> se tiendra &agrave; Melbourne le 17 novembre. L'appel &agrave; conf&eacute;renciers court jusqu'au 8 septembre&nbsp;: <a target="_blank" href="https://goo.gl/5d9EbT">https://goo.gl/5d9EbT</a> <a target="_blank" href="http://2017.pgday.com.au/">http://2017.pgday.com.au/</a></li>
+
+<li><em>PGConf Local&nbsp;: Austin</em> aura lieu les 4 & 5 d&eacute;cembre 2017. L'appel &agrave; conf&eacute;renciers a &eacute;t&eacute; lanc&eacute;&nbsp;: <a target="_blank" href="https://www.pgconf.us/conferences/Austin2017">https://www.pgconf.us/conferences/Austin2017</a></li>
+
+<li>La PGConf.ASIA 2017 aura lieu &agrave; Akihabara (Tokyo, Japon) du 4 au 6 d&eacute;cembre 2017&nbsp;: <a target="_blank" href="http://www.pgconf.asia/EN/2017/">http://www.pgconf.asia/EN/2017/</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20170827202948.GA11346@fetter.org">http://www.postgresql.org/message-id/20170827202948.GA11346@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

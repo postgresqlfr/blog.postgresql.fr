@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2019-07-26-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La <em>2Q PGConf 2019</em> se tiendra &agrave; Chicago les 4 & 5 d&eacute;cembre. L'appel &agrave; conf&eacute;renciers court jusqu'au 30 ao&ucirc;t 2019&nbsp;: <a target="_blank" href="https://www.2qpgconf.com/">https://www.2qpgconf.com/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>postgres-checkup 1.2 "The Guardian's Voice", un outil permettant de g&eacute;n&eacute;rer des rapports de sant&eacute; de clusters PostgreSQL&nbsp;: <a target="_blank" href="https://gitlab.com/postgres-ai-team/postgres-checkup/tags/1.2">https://gitlab.com/postgres-ai-team/postgres-checkup/tags/1.2</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en juillet</h2>
 

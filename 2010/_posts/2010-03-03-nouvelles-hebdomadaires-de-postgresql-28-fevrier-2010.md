@@ -6,6 +6,110 @@ redirect_from: "index.php?post/2010-03-03-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 9.0alpha4 est disponible. &Agrave; vos tests&nbsp;! D&eacute;tails et t&eacute;l&eacute;chargement&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/developer/alpha">http://www.postgresql.org/developer/alpha</a> <a target="_blank" href="http://www.postgresql.org/ftp/source/9.0alpha4">http://www.postgresql.org/ftp/source/9.0alpha4</a></p>
+
+<p>Les inscriptions pour la PGCon 2010 sont ouvertes&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2010/registration.php">http://www.pgcon.org/2010/registration.php</a></p>
+
+<p>Le BWPUG [ndt: Baltimore/Washington PUG] se r&eacute;unira &agrave; Falls Church (Virginie, &Eacute;tats-Unis) le 10 mars &agrave; 18h30&nbsp;: 
+
+<a target="_blank" href="http://www.xzilla.net/blog/2010/Feb/BWPUG-March-10th,-Falls-Church-take-two..html">http://www.xzilla.net/blog/2010/Feb/BWPUG-March-10th,-Falls-Church-take-two..html</a></p>
+
+<p>L'appel aux conf&eacute;renciers pour l'OSBridge est lanc&eacute;&nbsp;! 
+
+<a target="_blank" href="http://opensourcebridge.org/events/2010/proposals/">http://opensourcebridge.org/events/2010/proposals/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>"The Karoo Project", une plateforme de d&eacute;veloppement pour applications PostgreSQL distribu&eacute;es, propose maintenant un ensemble de widgets pour les interfaces web&nbsp;: 
+
+<a target="_blank" href="http://www.zwartberg.com/widgets.html">http://www.zwartberg.com/widgets.html</a></li>
+
+<li>pgFouine 1.2, un analyseur de log pour PostgreSQL &eacute;crit en PHP&nbsp;: 
+
+<a target="_blank" href="http://pgfouine.projects.postgresql.org/">http://pgfouine.projects.postgresql.org/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 9.0 de la semaine</strong></p>
+
+<p>La suite "pgbench" est maintenant multi-thread&eacute;e, prenant ainsi avantage des processeurs &agrave; c&oelig;urs multiples.</p>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-02/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-02/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le PUG germanophone aura un stand dans le "Project Lounge" du hall 2 au Cebit 2010 du 2 au 6 mars 2010 &agrave; Hanovre&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/649-PostgreSQL-stand-at-Cebit-2010.html">http://andreas.scherbaum.la/blog/archives/649-PostgreSQL-stand-at-Cebit-2010.html</a></li>
+
+<li>Le PUG allemand aura un stand aux Linuxdays de Chemnitz les 13 et 14 mars 2010. Andreas (ads) Scherbaum y donnera une conf&eacute;rence sur PostgreSQL 9.0 et dirigera un atelier sur la configuration de PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/652-PostgreSQL-stand-at-Chemnitz-Linux-Days-2010.html">http://andreas.scherbaum.la/blog/archives/652-PostgreSQL-stand-at-Chemnitz-Linux-Days-2010.html</a> <a target="_blank" href="http://chemnitzer.linux-tage.de/2010/vortraege/plan.html">http://chemnitzer.linux-tage.de/2010/vortraege/plan.html</a></li>
+
+<li>La "JDCon East" aura lieu &agrave; Philadelphie (Pennsylvanie, &Eacute;tats-Unis) du 25 au 28 mars 2010&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org/2010/east">http://www.postgresqlconference.org/2010/east</a></li>
+
+<li>La "Linuxfest Northwest 2010" aura lieu &agrave; Bellingham, Washington, &Eacute;tats-Unis les 24 et 25 avril. Conf&eacute;rences, r&eacute;unions et m&eacute;c&eacute;nat sont proposables&nbsp;: 
+
+<a target="_blank" href="http://linuxfestnorthwest.org/">http://linuxfestnorthwest.org/</a></li>
+
+<li>Andreas (ads) Scherbaum enseignera au centre pour adultes de Magdeburg (All.) du 3 au 7 mai 2010 sur le sujet "PostgreSQL for Corporate Use". D&eacute;tails ci-dessous&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/650-PostgreSQL-Schulung-als-Bildungsurlaub-03.-07.05.2010-in-Magdeburg.html">http://andreas.scherbaum.la/blog/archives/650-PostgreSQL-Schulung-als-Bildungsurlaub-03.-07.05.2010-in-Magdeburg.html</a></li>
+
+<li>La PgCon 2010 aura lieu les 20 &amp; 21 mai 2010 &agrave; Ottawa avec des tutoriels les 18 et 19. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;! 
+
+<a target="_blank" href="http://www.pgcon.org/2010/registration.php">http://www.pgcon.org/2010/registration.php</a></li>
+
+<li>L'OSCON aura lieu &agrave; Portland (Oregon) du 19 au 23 juillet 2010&nbsp;: 
+
+<a target="_blank" href="http://www.oscon.com/oscon2010">http://www.oscon.com/oscon2010</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20100228">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

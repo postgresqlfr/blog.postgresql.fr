@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-224 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>On parle de plus en plus de PostgreSQL, et des SGBD libre en général, comme des alternatives sérieuses aux SGBD propriétaires, y compris pour les applications dites <strong>critiques</strong>. Ce qui est notable en cette fin d'année, c'est que non seulement on en parle, mais on le fait vraiment. Nombre d'applications critiques tournent déjà sur plusieurs sites, y compris en France.</p>
 

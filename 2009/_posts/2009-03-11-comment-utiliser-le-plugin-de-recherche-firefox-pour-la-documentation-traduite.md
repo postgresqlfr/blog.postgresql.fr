@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2009-03-11-comment-utiliser-le-plugin-de-recherch
 
 
 
+
+<!--more-->
+
+
 Il existe un plugin de recherche Firefox pour trois versions : 8.3, 8.2 et 8.1. Pour l'installer, il vous suffit d'aller sur la page de la documentation de la version. Par exemple http://docs.postgresql.fr/8.3/. En regardant le champ de recherche de Firefox, vous devriez voir la liste déroulante bleutée comme sur cette copie d'écran :
 
 

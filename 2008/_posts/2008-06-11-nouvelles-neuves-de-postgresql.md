@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-427 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 8 juin 2008</strong></p>
+
+<p>PostgreSQL 8.3.3 et "pères" seront bientôt disponibles. Échauffez-vous pour les mises à jour&nbsp;!
+
+[update: les maj sont maintenant disponibles. Plus d'infos <a href="http://www.postgresqlfr.org/?q=node/1659">ici</a>]</p>
+
+<p>[ndt: à propos de la nouvelle sur la réplication au coeur de PG, un article détaillé et en français <a href="http://blog.guillaume.lelarge.info/index.php/post/2008/06/07/Une-replication-au-coeur-de-PostgreSQL">ici</a>]</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

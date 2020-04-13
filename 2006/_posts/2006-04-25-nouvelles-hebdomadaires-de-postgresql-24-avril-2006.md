@@ -6,6 +6,32 @@ redirect_from: "index.php?post/drupal-180 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 24 Avril 2006</strong></p>
+
+<p>
+
+Nous avons besoin d'étudiants et de mentors qui souhaiteraient travailler sur les projets PostgreSQL pour le prochain « <em>Summer Of Code</em> » de Google. Un des gagnants de l'année dernière était  <a target="_blank" href="http://pgfoundry.org/projects/qbe/"> le projet « <em>Query By Example</em>»</a>. Si vous êtes professeur,  lycéen ou étudiant et que vous êtes intéressé par la partie base de données du projet Summer of Code, et particulièrement si vous avez déjà votre propre projet en relation avec PostgreSQL, prenez contact avec <a href="mailto:josh%20at%20postgresql%20dot%20org">Josh Berkus</a> le plus rapidement possible.  <a target="_blank" href="http://www.postgresql.org/developer/summerofcode">http://www.postgresql.org/developer/summerofcode</a>
+
+</p>
+
+<p>
+
+Un nouveau vote est disponible sur le site principal de PostgreSQL.  <a target="_blank" href="http://www.postgresql.org/community/">http://www.postgresql.org/community/</a>
+
+</p>
+
+<p>L'inscription pour le PostgreSQL Anniversary est ouverte :
+
+<a target="_blank" href="http://conference.postgresql.org/Registration">http://conference.postgresql.org/Registration</a>
+
+</p>
+
+<p>
+
+Le PostgreSQL Anniversary Summit vous est proposé par  Afilias, EnterpriseDB, GreenPlum, Pervasive et Sun Microsystems. </p>
+
+<!--more-->
+
 
 <strong>Communautés régionales de PostgreSQL</strong>
 

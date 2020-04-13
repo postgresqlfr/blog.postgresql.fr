@@ -6,6 +6,38 @@ redirect_from: "index.php?post/2009-10-22-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La Commitfest 2009-09 est maintenant termin&eacute;e. Vous pouvez d&egrave;s &agrave; pr&eacute;sent recommencer &agrave; travailler sur vos propres patchs&nbsp;:)</p>
+
+<p>La "PostgreSQL Conference (JDCon) West" s'est conclue aujourd'hui. Merci &agrave; toutes les merveilleuses personnes de Seattle pour en avoir fait un succ&egrave;s.</p>
+
+<p>[ndt] Fin des inscriptions au PGDay.EU 2009 vendredi 23 au soir. Apr&egrave;s cette date, ce sera sur place avec une majoration.</p>
+
+<p>[ndt] En bordure du PGDay.EU, David Fetter fera une conf&eacute;rence chez Parinux le 10 novembre. Plus d'infos&nbsp;: 
+
+<a target="_blank" href="http://www.parinux.org/content/conference-postgresql-le-mardi-11-novembre-2009">http://www.parinux.org/content/conference-postgresql-le-mardi-11-novembre-2009</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>PWN Translator 3.0, un script d'aide &agrave; la traduction des Nouvelles Hebdomadaires de PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pwn-translation/">http://pgfoundry.org/projects/pwn-translation/</a></li>
+
+<li>Benetl 3.2, un outil d'ETL pour fichiers&nbsp;: 
+
+<a target="_blank" href="http://www.benetl.net">http://www.benetl.net</a></li>
+
+<li>Bucardo 4.3.0, un syst&egrave;me de r&eacute;plication capable de g&eacute;rer deux instances "ma&icirc;tres"&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/wiki/Bucardo">http://bucardo.org/wiki/Bucardo</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20091018">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en octobre</strong></p>
 

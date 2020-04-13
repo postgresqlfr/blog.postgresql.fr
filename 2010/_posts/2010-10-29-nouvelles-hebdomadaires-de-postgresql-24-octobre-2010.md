@@ -6,6 +6,94 @@ redirect_from: "index.php?post/2010-10-29-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Nouveau sondage : Que pensez-vous du <em>Hot Standby / Streaming Replication</em>&nbsp;? 
+
+<a target="_blank" href="http://www.postgresql.org/community">http://www.postgresql.org/community</a></p>
+
+<p>Andreas Scherbaum a tenu une conf&eacute;rence en allemand sur PostgreSQL. Podcast disponible sur&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/743-POFACS-PostgreSQL.html">http://andreas.scherbaum.la/blog/archives/743-POFACS-PostgreSQL.html</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Another PostgreSQL Diff Tool 2.3, un outil de "diff" pour bases de donn&eacute;es&nbsp;: 
+
+<a target="_blank" href="http://apgdiff.startnet.biz/">http://apgdiff.startnet.biz/</a></li>
+
+<li>plproxyrc, un outil pour configurer PL/Proxy&nbsp;: 
+
+<a target="_blank" href="http://github.com/myYearbook/plproxyrc">http://github.com/myYearbook/plproxyrc</a></li>
+
+<li>partmanteau, un gestionnaire de partitionnement pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://github.com/myYearbook/partmanteau">http://github.com/myYearbook/partmanteau</a></li>
+
+<li>pgpool-II 3.0.1, un gestionnaire de connexion et bien d'avantage, et pgpoolAdmin 3.0.1, une interface graphique pour pgpool&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en octobre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-10/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-10/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La date limite de l'appel &agrave; conf&eacute;renciers pour la <em>MySQL Conf</em> est le 25 octobre. Mail &agrave; Selena Deckelman (selenamarie &lt;AT&gt; gmail &lt;DOT&gt; com) pour un retour, une conseil &agrave; la candidature, ou une aide pour trouver des id&eacute;es&nbsp;: 
+
+<a target="_blank" href="http://en.oreilly.com/mysql2011/public/cfp/126">http://en.oreilly.com/mysql2011/public/cfp/126</a></li>
+
+<li>Les inscriptions pour la JDCon West 2010 [ndt: 2-4 nov.] sont toujours ouvertes. Scott McNealy, ancien de Sun Microsystems, tiendra une <em>keynote</em>&nbsp;: 
+
+<a target="_blank" href="https://www.postgresqlconference.org/content/pgwest-2010-registration">https://www.postgresqlconference.org/content/pgwest-2010-registration</a></li>
+
+<li>L'appel &agrave; conf&eacute;renciers pour le PGDay.EU 2010, tenu du 6 au 8 d&eacute;cembre &agrave; Stuttgart (All.), est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2010.pgday.eu/register">http://2010.pgday.eu/register</a></li>
+
+<li>PgDay.IT 2010 aura lieu &agrave; Rome le 10 d&eacute;cembre de cette ann&eacute;e. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.it/">http://www.pgday.it/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20101024">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues</strong></p>
 

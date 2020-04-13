@@ -6,6 +6,48 @@ redirect_from: "index.php?post/2009-04-02-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 29 mars 2009</strong></p>
+
+<p>Les derniers points pour le dernier CommitFest de la 8.4 ont &eacute;t&eacute; termin&eacute;s. Attendez-vous &agrave; une annonce majeure dans le courant de la semaine. [ndt: <a href="http://wiki.postgresql.org/wiki/CommitFest_2008-11">http://wiki.postgresql.org/wiki/CommitFest_2008-11</a>]</p>
+
+<p>Le d&eacute;p&ocirc;t Git prend maintenant en charge les logins communautaires, et est nettement plus facile &agrave; utiliser et &agrave; g&eacute;rer&nbsp;: 
+
+<a target="_blank" href="http://git.postgresql.org/">http://git.postgresql.org/</a></p>
+
+<p>Nouveau sondage&nbsp;: Quel est votre outil de r&eacute;plication favori&nbsp;? 
+
+<a target="_blank" href="http://www.postgresql.org/community/">http://www.postgresql.org/community/</a></p>
+
+<p>Devrim GUNDUZ a publi&eacute; un nouvel ensemble de paquets RPM de test. Lancez-vous et testez&nbsp;:) 
+
+<a target="_blank" href="http://yum.pgsqlrpms.org/news-8.4devel-ready-for-testing.php">http://yum.pgsqlrpms.org/news-8.4devel-ready-for-testing.php</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>pgAdmin 1.10 beta 2, un outil graphique de gestion pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/ftp/pgadmin3/release/v1.10.0-beta2/">http://www.postgresql.org/ftp/pgadmin3/release/v1.10.0-beta2/</a></li>
+
+<li>DBD::Pg 2.12.0, un connecteur Perl pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://search.cpan.org/dist/DBD-Pg/">http://search.cpan.org/dist/DBD-Pg/</a></li>
+
+</ul>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Vous pouvez utiliser un fichier pg_service pour mettre en place diff&eacute;rents "profils" de connexions &agrave; vos serveurs.</p>
+
+<p><strong>La fonctionnalit&eacute; 8.4 de la semaine</strong></p>
+
+<p>Nettoyage SSL&nbsp;: Magnus Hagander a nettoy&eacute; le code de connexion SSL afin de le rendre plus intuitif et plus fiable. Cela permet &eacute;galement d'indiquer, pour une connexion sp&eacute;cifique, quel certificat doit &ecirc;tre utilis&eacute;.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090329">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en mars</strong></p>
 

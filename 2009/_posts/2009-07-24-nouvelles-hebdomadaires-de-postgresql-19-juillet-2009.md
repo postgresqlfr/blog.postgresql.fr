@@ -6,6 +6,40 @@ redirect_from: "index.php?post/2009-07-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La premi&egrave;re Commitfest du cycle de d&eacute;veloppement de la 8.5 est ouverte&nbsp;! 
+
+<a target="_blank" href="http://commitfest.postgresql.org/">http://commitfest.postgresql.org/</a></p>
+
+<p>Le PUG italien a rejoint le "PostgreSQL Translation Project". Un groupe de travail de 9 personnes a entrepris de rendre plus verte la section italienne de <a href="http://babel.postgresql.org/">babel.postgresql.org</a>. Plus d'informations en italien&nbsp;: 
+
+<a target="_blank" href="http://traduzioni.itpug.org/">http://traduzioni.itpug.org/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Archiveopteryx 3.1.2, un gestionnaire d'email bas&eacute; sur PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.archiveopteryx.org/3.1.2">http://www.archiveopteryx.org/3.1.2</a></li>
+
+<li>Benetl 2.9, un ETL pour fichiers utilisant PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.benetl.net">http://www.benetl.net</a></li>
+
+<li>Npgsql2 2.0.6, un gestionnaire .NET de donn&eacute;es pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.npgsql.org">http://www.npgsql.org</a></li>
+
+<li>PostgreDAC ver. 2.5.2&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/connectivity/postgresdac/download/">http://microolap.com/products/connectivity/postgresdac/download/</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090719">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en juillet</strong></p>
 

@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-220 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 13 Mai 2007</strong></p>
+
+<p>Il y a quelques discussions animées sur la
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-patches/2007-05/threads.php">mailing list -patches.</a></p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

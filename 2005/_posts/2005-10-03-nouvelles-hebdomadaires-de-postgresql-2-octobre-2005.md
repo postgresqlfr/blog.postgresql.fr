@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-121 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - October 02 2005</strong></p>
+
+<p>
+
+Une discussion animée s'est poursuivie sur -hackers au sujet du tri externe, un point important à prendre en considération concernant les performances des grosses bases de données. Si la discussion est bonne, le code sera également bon.</p>
+
+<!--more-->
+
 
 <strong>Nouvelles des produits autour de PostgreSQL</strong>
 

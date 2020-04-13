@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-88 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p><a href="http://www.oracle.com/corporate/pressroom/html/ellisonl.html" target="_blank">Lawrence J. Ellison</a> fait encore parler de lui ces jours-cis dans la presse Américaine&nbsp;!</p>
 

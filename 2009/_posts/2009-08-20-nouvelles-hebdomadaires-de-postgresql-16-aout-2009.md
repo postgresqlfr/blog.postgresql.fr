@@ -6,6 +6,26 @@ redirect_from: "index.php?post/2009-08-20-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La premi&egrave;re <em>commitfest</em> du cycle de la 8.5 se conclut. Avec presque 40 patchs appliqu&eacute;s et seulement 5 rejets sans appel, le d&eacute;veloppement de cette nouvelle version se fait encore plus paisiblement et plus efficacement que ne se fit celui de la 8.4.</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>pgfincore 0.3, un outil pour d&eacute;terminer quels fichiers ou parties de PG sont dans le cache de l'OS&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgfincore/">http://pgfoundry.org/projects/pgfincore/</a></li>
+
+<li>pgpool-II 2.2.3, un gestionnaire de connexions et bien d'avantage&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090816">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en ao&ucirc;t</strong></p>
 

@@ -6,6 +6,16 @@ redirect_from: "index.php?post/2018-07-03-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>psycopg2 2.7.5, un connecteur python pour PostgreSQL&nbsp;: <a target="_blank" href="http://initd.org/psycopg/articles/2018/06/17/psycopg-275-released/">http://initd.org/psycopg/articles/2018/06/17/psycopg-275-released/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en juin</h2>
 

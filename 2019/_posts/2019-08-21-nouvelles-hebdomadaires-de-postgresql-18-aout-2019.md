@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2019-08-21-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgpool-II versions 4.0.6, 3.7.11, 3.6.18, 3.5.22 et 3.4.25 publi&eacute;es. <a target="_blank" href="http://pgpool.net/mediawiki/index.php/Downloads">http://pgpool.net/mediawiki/index.php/Downloads</a></li>
+
+<li>PostGIS versions 3.0.0alpha4, 2.5.3, 2.4.8, et 2.3.10, le syst&egrave;me d'information g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL&nbsp;: <a target="_blank" href="https://postgis.net/2019/08/11/postgis-patches/">https://postgis.net/2019/08/11/postgis-patches/</a></li>
+
+<li>temboard 4.0, un outil de gestion pour PostgreSQL&nbsp;: <a target="_blank" href="http://temboard.io/">http://temboard.io/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en ao&ucirc;t</h2>
 

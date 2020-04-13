@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2016-05-13-postgresql-9-6-beta-est-sortie-testez-
 
 
 
+
+<!--more-->
+
+
 Le PostgreSQL Global Development Group (PGDG) vient d'annoncer la sortie de la première version bêta de PostgreSQL 9.6. Cette version donne un aperçu de toutes les fonctionnalités qui seront présentes dans la version finale, même si certains détails peuvent encore changer. Le projet PostgreSQL encourage tous les utilisateurs à tester leurs applications sur cette version.
 
 

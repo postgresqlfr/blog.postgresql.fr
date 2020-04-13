@@ -6,6 +6,10 @@ redirect_from: "index.php?post/2019-12-17-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les derni&egrave;res publications des paquets PostgreSQL depuis apt.postgresql.org, debian.org et ubuntu.com corrigent une vuln&eacute;rabilit&eacute; (CVE-2019-3466) par laquelle un superutilisateur PostgreSQL pourrait r&eacute;cup&eacute;rer des droits root via une faiblesse de la commande 'pg_ctlcluster'. Merci de suivre les &eacute;tapes d'endiguement ci-apr&egrave;s&nbsp;: <a target="_blank" href="https://www.postgresql.org/about/news/1998/">https://www.postgresql.org/about/news/1998/</a></p>
+
+<!--more-->
+
 
 <h2>PostgreSQL Local</h2>
 

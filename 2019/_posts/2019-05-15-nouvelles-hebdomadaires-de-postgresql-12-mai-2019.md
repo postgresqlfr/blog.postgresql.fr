@@ -6,6 +6,10 @@ redirect_from: "index.php?post/2019-05-15-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les mises &agrave; jour de s&eacute;curit&eacute; 11.3, 10.8, 9.6.13, 9.5.17 et 9.4.22 ont &eacute;t&eacute; publi&eacute;es. Mettez &agrave; jour d&egrave;s que possible&nbsp;! <a target="_blank" href="https://www.postgresql.org/about/news/1939/">https://www.postgresql.org/about/news/1939/</a></p>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en mai</h2>
 

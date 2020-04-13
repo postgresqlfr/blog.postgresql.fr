@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-169 "
 ---
 
 
+<p>
+
+Dans les listes de diffusion de PostgreSQL, il y a des moments de grâce parfois. Comme par exemple quand un utilisateur vient de lui-même présenter son usage de PostgreSQL. C'est ce qui est arrivé, une fois de plus, le 13 mars sur la liste <em>pgsql-advocacy</em>. Kevin Grittner nous a envoyé le mail suivant (<a href="http://archives.postgresql.org/pgsql-advocacy/2006-03/msg00113.php" target="_blank">mail original en anglais</a>):
+
+</p>
+
+<!--more-->
+
 
 Le Système de Consolidation Automatique des Programmes de la Cour du Wisconsin a migré à PostgreSQL pour tout ce qui concerne les applications Web de la Cour. Huit bases de données de production ont été converties, six d'entre elles ont une volumétrie d'environ 180 Gb. Elles contiennent des informations état par état de quelques 72 bases de données de comtés qui sont répliquées en temps réel. La copie centrale est utilisée pour des audits, des calculs statistiques et la génération de rapports, et ce site web:
 

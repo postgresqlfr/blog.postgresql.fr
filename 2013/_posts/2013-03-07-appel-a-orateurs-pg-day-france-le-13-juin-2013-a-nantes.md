@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2013-03-07-appel-a-orateurs-pg-day-france-le-13-j
 
 
 
+
+<!--more-->
+
+
 Le PG Day France est la conférence annuelle de la communauté francophone de PostgreSQL. Cette année, l’événement se tiendra le jeudi 13 juin à Nantes. Une centaine de visiteurs sont attendus pour une journée d'échanges autour de PostgreSQL et de ses projets associés. 
 
 

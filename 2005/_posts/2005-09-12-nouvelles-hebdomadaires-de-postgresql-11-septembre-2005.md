@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-115 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 11 Septembre 2005</strong></p>
+
+<p>
+
+Tom Lane vient de créer une nouvelle manière d'enregistrer les langages de procédures stockées. Une des conséquences en sera qu'il sera possible de faire un "<em>drop</em>" du schéma 'public', comme certains préfèreraient le faire. Une autre conséquence est un pg_dump(all) plus propre et fonctionnant mieux.</p>
+
+<!--more-->
+
 
 <strong>Nouvelles des produits autour de PostgreSQL</strong>
 

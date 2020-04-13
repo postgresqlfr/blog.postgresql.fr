@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-148 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Suite au concours de création que nous avions lancé il y a quelques temps, nous avons reçu quelques propositions.</p>
 

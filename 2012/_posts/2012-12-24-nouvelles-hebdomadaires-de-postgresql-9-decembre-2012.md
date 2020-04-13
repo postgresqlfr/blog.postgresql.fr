@@ -6,6 +6,84 @@ redirect_from: "index.php?post/2012-12-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Correction de bug avec les versions 9.2.2, 9.1.7, 9.0.11 et 8.4.15. Mettez &agrave; jour d&egrave;s que possible&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/about/news/1430/">http://www.postgresql.org/about/news/1430/</a></p>
+
+<p>PGDG offre maintenant un d&eacute;p&ocirc;t pour les paquets .deb (Debian/Ubuntu)&nbsp;: 
+
+<a target="_blank" href="https://wiki.postgresql.org/wiki/Apt">https://wiki.postgresql.org/wiki/Apt</a></p>
+
+<p>PGCon 2013 aura lieu les 23 &amp; 24 mai 2013 &agrave; l'Universit&eacute; d'Ottawa. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2013/">http://www.pgcon.org/2013/</a></p>
+
+<p>La <em>PostgreSQL Session</em> est programm&eacute;e pour le 28 mars 2013 &agrave; Paris. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/en/5/">http://www.postgresql-sessions.org/en/5/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>E-Maj 1.0.0, une extension PostgreSQL qui offre la possibilit&eacute; de logger les <em>updates</em> faits sur un ou plusieurs ensemble de tables, et de les annuler si besoin est, r&eacute;trogradant l'ensemble de tables &agrave; un &eacute;tat stable pr&eacute;d&eacute;fini&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/emaj/">http://pgfoundry.org/projects/emaj/</a></li>
+
+<li>pg_activity, un utilitaire similaire &agrave; htop pour suivre l'activit&eacute; d'un serveur PostgreSQL&nbsp;: 
+
+<a target="_blank" href="https://github.com/julmon/pg_activity">https://github.com/julmon/pg_activity</a></li>
+
+<li>pgbouncer 1.5.4, un gestionnaire de connexions l&eacute;ger pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/frs/shownotes.php?release_id=1981">http://pgfoundry.org/frs/shownotes.php?release_id=1981</a></li>
+
+<li>pg_repack 1.1.8, un fork de pg_reorg&nbsp;: 
+
+<a target="_blank" href="http://pgxn.org/dist/pg_repack/">http://pgxn.org/dist/pg_repack/</a></li>
+
+<li>PL/Proxy 2.5, un syst&egrave;me de partitionnement de BDD impl&eacute;ment&eacute; en PL&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/plproxy/">http://pgfoundry.org/projects/plproxy/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La conf&eacute;rence PGDay du FOSDEM sera tenue juste avant l'ouverture du meeting, le 1er f&eacute;vrier &agrave; Bruxelles, Belgique. Les appels &agrave; conf&eacute;renciers, pour cette conf&eacute;rence et pour le cursus PostgreSQL du FOSDEM, sont lanc&eacute;s&nbsp;: 
+
+<a target="_blank" href="http://fosdem2013.pgconf.eu/callforpapers/">http://fosdem2013.pgconf.eu/callforpapers/</a></li>
+
+<li>Le PGDay 2013 de New-York City aura lieu le 22 mars. La date limite de candidature des conf&eacute;renciers est fix&eacute;e au 7 janvier 2013, midi (heure de New-York). Envois &agrave; l'adresse papers AT nycpug DOT org&nbsp;: 
+
+<a target="_blank" href="http://pgday.nycpug.org/speakers">http://pgday.nycpug.org/speakers</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2012-12/msg00011.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

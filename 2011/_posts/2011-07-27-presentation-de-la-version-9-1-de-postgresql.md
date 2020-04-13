@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2011-07-27-presentation-de-la-version-9-1-de-post
 
 
 
+
+<!--more-->
+
+
 Cet article présente, comme je commence à en avoir pris l'habitude maintenant, les fonctionnalités qui me semblent importantes dans la version 9.1. Tout n'est évidemment pas présenté, certaines modifications étant soit peu importantes, soit plutôt relatives à l'infrastructure du logiciel, et donc pas immédiatement visibles.
 
 

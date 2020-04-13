@@ -6,6 +6,108 @@ redirect_from: "index.php?post/2010-01-06-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Des paquets RPM pour la 8.5alpha3 sont disponibles, gr&acirc;ce au dur travail de Devrim. &Agrave; vos tests&nbsp;! 
+
+<a target="_blank" href="http://yum.pgsqlrpms.org/news-8.5alpha-packages-ready-for-testing.php">http://yum.pgsqlrpms.org/news-8.5alpha-packages-ready-for-testing.php</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Benetl 3.3, un outil d'ETL pour fichiers utilisant PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.benetl.net">http://www.benetl.net</a></li>
+
+<li>Dataware Quick Application Suite 1.1, un outil RAD qui supporte PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.datawarestudio.com">http://www.datawarestudio.com</a></li>
+
+<li>Npgsql 2.0.8, un gestionnaire .NET de donn&eacute;es pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.npgsql.org">http://www.npgsql.org</a></li>
+
+<li>psqlODBC 08.04.0200, un pilote ODBC pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://psqlodbc.projects.postgresql.org/release.html">http://psqlodbc.projects.postgresql.org/release.html</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 8.5 de la semaine</strong></p>
+
+<p>Dans psql, \d montre &agrave; pr&eacute;sent combien de tables filles une table a en h&eacute;ritage, et \d+ les liste.</p>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en janvier</strong></p>
+
+<ul>
+
+<li><a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-01/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-01/threads.php</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La premi&egrave;re r&eacute;union du "New York Capital District PUG" aura lieu le 7 janvier 2010&nbsp;: 
+
+<a target="_blank" href="http://nycdpug.x10hosting.com/">http://nycdpug.x10hosting.com/</a></li>
+
+<li>Stefan Keller, de l'universit&eacute; des sciences appliqu&eacute;es de Rapperswil (HSR), animera un s&eacute;minaire intitul&eacute; "Introduction &agrave; PostGIS/PostgreSQL" le 14 janvier 2010 &agrave; Zurich (Suisse)&nbsp;: 
+
+<a target="_blank" href="http://www.gis.hsr.ch/wiki/Agenda">http://www.gis.hsr.ch/wiki/Agenda</a></li>
+
+<li>&Agrave; la recherche de volontaires pour la rencontre de la "Open Day Linux Conf AU" &agrave; Wellington, Nouvelle Z&eacute;lande, le 23 janvier 2010 entre 11 et 14h. Contactez selena -at- postgresql.org.</li>
+
+<li>L'appel &agrave; conf&eacute;rencier pour "East" est lanc&eacute; avec, comme date limite, le 30 janvier 2010. D&eacute;tails sur&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org/">http://www.postgresqlconference.org/</a></li>
+
+<li>Le PGDay-Cuba 2010 sera tenu du 4 au 6 f&eacute;vrier 2010 &agrave; l'Universit&eacute; des Sciences Informatiques, &agrave; La Havane. Sont invit&eacute;s les participants de Cuba, de la R&eacute;publique Dominicaine et du Venezuela.</li>
+
+<li>Le FOSDEM 2010 aura lieu &agrave; Bruxelles les 6 &amp; 7 f&eacute;vrier 2010&nbsp;: 
+
+<a target="_blank" href="http://www.fosdem.org/">http://www.fosdem.org/</a></li>
+
+<li>Le PUG allemand aura un stand dans "l'Open Source Park" au Cebit 2010 du 2 au 6 mars 2010 &agrave; Hanovre&nbsp;: 
+
+<a target="_blank" href="http://www.cebit.de/">http://www.cebit.de/</a></li>
+
+<li>Le "Chemnitzer Linuxtage" aura lieu &agrave; Chemnitz (All.) les 13 &amp; 14 mars 2010&nbsp;: 
+
+<a target="_blank" href="http://chemnitzer.linux-tage.de/">http://chemnitzer.linux-tage.de/</a></li>
+
+<li>La PgCon 2010 aura lieu les 20 &amp; 21 mai 2010 &agrave; Ottawa avec des tutoriels les 18 et 19. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;! 
+
+<a target="_blank" href="http://www.pgcon.org/2010/papers.php">http://www.pgcon.org/2010/papers.php</a></li>
+
+<li>L'appel aux propositions est lanc&eacute; pour l'OSCON, qui aura lieu &agrave; Portland (Oregon) du 19 au 23 juillet 2010&nbsp;: 
+
+<a target="_blank" href="http://post.oreilly.com/f2f/9z1zqmm5lhkab0uogt3avlvc4u59bro6f917re423d8">http://post.oreilly.com/f2f/9z1zqmm5lhkab0uogt3avlvc4u59bro6f917re423d8</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20100103">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues</strong></p>
 

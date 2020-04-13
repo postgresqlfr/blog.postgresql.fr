@@ -6,6 +6,22 @@ redirect_from: "index.php?post/drupal-159 "
 ---
 
 
+<h2>Nouvelles hebdomadaires de PostgreSQL - 12 février 2006</h2>
+
+<p>
+
+Les versions de sécurité 8.1.3, 8.0.7, 7.4.12 et 7.3.14 ont été marqué dans le dépot. Soyez prêt à mettre à jour.
+
+</p>
+
+<p>
+
+Une discussion a eu lieu à propos de l'écriture de types de données utilisateurs en Java ou autres langages. Le résultat est qu'il sera possible d'écrire des types de données utilisateurs sans écrire de code C.
+
+</p>
+
+<!--more-->
+
 
 <h3>Produits autour de PostgreSQL</h3>
 

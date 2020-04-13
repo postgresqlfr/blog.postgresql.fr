@@ -6,6 +6,40 @@ redirect_from: "index.php?post/drupal-135 "
 ---
 
 
+<p>
+
+Alvaro Herrera a soumis un patch qui ajoute deux nouvelles commandes: DROP OWNED et REASSIGN OWNED BY dans la version CVS.
+
+</p>
+
+<p>
+
+Pour sa part, Andrew Dunstan a ajouté un patch DROP IF EXISTS dans le CVS. Cela devrait aider le travail avec les rôles et adoucir les migrations depuis les autres SGBDR ainsi que le travail avec les scripts DDL (NDT: Data Definition
+
+Language).
+
+</p>
+
+<p>
+
+Tom Lane et AL. ont ajouté le support des NULL dans les tableaux, dans la version CVS. Andrew Dunstan a ajouté l'équivalent dans PL/Perl. </p>
+
+<p>
+
+Il y a eu de grandes discussions en vue de l'amélioration du COUNT(*) pour les grosses tables.
+
+</p>
+
+<p>
+
+PostgreSQL 8.1.0 pour Solaris est disponible sur:<br />
+
+<a href="http://www.blastwave.org/" target="_blank">http://www.blastwave.org/</a>
+
+</p>
+
+<!--more-->
+
 
 <h3>== Nouveaux produits autour de PostgreSQL ==</h3>
 

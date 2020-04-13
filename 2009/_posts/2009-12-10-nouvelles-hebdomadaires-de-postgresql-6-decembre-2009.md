@@ -6,6 +6,116 @@ redirect_from: "index.php?post/2009-12-10-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La <em>commitfest</em> en cours se termine bient&ocirc;t. Continuez de relire les patchs d'autres personnes pour pouvoir commencer le v&ocirc;tre l'esprit serein&nbsp;:)</p>
+
+<p>PostgreSQL a maintenant une politique officielle de support des publications. D&eacute;tails&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/PostgreSQL_Release_Support_Policy">http://wiki.postgresql.org/wiki/PostgreSQL_Release_Support_Policy</a></p>
+
+<p>Nouveau sondage&nbsp;: Comment contribuez-vous &agrave; PostgreSQL&nbsp;? 
+
+<a target="_blank" href="http://www.postgresql.org/community">http://www.postgresql.org/community</a></p>
+
+<p>Jeff Davis pr&eacute;sente les "Operator Exclusion Constraints" [ndt: contraintes d'exclusion via op&eacute;rateur&nbsp;?] au SFPUG, mardi 8 d&eacute;cembre &agrave; San Francisco&nbsp;: 
+
+<a target="_blank" href="http://postgresql.meetup.com/1/calendar/11928447/">http://postgresql.meetup.com/1/calendar/11928447/</a></p>
+
+<p>La prochaine r&eacute;union de l'AustinPUG aura lieu mercredi 9 d&eacute;cembre 2009. Jim Nasby y parlera des h&eacute;ritages de tables&nbsp;: 
+
+<a target="_blank" href="http://pugs.postgresql.org/node/1500">http://pugs.postgresql.org/node/1500</a></p>
+
+<p>La premi&egrave;re r&eacute;union du "New York Capital District PUG" aura lieu le 7 janvier 2010&nbsp;: 
+
+<a target="_blank" href="http://nycdpug.x10hosting.com/">http://nycdpug.x10hosting.com/</a></p>
+
+<p>Le PGDay-Cuba 2010 sera tenu du 4 au 6 f&eacute;vrier 2010 &agrave; l'Universit&eacute; des Sciences Informatiques, &agrave; La Havane. Sont invit&eacute;s les participants de Cuba, de la R&eacute;publique Dominicaine et du Venezuela.</p>
+
+<p>La PgCon 2010 aura lieu les 20 &amp; 21 mai 2010 &agrave; Ottawa avec des tutoriels les 18 et 19. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;! 
+
+<a target="_blank" href="http://www.pgcon.org/2010/papers.php">http://www.pgcon.org/2010/papers.php</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Le pr&eacute;compilateur COBOL-IT pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.cobol-it.com/index.php?mact=News,cntnt01,detail,0&amp;cntnt01articleid=31&amp;cntnt01detailtemplate=simple&amp;cntnt01returnid=58">http://www.cobol-it.com/index.php?mact=News,cntnt01,detail,0&amp;cntnt01articleid=31&amp;cntnt01detailtemplate=simple&amp;cntnt01returnid=58</a></li>
+
+<li>GT portalBase 2.4, une plateforme pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.gtportalbase.com/">http://www.gtportalbase.com/</a></li>
+
+<li>PostgreSQL Maestro 9.12, une interface d'administration et de d&eacute;veloppement pour Windows&nbsp;: 
+
+<a target="_blank" href="http://www.sqlmaestro.com/products/postgresql/maestro/">http://www.sqlmaestro.com/products/postgresql/maestro/</a></li>
+
+<li>MicroOLAP Database Designer 1.2.9 pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/database/postgresql-designer/">http://microolap.com/products/database/postgresql-designer/</a></li>
+
+<li>pgpool-II 2.2.6, un gestionnaire de connexion et bien d'avantage&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+<li>PostgreDAC 2.5.4 beta, un "builder Delphi/C++" pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/connectivity/postgresdac/download/">http://microolap.com/products/connectivity/postgresdac/download/</a></li>
+
+<li>"Quick Application Suite" et "Quick Application Builder" publi&eacute;es&nbsp;: 
+
+<a target="_blank" href="http://www.datawarestudio.com/">http://www.datawarestudio.com/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en d&eacute;cembre</strong></p>
+
+<ul>
+
+<li><a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2009-12/threads.php">http://archives.postgresql.org/pgsql-jobs/2009-12/threads.php</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Stefan Keller, de l'universit&eacute; des sciences appliqu&eacute;es de Rapperswil (HSR), animera un s&eacute;minaire intitul&eacute; "Introduction &agrave; PostGIS/PostgreSQL" le 14 janvier 2010 &agrave; Zurich (Suisse)&nbsp;: 
+
+<a target="_blank" href="http://www.gis.hsr.ch/wiki/Agenda">http://www.gis.hsr.ch/wiki/Agenda</a></li>
+
+<li>Le FOSDEM 2010 aura lieu &agrave; Bruxelles les 6 &amp; 7 f&eacute;vrier 2010&nbsp;: 
+
+<a target="_blank" href="http://www.fosdem.org/">http://www.fosdem.org/</a></li>
+
+<li>Le "Chemnitzer Linuxtage" aura lieu &agrave; Chemnitz (All.) les 13 &amp; 14 mars 2010&nbsp;: 
+
+<a target="_blank" href="http://chemnitzer.linux-tage.de/">http://chemnitzer.linux-tage.de/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter et Josh Berkus. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20091206">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues</strong></p>
 

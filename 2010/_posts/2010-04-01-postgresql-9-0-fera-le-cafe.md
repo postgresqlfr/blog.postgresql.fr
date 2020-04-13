@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2010-03-31-postgresql-9-0-fera-le-cafe "
 
 
 
+
+<!--more-->
+
+
 La future version 9.0 de PostgreSQL vient tout juste de sortir en version alpha 4
 
 et alors que les premiers tests en conditions de production commencent,

@@ -6,6 +6,12 @@ redirect_from: "index.php?post/2009-04-28-nouveautes-postgresql-8-4 "
 ---
 
 
+<p>Le but de cet article est de détailler les nouveautés apportées par la version 8.4 de PostgreSQL.
+
+Il s'agit d'une partie de la <a hreflang="fr" href="http://docs.postgresql.fr/8.4/release.html">liste réelle des changements</a>, qui est bien plus vaste.</p>
+
+<!--more-->
+
 
 <h1>Introduction</h1>
 

@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2013-08-27-sortie-de-postgresql-9-3-release-candi
 
 
 
+
+<!--more-->
+
+
 La RC1 de PostgreSQL 9.3 a été publiée ce jour.
 
 

@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-218 "
 
 
 
+
+<!--more-->
+
+
 Le conseil d'administration de l'association loi 1901 PostgreSQLFr vient de procéder à l'élection de son bureau. Voici sa nouvelle composition :
 
 <ul>

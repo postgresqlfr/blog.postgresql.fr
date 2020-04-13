@@ -6,6 +6,26 @@ redirect_from: "index.php?post/2020-03-20-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Plusieurs conf&eacute;rences ont &eacute;t&eacute; annul&eacute;es &agrave; cause de COVID-19, notamment PGConfNepal, Nordic PGDay et pgDay Paris.</p>
+
+<p>Le pgDay isra&eacute;lien 2020 aura lieu le 10 septembre 2020 &agrave; Tel Aviv. L'appel &agrave; conf&eacute;rencier s'&eacute;teint le 15 janvier 2020&nbsp;: <a target="_blank" href="http://pgday.org.il/">http://pgday.org.il/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pg_featureserv un service web RESTful donnant acc&egrave;s aux donn&eacute;es spatiales des tables PostGIS&nbsp;: <a target="_blank" href="https://github.com/crunchydata/pg_featureserv">https://github.com/crunchydata/pg_featureserv</a></li>
+
+<li>Postgresql Anonymizer 0.6, une extension cachant ou substituant &agrave; la vol&eacute;e des informations personnelles ou des donn&eacute;es commerciales sensibles d'une base de donn&eacute;es PostgreSQL&nbsp;: <a target="_blank" href="https://postgresql-anonymizer.readthedocs.io/en/latest/">https://postgresql-anonymizer.readthedocs.io/en/latest/</a></li>
+
+<li>PostgreSQL Automatic Failover (PAF) v2.3.0&nbsp;: <a target="_blank" href="https://github.com/ClusterLabs/PAF/releases/latest">https://github.com/ClusterLabs/PAF/releases/latest</a></li>
+
+<li>pg_tileserv, un serveur de tuiles &eacute;crit en Go, exclusivement pour PostGIS&nbsp;: <a target="_blank" href="https://github.com/crunchydata/pg_tileserv">https://github.com/crunchydata/pg_tileserv</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>PostgreSQL Local</h2>
 

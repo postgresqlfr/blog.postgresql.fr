@@ -6,6 +6,24 @@ redirect_from: "index.php?post/drupal-120 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 15 Juillet 2007</strong></p>
+
+<p>Le département marketing d'EnterpriseDB a essuyé de vives critiques après la publication d'un communiqué de presse controversé. Néanmoins, la discussion qui s'ensuivit, à laquelle EnterpriseDB s'est joint, a permis d'aplanir les choses et d'éviter à l'avenir tout argument publicitaire déplacé. Compliments, donc, à EnterpriseDB pour cette écoute et cette attention envers la communauté.
+
+</p>
+
+<ul><li>Le communiqué originel&nbsp;:
+
+<a target="_blank" href="http://www.enterprisedb.com/news_events/press_releases/07_11_07.do">http://www.enterprisedb.com/news_events/press_releases/07_11_07.do</a></li>
+
+<li>La discussion&nbsp;:
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-advocacy/2007-07/msg00023.php">http://archives.postgresql.org/pgsql-advocacy/2007-07/msg00023.php</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-435 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 20 juillet 2008</strong></p>
+
+<p>Nouveau sondage&nbsp;: comment procédez-vous pour installer ou mettre à jour PostgreSQL&nbsp;?
+
+<a target="_blank" href="http://www.posgresql.org/community">http://www.posgresql.org/community</a></p>
+
+<p>Aujourd'hui, Peter Eisentraut de la "Core Team" a pris ses fonctions de développeur PostgreSQL chez Sun Microsystems. Dans le même temps, Josh Berkus quittait Sun, sans pour autant dire où il se rendait.</p>
+
+<p>(<a href="http://people.planetpostgresql.org/dfetter/index.php?/archives/183-PostgreSQL-Weekly-News-July-20-2008.html">lire l'article original</a>)</p>
+
+<!--more-->
+
 
 <!--break-->
 

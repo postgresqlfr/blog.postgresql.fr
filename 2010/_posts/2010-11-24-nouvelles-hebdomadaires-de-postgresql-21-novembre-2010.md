@@ -6,6 +6,84 @@ redirect_from: "index.php?post/2010-11-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>DiffKit 0.8.2, un outil de comparaison de tables avec support de PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.diffkit.org">http://www.diffkit.org</a></li>
+
+<li>PostgreDAC 2.6.0, un <em>builder</em> Delphi/C++ pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/connectivity/postgresdac/download/">http://microolap.com/products/connectivity/postgresdac/download/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en novembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-11/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-11/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>L'appel &agrave; projets de PostgreSQLFr a &eacute;t&eacute; lanc&eacute;. Les projets doivent concerner PostgreSQL et la communaut&eacute; francophone. Mail &agrave; appel-projets-2010 (AT) postgresql (DOT) fr. 
+
+<a target="_blank" href="http://www.postgresql.fr/appel_a_projets_2010:appel">http://www.postgresql.fr/appel_a_projets_2010:appel</a></li>
+
+<li>Les inscriptions pour le PGDay.EU 2010 tenu du 6 au 8 d&eacute;cembre &agrave; Stuttgart sont ouvertes [ndt: <b>jusqu'au 26 novembre</b>]&nbsp;: 
+
+<a target="_blank" href="http://2010.pgday.eu/register">http://2010.pgday.eu/register</a></li>
+
+<li>Pour les "l&egrave;ves-t&ocirc;ts", les inscriptions au PGDay.IT, qui aura lieu le 10 d&eacute;cembre 2010 &agrave; Rome, sont ouvertes et le programme a &eacute;t&eacute; publi&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2010.pgday.it/">http://2010.pgday.it/</a></li>
+
+<li>Le FOSDEM est l'un des plus grand &eacute;v&eacute;nements autour du Libre et de l'Open Source&nbsp;; il a lieu annuellement &agrave; Bruxelles et rassemble environ 4000 personnes. La prochaine &eacute;dition est programm&eacute;e pour les 5 &amp; 6 f&eacute;vrier 2011. Envoyez vos propositions &agrave; l'adresse fosdem AT postgresql POINT eu. 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/749-PostgreSQLFOSDEM-2011-Call-for-talks.html">http://andreas.scherbaum.la/blog/archives/749-PostgreSQLFOSDEM-2011-Call-for-talks.html</a></li>
+
+<li>Le PGDay est au programme du <em>Southern California Linux Exposition (SCALE)</em> de cette ann&eacute;e, tenu &agrave; l'h&ocirc;tel LAX Hilton de Los Angeles (Californie) le vendredi 25 f&eacute;vrier 2011. Proposez vos conf&eacute;rences sur pgday-submissions (AT) googlegroups (DOT) com.</li>
+
+<li>PGCon aura lieu les 19 &amp; 20 mai 2011 &agrave; l'Universit&eacute; d'Ottawa, pr&eacute;c&eacute;d&eacute; par deux jours de tutoriels les 17 &amp; 18 mai&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2011/">http://www.pgcon.org/2011/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20101121">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues</strong></p>
 

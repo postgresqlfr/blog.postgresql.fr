@@ -6,6 +6,28 @@ redirect_from: "index.php?post/2020-03-03-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Postgres Ibiza aura lieu &agrave; Ibiza (Espagne) les 25 et 26 juin 2020. L'appel &agrave; conf&eacute;renciers court jusqu'au 8 mars 2020&nbsp;: <a target="_blank" href="https://pgibz.io/">https://pgibz.io/</a></p>
+
+<p>Le PGDay Ukraine se tiendra le 25 avril 2020 &agrave; Lviv, au Bank Hotel&nbsp;: <a target="_blank" href="https://pgday.org.ua/">https://pgday.org.ua/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgBackRest 2.24, un syst&egrave;me de sauvegarde et restauration pour PostgreSQL&nbsp;: <a target="_blank" href="https://pgbackrest.org/release.html#2.24">https://pgbackrest.org/release.html#2.24</a></li>
+
+<li>Database Lab 0.3.0, un outil pour cloner rapidement de grosses bases de donn&eacute;es PostgreSQL en vue de monter des environnements hors production&nbsp;: <a target="_blank" href="https://gitlab.com/postgres-ai/database-lab">https://gitlab.com/postgres-ai/database-lab</a></li>
+
+<li>Joe 0.5.0, un bot de discussion Slack qui aide les d&eacute;veloppeurs backend et les DBA &agrave; corriger et optimiser les requ&ecirc;tes PostgreSQL&nbsp;: <a target="_blank" href="https://gitlab.com/postgres-ai/joe/-/releases#0.5.0">https://gitlab.com/postgres-ai/joe/-/releases#0.5.0</a></li>
+
+<li>HighGo PostgreSQL Server 1.2, un d&eacute;riv&eacute; de PostgreSQL avec une attention port&eacute;e sur l'am&eacute;lioration des performances des backups tout en maintenant une bonne utilisabilit&eacute;&nbsp;: <a target="_blank" href="https://www.highgo.ca/products/">https://www.highgo.ca/products/</a></li>
+
+<li>pgquarrel 0.7.0, un outil comparant des sch&eacute;mas de BD PostgreSQL et produisant un ensemble de commandes pour convertir l'un des sch&eacute;mas vers le second&nbsp;: <a target="_blank" href="http://eulerto.github.io/pgquarrel">http://eulerto.github.io/pgquarrel</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en mars</h2>
 

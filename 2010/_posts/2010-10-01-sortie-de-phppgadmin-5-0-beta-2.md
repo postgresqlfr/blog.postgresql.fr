@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2010-10-01-sortie-de-phppgadmin-5-0-beta-2 "
 
 
 
+
+<!--more-->
+
+
 La seconde version béta de phpPgAdmin 5.0 vient d'être publiée ce 1er octobre 2010.
 
 

@@ -6,6 +6,46 @@ redirect_from: "index.php?post/2009-09-05-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La 8.5alpha1, la toute premi&egrave;re version alpha de PostgreSQL, est disponible au t&eacute;l&eacute;chargement. Les notes de publication, les informations g&eacute;n&eacute;rales li&eacute;es &agrave; l'"alpha" et le t&eacute;l&eacute;chargement sont &agrave; ces adresses&nbsp;: 
+
+<a target="_blank" href="http://developer.postgresql.org/pgdocs/postgres/release-8.5.html">http://developer.postgresql.org/pgdocs/postgres/release-8.5.html</a> <a target="_blank" href="http://www.postgresql.org/developer/alpha">http://www.postgresql.org/developer/alpha</a> <a target="_blank" href="http://www.postgresql.org/ftp/source/8.5alpha1/">http://www.postgresql.org/ftp/source/8.5alpha1/</a></p>
+
+<p>Le livre d'Andreas (ads) Scherbaum &laquo;&nbsp;PostgreSQL. Datenbankpraxis f&uuml;r Anwender, Administratoren und Entwickler&nbsp;&raquo; [ndt: PostgreSQL. Manuel de BDD &agrave; l'usage des utilisateurs, administrateurs et d&eacute;veloppeurs] a &eacute;t&eacute; publi&eacute;&nbsp;: 
+
+<a target="_blank" href="http://www.amazon.de/PostgreSQL-Datenbankpraxis-Anwender-Administratoren-Entwickler/dp/3937514694/">http://www.amazon.de/PostgreSQL-Datenbankpraxis-Anwender-Administratoren-Entwickler/dp/3937514694/</a></p>
+
+<p>Les versions de correction de bug 8.4.1, 8.3.8, 8.2.13, 8.1.17, 8.0.21 et 7.4.25 seront bient&ocirc;t disponibles. Pr&eacute;parez-vous &agrave; mettre &agrave; jour&nbsp;!</p>
+
+<p>La date limite pour les conf&eacute;rences du JDCon a &eacute;t&eacute; report&eacute;e au 5 septembre. Proposez-vous&nbsp;! 
+
+<a target="_blank" href="http://www.postgresqlconference.org/">http://www.postgresqlconference.org/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>once:radix version 1.5, un syst&egrave;me de d&eacute;veloppement rapide d'applications bas&eacute; sur PostgreSQL 8.4&nbsp;: 
+
+<a target="_blank" href="http://www.oncetechnologies.com/">http://www.oncetechnologies.com/</a></li>
+
+<li>Benetl 3.0, un ETL pour fichiers utilisant PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.benetl.net">http://www.benetl.net</a></li>
+
+<li>PostgreSQL Replicator 8.3.1-1.8, anciennement Mammoth Replicator&nbsp;: 
+
+<a target="_blank" href="http://projects.commandprompt.com/public/replicator">http://projects.commandprompt.com/public/replicator</a></li>
+
+<li>pgpool-II 2.2.4, un gestionnaire de connexions et bien d'avantage&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090830">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en ao&ucirc;t</strong></p>
 

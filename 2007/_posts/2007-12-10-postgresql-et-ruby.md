@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-264 "
 
 
 
+
+<!--more-->
+
+
 <h2>Extracteur de tables</h2>
 
 <p>Trouvé sur le site <a href="http://www.geekz.fr"> We are Geeks</a>, un extracteur de tables pour PostgreSQL.</p>

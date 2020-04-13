@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2010-10-03-iiii "
 
 
 
+
+<!--more-->
+
+
 !!!! I  Introduction
 
 !!! A. Pourquoi ce document?

@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-116 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 18 Septembre 2005</strong></p>
+
+<p>
+
+La version Beta2 est sortie ! Plus vous la testerez, plus la version 8.1 arrivera rapidement et sera exempte de bug.</p>
+
+<p>
+
+Martijn van Oosterhout a initié une discussion animée sur ORDER BY faisant suite à une proposition de Tom Lane visant à changer la manière dont les opérateurs de classes sont définis. Jetez un oeil sur le tri par COLLATION dans la 8.2.</p>
+
+<!--more-->
+
 
 Tom Lane a initié une autre discussion au sujet des <em>spinlocks</em>, qui d'après lui commencent à devenir un goulot d'étranglement au niveau des performances. <a target="_blank" href="http://archives.postgresql.org/pgsql-hackers/2005-09/msg00566.php">http://archives.postgresql.org/pgsql-hackers/2005-09/msg00566.php</a> <br /><p>
 

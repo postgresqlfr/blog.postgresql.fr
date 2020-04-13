@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2010-11-08-appel-a-projets-2010 "
 
 
 
+
+<!--more-->
+
+
 L'année 2009 fut exceptionnelle pour la communauté PostgreSQL
 
 Francophone avec notamment la conférence européenne "PG Day" qui s'est

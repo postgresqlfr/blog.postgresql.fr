@@ -6,6 +6,10 @@ redirect_from: "index.php?post/2016-09-04-sortie-de-postgresql-9-6-rc-1 "
 ---
 
 
+Le groupe de développement de PostgreSQL (PGDG) vient d'annoncer la sortie de la première version  candidate de PostgreSQL 9.6. Cette version est théoriquement identique à la version finale qui sortira dans quelques semaines. Elle contient des corrections pour tous les problèmes identifiés lors de la phase de test.
+
+<!--more-->
+
 
 !!!! Changements depuis la version Beta 4
 

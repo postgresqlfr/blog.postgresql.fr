@@ -6,6 +6,38 @@ redirect_from: "index.php?post/drupal-371 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires de PostgreSQL - 22 juin 2004 ==</h2>
+
+<p>La 7.4.3 étant sortie, tous les yeux se sont tournés sur le développement de la 7.5. Le progrès le plus important à cet égard a été accompli par l'envoi du correctif trsè attendu sur les <em>tablespaces</em>. Ceci nous donne l'implémentation initiale pour le support d'emplacements différents sur de nombreux objets de la base de données. Certains points restent à préciser et à corriger mais il est
+
+certain que cette fonctionnalité fera partie de la 7.5. Les personnes intéressées pour y jeter un œil devraient lire la documentation des développeurs sur <a href="http://developer.postgresql.org/docs/postgres/manage-ag-tablespaces.html">
+
+http://developer.postgresql.org/docs/postgres/manage-ag-tablespaces.html</a>.
+
+</p>
+
+<p>En ce qui concerne les autres fonctionnalités, le portage win32
+
+touche à sa fin. Nous aurons bientôt les correctifs concernant les
+
+transactions imbriquées et le <abbr title="Point In Time Recovery">PITR</abbr>.
+
+Nous avons aussi eu des rapports qu'une version intégrée de
+
+pg_autovacuum et qu'une version mise à jour (et disposant de nombreux
+
+ajouts) de plperl sont en cours. Pour les personnes intéressées par ces
+
+fonctionnalités, gardez un œil sur la date du lancement de la version
+
+bêta car, si tous ces changements sont pris en compte dans cette
+
+version, nous aurons à coup sûr besoin d'un grand nombre de testeurs
+
+avec une telle variété de fonctionnalités.</p>
+
+<!--more-->
+
 
 <h2>== Nouvelles des produits PostgreSQL ==</h2>
 

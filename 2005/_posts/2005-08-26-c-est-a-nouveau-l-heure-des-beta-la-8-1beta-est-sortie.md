@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-104 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p><em>Dans son article du 26 Aout 2005, Marc G. Fournier nous annonçait sur pg-announce</em></p>
 

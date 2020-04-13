@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2009-06-23-appel-a-conferences-pour-le-pgday-2009
 
 
 
+
+<!--more-->
+
+
 [PostgreSQLFr|http://www.postgresql.fr|fr], en partenariat avec [PostgreSQL Europe|http://www.postgresql.eu|en], est fière d'accueillir la deuxième conférence européenne dédiée à PostgreSQL.
 
 

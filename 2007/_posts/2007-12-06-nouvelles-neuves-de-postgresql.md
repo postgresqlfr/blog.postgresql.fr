@@ -6,6 +6,28 @@ redirect_from: "index.php?post/drupal-234 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 2 décembre 2007</strong></p>
+
+<ul>
+
+<li>La bêta 4 de la version 8.3 sera disponible sous peu, continuons à tester&nbsp;!&nbsp;:)</li>
+
+<li>Conférence de Josh Berkus au FOSS.IN. On vous attend pour un grand BoF&nbsp;!
+
+<a target="_blank" href="http://www.foss.in/">http://www.foss.in/</a></li>
+
+<li>David Fetter participera aux PgCon.BR à Sao Paulo les 7 et 8 décembre&nbsp;:
+
+<a target="_blank" href="http://pgcon.postgresql.org.br/index.en.html">http://pgcon.postgresql.org.br/index.en.html</a></li>
+
+<li>Nouvelle enquête&nbsp;: À quel moment passez-vous à la version supérieure&nbsp;?
+
+<a target="_blank" href="http://www.postgresql.org/community">http://www.postgresql.org/community</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <!--break-->
 

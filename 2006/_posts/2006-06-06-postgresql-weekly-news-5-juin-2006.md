@@ -6,6 +6,24 @@ redirect_from: "index.php?post/drupal-187 "
 ---
 
 
+<p>
+
+Les discussions continuent sur les estimations des coûts du <em>planner</em>.
+
+</p>
+
+<p>
+
+Tom Lane et Bruce Momjian ont ajouté des améliorations à <em>psql</em>.
+
+</p>
+
+<p>
+
+Teodor Sigaev a apporté quelques corrections à <strong>tsearch2</strong>.</p>
+
+<!--more-->
+
 
 <h3>== Nouveaux produits autour de PostgreSQL ==</h3>
 

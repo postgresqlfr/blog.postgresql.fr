@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2019-07-08-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgBadger v11.0, un analyseur de log PostgreSQL et un g&eacute;n&eacute;rateur de graphe en Perl&nbsp;: <a target="_blank" href="https://github.com/darold/pgbadger/releases">https://github.com/darold/pgbadger/releases</a></li>
+
+<li>repmgr 4.4, un gestionnaire de r&eacute;plication pour PostgreSQL&nbsp;: <a target="_blank" href="https://repmgr.org/docs/4.4/release-4.4.html">https://repmgr.org/docs/4.4/release-4.4.html</a></li>
+
+<li>pgAdmin4 4.9, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_9.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_9.html</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en juin</h2>
 

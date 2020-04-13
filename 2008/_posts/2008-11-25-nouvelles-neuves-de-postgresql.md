@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2008-11-25-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 23 novembre 2008</strong></p>
+
+<p>Le premier PGDay argentin a attir&eacute; une audience venue de toute l'Am&eacute;rique Latine, donnant lieu &agrave; de nombreux &eacute;changes.</p>
+
+<p>Devrim GUNDUZ a publi&eacute; un nouvel ensemble de paquets RPM pour les tests de la 8.4, paquets construits &agrave; partir de la version CVS du 18 novembre &agrave; 21h (UTC)&nbsp;: 
+
+<a target="_blank" href="http://yum.pgsqlrpms.org/news-8.4devel-ready-for-testing.php">http://yum.pgsqlrpms.org/news-8.4devel-ready-for-testing.php</a></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20081123">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en novembre</strong></p>
 

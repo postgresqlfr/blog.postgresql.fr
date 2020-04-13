@@ -6,6 +6,72 @@ redirect_from: "index.php?post/2012-06-11-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les mises &agrave; jour de s&eacute;curit&eacute;&nbsp;: 9.1.4, 9.0.8, 8.4.12 et 8.3.19 qui corrigent, entre autres choses, un probl&egrave;me avec la version FreeBSD de crypt() seront disponibles sous peu [ndt: d&eacute;sol&eacute; pour le d&eacute;lai :-(]. Pr&eacute;parez-vous&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/about/news/1397/">http://www.postgresql.org/about/news/1397/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>MyJSQLView Version 3.35&nbsp;: 
+
+<a target="_blank" href="http://dandymadeproductions.com/projects/MyJSQLView/">http://dandymadeproductions.com/projects/MyJSQLView/</a></li>
+
+<li>pgbouncer 1.5.2, un gestionnaire l&eacute;ger de connexions pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgbouncer/">http://pgfoundry.org/projects/pgbouncer/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le <em>PGDay France</em> aura lieu &agrave; Lyon, le 7 juin 2012&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.fr">http://www.pgday.fr</a></li>
+
+<li>La conf&eacute;rence <em>PostgreSQL China 2012</em> aura lieu du 14 au 17 juin &agrave; P&eacute;kin&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/Pgconfchina2012">http://wiki.postgresql.org/wiki/Pgconfchina2012</a></li>
+
+<li>La 4<sup>&egrave;me</sup> Session PostgreSQL aura lieu le 4 octobre 2012 &agrave; Paris. Appel &agrave; conf&eacute;renciers et plus d'informations sur&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/en/4/">http://www.postgresql-sessions.org/en/4/</a></li>
+
+<li>La <em>PostgreSQL Conference Europe</em> 2012 aura lieu &agrave; Prague, R&eacute;publique Tch&egrave;que, du 23 au 26 octobre. L'appel &agrave; sponsors est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2012.pgconf.eu/">http://2012.pgconf.eu/</a></li>
+
+<li>Le PgDay argentin 2012 se tiendra &agrave; l'Universit&eacute; Nationale de Quilmes, &agrave; Bernal pr&egrave;s de Buenos Aires, le 13 novembre. Les sujets couverts concerneront aussi bien les utilisateurs, d&eacute;veloppeurs et contributeurs, que les d&eacute;cideurs et hauts responsables. Pour plus d'informations &agrave; propos de la conf&eacute;rence, consultez le site suivant&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.com.ar/quilmes2012?lang=en">http://www.pgday.com.ar/quilmes2012?lang=en</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2012-06/msg00001.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

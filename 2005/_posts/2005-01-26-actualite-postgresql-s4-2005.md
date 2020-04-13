@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-66 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Faisons un point sur la semaine écoulée :</p>
 

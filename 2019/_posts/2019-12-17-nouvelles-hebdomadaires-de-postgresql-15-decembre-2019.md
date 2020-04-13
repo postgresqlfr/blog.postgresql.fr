@@ -6,6 +6,32 @@ redirect_from: "index.php?post/2019-12-17-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La <em>PGCon 2020</em> se tiendra &agrave; Ottawa du 26 au 29 mai 2020. L'appel &agrave; conf&eacute;renciers court jusqu'au 19 janvier 2020 sur&nbsp;: <a target="_blank" href="http://www.pgcon.org/2020/papers.php">http://www.pgcon.org/2020/papers.php</a> <a target="_blank" href="https://www.pgcon.org/2020/">https://www.pgcon.org/2020/</a></p>
+
+<p>La conf&eacute;rence germanophone <em>PostgreSQL Conference 2020</em> aura lieu le 15 mai 2020 &agrave; Stuttgart. L'appel &agrave; conf&eacute;renciers court jusqu'au 3 f&eacute;vrier 2020&nbsp;: <a target="_blank" href="https://2020.pgconf.de/callforpapers/">https://2020.pgconf.de/callforpapers/</a> <a target="_blank" href="https://2020.pgconf.de/">https://2020.pgconf.de/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgBackRest 2.20, un syst&egrave;me de sauvegarde et restauration pour PostgreSQL&nbsp;: <a target="_blank" href="https://pgbackrest.org/release.html#2.20">https://pgbackrest.org/release.html#2.20</a></li>
+
+<li>barman 2.10, un gestionnaire de sauvegarde et restauration pour PostgreSQL&nbsp;: <a target="_blank" href="https://www.pgbarman.org/barman-2-10-released/">https://www.pgbarman.org/barman-2-10-released/</a></li>
+
+<li>Odyssey 1.0, un pooleur multi-thread&eacute; de connexions pour PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/yandex/odyssey/releases">https://github.com/yandex/odyssey/releases</a></li>
+
+<li>phpPgAdmin 7.12.1, un outil web d'administration pour PostgreSQL&nbsp;: <a target="_blank" href="https://xzilla.net//blog/2019/Dec/phpPgAdmin-7-12-1-released.html">https://xzilla.net//blog/2019/Dec/phpPgAdmin-7-12-1-released.html</a></li>
+
+<li>pg_chameleon 2.0.12, un outil pour r&eacute;pliquer de MySQL vers PostgreSQL&nbsp;: <a target="_blank" href="https://pgchameleon.org/blog/2019/12/11/release-2012/">https://pgchameleon.org/blog/2019/12/11/release-2012/</a></li>
+
+<li>pgAdmin4 4.16, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_16.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_16.html</a></li>
+
+<li>pitrery 2.4, un ensemble de scripts Bash permettant de g&eacute;rer les sauvegardes PITR de PostgreSQL&nbsp;: <a target="_blank" href="http://dalibo.github.io/pitrery/">http://dalibo.github.io/pitrery/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en d&eacute;cembre</h2>
 

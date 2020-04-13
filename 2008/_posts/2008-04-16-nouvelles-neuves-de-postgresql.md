@@ -6,6 +6,40 @@ redirect_from: "index.php?post/drupal-424 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 13 avril 2008</strong></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>pg_top, précédemment connu sour le nom de ptop, est disponible en version 3.6.2-beta3&nbsp;:
+
+<a target="_blank" href="http://ptop.projects.postgresql.org/">http://ptop.projects.postgresql.org/</a></li>
+
+<li>check_postgres 1.4.2 est disponible&nbsp;:
+
+<a target="_blank" href="http://bucardo.org/nagios/">http://bucardo.org/nagios/</a></li>
+
+<li>Npgsql 2 Beta3 a été publié&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/npgsql/">http://pgfoundry.org/projects/npgsql/</a></li>
+
+<li>pg_bulkload-2.3.0 est disponible&nbsp;:
+
+<a target="_blank" href="http://pgbulkload.projects.postgresql.org/">http://pgbulkload.projects.postgresql.org/</a></li>
+
+<li>pgpool-II 2.1 beta2 est disponible&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+<li>SkyTools 2.1.6 ont été publiés&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/skytools/">http://pgfoundry.org/projects/skytools/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <!--break-->
 

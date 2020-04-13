@@ -6,6 +6,32 @@ redirect_from: "index.php?post/drupal-440 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 31 août 2008</strong></p>
+
+<ul>
+
+<li>La "Commit Fest" de septembre commence demain.</li>
+
+<li>Un espace sera disponible pour les développeurs PostgreSQL, l'après-midi du 16 octobre, la veille du PGDay 2008. Faisons-en bon usage&nbsp;!</li>
+
+<li>Le 10 septembre sera le dernier jour pour s'inscrire en tant que partenaire commercial pour les "conference bags" du PGDay 2008.</li>
+
+<li>Pour permettre une entrée gratuite au PGDay 2008, nous aurions besoin de quelques partenaires supplémentaires, plus particulièrement des "Silver" (ou supérieur). N'hésitez pas à visiter la page des partenariat pour plus d'informations&nbsp;:
+
+<a target="_blank" href="http://www.pgday.org/en/sponsors/campaign">http://www.pgday.org/en/sponsors/campaign</a></li>
+
+<li>Le projet de fabrication des RPM PostgreSQL a publié de nouvelles mises à jour des versions 8.3 et 8.2&nbsp;:
+
+<a target="_blank" href="http://yum.pgsqlrpms.org">http://yum.pgsqlrpms.org</a></li>
+
+<li>Victor Vislobokov a publié un résumé des fonctionnalités en russe&nbsp;:
+
+<a target="_blank" href="http://postgresql.ru.net/docs/overview.html">http://postgresql.ru.net/docs/overview.html</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

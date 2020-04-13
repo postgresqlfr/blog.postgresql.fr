@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-43 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Marc G. Fournier nous informait sur la liste pgsql-announce le 23 octobre 2004:</p>
 

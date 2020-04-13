@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-413 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 11 novembre 2007</strong></p>
+
+<ul>
+
+<li>Attendez vous à une 3<sup>ème</sup> bêta de la 8.3 un peu plus tard dans la semaine.</li>
+
+<li>gborg.postgresql.org est mort. Longue vie à <a target="_blank" href="http://pgfoundry.org/">pgfoundry.org</a>&nbsp;!</li>
+
+</ul>
+
+<!--more-->
+
 
 <!--break-->
 

@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-31 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Dans certaines circonstances, PostgreSQL peut laisser des ressources «&nbsp;permanentes&nbsp;» occupées sur le serveur aprés un violent problème (ou un redémarrage). Ces ressources sont des IPC (Inter Process Communication) et peuvent se manifester sous deux formes&nbsp;:</p>
 

@@ -6,6 +6,46 @@ redirect_from: "index.php?post/2009-06-18-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 8.4 RC1 sera bient&ocirc;t disponible. Faites pr&eacute;chauffer les bancs de test&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/developer/beta">http://www.postgresql.org/developer/beta</a><br>
+
+[ndt: cf <a href="http://blog.postgresql.fr/index.php?post/2009/06/17/PostgreSQL-8.4-Release-Candidate-1-disponible" target="_blank">http://blog.postgresql.fr/index.php?post/2009/06/17/PostgreSQL-8.4-Release-Candidate-1-disponible</a>]</p>
+
+<p>Nouveau sondage&nbsp;: quelle est votre plus forte attente concernant le d&eacute;veloppement de PostgreSQL&nbsp;? 
+
+<a target="_blank" href="http://www.postgresql.org/community">http://www.postgresql.org/community</a></p>
+
+<p>Le projet TikiWiki a besoin d'une aide postgresqlienne&nbsp;! TikiWiki a besoin d'un mainteneur de compatibilit&eacute; PostgreSQL, sans quoi le support pourrait &ecirc;tre arr&ecirc;t&eacute;. Si vous utilisez TikiWiki et pouvez aider, veuillez contacter marclaporte AT tikiwiki DOT org.</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Mogwai ER-DesignerNG 1.7-SNAPSHOT, un outil pour l'ERD, bas&eacute; sur Java&nbsp;: 
+
+<a target="_blank" href="http://mogwai.sourceforge.net/">http://mogwai.sourceforge.net/</a></li>
+
+<li>Slony1-ctl 1.1.4, un ensemble de script pour administrer Slony&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/slony1-ctl/">http://pgfoundry.org/projects/slony1-ctl/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 8.4 de la semaine</strong></p>
+
+<p>C'est le module pg_stat_statements (contrib) qui permet d'&eacute;tablir des statistiques d'ex&eacute;cution pour l'ensemble du serveur. Que les devins de la charge serveur se r&eacute;jouissent&nbsp;!<br>
+
+[ndt: <a href="http://docs.postgresql.fr/8.4/pgstatstatements.html" target="_blank">http://docs.postgresql.fr/8.4/pgstatstatements.html</a>]</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Il est conseill&eacute; d'indexer les champs de clefs &eacute;trang&egrave;res (c&ocirc;t&eacute; r&eacute;f&eacute;ren&ccedil;ant ou "fils"), &agrave; moins que les valeurs r&eacute;f&eacute;renc&eacute;es aient une tr&egrave;s faible cardinalit&eacute;. PostgreSQL ne met pas cela en place automatiquement.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090614">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en juin</strong></p>
 

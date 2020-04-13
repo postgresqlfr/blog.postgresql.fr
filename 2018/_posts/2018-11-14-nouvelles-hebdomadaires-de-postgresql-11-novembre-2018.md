@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2018-11-14-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les mises &agrave; jour de s&eacute;curit&eacute; 11.1, 10.6, 9.6.11, 9.5.15, 9.4.20, et 9.3.25 ont &eacute;t&eacute; publi&eacute;es. Il s'agit de la derni&egrave;re publication pour la s&eacute;rie 9.3. Merci de lire l'annonce ci-dessous et d'appliquer la mise &agrave; jour d&egrave;s que possible&nbsp;: <a target="_blank" href="https://www.postgresql.org/about/news/1905/">https://www.postgresql.org/about/news/1905/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pg_back 1.7, un script de sauvegarde pour PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/orgrim/pg_back">https://github.com/orgrim/pg_back</a></li>
+
+<li>Bucardo 5.5.0, un syst&egrave;me de r&eacute;plication avec possibilit&eacute; ma&icirc;tre-ma&icirc;tre&nbsp;: <a target="_blank" href="http://bucardo.org/wiki/Bucardo">http://bucardo.org/wiki/Bucardo</a></li>
+
+<li>PipelineDB v1.0.0 est disponible comme extension pour PostgreSQL 11&nbsp;: <a target="_blank" href="https://www.pipelinedb.com/blog/high-performance-time-series-aggregation-for-postgresql-11">https://www.pipelinedb.com/blog/high-performance-time-series-aggregation-for-postgresql-11</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en novembre</h2>
 

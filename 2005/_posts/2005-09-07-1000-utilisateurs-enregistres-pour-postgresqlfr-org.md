@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-111 "
 
 
 
+
+<!--more-->
+
+
 <p>Ça y est, depuis quelques minutes, PostgreSQLFr.org compte son millième utilisateur enregistré&nbsp;! And the winner is «&nbsp;nicolas-hafner&nbsp;», que nous manquerons pas de contacter directement par mail, nous pensons en effet marquer le coup avec un petit cadeau ;-)</p>
 
 <p>Aujourd'hui le site c'est&nbsp;:</p>

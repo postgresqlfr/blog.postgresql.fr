@@ -6,6 +6,74 @@ redirect_from: "index.php?post/2009-05-15-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Nouveau sondage&nbsp;: quelle fonctionnalit&eacute; vous attire le plus dans la 8.4&nbsp;? <a href="http://www.postgresql.org/community" target="_blank">http://www.postgresql.org/community</a></p>
+
+<p>Le site web de PostgreSQL a besoin d'une refonte et pour cela, 2000&nbsp;$ ont &eacute;t&eacute; mis sur la table. Usez de vos talents pour acqu&eacute;rir gloire et (petite) fortune&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/Website_Overhaul_Requirements">http://wiki.postgresql.org/wiki/Website_Overhaul_Requirements</a></p>
+
+<p>Le PGDay de Junin / Buenos Aires aura lieu le 6 juin &agrave; l'Unnoba&nbsp;: 
+
+<a target="_blank" href="http://www.arpug.com.ar/trac/wiki/PgDayUnnoba">http://www.arpug.com.ar/trac/wiki/PgDayUnnoba</a></p>
+
+<p>Le PGDay.EU 2009 est programm&eacute; pour les 6 &amp; 7 novembre 2009 &agrave; Telecom ParisTech (ndt: ENST ?)&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.eu/">http://www.pgday.eu/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>check_postgres 2.8.0, un module Nagios pour la surveillance de PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/check_postgres/">http://bucardo.org/check_postgres/</a></li>
+
+<li>Jopr 2.2, une application de gestion et de surveillance serveur&nbsp;: 
+
+<a target="_blank" href="http://www.jboss.org/jopr/">http://www.jboss.org/jopr/</a></li>
+
+<li>Le "PostgreSQL RPM Building Project" a publi&eacute; une nouvelle version de "The PostgreSQL LiveCD"&nbsp;: 
+
+<a target="_blank" href="http://www.pglivecd.org">http://www.pglivecd.org</a></li>
+
+<li>Npgsql2 2.0.5, un gestionnaire .NET de donn&eacute;es pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.npgsql.org">http://www.npgsql.org</a></li>
+
+<li>pgAdmin 1.10 beta 3, une interface graphique de gestion pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/ftp/pgadmin3/release/v1.10.0-beta3/">http://www.postgresql.org/ftp/pgadmin3/release/v1.10.0-beta3/</a></li>
+
+<li>pgpool-II 2.2.2, un gestionnaire de connexions et bien d'avantage&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+<li>La "United States PostgreSQL Association" est &agrave; pr&eacute;sent qualifi&eacute;e 501(c)(3) non-lucrative. F&eacute;licitations&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.us/">http://www.postgresql.us/</a></li>
+
+<li>PostGIS 1.3.6, un syst&egrave;me g&eacute;ospatial pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://postgis.refractions.net/">http://postgis.refractions.net/</a></li>
+
+<li>Slony 1.2.16 et 2.0.2, un syst&egrave;me de r&eacute;plication ma&icirc;tre-esclave en cascade&nbsp;: 
+
+<a target="_blank" href="http://slony.info/">http://slony.info/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 8.4 de la semaine</strong></p>
+
+<p>Les fonctions de fen&ecirc;trage. Ces requ&ecirc;tes sont devenues nettement plus accessibles. 'PARTITION BY' y est particuli&egrave;rement utile.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Il est conseill&eacute; d'indexer les champs de clefs &eacute;trang&egrave;res (c&ocirc;t&eacute; r&eacute;f&eacute;ren&ccedil;ant ou "fils"), &agrave; moins que les valeurs r&eacute;f&eacute;renc&eacute;es aient une tr&egrave;s faible cardinalit&eacute;. PostgreSQL ne met pas cela en place automatiquement.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090509">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en mai</strong></p>
 

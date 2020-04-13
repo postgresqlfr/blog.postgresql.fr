@@ -6,6 +6,40 @@ redirect_from: "index.php?post/drupal-428 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 11 mai 2008</strong></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>DBD::Pg 2.7.1 est disponible&nbsp;:
+
+<a target="_blank" href="http://search.cpan.org/dist/DBD-Pg/">http://search.cpan.org/dist/DBD-Pg/</a></li>
+
+<li>OpenX 2.5.67-beta est disponible, avec à présent le support de PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://www.openx.org/beta">http://www.openx.org/beta</a></li>
+
+<li>pgsnap 0.3.1 est disponible&nbsp;:
+
+<a target="_blank" href="http://pgsnap.projects.postgresql.org/">http://pgsnap.projects.postgresql.org/</a></li>
+
+<li>pg_top 3.6.2 a été publié&nbsp;:
+
+<a target="_blank" href="http://ptop.projects.postgresql.org/">http://ptop.projects.postgresql.org/</a></li>
+
+<li>psqlODBC 08.03.0200 a été publié&nbsp;:
+
+<a target="_blank" href="http://psqlodbc.projects.postgresql.org/release.html">http://psqlodbc.projects.postgresql.org/release.html</a></li>
+
+<li>PostgreSQL Data Wizard 8.4 a été publié&nbsp;:
+
+<a target="_blank" href="http://www.sqlmaestro.com/products/postgresql/datawizard/">http://www.sqlmaestro.com/products/postgresql/datawizard/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <strong>Offres d'emplois autour de PostgreSQL en mai</strong>
 

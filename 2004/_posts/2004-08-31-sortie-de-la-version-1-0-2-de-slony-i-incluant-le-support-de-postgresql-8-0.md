@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-25 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 L'équipe de Slony a annoncé la sortie de la version 1.0.2 de leur outil de réplication, suivant ainsi de près la sortie de la dernière mouture de PostgreSQL (8.0.0 BETA 1).
 

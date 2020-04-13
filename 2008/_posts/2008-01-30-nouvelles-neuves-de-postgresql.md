@@ -6,6 +6,26 @@ redirect_from: "index.php?post/drupal-405 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 27 janvier 2008</strong></p>
+
+<ul>
+
+<li>La 8.3 RC2 est à votre disposition. Un petit test ?
+
+<a target="_blank" href="http://www.postgresql.org/developer/beta">http://www.postgresql.org/developer/beta</a></li>
+
+<li>Félicitations à Selena Deckelmann pour son nouveau de travail de liaison inter-PUG.</li>
+
+<li>Attendez-vous à un serveur PUG mis à jour dans le courant de la semaine&nbsp;:
+
+<a target="_blank" href="http://pugs.postgresql.org/">http://pugs.postgresql.org/</a></li>
+
+<li>Postgres Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter et Devrim Gunduz.</li>
+
+</ul>
+
+<!--more-->
+
 
 <!--break-->
 

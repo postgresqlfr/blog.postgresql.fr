@@ -6,6 +6,14 @@ redirect_from: "index.php?post/2019-11-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le PGDay suisse 2020 aura lieu &agrave; Rapperswil-Jona (pr&egrave;s de Zurich) les 18 & 19 juin 2020&nbsp;: <a target="_blank" href="https://www.pgday.ch/2020/">https://www.pgday.ch/2020/</a></p>
+
+<p>[ndt: <em>brown bag lunch</em> le 5/12 à midi pour le groupe de Lyon&nbsp;: <a href="https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/" target="_blank">https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/</a>]</p>
+
+<p>[ndt: meetup le 5/12 à 19h à Nantes&nbsp;: <a href="https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Nantes/" target="_blank">https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Nantes/</a>]</p>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en novembre</h2>
 

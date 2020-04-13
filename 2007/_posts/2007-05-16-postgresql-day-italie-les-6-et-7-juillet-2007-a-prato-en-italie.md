@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-253 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 La communauté PostgreSQL se réunira en Toscane à la veille du 21ème anniversaire de la base de données totalement libre. Cet évènement est basé sous le signe de l'échange : tant les développeurs que les utilisateurs, tant les administrations que les entreprises y sont attendues.
 

@@ -6,6 +6,28 @@ redirect_from: "index.php?post/drupal-181 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 30 Avril 2006</strong></p>
+
+<p>
+
+Une grande partie du travail a été effectuée sur l'indexation inverse généralisée (<em>Generalized Inverted Indexing</em> (GIN)) et servira de base à l'implantation de tseach3 et d'autres. </p>
+
+<p>
+
+Nous sommes toujours à la recherche d'étudiants et de mentors qui souhaiteraient travailler sur les projets autour de PostgreSQL pour le prochain <em>Summer Of Code</em> de Google. Un des gagnants de l'an dernier était  <a target="_blank" href="http://pgfoundry.org/projects/qbe/"> Query By Example</a>. Si vous êtes professeur ou un étudiant en lycée ou à l'université et que vous êtes intéressés par un projet orienté base de données du <em>Summer Of Code</em>, et plus particulièrement si vous avez votre propre projet traitant avec PostgreSQL, contactez <a href="mailto:josh%20at%20postgresql%20dot%20org">Josh Berkus</a> le plus rapidement possible. <a target="_blank" href="http://www.postgresql.org/developer/summerofcode">http://www.postgresql.org/developer/summerofcode</a>
+
+<br />
+
+Les inscriptions pour le <em>PostgreSQL Anniversary</em> sont ouvertes  <a target="_blank" href="http://conference.postgresql.org/Registration">http://conference.postgresql.org/Registration</a>
+
+</p>
+
+<p>
+
+Le <em>PostgreSQL Anniversary Summit</em> est sponsorisé par  Afilias, EnterpriseDB, GreenPlum, Pervasive et Sun Microsystems. </p>
+
+<!--more-->
+
 
 <strong>Nouvelles des produits autour de PostgreSQL</strong>
 

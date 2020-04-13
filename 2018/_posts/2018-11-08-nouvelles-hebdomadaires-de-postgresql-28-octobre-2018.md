@@ -6,6 +6,26 @@ redirect_from: "index.php?post/2018-11-08-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le PGDay argentin 2018 aura lieu &agrave; Buenos Aires le 21 novembre 2018. L'appel &agrave; conf&eacute;renciers court jusqu'au 31 octobre 2018&nbsp;: <a target="_blank" href="http://www.pgday.com.ar/buenosaires2018/?lang=en">http://www.pgday.com.ar/buenosaires2018/?lang=en</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>Pgpool-II 4.0.0 et pgpoolAdmin 4.0.0 ont &eacute;t&eacute; publi&eacute;s&nbsp;: <a target="_blank" href="http://www.pgpool.net/docs/latest/en/html/release-4-0.html">http://www.pgpool.net/docs/latest/en/html/release-4-0.html</a></li>
+
+<li>barman 2.5, un gestionnaire de sauvegarde et restauration pour PostgreSQL&nbsp;: <a target="_blank" href="https://www.pgbarman.org/barman-2-5-released/">https://www.pgbarman.org/barman-2-5-released/</a></li>
+
+<li>pg_permission 1.0, une extension utilisant des tables de donn&eacute;es pour d&eacute;finir des normes de contr&ocirc;les d'acc&egrave;s, et incluant des outils pour les v&eacute;rifier vis-&agrave;-vis des contr&ocirc;les d'acc&egrave;s effectifs du syst&egrave;me&nbsp;: <a target="_blank" href="https://github.com/cybertec-postgresql/pg_permission">https://github.com/cybertec-postgresql/pg_permission</a></li>
+
+<li>Benetl 4.9, un ETL pour PostgreSQL&nbsp;: <a target="_blank" href="http://www.benetl.net">http://www.benetl.net</a></li>
+
+<li>PipelineDB v1.0.0, an extension to handle streaming time-series data, released. <a target="_blank" href="https://www.pipelinedb.com/blog/pipelinedb-1-0-0-high-performance-time-series-aggregation-for-postgresql">https://www.pipelinedb.com/blog/pipelinedb-1-0-0-high-performance-time-series-aggregation-for-postgresql</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en octobre</h2>
 

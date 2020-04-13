@@ -6,6 +6,48 @@ redirect_from: "index.php?post/2009-09-09-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Nouveau sondage&nbsp;: quelle fonctionnalit&eacute; de la 8.5 alpha1 trouvez-vous la plus int&eacute;ressante&nbsp;? 
+
+<a target="_blank" href="http://www.postgresql.org/community">http://www.postgresql.org/community</a></p>
+
+<p>Les inscriptions pour la "PostgreSQL Conference West" sont ouvertes&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.us/purchase">http://www.postgresql.us/purchase</a></p>
+
+<p>Le projet "PostgreSQL Live CD" a ouvert une mailing-list pour construire ce CD suivant les commentaires de la communaut&eacute;&nbsp;: 
+
+<a target="_blank" href="http://www.pglivecd.org/community.php">http://www.pglivecd.org/community.php</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>GTpB portalBase, une plateforme web bas&eacute;e sur PostgreSQL, est maintenant disponible en GPL&nbsp;: 
+
+<a target="_blank" href="http://www.gtportalbase.com/">http://www.gtportalbase.com/</a></li>
+
+<li>Le "PostgreSQL RPM Building Project" publie une nouvelle version du "PostgreSQL Live CD", cette fois-ci bas&eacute; sur PostgreSQL 8.4.0 et CentOS 5.3&nbsp;: 
+
+<a target="_blank" href="http://yum.pgsqlrpms.org/livecd.php">http://yum.pgsqlrpms.org/livecd.php</a></li>
+
+<li>AnySQL Maestro 9.8, une interface graphique pour l'administration et le d&eacute;veloppement sous Windows&nbsp;: 
+
+<a target="_blank" href="http://www.sqlmaestro.com/products/anysql/maestro/">http://www.sqlmaestro.com/products/anysql/maestro/</a></li>
+
+<li>pg51g, une bo&icirc;te &agrave; outils de comparaison de donn&eacute;es ("data diff") pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://pgdba.net/pg51g/">http://pgdba.net/pg51g/</a></li>
+
+<li>pgDesigner 1.2.11, un utilitaire graphique de sch&eacute;matisation BDD pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://pgdesigner.sourceforge.net/en/index.html">http://pgdesigner.sourceforge.net/en/index.html</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090906">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en September</strong></p>
 

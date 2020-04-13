@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-209 "
 
 
 
+
+<!--more-->
+
+
 <p>PostgreSQLFr tient un stand aux <a href="http://www.rmll.info/">Rencontres mondiales des Logiciels Libres</a>.</p>
 
 <p>Cet évènement se déroule à Amiens du 10 au 14 juillet.</p>

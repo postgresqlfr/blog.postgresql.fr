@@ -6,6 +6,66 @@ redirect_from: "index.php?post/drupal-69 "
 ---
 
 
+<p><em>David Fetter est le nouveau responsable du PostgreSQL Weekly News.</em></p>
+
+<p><strong>== PostgreSQL Weekly News - 28 Janvier 2005 ==</strong></p>
+
+<p>
+
+PostgreSQL 8.0.0 incluant le plus grand nombre de modifications duepuis la version 6.3 est sorti. Réservez le meilleur accueil dans la communauté aux nouveaux utilisateurs Windows . Les détails techniques des nouvelles fonctionnalités se trouve sur
+
+<a href="http://www.postgresql.org/about/news.277">http://www.postgresql.org/about/news.277</a>
+
+</p>
+
+<p>
+
+Pervasive Software Inc. a annoncé la sortie de Pervasive Postgres,
+
+leur version du code PostgreSQL incluant un support. Pervasive est connue comme étant l'heureux propriétaire de la base de données embarquée propriétaire Btrieve.  Leur équipe, de 12 programmeurs, est trés motivée par la contribution qu'elle pourrait apporté au code Open Source de PostgreSQL. Pour plus d'informations lisez la page <a href="http://www.pervasivepostgres.com">http://www.pervasivepostgres.com</a>.
+
+</p>
+
+<p>Il y a eu une discussion animée sur -hackers au sujet d'un brevet
+
+d'IBM portant sur ARC. Souvenez vous que les opinions des développeurs
+
+de logiciels sur les aspects légaux ont un poids équivalent à ceux des
+
+avocats.
+
+</p>
+
+<p>
+
+Les futures versions 8.0.1, 7.4.7, 7.3.9 et 7.2.7 vont corriger un bug de sécurité sur l'extension LOAD décrite dans <a href="http://archives.postgresql.org/pgsql-bugs/2005-01/msg00269.php">http://archives.postgresql.org/pgsql-bugs/2005-01/msg00269.php</a>
+
+et permettant à un utilisateur disposant de petits privilèges de
+
+charger arbitrairement des bibliothèques dans l'espace de processus de
+
+postgres, au moins sous Windows. Les autres patches inclus dans la
+
+8.0.1 contiennent des améliorations pour Windows NT4 et un moyen de
+
+fixer la taille de la pile sous Windows pouvant mener à un crash dans
+
+les clauses IN() de taille conséquente.
+
+</p>
+
+<p>Jean-Gérard Pailloncy est parti de l'idée purement théorique de
+
+types étendus (nombre + unité) pour arriver à une implémentation
+
+pratique incluant l'arithmétique sur les unités en une semaine. Les
+
+détails sur ce point sont sur <a href="http://archives.postgresql.org/pgsql-general/2005-01/msg01355.php">http://archives.postgresql.org/pgsql-general/2005-01/msg01355.php</a>.
+
+</p>
+
+<!--more-->
+
 
 <strong>== PostgreSQL Product News ==</strong><br /><p>
 

@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2018-08-13-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgpool-II versions 3.7.5, 3.6.12, 3.5.16, 3.4.18, et 3.3.22 publi&eacute;es. <a target="_blank" href="http://www.pgpool.net/docs/latest/en/html/release.html">http://www.pgpool.net/docs/latest/en/html/release.html</a></li>
+
+<li>repmgr 4.1.0, un gestionnaire de r&eacute;plication pour PostgreSQL&nbsp;: <a target="_blank" href="https://repmgr.org/docs/4.1/release-4.1.0.html">https://repmgr.org/docs/4.1/release-4.1.0.html</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en ao&ucirc;t</h2>
 

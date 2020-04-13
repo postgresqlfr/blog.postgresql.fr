@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-389 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Attention, tous les exemples de cet article utilisent le langage PL/pgsql. Pour l'utiliser, vous devez l'intégrer à votre base. Cela se fait tout simplement avec cette commande&nbsp;:</p>
 

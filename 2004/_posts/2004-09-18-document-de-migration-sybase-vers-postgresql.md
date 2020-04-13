@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-29 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Virginie Quesnay a écrit sur la liste pgsql-fr-générale:</p>
 

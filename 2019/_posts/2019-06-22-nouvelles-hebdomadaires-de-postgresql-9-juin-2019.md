@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2019-06-22-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p><em>PostgresOpen</em> aura lieu au Rosen Centre Hotel d'Orlando (Floride, &Eacute;tats-Unis) du 11 au 13 septembre 2019. L'appel &agrave; conf&eacute;renciers est lanc&eacute; via <a target="_blank" href="https://2019.postgresopen.org/callforpapers/">https://2019.postgresopen.org/callforpapers/</a> <a target="_blank" href="https://2019.postgresopen.org/">https://2019.postgresopen.org/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgAdmin4 4.8, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_8.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_8.html</a></li>
+
+<li>pgFormatter 4.0, un outil de formatage/coloration syntaxique pour le code SQL&nbsp;: <a target="_blank" href="http://sqlformat.darold.net/">http://sqlformat.darold.net/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en juin</h2>
 

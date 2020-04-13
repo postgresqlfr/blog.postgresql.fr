@@ -6,6 +6,74 @@ redirect_from: "index.php?post/drupal-360 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires de PostgreSQL - 12 avril 2004 ==</h2>
+
+<p>Une tranquille semaine de développement pour le projet principal mais
+
+plusieurs développements intéressants ont eu lieu dans le monde. Probablement
+
+un des plus intéressants est la sortie des spécifications SQL:2003. Toute
+
+personne intéressée par le concept et la conception des bases de données
+
+devrait y jeter un oeil car un certain nombre d'articles apparaissent pour
+
+discuter des changements qui s'en découlent; j'ai inclus un lien vers un
+
+synopsis ci-dessous.<!--break-->
+
+</p>
+
+<p>Entre temps, de retour au monde de PostgreSQL, nous avons une petite liste
+
+de modifications à revoir. Le programme psql affiche maintenant l'information
+
+du CLUSTER en utilisant \d sur l'objet adéquat. Quelques vérifications
+
+d'erreurs ont été ajouté à la commande copy pour empêcher certaines personnes
+
+d'utiliser un délimiteur apparaissant dans la chaîne COPY NULL. Les
+
+fonctionnalités de traces peuvent maintenant tracer à partir des instructions
+
+DML et DDL en plus d'autres options (vérifiez la documentation en développement
+
+pour les spécificités de l'implémentation). L'optimiseur garde maintenant une
+
+meilleure trace des tris utilisé dans les opérations "set" pour éviter des tris
+
+redondants à des niveaux supérieurs.</p>
+
+<p>Deux informations particulièrement intéressantes à mentionner cette semaine
+
+concernent la rupture de compatibilité descendante avec les anciennes versions
+
+de PostgreSQL. La première implique la correction d'un bogue autorisant un
+
+siècle 0 et un millénium 0. L'autre changement fait que la commande \copy de
+
+psql lit les commandes sur l'entrée/sortie et ajoute un pstdin/pstdout pour
+
+lire à partir du stdin/stdout de psql. Ces deux changements seront indiqués
+
+dans le journal des modifications intégral de la 7.5 mais il est toujours
+
+appréciable de le savoir aussi tôt que possible.</p>
+
+<p>Une dernière information sur une mise à jour d'une solution de réplication
+
+très prometteuse pour PostgreSQL connue sour le nom de PGCluster. Celle-ci
+
+a pour licence BSD. Il s'agit d'une solution de réplication multi-maîtres
+
+synchrones, basée actuellement sur les sources de la 7.3.4. Pour les personnes
+
+intéressés, plus d'informations sont disponibles sur le site du projet (<a href="http://hiroshima.sraw.co.jp/people/mitani/jpug/pgcluster/en/">http://hiroshima.sraw.co.jp/people/mitani/jpug/pgcluster/en/</a>).
+
+</p>
+
+<!--more-->
+
 
 <h2>== Nouvelles concernant les produits PostgreSQL ==</h2>
 

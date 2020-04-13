@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2011-09-26-nouvelles-versions-mineures "
 
 
 
+
+<!--more-->
+
+
 <p>
 
 Le PostgreSQL Global Development Group publie aujourd'hui des mises à jour pour toutes les branches actives du SGBD PostgreSQL. Les versions ainsi publiées sont les versions numérotées 9.1.1, 9.0.5, 8.4.9, 8.3.16 et 8.2.22.

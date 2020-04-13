@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2016-09-29-sortie-de-postgresql-9-6 "
 
 
 
+
+<!--more-->
+
+
 <p>29 septembre 2016 : le PostgreSQL Global Development Group a publié aujourd'hui PostgreSQL 9.6, dernière version du système libre de gestion de bases de données SQL de référence.
 
 Cette version va permettre aux utilisateurs de réaliser à la fois une expansion interne (scale up) et externe (scale out, répartition de la charge) de leurs bases de données haute-performance. Les nouvelles fonctionnalités incluent notamment le parallélisme des requêtes, des améliorations sur la réplication synchrone, la recherche par phrase, ainsi que des améliorations sur la performance et la facilité d'utilisation.</p>

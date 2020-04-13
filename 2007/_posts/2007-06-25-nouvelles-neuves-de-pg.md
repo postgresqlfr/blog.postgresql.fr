@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-173 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 17 Juin 2007</strong></p>
+
+<p>postgresql_autodoc, postgresql-pgpoolAdmin et postgresql-table_log font maintenant partie de Fedora. Vous pouvez les installer avec Yum.</p>
+
+<p>Si vous désirez des RPM de programmes en lien avec PostgreSQL, veuillez envoyer un email à devrim <em>abizarre</em> commandprompt <em>point</em> com.</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

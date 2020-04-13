@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2019-10-15-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgcat, un syst&egrave;me de r&eacute;plication logique pour PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/kingluo/pgcat">https://github.com/kingluo/pgcat</a></li>
+
+<li>PostGIS 3.0.0rc2, le syst&egrave;me d'information g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL&nbsp;: <a target="_blank" href="https://postgis.net/2019/10/13/postgis-3.0.0rc2/">https://postgis.net/2019/10/13/postgis-3.0.0rc2/</a></li>
+
+<li>PEV2, un outil de visualisation des plans d'ex&eacute;cution de PostgreSQL&nbsp;: <a target="_blank" href="https://dali.bo/github_pev2">https://dali.bo/github_pev2</a></li>
+
+<li>oracle_fdw 2.2.0&nbsp;: <a target="_blank" href="https://laurenz.github.io/oracle_fdw">https://laurenz.github.io/oracle_fdw</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en octobre</h2>
 

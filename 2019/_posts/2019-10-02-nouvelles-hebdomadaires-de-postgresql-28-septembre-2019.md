@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2019-10-02-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 12 <em>Release Candidate</em> 1 est disponible, &agrave; vos tests&nbsp;! <a target="_blank" href="https://www.postgresql.org/about/news/1975/">https://www.postgresql.org/about/news/1975/</a></p>
+
+<p>La conf&eacute;rence germanophone <em>PostgreSQL Conference 2020</em> aura lieu le 10 mai 2020 &agrave; Stuttgart.</p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>PostGIS 3.0.0beta1, le syst&egrave;me d'information g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL&nbsp;: <a target="_blank" href="https://postgis.net/2019/09/28/postgis-3.0.0beta1/">https://postgis.net/2019/09/28/postgis-3.0.0beta1/</a></li>
+
+<li>pgFormatter 4.1, un outil de formatage/coloration syntaxique pour le code SQL&nbsp;: <a target="_blank" href="http://sqlformat.darold.net/">http://sqlformat.darold.net/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en septembre</h2>
 

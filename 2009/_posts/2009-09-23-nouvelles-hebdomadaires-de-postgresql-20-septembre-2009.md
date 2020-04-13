@@ -6,6 +6,14 @@ redirect_from: "index.php?post/2009-09-23-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les inscriptions pour la PGCon Brazil 2009 sont ouvertes&nbsp;: 
+
+<a target="_blank" href="http://pgcon.postgresql.org.br">http://pgcon.postgresql.org.br</a></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090920">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en septembre</strong></p>
 

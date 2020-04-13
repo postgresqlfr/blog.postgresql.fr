@@ -6,6 +6,52 @@ redirect_from: "index.php?post/drupal-363 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires de PostgreSQL - 3 mai 2004 ==</h2>
+
+<p>Il y a eu beaucoup de discussions cette semaine concernant le passage de la
+
+7.5 en bêta. Alors qu'une date proposée était le 1er juin, certains pensent que
+
+la sortie doit être décalée pour aider aux finissions de quelques
+
+fonctionnalités de haute volée, actuellement en développement comme les espaces
+
+de nommages (tablespace), le commit en deux phases et le portage vers win32.
+
+Alors qu'aucun n'est terminé actuellement, la plupart ont des concepts
+
+fonctionnels et des correctifs en cours de développement. Il y a donc de fortes
+
+chances pour qu'ils soient terminés et inclus avant le gel des
+
+fonctionnalités.
+
+</p>
+
+<p>Pour ce qui est des sources actuelles, le plus gros impact de la semaine est
+
+l'ajout de la bibliothèque des fuseaux horaires d'Arthur Olson, du domaine
+
+public, dans le moteur. Originellement, il a été inclus dans l'effort du portage
+
+win32. Ceci dit, quelques problèmes côté Unix ont été corrigé grâce à cela,
+
+notamment l'amélioration de la fiabilité de détection des fuseaux horaires
+
+légaux, sans parler de la résolution des problèmes de portabilité entre
+
+plateformes. Il est aussi important de mentionner l'envoi de l'ensemble complet
+
+des correctifs pour la phase 1 de PITR sur la liste -patches. Cet ensemble
+
+apporte une implémentation, plus ou moins fonctionnelle de PITR, bien qu'il
+
+reste du travail pour rendre ceci utilisable en général. Néanmoins, c'est un bon
+
+aperçu de ce qui nous attend.</p>
+
+<!--more-->
+
 
 <h2>== Nouvelles concernant les produits PostgreSQL ==</h2>
 

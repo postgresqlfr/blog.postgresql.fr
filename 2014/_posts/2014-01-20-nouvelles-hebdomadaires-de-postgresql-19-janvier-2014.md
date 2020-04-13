@@ -6,6 +6,86 @@ redirect_from: "index.php?post/2014-01-20-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La quatri&egrave;me et derni&egrave;re <em>commitfest</em> de la version 9.4 de PostgreSQL a commenc&eacute;. Lancez-vous&nbsp;: relisez et r&eacute;visez ces patchs&nbsp;! 
+
+<a target="_blank" href="https://commitfest.postgresql.org/action/commitfest_view?id=21">https://commitfest.postgresql.org/action/commitfest_view?id=21</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>PG Partition Manager 1.5.1&nbsp;: une extension pour g&eacute;rer un partitionnement bas&eacute; sur un horodatage ou une suite&nbsp;: 
+
+<a target="_blank" href="http://www.keithf4.com/managing-constraint-exclusion-in-table-partitioning/">http://www.keithf4.com/managing-constraint-exclusion-in-table-partitioning/</a> <a target="_blank" href="https://github.com/keithf4/pg_partman">https://github.com/keithf4/pg_partman</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en janvier</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2014-01/threads.php">http://archives.postgresql.org/pgsql-jobs/2014-01/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>FOSDEM PGDay, une conf&eacute;rence d'une journ&eacute;e, tenue avant le FOSDEM &agrave; Bruxelles, aura lieu le 31 janvier 2014. D&eacute;tails&nbsp;: 
+
+<a target="_blank" href="http://fosdem2014.pgconf.eu/">http://fosdem2014.pgconf.eu/</a> <a target="_blank" href="http://fosdem2014.pgconf.eu/registration/">http://fosdem2014.pgconf.eu/registration/</a></li>
+
+<li>La 7<sup>&egrave;me</sup> conf&eacute;rence annuelle "<em>Prague PostgreSQL Developers Day</em>" (P2D2), organis&eacute;e par le CSPUG (PUG tch&egrave;que et slovaque), aura lieu le 6 f&eacute;vrier 2014 &agrave; la Facult&eacute; des Sciences Math&eacute;matiques &amp; Physiques de l'Universit&eacute; Charles (Malostranske namesti 25, Prague). Infos en langue tch&egrave;que ci-apr&egrave;s&nbsp;: 
+
+<a target="_blank" href="http://www.p2d2.cz/">http://www.p2d2.cz/</a></li>
+
+<li>Le PGDay Nordique 2014 aura lieu &agrave; Stockholm (Su&egrave;de) &agrave; l'h&ocirc;tel Hilton le 20 mars 2014. L'appel &agrave; conf&eacute;renciers est ouvert jusqu'au 2 f&eacute;vrier 2014&nbsp;: 
+
+<a target="_blank" href="http://2014.nordicpgday.org/">http://2014.nordicpgday.org/</a></li>
+
+<li>La <em>PGConf NYC 2014</em> aura lieu les 3 &amp; 4 avril 2014 &agrave; New-York (New-York, USA)&nbsp;: 
+
+<a target="_blank" href="http://nyc.pgconf.us/2014/">http://nyc.pgconf.us/2014/</a></li>
+
+<li>Le sommet Open Data aura lieu le 11 avril 2014 &agrave; Denver (Colorado, &Eacute;tats-Unis)&nbsp;: 
+
+<a target="_blank" href="http://www.opendatasummit.com">http://www.opendatasummit.com</a></li>
+
+<li>La PGCon 2014, la conf&eacute;rence mondiale des d&eacute;veloppeurs PostgreSQL, se tiendra &agrave; Ottawa (Ontario, Canada) du 20 au 24 mai 2014&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2014/">http://www.pgcon.org/2014/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20140120070304.GC8349@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

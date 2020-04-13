@@ -6,6 +6,94 @@ redirect_from: "index.php?post/drupal-368 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires de PostgreSQL - 1er juin 2004 ==</h2>
+
+<p>Après bien des rumeurs et des spéculations, l'équipe principale a annoncé que
+
+le 1er juillet sera la date officielle du gel des fonctionnalités pour
+
+PostgreSQL 7.5. La principale raison derrière ceci est le désir de donenr un peu
+
+plus de temps de développement sur certaines fonctionnalités majeures comme
+
+PITR, actuellement en cours de relecture et de tests. Toute personne travaillant
+
+sur une autre fonctionnalité susceptible d'être intégrée dans les prochaines
+
+semaines est encouragée à envoyer un correctif aussi rapidement que
+
+possible.
+
+</p>
+
+<p>Quelques correctifs impressionants ont été intégrés cette semaine. L'un
+
+d'entre eux provient d'Euler Taveira de Oliveira qui a implémenté ALTER DATABASE
+
+foo OWNER TO bar, supprimant ainsi un élément de la liste des choses à faire. La
+
+fonction est supportée dans ECPG et est limité aux administrateurs. Thomas
+
+Hallgren a aussi fourni un correctif basé sur un élément de la même liste&nbsp;;
+
+celui-ci a implémenté la possibilité à des interfaces externes d'étendre
+
+l'ensemble des variables GUC. Les modules supplémentaires comme les langages
+
+procéduraux seront maintenant capables de déclarer une classe de variables et de
+
+les utiliser ensuite comme conteneurs de différentes informations.</p>
+
+<p>Neil Conway a pu soumettre son correctif de réécriture de la structure de
+
+données des listes chaînées avant de disparaître pour l'été. Le correctif, basé
+
+sur de nombreuses discussions sur les différentes listes, change
+
+l'implémentation des listes en les passant de simples pointeurs vers des noeuds de
+
+la liste en pointeurs vers une structure contenant des méta-données sur chaque
+
+liste. Ceux intéressés par les plus petits détails sont encouragés à regarder
+
+dans les archives des listes de discussion. Parmi les codes refactorisés, le
+
+code de l'enregistreur a été logiquement séparé pour être placé dans son propre
+
+module et a reçu la responsabilté des activités de vérification séquentielle
+
+(checkpoint). fsync(2) a éré remplacé par un fsync explicite sur des fichiers
+
+non temporaires.</p>
+
+<p>La fonction identify_system_timezone() a été modifié pour parcourir toutes
+
+les zones horaires connues plutôt que la liste fournie auparavant. Ceci devrait
+
+être un peu plus complet sans ajouter un supplément important de travail lors du
+
+lancement de postmaster. Une version binaire de pg_ctl a été intégrée,
+
+remplaçant le dernier script shell pour le portage win32. D'autres travaux
+
+orientés vers le portage win32 ont été effectués, comme des correctifs pour les
+
+locales, un nettoyage du code utilisé pour lancer de nouveaux moteurs et des
+
+modifications dans le processus EXEC_BACKEND.</p>
+
+<p>Et enfin, dernier point de cette semaine, une nouvelle version du code
+
+btree_gist a été intégrée pour ajouter le support des différents nouveaux types
+
+de données. Nous avons aussi ajouté un nouveau module contrib pg_trgm qui
+
+fournit des fonctions et des classes d'index pour déterminer la similarité de
+
+texxtes suivant une correspondance "trigram".</p>
+
+<!--more-->
+
 
 <h2>== Nouvelles concernant les produits PostgreSQL ==</h2>
 

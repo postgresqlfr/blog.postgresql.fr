@@ -6,6 +6,44 @@ redirect_from: "index.php?post/drupal-18 "
 ---
 
 
+<h3>== Nouvelles hebdomadaires de PostgreSQL - 12 juillet 2004 ==</h3>
+
+<p>Bien, les choses commencent à se préciser pour la fin de ce cycle de développement. Personne ne peut encore dire quand la nouvelle beta sortira mais il y a beaucoup de discussions en cours sur l'inclusion ou pas de fonctionnalités comme le «&nbsp;commit en deux phases&nbsp;» et le <acronym title="Point In Time Recovery">PITR</acronym>. Ainsi, nous ne devrions pas voir sortir une beta ce mois-ci. Ceux qui ont des connaissances sur ces fonctionnalités sont invités à lire et à participer à la discussion sur la liste <a href="http://archives.postgresql.org/pgsql-hackers">pgsql-hackers</a>.
+
+</p>
+
+<p>Pendant que les discussions vont bon train, le codage continue pour
+
+les fonctionalités existantes qui seront livrées dans la prochaine
+
+version. Il y a aussi plusieurs corrections pour OSX et les *BSD ainsi
+
+que des corrections sur le nouveau code de plperl. La commande \d
+
+affiche maintenant des informations complémentaires sur les espaces
+
+logiques. La fonction has_tablespace_privilege() a été ajoutée. Elle
+
+vérifie si un utilisateur peut accéder à un espace logique dans
+
+diverses situations. La détection du fuseau horaire a aussi été
+
+modifiée pour améliorer la précision de ses résultats sur des systèmes
+
+configurés par défaut.</p>
+
+<p>Un dernier changement vaut d'être mentionné, il s'agit d'un
+
+correctif permettant à PostgreSQL d'avoir des fichiers de configuration
+
+ailleurs que dans le répertoire PGDATA. Cela devrait aider les systèmes
+
+souhaitant placer dans un même répertoire tous les fichiers de
+
+configuration (<acronym title="Note Du Traducteur">NDT</acronym>&nbsp;: par exemple /etc pour Debian, ce qui évitera des liens symboliques pas très jolis...).</p>
+
+<!--more-->
+
 
 <h3>== Nouvelles des produits PostgreSQL ==</h3>
 

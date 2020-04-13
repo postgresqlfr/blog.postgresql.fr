@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-256 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Sur <a href="http://www.pgday.it/fr/">cette page</a> vous trouverez les liens nécessaires pour écouter en live les conférences du pgday à Prato en Italie!...</p>
 

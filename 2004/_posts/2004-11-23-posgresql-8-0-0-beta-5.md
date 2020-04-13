@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-51 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <em>Dans son mail sur pg announce Marc G. Fournier nous annonçait:</em>
 

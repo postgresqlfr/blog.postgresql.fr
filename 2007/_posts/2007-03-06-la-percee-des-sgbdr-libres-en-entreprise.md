@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-241 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Tel est le titre d'un article, signée par Christiène Brancier, paru ce 5 mars dans Décision Distribution (n° 709).</p>
 

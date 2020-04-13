@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-254 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 3 juin 2007</strong></p>
+
+<p>Les discussions se poursuivent avec vigueur à propos des nombreuses nouveautés à incorporer dans la 8.3.</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2013-06-28-sortie-de-postgresql-9-3-beta-2 "
 
 
 
+
+<!--more-->
+
+
 La seconde version bêta de PostgreSQL 9.3 est désormais disponible.
 
 Cette bêta propose un avant-goût de toutes les fonctionnalités qui

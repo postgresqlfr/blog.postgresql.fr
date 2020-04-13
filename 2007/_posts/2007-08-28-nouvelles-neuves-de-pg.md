@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-411 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 26 Août 2007</strong></p>
+
+<p>Les travaux continuent sur la future version 8.3 incluant nativement la recherche de texte TSearch2.</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

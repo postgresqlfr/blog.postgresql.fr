@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-72 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Comme promis sur le stand PostgreSQLFr lors de Solutions Linux 2005, vous trouverez ci-après les liens qui vous permettront de télécharger les présentations des
 

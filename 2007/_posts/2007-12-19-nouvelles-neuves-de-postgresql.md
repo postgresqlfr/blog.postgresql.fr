@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-414 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 16 décembre 2007</strong></p>
+
+<ul>
+
+<li>ruby-pg est maintenant le projet officiel de la rubyforge en tant que gemme "Postgres"&nbsp;:
+
+<a target="_blank" href="http://www.rubyforge.org/projects/ruby-pg">http://www.rubyforge.org/projects/ruby-pg</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

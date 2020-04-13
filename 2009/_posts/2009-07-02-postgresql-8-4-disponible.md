@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2009-07-02-postgresql-8-4-disponible "
 
 
 
+
+<!--more-->
+
+
 <h1>PostgreSQL 8.4</h1>
 
 <p><strong>1er juillet 2009</strong> Le groupe de développement mondial de PostgreSQL (PGDG) a publié la version 8.4, dans la continuité du développement rapide de ce SGBD avancé.

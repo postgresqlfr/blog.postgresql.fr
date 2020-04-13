@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-48 "
 
 
 
+
+<!--more-->
+
+
 <p>
 
 Le centre informatique de l'Université d'Oxfort a annoncé le contenu de ses plans pour se passer de son dernier SGBD commercial au profit des logiciels Open Source, et plus spécifiquement, PostgreSQL.

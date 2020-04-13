@@ -6,6 +6,22 @@ redirect_from: "index.php?post/drupal-91 "
 ---
 
 
+<p>David Fetter nous annonçait :</p>
+
+<p>== Nouvelles hebdomadaires de PostgreSQL - 17 avril 2005 ==</p>
+
+<p>8.0.2 est sorti, avec maintenant le non-breveté (et plus rapide) 2Q en
+
+remplacement de ARC. La <code>libpq</code> ayant changé de versions, vous
+
+devrez recompiler les applications l'utilisant.</p>
+
+<p>Tom Lane a soumis une optimisation pour les aggrégats min() et max() dans
+
+le CVS, qui permet l'utilisation d'indexes.</p>
+
+<!--more-->
+
 
 == Nouveaux Produits PostgreSQL ==
 

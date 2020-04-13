@@ -6,6 +6,34 @@ redirect_from: "index.php?post/drupal-90 "
 ---
 
 
+Le 10 avril 2005, David Fetter écrivait&nbsp;:<br /><br />== PostgreSQL Weekly News - April 10 2005 ==
+
+<p>
+
+PostgreSQL 8.0.2 bientôt dans les bacs.
+
+(NDT&nbsp;: Jean-Paul vous annoçait hier sa sortie. <a href="http://www.postgresqlfr.org/?q=node/205">Sortie de PostgreSQL 8.0.2</a>).
+
+A noter&nbsp;: La bibliothèque <tt>libpq</tt> a changé de numéro majeur. Vous aurez besoin de recompiler les applications qui l'utilisent. <tt>2Q</tt> remplace maintenant <tt>ARC</tt> qui risque d'être grevé d'un brevet. Cette version apporte divers correctifs à PL et les habituels améliorations et autres corrections de bogues.
+
+Plus de détails là : <a href="http://candle.pha.pa.us/main/writings/pgsql/sgml/release.html#RELEASE-8-0-2">http://candle.pha.pa.us/main/writings/pgsql/sgml/release.html#RELEASE-8-0-2</a>
+
+</p>
+
+<p>
+
+Les <tt>TIP</tt> <tt>CVS</tt> incluent à présent les paramètres <tt>IN</tt>, <tt>OUT</tt> et <tt>INOUT</tt> pour les procédures stockées.
+
+</p>
+
+<p>
+
+Il y a un nouveau scrutin sur <a href="http://www.postgresql.org/community/">http://www.postgresql.org/community/</a>
+
+</p>
+
+<!--more-->
+
 
 == PostgreSQL Product News ==
 

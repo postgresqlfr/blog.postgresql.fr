@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-404 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 7 octobre 2007</strong></p>
+
+<p>Postgres 8.3 bêta 1 disponible&nbsp;:
+
+<a target="_blank" href="http://www.postgresql.org/about/news.872">http://www.postgresql.org/about/news.872</a></p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

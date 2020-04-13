@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2011-08-24-sortie-de-postgresql-9-1-rc-1 "
 
 
 
+
+<!--more-->
+
+
 La première version candidate (RC1) de PostgreSQL 9.1 est disponible. Cette version contient des correctifs pour tous les bugs remontés sur les
 
 différentes bêtas de la version 9.1. Afin d'éviter tout bug sur la version de production, il est essentiel que les utilisateurs testent cette version et vérifie que toutes les erreurs sont effectivement corrigés.

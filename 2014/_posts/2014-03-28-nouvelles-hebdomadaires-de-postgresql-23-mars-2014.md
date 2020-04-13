@@ -6,6 +6,94 @@ redirect_from: "index.php?post/2014-03-28-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les versions correctives 9.3.4, 9.2.8, 9.1.13, 9.0.17 et 8.4.21 sont disponibles. Mettez &agrave; jour d&egrave;s que possible&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/about/news/1511/">http://www.postgresql.org/about/news/1511/</a> [ndt: <a href="http://blog.postgresql.fr/index.php?post/2014/03/20/Sortie-des-versions-correctives-9.3.4%2C-9.2.8%2C-9.1.13%2C-9.0.17%2C-et-8.4.21" target="_blank">vf</a>]</p>
+
+<p>Le sixi&egrave;me PGDay cubain aura lieu les 13 et 14 octobre 2014 &agrave; la Havane&nbsp;: 
+
+<a target="_blank" href="https://postgresql.uci.cu/?p=380">https://postgresql.uci.cu/?p=380</a></p>
+
+<p>Les appels &agrave; conf&eacute;renciers pour Char(13) et le PGDay anglais, les 8 et 9 juillet 2014 respectivement, ont &eacute;t&eacute; lanc&eacute;s et les r&eacute;ponses sont attendues avant le 17 avril. speakers AT char14 DOT info, et speakers AT postgresqlusergroup DOT org DOT uk, respectivement&nbsp;: 
+
+<a target="_blank" href="http://www.char14.info">http://www.char14.info</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>DataFiller version 2.0.0, un g&eacute;n&eacute;rateur de donn&eacute;es al&eacute;atoires pour PostgreSQL se basant sur un sch&eacute;ma de base de donn&eacute;es et une s&eacute;rie de directives en commentaire&nbsp;: 
+
+<a target="_blank" href="http://blog.coelho.net/database/2014/03/23/datafiller-2-0-0/">http://blog.coelho.net/database/2014/03/23/datafiller-2-0-0/</a></li>
+
+<li>Npgsql2 2.1.0, un connecteur .NET pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="https://www.nuget.org/packages/Npgsql/2.1.0">https://www.nuget.org/packages/Npgsql/2.1.0</a> <a target="_blank" href="https://github.com/npgsql/Npgsql/releases/tag/v2.1.0">https://github.com/npgsql/Npgsql/releases/tag/v2.1.0</a></li>
+
+<li>Repmgr 2.0, un logiciel de gestion de cluster haute-disponibilit&eacute; et r&eacute;plication pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.repmgr.org">http://www.repmgr.org</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en mars</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2014-03/threads.php">http://archives.postgresql.org/pgsql-jobs/2014-03/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La <em>PGConf NYC 2014</em> aura lieu les 3 &amp; 4 avril 2014 &agrave; New-York (New-York, USA)&nbsp;: 
+
+<a target="_blank" href="http://nyc.pgconf.us/2014/">http://nyc.pgconf.us/2014/</a></li>
+
+<li>Le sommet Open Data aura lieu le 11 avril 2014 &agrave; Denver (Colorado, &Eacute;tats-Unis)&nbsp;: 
+
+<a target="_blank" href="http://www.opendatasummit.com">http://www.opendatasummit.com</a></li>
+
+<li>La PGCon 2014, la conf&eacute;rence mondiale des d&eacute;veloppeurs PostgreSQL, se tiendra &agrave; Ottawa (Ontario, Canada) du 20 au 24 mai 2014&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2014/">http://www.pgcon.org/2014/</a></li>
+
+<li>Le sixi&egrave;me PGDay cubain aura lieu les 13 et 14 octobre 2014 &agrave; la Havane&nbsp;: 
+
+<a target="_blank" href="https://postgresql.uci.cu/?p=380">https://postgresql.uci.cu/?p=380</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20140324062427.GA10251@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

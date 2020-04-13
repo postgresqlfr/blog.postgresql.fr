@@ -6,6 +6,22 @@ redirect_from: "index.php?post/drupal-420 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 16 mars 2008</strong></p>
+
+<p>Rassemblement de l'ITPUG sur IRC pour organiser les PGDay.IT qui auront lieu les 17 et 18 octobre 2008 à Prato. La réunion se fera en italien et commencera jeudi 18 mars à 21h30 CET&nbsp;:
+
+irc://irc.freenode.net/pgday-it</p>
+
+<p>La "United States PostgreSQL Association" a été lancée&nbsp;:
+
+<a target="_blank" href="http://www.postgresql.us">http://www.postgresql.us</a></p>
+
+<p>Dave Page a mis en place un wiki de documentation à destination des utilisateurs&nbsp;:
+
+<a target="_blank" href="http://wiki.postgresql.org/">http://wiki.postgresql.org/</a></p>
+
+<!--more-->
+
 
 <!--break-->
 

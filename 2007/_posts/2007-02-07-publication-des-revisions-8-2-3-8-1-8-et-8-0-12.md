@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-235 "
 ---
 
 
+<p>Le PostgreSQL Global Development Group a publié aujourd'hui la mise à jour de sécurité de toutes les versions 8.x&nbsp;: les révisions 8.2.3, 8.1.8, 8.0.12. Elles annulent et remplacent les mises à jour publiées le 5 février qui contenaient un bogue de transtypage affectant de nombreux utilisateurs.</p>
+
+<p> Si vous avez téléchargé une copie des versions 8.2.2, 8.1.7 ou 8.0.11, vous pouvez l'abandonner et installer les dernières révisions.</p>
+
+<!--more-->
+
 
 <p>Cette révision corrige CVE-2007-0555 et CVE-2007-0556. Ces deux failles autorisent un utilisateur authentifié disposant des permissions d'exécuter du code SQL à lancer une attaque de type "déni de service" ou de lire des portions aléatoires de la mémoire. Puisqu'il est nécessaire d'être authentifié, ce risque n'est jugé que moyen. Plus d'informations sur Mitre&nbsp;:</p>
 

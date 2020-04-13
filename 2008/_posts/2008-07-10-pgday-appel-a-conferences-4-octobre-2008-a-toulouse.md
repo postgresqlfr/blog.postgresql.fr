@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-252 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <h1><a name="appel_a_conferences" id="appel_a_conferences">Appel à conférences</a></h1>
 

@@ -6,6 +6,30 @@ redirect_from: "index.php?post/2008-11-18-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 16 novembre 2008</strong></p>
+
+<p>Le FOSDEM ouvrira bient&ocirc;t ses portes &agrave; Bruxelles. D&eacute;tails un peu plus bas.</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>MicroOLAP Database Designer 1.2.6 pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/database/postgresql-designer/">http://microolap.com/products/database/postgresql-designer/</a></li>
+
+<li>PGUnit&nbsp;: 
+
+<a target="_blank" href="http://en.dklab.ru/lib/dklab_pgunit/">http://en.dklab.ru/lib/dklab_pgunit/</a></li>
+
+<li>PyReplica 1.0.5 beta&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pyreplica/">http://pgfoundry.org/projects/pyreplica/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en novembre</strong></p>
 

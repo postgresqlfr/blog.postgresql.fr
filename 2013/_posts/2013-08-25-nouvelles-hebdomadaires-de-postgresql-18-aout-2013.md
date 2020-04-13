@@ -6,6 +6,82 @@ redirect_from: "index.php?post/2013-08-25-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>PostGIS 2.1.0, le syst&egrave;me d'information g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL, a &eacute;t&eacute; publi&eacute;&nbsp;: 
+
+<a target="_blank" href="http://postgis.net/2013/08/17/postgis-2-1-0">http://postgis.net/2013/08/17/postgis-2-1-0</a></li>
+
+<li>Publication du livre "PostgreSQL Server Programming"&nbsp;: 
+
+<a target="_blank" href="http://www.2ndquadrant.com/en/books/">http://www.2ndquadrant.com/en/books/</a></li>
+
+<li>Skytools 3.1.5, un ensemble d'outils d&eacute;velopp&eacute; par Skype pour la r&eacute;plication et le failover incluant PgQ, un framework g&eacute;n&eacute;rique de mise en queue, et Londiste, un syst&egrave;me de r&eacute;plication ma&icirc;tre-esclave&nbsp;: 
+
+<a target="_blank" href="https://github.com/markokr/skytools">https://github.com/markokr/skytools</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en ao&ucirc;t</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2013-08/threads.php">http://archives.postgresql.org/pgsql-jobs/2013-08/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li><em>Postgres Open 2013</em> aura lieu &agrave; Chicago, (USA, Illinois) du 16 au 18 septembre&nbsp;: 
+
+<a target="_blank" href="http://postgresopen.org/">http://postgresopen.org/</a></li>
+
+<li>Le PGDay italien (PGDay.IT) sera tenu &agrave; Prato (Italie, Toscane) au centre de recherche de l'Universit&eacute; Monash. Un appel international &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2013.pgday.it/index.php/programma/call-for-papers-english/">http://2013.pgday.it/index.php/programma/call-for-papers-english/</a></li>
+
+<li>La <em>PGConf.EU 2013</em> sera tenue du 29 octobre au 1<sup>er</sup> novembre au Conrad Hotel dans le centre-ville de Dublin en Irlande. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2013.pgconf.eu/">http://2013.pgconf.eu/</a></li>
+
+<li><em>PGConf.DE 2013</em> aura lieu le 8 novembre 2013 au mus&eacute;e industriel de la Rh&eacute;nanie &agrave; Oberhausen. L'appel &agrave; conf&eacute;renciers porte jusqu'au 15 septembre&nbsp;: 
+
+<a target="_blank" href="http://2013.pgconf.de/">http://2013.pgconf.de/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20130819034100.GD24387@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

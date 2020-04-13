@@ -6,6 +6,30 @@ redirect_from: "index.php?post/drupal-423 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 6 avril 2008</strong></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>Benetl 1.7 est disponible&nbsp;:
+
+<a target="_blank" href="http://www.benetl.net">http://www.benetl.net</a></li>
+
+<li>check_postgres 1.4.1 a été publié&nbsp;:
+
+<a target="_blank" href="http://bucardo.org/nagios/">http://bucardo.org/nagios/</a></li>
+
+<li>phpPgAdmin 4.2 est disponible&nbsp;:
+
+<a target="_blank" href="http://phppgadmin.sourceforge.net/">http://phppgadmin.sourceforge.net/</a>
+
+[ndt: plus d'infos sur <a href="http://linuxfr.org/2008/04/09/23949.html">un article LinuxFR</a>]</li>
+
+</ul>
+
+<!--more-->
+
 
 <!--break-->
 

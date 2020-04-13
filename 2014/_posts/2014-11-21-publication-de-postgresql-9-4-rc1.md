@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2014-11-21-publication-de-postgresql-9-4-rc1 "
 
 
 
+
+<!--more-->
+
+
 Le PostgreSQL Global Development Group a publié la version 9.4 RC1. 
 
 

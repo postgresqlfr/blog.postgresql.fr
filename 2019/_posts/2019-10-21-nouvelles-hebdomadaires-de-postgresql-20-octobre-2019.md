@@ -6,6 +6,32 @@ redirect_from: "index.php?post/2019-10-21-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL@SCaLE est un &eacute;v&eacute;nement de 2 jours &agrave; double programmes qui aura lieu les 5 & 6 mars 2020 au centre de convention de Pasadena, int&eacute;gr&eacute; au SCaLE 18X. L'appel &agrave; conf&eacute;renciers court jusqu'au 30 novembre 2019&nbsp;: <a target="_blank" href="https://www.socallinuxexpo.org/scale/18x/postgresscale">https://www.socallinuxexpo.org/scale/18x/postgresscale</a></p>
+
+<p>L'appel &agrave; conf&eacute;renciers pour le FOSDEM PGDay expire le 18 novembre 2019 &agrave; 24h00 CET&nbsp;: <a target="_blank" href="https://2020.fosdempgday.org/">https://2020.fosdempgday.org/</a></p>
+
+<p>L'appel &agrave; conf&eacute;renciers pour le FOSDEM expire le 8 novembre 2019&nbsp;: <a target="_blank" href="https://fosdem.org/2020/news/2019-08-13-call-for-participation/">https://fosdem.org/2020/news/2019-08-13-call-for-participation/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>repmgr 5.0, un gestionnaire de r&eacute;plication pour PostgreSQL&nbsp;: <a target="_blank" href="https://repmgr.org/docs/5.0/release-5.0.html">https://repmgr.org/docs/5.0/release-5.0.html</a></li>
+
+<li>KrahoDB, SGBD r&eacute;plication multi-ma&icirc;tres bas&eacute; sur la r&eacute;plication logique&nbsp;: <a target="_blank" href="https://github.com/timbira/krahodb">https://github.com/timbira/krahodb</a></li>
+
+<li>pgAdmin4 4.14, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_14.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_14.html</a></li>
+
+<li>pg_probackup 2.2.3, un utilitaire pour g&eacute;rer les sauvegardes et les restaurations de clusters PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/postgrespro/pg_probackup">https://github.com/postgrespro/pg_probackup</a></li>
+
+<li>pgbouncer 1.12.0, un pooler de connexions &agrave; PostgreSQL et bien d'avantage&nbsp;: <a target="_blank" href="https://pgbouncer.github.io/2019/10/pgbouncer-1-12-0">https://pgbouncer.github.io/2019/10/pgbouncer-1-12-0</a></li>
+
+<li>pg_timetable, un programmateur de job pour PostgreSQL&nbsp;: <a target="_blank" href="https://www.cybertec-postgresql.com/en/products/pg_timetable/">https://www.cybertec-postgresql.com/en/products/pg_timetable/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en octobre</h2>
 

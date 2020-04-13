@@ -6,6 +6,78 @@ redirect_from: "index.php?post/2018-01-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pg_back 1.4, un script de sauvegarde pour PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/orgrim/pg_back">https://github.com/orgrim/pg_back</a></li>
+
+<li>PostGIS versions 2.4.3 et 2.3.6, le syst&egrave;me d'information g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL&nbsp;: <a target="_blank" href="http://postgis.net/2018/01/17/postgis-patches/">http://postgis.net/2018/01/17/postgis-patches/</a></li>
+
+<li>OmniDB 2.4.1, un outil de gestion de BDD via navigateur web&nbsp;: <a target="_blank" href="https://www.2ndquadrant.com/en/resources/omnidb/">https://www.2ndquadrant.com/en/resources/omnidb/</a></li>
+
+<li>repmgr 4.0.2, un gestionnaire de r&eacute;plication pour PostgreSQL&nbsp;: <a target="_blank" href="https://repmgr.org/docs/4.0/release-4.0.2.html">https://repmgr.org/docs/4.0/release-4.0.2.html</a></li>
+
+<li>Database Designer pour PostgreSQL 1.12.2&nbsp;: <a target="_blank" href="http://microolap.com/products/database/postgresql-designer/news/">http://microolap.com/products/database/postgresql-designer/news/</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en janvier</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2018-01/">http://archives.postgresql.org/pgsql-jobs/2018-01/</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>FOSDEM PGDay 2018, une conf&eacute;rence d'une journ&eacute;e tenue avant l'&eacute;v&eacute;nement principal, sera tenue &agrave; Bruxelles (Belgique) le 2 f&eacute;vrier 2018&nbsp;: <a target="_blank" href="https://2018.fosdempgday.org/">https://2018.fosdempgday.org/</a></li>
+
+<li><em>Prague PostgreSQL Developer Day 2018</em> (P2D2 2018) est une s&eacute;rie de conf&eacute;rences sur deux jours qui aura lieu les 14 & 15 f&eacute;vrier 2018 &agrave; Prague (R&eacute;publique Tch&egrave;que)&nbsp;: <a target="_blank" href="http://www.p2d2.cz/">http://www.p2d2.cz/</a></li>
+
+<li>La <em>PGConf India 2018</em> aura lieu les 22 & 23 f&eacute;vrier 2018 &agrave; Bengalore (&Eacute;tat du Karnataka en Inde)&nbsp;: <a target="_blank" href="http://pgconf.in/">http://pgconf.in/</a></li>
+
+<li>[ndt: MeetUp &agrave; Lyon le 28 f&eacute;vrier&nbsp;: <a target="_blank" href="https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/">https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/</a>]</li>
+
+<li>PostgreSQL@SCaLE est un &eacute;v&eacute;nement de 2 jours &agrave; double programmes qui aura lieu les 8 & 9 mars 2018 au centre de convention de Pasadena, int&eacute;gr&eacute; au SCaLE 16X&nbsp;: <a target="_blank" href="http://www.socallinuxexpo.org/scale/16x/cfp">http://www.socallinuxexpo.org/scale/16x/cfp</a></li>
+
+<li>Le PGDay nordique 2018 se tiendra &agrave; Oslo (Norv&egrave;ge) &agrave; l'h&ocirc;tel Radisson Blu le 13 mars 2018. L'appel &agrave; conf&eacute;renciers s'&eacute;teint le 31 d&eacute;cembre 2017&nbsp;: <a target="_blank" href="https://2018.nordicpgday.org/cfp/">https://2018.nordicpgday.org/cfp/</a></li>
+
+<li>Le <em>pgDay Paris 2018</em> aura lieu &agrave; l'espace Saint Martin (Paris, France) le 15 mars 2018. L'appel &agrave; conf&eacute;renciers court jusqu'au 31 d&eacute;cembre 2017&nbsp;: <a target="_blank" href="http://2018.pgday.paris/callforpapers/">http://2018.pgday.paris/callforpapers/</a></li>
+
+<li>PGConf APAC 2018 se tiendra &agrave; Singapour du 22 au 24 mars 2018&nbsp;: <a target="_blank" href="http://2018.pgconfapac.org/">http://2018.pgconfapac.org/</a></li>
+
+<li>La conf&eacute;rence germanophone <em>PostgreSQL Conference 2018</em> aura lieu le 13 avril 2018 &agrave; Berlin&nbsp;: <a target="_blank" href="http://2018.pgconf.de/">http://2018.pgconf.de/</a></li>
+
+<li>La <em>PGConfNepal 2018</em> se tiendra les 4 & 5 mai 2018 &agrave; l'universit&eacute; de Katmandou, Dulikhel, N&eacute;pal. L'appel &agrave; conf&eacute;renciers court jusqu'au 1er f&eacute;vrier 2018&nbsp;: <a target="_blank" href="https://postgresconf.org/conferences/Nepal2018/program/proposals">https://postgresconf.org/conferences/Nepal2018/program/proposals</a> <a target="_blank" href="https://postgresconf.org/conferences/Nepal2018">https://postgresconf.org/conferences/Nepal2018</a></li>
+
+<li>La <em>PGCon 2018</em> se tiendra &agrave; Ottawa du 29 mai au 1er juin 2018&nbsp;: <a target="_blank" href="https://www.pgcon.org/2018/">https://www.pgcon.org/2018/</a></li>
+
+<li>La <em>PGConf.Brazil 2018</em> aura lieu &agrave; S&atilde;o Paulo (Br&eacute;sil) les 3 & 4 ao&ucirc;t 2018. L'appel &agrave; conf&eacute;renciers sera lanc&eacute; prochainement&nbsp;: <a target="_blank" href="http://pgconf.com.br">http://pgconf.com.br</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20180121200607.GA4938@fetter.org">http://www.postgresql.org/message-id/20180121200607.GA4938@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

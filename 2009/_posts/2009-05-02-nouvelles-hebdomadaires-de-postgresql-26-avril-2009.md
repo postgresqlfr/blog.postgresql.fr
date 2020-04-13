@@ -6,6 +6,44 @@ redirect_from: "index.php?post/2009-05-02-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La communaut&eacute; PG hispanophone a maintenant son site web. F&eacute;licitations ! 
+
+<a target="_blank" href="http://www.postgresql-es.org/">http://www.postgresql-es.org/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>DBD::Pg 2.13.1, un connecteur Perl pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://search.cpan.org/dist/DBD-Pg/">http://search.cpan.org/dist/DBD-Pg/</a></li>
+
+<li>pgFouine 1.1, un analyseur de log PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://pgfouine.projects.postgresql.org/">http://pgfouine.projects.postgresql.org/</a></li>
+
+<li>pgpool-II 2.2.1, un gestionnaire de connexions et bien d'avantage&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+<li>Slony-ctl 1.0, a jeu de scripts pour g&eacute;rer les grappes Slony&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/slony1-ctl/">http://pgfoundry.org/projects/slony1-ctl/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 8.4 de la semaine</strong></p>
+
+<p>pg_stat_functions&nbsp;: cette nouvelle vue syst&egrave;me montre combien de fois une fonction a &eacute;t&eacute; appel&eacute;e et le temps pass&eacute; en ex&eacute;cution.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>PostgreSQL prend en charge les sous-requ&ecirc;tes dans les clauses SELECT, FROM et WHERE. N'h&eacute;sitez donc pas&nbsp;: pensez &agrave; la/les placer de fa&ccedil;on &agrave; ce qu'elles s'ex&eacute;cutent au mieux et vous donnent le r&eacute;sultat escompt&eacute;.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090426">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en avril</strong></p>
 

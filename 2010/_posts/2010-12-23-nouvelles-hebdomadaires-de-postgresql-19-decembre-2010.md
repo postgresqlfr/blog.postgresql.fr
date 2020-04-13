@@ -6,6 +6,112 @@ redirect_from: "index.php?post/2010-12-23-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les mises &agrave; jour PostgreSQL 9.0.2, 8.4.6, 8.3.13, 8.2.19 et 8.1.23 ont &eacute;t&eacute; publi&eacute;es. Si vous utilisez le "<em>Hot</em>" ou le "<em>Warm Standby</em>", ou encore "<em>PITR</em>", vous devriez mettre &agrave; jour d&egrave;s que possible. &Agrave; noter que la s&eacute;rie des 8.1 atteint sa fin de vie, et ses utilisateurs sont encourag&eacute;s &agrave; migrer vers une nouvelle version majeure d&egrave;s qu'ils le peuvent&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/docs/9.0/static/release.html">http://www.postgresql.org/docs/9.0/static/release.html</a></p>
+
+<p>Soumettez vos propositions pour le PGCon 2011&nbsp;: 
+
+<a target="_blank" href="http://lists.pgcon.org/pipermail/pgcon-announce/2010-December/000065.html">http://lists.pgcon.org/pipermail/pgcon-announce/2010-December/000065.html</a></p>
+
+<p>L'appel &agrave; conf&eacute;renciers pour l'annuel "<em>Prague PostgreSQL Developers' Day</em>", 4&egrave;me &eacute;dition, est lanc&eacute;. L'&eacute;v&eacute;nement sera tenu le 10 f&eacute;vrier 2011 &agrave; l'<em>Universitas Carolinas</em>&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2010-12/msg00009.php">http://archives.postgresql.org/pgsql-announce/2010-12/msg00009.php</a></p>
+
+<p>PostgreSQL Conference East 2011&nbsp;: New-York City, du 22 au 25 mars&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org">http://www.postgresqlconference.org</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>DBD::Pg 2.17.2, un driver Perl pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://search.cpan.org/dist/DBD-Pg/">http://search.cpan.org/dist/DBD-Pg/</a></li>
+
+<li>devart dotConnect pour PostgreSQL, un provider ADO.NET&nbsp;: 
+
+<a target="_blank" href="http://www.devart.com/dotconnect/postgresql/">http://www.devart.com/dotconnect/postgresql/</a></li>
+
+<li>MicroOLAP a publi&eacute; PaGoDump et PaGoRestore avec support de PostgreSQL 9.0&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/database/pagodump/download/">http://microolap.com/products/database/pagodump/download/</a></li>
+
+<li>PGSI 1.5.0, un outil g&eacute;n&eacute;rant des rapports sur l'impact global de requ&ecirc;tes PostgreSQL sur un serveur&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/wiki/Pgsi">http://bucardo.org/wiki/Pgsi</a></li>
+
+<li>phpPgAdmin 5.0.1, un outil web d'administration pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://phppgadmin.sourceforge.net/">http://phppgadmin.sourceforge.net/</a></li>
+
+<li>Des versions imprim&eacute;es du manuel de PostgreSQL 9.0.1 sont disponibles&nbsp;: 
+
+<a target="_blank" href="http://www.network-theory.co.uk/postgresql9/">http://www.network-theory.co.uk/postgresql9/</a></li>
+
+<li>Data Visualization 0.9.2, utilisable avec PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://sites.google.com/site/datavisualizationapplication/">http://sites.google.com/site/datavisualizationapplication/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en d&eacute;cembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-12/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-12/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>L'appel &agrave; projets de PostgreSQLFr a &eacute;t&eacute; lanc&eacute;. Les projets doivent concerner PostgreSQL et la communaut&eacute; francophone. Mail &agrave; appel-projets-2010 (AT) postgresql (DOT) fr. 
+
+<a target="_blank" href="http://www.postgresql.fr/appel_a_projets_2010:call_for_projects">http://www.postgresql.fr/appel_a_projets_2010:call_for_projects</a></li>
+
+<li>Le FOSDEM est l'un des plus grand &eacute;v&eacute;nements autour du Libre et de l'Open Source&nbsp;; il a lieu annuellement &agrave; Bruxelles et rassemble environ 4000 personnes. La prochaine &eacute;dition est programm&eacute;e pour les 5 &amp; 6 f&eacute;vrier 2011. Envoyez vos propositions &agrave; l'adresse fosdem AT postgresql POINT eu&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/749-PostgreSQLFOSDEM-2011-Call-for-talks.html">http://andreas.scherbaum.la/blog/archives/749-PostgreSQLFOSDEM-2011-Call-for-talks.html</a></li>
+
+<li>Un PGDay.US est au programme du <em>Southern California Linux Exposition (SCALE)</em> de cette ann&eacute;e, tenu &agrave; l'h&ocirc;tel LAX Hilton de Los Angeles (Californie) le vendredi 25 f&eacute;vrier 2011. Proposez vos conf&eacute;rences sur pgday-submissions (AT) googlegroups (DOT) com.</li>
+
+<li>PGCon aura lieu les 19 &amp; 20 mai 2011 &agrave; l'Universit&eacute; d'Ottawa, pr&eacute;c&eacute;d&eacute; par deux jours de tutoriels les 17 &amp; 18 mai&nbsp;. L'appel &agrave; conf&eacute;renciers a &eacute;t&eacute; lanc&eacute;&nbsp;! 
+
+<a target="_blank" href="http://www.pgcon.org/2011/">http://www.pgcon.org/2011/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20101219">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

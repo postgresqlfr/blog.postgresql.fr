@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-78 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Sur <a href="http://www.infogiciel.info/article0144.html" target="_blank">cet article</a> du site Infogiciel.com, on apprend que Cityvox a migré son architecture basée sur Oracle et Vignette vers une architecture Open Source PHP/PostgreSQL&nbsp;!
 

@@ -6,6 +6,20 @@ redirect_from: "index.php?post/drupal-260 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 24 Septembre 2007</strong></p>
+
+<ul>
+
+<li>Les versions 8.2.5, 8.1.10, 8.0.14, 7.4.18 et 7.3.20 de PostgreSQL sont disponibles. Mettez à jour dès que possible !<br />
+
+Ndt&nbsp;: pour rappel, il s'agit d'un changement <em>mineur</em> de version (cf&nbsp;: <a href="http://www.postgresql.org/support/versioning">http://www.postgresql.org/support/versioning</a>)</li>
+
+<li>Lorsque la version 8.3 sera disponible (a priori avant la fin de l'année), les versions 8.1.x et 8.0.x sous Windows® ne recevront plus de support officiel.</li>
+
+</ul>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

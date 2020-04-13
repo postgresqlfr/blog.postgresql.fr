@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-105 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p><em>Cet article est la traduction d'un billet posté par Josh Berkus et Joe Conway sur leur site, <a href="http://powerpostgresql.com">powerpostgresql.com</a>. D'autres documents devraient suivre...</em></p>
 

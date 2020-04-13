@@ -6,6 +6,10 @@ redirect_from: "index.php?post/2015-11-12-publication-de-postgresql-9-5-beta-2 "
 ---
 
 
+Le PostgreSQL Global Development Group annonce aujourd'hui la deuxième bêta de la version 9.5 de PostgreSQL. <br /><br /><br />
+
+<!--more-->
+
 
 Cette version contient toutes les fonctionnalités qui seront dans la version finale. Peu de modifications devraient intervenir.<br />Les utilisateurs peuvent désormais tester leurs applications avec cette version en préparation de la version finale.
 

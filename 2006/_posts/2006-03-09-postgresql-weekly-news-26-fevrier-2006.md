@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-165 "
 ---
 
 
+<p>
+
+Il y a eu des discussions bien animées à propos du <em>back-end</em> (serveur) cette semaine. Y ont pris part de nouvelles personnes et d'autres de retour après une absence prolongée.</p>
+
+<!--more-->
+
 
 <h3>== Nouveaux produits autour de PostgreSQL ==</h3>
 

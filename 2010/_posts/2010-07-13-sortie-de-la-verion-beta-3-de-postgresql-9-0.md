@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2010-07-13-sortie-de-la-verion-beta-3-de-postgres
 
 
 
+
+<!--more-->
+
+
 La 3ème version beta de PostgreSQL 9.0 est désormais disponible. Cette version contient de nombreuses corrections et plusieurs changements par rapport à la Beta 2, notamment un dépoussiérage final de la Streaming Replication et du Hot Standby. N'hésitez pas à télécharger, installer et tester cette version pour aider les développeurs à avancer vers la version finale. Plusieurs changement significatifs ont été introduit dans la Beta3, ce qui implique que certaines fonctionnalités doivent être re-testées, notamment :
 
 

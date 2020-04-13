@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2010-08-31-postgresql-9-0-rc1 "
 
 
 
+
+<!--more-->
+
+
 La première « release candidate » de PostgreSQL 9.0 est désormais publiée. 
 
 

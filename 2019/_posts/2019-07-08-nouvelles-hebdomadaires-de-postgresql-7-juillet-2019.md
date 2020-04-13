@@ -6,6 +6,28 @@ redirect_from: "index.php?post/2019-07-08-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le <em>pgDay Paris 2020</em> se tiendra &agrave; Paris le 26 mars 2020 &agrave; l'espace St Martin&nbsp;: <a target="_blank" href="http://2020.pgday.paris/">http://2020.pgday.paris/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>PostGIS 3.0.0alpaha3, le syst&egrave;me d'information g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL&nbsp;: <a target="_blank" href="https://postgis.net/2019/07/01/postgis-3.0.0alpha3/">https://postgis.net/2019/07/01/postgis-3.0.0alpha3/</a></li>
+
+<li>Perfalytics, un tableau de contr&ocirc;le des performances pour PostgreSQL&nbsp;: <a target="_blank" href="https://home.perfalytics.com/">https://home.perfalytics.com/</a></li>
+
+<li>pgAdmin4 4.10, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_10.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_10.html</a></li>
+
+<li>pgbouncer 1.10.0, un pooler de connexions &agrave; PostgreSQL et bien d'avantage&nbsp;: <a target="_blank" href="https://pgbouncer.github.io/2019/07/pgbouncer-1-10-0">https://pgbouncer.github.io/2019/07/pgbouncer-1-10-0</a></li>
+
+<li>PostgresCompare v1.1.3, un outil de comparaison et de d&eacute;ploiement pour PostgreSQL&nbsp;: <a target="_blank" href="https://www.postgrescompare.com">https://www.postgrescompare.com</a></li>
+
+<li>pitrery 2.3, un ensemble de scripts Bash permettant de g&eacute;rer les sauvegardes PITR de PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/dalibo/pitrery">https://github.com/dalibo/pitrery</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en juillet</h2>
 

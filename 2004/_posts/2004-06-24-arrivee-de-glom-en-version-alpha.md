@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-16 "
 
 
 
+
+<!--more-->
+
+
 <p>
 
 Il s'agit d'une interface de conception et d'utilisation de bases de données, pour <em>PostgreSQL</em> (bien sûr).</p>

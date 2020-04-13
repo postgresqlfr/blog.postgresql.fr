@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2009-01-22-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 18 janvier 2009</strong></p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Pour activer, sur une seule base, l'enregistrement des requ&ecirc;tes&nbsp;: ALTER &lt;nom_de_la_base&gt; SET log_statement = 'all'<br>
+
+[ndt: pour un param&eacute;trage global, cf 
+
+<a target="_blank" href="http://docs.postgresql.fr/8.3/runtime-config-logging.html#guc-log-statement">doc</a>]</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090118">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en janvier</strong></p>
 

@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2011-04-01-le-site-mysql-com-annonce-son-passage-
 
 
 
+
+<!--more-->
+
+
 Le 27 mars dernier, le site officiel de [MySQL a été victime d'une attaque|http://www.journaldunet.com/solutions/securite/injection-sql-sur-site-web-mysql-0311.shtml|fr] par injection SQL qui a ouvert l'accès la liste complète des
 
 noms d'utilisateurs et leurs mots de passe chiffrés. Les assaillants

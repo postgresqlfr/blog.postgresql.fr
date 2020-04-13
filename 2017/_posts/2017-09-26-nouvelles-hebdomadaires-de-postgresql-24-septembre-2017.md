@@ -6,6 +6,74 @@ redirect_from: "index.php?post/2017-09-26-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 10 <em>Release Candidate</em> 1 est disponible, &agrave; vos tests&nbsp;! <a target="_blank" href="https://www.postgresql.org/about/news/1783/">https://www.postgresql.org/about/news/1783/</a></p>
+
+<p>[ndt: MeetUp &agrave; Lille le 17 octobre&nbsp;:<a target="_blank" href="https://www.meetup.com/fr-FR/Meetup-PostgreSQL-Lille/">https://www.meetup.com/fr-FR/Meetup-PostgreSQL-Lille/</a>]</p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pg-wrapper 0.2.2, une surcouche &agrave; l'extension pgsql de PHP permettant de manipuler directement les types complexes de PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/sad-spirit/pg-wrapper">https://github.com/sad-spirit/pg-wrapper</a></li>
+
+<li>brimbox 2.3.4, une interface et un framework web/BDD, construit autour de PostgreSQL&nbsp;: <a target="_blank" href="https://www.brimbox.com/brimbox-version-2-3-4-released/">https://www.brimbox.com/brimbox-version-2-3-4-released/</a></li>
+
+<li>pg_dirtyread 1.2, une extension permettant de lire des enregistrements obsol&egrave;tes mais non nettoy&eacute;s ("vacuum&eacute;s") d'une relation&nbsp;: <a target="_blank" href="https://github.com/ChristophBerg/pg_dirtyread">https://github.com/ChristophBerg/pg_dirtyread</a></li>
+
+<li>pg_builder 0.2.1, un constructeur de requ&ecirc;tes en PHP pour PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/sad-spirit/pg-builder">https://github.com/sad-spirit/pg-builder</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en septembre</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2017-09/">http://archives.postgresql.org/pgsql-jobs/2017-09/</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>PGDay.IT 2017 aura lieu &agrave; Milan (Italie) le 13 octobre&nbsp;: <a target="_blank" href="http://pgday.it">http://pgday.it</a></li>
+
+<li>La <em>PostgreSQL Conference Europe 2017</em> aura lieu du 24 au 27 octobre 2017 au Warsaw Marriott Hotel, &agrave; Varsovie (Pologne)&nbsp;: <a target="_blank" href="https://2017.pgconf.eu/">https://2017.pgconf.eu/</a></li>
+
+<li><em>PGConf Local&nbsp;: Seattle</em> aura lieu les 13 et 14 novembre 2017&nbsp;: <a target="_blank" href="https://www.pgconf.us/#Seattle2017">https://www.pgconf.us/#Seattle2017</a></li>
+
+<li>PGDay Australia 2017 will be held on November 17 in Melbourne. <a target="_blank" href="http://2017.pgday.com.au/">http://2017.pgday.com.au/</a></li>
+
+<li>La conf&eacute;rence 2ndQuadrant PostgreSQL 2017 (<em>2Q PGConf</em> en abr&eacute;g&eacute;) sera tenue les 6 et 7 novembre &agrave; New-York City, et le 9 novembre &agrave; Chicago&nbsp;: <a target="_blank" href="http://www.2qpgconf.com/">http://www.2qpgconf.com/</a></li>
+
+<li>Session PostgreSQL le 17 novembre 2017 &agrave; Paris. L'appel &agrave; conf&eacute;renciers est lanc&eacute; jusqu'au 30 septembre &agrave; l'adresse call-for-paper AT postgresql-sessions POINT org. D&eacute;tails par l&agrave;&nbsp;: <a target="_blank" href="http://blog.dalibo.com/2017/08/29/cfp_pgsession9.html">http://blog.dalibo.com/2017/08/29/cfp_pgsession9.html</a></li>
+
+<li><em>PGConf Local&nbsp;: Austin</em> aura lieu les 4 & 5 d&eacute;cembre 2017. L'appel &agrave; conf&eacute;renciers a &eacute;t&eacute; lanc&eacute;&nbsp;: <a target="_blank" href="https://www.pgconf.us/conferences/Austin2017">https://www.pgconf.us/conferences/Austin2017</a></li>
+
+<li>La PGConf.ASIA 2017 aura lieu &agrave; Akihabara (Tokyo, Japon) du 4 au 6 d&eacute;cembre 2017&nbsp;: <a target="_blank" href="http://www.pgconf.asia/EN/2017/">http://www.pgconf.asia/EN/2017/</a></li>
+
+<li>La <em>PGConf India 2018</em> aura lieu les 22 & 23 f&eacute;vrier 2018 &agrave; Bengalore (&Eacute;tat du Karnataka en Inde). Les propositions sont attendues via <a target="_blank" href="https://goo.gl/forms/F9hRjOIsaNasVOAz2">https://goo.gl/forms/F9hRjOIsaNasVOAz2</a> avant le 31 octobre 2017&nbsp;: <a target="_blank" href="http://pgconf.in/">http://pgconf.in/</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20170925030820.GA18035@fetter.org">http://www.postgresql.org/message-id/20170925030820.GA18035@fetter.org</a></p>
+
+<p>Submit news and announcements by Sunday at 3:00pm EST5EDT. Please send English language ones to david@fetter.org, German language to pwn@pgug.de, Italian language to pwn@itpug.org.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

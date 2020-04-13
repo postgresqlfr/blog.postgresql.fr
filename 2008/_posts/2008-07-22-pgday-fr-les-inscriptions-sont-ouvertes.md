@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-300 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Le site <a href="http://www.pgday.fr">pgday.fr</a> est en ligne !
 

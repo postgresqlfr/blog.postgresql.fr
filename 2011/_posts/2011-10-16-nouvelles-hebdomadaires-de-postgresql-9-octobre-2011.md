@@ -6,6 +6,98 @@ redirect_from: "index.php?post/2011-10-16-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La "<em>PostgreSQL Conference Europe 2011</em>" se tiendra &agrave; Amsterdam, du 18 au 21 octobre. Les inscriptions sont encore ouvertes&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.eu/registration/">http://2011.pgconf.eu/registration/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>devart dotConnect 5.50 pour PostgreSQL, un <em>provider</em> ADO.NET&nbsp;: 
+
+<a target="_blank" href="http://www.devart.com/dotconnect/postgresql/">http://www.devart.com/dotconnect/postgresql/</a></li>
+
+<li>ODB 1.6.0, un ORM pour le C++, avec support PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.codesynthesis.com/~boris/blog/2011/10/04/odb-1-6-0-released/">http://www.codesynthesis.com/~boris/blog/2011/10/04/odb-1-6-0-released/</a></li>
+
+<li>pgwatch 1.0, un syst&egrave;me de surveillance pour PostgreSQL, "web-consultable"&nbsp;: 
+
+<a target="_blank" href="http://www.cybertec.at/en/pgwatch">http://www.cybertec.at/en/pgwatch</a></li>
+
+<li>phpPgAdmin 5.0.3, a web-based administrative tool for PostgreSQL, released. 
+
+<a target="_blank" href="http://phppgadmin.sourceforge.net/">http://phppgadmin.sourceforge.net/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en octobre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2011-10/threads.php">http://archives.postgresql.org/pgsql-jobs/2011-10/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La "<em>PostgreSQL Conference Europe 2011</em>" se tiendra &agrave; Amsterdam, du 18 au 21 octobre&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.eu/">http://2011.pgconf.eu/</a></li>
+
+<li>Le <em>PG-Day Denver 2011</em> aura lieu le vendredi 21 octobre 2011 dans le campus Auraria pr&egrave;s de Denver, Colorado&nbsp;: 
+
+<a target="_blank" href="http://pgday.consistentstate.com/">http://pgday.consistentstate.com/</a></li>
+
+<li>pgbr aura lieu &agrave; S&atilde;o Paulo (Br&eacute;sil) les 3 &amp; 4 novembre 2011&nbsp;: 
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/">http://pgbr.postgresql.org.br/</a></li>
+
+<li><em>PGConf.DE 2011</em> est une conf&eacute;rence germanophone tenue le 11 novembre au mus&eacute;e industriel du Rhin &agrave; Oberhausen (Allemagne). L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.de/">http://2011.pgconf.de/</a></li>
+
+<li>La cinqui&egrave;me &eacute;dition du PGDay italien (PGDay.IT 2011) aura lieu le 25 novembre &agrave; Prato&nbsp;: 
+
+<a target="_blank" href="http://2011.pgday.it/">http://2011.pgday.it/</a></li>
+
+<li>L'appel &agrave; conf&eacute;renciers a &eacute;t&eacute; lanc&eacute; pour le FLOSS UK, programm&eacute; du 20 au 22 mars 2012 &agrave; Edimbourg. La date limite de d&eacute;p&ocirc;t des candidatures est fix&eacute;e au 18 novembre 2011 et les conf&eacute;renciers s&eacute;lectionn&eacute;s seront inform&eacute;s avant le 25 novembre. Les propositions sont &agrave; envoyer &agrave; postgresql2012 AT flossuk POINT org. Plus d'informations via le lien suivant&nbsp;: 
+
+<a target="_blank" href="http://www.flossuk.org/Events/Spring2012">http://www.flossuk.org/Events/Spring2012</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20111009">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

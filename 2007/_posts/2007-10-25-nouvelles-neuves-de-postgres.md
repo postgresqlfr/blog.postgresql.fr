@@ -6,6 +6,24 @@ redirect_from: "index.php?post/drupal-114 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 22 octobre 2007</strong></p>
+
+<ul>
+
+<li>Attendez-vous à une prochaine bêta 2 de la 8.3 et grand merci à tous les testeurs :)</li>
+
+<li>La PostgreSQL Fall Conference fut un grand succès. Quelques souvenirs...
+
+<a target="_blank" href="http://db.endpoint.com/pgcon07/">http://db.endpoint.com/pgcon07/</a></li>
+
+</ul><ul><!-- Apparemment le </ul>
+
+est heureusement rajoute par Drupal dans la version coupee -->
+
+</ul>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

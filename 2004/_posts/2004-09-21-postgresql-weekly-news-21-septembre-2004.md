@@ -6,6 +6,58 @@ redirect_from: "index.php?post/drupal-379 "
 ---
 
 
+<h3>== Nouvelles hebdomadaires de PostgreSQL - 21 septembre 2004 ==</h3>
+
+<p>Les tests de PostgreSQL continuent avec le dernier paquetage beta. Beaucoup
+
+de bogues ont été rapportés, ce qui signifie que nous nous approchons d'une
+
+nouvelle version beta. Ceci est aussi une bonne indication que d'autres nombreux
+
+tests sont nécessaires.</p>
+
+<p>Différents problèmes de compilateur dans plusieurs modules de contribution
+
+pour la partie win32 ont été corrigés . Cela inclut dbase, pgbench, pgcrypto,
+
+tsearch et miscutil. Aussi sur win32, un petit problème de perte mémoire a été
+
+corrigé au niveau de psql et pltcl a vu la résolution de quelques soucis. Pour
+
+les autres modifications, le code de gestion des sous-transactions a été
+
+restructuré pour réduire la consomnation de mémoire, pour adresser un problème
+
+de régression et pour colmater certaines pertes mémoire. Enfin, le support de
+
+GNU/Hurd et GNU/*BSD a été ajouté.
+
+</p>
+
+<p>Le "&nbsp;query-snapshot timing&nbsp;" a été refait de façon à ce que les fonctions volatiles
+
+du mode "&nbsp;READ COMMITTED&nbsp;" voient un aperçu à jour pour chaque commande
+
+de la fonction, plutôt que le dernier aperçu de la commande interactive. C'est une
+
+modification non compatible avec les versions précédentes (à la demande nombreux
+
+utilisateurs), donc il est recommendé aux personnes intéressées par cette fonctionnalité
+
+de tester la prochaine version beta à ce niveau.</p>
+
+<p>La dernière information de cette semaine concerne l'annonce de l'arrivé de
+
+Peter Eisentraut au sein du comité principal de PostgreSQL. Peter est le
+
+principal développeur concernant le front de l'internationalisation et a fourni
+
+un travail remarquable dans le processus de construction et de sortie de
+
+versions. Félicitations, Peter&nbsp;!</p>
+
+<!--more-->
+
 
 <h3>== Nouvelles des produits PostgreSQL ==</h3>
 

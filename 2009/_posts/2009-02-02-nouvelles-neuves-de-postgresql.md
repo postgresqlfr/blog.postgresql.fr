@@ -6,6 +6,44 @@ redirect_from: "index.php?post/2009-02-02-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 25 janvier 2009</strong></p>
+
+<p>Le "Prague PostgreSQL Developers' Day 2009" (P2D2) aura lieu le 12 f&eacute;vrier 2009&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/about/event.808">http://www.postgresql.org/about/event.808</a><br>
+
+Programme&nbsp;: 
+
+<a target="_blank" href="http://www.postgres.cz/p2d2/2009/sched_en.html">http://www.postgres.cz/p2d2/2009/sched_en.html</a></p>
+
+<p>La "PostgreSQL Conference East 09" se tiendra du 3 au 5 avril 2009 &agrave; l'Universit&eacute; Drexel de Philadelphia. L'appel aux conf&eacute;renciers est d'ores et d&eacute;j&agrave; lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org/2009/east/">http://www.postgresqlconference.org/2009/east/</a></p>
+
+<p>Nouveau sondage&nbsp;: Vivez-vous pr&egrave;s d'un PUG ? [ndt:Pg User Group - Association d'Utilisateurs de PostgreSQL] 
+
+<a target="_blank" href="http://www.postgresql.org/community/">http://www.postgresql.org/community/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>pgpool-II 2.2beta1&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+<li>pgTAP 0.15&nbsp;: 
+
+<a target="_blank" href="http://pgtap.projects.postgresql.org/">http://pgtap.projects.postgresql.org/</a></li>
+
+</ul>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Pour am&eacute;liorer les performances, il est g&eacute;n&eacute;ralement utile de placer le journal des transactions (pg_xlog) sur un(e) disque/matrice ind&eacute;pendant(e), id&eacute;alement avec un canal d'entr&eacute;e/sortie d&eacute;di&eacute;.</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en janvier</strong></p>
 

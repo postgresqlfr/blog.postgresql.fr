@@ -6,6 +6,94 @@ redirect_from: "index.php?post/2015-02-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le PUG indien organise un PGday &agrave; Bengaluru (&Eacute;tat du Karnataka en Inde) le 11 avril 2015. RSVP&nbsp;: 
+
+<a target="_blank" href="http://www.meetup.com/India-PUG/events/220553997/">http://www.meetup.com/India-PUG/events/220553997/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>pypgTAP, un framework visant &agrave; faciliter le processus de d&eacute;veloppement/test/d&eacute;ploiement avec PostgreSQL&nbsp;: 
+
+<a target="_blank" href="https://github.com/itissid/pypgTAP">https://github.com/itissid/pypgTAP</a></li>
+
+<li>PostgreSQL Dashboard 0.2, un &eacute;cran de suivi temps-r&eacute;el bas&eacute; sur Dashing et Sinatra, released. 
+
+<a target="_blank" href="http://daamien.github.io/PostgreSQL-Dashboard/">http://daamien.github.io/PostgreSQL-Dashboard/</a> [ndt:<a target="_blank" href="http://blog.taadeem.net/french/2015/02/23/PostgreSQL_Dashboard/">http://blog.taadeem.net/french/2015/02/23/PostgreSQL_Dashboard/</a>]</li>
+
+<li>ODB 2.4.0, un ORM pour le C++ compatible PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.codesynthesis.com/~boris/blog/2015/02/11/odb-2-4-0-released/">http://www.codesynthesis.com/~boris/blog/2015/02/11/odb-2-4-0-released/</a></li>
+
+<li>pgpool-II versions 3.4.1, 3.3.5, 3.2.10, 3.1.13 et 3.0.17 publi&eacute;es avec pgpoolAdmin 3.4.1. pgpool-II est un pooler de connexion et un syst&egrave;me de r&eacute;plication pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://pgpool.net/mediawiki/index.php/Downloads">http://pgpool.net/mediawiki/index.php/Downloads</a> <a target="_blank" href="http://pgpool.net/mediawiki/index.php/Yum_Repository">http://pgpool.net/mediawiki/index.php/Yum_Repository</a></li>
+
+<li>psycopg2 2.6 et 2.5.5, un connecteur Python pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://initd.org/psycopg/articles/2015/02/09/psycopg-26-and-255-released/">http://initd.org/psycopg/articles/2015/02/09/psycopg-26-and-255-released/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2015-02/threads.php">http://archives.postgresql.org/pgsql-jobs/2015-02/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>pgDaySF 2015 aura lieu le 10 mars 2015 &agrave; Burlingame (Californie)&nbsp;: 
+
+<a target="_blank" href="http://sfpostgres.org/pgday-sf-2015-call-for-speakers-and-sponsors/">http://sfpostgres.org/pgday-sf-2015-call-for-speakers-and-sponsors/</a></li>
+
+<li>Les inscriptions pour le <em>Nordic PostgreSQL Day 2015</em>, pr&eacute;vu le 11 mars 2015 &agrave; Copenhague (Danemark), sont ouvertes&nbsp;: 
+
+<a target="_blank" href="http://2015.nordicpgday.org/registration/">http://2015.nordicpgday.org/registration/</a></li>
+
+<li>PGConf US 2015 aura lieu du 25 au 27 mars 2015 &agrave; New-York City&nbsp;: 
+
+<a target="_blank" href="http://nyc.pgconf.us/2015/">http://nyc.pgconf.us/2015/</a></li>
+
+<li>PGCon 2015 du 16 au 20 juin &agrave; Ottawa, Canada&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2015/">http://www.pgcon.org/2015/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20150222234820.GC5556@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

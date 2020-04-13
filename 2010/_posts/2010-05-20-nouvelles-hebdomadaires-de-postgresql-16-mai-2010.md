@@ -6,6 +6,120 @@ redirect_from: "index.php?post/2010-05-20-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les mises à jour correctrices [ndt: et de sécurité] 8.4.4, 8.3.11, 8.2.17, 8.1.21, 8.0.25 et 7.4.29 seront disponibles sous peu. Préparez-vous&nbsp;!</p>
+
+<p>Les élections du bureau de PostgreSQL EU courent jusqu'au 23 mai 2010&nbsp;:
+
+<a target="_blank" href="https://www.postgresql.eu/elections/">https://www.postgresql.eu/elections/</a></p>
+
+<p>Conférence de Michael Renner au Netways OSDC à Nuremberg (All.) les 23 &amp; 24 juin 2010&nbsp;:
+
+<a target="_blank" href="http://www.netways.de/osdc/y2010/programm/">http://www.netways.de/osdc/y2010/programm/</a></p>
+
+<p>Le PDXPUG Day est programmé pour le 18 juillet 2010 à "l'Oregon Convention Center" à Portland. D'avantage d'informations&nbsp;:
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/PDXPUGDay2010">http://wiki.postgresql.org/wiki/PDXPUGDay2010</a></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>tail_n_mail 1.10.3, un programme Perl pour scanner les fichiers de logs et envoyer les résultats par mail&nbsp;:
+
+<a target="_blank" href="http://bucardo.org/wiki/Tail_n_mail">http://bucardo.org/wiki/Tail_n_mail</a></li>
+
+<li>neo_my2pg 0.8, un utilitaire de conversion depuis MySQL&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/my2postgres/">http://pgfoundry.org/projects/my2postgres/</a></li>
+
+<li>pgAdmin 1.10.3, une interface graphique de gestion pour PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://www.pgadmin.org/download/">http://www.pgadmin.org/download/</a></li>
+
+<li>pgbouncer 1.3.3, un gestionnaire léger de connexions pour PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgbouncer/">http://pgfoundry.org/projects/pgbouncer/</a></li>
+
+<li>pglesslog 1.4.1, un ensemble d'outils visant à réduire la taille des WALs&nbsp;:
+
+<a target="_blank" href="http://pglesslog.projects.postgresql.org/">http://pglesslog.projects.postgresql.org/</a></li>
+
+<li>psycopg2 2.2.0, un connecteur Python pour PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://initd.org/psycopg/">http://initd.org/psycopg/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalité 9.0 de la semaine</strong></p>
+
+<p>pg_ctl a maintenant une option "initdb".</p>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en mai</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;:
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-05/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-05/threads.php</a>;</li>
+
+<li>Francophones&nbsp;:
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La PgCon 2010 aura lieu les 20 &amp; 21 mai 2010 à Ottawa avec des tutoriels les 18 et 19&nbsp;:
+
+<a target="_blank" href="http://www.pgcon.org/2010/registration.php">http://www.pgcon.org/2010/registration.php</a></li>
+
+<li>Le "Prague PostgreSQL Test Day" aura lieu le 21 mai 2010 à Prague, République Tchèque&nbsp;:
+
+<a target="_blank" href="http://www.nic.cz/page/747/test-the-new-beta-version-of-postgresql-in-the-cz.nic-laboratories/">http://www.nic.cz/page/747/test-the-new-beta-version-of-postgresql-in-the-cz.nic-laboratories/</a></li>
+
+<li>Les inscriptions sont ouvertes pour l'Open Source Bridge et les conférences sont annoncées&nbsp;! L'événement aura lieu du 1er au 4 juin 2010 à Portland (Oregon)&nbsp;:
+
+<a target="_blank" href="http://opensourcebridge.org/events/2010/proposals/">http://opensourcebridge.org/events/2010/proposals/</a></li>
+
+<li>Michael Renner tiendra une conférence au AMOOCON qui aura lieu du 4 au 6 juin 2010&nbsp;:
+
+<a target="_blank" href="http://www.amoocon.de/speakers/214">http://www.amoocon.de/speakers/214</a></li>
+
+<li>La "Southeast Linuxfest 2010" aura lieu à Spartanburg (Caroline du Sud, États-Unis) du 11 au 13 juin. Nos PG-gourous Joshua Drake et Andrew Dunstan donneront des présentations à ne pas manquer&nbsp;:
+
+<a target="_blank" href="http://southeastlinuxfest.org/">http://southeastlinuxfest.org/</a></li>
+
+<li>L'OSCON aura lieu à Portland (Oregon) du 19 au 23 juillet 2010&nbsp;:
+
+<a target="_blank" href="http://www.oscon.com/oscon2010">http://www.oscon.com/oscon2010</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les média</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;:
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><em>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter et Devrim Gunduz. Traduction par l'équipe PostgreSQLFr sous licence CC BY-NC-SA.</em></p>
+
+<p><em>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais à david (a) fetter.org, en allemand à pwn (a) pgug.de, en italien à pwn (a) itpug.org et en espagnol à pwn (a) arpug.com.ar.</em></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20100516">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqués</strong></p>
 

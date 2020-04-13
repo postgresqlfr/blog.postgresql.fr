@@ -6,6 +6,36 @@ redirect_from: "index.php?post/drupal-417 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 9 décembre 2007</strong></p>
+
+<ul>
+
+<li>La bêta 4 de la version 8.3 est disponible. Errare humanum est, testare beneficium&nbsp;!</li>
+
+<li>Le FISL 9.0 aura lieu les 17, 18 et 19 avril 2008 à la PUCRS, à Porto Alegre au Brésil. Les propositions de conférences doivent être rendues d'ici le 17 décembre. Désolé pour l'info tardive.
+
+<a target="_blank" href="https://fisl.softwarelivre.org/9.0/papers/speaker/">https://fisl.softwarelivre.org/9.0/papers/speaker/</a></li>
+
+<li>Pour aider à traduire la documentation de Postgres en italien, n'hésitez pas à aller sur le wiki&nbsp;:
+
+<a target="_blank" href="https://labs.psql.it/wiki/Traduzioni">https://labs.psql.it/wiki/Traduzioni</a></li>
+
+<li>Enquête Developer.com&nbsp;: venez faire monter les chiffres de PostgreSQL&nbsp;!
+
+<a target="_blank" href="http://solutions.internet.com/index.php/4431_default/d06d68c39e4b77545d082da8d2ea5d86">http://solutions.internet.com/index.php/4431_default/d06d68c39e4b77545d082da8d2ea5d86</a></li>
+
+<li>Les PgCon.br ont été un succès frappant avec plus de 200 visiteurs.
+
+<a target="_blank" href="http://www.postgresql.org.br/encontronacionalpostgresql">http://www.postgresql.org.br/encontronacionalpostgresql</a></li>
+
+<li>Xing a maintenant un groupe PostgreSQL&nbsp;:
+
+<a target="_blank" href="https://www.xing.com/net/postgresql">https://www.xing.com/net/postgresql</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <!--break-->
 

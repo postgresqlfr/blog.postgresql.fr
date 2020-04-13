@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2013-05-14-sortie-de-postgresql-9-3-beta-1 "
 
 
 
+
+<!--more-->
+
+
 La première version bêta de PostgreSQL 9.3, la dernière mouture de la
 
 meilleure base de données open source, est disponible.

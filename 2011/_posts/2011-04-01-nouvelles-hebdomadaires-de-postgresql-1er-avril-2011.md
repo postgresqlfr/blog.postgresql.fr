@@ -6,6 +6,92 @@ redirect_from: "index.php?post/2011-04-01-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Julian Assange, contributeur de longue date, est parvenu &agrave; d&eacute;couvrir via un utilitaire sophistiqu&eacute; &agrave; base d'expressions r&eacute;guli&egrave;res, de nombreuses <em>back doors</em> b&eacute;n&eacute;ficiant &agrave; la NSA am&eacute;ricaine, ins&eacute;r&eacute;es par le nouvel arrivant&nbsp;: Tom Lane. Ce dernier a imm&eacute;diatement &eacute;t&eacute; expuls&eacute; du projet.</p>
+
+<p>&Agrave; propos de la tenacit&eacute; dont il a fait preuve dans cette fouille, Julian Assange a d&eacute;clar&eacute;&nbsp;: "Il est impossible d'&eacute;viter ces m&eacute;faits &agrave; moins de discerner l'&eacute;tendue de leur malveillance." Il ajouta&nbsp;: "Je me suis toujours inqui&eacute;t&eacute; des relations entre M. Lane et le <em>Foreign Office</em> am&eacute;ricain, et j'ai donc creus&eacute; d'avantage&nbsp;: plus profond, en fait, que quiconque n'aurait pu imaginer."</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<p>DostgreSQL, une distribution de PostgreSQL, facile d'acc&egrave;s, et &agrave; destination des utilisateurs turcs, a &eacute;t&eacute; publi&eacute;e&nbsp;: 
+
+<a target="_blank" href="http://www.DostgreSQL.org">http://www.DostgreSQL.org</a></p>
+
+<p><strong>La fonctionnalit&eacute; 9.1 de la semaine</strong></p>
+
+<p>O(1) Multi-Master Replication. La syntaxe de la commande est&nbsp;:</p>
+
+<pre>
+
+ ALTER DATABASE [dbname]<br> ENABLE MMR<br> HOST host1 [, host2, ... hostn] 
+
+</pre>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Un ordinateur vous permet de faire plus d'erreurs, plus vite, que n'importe quelle autre invention dans l'histoire de l'humanit&eacute;. &Agrave; l'exception possible des armes automatiques et de la tequila.</p>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en avril</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://jobs.oracle.com/">http://jobs.oracle.com/</a></li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://www.lesjeudis.com/recherche-offre-emploi/emploi-db2/">http://www.lesjeudis.com/recherche-offre-emploi/emploi-db2/</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>PostgreSQL aura une pr&eacute;sence importante lors de la "<em>MySQL Conference and Expo</em>", du 11 au 14 avril &agrave; Santa Clara (Californie)&nbsp;: 
+
+<a target="_blank" href="http://en.oreilly.com/mysql2011/public/schedule/tag/postgresql">http://en.oreilly.com/mysql2011/public/schedule/tag/postgresql</a></li>
+
+<li>L'<em>Open Database Camp</em> aura lieu du 7 au 9 mai 2011 en Sardaigne (Italie)&nbsp;: 
+
+<a target="_blank" href="http://datacharmer.blogspot.com/2011/01/announcing-open-database-camp-sardinia.html">http://datacharmer.blogspot.com/2011/01/announcing-open-database-camp-sardinia.html</a></li>
+
+<li>PGCon aura lieu les 19 &amp; 20 mai 2011 &agrave; l'Universit&eacute; d'Ottawa, pr&eacute;c&eacute;d&eacute; par deux jours de tutoriels les 17 &amp; 18 mai&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2011/">http://www.pgcon.org/2011/</a></li>
+
+<li>La PG Session 2, sur PostGIS, se tiendra &agrave; Paris le 23 juin. Appel &agrave; conf&eacute;renciers&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/en/2/">http://www.postgresql-sessions.org/en/2/</a></li>
+
+<li>pgbr aura lieu &agrave; S&atilde;o Paulo (Br&eacute;sil) les 3 &amp; 4 novembre 2011&nbsp;: 
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/">http://pgbr.postgresql.org.br/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20110401">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

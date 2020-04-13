@@ -6,6 +6,52 @@ redirect_from: "index.php?post/2009-06-30-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La 8.4.0 sera bient&ocirc;t publi&eacute;e. En attendant, poursuivez les tests&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/developer/beta">http://www.postgresql.org/developer/beta</a></p>
+
+<p>Il y aura une conf&eacute;rence &agrave; Athens (Georgie, &Eacute;tats-Unis) le 19 septembre 2009. L'appel aux conf&eacute;rences est ouvert&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org/2009/pgday/athens">http://www.postgresqlconference.org/2009/pgday/athens</a></p>
+
+<p>La rencontre PostgreSQL lors du FISL &agrave; Porto Alegre (Br&eacute;sil) fut vive. Quelques photos&nbsp;: 
+
+<a target="_blank" href="http://picasaweb.google.com/diogob/FISL2009?feat=directlink">http://picasaweb.google.com/diogob/FISL2009?feat=directlink</a></p>
+
+<p>Le PUG allemand a obtenu un emplacement d&eacute;veloppeur au FrOSCon le dimanche 23 ao&ucirc;t 2009. L'appel &agrave; conf&eacute;rences est ouvert&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/573-Call-for-Papers-fuer-den-PostgreSQL-Devroom-auf-der-FrOSCon-2009.html">http://andreas.scherbaum.la/blog/archives/573-Call-for-Papers-fuer-den-PostgreSQL-Devroom-auf-der-FrOSCon-2009.html</a></p>
+
+<p>Une suite de conf&eacute;rences est organis&eacute;e &agrave; Seattle (&Eacute;tat de Washington, &Eacute;tats-Unis) du 16 au 18 octobre 2009. L'appel &agrave; conf&eacute;rences est ouvert&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org/2009/west">http://www.postgresqlconference.org/2009/west</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Andreas (ads) Scherbaum enseignera au centre pour adultes de Magdeburg (All.) du 7 au 11 septembre 2009 sur le sujet "PostgreSQL for Corporate Use". D&eacute;tails ci-dessous&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/574-PostgreSQL-als-Bildungsurlaub.html">http://andreas.scherbaum.la/blog/archives/574-PostgreSQL-als-Bildungsurlaub.html</a></li>
+
+<li>MyJSQLView 3.03, une interface graphique en Java pour l'&eacute;dition de donn&eacute;es&nbsp;: 
+
+<a target="_blank" href="http://myjsqlview.org/projects/MyJSQLView/index.html">http://myjsqlview.org/projects/MyJSQLView/index.html</a></li>
+
+<li>py-postgresql 0.9.0 et 0.8.2, un pilote Python pour PostgreSQL et un kit g&eacute;n&eacute;raliste pour les travaux PG sous Python&nbsp;: 
+
+<a target="_blank" href="http://python.projects.postgresql.org/?utm_source=release&amp;utm_medium=email&amp;utm_campaign=py-postgresql-0.9.0">http://python.projects.postgresql.org/?utm_source=release&amp;utm_medium=email&amp;utm_campaign=py-postgresql-0.9.0</a></li>
+
+</ul>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Besoin d'envoyer des donn&eacute;es &agrave; MS Excel&reg;&nbsp;? "COPY ... WITH CSV HEADERS"</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090628">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en juin</strong></p>
 

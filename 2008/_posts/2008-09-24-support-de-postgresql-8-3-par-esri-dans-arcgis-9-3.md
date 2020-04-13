@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-308 "
 
 
 
+
+<!--more-->
+
+
 <p>La nouvelle version 9.3 de <a href="http://www.esri.com/software/arcgis/index.html">ArcGIS</a>, de la société <a href="http://www.esri.com/">ESRI</a> supporte désormais PostgreSQL 8.3 !</p>
 
 <p>Sur la page <a href="http://www.esri.com/software/arcgis/geodatabase/about/whats-new.html">"What's new in the Geodatabase 9.3"</a> du site de l'éditeur, on apprend que le support de PostgreSQL 8.3 est enfin possible. Voici le contenu de cette annonce:

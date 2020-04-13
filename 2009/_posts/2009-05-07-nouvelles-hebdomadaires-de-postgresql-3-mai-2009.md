@@ -6,6 +6,32 @@ redirect_from: "index.php?post/2009-05-07-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>OpenStreetMap bascule vers PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://blog.cleverelephant.ca/2009/04/openstreetmap-moves-to-postgresql.html">http://blog.cleverelephant.ca/2009/04/openstreetmap-moves-to-postgresql.html</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>autodoc 1.40, un syst&egrave;me d'automatisation de la documentation pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/autodoc/">http://pgfoundry.org/projects/autodoc/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL 8.4 Feature of the Week</strong></p>
+
+<p>Nouveau hachage pour les index&nbsp;: gr&acirc;ce au "Google Summer of Code", le hachage de nos index a &eacute;t&eacute; retritur&eacute; et ils obtiennent &agrave; pr&eacute;sent des performances sup&eacute;rieures &agrave; celles des index B-Tree sur les recherches "mono-colonnes". &Agrave; noter, cependant, que ces nouveaux index ne sont pas encore tout &agrave; fait r&eacute;sistants aux crashs et peuvent n&eacute;cessiter une r&eacute;indexation en cas de plantage syst&egrave;me.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Le module 'ltree' des "contribs" est une impl&eacute;mentation des arborescences index&eacute;es et peut s'av&eacute;rer utile pour repr&eacute;senter un syst&egrave;me de fichier ou une hi&eacute;rarchie similaire dans votre base.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090503">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en May</strong></p>
 

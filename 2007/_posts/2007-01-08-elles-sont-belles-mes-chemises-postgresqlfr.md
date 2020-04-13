@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-229 "
 ---
 
 
+<p><a href="./?q=node/163">L'association PostgreSQLFr</a> tiendra un stand à <a href="http://www.solutionslinux.fr/" target="_blank">Solutions Linux 2007</a>, du côté du village associatif.</p>
+
+<p>
+
+Nous aimerions cette année vous offrir pas mal de goodies, en plus de notre traditionnelle vente de tshirt. Cette année nous aurions aimé aussi vous proposer une chemise (tailles XL, L ou M), avec à la place de la poche avant, notre logo brodé aux couleurs de l'association (<a href="http://dbadialog.free.fr/PGFr/postgresqlfr.png" target="_blank">l'éléphant bleu classique de PostgreSQL, entouré de la roue de la francophonie</a>, qui est le logo de l'association depuis ses débuts).</p>
+
+<!--more-->
+
 
 <p>Voici la chemise en question&nbsp;: </p>
 

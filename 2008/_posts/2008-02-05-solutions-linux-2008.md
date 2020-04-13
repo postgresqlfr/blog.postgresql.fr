@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-398 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Solutions Linux 2008 s'est terminé jeudi dernier. Cette édition a été un nouveau succès en terme de visiteurs.</p>
 

@@ -6,6 +6,76 @@ redirect_from: "index.php?post/2013-02-02-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p><strong>Offres d'emplois autour de PostgreSQL en janvier</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2013-01/threads.php">http://archives.postgresql.org/pgsql-jobs/2013-01/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La conf&eacute;rence PGDay du FOSDEM sera tenue juste avant l'ouverture du meeting, le 1er f&eacute;vrier &agrave; Bruxelles, Belgique&nbsp;: 
+
+<a target="_blank" href="http://fosdem2013.pgconf.eu/">http://fosdem2013.pgconf.eu/</a></li>
+
+<li>La premi&egrave;re &eacute;dition du PgDay australien (PGDay.AU 2013) aura lieu &agrave; Melbourne le 4 f&eacute;vrier 2013. L'inscription est gratuite. Programme et informations&nbsp;: 
+
+<a target="_blank" href="http://2013.pgday.org.au/">http://2013.pgday.org.au/</a> Inscription&nbsp;: <a target="_blank" href="http://www.meetup.com/melpug">http://www.meetup.com/melpug</a></li>
+
+<li>Le PyPgDay aura lieu le 13 mars au <em>Santa Clara Convention Center</em>, le premier jour de la <em>PyCon</em>. Informations par l&agrave;&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/PyPgDay2013">http://wiki.postgresql.org/wiki/PyPgDay2013</a></li>
+
+<li>Le PGDay 2013 de New-York City aura lieu le 22 mars&nbsp;: 
+
+<a target="_blank" href="http://pgday.nycpug.org/">http://pgday.nycpug.org/</a></li>
+
+<li>La <em>PostgreSQL Session</em> est programm&eacute;e pour le 28 mars 2013 &agrave; Paris. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/en/5/">http://www.postgresql-sessions.org/en/5/</a></li>
+
+<li>PGCon 2013 aura lieu les 23 &amp; 24 mai 2013 &agrave; l'Universit&eacute; d'Ottawa&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2013/">http://www.pgcon.org/2013/</a></li>
+
+<li>La 6&egrave;me conf&eacute;rence annuelle "Prague PostgreSQL Developers Day", organis&eacute;e par le CSPUG (Groupe des utilisateurs tch&egrave;ques et slovaques de PostgreSQL), aura lieu le 30 mai 2013 &agrave; la Facult&eacute; des Sciences Math&eacute;matiques &amp; Physiques de l'Universit&eacute; Charles (Malostranske namesti 25, Prague). Les candidatures des conf&eacute;renciers sont attendues jusqu'au 14 avril &agrave; l'adresse &lt;info AT p2d2 POINT cz&gt;. D'avantage d'informations sur le site&nbsp;: 
+
+<a target="_blank" href="http://www.p2d2.cz/">http://www.p2d2.cz/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20130128071136.GE5846@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

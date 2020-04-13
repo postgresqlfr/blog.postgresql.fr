@@ -6,6 +6,26 @@ redirect_from: "index.php?post/2019-05-03-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>pgibz aura lieu &agrave; Ibiza (Espagne) du 19 au 23 juin 2019. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: <a target="_blank" href="https://pgibz.io/">https://pgibz.io/</a></p>
+
+<p>La <em>PostgreSQL Conference Europe 2019</em> aura lieu du 15 au 18 octobre 2019 &agrave; Milan (Italie). L'appel &agrave; conf&eacute;renciers court jusqu'au 15 juillet, via <a target="_blank" href="https://2019.pgconf.eu/callforpapers">https://2019.pgconf.eu/callforpapers</a> <a target="_blank" href="https://2017.pgconf.eu/">https://2017.pgconf.eu/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>WAL-G 0.2.9, un syst&egrave;me de gestion des sauvegardes pour PostgreSQL &eacute;crit en Go&nbsp;: <a target="_blank" href="https://github.com/wal-g/wal-g/releases">https://github.com/wal-g/wal-g/releases</a></li>
+
+<li>pg_partman 4.1.0, un syst&egrave;me de gestion pour le partitionnement des tables&nbsp;: <a target="_blank" href="https://github.com/pgpartman/pg_partman">https://github.com/pgpartman/pg_partman</a></li>
+
+<li>postgres-checkup 1.0, un outil permettant de g&eacute;n&eacute;rer des rapports de sant&eacute; de clusters PostgreSQL&nbsp;: <a target="_blank" href="https://gitlab.com/postgres-ai-team/postgres-checkup/tags/1.0">https://gitlab.com/postgres-ai-team/postgres-checkup/tags/1.0</a></li>
+
+<li>pgFormatter 3.4, un outil de formatage/coloration syntaxique pour le code SQL&nbsp;: <a target="_blank" href="http://sqlformat.darold.net/">http://sqlformat.darold.net/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en avril</h2>
 

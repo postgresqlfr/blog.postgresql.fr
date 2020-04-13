@@ -6,6 +6,98 @@ redirect_from: "index.php?post/drupal-39 "
 ---
 
 
+<p>
+
+Rien ne vaut quelques ouragans et des coupures d'électricité pour vous inspirer
+
+des variations de ces nouvelles hebdomadaires. Bien sur, lorsque vous êtes dans un
+
+environnement de développement distribué, le temps qu'il fait importe peu, ainsi
+
+lorsque j'étais à l'extérieur pour nettoyer les arbres cassés et autres, les
+
+développeurs de PostgreSQL préparaient PostgreSQL 8.0 beta 3.
+
+Ceux qui n'ont pas encore mis à jour sont priés de le faire, les paquets sont
+
+disponibles sur les serveurs habituels. Ceux qui voudraient savoir quelles
+
+corrections il nous reste à apporter peuvent aller voir la liste des items
+
+ouverts sur <a href="http://candle.pha.pa.us/cgi-bin/pgopenitems">
+
+http://candle.pha.pa.us/cgi-bin/pgopenitems
+
+</a>.
+
+</p>
+
+<p>
+
+Ainsi, après deux semaines et une nouvelle beta, nous avons certainement une
+
+bonne liste de changements à balayer. Le code assembleur pour l'instruction
+
+test-and-set (TAS) sous Solaris/386 a été corrigé. Un cas particulier dans
+
+lequel la libpq auraît pu traiter une commande défectueuse comme étant réussie a
+
+aussi été corrigé. Quelques conditions de dépassement de pile dans les
+
+opérateurs arithmétiques sur des entiers sont désormais détectés. Une
+
+optimisation des hash joins pour lesquels la relation INNER est complètement
+
+vide a été ajoutée. ALTER TABLE OWNER a été ajusté pour mettre à jour la
+
+propriété des séquences afférentes, en accord avec les index. Le code de
+
+vérrouillage sur les index a été amélioré, et le code de mise à jour de table
+
+héritées a été amélioré. Enfin, le label de volatilité des fonctions relatives
+
+au timestamp a été revu et corrigé comme il le fallait.
+
+</p>
+
+<p>
+
+Un autre domaine qui a bénéficié de tout un tas d'améliorations a été le
+
+programme psql. Parmi les ajouts, on trouve le support des tabulation pour ALTER
+
+SEQUENCE, ajout de "RENAME TO" pour ALTER TRIGGER xx ON yy, support de ALTER
+
+USER xxx, support de ALTER LANGUAGE, support amélioré de ALTER TABLE xxx ALTER
+
+COLUMN xxx. Parmi les corrections, on trouve la bonne table pour ALTER TRIGGER
+
+xx ON ..., ALTER GROUP xxx DROP ..., ALTER DOMAIN xxx DROP ... et ALTER DOMAIN
+
+xx SET DEFAULT. Merci à Greg Sabino-Mullane pour cet important travail.
+
+</p>
+
+<p>
+
+Un autre domaine qui se doit d'être cité est le travail continu d'amélioration
+
+de la documentation. Les récents endroits où on a travaillé sont par exemple la
+
+commande CREATE TABLE AS, l'installation de PL/Python, le support de SSL dans la
+
+libpq, l'utilisation de PERFORM en plpgsql, la procédure de mise à jour, et
+
+plusieurs nouvelles entrées dans l'index de la documentation. Si vous le l'avez
+
+pas encore fait, veuillez vous ballader dans cette nouvelle documentation et
+
+nous envoyer toutes les suggestions que vous auriez.
+
+</p>
+
+<!--more-->
+
 
 <h3>== Nouveautés autour de PostgreSQL ==
 

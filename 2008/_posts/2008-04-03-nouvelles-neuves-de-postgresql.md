@@ -6,6 +6,20 @@ redirect_from: "index.php?post/drupal-422 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 30 mars 2008</strong></p>
+
+<p>La date limite d'inscription au "Summer of Code" approche. Envoyez vos dossiers dès que possible&nbsp;!
+
+<a target="_blank" href="http://code.google.com/soc">http://code.google.com/soc</a></p>
+
+<p>La première "commit fest" se termine bientôt et beaucoup de nouvelles fonctionnalités ont vu le jour. Bravo à tous pour le travail.
+
+[ndt: quelques morceaux choisis <a href="http://www.depesz.com/index.php/2008/04/02/waiting-for-84-3/">ici</a> et <a href="http://www.depesz.com/index.php/2008/03/31/waiting-for-84-2/">ici</a> (notamment le poids des bases avec un simple \l+ :) ]</p>
+
+<p>La "PostgreSQL Conference East" vient de s'achever. Félicitations à tous les organisateurs, conférenciers et participants.</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

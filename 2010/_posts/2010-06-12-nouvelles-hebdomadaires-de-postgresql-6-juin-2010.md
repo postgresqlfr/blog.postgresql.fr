@@ -6,6 +6,86 @@ redirect_from: "index.php?post/2010-06-12-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le 11 juin 2010, Gabriele Bartolini (de 2<sup>nd</sup>Quadrant Italia) interviendra lors de la conf&eacute;rence italienne sur les Logiciels Libres &agrave; Cagliari, Sardaigne&nbsp;; intervention titr&eacute;e "High Availability of business databases with PostgreSQL" [ndt: Haute Disponibilit&eacute; de bases de donn&eacute;es d'entreprises avec PostgreSQL]&nbsp;: 
+
+<a target="_blank" href="http://www.confsl.org/">http://www.confsl.org/</a></p>
+
+<p>Le 12 juin 2010, le PUG italien fera la promotion de PostgreSQL lors de la conf&eacute;rence italienne sur les Logiciels Libres &agrave; Cagliari, Sardaigne avec une journ&eacute;e enti&egrave;re d'ateliers autour de PostgreSQL allant d'une "Introduction" &agrave; la "Haute Disponibilit&eacute;"&nbsp;: 
+
+<a target="_blank" href="http://www.confsl.org/">http://www.confsl.org/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>ChronicDB v2.2.2, un outil de d&eacute;ploiement de sch&eacute;ma&nbsp;: 
+
+<a target="_blank" href="http://chronicdb.com">http://chronicdb.com</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en juin</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-05/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-05/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La "Southeast Linuxfest 2010" aura lieu &agrave; Spartanburg (Caroline du Sud, &Eacute;tats-Unis) du 11 au 13 juin. Nos PG-gourous Joshua Drake et Andrew Dunstan donneront des pr&eacute;sentations &agrave; ne pas manquer&nbsp;: 
+
+<a target="_blank" href="http://southeastlinuxfest.org/">http://southeastlinuxfest.org/</a></li>
+
+<li>Conf&eacute;rence de Michael Renner au Netways OSDC &agrave; Nuremberg (All.) les 23 &amp; 24 juin 2010&nbsp;: 
+
+<a target="_blank" href="http://www.netways.de/osdc/y2010/programm/">http://www.netways.de/osdc/y2010/programm/</a></li>
+
+<li>CHAR(10), la conf&eacute;rence PostgreSQL d&eacute;di&eacute;e au clustering, &agrave; la haute-disponibilit&eacute; et &agrave; la r&eacute;plication vient d'ouvrir les inscriptions en ligne et les r&eacute;servations. 2 &amp; 3 juillet 2010, Oriel College, Universit&eacute; d'Oxford (Royaume-Uni)&nbsp;: 
+
+<a target="_blank" href="http://www.char10.org/">http://www.char10.org/</a></li>
+
+<li>Le PDXPUG Day est programm&eacute; pour le 18 juillet 2010 &agrave; "l'Oregon Convention Center" &agrave; Portland. D'avantage d'informations&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/PDXPUGDay2010">http://wiki.postgresql.org/wiki/PDXPUGDay2010</a></li>
+
+<li>L'OSCON aura lieu &agrave; Portland (Oregon) du 19 au 23 juillet 2010&nbsp;: 
+
+<a target="_blank" href="http://www.oscon.com/oscon2010">http://www.oscon.com/oscon2010</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20100606">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

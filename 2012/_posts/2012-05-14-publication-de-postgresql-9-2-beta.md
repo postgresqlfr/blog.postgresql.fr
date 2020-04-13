@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2012-05-14-publication-de-postgresql-9-2-beta "
 
 
 
+
+<!--more-->
+
+
 Le PostgreSQL Global Development Group publie ce jour la version beta de PostgreSQL 9.2. Celle-ci améliore considérablement les performances et les possibilités d'extension verticale et horizontale.
 
 L'aide de tous est requise pour tester cette version.

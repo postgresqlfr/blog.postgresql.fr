@@ -6,6 +6,78 @@ redirect_from: "index.php?post/2017-09-14-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La premi&egrave;re PGConf sud-africaine aura lieu sur Le Cap le 3 octobre 2017&nbsp;: <a target="_blank" href="https://pgconf.org/conferences/SouthAfrica2017">https://pgconf.org/conferences/SouthAfrica2017</a></p>
+
+<p>La premi&egrave;re Commitfest pour PostgreSQL 11 a d&eacute;but&eacute;, avec le nombre record de 256 patchs en attente, donc nous avons besoin de toute l'aide possible de la communaut&eacute; pour relire toutes ces magnifiques contributions. Si vous &ecirc;tes l'auteur d'un patch, restez attentifs aux revues pour que votre contribution puisse &ecirc;tre int&eacute;grable.</p>
+
+<p>[ndt: Meetup le 20 septembre &agrave; Lyon&nbsp;: <a target="_blank" href="https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/">https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/</a>]</p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>Pgpool-II 3.6.6, 3.5.10, 3.4.13, 3.3.17 et 3.2.22, et pgpoolAdmin 3.6.2 ont &eacute;t&eacute; publi&eacute;s&nbsp;: <a target="_blank" href="http://pgpool.net/mediawiki/index.php/Downloads">http://pgpool.net/mediawiki/index.php/Downloads</a></li>
+
+<li>psqlODBC 09.06.0500&nbsp;: <a target="_blank" href="https://odbc.postgresql.org/docs/release.html">https://odbc.postgresql.org/docs/release.html</a></li>
+
+<li>Aquameta 0.1, un r&eacute;seau pair-&agrave;-pair permettant d'&eacute;changer des "bundles" impl&eacute;ment&eacute; via PostgreSQL&nbsp;: <a target="_blank" href="http://github.com/aquametalabs/aquameta">http://github.com/aquametalabs/aquameta</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en septembre</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2017-09/">http://archives.postgresql.org/pgsql-jobs/2017-09/</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>PostgresOpen prendra place &agrave; San Francisco du 6 au 8 septembre 2017&nbsp;: <a target="_blank" href="https://2017.postgresopen.org/">https://2017.postgresopen.org/</a></li>
+
+<li>PGBR2017 (La PgConf br&eacute;silienne) aura lieu &agrave; Porto Alegre (&Eacute;tat du Rio Grande do Sul) du 14 au 16 septembre 2017&nbsp;: <a target="_blank" href="https://pgbr.postgresql.org.br/2017/">https://pgbr.postgresql.org.br/2017/</a></li>
+
+<li>[ndt: Meetup le 25 septembre &agrave; Toulouse&nbsp;: <a target="_blank" href="https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Toulouse/">https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Toulouse/</a>]</li>
+
+<li>PGDay.IT 2017 aura lieu &agrave; Milan (Italie) le 13 octobre&nbsp;: <a target="_blank" href="http://pgday.it">http://pgday.it</a></li>
+
+<li>La <em>PostgreSQL Conference Europe 2017</em> aura lieu du 24 au 27 octobre 2017 au Warsaw Marriott Hotel, &agrave; Varsovie (Pologne)&nbsp;: <a target="_blank" href="https://2017.pgconf.eu/">https://2017.pgconf.eu/</a></li>
+
+<li><em>PGConf Local&nbsp;: Seattle</em> aura lieu les 13 et 14 novembre 2017&nbsp;: <a target="_blank" href="https://www.pgconf.us/#Seattle2017">https://www.pgconf.us/#Seattle2017</a></li>
+
+<li>Le <em>PGDay Australia 2017</em> se tiendra &agrave; Melbourne le 17 novembre. L'appel &agrave; conf&eacute;renciers court jusqu'au 8 septembre&nbsp;: <a target="_blank" href="https://goo.gl/5d9EbT">https://goo.gl/5d9EbT</a> <a target="_blank" href="http://2017.pgday.com.au/">http://2017.pgday.com.au/</a></li>
+
+<li>La conf&eacute;rence 2ndQuadrant PostgreSQL 2017 (<em>2Q PGConf</em> en abr&eacute;g&eacute;) sera tenue les 6 et 7 novembre &agrave; New-York City, et le 9 novembre &agrave; Chicago&nbsp;: <a target="_blank" href="http://www.2qpgconf.com/">http://www.2qpgconf.com/</a></li>
+
+<li>Session PostgreSQL le 17 novembre 2017 &agrave; Paris. L'appel &agrave; conf&eacute;renciers est lanc&eacute; jusqu'au 30 septembre &agrave; l'adresse call-for-paper AT postgresql-sessions POINT org. D&eacute;tails par l&agrave;&nbsp;: <a target="_blank" href="http://blog.dalibo.com/2017/08/29/cfp_pgsession9.html">http://blog.dalibo.com/2017/08/29/cfp_pgsession9.html</a></li>
+
+<li><em>PGConf Local&nbsp;: Austin</em> aura lieu les 4 & 5 d&eacute;cembre 2017. L'appel &agrave; conf&eacute;renciers a &eacute;t&eacute; lanc&eacute;&nbsp;: <a target="_blank" href="https://www.pgconf.us/conferences/Austin2017">https://www.pgconf.us/conferences/Austin2017</a></li>
+
+<li>La PGConf.ASIA 2017 aura lieu &agrave; Akihabara (Tokyo, Japon) du 4 au 6 d&eacute;cembre 2017&nbsp;: <a target="_blank" href="http://www.pgconf.asia/EN/2017/">http://www.pgconf.asia/EN/2017/</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20170911042217.GA8392@fetter.org">http://www.postgresql.org/message-id/20170911042217.GA8392@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

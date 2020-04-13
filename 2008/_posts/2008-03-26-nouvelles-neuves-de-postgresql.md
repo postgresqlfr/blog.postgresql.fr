@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-290 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 23 mars 2008</strong></p>
+
+<p>Les versions 8.3.1 et 8.2.7 de PostgreSQL sont sorties. Mettez à jour dès que possible&nbsp;!</p>
+
+<p>"Summer of PostgreSQL": le "Google Summer of Code" commencera à enregistrer les candidatures le 25 mars. Préparez-vous dès maintenant&nbsp;!</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

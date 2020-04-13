@@ -6,6 +6,24 @@ redirect_from: "index.php?post/drupal-419 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 25 novembre 2007</strong></p>
+
+<ul>
+
+<li>La Beta 3 de la version 8.3 est en ligne&nbsp;:
+
+<a target="_blank" href="http://www.postgresql.org/developer/beta">http://www.postgresql.org/developer/beta</a></li>
+
+<li>Le UK Postgres User Group se réunira le 3 décembre. Un petit mail à Simon Riggs &lt;uk AT postgresql.org&gt; pour plus de détails.</li>
+
+<li>L'IT-PUG est à présent une organisation à but non-lucratif&nbsp;:
+
+<a target="_blank" href="http://www.itpug.org/index.it.html">http://www.itpug.org/index.it.html</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <!--break-->
 

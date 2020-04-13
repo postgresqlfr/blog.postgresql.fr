@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-101 "
 ---
 
 
+<p><strong>== Nouvelles hebdomadaires de PostgreSQL - 27 juin 2005 ==</strong></p>
+
+<p>Le gel des fonctionnalités a été large. Vous pouvez être sûr que votre fonctionnalité favorite s'y trouve!
+
+</p>
+
+<p>Teodor Sigaev a fait en sorte que les index GiST soient totalement concurrents</p>
+
+<p> Magnus Hagander et Neil Conway on supprimé Kerberos 4, ce dernier n'étant plus utilisé. Le protocole en lui même n'est plus supporté en partie à cause de problèmes de sécurité.</p>
+
+<!--more-->
+
 
 PL/PgSQL permet mainteant de faire EXECUTE INTO.
 

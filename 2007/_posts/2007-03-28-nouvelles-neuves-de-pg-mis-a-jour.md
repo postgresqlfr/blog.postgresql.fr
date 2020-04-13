@@ -6,6 +6,26 @@ redirect_from: "index.php?post/drupal-244 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 25 mars 2007</strong></p>
+
+<p>
+
+La date limite de soumission de projets pour le &amp;laquote;&nbsp;Summer of Code&nbsp;» a été repoussée au lundi 26 mars. Elles pouvaient être déposées là&nbsp;:
+
+<a target="_blank" href="http://www.postgresql.org/developer/summerofcode">http://www.postgresql.org/developer/summerofcode</a>
+
+</p>
+
+<p>
+
+Pavel Stehule a publié son matériel pédagogique en tchèque&nbsp;:
+
+<a target="_blank" href="http://www.pgsql.cz/index.php/Jednodenn%C3%AD_%C5%A1kolen%C3%AD_PostgreSQL">http://www.pgsql.cz/index.php/Jednodenn%C3%AD_%C5%A1kolen%C3%AD_PostgreSQL</a>
+
+</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

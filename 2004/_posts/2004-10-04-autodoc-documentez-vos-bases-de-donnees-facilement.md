@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-38 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p><a href="http://www.rbt.ca/autodoc/">Autodoc</a> permet de documenter de manière extrêmement simple et efficace une base de données.</p>
 

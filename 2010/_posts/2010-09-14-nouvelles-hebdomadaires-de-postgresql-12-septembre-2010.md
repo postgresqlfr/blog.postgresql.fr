@@ -6,6 +6,78 @@ redirect_from: "index.php?post/2010-09-14-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Jonathan S. Katz parlera des ORMs: Le Bon, La Brute et le N&eacute;cessaire (avec consid&eacute;rations sur PostgreSQL) au PUG de New-York le 13 septembre dans les bureaux de Yodle. D&eacute;tails et RSVP ci-dessous&nbsp;: 
+
+<a target="_blank" href="http://www.meetup.com/postgresql-3/calendar/14472452/">http://www.meetup.com/postgresql-3/calendar/14472452/</a></p>
+
+<p>Surge 2010, le salon sur l'&eacute;volutivit&eacute; et la performance, aura lieu &agrave; Baltimore (Maryland, &Eacute;tats-Unis) du 30 septembre au 1<sup>er</sup> octobre 2010&nbsp;: 
+
+<a target="_blank" href="http://omniti.com/surge/2010">http://omniti.com/surge/2010</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Dataware Quick Application Suite 1.5, un outil pour d&eacute;veloppement RAD supportant PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.datawarestudio.com">http://www.datawarestudio.com</a></li>
+
+<li>pgbouncer 1.3.4, un gestionnaire de connexion l&eacute;ger pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgbouncer/">http://pgfoundry.org/projects/pgbouncer/</a></li>
+
+<li>pgpool-II 3.0, un gestionnaire de connexions et bien d'avantage, et pgpoolAdmin 3.0, une interface graphique pour pgpool&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en septembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-09/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-09/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>L'appel &agrave; conf&eacute;renciers pour le PGDay.EU 2010, tenu du 6 au 8 d&eacute;cembre &agrave; Stuttgart (All.), est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2010.pgday.eu/callforpapers">http://2010.pgday.eu/callforpapers</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20100912">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

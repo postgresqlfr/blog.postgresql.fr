@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2013-09-09-publication-de-postgresql-9-3-0 "
 
 
 
+
+<!--more-->
+
+
 <h1>Dossier de presse PostgreSQL 9.3</h1>
 
 <h2>Contenu</h2>

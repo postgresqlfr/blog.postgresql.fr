@@ -6,6 +6,52 @@ redirect_from: "index.php?post/2009-03-22-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 15 mars 2009</strong></p>
+
+<p>Correction de bug dans les versions 8.3.7, 8.2.13, 8.1.17, 8.0.21 et 7.4.25 &agrave; venir. Pr&eacute;parez-vous &agrave; mettre &agrave; jour. [ndt: versions disponibles ce jour]</p>
+
+<p>Nouveau sondage&nbsp;: quel langage de programmation utilisez-vous avec PostgreSQL&nbsp;? <a href="http://www.postgresql.org/community">www.postgresql.org/community</a></p>
+
+<p>De nombreux PgDays sont en train d'&ecirc;tre organis&eacute;s au Br&eacute;sil, avec S&atilde;o Paulo, Porto Velho, Ji-Paran&aacute; et Brasilia. Plus d'informations la semaine prochaine&nbsp;!</p>
+
+<p>Devrim GUNDUZ a publi&eacute; un nouvel ensemble de paquets RPM de test. Lancez-vous et testez&nbsp;:) 
+
+<a target="_blank" href="http://yum.pgsqlrpms.org/news-8.4devel-ready-for-testing.php">http://yum.pgsqlrpms.org/news-8.4devel-ready-for-testing.php</a></p>
+
+<p>Le site 01.net a couronn&eacute; PostgreSQL "meilleure base de donn&eacute;es Open Source"&nbsp;: 
+
+<a target="_blank" href="http://www.01net.com/editorial/404090/postgresql-meilleure-base-de-donnees-open-source/">http://www.01net.com/editorial/404090/postgresql-meilleure-base-de-donnees-open-source/</a></p>
+
+<p>Des vid&eacute;os li&eacute;es &agrave; PostgreSQL bient&ocirc;t disponibles&nbsp;!</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Jopr 2.2 beta 1, un logiciel de gestion et de surveillance serveurs&nbsp;: 
+
+<a target="_blank" href="http://pilhuhn.blogspot.com/2009/03/public-beta-of-jopr-22-released.html">http://pilhuhn.blogspot.com/2009/03/public-beta-of-jopr-22-released.html</a></li>
+
+<li>pglesslog 1.2, un patch permettant de r&eacute;duire la taille des WALs&nbsp;: 
+
+<a target="_blank" href="http://pglesslog.projects.postgresql.org/">http://pglesslog.projects.postgresql.org/</a></li>
+
+<li>Skytools 2.1.9, un syst&egrave;me de r&eacute;plication en Python&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/skytools/">http://pgfoundry.org/projects/skytools/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 8.4 de la semaine</strong></p>
+
+<p>pg_stat_user_functions&nbsp;: cette nouvelle vue syst&egrave;me permet de voir quelles fonctions et combien de fois elles ont &eacute;t&eacute; appel&eacute;es, ainsi que le temps &eacute;coul&eacute; dans la fonction et dans les appels effectu&eacute;s &agrave; l'int&eacute;rieur de celle-ci.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>pg_fouine parcourt les logs de PostgreSQL et fait une synth&egrave;se des requ&ecirc;tes les plus lentes. La version en cours de d&eacute;veloppement est m&ecirc;me capable de travailler sur des logs &agrave; virgules.</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en mars</strong></p>
 

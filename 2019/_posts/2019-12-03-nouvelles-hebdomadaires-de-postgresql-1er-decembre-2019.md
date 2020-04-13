@@ -6,6 +6,24 @@ redirect_from: "index.php?post/2019-12-03-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>[ndt: <em>brown bag lunch</em> le 5/12 à midi pour le groupe de Lyon&nbsp;: <a href="https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/" target="_blank">https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/</a>]</p>
+
+<p>[ndt: meetup le 5/12 à 19h à Nantes&nbsp;: <a href="https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Nantes/" target="_blank">https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Nantes/</a>]</p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>Ajqvue version 3.1, une UI java compatible PostgreSQL&nbsp;: <a target="_blank" href="http://ajqvue.com">http://ajqvue.com</a></li>
+
+<li>pgquarrel 0.6.0, un outil comparant des sch&eacute;mas de BD PostgreSQL et produisant un ensemble de commandes pour convertir l'un des sch&eacute;mas vers le second&nbsp;: <a target="_blank" href="http://eulerto.github.io/pgquarrel">http://eulerto.github.io/pgquarrel</a></li>
+
+<li>pg_filedump 12.0 un utilitaire permettant de transformer les fichiers heap/index/control de PostgreSQL sous une forme humainement intelligible&nbsp;: <a target="_blank" href="https://wiki.postgresql.org/wiki/Pg_filedump">https://wiki.postgresql.org/wiki/Pg_filedump</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en d&eacute;cembre</h2>
 

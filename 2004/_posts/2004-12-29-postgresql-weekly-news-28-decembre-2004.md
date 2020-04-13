@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-59 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Le 28 décembre 2004, Rober Treat nous annonçait sur la liste pgsql-announce:</p>
 

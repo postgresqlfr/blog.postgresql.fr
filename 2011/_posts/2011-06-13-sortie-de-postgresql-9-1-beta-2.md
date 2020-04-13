@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2011-06-13-sortie-de-postgresql-9-1-beta-2 "
 
 
 
+
+<!--more-->
+
+
 La seconde version bêta de PostgreSQL 9.1 est désormais disponible. Cette bêta corrige plusieurs problèmes signalés sur la version 9.1 bêta 1. Tous les utilisateurs qui souhaitent aider le projet peuvent télécharger et tester PostgreSQL 9.1 bêta 2 dès que possible.
 
 

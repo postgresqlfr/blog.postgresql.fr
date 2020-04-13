@@ -6,6 +6,36 @@ redirect_from: "index.php?post/2009-07-17-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Des places sont toujours disponibles pour le PgDay de San Jose, dimanche 19 juillet. Inscrivez-vous rapidement&nbsp;! 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/PgDaySanJose2009">http://wiki.postgresql.org/wiki/PgDaySanJose2009</a></p>
+
+<p>Un nouvel outil fait son apparition pour les Commitfests. Merci &agrave; Robert Haas, Brendan Jurd et de nombreux autres&nbsp;: 
+
+<a target="_blank" href="http://commitfest.postgresql.org/">http://commitfest.postgresql.org/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>check_postgres 2.9.2, un plugin de Nagios pour surveiller PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/check_postgres/">http://bucardo.org/check_postgres/</a></li>
+
+<li>Le "PostgreSQL RPM Building Project" a publi&eacute; le "PostgreSQL 8.4 Live CD"&nbsp;: 
+
+<a target="_blank" href="http://www.pglivecd.org">http://www.pglivecd.org</a></li>
+
+<li>pgbouncer 1.3.1, un gestionnaire de connexion &agrave; PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgbouncer/">http://pgfoundry.org/projects/pgbouncer/</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090712">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en juillet</strong></p>
 

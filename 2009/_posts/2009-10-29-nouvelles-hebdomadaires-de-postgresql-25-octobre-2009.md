@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2009-10-29-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>[ndt] Gr&acirc;ce &agrave; la g&eacute;n&eacute;rosit&eacute; des sponsors, la date butoir pour les inscriptions au PGday.eu est repouss&eacute;e au 31 octobre. Pass&eacute;e cette date, ce sera le tarif "guichet"&nbsp;: <a href="http://2009.pgday.eu/fr:register" target="_blank">http://2009.pgday.eu/fr:register</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>once:fabrik, un progiciel de gestion int&eacute;gr&eacute;e bas&eacute; sur PostgreSQL est disponible en essai gratuit jusqu'au 31 octobre 2009&nbsp;: 
+
+<a target="_blank" href="http://www.oncetechnologies.com/">http://www.oncetechnologies.com/</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20091025">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en octobre</strong></p>
 

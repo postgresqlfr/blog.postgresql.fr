@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-4 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Suite à ce <a href="http://archives.postgresql.org/pgsql-hackers/2007-04/msg01127.php">courriel</a> posté sur la liste [HACKERS], il a été décidé de ne plus maintenir les versions <strong>8.0</strong> et <strong>8.1</strong> de la branche Windows lorsque la version <strong>8.3</strong> sera sortie (prévue en juin 2007).
 

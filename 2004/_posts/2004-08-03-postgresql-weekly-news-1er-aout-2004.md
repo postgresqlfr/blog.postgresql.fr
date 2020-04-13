@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-21 "
 ---
 
 
+<p><acronym title="Note Du Traducteur">NDT</acronym>&nbsp;: une fois n'est pas coutume,
+
+nous laissons le texte à la première personne car il s'agit surtout du compte-rendu des
+
+conférences OSCon. N'oubliez donc pas, en lisant ceci, que le personnage principal est
+
+Robert Treat, auteur des «&nbsp;PostgreSQL Weekly News&nbsp;», et que nous ne faisons
+
+qu'une humble traduction de sa lettre hebdomadaire.</p>
+
+<!--more-->
+
 
 <h3>== Nouvelles hebdomadaires de PostgreSQL - 1er août 2004 ==</h3>
 

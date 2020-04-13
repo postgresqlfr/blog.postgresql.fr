@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-247 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 15 avril 2007</strong></p>
+
+<p>
+
+De nombreuses discussions pendant la courte (nous l'espérons) préiode d'après gel des fonctionnalités. </p>
+
+<!--more-->
+
 
 <p><strong>Les nouveautés des produits dérivés</strong></p>
 

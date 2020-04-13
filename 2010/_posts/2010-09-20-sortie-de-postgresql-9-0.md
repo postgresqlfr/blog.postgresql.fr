@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2010-09-20-sortie-de-postgresql-9-0 "
 
 
 
+
+<!--more-->
+
+
 <!-- BEGIN page_title_block -->
 
 PostgreSQL 9.0

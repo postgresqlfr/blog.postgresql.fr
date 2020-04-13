@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-204 "
 ---
 
 
+<p>De nombreux patches ont été commités. Voir la section suivante pour les
+
+détails!</p>
+
+<!--more-->
+
 
 <h3>== Nouveaux produits ==</h3>
 

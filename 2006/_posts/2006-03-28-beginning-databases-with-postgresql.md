@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-390 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 J'ai commandé ce <a href="http://www.amazon.com/gp/product/1590594789/">livre</a> car amazon.com proposait une vente groupée avec « <a href="http://www.amazon.com/gp/product/1590595475/">Beginning PHP and PostgreSQL 8</a> ». J'avoue que j'ai été heureusement surpris. C'est plus qu'une simple copie du <a href="http://docs.postgresqlfr.org/pgsql-8.1.3-fr/" target="_blank">manuel PostgreSQL</a>. Les explications sont simples, la difficulté augmente raisonnablement. Il existe même un chapitre assez important sur la conception d'une base de donnée, partie plutôt théorique et moins axée sur PG.
 

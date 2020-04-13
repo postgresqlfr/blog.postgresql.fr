@@ -6,6 +6,70 @@ redirect_from: "index.php?post/2016-06-28-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 9.6 Beta 2 disponible. &Agrave; vos tests&nbsp;! <a target="_blank" href="https://www.postgresql.org/about/news/1677/">https://www.postgresql.org/about/news/1677/</a></p>
+
+<p>Le PGDay POA 2016 aura lieu &agrave; Porto Alegre (&Eacute;tat du Rio Grande do Sul, au Br&eacute;sil) le 14 juillet 2016, en conjonction avec le FISL17&nbsp;: <a target="_blank" href="http://softwarelivre.org/fisl17/programacao/pgday-poa">http://softwarelivre.org/fisl17/programacao/pgday-poa</a></p>
+
+<p>Le PGDay Philly 2016 se tiendra le 21 juillet au Huntsman Hall de la Wharton School et partage les lieux avec la DjangoCon de cette ann&eacute;e <a target="_blank" href="https://2016.djangocon.us/.">https://2016.djangocon.us/.</a> Pour plus d'informations, cf <a target="_blank" href="http://www.meetup.com/phlpug/events/231214177/">http://www.meetup.com/phlpug/events/231214177/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>DB Doc 3.1, un outil de documentation de base de donn&eacute;e PostgreSQL&nbsp;: <a target="_blank" href="http://www.yohz.com/dbdoc_details.htm">http://www.yohz.com/dbdoc_details.htm</a></li>
+
+<li>Amazon RDS Postgres permet &agrave; pr&eacute;sent en inter-r&eacute;gions les instances r&eacute;pliqu&eacute;es en lecture seule&nbsp;: <a target="_blank" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html#USER_ReadRepl.XRgn">http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html#USER_ReadRepl.XRgn</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en juin</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2016-06/">http://archives.postgresql.org/pgsql-jobs/2016-06/</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>FOSS4G NA (<em>Free and Open Source Software for Geospatial - North America</em>) se tiendra &agrave; Raleigh, en Caroline du Nord, du 2 au 5 mai 2016&nbsp;: <a target="_blank" href="https://2016.foss4g-na.org/">https://2016.foss4g-na.org/</a></li>
+
+<li>La <em>PGCon 2016</em> se tiendra du 17 au 21 mai 2016 &agrave; Ottawa&nbsp;: <a target="_blank" href="http://www.pgcon.org/">http://www.pgcon.org/</a></li>
+
+<li>Le PGDay suisse sera, cette ann&eacute;e, tenue &agrave; l'Universit&eacute; des Sciences Appliqu&eacute;es (HSR) de Rapperswil le 24 juin 2016&nbsp;: <a target="_blank" href="http://www.pgday.ch/">http://www.pgday.ch/</a></li>
+
+<li>"5432 ... Meet us!" aura lieu &agrave; Milan (Italie) les 28 &amp; 29 juin 2016. Les inscriptions sont ouvertes&nbsp;: <a target="_blank" href="http://5432meet.us/">http://5432meet.us/</a></li>
+
+<li>Le <em>PG Day UK</em> aura lieu le 5 juillet 2016&nbsp;: <a target="_blank" href="http://www.pgconf.uk/">http://www.pgconf.uk/</a></li>
+
+<li>Le PostgresOpen 2016 aura lieu &agrave; Dallas (Texas, USA) du 13 au 16 septembre. L'appel &agrave; conf&eacute;renciers &agrave; &eacute;t&eacute; lanc&eacute;&nbsp;: <a target="_blank" href="https://2016.postgresopen.org/callforpapers/">https://2016.postgresopen.org/callforpapers/</a></li>
+
+<li>Session PostgreSQL le 22 septembre 2016 &agrave; Lyon (France). La date limite de candidature est le 20 mai : envoyez vos propositions &agrave; call-for-paper AT postgresql-sessions DOT org [ndt: <a href="http://www.postgresql-sessions.org/8/start" target="_blank">www.postgresql-sessions.org</a>]</li>
+
+<li>La <em>PgConf Silicon Valley 2016</em> aura lieu du 14 au 16 novembre 2016&nbsp;: <a target="_blank" href="http://www.pgconfsv.com/">http://www.pgconfsv.com/</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20160627005831.GA11441@fetter.org">http://www.postgresql.org/message-id/20160627005831.GA11441@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

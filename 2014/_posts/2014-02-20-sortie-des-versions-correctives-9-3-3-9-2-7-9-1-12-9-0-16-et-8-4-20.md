@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2014-02-20-sortie-des-versions-correctives-9-3-3-
 
 
 
+
+<!--more-->
+
+
 Le PostgreSQL Global Development Group publie aujourd'hui une mise-à-jour importante de toutes les versions supportées du SGBD PostgreSQL. Les versions publiées sont : 9.3.3, 9.2.7, 9.1.12, 9.0.16 et 8.4.20.
 
 

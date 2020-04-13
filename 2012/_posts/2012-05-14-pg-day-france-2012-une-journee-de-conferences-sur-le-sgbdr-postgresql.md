@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2012-05-14-pg-day-france-2012-une-journee-de-conf
 
 
 
+
+<!--more-->
+
+
 Le 7 juin à Lyon se tiendra le PG Day France 2012, une journée de conférences et d'échanges sur le thème du SGBDR open source PostgreSQL. Cette journée sera également l'occasion de rencontrer les acteurs de la communauté PostgreSQL. 
 
 

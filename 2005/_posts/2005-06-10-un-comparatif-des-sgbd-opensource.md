@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-3 "
 
 
 
+
+<!--more-->
+
+
 <p>Un document assez intéressant, objectif, n'essayant pas de conclure sur la supériorité d'un moteur sur les autres.</p>
 
 <p>Il est disponible là&nbsp;: <a href="http://www.fabalabs.org/research/papers/FabalabsResearchPaper-OSDBMS-Eval.pdf" target="_blank"> http://www.fabalabs.org/research/papers/FabalabsResearchPaper-OSDBMS-Eval.pdf </a>.</p>

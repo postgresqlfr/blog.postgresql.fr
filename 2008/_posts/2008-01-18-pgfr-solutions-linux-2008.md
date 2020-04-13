@@ -6,6 +6,26 @@ redirect_from: "index.php?post/drupal-263 "
 ---
 
 
+<p>Le salon Solutions Linux  2008 aura lieu du 29 au 31 janvier au CNIT à La Défense. Plus d'informations par ici&nbsp;:
+
+<a href="http://www.solutionslinux.fr/">http://www.solutionslinux.fr/</a>
+
+</p>
+
+<p>
+
+Comme d'habitude l'association PostgreSQLFr tiendra un stand dans le village associatif. Cette année le programme autour de PostgreSQL sera particulièrement chargé.
+
+</p>
+
+<p>
+
+Notons également la présence d'Oleg Bartunov, spécialiste de la nouvelle fonctionnalité Full Text Search (FTS), basée sur le module tsearch2.
+
+</p>
+
+<!--more-->
+
 
 <p>Le salon Solutions Linux  2008 aura lieu du 29 au 31 janvier au CNIT à La Défense. Plus d'informations par ici&nbsp;:
 

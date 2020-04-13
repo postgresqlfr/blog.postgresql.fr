@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2020-03-26-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La conf&eacute;rence PostgreSQL germanophone et le PGDay suisse ont &eacute;t&eacute; annul&eacute;s &agrave; cause du COVID-19.</p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgBadger v11.2, un analyseur de log PostgreSQL et un g&eacute;n&eacute;rateur de graphe en Perl&nbsp;: <a target="_blank" href="https://github.com/darold/pgbadger/releases">https://github.com/darold/pgbadger/releases</a></li>
+
+<li>check_pgbackrest 1.8, une sonde compatible Nagios pour pgBackRest&nbsp;: <a target="_blank" href="https://github.com/dalibo/check_pgbackrest/releases">https://github.com/dalibo/check_pgbackrest/releases</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en mars</h2>
 

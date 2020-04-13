@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2014-10-14-publication-de-postgresql-9-4-beta-3 "
 
 
 
+
+<!--more-->
+
+
 <p>Le «&nbsp;PostgreSQL Global Development Group&nbsp;» vient de publier la version 9.4 bêta 3, la nouvelle révision bêta de la prochaine version.
 
 <br />

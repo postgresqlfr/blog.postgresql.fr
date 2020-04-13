@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-172 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Une bien triste journée pour nous tous à la lecture de <a href="files/oracle.html" target="_blank">cette annonce d'Oracle</a>...
 

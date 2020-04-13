@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2019-08-01-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pglogical 2.2.2, un syst&egrave;me de r&eacute;plication bas&eacute; sur les WAL logiques, pour PostgreSQL&nbsp;: <a target="_blank" href="https://www.2ndquadrant.com/en/resources/pglogical/release-notes/">https://www.2ndquadrant.com/en/resources/pglogical/release-notes/</a></li>
+
+<li>pgAdmin4 4.11, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_11.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_11.html</a></li>
+
+<li>Pyrseas 0.9.0, une bo&icirc;te &agrave; outils pour la comparaison et la synchronisation de sch&eacute;mas de bases de donn&eacute;es PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/pyrseas/Pyrseas">https://github.com/pyrseas/Pyrseas</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en juillet</h2>
 

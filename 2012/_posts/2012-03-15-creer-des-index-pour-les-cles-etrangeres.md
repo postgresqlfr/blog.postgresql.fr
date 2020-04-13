@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2012-03-15-creer-des-index-pour-les-cles-etranger
 
 
 
+
+<!--more-->
+
+
 Aujourd'hui, un client a découvert que les clés étrangères ne créaient pas d'index sur la table sur laquelle on crée la clé étrangère. La table sur la clé primaire de laquelle la clé étrangère pointe est bien sûr indexée.
 
 

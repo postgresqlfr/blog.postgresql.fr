@@ -6,6 +6,86 @@ redirect_from: "index.php?post/2014-11-04-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PG-Cuba aura lieu les 25 &amp; 26 novembre&nbsp;: 
+
+<a target="_blank" href="http://postgresql.uci.cu/?p=1087#more-1087">http://postgresql.uci.cu/?p=1087#more-1087</a></p>
+
+<p>L'appel &agrave; conf&eacute;renciers pour le PGDay (30 janvier 2015) et la <em>dev room</em> PostgreSQL du FOSDEM (31 janvier au 1<sup>er</sup> f&eacute;vrier 2015) est lanc&eacute;. Date limite des candidatures&nbsp;: 24 novembre 2014&nbsp;: 
+
+<a target="_blank" href="http://fosdem2015.pgconf.eu/callforpapers/">http://fosdem2015.pgconf.eu/callforpapers/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>POWA 1.2, un analyseur de charge de travail pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://dalibo.github.io/powa/">http://dalibo.github.io/powa/</a></li>
+
+<li>psqlODBC 09.03.0400&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/ftp/odbc/versions/">http://www.postgresql.org/ftp/odbc/versions/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en novembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2014-11/threads.php">http://archives.postgresql.org/pgsql-jobs/2014-11/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le PGDay.IT 2014 aura lieu &agrave; Prato le 7 novembre 2014&nbsp;: 
+
+<a target="_blank" href="http://2014.pgday.it/call-for-papers-en/">http://2014.pgday.it/call-for-papers-en/</a></li>
+
+<li>[ndt: meetup &agrave; Lyon le 19 novembre&nbsp;: 
+
+<a target="_blank" href="http://www.meetup.com/PostgreSQL-User-Group-Lyon/events/214027472/">http://www.meetup.com/PostgreSQL-User-Group-Lyon/events/214027472/</a>]</li>
+
+<li>PG-Cuba aura lieu les 25 &amp; 26 novembre 2014&nbsp;: 
+
+<a target="_blank" href="http://postgresql.uci.cu/?p=1087#more-1087">http://postgresql.uci.cu/?p=1087#more-1087</a></li>
+
+<li>L'appel &agrave; conf&eacute;renciers pour la <em>PGConf NYC 2015</em> court jusqu'au 17 d&eacute;cembre 2014. Les notifications seront envoy&eacute;es le 10 janvier. l'&eacute;v&eacute;nement aura lieu &agrave; New-York du 25 au 27 mars 2015&nbsp;: 
+
+<a target="_blank" href="http://nyc.pgconf.us/2015/">http://nyc.pgconf.us/2015/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20141103060322.GA7610@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2019-02-25-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>pgpool-II versions 4.0.3, 3.7.8, 3.6.15, 3.5.19 et 3.4.22 publi&eacute;es. <a target="_blank" href="http://pgpool.net/mediawiki/index.php/Downloads">http://pgpool.net/mediawiki/index.php/Downloads</a></p>
+
+<p>La <em>PGConf.Brazil 2019</em> aura lieu &agrave; S&atilde;o Paulo (Br&eacute;sil) du 1er au 3 ao&ucirc;t 2019. Candidatures des conf&eacute;renciers &agrave; d&eacute;poser sur <a target="_blank" href="https://goo.gl/forms/owW8g5DKwnZtI4Mq1">https://goo.gl/forms/owW8g5DKwnZtI4Mq1</a> avant le 28 f&eacute;vrier 2019&nbsp;: <a target="_blank" href="http://pgconf.com.br">http://pgconf.com.br</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>psycopg2 2.8 beta 1, un connecteur python pour PostgreSQL&nbsp;: <a target="_blank" href="https://www.postgresql.org/message-id/CA%2Bmi_8aNS0e29cWbd42Erdu_OW5Jx%2BQ5O_Hre%2BWdF3DcbfRU0A%40mail.gmail.com">https://www.postgresql.org/message-id/CA%2Bmi_8aNS0e29cWbd42Erdu_OW5Jx%2BQ5O_Hre%2BWdF3DcbfRU0A%40mail.gmail.com</a></li>
+
+<li>pgmetrics 1.6, un outil en ligne de commande pour acc&eacute;der aux m&eacute;triques de PostgreSQL&nbsp;: <a target="_blank" href="https://pgmetrics.io/">https://pgmetrics.io/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</h2>
 

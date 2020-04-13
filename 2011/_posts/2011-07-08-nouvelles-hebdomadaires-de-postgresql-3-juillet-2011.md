@@ -6,6 +6,128 @@ redirect_from: "index.php?post/2011-07-08-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La conf&eacute;rence CHAR(11) de Cambridge (Royaume-Uni, les 11 et 12 juillet 2011) abordant des domaines tels que le <em>Cloud</em>, la haute disponibilit&eacute; et la r&eacute;plication, propose jusqu'&agrave; la fin de ce 4 juillet [ndt: d&eacute;sol&eacute; pour le retard...] des tickets au prix standard (&pound;375). Apr&egrave;s cela resteront seulement les tickets dits de "derni&egrave;re minute" (&pound;425)&nbsp;: 
+
+<a target="_blank" href="http://www.char11.org/">http://www.char11.org/</a></p>
+
+<p>[ndt: article en fran&ccedil;ais concernant CHAR(11)&nbsp;: <a href="http://tapoueh.org/blog/2011/07/04-pret-pour-char11.html" target="_blank">http://tapoueh.org/blog/2011/07/04-pret-pour-char11.html</a>]</p>
+
+<p><em>Postgres Open</em> accepte volontiers les propositions de conf&eacute;rences et d'ateliers. Les conf&eacute;rences devraient cibler l'homme d'affaire ou le d&eacute;veloppeur utilisant PostgreSQL, avec une bonne part de contenu technique. Les soumissions sont accept&eacute;es jusqu'au 8 juillet, &agrave; cette adresse&nbsp;: 
+
+<a target="_blank" href="http://postgresopen.org/2011/speaker/">http://postgresopen.org/2011/speaker/</a></p>
+
+<p>Le PG Day 2011 de Denver a &eacute;t&eacute; report&eacute;, il aura finalement lieu le vendredi 21 octobre 2011. L'appel &agrave; conf&eacute;renciers porte jusqu'au 31 juillet. Les inscriptions sont gratuites jusqu'&agrave; cette date&nbsp;: 
+
+<a target="_blank" href="http://pgday.consistentstate.com/node">http://pgday.consistentstate.com/node</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Postgres Plus Advanced Server v9.0&nbsp;: 
+
+<a target="_blank" href="http://www.enterprisedb.com/wp-whats-new-postgres-plus-advanced-server-9.">http://www.enterprisedb.com/wp-whats-new-postgres-plus-advanced-server-9.</a></li>
+
+<li>Dubsar Mobile, un dictionnaire bas&eacute; sur PostgreSQL et tourn&eacute; vers les mobiles&nbsp;: 
+
+<a target="_blank" href="http://dubsar-dictionary.com">http://dubsar-dictionary.com</a></li>
+
+<li>pg_sample 0.05, un utilitaire pour exporter un petit &eacute;chantillon de donn&eacute;es d'une grosse base PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://github.com/mla/pg_sample">http://github.com/mla/pg_sample</a></li>
+
+<li>Pyrseas 0.3.0, un ensemble d'outils pour la gestion de version sous PostgreSQL, publi&eacute; sur PGXN&nbsp;: 
+
+<a target="_blank" href="http://pgxn.org/dist/pyrseas/">http://pgxn.org/dist/pyrseas/</a></li>
+
+<li>Les paquets RPM et Deb pour PostgreSQL 9.1 beta 2, pour Linux 32 et 64bits ont &eacute;t&eacute; publi&eacute;s par OpenSCG&nbsp;: 
+
+<a target="_blank" href="http://www.openscg.com/se/postgresql/packages.jsp">http://www.openscg.com/se/postgresql/packages.jsp</a></li>
+
+<li>Postgres-XC 0.9.5, un syst&egrave;me de cluster pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://postgres-xc.sourceforge.net/">http://postgres-xc.sourceforge.net/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en juillet</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2011-07/threads.php">http://archives.postgresql.org/pgsql-jobs/2011-07/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>CHAR(11), la conf&eacute;rence PostgreSQL sur le <em>clustering</em>, la haute disponibilit&eacute; et la r&eacute;plication accepte &agrave; pr&eacute;sent les inscriptions et r&eacute;servations. Dates&nbsp;: 11 &amp; 12 juillet 2011 &agrave; Cambridge, Royaume-Uni&nbsp;: 
+
+<a target="_blank" href="http://www.char11.org/">http://www.char11.org/</a></li>
+
+<li>La "PgCon China" 2011 aura lieu &agrave; Guangzhou (Canton) les 15 &amp; 16 juillet 2011&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/Pgconchina2011">http://wiki.postgresql.org/wiki/Pgconchina2011</a></li>
+
+<li>Le PDXPUG se chargera d'accueillir le PgDay, dimanche 24 juillet 2011, la veille de l'OSCON &agrave; Portland dans l'Oregon (&Eacute;tats-Unis). Plus de d&eacute;tails sur&nbsp;: 
+
+<a target="_blank" href="http://pugs.postgresql.org/node/1663">http://pugs.postgresql.org/node/1663</a></li>
+
+<li>Postgres Open 2011, conf&eacute;rence ayant pour th&egrave;me les "&eacute;volutions brutales dans l'industrie de la base de donn&eacute;es", aura lieu du 14 au 16 septembre 2011 &agrave; Chicago (Illinois, &Eacute;tats-Unis) &agrave; l'h&ocirc;tel "<em>Westin Michigan Avenue</em>"&nbsp;: 
+
+<a target="_blank" href="http://postgresopen.org">http://postgresopen.org</a></li>
+
+<li>Le <em>PG-Day Denver 2011</em> aura lieu le samedi 17 septembre 2011 dans le campus Auraria pr&egrave;s de Denver, Colorado&nbsp;: 
+
+<a target="_blank" href="http://pgday.consistentstate.com/">http://pgday.consistentstate.com/</a></li>
+
+<li><em>PostgreSQL Conference West</em> (#PgWest) aura lieu du 27 au 30 septembre 2011 au centre des conventions de San Jos&eacute; (Californie, &Eacute;tats-Unis)&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org">http://www.postgresqlconference.org</a></li>
+
+<li>La "<em>PostgreSQL Conference Europe 2011</em>" se tiendra &agrave; Amsterdam, du 18 au 21 octobre&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.eu/">http://2011.pgconf.eu/</a></li>
+
+<li>pgbr aura lieu &agrave; S&atilde;o Paulo (Br&eacute;sil) les 3 &amp; 4 novembre 2011&nbsp;: 
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/">http://pgbr.postgresql.org.br/</a></li>
+
+<li><em>PGConf.DE 2011</em> est une conf&eacute;rence germanophone tenue le 11 novembre au mus&eacute;e industriel du Rhin &agrave; Oberhausen (Allemagne). L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.de/">http://2011.pgconf.de/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20110703">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

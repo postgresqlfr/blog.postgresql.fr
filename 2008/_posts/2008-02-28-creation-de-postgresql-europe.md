@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-203 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Le salon <a href="http://www.fosdem.org">FOSDEM 2008</a> qui s'est tenu à Bruxelles le 23 et 24 férvier 2008 a été  un grand succès : 4000 développeurs, 200 conférences, 16 dev rooms.
 

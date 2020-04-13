@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-125 "
 ---
 
 
+<p>Les nouvelles versions 8.0.4, 7.4.9 et 7.3.11 sont sorties et corrigent des bugs. Veuillez mettre à jour vos serveurs aussi vite que possible. Notez que la version 7.2 n'a pas été mise à jour, et ne sera désormais plus supportée par la communauté.</p>
+
+<p>Il y a eu une longue discussion pour accélerer les tris externes (tris dans requêtes, merge joins et création d'index qui sollicitent le disque). Elle a amenée plusieurs pistes, dont de nouveaux algorithmes de tris, micro-optimisation, allocation de mémoire pour les tris et optimisation sur les entrées/sorties disques. Tom Lane et Simon Riggs ont joint leurs efforts pour produire un nouveau patch avec une nouvelle variable générale de configuration, à l'attention des développeurs: "trace_sort" qui permet de mesurer l'utilisation des ressources pour lors des tris externes. Merci de bien vouloir tester cette option, si vous savez comment le faire.</p>
+
+<!--more-->
+
 
 Merci de participer aussi à ce sondage&nbsp;: Où vous procurez-vous PostgreSQL&nbsp;? (<a href="http://www.postgresql.org/community/" target="_blank">http://www.postgresql.org/community/</a>).
 

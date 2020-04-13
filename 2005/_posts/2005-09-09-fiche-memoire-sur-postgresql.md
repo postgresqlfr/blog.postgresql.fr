@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-113 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Peter Freitag vient de publier une fiche mémoire sur PostgreSQL dont voici la traduction. La version anglaise est disponible sur le <a href="http://www.petefreitag.com/cheatsheets/postgresql/">site de Peter Freitag</a>.</p>
 

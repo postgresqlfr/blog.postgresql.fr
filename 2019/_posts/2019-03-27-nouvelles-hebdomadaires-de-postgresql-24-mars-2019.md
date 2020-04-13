@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2019-03-27-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>barman 2.7, un gestionnaire de sauvegarde et restauration pour PostgreSQL&nbsp;: <a target="_blank" href="https://www.pgbarman.org/barman-2-7-released/">https://www.pgbarman.org/barman-2-7-released/</a></li>
+
+<li>check_pgbackrest 1.5, une sonde compatible Nagios pour pgBackRest&nbsp;: <a target="_blank" href="https://github.com/dalibo/check_pgbackrest/releases">https://github.com/dalibo/check_pgbackrest/releases</a></li>
+
+<li>temboard 3.0, un outil de gestion pour PostgreSQL&nbsp;: <a target="_blank" href="http://temboard.io/">http://temboard.io/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en mars</h2>
 

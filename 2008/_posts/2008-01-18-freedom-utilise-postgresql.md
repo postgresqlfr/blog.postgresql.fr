@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-270 "
 ---
 
 
+<p><a href="http://www.freedom-ecm.org">Freedom</a> (pour <em>free document management</em>) est un <strong>ECM</strong> sous licence GPL, développé en <strong>PHP</strong> et s'appuyant sur une base de donnée <a href="http://www.postgresql.org">PostgreSQL</a>.</p>
+
+<p>
+
+Il autorise la structuration de tout type d'information et la création rapide d'applications collaboratives par simple définition du modèle de données, du modèle de droit et du modèle de circulation de l'information.
+
+</p>
+
+<!--more-->
+
 
 <p>L'avantage de <strong>freedom</strong> est de permettre cette structuration simplement et rapidement par paramétrage, sans nécessiter la moindre ligne de code. Il reste tout de même possible de créer ses propres interfaces et de coupler <strong>freedom</strong> avec d'autres applications, par l'utilisation des <strong>API SOAP</strong>, <strong>PHP</strong> et <strong>AJAX</strong>.
 

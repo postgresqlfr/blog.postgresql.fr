@@ -6,6 +6,24 @@ redirect_from: "index.php?post/drupal-249 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 24 Juin 2007</strong></p>
+
+<ul>
+
+<li>Il y a eu un bref échange à propos de la meilleure manière d'intégrer tsearch2 dans le cœur,</li>
+
+<li>Une plus longue discussion sur la sémantique des commit à retardement continue à l'heure où ces lignes sont écrites,</li>
+
+<li>Chris Browne a démarré bruyamment un débat sur l'usage des "queues de messages" dans PostgreSQL,</li>
+
+<li>Le patch de Simon Riggs visant à réduire la taille d'un NUMERIC dans la version 8.3 a lancé une discussion intéressante sur la façon la plus efficace de les stocker,</li>
+
+<li>Une foule de gens a discuté de la syntaxe des unités de temps dans les GUC (pour Global User Configuration variables, en général définies dans postgresql.conf).</li>
+
+</ul>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

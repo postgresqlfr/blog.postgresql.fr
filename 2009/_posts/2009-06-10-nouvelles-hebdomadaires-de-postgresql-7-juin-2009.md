@@ -6,6 +6,36 @@ redirect_from: "index.php?post/2009-06-10-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>L'appel aux conférenciers est lancé pour la "PGCon Brazil"&nbsp;!
+
+<a target="_blank" href="http://pgcon.postgresql.org.br/2009/chamadas.en.php">http://pgcon.postgresql.org.br/2009/chamadas.en.php</a></p>
+
+<p>L'ITPUG sera à la Conférence Italienne pour le Logiciel Libre qui se tiendra à Bologne les 12 &amp; 13 juin. Gabriele Bartolini sera présente, "Étudiants et open-source&nbsp;: le cas PostgreSQL", samedi 13 juin à 10h35&nbsp;:
+
+<a target="_blank" href="http://www.confsl.org/">http://www.confsl.org/</a></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>pgtheme, un thème développé spécialement pour Drupal 6.x, est disponible&nbsp;:
+
+<a target="_blank" href="http://drupal.org/project/pgtheme">http://drupal.org/project/pgtheme</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 8.4 de la semaine</strong></p>
+
+<p>quote_nullable: similaire à quote_literal, mais retourne la chaîne "NULL" lorsque l'argument fourni est NULL.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Le module 'ltree' des "contribs" est une implémentation des arborescences indexées et peut s'avérer utile pour représenter un système de fichier ou une hiérarchie similaire dans votre base.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090607">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>PostgreSQL Local</strong></p>
 

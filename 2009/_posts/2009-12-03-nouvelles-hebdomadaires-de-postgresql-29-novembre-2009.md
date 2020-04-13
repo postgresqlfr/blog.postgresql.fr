@@ -6,6 +6,78 @@ redirect_from: "index.php?post/2009-12-03-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les paquets RPM de PostgreSQL pour Fedora-12 sont disponibles&nbsp;: 
+
+<a target="_blank" href="http://yum.pgsqlrpms.org/news-fedora12-packages-released.php">http://yum.pgsqlrpms.org/news-fedora12-packages-released.php</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>apgdiff 1.4, un outil de comparaison de sch&eacute;ma PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://sourceforge.net/projects/apgdiff/">http://sourceforge.net/projects/apgdiff/</a></li>
+
+<li>Karoo, une interface web bas&eacute;e sur PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.zwartberg.com/cave.html">http://www.zwartberg.com/cave.html</a></li>
+
+<li>MyJSQLView 3.05, une interface de gestion BDD (MySQL, PostgreSQL,...) bas&eacute;e sur Java, a &eacute;t&eacute; publi&eacute;.</li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en novembre</strong></p>
+
+<ul>
+
+<li><a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2009-11/threads.php">http://archives.postgresql.org/pgsql-jobs/2009-11/threads.php</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La troisi&egrave;me &eacute;dition du PGday italien sera tenue &agrave; l'universit&eacute; de Pise, le 4 d&eacute;cembre. Entr&eacute;e libre, sponsors bienvenus&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.it/">http://www.pgday.it/</a></li>
+
+<li>Stefan Keller, de l'universit&eacute; des sciences appliqu&eacute;es de Rapperswil (HSR), animera un s&eacute;minaire intitul&eacute; "Introduction &agrave; PostGIS/PostgreSQL" le 14 janvier 2010 &agrave; Zurich (Suisse)&nbsp;: 
+
+<a target="_blank" href="http://www.gis.hsr.ch/wiki/Agenda">http://www.gis.hsr.ch/wiki/Agenda</a></li>
+
+<li>Le FOSDEM 2010 aura lieu &agrave; Bruxelles les 6 &amp; 7 f&eacute;vrier 2010&nbsp;: 
+
+<a target="_blank" href="http://www.fosdem.org/">http://www.fosdem.org/</a></li>
+
+<li>Le "Chemnitzer Linuxtage" aura lieu &agrave; Chemnitz (All.) les 13 &amp; 14 mars 2010&nbsp;: 
+
+<a target="_blank" href="http://chemnitzer.linux-tage.de/">http://chemnitzer.linux-tage.de/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter et Devrim Gunduz. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20091129">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

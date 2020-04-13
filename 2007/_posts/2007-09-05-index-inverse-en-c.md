@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-393 "
 
 
 
+
+<!--more-->
+
+
 <p>Depuis la version 8i, Oracle implémente les index inversés. Voici une proposition d’implémentation équivalente pour PostgreSQL. Les index inversés permettent d’accélérer les recherches sur les motifs tels que « colonne LIKE '%chaîne' ». Dans un tel cas, PostgreSQL effectue un parcours séquentiel (ou « sequential scan ») de la table interrogée. Toutefois, il est possible d’émuler un index inverse au moyen d’une fonction de renversement de chaîne couplée à un index sur fonction.</p>
 
 <p>L'<a href="http://www.postgresqlfr.org/?q=node/1329" hreflang="fr">article précédent</a> proposait l'implémentation d'un prototype en langage procédural PL/pgSQL, qui fait office ici de prototype. Cette implémentation a pour principal défaut d'être lente, pénalisant ainsi gravement les performances en écriture (INSERT et UPDATE). Ainsi, à chaque mise à jour, il est nécessaire de faire appel à la fonction <code>reverse</code> pour mettre à jour l'index fonctionnel ; cela s'observe notamment à la création de l'index. En revanche, il est possible de tirer partie des capacités de traitement des caractères multi-octets, que l'on rencontre notamment dans le cas d'une base de données encodée en UTF-8.</p>

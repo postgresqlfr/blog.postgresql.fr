@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-110 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 5 Septembre 2005</strong></p>
+
+<p>Il y a eu une discussion animée sur le support du tri alphabétique en fonction de la locale utilisée. Il apparaît clairement que cette fonctionnalité serait largement traîtée dans la version 8.2 de PostgreSQL. </p>
+
+<p>
+
+SCALE 4x, le Southern California Linux Expo fait un appel à candidature pour les présentations. Voir ci-après pour plus d'informations.  <a target="_blank" href="http://www.socallinuxexpo.org">http://www.socallinuxexpo.org</a>
+
+</p>
+
+<!--more-->
+
 
 Mark Wong d'OSDL a débuté le travail sur dbt-4, un implémentation correcte de TPC-App. TPC-App est un outil de charge de services web b2b et Mark aimerait avoir un peu plus d'aide de la part de développeurs Java.
 

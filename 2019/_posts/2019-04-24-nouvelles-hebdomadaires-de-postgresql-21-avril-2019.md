@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2019-04-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PgConf Belgium aura lieu le 17 mai 2019 sur le campus de UCLL de Haasrode (pr&egrave;s de Louvain/Leuven)&nbsp;: <a target="_blank" href="http://pgconf.be">http://pgconf.be</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>psycopg2 2.8.2, un connecteur python pour PostgreSQL&nbsp;: <a target="_blank" href="http://initd.org/psycopg/articles/2019/04/14/psycopg-281-282-released/">http://initd.org/psycopg/articles/2019/04/14/psycopg-281-282-released/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en avril</h2>
 

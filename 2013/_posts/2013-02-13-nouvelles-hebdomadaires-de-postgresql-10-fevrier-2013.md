@@ -6,6 +6,110 @@ redirect_from: "index.php?post/2013-02-13-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Correctifs de s&eacute;curit&eacute;&nbsp;: 9.2.3, 9.1.8, 9.0.12, 8.4.16 et 8.3.23. D&eacute;ployez d&egrave;s que possible&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/about/news/1446/">http://www.postgresql.org/about/news/1446/</a></p>
+
+<p>Le PgDay Fr est l'&eacute;v&eacute;nement majeur de la communaut&eacute; francophone. La date limite pour les propositions de conf&eacute;rence est le samedi 24 mars 2013 &agrave; 23h59 CEST&nbsp;: 
+
+<a target="_blank" href="http://pgday.fr/call_for_papers">http://pgday.fr/call_for_papers</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Barman 1.2.0, un gestionnaire de sauvegarde et de r&eacute;cup&eacute;ration pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.pgbarman.org">http://www.pgbarman.org</a></li>
+
+<li>pg_activity 0.3.0&nbsp;: 
+
+<a target="_blank" href="https://github.com/julmon/pg_activity/">https://github.com/julmon/pg_activity/</a></li>
+
+<li>pgpool-II 3.2.2, 3.1.6, 3.0.10, et pgpoolAdmin 3.2.2&nbsp;: 
+
+<a target="_blank" href="http://pgpool.net/mediawiki/index.php/Downloads">http://pgpool.net/mediawiki/index.php/Downloads</a></li>
+
+<li>pg_statsinfo 2.4&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/frs/?group_id=1000422&amp;release_id=2015">http://pgfoundry.org/frs/?group_id=1000422&amp;release_id=2015</a></li>
+
+<li>pg_stats_reporter 1.0&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/frs/?group_id=1000422&amp;release_id=2008">http://pgfoundry.org/frs/?group_id=1000422&amp;release_id=2008</a></li>
+
+<li>Postgres-XC 1.0.2, un cluster sym&eacute;trique multi-ma&icirc;tre aux performances &eacute;volutives en &eacute;criture, bas&eacute; sur PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://postgres-xc.sourceforge.net/">http://postgres-xc.sourceforge.net/</a></li>
+
+<li>Pyrseas 0.6.1, un ensemble d'outil pour la gestion de version avec PostgreSQL, publi&eacute; sur PGXN&nbsp;: 
+
+<a target="_blank" href="http://pgxn.org/dist/pyrseas/">http://pgxn.org/dist/pyrseas/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2013-02/threads.php">http://archives.postgresql.org/pgsql-jobs/2013-02/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le PyPgDay aura lieu le 13 mars au <em>Santa Clara Convention Center</em>, le premier jour de la <em>PyCon</em>. Informations par l&agrave;&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/PyPgDay2013">http://wiki.postgresql.org/wiki/PyPgDay2013</a></li>
+
+<li>Le PGDay 2013 de New-York City aura lieu le 22 mars&nbsp;: 
+
+<a target="_blank" href="http://pgday.nycpug.org/">http://pgday.nycpug.org/</a></li>
+
+<li>La <em>PostgreSQL Session</em> est programm&eacute;e pour le 28 mars 2013 &agrave; Paris. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/en/5/">http://www.postgresql-sessions.org/en/5/</a></li>
+
+<li>PGCon 2013 aura lieu les 23 &amp; 24 mai 2013 &agrave; l'Universit&eacute; d'Ottawa&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2013/">http://www.pgcon.org/2013/</a></li>
+
+<li>La 6&egrave;me conf&eacute;rence annuelle "Prague PostgreSQL Developers Day", organis&eacute;e par le CSPUG (Groupe des utilisateurs tch&egrave;ques et slovaques de PostgreSQL), aura lieu le 30 mai 2013 &agrave; la Facult&eacute; des Sciences Math&eacute;matiques &amp; Physiques de l'Universit&eacute; Charles (Malostranske namesti 25, Prague). Les candidatures des conf&eacute;renciers sont attendues jusqu'au 14 avril &agrave; l'adresse &lt;info AT p2d2 POINT cz&gt;. D'avantage d'informations sur le site&nbsp;: 
+
+<a target="_blank" href="http://www.p2d2.cz/">http://www.p2d2.cz/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20130211064113.GA1873@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

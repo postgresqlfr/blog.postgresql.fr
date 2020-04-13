@@ -6,6 +6,80 @@ redirect_from: "index.php?post/drupal-366 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires de PostgreSQL - 25 mai 2004 ==</h2>
+
+<p>Nouvelle semaine, nouveaux changements dans notre progression vers la
+
+7.5. Cette semaine a vu des modifications au niveau de fonctionnalités
+
+déjà existantes plutôt que de nouvelles fonctionnalités, bien que
+
+certaines de ces modifications feront que les anciennes fonctions seront
+
+maintenant utilisables par de nouvelles personnes, ce qui est le but à mon
+
+sens.<!--break-->
+
+</p>
+
+<p>Nous avons vu un passage à l'utilisation des routines de bibliothèque des
+
+caractères composés pour les fonctions upper/lower/initcap
+
+(majuscules/minuscules/majuscule en première lettre). Ceci permet à ces
+
+fonctions de travailler correctement avec Unicode et les codages multi-octets,
+
+qui nous ont posé bien des problèmes dans le passé. Les nouvelles bibliothèques
+
+sur les zones horaires, recherchées auparavant pour win32, sont maintenant
+
+utilisées par toutes les plateformes. Ceci résoudra quelques problèmes rélatifs
+
+aux zones horaires que certaines personnes ont eu et met toutes les
+
+plateformes sur un pied d'égalité pour cette fonctionnalité. D'autre part, le
+
+verrouillage effectué par pg_listener pour NOTIFY et les autres commandes de ce
+
+genre a été réduit de AcessExclusiveLock à ExclusiveLock. Bien que ces
+
+opérations seront toujours réalisées en série, elles n'entreront pas en conflit
+
+avec les opérations ANALYZE concurrentes. Et en parlant d'ANALYZE, pour le
+
+calcul des statistiques, une nouvelle méthode de choix en deux étapes a été
+
+intégrée à ANALYZE, cette méthode devant donner de meilleurs résultats lorsque
+
+la densité des lignes non supprimées n'est pas uniforme sur toute la table.
+
+Suite aux modifications des dernières semaines, un peu de temps a été passé pour
+
+nettoyer et documenter la relativement nouvelle fonction d'installation et des
+
+marqueurs ont été ajouté pour la "fin du dump" dans les outils pg_dump et
+
+pg_dumpall.</p>
+
+<p>La dernière modification importante à mentionner concerne la
+
+modification des messages du CVS envoyés sur la liste de diffusion
+
+pgsql-commiters. Maintenant, chaque fois qu'une modification est
+
+diffusée (cvs commit), le courrier électronique envoyé à la liste
+
+contiendra un lien direct vers l'interface de CVS-Web indiquant les
+
+différences entre le fichier et sa version précédente. Nous espérons que
+
+cela va améliorer la relecture du code en la rendant plus accessible
+
+pour ceux intéressés par les détails des modifications.</p>
+
+<!--more-->
+
 
 <h2>== Nouvelles des produits PostgreSQL ==</h2>
 

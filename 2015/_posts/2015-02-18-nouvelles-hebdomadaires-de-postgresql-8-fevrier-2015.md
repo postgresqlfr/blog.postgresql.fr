@@ -6,6 +6,98 @@ redirect_from: "index.php?post/2015-02-18-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Correctifs de s&eacute;curit&eacute;&nbsp;: 9.4.1, 9.3.6, 9.2.10, 9.1.15 et 9.0.19. Mettez &agrave; jour&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/about/news/1569/">http://www.postgresql.org/about/news/1569/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Ora2PG 15.1, un syst&egrave;me de migration depuis Oracle vers PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://ora2pg.darold.net/">http://ora2pg.darold.net/</a></li>
+
+<li>oracle_fdw 1.2.0&nbsp;: 
+
+<a target="_blank" href="https://github.com/laurenz/oracle_fdw">https://github.com/laurenz/oracle_fdw</a></li>
+
+<li>pgpool-II versions 3.4.1, 3.3.5, 3.2.10, 3.1.13 et 3.0.17. pgpool-II est un pooler de connexions et un syst&egrave;me de r&eacute;plication pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://pgpool.net/mediawiki/index.php/Downloads">http://pgpool.net/mediawiki/index.php/Downloads</a></li>
+
+<li>skit 0.1 alpha, un outil en ligne de commande pour extraire les d&eacute;finitions de sch&eacute;mas, extraire des diffs et g&eacute;n&eacute;rer les DDL&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/skit/">http://pgfoundry.org/projects/skit/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2015-02/threads.php">http://archives.postgresql.org/pgsql-jobs/2015-02/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le <em>Prague PostgreSQL Developer Day</em> (P2D2) 2015 aura lieu &agrave; Prague, R&eacute;publique Tch&egrave;que, les 11 &amp; 12 f&eacute;vrier 2015&nbsp;: 
+
+<a target="_blank" href="http://www.p2d2.cz/">http://www.p2d2.cz/</a></li>
+
+<li>Le <em>meetup</em> du 18 f&eacute;vrier 2015 &agrave; Melbourne accueillera Gabriele Bartolini &agrave; propos de PostgreSQL 9.4 pour les devops. D&eacute;tails ci-apr&egrave;s, et RSVP&nbsp;: 
+
+<a target="_blank" href="http://www.meetup.com/melpug/events/219082475/">http://www.meetup.com/melpug/events/219082475/</a></li>
+
+<li>pgDaySF 2015 aura lieu le 10 mars 2015 &agrave; Burlingame (Californie)&nbsp;: 
+
+<a target="_blank" href="http://sfpostgres.org/pgday-sf-2015-call-for-speakers-and-sponsors/">http://sfpostgres.org/pgday-sf-2015-call-for-speakers-and-sponsors/</a></li>
+
+<li>Les inscriptions pour le <em>Nordic PostgreSQL Day 2015</em>, pr&eacute;vu le 11 mars 2015 &agrave; Copenhague (Danemark), sont ouvertes&nbsp;: 
+
+<a target="_blank" href="http://2015.nordicpgday.org/registration/">http://2015.nordicpgday.org/registration/</a></li>
+
+<li>PGConf US 2015 aura lieu du 25 au 27 mars 2015 &agrave; New-York City&nbsp;: 
+
+<a target="_blank" href="http://nyc.pgconf.us/2015/">http://nyc.pgconf.us/2015/</a></li>
+
+<li>PGCon 2015 du 16 au 20 juin &agrave; Ottawa, Canada&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2015/">http://www.pgcon.org/2015/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20150208230413.GA5514@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

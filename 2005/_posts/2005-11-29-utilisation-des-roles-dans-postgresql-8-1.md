@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-137 "
 ---
 
 
+<p>Ce document est un rappel de l'utilisation des utilisateurs et groupes
+
+pour les versions antérieures à la 8.1 et une introduction aux rôles,
+
+concept remplaçant les utilisateurs/groupes à partir de PostgreSQL 8.1.</p>
+
+<!--more-->
+
 
 <!-- header -->
 

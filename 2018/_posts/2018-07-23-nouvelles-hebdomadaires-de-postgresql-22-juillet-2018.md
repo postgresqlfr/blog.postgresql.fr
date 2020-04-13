@@ -6,6 +6,16 @@ redirect_from: "index.php?post/2018-07-23-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pginstaller, a GUI installer for PostgreSQL, released. <a target="_blank" href="https://www.2ndquadrant.com/en/resources/postgresql-installer-2ndquadrant/">https://www.2ndquadrant.com/en/resources/postgresql-installer-2ndquadrant/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en juillet</h2>
 

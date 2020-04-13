@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-142 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>L'ancien serveur de PostgreSQLFr.org étant arrivé en fin de cycle de vie, <a href="http://www.dalibo.com" target="_blank">notre hébergeur</a> a migré le site et les services annexes de celui-ci sur une nouvelle machine. Elle est relativement performante, et la navigation dans le site s'en ressent.</p>
 

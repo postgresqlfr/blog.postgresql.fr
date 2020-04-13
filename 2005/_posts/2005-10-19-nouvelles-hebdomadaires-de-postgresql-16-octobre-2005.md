@@ -6,6 +6,28 @@ redirect_from: "index.php?post/drupal-124 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 16 Octobre 2005</strong></p>
+
+<p>
+
+PostgreSQL 8.1 beta 3 est sorti.  Prière de tester. </p>
+
+<p>
+
+Tom Lane et al. ont corrigé un bug dans  Kerberos5. </p>
+
+<p>
+
+Il y a eu une discussion fructueuse au sujet d'une révision des commandes LISTEN/NOTIFY pour la version 8.2.
+
+</p>
+
+<p>
+
+Tom Lane a ajouté en dernière minute une astuce de compilation pour la 8.1 qui permet de définir des LWLocks définis par l'utilisateur</p>
+
+<!--more-->
+
 
 <strong>Nouvelles des produits autour de PostgreSQL</strong>
 

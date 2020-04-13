@@ -6,6 +6,124 @@ redirect_from: "index.php?post/2010-11-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La <em>Commitfest</em> sur la p&eacute;riode du 15 novembre au 15 d&eacute;cembre va commencer. Commencez &agrave; relire ces patchs&nbsp;! 
+
+<a target="_blank" href="https://commitfest.postgresql.org/action/commitfest_view?id=8">https://commitfest.postgresql.org/action/commitfest_view?id=8</a></p>
+
+<p>Vous pensez que relire des patchs est trop compliqu&eacute;&nbsp;? Repensez-y&nbsp;! Vous pouvez aider&nbsp;! 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/Reviewing_a_Patch">http://wiki.postgresql.org/wiki/Reviewing_a_Patch</a></p>
+
+<p>L'appel &agrave; projets de PostgreSQLFr a &eacute;t&eacute; lanc&eacute;. Les projets doivent concerner PostgreSQL et la communaut&eacute; francophone. Mail &agrave; appel-projets-2010 (AT) postgresql (DOT) fr.</p>
+
+<p>HTSQL, un langage de requ&ecirc;te BD de haut niveau pour les bases de donn&eacute;es relationnelles avec un support pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://htsql.org/">http://htsql.org/</a></p>
+
+<p>Nouveau sondage&nbsp;: &agrave; quel &eacute;v&eacute;nement PostgreSQL irez-vous le plus probablement dans les 6 prochains mois&nbsp;? 
+
+<a target="_blank" href="http://www.postgresql.org/community/">http://www.postgresql.org/community/</a></p>
+
+<p>Robert Treat recherche des utilisateurs (confirm&eacute;s et potentiels) de PostgreSQL dans la r&eacute;gion de la Nouvelle Orl&eacute;ans. Contactez-le sur rob (AT) xzilla (DOT) net.</p>
+
+<p>PGCon aura lieu les 19 &amp; 20 mai 2011 &agrave; l'Universit&eacute; d'Ottawa, pr&eacute;c&eacute;d&eacute; par deux jours de tutoriels les 17 &amp; 18 mai&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2011/">http://www.pgcon.org/2011/</a></p>
+
+<p>Pour les "l&egrave;ves-t&ocirc;ts", les inscriptions au PGDay.IT, qui aura lieu le 10 d&eacute;cembre 2010 &agrave; Rome, sont ouvertes et le programme a &eacute;t&eacute; publi&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2010.pgday.it/">http://2010.pgday.it/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Le projet open-source <em>Dubsar Dictionary</em>, qui utilise PostgreSQL, a &eacute;t&eacute; lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://dubsar-dictionary.com/">http://dubsar-dictionary.com/</a></li>
+
+<li>psycopg2 2.3.0 beta 1, un connecteur PostgreSQL pour Python&nbsp;: 
+
+<a target="_blank" href="http://initd.org/psycopg/">http://initd.org/psycopg/</a></li>
+
+<li>Les paquets RPMs de PostgreSQL 9.0 pour RHEL 6 et Fedora 14 sont disponibles&nbsp;: 
+
+<a target="_blank" href="http://people.planetpostgresql.org/devrim/index.php?/archives/48-What-is-new-in-PostgreSQL-9.0-RPMs.html">http://people.planetpostgresql.org/devrim/index.php?/archives/48-What-is-new-in-PostgreSQL-9.0-RPMs.html</a></li>
+
+<li>Skytools 2.1.12, un syst&egrave;me de r&eacute;plication utilisant Python&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/skytools/">http://pgfoundry.org/projects/skytools/</a></li>
+
+<li>Le code source de Skytools est disponible sur&nbsp;: 
+
+<a target="_blank" href="http://git.postgresql.org/gitweb?p=skytools.git;a=summary">http://git.postgresql.org/gitweb?p=skytools.git;a=summary</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en novembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-11/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-11/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le PUG allemand organise une rencontre pour l'<em>OpenRheinRuhr 2010</em> les 13 &amp; 14 novembre &agrave; Oberhausen (All.). Andreas Scherbaum y parlera des nouvelles fonctionnalit&eacute;s de PostgreSQL 9.0&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/744-PostgreSQL-OpenRheinRuhr-2010.html">http://andreas.scherbaum.la/blog/archives/744-PostgreSQL-OpenRheinRuhr-2010.html</a></li>
+
+<li>Le PUG allemand sera pr&eacute;sent avec stand, conf&eacute;rence et atelier lors du <em>Brandenburger Linux-Infotag 2010</em> &agrave; Potsdam (All.) le 6 novembre&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/746-PostgreSQL-Brandenburger-Linux-Infotag-2010.html">http://andreas.scherbaum.la/blog/archives/746-PostgreSQL-Brandenburger-Linux-Infotag-2010.html</a></li>
+
+<li>Les inscriptions pour le PGDay.EU 2010 tenu du 6 au 8 d&eacute;cembre &agrave; Stuttgart sont ouvertes&nbsp;: 
+
+<a target="_blank" href="http://2010.pgday.eu/register">http://2010.pgday.eu/register</a></li>
+
+<li>Pour les "l&egrave;ves-t&ocirc;ts", les inscriptions au PGDay.IT, qui aura lieu le 10 d&eacute;cembre 2010 &agrave; Rome, sont ouvertes et le programme a &eacute;t&eacute; publi&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2010.pgday.it/">http://2010.pgday.it/</a></li>
+
+<li>Le FOSDEM est l'un des plus grand &eacute;v&eacute;nements autour du Libre et de l'Open Source&nbsp;; il a lieu annuellement &agrave; Bruxelles et rassemble environ 4000 personnes. La prochaine &eacute;dition est programm&eacute;e pour les 5 &amp; 6 f&eacute;vrier 2011. Envoyez vos propositions &agrave; l'adresse fosdem AT postgresql POINT eu. 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/749-PostgreSQLFOSDEM-2011-Call-for-talks.html">http://andreas.scherbaum.la/blog/archives/749-PostgreSQLFOSDEM-2011-Call-for-talks.html</a></li>
+
+<li>Le PGDay est au programme du <em>Southern California Linux Exposition (SCALE)</em> de cette ann&eacute;e, tenu &agrave; l'h&ocirc;tel LAX Hilton de Los Angeles (Californie) le vendredi 25 f&eacute;vrier 2011. Proposez vos conf&eacute;rences sur pgday-submissions (AT) googlegroups (DOT) com.</li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20101114">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-304 "
 
 
 
+
+<!--more-->
+
+
 Bonjour,
 
 Benetl, un ETL gratuit pour fichiers fonctionnant avec postgreSQL 8.3 est sorti en version 2.3.

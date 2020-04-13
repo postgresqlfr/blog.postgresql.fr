@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-426 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 1<sup>er</sup> juin 2008</strong></p>
+
+<p>Les développeurs principaux ont annoncé leur intention d'intégrer une solution de réplication facile d'utilisation, basée sur <a href="http://docs.postgresqlfr.org/8.3/wal-intro.html">WAL</a>, à PostgreSQL.
+
+[ndt: plus d'infos <a href="http://archives.postgresql.org/pgsql-hackers/2008-05/msg00913.php">ici</a> (eng) et <a href="http://www.postgresqlfr.org/?q=node/1656">là</a> (fr)]</p>
+
+<p>(<a href="http://people.planetpostgresql.org/dfetter/index.php?/archives/175-PostgreSQL-Weekly-News-June-01-2008.html">lire l'article original</a>)</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

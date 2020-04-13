@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-117 "
 ---
 
 
+<p>Les RPMs pour la version 8.1 beta2 sont disponibles pour plusieurs plates-formes sur <a href="http://developer.postgresql.org/%7Edevrim/rpms/8.1/beta2/rpms/" target="_blank">
+
+http://developer.postgresql.org/~devrim/rpms/8.1/beta2/rpms/</a>.</p>
+
+<!--more-->
+
 
 <h3>== Nouveaux produits autour de PostgreSQL ==</h3>
 

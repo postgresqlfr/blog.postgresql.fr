@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2011-07-18-sortie-de-postgresql-9-1-beta-3 "
 
 
 
+
+<!--more-->
+
+
 La troisième version bêta de PostgreSQL 9.1 est désormais disponible. Cette bêta corrige plusieurs problèmes remontés avec PostgreSQL 9.1 beta 2. Tous les utilisateurs sont invités à aider le projet en téléchargeant et en testant PostgreSQL 9.1 beta 3 dès que possible.
 
 

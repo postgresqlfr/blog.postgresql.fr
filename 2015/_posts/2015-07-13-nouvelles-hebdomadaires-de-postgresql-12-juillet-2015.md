@@ -6,6 +6,72 @@ redirect_from: "index.php?post/2015-07-13-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le PGDay.IT 2015 aura lieu &agrave; Prato le 23 octobre 2015. L'appel international &agrave; conf&eacute;renciers court jusqu'au 8 ao&ucirc;t&nbsp;: <a target="_blank" href="http://pgday.it">http://pgday.it</a></p>
+
+<p>La 2&egrave;me conf&eacute;rence PostgreSQL russe officielle se tiendra &agrave; Saint-P&eacute;tersbourg. Un meetup PostgreSQLRussia pour les nouveaux utilisateurs est programm&eacute; pour le 17 juillet, m&ecirc;me endroit&nbsp;: <a target="_blank" href="http://PgDay.ru">http://PgDay.ru</a> <a target="_blank" href="http://PostgreSQLRussia.org">http://PostgreSQLRussia.org</a></p>
+
+<p>Rubens Souza de 2ndQuadrant Italie organise un meetup "Comment installer PostgreSQL sur un Raspberry PI" le jeudi 23 juillet &agrave; Prato&nbsp;: <a target="_blank" href="http://goo.gl/YYpsy7">http://goo.gl/YYpsy7</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>Pervasync 6.0.2, un framework de synchronisation compatible PosrgreSQL&nbsp;: <a target="_blank" href="http://www.pervasync.com">http://www.pervasync.com</a></li>
+
+<li>pgBadger 7.1, un analyseur de log PostgreSQL parall&eacute;lisable &eacute;crit en Perl&nbsp;: <a target="_blank" href="http://dalibo.github.io/pgbadger/">http://dalibo.github.io/pgbadger/</a><br>
+
+D&eacute;veloppement&nbsp;: <a target="_blank" href="https://github.com/dalibo/pgbadger/">https://github.com/dalibo/pgbadger/</a></li>
+
+<li>PipelineDB 0.7.7, un SGBD de "flux SQL", relationnel et open-source bas&eacute; sur PostgreSQL&nbsp;: <a target="_blank" href="http://www.pipelinedb.com/">http://www.pipelinedb.com/</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en juillet</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2015-07/">http://archives.postgresql.org/pgsql-jobs/2015-07/</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>Le <em>PGDay Campinas 2015</em> aura lieu &agrave; Campinas (Br&eacute;sil) le 7 ao&ucirc;t&nbsp;: <a target="_blank" href="http://pgdaycampinas.com.br/english/">http://pgdaycampinas.com.br/english/</a></li>
+
+<li>Le PostgresOpen 2015 aura lieu &agrave; Dallas (Texas, USA) du 16 au 18 septembre&nbsp;: <a target="_blank" href="http://2015.postgresopen.org/">http://2015.postgresopen.org/</a></li>
+
+<li>La <em>session PostgreSQL n&deg;7</em> aura lieu le 24 septembre 2015 &agrave; Paris (France)&nbsp;: <a target="_blank" href="http://www.postgresql-sessions.org/7/about">http://www.postgresql-sessions.org/7/about</a></li>
+
+<li><em>PostgreSQL Conference Europe 2015</em> aura lieu du 27 au 30 octobre au Vienna Marriott Hotel &agrave; Vienne (Autriche). L'appel &agrave; conf&eacute;renciers est lanc&eacute; jusqu'au 7 ao&ucirc;t&nbsp;: <a target="_blank" href="http://2015.pgconf.eu/">http://2015.pgconf.eu/</a></li>
+
+<li><em>PGConf Silicon Valley 2015</em> se tiendra au centre de convention sud de San Francisco les 17 &amp; 18 novembre&nbsp;: <a target="_blank" href="http://www.pgconfsv.com">http://www.pgconfsv.com</a></li>
+
+<li>PGBR2015 (la PgConf br&eacute;silienne) aura lieu &agrave; Porto Alegre (&Eacute;tat du Rio Grande do Sul) les 18, 19 et 20 novembre. L'appel &agrave; conf&eacute;renciers expire le 15 juillet&nbsp;: <a target="_blank" href="http://pgbr.postgresql.org.br/2015/en/#call-for-papers">http://pgbr.postgresql.org.br/2015/en/#call-for-papers</a></li>
+
+<li><em>PostgreSQL Conference Europe 2015</em> aura lieu du 27 au 30 octobre au Vienna Marriott Hotel &agrave; Vienne (Autriche). L'appel &agrave; conf&eacute;renciers est lanc&eacute; jusqu'au 7 ao&ucirc;t&nbsp;: <a target="_blank" href="http://2015.pgconf.eu/">http://2015.pgconf.eu/</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20150712232259.GB2535@fetter.org">http://www.postgresql.org/message-id/20150712232259.GB2535@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

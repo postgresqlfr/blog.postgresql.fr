@@ -6,6 +6,94 @@ redirect_from: "index.php?post/2011-09-27-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les MAJ de s&eacute;curit&eacute; 9.1.1, 9.0.5, 8.4.9, 8.3.16 et 8.2.22 sont disponibles. Installez-les d&egrave;s que possible si vous &ecirc;tes concern&eacute;s. D&eacute;tails ci-apr&egrave;s&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/about/news.1355">http://www.postgresql.org/about/news.1355</a></p>
+
+<p>[ndt: annonce d&eacute;taill&eacute;e, en fran&ccedil;ais&nbsp;: 
+
+<a target="_blank" href="http://blog.postgresql.fr/index.php?post/2011/09/26/Nouvelles-versions-mineures">http://blog.postgresql.fr/index.php?post/2011/09/26/Nouvelles-versions-mineures</a>]</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>MicroOLAP Database Designer 1.8.1 pour PostgreSQL publi&eacute;, avec nouveau support pour PostgreSQL 9.1&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/database/postgresql-designer/">http://microolap.com/products/database/postgresql-designer/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en septembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2011-09/threads.php">http://archives.postgresql.org/pgsql-jobs/2011-09/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li><em>PostgreSQL Conference West</em> (#PgWest) aura lieu du 27 au 30 septembre 2011 au centre des conventions de San Jos&eacute; (Californie, &Eacute;tats-Unis)&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org">http://www.postgresqlconference.org</a></li>
+
+<li>La "<em>PostgreSQL Conference Europe 2011</em>" se tiendra &agrave; Amsterdam, du 18 au 21 octobre&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.eu/">http://2011.pgconf.eu/</a></li>
+
+<li>Le <em>PG-Day Denver 2011</em> aura lieu le vendredi 21 octobre 2011 dans le campus Auraria pr&egrave;s de Denver, Colorado&nbsp;: 
+
+<a target="_blank" href="http://pgday.consistentstate.com/">http://pgday.consistentstate.com/</a></li>
+
+<li>pgbr aura lieu &agrave; S&atilde;o Paulo (Br&eacute;sil) les 3 &amp; 4 novembre 2011&nbsp;: 
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/">http://pgbr.postgresql.org.br/</a></li>
+
+<li><em>PGConf.DE 2011</em> est une conf&eacute;rence germanophone tenue le 11 novembre au mus&eacute;e industriel du Rhin &agrave; Oberhausen (Allemagne). L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.de/">http://2011.pgconf.de/</a></li>
+
+<li>La cinqui&egrave;me &eacute;dition du PGDay italien (PGDay.IT 2011) aura lieu le 25 novembre &agrave; Prato&nbsp;: 
+
+<a target="_blank" href="http://2011.pgday.it/">http://2011.pgday.it/</a></li>
+
+<li>L'appel &agrave; conf&eacute;renciers a &eacute;t&eacute; lanc&eacute; pour le FLOSS UK, programm&eacute; du 20 au 22 mars 2012 &agrave; Edimbourg. La date limite de d&eacute;p&ocirc;t des candidatures est fix&eacute;e au 18 novembre 2011 et les conf&eacute;renciers s&eacute;lectionn&eacute;s seront inform&eacute;s avant le 25 novembre. Les propositions sont &agrave; envoyer &agrave; postgresql2012 AT flossuk POINT org. Plus d'informations via le lien suivant&nbsp;: 
+
+<a target="_blank" href="http://www.flossuk.org/Events/Spring2012">http://www.flossuk.org/Events/Spring2012</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20110925">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

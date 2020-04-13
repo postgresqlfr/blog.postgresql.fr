@@ -6,6 +6,88 @@ redirect_from: "index.php?post/2011-10-06-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Inscriptions sp&eacute;ciales "l&egrave;ves-t&ocirc;ts" (pas cher&nbsp;! pas cher&nbsp;!) disponibles pour le PGDay.IT&nbsp;: 
+
+<a target="_blank" href="http://blog.2ndquadrant.com/en/2011/09/pgday-it-2011-early-bird-registrations-open.html">http://blog.2ndquadrant.com/en/2011/09/pgday-it-2011-early-bird-registrations-open.html</a></p>
+
+<p>La liste des conf&eacute;renciers pour le PGBR2011 a &eacute;t&eacute; publi&eacute;e&nbsp;: 
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/2011/palestrantes.en.php">http://pgbr.postgresql.org.br/2011/palestrantes.en.php</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>check_postgres 2.18.0, un script Nagios de surveillance de PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/wiki/Check_postgres">http://bucardo.org/wiki/Check_postgres</a></li>
+
+<li>tail_n_mail 1.20.3, un programme de surveillance de log PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/wiki/Tail_n_mail">http://bucardo.org/wiki/Tail_n_mail</a></li>
+
+<li>Pyrseas 0.4.0, un ensemble d'outils pour la gestion de version avec PostgreSQL, publi&eacute; sur PGXN&nbsp;: 
+
+<a target="_blank" href="http://pgxn.org/dist/pyrseas/">http://pgxn.org/dist/pyrseas/</a></li>
+
+<li>xlogdump 0.5.0, un outil pour extraire des donn&eacute;es depuis des fichiers WAL&nbsp;: 
+
+<a target="_blank" href="https://github.com/snaga/xlogdump">https://github.com/snaga/xlogdump</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La "<em>PostgreSQL Conference Europe 2011</em>" se tiendra &agrave; Amsterdam, du 18 au 21 octobre&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.eu/">http://2011.pgconf.eu/</a></li>
+
+<li>Le <em>PG-Day Denver 2011</em> aura lieu le vendredi 21 octobre 2011 dans le campus Auraria pr&egrave;s de Denver, Colorado&nbsp;: 
+
+<a target="_blank" href="http://pgday.consistentstate.com/">http://pgday.consistentstate.com/</a></li>
+
+<li>pgbr aura lieu &agrave; S&atilde;o Paulo (Br&eacute;sil) les 3 &amp; 4 novembre 2011&nbsp;: 
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/">http://pgbr.postgresql.org.br/</a></li>
+
+<li><em>PGConf.DE 2011</em> est une conf&eacute;rence germanophone tenue le 11 novembre au mus&eacute;e industriel du Rhin &agrave; Oberhausen (Allemagne). L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.de/">http://2011.pgconf.de/</a></li>
+
+<li>La cinqui&egrave;me &eacute;dition du PGDay italien (PGDay.IT 2011) aura lieu le 25 novembre &agrave; Prato&nbsp;: 
+
+<a target="_blank" href="http://2011.pgday.it/">http://2011.pgday.it/</a></li>
+
+<li>L'appel &agrave; conf&eacute;renciers a &eacute;t&eacute; lanc&eacute; pour le FLOSS UK, programm&eacute; du 20 au 22 mars 2012 &agrave; Edimbourg. La date limite de d&eacute;p&ocirc;t des candidatures est fix&eacute;e au 18 novembre 2011 et les conf&eacute;renciers s&eacute;lectionn&eacute;s seront inform&eacute;s avant le 25 novembre. Les propositions sont &agrave; envoyer &agrave; postgresql2012 AT flossuk POINT org. Plus d'informations via le lien suivant&nbsp;: 
+
+<a target="_blank" href="http://www.flossuk.org/Events/Spring2012">http://www.flossuk.org/Events/Spring2012</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20111002">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

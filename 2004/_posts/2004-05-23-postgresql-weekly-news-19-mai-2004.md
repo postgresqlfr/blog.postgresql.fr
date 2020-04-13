@@ -6,6 +6,74 @@ redirect_from: "index.php?post/drupal-365 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires de PostgreSQL - 19 avril 2004 ==</h2>
+
+<p>Le développement a continué sur un bon rythme, tout le monde se préparant
+
+pour la période de beta test de la 7.5. Le travail a continué sur quelques gros
+
+éléments comme PITR et win32, et nous avons aussi eu un premier aperçu de
+
+l'implémentation des espaces de nommage. Bien que cette fonctionnalité n'est pas
+
+encore prête pour un envoi officiel, Gavin Sherry a envoyé un correctif avec
+
+quelques problèmes non résolus ajoutant ainsi une nouvelle étape à cette
+
+fonctionnalité fréquemment demandée.<!--break-->
+
+</p>
+
+<p>Quelques bogues ont été corrigé, ces corrections ayant aussi été reportées
+
+sur la version 7.4, ce qui a lancé des rumeurs sur une potentielle version 7.4.3
+
+dans les prochaines semaines. Bien qu'aucune date n'a été fixé, avec la beta
+
+arrivant à grand pas, il est plus que probable que nous aurons cette nouvelle
+
+version dans quelques petites semaines ; entre temps, voici une liste des
+
+correctifs de la semaine. Un problème d'efficacité dans le lancement de
+
+l'exécuteur en relation avec un code de bas niveau (aclcheck) a été revu. Un
+
+dépassement de tampon possible a été corrigé dans enlargeStringInfo(). Un bogue
+
+a aussi été corrigé lors d'union de tables n'ayant aucune colonne. Quelques
+
+problèmes sur le support des threads ont été corrigés pour le système
+
+Unixware.</p>
+
+<p>En regardant certains autres domaines où de nouvelles fonctionnalités ont été
+
+ajoutées, un support a été introduit pour les installations déplaçables ce qui
+
+permet aux utilisateurs de déplacer entièrement les structures du répertoire
+
+d'installation tout en laissant les exéutables PostgreSQL fonctionner
+
+normalement. Les modules externes (comme les langages procéduraux) peuvent
+
+maintenant configurer des options supplémentaires pour les commandes dlltool et
+
+dllwrap. Une implémentation basique de la fonction width_bucket() (spécification
+
+SQL 2003) a été implémenté pour le type de données 'numeric'. Les fonctions
+
+ln(), log(), power() et sqrt() ont été modifié pour émettre les bons codes
+
+d'erreur SQLSTATE pour certaines conditions d'erreur comme spécifié par SQL2003.
+
+Enfin, de la documentation pour la nouvelle fonctionnalité "dollar quoting" a
+
+été ajouté et plusieurs exemples ont été mis à jour pour montrer le nouveau
+
+style.</p>
+
+<!--more-->
+
 
 <h2>== Nouvelles concernant les produits PostgreSQL ==</h2>
 

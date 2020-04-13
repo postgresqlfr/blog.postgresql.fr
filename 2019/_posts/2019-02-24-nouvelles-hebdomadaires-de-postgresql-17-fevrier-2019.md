@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2019-02-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Mises &agrave; jour correctives 11.2, 10.7, 9.6.12, 9.5.16, 9.4.21, et 9.3.26 publi&eacute;es. D&eacute;ployez d&egrave;s que possible&nbsp;: <a target="_blank" href="https://www.postgresql.org/about/news/1920/">https://www.postgresql.org/about/news/1920/</a></p>
+
+<p>PostgresLondon 2019 aura lieu les 2 & 3 juillet 2019 avec une journ&eacute;e optionnelle de formation le 1er juillet. L'appel &agrave; conf&eacute;renciers court jusqu'au 15 mars &agrave; l'adresse <a target="_blank" href="https://goo.gl/forms/hsvZKAmq0c96XQ4l2">https://goo.gl/forms/hsvZKAmq0c96XQ4l2</a> : <a target="_blank" href="http://postgreslondon.org">http://postgreslondon.org</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgBadger v10.3, un analyseur de log PostgreSQL et un g&eacute;n&eacute;rateur de graphe en Perl&nbsp;: <a target="_blank" href="https://github.com/darold/pgbadger/releases">https://github.com/darold/pgbadger/releases</a></li>
+
+<li>pgAdmin4 4.2, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_2.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_2.html</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</h2>
 

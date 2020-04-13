@@ -6,6 +6,102 @@ redirect_from: "index.php?post/2012-05-18-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La 4<sup>&egrave;me</sup> Session PostgreSQL aura lieu le 4 octobre 2012 &agrave; Paris. Appel &agrave; conf&eacute;renciers et plus d'informations sur&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/en/4/">http://www.postgresql-sessions.org/en/4/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>AnySQL Maestro 12.5, un outil de gestion bas&eacute; sur ODBC, compatible PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.sqlmaestro.com/products/anysql/maestro/">http://www.sqlmaestro.com/products/anysql/maestro/</a></li>
+
+<li>pgXplorer, une interface graphique pour Postgres 8.4+. Le code est <em>open source</em> (licence ISC) et peut &ecirc;tre trouv&eacute; &agrave; l'adresse&nbsp;: 
+
+<a target="_blank" href="https://github.com/davyjones/pgXplorer">https://github.com/davyjones/pgXplorer</a></li>
+
+<li>Postgres-XC 1.0beta2, un cluster sym&eacute;trique multi-ma&icirc;tre &agrave; performances &eacute;volutives en &eacute;criture, bas&eacute; sur PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://postgres-xc.sourceforge.net/docs/1_0/release-xc-1-0.html">http://postgres-xc.sourceforge.net/docs/1_0/release-xc-1-0.html</a></li>
+
+<li>PL/Proxy 2.4, un syst&egrave;me de partitionnement de base de donn&eacute;es impl&eacute;ment&eacute; en PL&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/plproxy/">http://pgfoundry.org/projects/plproxy/</a></li>
+
+<li>SIDU 3.5 pour PostgreSQL, un outil web pour administration de base de donn&eacute;es&nbsp;: 
+
+<a target="_blank" href="http://sidu.sf.net">http://sidu.sf.net</a></li>
+
+<li>Version 1.25.1 de tail_n_mail, un programme de surveillance de logs PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/wiki/Tail_n_mail">http://bucardo.org/wiki/Tail_n_mail</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en mai</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2012-05/threads.php">http://archives.postgresql.org/pgsql-jobs/2012-05/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La <em>PGCon 2012</em> sera tenue &agrave; l'Universit&eacute; d'Ottawa, les 17 et 18 mai 2012. Elle sera pr&eacute;c&eacute;d&eacute;e par deux jours de tutoriels les 15 &amp; 16 mai 2012&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2012/">http://www.pgcon.org/2012/</a></li>
+
+<li>Le <em>PGDay France</em> aura lieu &agrave; Lyon, le 7 juin 2012&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.fr">http://www.pgday.fr</a></li>
+
+<li style="list-style: none; display: inline">
+
+<p>La conf&eacute;rence <em>PostgreSQL China 2012</em> aura lieu du 14 au 17 juin &agrave; P&eacute;kin&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/Pgconfchina2012">http://wiki.postgresql.org/wiki/Pgconfchina2012</a></p>
+
+</li>
+
+<li>La <em>PostgreSQL Conference Europe</em> 2012 aura lieu &agrave; Prague, R&eacute;publique Tch&egrave;que, du 23 au 26 octobre. L'appel &agrave; sponsors est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2012.pgconf.eu/">http://2012.pgconf.eu/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2012-05/msg00009.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

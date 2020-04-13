@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2018-12-20-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La conf&eacute;rence germanophone <em>PostgreSQL Conference 2018</em> aura lieu le 10 mai 2019 &agrave; Leipzig. L'appel &agrave; conf&eacute;renciers est ouvert &agrave; l'adresse <a target="_blank" href="http://2019.pgconf.de/cfp">http://2019.pgconf.de/cfp</a> jusqu'au 26 f&eacute;vrier 2019, et le site de la conf&eacute;rence est disponible ici&nbsp;: <a target="_blank" href="http://2019.pgconf.de/">http://2019.pgconf.de/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgCluu 2.9, un programme en Perl pour auditer les performances de PostgreSQL&nbsp;: <a target="_blank" href="http://pgcluu.darold.net/">http://pgcluu.darold.net/</a></li>
+
+<li>dbForge Studio pour PostgreSQL&nbsp;: <a target="_blank" href="https://blog.devart.com/whats-new-in-dbforge-studio-for-postgresql-20.html">https://blog.devart.com/whats-new-in-dbforge-studio-for-postgresql-20.html</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en d&eacute;cembre</h2>
 

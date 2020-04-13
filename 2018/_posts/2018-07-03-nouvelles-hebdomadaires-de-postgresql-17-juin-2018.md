@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2018-07-03-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La <em>PostgreSQL Conference Europe 2018</em> aura lieu du 23 au 26 octobre 2018 au Lisbon Marriott Hotel, &agrave; Lisbonne (Portugal). L'appel &agrave; conf&eacute;renciers court jusqu'au 6 ao&ucirc;t minuit CET&nbsp;: <a target="_blank" href="https://2018.pgconf.eu/callforpapers">https://2018.pgconf.eu/callforpapers</a> <a target="_blank" href="https://2017.pgconf.eu/">https://2017.pgconf.eu/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgpool-II versions 3.7.4, 3.6.11, 3.5.15, et 3.4.18 publi&eacute;es. <a target="_blank" href="http://www.pgpool.net/docs/latest/en/html/release.html">http://www.pgpool.net/docs/latest/en/html/release.html</a></li>
+
+<li>repmgr 4.0.6, un gestionnaire de r&eacute;plication pour PostgreSQL&nbsp;: <a target="_blank" href="https://repmgr.org/docs/4.0/release-4.0.6.html">https://repmgr.org/docs/4.0/release-4.0.6.html</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en juin</h2>
 

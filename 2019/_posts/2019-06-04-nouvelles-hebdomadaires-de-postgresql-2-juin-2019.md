@@ -6,6 +6,26 @@ redirect_from: "index.php?post/2019-06-04-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>David Rowley est notre tout nouveau committer. F&eacute;licitations&nbsp;!</p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>psqlODBC 11.01.0000&nbsp;: <a target="_blank" href="https://odbc.postgresql.org/docs/release.html">https://odbc.postgresql.org/docs/release.html</a></li>
+
+<li>PostGIS 3.0.0alpaha2, le syst&egrave;me d'information g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL&nbsp;: <a target="_blank" href="https://postgis.net/2019/06/02/postgis-3.0.0alpha2/">https://postgis.net/2019/06/02/postgis-3.0.0alpha2/</a></li>
+
+<li>pgAdmin4 4.7, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_7.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_7.html</a></li>
+
+<li>postgres-checkup 1.1 "Young Owl", un outil permettant de g&eacute;n&eacute;rer des rapports de sant&eacute; de clusters PostgreSQL&nbsp;: <a target="_blank" href="https://gitlab.com/postgres-ai-team/postgres-checkup/tags/1.1">https://gitlab.com/postgres-ai-team/postgres-checkup/tags/1.1</a></li>
+
+<li>pg_probackup 2.1.3, un utilitaire pour g&eacute;rer les sauvegardes et les restaurations de clusters PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/postgrespro/pg_probackup">https://github.com/postgrespro/pg_probackup</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en juin</h2>
 

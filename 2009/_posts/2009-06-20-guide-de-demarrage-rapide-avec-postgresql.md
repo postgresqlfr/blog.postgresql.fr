@@ -6,6 +6,84 @@ redirect_from: "index.php?post/2009-06-20-guide-de-demarrage-rapide-avec-postgre
 ---
 
 
+<h3>Pourquoi ce document?</h3>
+
+<p>J'ai commencé à développer sous PostgreSQL assez récemment après une
+
+longue expérience sous Oracle. La documentation générale de PostgreSQL
+
+est excellente, et très riche, mais j'avais besoin d'un document plus
+
+léger expliquant la procédure d'installation sur différents systèmes et
+
+comment démarrer (créer un cluster, configurer les connexions), ainsi
+
+que des informations sur ce qu'on pouvait faire avec PostgreSQL. Je ne
+
+l'ai pas trouvé.
+
+Après quelques mois d'utilisation, je me suis rendu compte que les
+
+problèmes des débutants étaient toujours les mêmes. Ainsi, j'ai compilé
+
+mes notes des débuts et ce que j'ai appris depuis dans ce document.
+
+Voici le résultat, en espérant qu'il vous aide à débuter et qu'il vous
+
+encourage à continuer avec PostgreSQL.</p>
+
+<h3>À qui s'adresse ce document?</h3>
+
+<p>Ce document a pour but de vous aider à installer PostgreSQL sous Windows ou sous Linux, et à commencer à développer.</p>
+
+<p>Il est écrit pour vous faire gagner du temps dans vos premiers pas
+
+avec PostgreSQL, tout en vous expliquant les points importants afin que
+
+vous puissiez progresser par vous-même.
+
+Il s'adresse donc principalement aux développeurs d'applications, afin
+
+de leur permettre de découvrir ce puissant moteur sur une petite base
+
+de test, ou aux personnes qui débutent complètement avec PostgreSQL.
+
+Vous n'aurez pas besoin de connaissances système avancées pour suivre
+
+ce document.</p>
+
+<p>Une fois que vous aurez terminé la lecture de ce document, vous
+
+pourrez continuer par la lecture de la documentation officielle pour
+
+apprendre à administrer PostgreSQL ou devenir un développeur aguerri.
+
+La dernière section de ce document vous donne les liens et références
+
+nécessaires pour continuer à progresser.
+
+Parfois les informations ne sont volontairement pas complètes, et
+
+lorsque la documentation de référence est plus claire et précise que ce
+
+qui aurait pu être fait ici, les liens sont fournis vers la
+
+documentation française.</p>
+
+<p>Ce document a été écrit initialement pour la version 8.3, mais les
+
+principes sont les mêmes avec les versions 8.2 et 8.4 (voir le chapitre
+
+sur les versions).</p>
+
+<p><strong>Avertissement :</strong> ce document n'est en aucun cas un
+
+document sur le tuning de la base. Il n'est pas fait non plus pour vous
+
+apprendre à administrer une base de production.</p>
+
+<!--more-->
+
 
 <p>Sachez que vous pouvez aussi télécharger ce document au format PDF : </p>
 

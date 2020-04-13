@@ -6,6 +6,10 @@ redirect_from: "index.php?post/2008-11-26-sortie-de-slony-2-0 "
 ---
 
 
+None
+
+<!--more-->
+
 
 Une news rapide pour avertir tout le monde de la sortie de Slony 2.0. Plus d'infos sur le [site officiel de Slony|http://slony.info/|en].
 

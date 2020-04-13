@@ -6,6 +6,20 @@ redirect_from: "index.php?post/drupal-171 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 8 avril 2007</strong></p>
+
+<p>
+
+Maintenant que les fonctionnalités sont gelées, les révisions sont débattues.
+
+</p>
+
+<p>
+
+Félicitations à Tom Dunstan pour le nouveau type enum.</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

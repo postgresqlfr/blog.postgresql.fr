@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-157 "
 ---
 
 
+<h2>Nouvelles Hebdomadaires de PostgreSQL - 5 février 2006</h2>
+
+<p>Tom Lane a committé de nombreux correctifs de bogues, incluant des améliorations de performances pour les UNION ALL ainsi que les contraintes d'exclusions. Andrew Dunstan a committé de nombreuses fonctionnalités "DROP IF EXISTS".</p>
+
+<p>Magnus Hagander fera une conférence à Linuxforum/2006 à Copenhague au Danemark, qui aura lieu les 3 et 4 mars 2006 : <a href="http://linuxforum.dk/2006/en/">http://linuxforum.dk/2006/en/</a>.</p>
+
+<!--more-->
+
 
 <h3>Nouvelles des produits autour de PostgreSQL</h3>
 

@@ -6,6 +6,28 @@ redirect_from: "index.php?post/drupal-191 "
 ---
 
 
+<p>Avec la sortie de Solaris 10 update 2, Sun a annoncé aujourd'hui
+
+l'inclusion de PostgreSQL dans Solaris et la disponibilité du support
+
+PostgreSQL (<a href="http://sun.com/solaris/postgresql.jsp" target="_blank">http://sun.com/solaris/postgresql.jsp</a>).</p>
+
+<p>Cette
+
+offre donne aux utilisateurs de Solaris un accès direct à un SGBDR à
+
+haute performances, et la confiance du support Sun mondial pour le
+
+support de leurs applications de production. Les utilisateurs de
+
+PostgreSQL peuvent prendre cela comme une opportunité pour ré-évaluer
+
+la plate-forme Solaris pour leurs projets où la robustesse est un but
+
+principal.</p>
+
+<!--more-->
+
 
 <p>Les ingénieurs de Sun dédiés aux bases de données et aux performances, dirigés par Josh Berkus (membre de la core team PostgreSQL), travailleront les prochains mois pour améliorer la version de PostgreSQL pour Solaris, améliorer les performances, et ajouter de nouvelles fonctionalités. 100% de ces améliorations seront Open-Source et données à la communauté PostgreSQL ou dans d'autres projets associés.</p>
 

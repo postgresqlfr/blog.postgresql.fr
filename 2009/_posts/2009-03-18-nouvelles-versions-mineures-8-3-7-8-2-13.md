@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2009-03-18-nouvelles-versions-mineures-8-3-7-8-2-
 
 
 
+
+<!--more-->
+
+
 De nouvelles versions mineures sont apparues aujourd'hui pour toutes les branches actives de PostgreSQL : cela nous donne donc les versions 8.3.7, 8.2.13, 8.1.17, 8.0.21 et 7.4.25. Ces mises à jour importantes cherchent à éviter une récursion infinie de messages d'erreur. Le problème est le suivant : une erreur est levée, PostgreSQL va chercher à convertir ce message dans la bonne langue et dans le bon encodage. Cette génération peut causer une autre erreur (de conversion cette fois). PostgreSQL va chercher de nouveau à traduire le message d'erreur et à le convertir, ce qui peut de nouveau générer une erreur. Etc. Le correctif appliqué est de ne pas traduire un message d'erreur et de ne pas convertir la locale si on détecte une possibilité de récursion.
 
 

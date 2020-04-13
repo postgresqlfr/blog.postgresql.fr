@@ -6,6 +6,94 @@ redirect_from: "index.php?post/2013-12-10-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Versions correctives 9.3.2, 9.2.6, 9.1.11, 9.0.15 et 8.4.19 disponibles. Mettez &agrave; jour &agrave; la premi&egrave;re occasion&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/about/news/1492/">http://www.postgresql.org/about/news/1492/</a></p>
+
+<p>La 7<sup>&egrave;me</sup> conf&eacute;rence annuelle "<em>Prague PostgreSQL Developers Day</em>" (P2D2) aura lieu le 6 f&eacute;vrier 2014 &agrave; la Facult&eacute; des Sciences Math&eacute;matiques &amp; Physiques de l'Universit&eacute; Charles (Malostranske namesti 25, Prague). Infos en langue tch&egrave;que ci-apr&egrave;s. L'appel &agrave; conf&eacute;renciers court jusqu'au 3 janvier 2014&nbsp;: 
+
+<a target="_blank" href="http://www.p2d2.cz/">http://www.p2d2.cz/</a></p>
+
+<p>Le PUG de Singapore, PUGS, s'est constitu&eacute;. Informations&nbsp;: 
+
+<a target="_blank" href="http://www.meetup.com/PUGS-Postgres-Users-Group-Singapore/">http://www.meetup.com/PUGS-Postgres-Users-Group-Singapore/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>DataFiller version 1.1.5, un g&eacute;n&eacute;rateur de donn&eacute;es al&eacute;atoires pour PostgreSQL bas&eacute; sur le sch&eacute;ma de la base + instructions&nbsp;: 
+
+<a target="_blank" href="https://www.cri.ensmp.fr/people/coelho/datafiller.html">https://www.cri.ensmp.fr/people/coelho/datafiller.html</a></li>
+
+<li>pg8000 1.9.0, un connecteur en pur python, compatible DB-API 2.0, pour PostgreSQL. Driver&nbsp;: 
+
+<a target="_blank" href="https://pypi.python.org/pypi/pg8000/">https://pypi.python.org/pypi/pg8000/</a> Docs&nbsp;: <a target="_blank" href="http://pythonhosted.org/pg8000/">http://pythonhosted.org/pg8000/</a></li>
+
+<li>pg_activity 1.1.0&nbsp;: 
+
+<a target="_blank" href="https://github.com/julmon/pg_activity/">https://github.com/julmon/pg_activity/</a></li>
+
+<li>Pyrseas 0.7.1, une bo&icirc;te &agrave; outils pour la gestion de version sous PostgreSQL&nbsp;: 
+
+<a target="_blank" href="https://github.com/pyrseas/Pyrseas">https://github.com/pyrseas/Pyrseas</a></li>
+
+<li>sqlserver2pgsql, un utilitaire Perl bas&eacute; sur Ketl d'aide &agrave; la conversion depuis MS-SQL&nbsp;: 
+
+<a target="_blank" href="https://github.com/dalibo/sqlserver2pgsql">https://github.com/dalibo/sqlserver2pgsql</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en d&eacute;cembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2013-12/threads.php">http://archives.postgresql.org/pgsql-jobs/2013-12/threads.php</a></li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>FOSDEM PGDay, une conf&eacute;rence d'une journ&eacute;e, tenue avant le FOSDEM &agrave; Bruxelles, aura lieu le 31 janvier 2014. D&eacute;tails&nbsp;: 
+
+<a target="_blank" href="http://fosdem2014.pgconf.eu/">http://fosdem2014.pgconf.eu/</a><br>
+
+L'appel &agrave; conf&eacute;renciers se termine le 15 d&eacute;cembre 2013&nbsp;: 
+
+<a target="_blank" href="http://fosdem2014.pgconf.eu/callforpapers/">http://fosdem2014.pgconf.eu/callforpapers/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20131209051817.GA27441@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-133 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p><em>Traduction officielle du dossier de presse de PostgreSQL 8.1</em></p>
 

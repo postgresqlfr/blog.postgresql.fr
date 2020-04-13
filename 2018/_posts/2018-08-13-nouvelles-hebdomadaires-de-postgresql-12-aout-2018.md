@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2018-08-13-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les mises &agrave; jour de s&eacute;curit&eacute; 10.5, 9.6.10, 9.5.14, 9.4.19, 9.3.24, et 11 Beta 3 ont &eacute;t&eacute; publi&eacute;es. Merci de lire l'annonce ci-dessous et d'appliquer la mise &agrave; jour d&egrave;s que possible&nbsp;: <a target="_blank" href="https://www.postgresql.org/about/news/1878/">https://www.postgresql.org/about/news/1878/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>PostGIS 2.5.0beta2 le syst&egrave;me d'information g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL&nbsp;: <a target="_blank" href="https://postgis.net/2018/08/11/postgis-2.5.0beta2/">https://postgis.net/2018/08/11/postgis-2.5.0beta2/</a></li>
+
+<li>pgmetrics 1.4, un outil en ligne de commande pour extraire et afficher les m&eacute;triques d'un serveur PostgreSQL&nbsp;: <a target="_blank" href="https://pgmetrics.io/">https://pgmetrics.io/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en ao&ucirc;t</h2>
 

@@ -6,6 +6,78 @@ redirect_from: "index.php?post/2013-03-31-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le projet PostgreSQL va publier une mise &agrave; jour de s&eacute;curit&eacute; le jeudi 4 avril pour toutes les versions support&eacute;es. Cette publication incluera un correctif pour une vuln&eacute;rabilit&eacute; tr&egrave;s expos&eacute;e. Tous les utilisateurs sont fortement pouss&eacute;s &agrave; appliquer la mise &agrave; jour aussit&ocirc;t que possible&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/about/news/1454/">http://www.postgresql.org/about/news/1454/</a><br>
+
+Page en fran&ccedil;ais&nbsp;: 
+
+<a target="_blank" href="http://blog.postgresql.fr/index.php?post/2013/04/02/Mise-%C3%A0-jour-importante-%C3%A0-pr%C3%A9voir-le-4-avril-!">http://blog.postgresql.fr/index.php?post/2013/04/02/Mise-%C3%A0-jour-importante-%C3%A0-pr%C3%A9voir-le-4-avril-!</a></p>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en mars</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2013-03/threads.php">http://archives.postgresql.org/pgsql-jobs/2013-03/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>PGCon 2013 aura lieu les 23 &amp; 24 mai 2013 &agrave; l'Universit&eacute; d'Ottawa&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2013/">http://www.pgcon.org/2013/</a></li>
+
+<li>La 6&egrave;me conf&eacute;rence annuelle "Prague PostgreSQL Developers Day", organis&eacute;e par le CSPUG (Groupe des utilisateurs tch&egrave;ques et slovaques de PostgreSQL), aura lieu le 30 mai 2013 &agrave; la Facult&eacute; des Sciences Math&eacute;matiques &amp; Physiques de l'Universit&eacute; Charles (Malostranske namesti 25, Prague). Les candidatures des conf&eacute;renciers sont attendues jusqu'au 14 avril &agrave; l'adresse &lt;info AT p2d2 POINT cz&gt;. D'avantage d'informations sur le site&nbsp;: 
+
+<a target="_blank" href="http://www.p2d2.cz/">http://www.p2d2.cz/</a></li>
+
+<li>Le PgDay Fr est l'&eacute;v&eacute;nement majeur de la communaut&eacute; francophone. Il aura lieu le 13 juin 2013 &agrave; Nantes (France)&nbsp;: 
+
+<a target="_blank" href="http://pgday.fr/">http://pgday.fr/</a></li>
+
+<li>The CfPs for Char(13) and PGday UK, July 11 and 12, 2013, respectively, are out and close April 19, 2013. For Char(13), write speakers AT char13 DOT info; for PGday UK, speakers AT postgresqlusergroup DOT org DOT uk.</li>
+
+<li><em>PostgreSQL Brazil</em> aura lieu du 15 au 17 ao&ucirc;t 2013 &agrave; Porto Velho, &Eacute;tat du Rond&ocirc;nia au Br&eacute;sil&nbsp;: 
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/2013/chamada.en.php">http://pgbr.postgresql.org.br/2013/chamada.en.php</a></li>
+
+<li>Notez la date&nbsp;! <em>Postgres Open 2013</em> aura lieu &agrave; Chicago (Illinois, USA) du 16 au 18 septembre. Hotel Sax&nbsp;: 
+
+<a target="_blank" href="https://reservations.ihotelier.com/crs/g_reservation.cfm?groupID=888761&amp;hotelID=6865">https://reservations.ihotelier.com/crs/g_reservation.cfm?groupID=888761&amp;hotelID=6865</a> Early Bird registration: <a target="_blank" href="http://postgresopen-eac2.eventbrite.com/">http://postgresopen-eac2.eventbrite.com/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20130401041512.GB19265@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

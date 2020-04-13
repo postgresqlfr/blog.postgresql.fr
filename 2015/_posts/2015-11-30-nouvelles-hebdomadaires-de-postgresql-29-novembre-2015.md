@@ -6,6 +6,66 @@ redirect_from: "index.php?post/2015-11-30-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 9.5 Beta 2 disponible&nbsp;: <a target="_blank" href="http://www.postgresql.org/about/news/1625/">http://www.postgresql.org/about/news/1625/</a></p>
+
+<p>Les paquets RPM PostgreSQL 9.6devel sont disponibles pour les testeurs. Veillez &agrave; ne les utilisez que pour les crash tests&nbsp;: <a target="_blank" href="http://www.postgresql.org/message-id/1447660638.4285.45.camel@gunduz.org">http://www.postgresql.org/message-id/1447660638.4285.45.camel@gunduz.org</a> <a target="_blank" href="http://yum.PostgreSQL.org">http://yum.PostgreSQL.org</a></p>
+
+<p>FOSDEM PGDay est une conf&eacute;rence d'une journ&eacute;e qui sera tenue avant le FOSDEM &agrave; Bruxelles (Belgique) le 29 janvier 2015. D&eacute;tails et appel &agrave; conf&eacute;renciers ci-apr&egrave;s&nbsp;: <a target="_blank" href="http://fosdem2016.pgconf.eu/">http://fosdem2016.pgconf.eu/</a></p>
+
+<p>Prague PostgreSQL Developer Day 2016 (P2D2 2016) est une conf&eacute;rence sur deux jours, les 17 et 18 f&eacute;vrier 2016, &agrave; Prague (R&eacute;publique Tch&egrave;que). Site en tch&egrave;que&nbsp;: <a target="_blank" href="http://www.p2d2.cz/">http://www.p2d2.cz/</a></p>
+
+<p>La premi&egrave;re conf&eacute;rence PostgreSQL pan-asiatique se tiendra en mars 2016 &agrave; Singapour. L'appel &agrave; conf&eacute;renciers est ouvert&nbsp;: <a target="_blank" href="http://2016.pgday.asia/">http://2016.pgday.asia/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>barman 1.5.1, un gestionnaire de sauvegarde et restauration pour PostgreSQL&nbsp;: <a target="_blank" href="http://www.pgbarman.org/barman-1-5-1-released/">http://www.pgbarman.org/barman-1-5-1-released/</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en novembre</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2015-11/">http://archives.postgresql.org/pgsql-jobs/2015-11/</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li><em>PGConf Silicon Valley 2015</em> se tiendra au centre de convention sud de San Francisco les 17 &amp; 18 novembre&nbsp;: <a target="_blank" href="http://www.pgconfsv.com">http://www.pgconfsv.com</a></li>
+
+<li>PGBR2015 (la PgConf br&eacute;silienne) aura lieu &agrave; Porto Alegre (&Eacute;tat du Rio Grande do Sul) les 18, 19 et 20 novembre. Les inscriptions sont ouvertes&nbsp;: <a target="_blank" href="http://pgbr.postgresql.org.br/2015/en/">http://pgbr.postgresql.org.br/2015/en/</a></li>
+
+<li><em>Postgres Conference China</em> 2015 aura lieu du 20 au 22 novembre 2015 &agrave; Beijing&nbsp;: <a target="_blank" href="http://postgres2015.eventdove.com/">http://postgres2015.eventdove.com/</a> <a target="_blank" href="http://postgrescluster2015.eventdove.com/">http://postgrescluster2015.eventdove.com/</a></li>
+
+<li>La PGConf.DE se tiendra au Lindner Hotel am Michel de Hambourg (Allemagne) les 26 &amp; 27 novembre 2015&nbsp;: <a target="_blank" href="http://2015.pgconf.de/">http://2015.pgconf.de/</a></li>
+
+<li>PostgreSQL@SCaLE est un &eacute;v&eacute;nement de deux jours avec deux programmes qui aura lieu les 21 et 22 janvier 2016 au Pasadena Convention Center &agrave; l'occasion du SCaLE 14X. L'appel &agrave; conf&eacute;renciers expire le 30 octobre 2015&nbsp;: <a target="_blank" href="https://www.socallinuxexpo.org/scale/14x/cfp">https://www.socallinuxexpo.org/scale/14x/cfp</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20151130041315.GB22300@fetter.org">http://www.postgresql.org/message-id/20151130041315.GB22300@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

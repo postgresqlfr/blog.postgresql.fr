@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-156 "
 ---
 
 
+<h2>Nouvelles hebdomadaires de PostgreSQL - 29 janvier 2006</h2>
+
+<p>Stephan Vollmer a rapporté de mauvaises performances d'indexation GiST avec tsearch2. Tom Lane et Martijn van Oosterhout ont enquêté et, après quelques discussions sur la liste performances, ils ont identifié une fonction de comptage de bit comme coupable. Tom a intégré une implémentation alternative utilisant une table de recherche statique pour de nombreux modules de contribution (intarray, ltree, trgm and tsearch2), implémentation qui amène une amélioration d'un facteur 20 pour les grands index. Une discussion a suivi pour des améliorations supplémentaires à propos de l'algorithme « picksplit » pour un gain par 10 mais elle n'a pas abouti sur une solution, du moins pour la branche 8.1.
+
+</p>
+
+<p>Andrew Dunstan a publié un <a href="http://www.onlamp.com/pub/a/databases/2006/01/19/more-perl-in-postgresql.html">article</a> sur PL/Perl.</p>
+
+<!--more-->
+
 
 <h3>Nouvelles des produits autour de PostgreSQL</h3>
 

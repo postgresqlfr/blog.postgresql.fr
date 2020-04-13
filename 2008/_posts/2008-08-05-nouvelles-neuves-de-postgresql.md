@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-437 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 3 août 2008</strong></p>
+
+<p>Quand vous lirez ces lignes, la "commit fest" de juillet sera terminée. Beaucoup de nouvelles fonctionnalités ont été intégrées, et pour celles à venir en septembre, regardez du côté des "Common Table Expressions" [aka "WITH"] et des fonctions d'encadrement ("Windowing Functions").
+
+[ndt: pour les "windowing functions", quelques pages intéressantes <a href="http://archives.postgresql.org/pgsql-hackers/2008-06/msg00380.php">ici</a> et <a href="http://umitanuki.net/pgsql/wfv03/design.html">là</a>. Pour les CTE, rappel <a href="http://archives.postgresql.org/pgsql-patches/2008-05/msg00362.php">ici</a>.]</p>
+
+<p>(<a href="http://people.planetpostgresql.org/dfetter/index.php?/archives/185-PostgreSQL-Weekly-News-August-03-2008.html">lire l'article original</a>)</p>
+
+<!--more-->
+
 
 <!--break-->
 

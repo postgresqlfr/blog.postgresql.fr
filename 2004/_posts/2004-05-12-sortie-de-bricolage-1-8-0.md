@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-11 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>C'est avec grand plaisir que l'équipe de développement de Bricolage vous annonce
 

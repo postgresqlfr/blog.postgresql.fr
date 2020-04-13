@@ -6,6 +6,94 @@ redirect_from: "index.php?post/2015-01-23-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Giulio Calacoci, le principal d&eacute;veloppeur de Barman, accueillera un rassemblement "D&eacute;couvrez Barman 1.4.0" &agrave; Prato, Italie, le 6 f&eacute;vrier prochain. Informations compl&eacute;mentaires et inscriptions&nbsp;: 
+
+<a target="_blank" href="http://www.meetup.com/2ndQuadrant-Italia-PostgreSQL-Meetup/events/219801332/">http://www.meetup.com/2ndQuadrant-Italia-PostgreSQL-Meetup/events/219801332/</a></p>
+
+<p>L'appel &agrave; conf&eacute;renciers pour la deuxi&egrave;me conf&eacute;rence suisse de PostgreSQL, devant se tenir &agrave; HSR Rapperswil les 25 &amp; 26 juin 2015, est lanc&eacute; avec, comme date limite, le 1<sup>er</sup> avril&nbsp;: 
+
+<a target="_blank" href="http://www.postgres-conference.ch/cfp/">http://www.postgres-conference.ch/cfp/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>pgmp 1.0.2, une biblioth&egrave;que arithm&eacute;tique pour les entiers et rationnels de haute pr&eacute;cision, offrant l'acc&egrave;s aux types de donn&eacute;es GMP&nbsp;: 
+
+<a target="_blank" href="http://pgmp.projects.pgfoundry.org/">http://pgmp.projects.pgfoundry.org/</a> <a target="_blank" href="http://pgxn.org/dist/pgmp/">http://pgxn.org/dist/pgmp/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en janvier</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2015-01/threads.php">http://archives.postgresql.org/pgsql-jobs/2015-01/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>L'appel &agrave; conf&eacute;renciers pour la PGCon 2015 (16-20 juin) a &eacute;t&eacute; lanc&eacute;. D&eacute;p&ocirc;t des candidatures jusqu'au 19 janvier 2014. D&eacute;tails&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2015/papers.php">http://www.pgcon.org/2015/papers.php</a></li>
+
+<li>PGDay pr&eacute;-FOSDEM (30 janvier 2015) et <em>dev room</em> PostgreSQL au FOSDEM (31 janvier - 1<sup>er</sup> f&eacute;vrier 2015)&nbsp;: 
+
+<a target="_blank" href="http://fosdem2015.pgconf.eu/">http://fosdem2015.pgconf.eu/</a></li>
+
+<li>Le <em>Prague PostgreSQL Developer Day</em> (P2D2) 2015 aura lieu &agrave; Prague, R&eacute;publique Tch&egrave;que, les 11 &amp; 12 f&eacute;vrier 2015&nbsp;: 
+
+<a target="_blank" href="http://www.p2d2.cz/">http://www.p2d2.cz/</a></li>
+
+<li>Le <em>meetup</em> du 18 f&eacute;vrier 2015 &agrave; Melbourne accueillera Gabriele Bartolini &agrave; propos de PostgreSQL 9.4 pour les devops. D&eacute;tails ci-apr&egrave;s, et RSVP&nbsp;: 
+
+<a target="_blank" href="http://www.meetup.com/melpug/events/219082475/">http://www.meetup.com/melpug/events/219082475/</a></li>
+
+<li>pgDaySF 2015 aura lieu le 10 mars 2015 &agrave; Burlingame (Californie)&nbsp;: 
+
+<a target="_blank" href="http://sfpostgres.org/pgday-sf-2015-call-for-speakers-and-sponsors/">http://sfpostgres.org/pgday-sf-2015-call-for-speakers-and-sponsors/</a></li>
+
+<li>L'appel &agrave; conf&eacute;renciers pour le <em>Nordic PostgreSQL Day 2015</em>, pr&eacute;vu le 11 mars 2015 &agrave; Copenhague (Danemark), est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2015.nordicpgday.org/cfp/">http://2015.nordicpgday.org/cfp/</a></li>
+
+<li>L'appel &agrave; conf&eacute;renciers pour la <em>PGConf US 2015</em> court jusqu'au 17 d&eacute;cembre 2014. Les notifications seront envoy&eacute;es le 10 janvier. L'&eacute;v&eacute;nement aura lieu &agrave; New-York du 25 au 27 mars 2015&nbsp;: 
+
+<a target="_blank" href="http://nyc.pgconf.us/2015/">http://nyc.pgconf.us/2015/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20150119071548.GE12186@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

@@ -6,6 +6,62 @@ redirect_from: "index.php?post/2009-03-26-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 22 mars 2009</strong></p>
+
+<ul>
+
+<li>Mises &agrave; jour de s&eacute;curit&eacute; 8.3.7, 8.2.13, 8.1.17, 8.0.21 et 7.4.25 disponibles. Ces versions corrigent une possibilit&eacute; de d&eacute;ni de service offerte par la conversion d'encodage, et il est conseill&eacute; &agrave; tous les utilisateurs de mettre &agrave; jour d&egrave;s qu'une occasion raisonnable se pr&eacute;sente.</li>
+
+<li>Les "bouts de code" (code snippets) sont maintenant h&eacute;berg&eacute;s sur le wiki&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/Snippets">http://wiki.postgresql.org/wiki/Snippets</a></li>
+
+<li>Fernando Ike de Oliveira a cr&eacute;&eacute; un groupe Identica sur PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://identi.ca/group/postgresql">http://identi.ca/group/postgresql</a></li>
+
+<li>Le programme de la pgCon est en place&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2009/schedule/">http://www.pgcon.org/2009/schedule/</a></li>
+
+<li>Le PgDay de Brasilia aura lieu le 17 avril. Contactez [fernando.ike (a) gmail (point) com] ou [eduardo (a) planejamento (point) gov (point) br] pour participer.</li>
+
+<li>L'appel aux conf&eacute;rences est lanc&eacute; pour le PgDay de S&atilde;o Paulo, programm&eacute; le 24 avril. Contactez [marins (point) consultoria (a) gmail (point) com] ou [marcelojscosta (a) gmail (point) com] pour participer.</li>
+
+<li>Il y aura &eacute;galement des PgDays les 29 et 30 avril, respectivement &agrave; Porto Velho (RO) et Ji-Parana (RO). Contactez Luis Fernando Bueno&nbsp;: [proflfbueno (a) gmail (point) com] pour participer.</li>
+
+</ul>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Benetl 2.6, un ETL pour fichiers utilisant PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.benetl.net">http://www.benetl.net</a></li>
+
+<li>dataPro 1.6, un outil graphique de gestion, d&eacute;veloppement et conversion de bases de donn&eacute;es&nbsp;: 
+
+<a target="_blank" href="http://www.vive.net/products/datapro.htm">http://www.vive.net/products/datapro.htm</a></li>
+
+<li>Simpycity 0.2.0a9, un syst&egrave;me de mapping en Python pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="https://projects.commandprompt.com/public/simpycity/repo/trunk/dist/Simpycity-0.2.0a9-py2.6.egg">https://projects.commandprompt.com/public/simpycity/repo/trunk/dist/Simpycity-0.2.0a9-py2.6.egg</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 8.4 de la semaine</strong></p>
+
+<p>&Eacute;dition de fonctions&nbsp;: psql peut maintenant &eacute;diter les fonctions via la commande \ef qui lancera votre &eacute;diteur favori.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>bonnie++, dd, et iozone sont chacun de bons outils pour tester rapidement les performances de votre syst&egrave;me de fichier. Si votre base de donn&eacute;es est trop volumineuse pour tenir en RAM, &ccedil;a ne pourra pas aller plus rapidement que le syst&egrave;me de stockage&nbsp;!</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090322">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en mars</strong></p>
 

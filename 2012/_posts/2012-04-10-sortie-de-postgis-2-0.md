@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2012-04-10-sortie-de-postgis-2-0 "
 
 
 
+
+<!--more-->
+
+
 Le groupe de développement de PostGIS vient d'annoncer la sortie officielle de la version 2.0 de PostGIS. 
 
 

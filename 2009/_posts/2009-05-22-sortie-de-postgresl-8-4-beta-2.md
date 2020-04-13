@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2009-05-22-sortie-de-postgresl-8-4-beta-2 "
 
 
 
+
+<!--more-->
+
+
 Le projet PostgreSQL vient de publier la seconde bêta de la version 8.4. La communauté peut continuer ses tests.
 
 

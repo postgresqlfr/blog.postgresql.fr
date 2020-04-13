@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2016-10-27-sortie-de-postgresql-9-6-1-et-fin-de-v
 
 
 
+
+<!--more-->
+
+
 ''Paris, le 27 octobre 2017''
 
 

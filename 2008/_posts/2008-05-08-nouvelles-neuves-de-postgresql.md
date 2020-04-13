@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-421 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 4 mai 2008</strong></p>
+
+<p>La "commit-fest" de mai a commencé et, <em>a priori</em>, se déroulera plus sereinement encore qu'en mars.</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

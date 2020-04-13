@@ -6,6 +6,54 @@ redirect_from: "index.php?post/2016-10-11-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 9.6 est disponible&nbsp;! <a target="_blank" href="https://www.postgresql.org/docs/current/static/release-9-6.html">https://www.postgresql.org/docs/current/static/release-9-6.html</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgAdmin4 1.0, un centre de contr&ocirc;le pour PostgreSQL en web &amp; GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/">https://www.pgadmin.org/</a></li>
+
+<li>barman 2.0, un gestionnaire de sauvegarde et restauration pour PostgreSQL&nbsp;: <a target="_blank" href="http://docs.pgbarman.org/release/2.0/">http://docs.pgbarman.org/release/2.0/</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li><em>Postgres Vision 2016</em> aura lieu &agrave; San Francisco du 11 au 13 octobre 2016&nbsp;: <a target="_blank" href="http://postgresvision.com/">http://postgresvision.com/</a></li>
+
+<li>Le groupe d'utilisateurs cor&eacute;ens tiendra son premier PGDay le 15 octobre &agrave; S&eacute;oul&nbsp;: <a target="_blank" href="http://pgday.postgresql.kr/">http://pgday.postgresql.kr/</a></li>
+
+<li>La <em>PostgreSQL Conference Europe 2016</em> aura lieu &agrave; Tallin, Estonie, du 1er au 4 novembre 2016. Le programme a &eacute;t&eacute; publi&eacute;&nbsp;: <a target="_blank" href="http://2016.pgconf.eu/registration/">http://2016.pgconf.eu/registration/</a></li>
+
+<li>Le PGDay 2016 &agrave; Austin aura lieu le 12 novembre 2016. Date limite de candidature au 21 septembre 2016 minuit CST. D&eacute;tails et formulaire de candidature&nbsp;: <a target="_blank" href="https://www.postgresql.us/events/2016/austin">https://www.postgresql.us/events/2016/austin</a></li>
+
+<li>La <em>PgConf Silicon Valley 2016</em> aura lieu du 14 au 16 novembre 2016&nbsp;: <a target="_blank" href="http://www.pgconfsv.com/">http://www.pgconfsv.com/</a></li>
+
+<li>CHAR(16) aura lieu &agrave; New York le 6 d&eacute;cembre 2016&nbsp;: <a target="_blank" href="http://charconference.org/">http://charconference.org/</a></li>
+
+<li>Le PGDay.IT 2016 aura lieu &agrave; Prato le 13 d&eacute;cembre 2016&nbsp;: <a target="_blank" href="http://pgday.it">http://pgday.it</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20161002231634.GB1769@fetter.org">http://www.postgresql.org/message-id/20161002231634.GB1769@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

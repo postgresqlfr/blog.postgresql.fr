@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2018-08-27-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>PostGIS 2.5.0rc1 le syst&egrave;me d'information g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL&nbsp;: <a target="_blank" href="http://postgis.net/2018/08/19/postgis-2.5.0rc1/">http://postgis.net/2018/08/19/postgis-2.5.0rc1/</a></li>
+
+<li>Slony 2.2.7, un syst&egrave;me de r&eacute;plication logique bas&eacute; sur les triggers&nbsp;: <a target="_blank" href="http://www.slony.info/">http://www.slony.info/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en ao&ucirc;t</h2>
 

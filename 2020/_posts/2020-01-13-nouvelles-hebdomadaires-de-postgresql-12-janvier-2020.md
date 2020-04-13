@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2020-01-13-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>psqlODBC 12.01.0000&nbsp;: <a target="_blank" href="https://odbc.postgresql.org/docs/release.html">https://odbc.postgresql.org/docs/release.html</a></li>
+
+<li>pgmetrics 1.8, un outil en ligne de commande pour acc&eacute;der aux m&eacute;triques de PostgreSQL&nbsp;: <a target="_blank" href="https://pgmetrics.io/">https://pgmetrics.io/</a></li>
+
+<li>pgAdmin4 4.17, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_17.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_17.html</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en janvier</h2>
 

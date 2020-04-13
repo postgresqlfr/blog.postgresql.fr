@@ -6,6 +6,94 @@ redirect_from: "index.php?post/2013-12-09-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La troisi&egrave;me <em>CommitFest</em> du cycle de la 9.4 a commenc&eacute;. Relisez&nbsp;! 
+
+<a target="_blank" href="https://commitfest.postgresql.org/action/commitfest_view?id=20">https://commitfest.postgresql.org/action/commitfest_view?id=20</a></p>
+
+<p>FOSDEM PGDay, une conf&eacute;rence d'une journ&eacute;e, tenue avant le FOSDEM &agrave; Bruxelles, aura lieu le 31 janvier 2014. D&eacute;tails&nbsp;: 
+
+<a target="_blank" href="http://fosdem2014.pgconf.eu/">http://fosdem2014.pgconf.eu/</a><br>
+
+L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://fosdem2014.pgconf.eu/callforpapers/">http://fosdem2014.pgconf.eu/callforpapers/</a></p>
+
+<p>Nouveaux groupes d'utilisateurs PostgreSQL &agrave; Singapour et Toronto. [ndt: et Paris aussi&nbsp;! 
+
+<a target="_blank" href="http://tapoueh.org/blog/2013/11/22-PostgreSQL-User-Group-Paris.html">http://tapoueh.org/blog/2013/11/22-PostgreSQL-User-Group-Paris.html</a> ]</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>MJSQLView Version 3.47, un utilitaire graphique en Java compatible PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://dandymadeproductions.com/projects/MyJSQLView/">http://dandymadeproductions.com/projects/MyJSQLView/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en novembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2013-11/threads.php">http://archives.postgresql.org/pgsql-jobs/2013-11/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le PGDay cubain aura lieu les 28 &amp; 29 novembre 2013&nbsp;: 
+
+<a target="_blank" href="http://postgresql.uci.cu/?page_id=474">http://postgresql.uci.cu/?page_id=474</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20131118064159.GA10257@fetter.org">lien vers l'article original</a>)</p>
+
+<p><strong>Correctifs appliqu&eacute;s</strong></p>
+
+<p>Magnus Hagander a pouss&eacute;&nbsp;:</p>
+
+<ul>
+
+<li>Don't abort pg_basebackup when receiving empty WAL block. This is a similar fix as c6ec8793aa59d1842082e14b4b4aae7d4bd883fd 9.2. This should never happen in 9.3 and newer since the special case cannot happen there, but this patch synchronizes up the code so there is no confusion on why they're different. An empty block is as harmless in 9.3 as it was in 9.2, and can safely be ignored. 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/705556a631c5908cd3caa0b973be13d994ff63e7">http://git.postgresql.org/pg/commitdiff/705556a631c5908cd3caa0b973be13d994ff63e7</a></li>
+
+<li>Fix doc links in README file to work with new website layout. Per report from Colin 't Hart 
+
+<a target="_blank" href="http://git.postgresql.org/pg/commitdiff/f1d6875916055914920f657ad88011c5b525f220">http://git.postgresql.org/pg/commitdiff/f1d6875916055914920f657ad88011c5b525f220</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <p>Tom Lane a pouss&eacute;&nbsp;:</p>
 

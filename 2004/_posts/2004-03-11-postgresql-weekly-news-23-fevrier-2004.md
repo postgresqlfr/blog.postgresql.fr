@@ -6,6 +6,88 @@ redirect_from: "index.php?post/drupal-354 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires de PostgreSQL - 23 février 2004 ==</h2>
+
+<p>La grosse nouvelle de la semaine a probablement été le pré-annoncement
+
+des sorties des versions 7.3.6 et 7.4.2 qui devraient être disponibles dans les
+
+prochaines semaines.<!--break--> Nous allons certainement voir quelques correctifs de la
+
+branche 7.4 apparaître cette semaine dans la branche 7.3.x, donc gardez un oeil
+
+sur le journal complet des modifications qui sera inclus avec chaque annonce de
+
+sortie.
+
+</p>
+
+<p>Pendant ce temps, le travail continue évidemment sur la 7.5. Continuant
+
+certains travaux de la semaine dernière, nous pouvons maintenant faire usage de
+
+statistiques sur les expressions d'index. Les traces sur les déconnexions ont
+
+été ajoutées dans les options de traces du fichier postgresql.conf. Quelques
+
+inconsistances ont été corrigées dans les messages d'erreurs reçus avec une
+
+entrée incorrecte du type d'OID. Des améliorations significatives ont été
+
+ajoutées à la documentation pour la nouvelle fonctionnalité de délai du vacuum,
+
+délai basé sur le coût estimé ; si celle-ci vous intéresse, vous pouvez
+
+regarder la documentation développeurs. Après une bonne discussion sur la liste
+
+de diffusion -hackers, l'analyseur de psql a été réécrit pour utiliser un
+
+analyseur généré par flex, utilisé pour les commandes texte SQL et les commandes
+
+'backslash'. Ceci devrait rendre plus simple l'analyse du comportement du
+
+moteur lexical SQL car des règles flex pratiquement identiques sont utilisées
+
+dans psql. Sur le front win32, un correctif implémentant settimer() a été
+
+ajouté, ce qui signifie que la détection des verrouillages (deadlock) et
+
+l'instruction statement_timeout sont maintenant fonctionnels pour win32.</p>
+
+<p>Plusieurs améliorations ont été incorporées au module dbmirror incluant
+
+la réplication des opérations sur les séquences via setval/nextval, le support
+
+de syslog pour les traces, le support des instructions SQL écrites dans des
+
+fichiers au lieu d'une base de données esclave en direct et l'ajout de
+
+plusieurs nouvelles options dans les fichiers de configuration.</p>
+
+<p>Enfin, l'équipe gérant le site web souhaite faire savoir que nous avons
+
+maintenant un accès RSS aux nouvelles des projets hébergés sur GBorg, accès
+
+disponible sur <a href="http://gborg.postgresql.org/news.rss">http://gborg.postgresql.org/news.rss</a>.
+
+Vous pouvez visualiser ceci à partir de votre outil RSS favori (evolution a
+
+notamment cette capacité) et nous souhaitons que ce RSS soit utilisé par d'autres sites
+
+web Open Source (si vous souhaitez nous aider à ce sujet, envoyez une note sur
+
+la liste de diffusion -advocacy). Un gros merci à David Costa de
+
+<a href="../www.dotgeek.org">www.dotgeek.org</a> pour avoir donné de
+
+son temps et du code pour faire fonctionner ceci. Avec un peu de chance, nous
+
+aurons bientôt un accès RSS officiel pour les nouvelles et événements sur le
+
+site PostgreSQL principal.</p>
+
+<!--more-->
+
 
 <h2>== Nouvelles concernant les produits PostgreSQL ==</h2>
 

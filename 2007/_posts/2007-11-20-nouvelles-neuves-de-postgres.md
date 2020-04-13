@@ -6,6 +6,24 @@ redirect_from: "index.php?post/drupal-415 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 18 novembre 2007</strong></p>
+
+<ul>
+
+<li>19 décembre&nbsp;: ouverture de la chasse aux propositions pour les PGCon 2008. Faites chauffer vos stylos&nbsp;:
+
+<a target="_blank" href="http://www.pgcon.org/2008/papers.php">http://www.pgcon.org/2008/papers.php</a></li>
+
+<li><em>Continuent</em> a offert deux serveurs à l'association PostgreSQLFr et deux autres pour le futur regroupement européen. Dalibo, mécène de PostgreSQLFr depuis 2005, les hébergera gracieusement tous les quatre.</li>
+
+<li>Le projet PostgreSQL a besoin de contacts régionaux&nbsp;! Venez partager l'exaltation et la gloire en nous aidant à porter la bonne nouvelle de la version 8.3 à la presse et aux communautés de votre région. Les besoins les plus pressants se situent en Inde, Afrique, Asie du Sud-Est, Mexique et les Îles du Pacifique. N'hésitez plus et contactez josh (a) postgresql . org .</li>
+
+<li>La 8.3 Beta 3 sera là sous peu. Continuez à tester&nbsp;!</li>
+
+</ul>
+
+<!--more-->
+
 
 <!--break-->
 

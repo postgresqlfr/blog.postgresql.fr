@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-75 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Josh Berkus et Joe Conway se sont lancés ce début d'année dans la rédaction d'un livre sur la dernière version de PostgreSQL. Sur
 

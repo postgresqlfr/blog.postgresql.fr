@@ -6,6 +6,34 @@ redirect_from: "index.php?post/drupal-406 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 6 janvier 2008</strong></p>
+
+<p>Attendez-vous à des avertissements de sécurité cette semaine
+
+[ndt: <a target="_blank" href="http://www.postgresql.org/about/news.905">http://www.postgresql.org/about/news.905</a>]
+
+[ndt2 en vf: <a target="_blank" href="http://www.postgresqlfr.org/?q=node/1514">http://www.postgresqlfr.org/?q=node/1514</a>]</p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>GNUmed 0.2.8.1 est sorti&nbsp;:
+
+<a target="_blank" href="http://wiki.gnumed.de">http://wiki.gnumed.de</a></li>
+
+<li>pgAdmin III 1.8.1 est disponible&nbsp;:
+
+<a target="_blank" href="http://www.pgadmin.org/">http://www.pgadmin.org/</a></li>
+
+<li>Le support de PostgreSQL pour Phorum 5 est maintenant en Beta&nbsp;:
+
+<a target="_blank" href="http://www.phorum.org/phorum5/read.php?14,126510">http://www.phorum.org/phorum5/read.php?14,126510</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <!--break-->
 

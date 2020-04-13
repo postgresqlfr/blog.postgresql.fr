@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2009-07-09-ma-fonctionnalite-8-4-preferee-pg-stat
 
 
 
+
+<!--more-->
+
+
 Dans ce billet,  je vais essayer de faire la publicité de ma fonctionnalité préférée de la version 8.4.<br /><br />Comme toujours, il y a une foule de nouveautés, toutes très intéressantes, et il est difficile d'en déclarer une comme étant la meilleure. Toutefois, j'ai un faible pour pg_stat_statement, et je vais essayer de vous expliquer pourquoi<br /><br />Pour superviser l'activité sur un serveur PostgreSQL, et trouver les requêtes SQL qui dégradent les performances, jusqu'à aujourd'hui, il n'y avait à ma connaissance qu'une seule solution : on active les traces des ordres SQL et de leur durée (log_statement à all, log_duration à on). Ensuite, on récupère la log de postgresql et on la fait avaler à <a href="http://pgfouine.projects.postgresql.org/">pgfouine</a> ou <a href="http://pgfoundry.org/projects/pqa/">pqa</a>, on obtient un rapport et on va voir les développeurs (ou on rajoute un index dans son coin ...) (les paramètres de log sont documentés ici : <a href="http://docs.postgresql.fr/8.4/runtime-config-logging.html">http://docs.postgresql.fr/8.4/runtime-config-logging.html)</a><br /><br />Cette méthode fonctionne, mais a des gros défauts :<br /><ul><li>On trace TOUS les ordres SQL dans la log, ce qui fait qu'on a une log gigantesque assez rapidement (ça peut monter rapidement à plusieurs gigas sur une base très active)</li>
 
 <li>C'est gourmand en ressources, parce qu'il faut formater les traces, les écrire dans la log, découper le message en plusieurs morceaux si il est plus grand qu'une trame syslog et qu'on a décidé de tracer en syslog. Et le surcoût est le même pour une requête de 20 µs et une requête de 2h.</li>

@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-99 "
 ---
 
 
+== PostgreSQL Weekly News - 12 juin 2005 ==<br /><br />Le 12 juin 2005, David Fetter écrivait :
+
+<p>
+
+Pavel Stehule a ajouté le support d'une clause <tt>INTO</tt> pour les commandes <tt>PL/PgSQL</tt> <tt>EXECUTE</tt>, <tt>SQLSTATE</tt>, <tt>SQLERRM</tt>, <tt>NEXT_DAY</tt> et <tt>LAST_DAY</tt>. Il travaille également sur les fonctions <tt>LEAST()</tt> et <tt>GREATEST()</tt>, similaires à <tt>MAX()</tt> et <tt>MIN()</tt>, à la différence près que ces fonctions opèrent au niveau ligne plutôt que colonne.
+
+</p>
+
+<!--more-->
+
 
 Alvarro Herrera <em>et al.</em> ont travaillé dur sur le <acronym title="two-phase commit">2PC</acronym>.
 

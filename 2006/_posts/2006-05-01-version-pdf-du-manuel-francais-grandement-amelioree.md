@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-391 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>La version PDF de la documentation n'a jamais été bien réalisée. Ceci est principalement dû à la façon dont elle était construite. L'équipe de traduction utilisait openjade pour générer un gros fichier HTML contenant toute la documentation. Puis, ce document était fournit à <a href="http://www.htmldoc.org">htmldoc</a> qui créait le PDF... sans prendre en compte les feuilles de style (une des grosses limitations de la version 1.8 de ce logiciel). De plus, ce logiciel a peu d'options qui permettraient d'améliorer la présentation du PDF.</p>
 

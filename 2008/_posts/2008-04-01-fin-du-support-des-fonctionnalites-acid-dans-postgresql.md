@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-288 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Pour concurrencer MySQL, qui a pris énormément de parts de marché du fait la simplicité de sa base de données, le PGDG annonce aujourd'hui la fin du support des fonctionnalités <a href="http://fr.wikipedia.org/wiki/Propri%C3%A9t%C3%A9s_ACID" target="_blank">ACID</a> dans PostgreSQL.
 

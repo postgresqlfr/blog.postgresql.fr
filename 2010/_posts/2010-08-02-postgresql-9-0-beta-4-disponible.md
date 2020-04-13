@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2010-08-02-postgresql-9-0-beta-4-disponible "
 
 
 
+
+<!--more-->
+
+
 Billet original de Selena Deckelmann, corrigé par Josh Berkus. Traductions de Stéphane Schildknecht.
 
 

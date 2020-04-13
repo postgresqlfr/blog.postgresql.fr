@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2018-09-26-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le code de conduite (CoC) du projet PostgreSQL a &eacute;t&eacute; publi&eacute; ! Merci de prendre le temps de le lire et de le faire v&ocirc;tre&nbsp;: <a target="_blank" href="https://www.postgresql.org/about/policies/coc/">https://www.postgresql.org/about/policies/coc/</a></p>
+
+<p>PostgreSQL 11 Beta 4 disponible. &Agrave; vos tests&nbsp;! <a target="_blank" href="https://www.postgresql.org/about/news/1890/">https://www.postgresql.org/about/news/1890/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgpool-II 4.0 beta1&nbsp;: <a target="_blank" href="http://www.pgpool.net/docs/pgpool-II-4.0/en/html/release-4-0.html">http://www.pgpool.net/docs/pgpool-II-4.0/en/html/release-4-0.html</a></li>
+
+<li>pitrery 2.2, un ensemble de scripts Bash permettant de g&eacute;rer les sauvegardes PITR de PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/dalibo/pitrery">https://github.com/dalibo/pitrery</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en septembre</h2>
 

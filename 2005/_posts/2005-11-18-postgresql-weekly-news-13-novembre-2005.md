@@ -6,6 +6,34 @@ redirect_from: "index.php?post/drupal-134 "
 ---
 
 
+<p>
+
+PostgreSQL v.8.1 est sorti :-) Vous trouverez tous les détails ici:<br />
+
+<a href="http://www.postgresql.org/docs/whatsnew" target="_blank">http://www.postgresql.org/docs/whatsnew</a></p>
+
+<p>PostgreSQL 8.1.0 est désormais présent dans l'arbre des "ports" OpenBSD</p>
+
+<p>Teodor Sigaev a ajouté nombre d'améliorations à tsearch2, qui est un moteur de recherche plein texte.</p>
+
+<p>Il y a eu des discussions très animées sur la liste de diffusion pgsql-hackers au sujet de MERGE et des index multi-tables. Espérons que cela continue&nbsp;!
+
+</p>
+
+<p>Les gens de SRA (NDT: Software Research Associates, une des grosses
+
+compagnies supportant PostgreSQL) ont spammé une publicité à une liste
+
+de courriels qu'ils avaient récupérés. Bien qu'il se soient rapidement
+
+excusés de l'avoir envoyée à la mauvaise liste, ils doivent toujours
+
+démolir la liste de courriels collectés et ne plus jamais en faire une
+
+autre.</p>
+
+<!--more-->
+
 
 <h3>== Nouveaux produits autour de PostgreSQL ==</h3>
 

@@ -6,6 +6,66 @@ redirect_from: "index.php?post/2018-06-05-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>F&eacute;licitations aux nouveaux commiteurs&nbsp;: Etsuro Fujita, Peter Geoghegan, Amit Kapila, Alexander Korotkov, Thomas Munro, Michael Paquier et Tomas Vondra !</p>
+
+<p>[ndt: Rencontre PostgreSQL à Toulouse le 5 juin&nbsp;: <a href="https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Toulouse/" target="_blank">https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Toulouse/</a>]</p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>Odyssey, un pooleur de connexions pour PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/yandex/odyssey">https://github.com/yandex/odyssey</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en juin</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2018-06/">http://archives.postgresql.org/pgsql-jobs/2018-06/</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>[ndt: Rencontre PostgreSQL à Lyon le 8 juin, entre midi et 14h&nbsp;: <a href="https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/" target="_blank">https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/</a>]</li>
+
+<li>Le PGDAY.IT 2018 aura lieu &agrave; Lazise, sur le Lac de Garde, le 29 juin 2018&nbsp;: <a target="_blank" href="https://2018.pgday.it/en/">https://2018.pgday.it/en/</a></li>
+
+<li>Le PGDay suisse 2018 aura lieu &agrave; Rapperswil-Jona (pr&egrave;s de Zurich) le 29 juin 2018. Les inscriptions sont ouvertes jusqu'au 28 juin 2018&nbsp;: <a target="_blank" href="http://www.pgday.ch/2018/">http://www.pgday.ch/2018/</a></li>
+
+<li>La <em>PGConf.Brazil 2018</em> aura lieu &agrave; S&atilde;o Paulo (Br&eacute;sil) les 3 & 4 ao&ucirc;t 2018&nbsp;: <a target="_blank" href="http://pgconf.com.br">http://pgconf.com.br</a></li>
+
+<li><em>PG Day France 2018</em> aura lieu &agrave; Marseille le 26 juin 2018&nbsp;: <a target="_blank" href="http://pgday.fr/">http://pgday.fr/</a></li>
+
+<li>Le PUG de Portland organise un PGDay le 10 septembre 2018 &agrave; Portland, Oregon. L'appel &agrave; conf&eacute;renciers se passe par l&agrave;&nbsp;: <a target="_blank" href="https://goo.gl/forms/E0CiUQGSZGMYwh922">https://goo.gl/forms/E0CiUQGSZGMYwh922</a> <a target="_blank" href="https://pdx.postgresql.us/pdxpgday2018">https://pdx.postgresql.us/pdxpgday2018</a></li>
+
+<li>La PgConf Silicon Valley 2018 aura lieu &agrave; San Francisco du 5 au 7 septembre 2018. L'appel &agrave; conf&eacute;renciers court jusqu'au 12 juin, <em>Anywhere on Earth</em> (AoE) (2018-06-12 23:59:59-12:00) <a target="_blank" href="https://2018.postgresopen.org/callforpapers/">https://2018.postgresopen.org/callforpapers/</a></li>
+
+<li>La conf&eacute;rence PostgreSQL sud-africaine aura lieu &agrave; Johannesburg le 9 octobre 2018. L'appel &agrave; conf&eacute;renciers court jusqu'au 30 juin 2018&nbsp;: <a target="_blank" href="https://postgresconf.org/conferences/SouthAfrica2018">https://postgresconf.org/conferences/SouthAfrica2018</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20180603222541.GA11266@fetter.org">http://www.postgresql.org/message-id/20180603222541.GA11266@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

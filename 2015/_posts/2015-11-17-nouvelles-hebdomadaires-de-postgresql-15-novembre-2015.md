@@ -6,6 +6,62 @@ redirect_from: "index.php?post/2015-11-17-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 9.5 Beta 2 disponible. &Agrave; vos tests&nbsp;! <a target="_blank" href="http://www.postgresql.org/about/news/1625/">http://www.postgresql.org/about/news/1625/</a></p>
+
+<p>[ndt: Stand PostgreSQL au <a target="_blank" href="http://www.opensourcesummit.paris/">Paris Open Source Summit</a> ces 18 &amp; 19 novembre]</p>
+
+<p>[ndt: Rappel&nbsp;: AG PostgreSQL.fr ce mercredi 18 au soir]</p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pg_wintools, une extension PostgreSQL servant d'interface avec l'OS Windows&nbsp;: <a target="_blank" href="https://github.com/jmguazzo/pg_wintools">https://github.com/jmguazzo/pg_wintools</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en novembre</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2015-11/">http://archives.postgresql.org/pgsql-jobs/2015-11/</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li><em>PGConf Silicon Valley 2015</em> se tiendra au centre de convention sud de San Francisco les 17 &amp; 18 novembre&nbsp;: <a target="_blank" href="http://www.pgconfsv.com">http://www.pgconfsv.com</a></li>
+
+<li>PGBR2015 (la PgConf br&eacute;silienne) aura lieu &agrave; Porto Alegre (&Eacute;tat du Rio Grande do Sul) les 18, 19 et 20 novembre. Les inscriptions sont ouvertes&nbsp;: <a target="_blank" href="http://pgbr.postgresql.org.br/2015/en/">http://pgbr.postgresql.org.br/2015/en/</a></li>
+
+<li><em>Postgres Conference China</em> 2015 aura lieu du 20 au 22 novembre 2015 &agrave; Beijing&nbsp;: <a target="_blank" href="http://postgres2015.eventdove.com/">http://postgres2015.eventdove.com/</a> <a target="_blank" href="http://postgrescluster2015.eventdove.com/">http://postgrescluster2015.eventdove.com/</a></li>
+
+<li>La PGConf.DE se tiendra au Lindner Hotel am Michel de Hambourg (Allemagne) les 26 &amp; 27 novembre 2015&nbsp;: <a target="_blank" href="http://2015.pgconf.de/">http://2015.pgconf.de/</a></li>
+
+<li>PostgreSQL@SCaLE is a two day, two track event which takes place on Jan. 21-22, 2016, at Pasadena Convention Center, as part of SCaLE 14X. <a target="_blank" href="https://www.socallinuxexpo.org/scale/14x/cfp">https://www.socallinuxexpo.org/scale/14x/cfp</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20151116070119.GB23214@fetter.org">http://www.postgresql.org/message-id/20151116070119.GB23214@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

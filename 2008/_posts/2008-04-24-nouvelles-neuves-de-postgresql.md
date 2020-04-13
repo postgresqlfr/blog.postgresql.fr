@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-425 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 20 avril 2008</strong></p>
+
+<p>Vague de patches sur la mailing-list du même nom
+
+[ndt&nbsp;: <a href="http://archives.postgresql.org/pgsql-patches/2008-04/index.php" target="_blank">http://archives.postgresql.org/pgsql-patches/2008-04/index.php</a>]</p>
+
+<p>Encore un succès lors du FISL, cette fois avec de nouveaux décors, de nouveaux personnages et un final digne d'une tragédie. À ce propos, le FISL a rassemblé quelques 7500 participants cette année, faisant de celui-ci le plus important des forum dédiés aux logiciels libres &amp; "open source".</p>
+
+<!--more-->
+
 
 <strong>PostgreSQL Product News</strong>
 

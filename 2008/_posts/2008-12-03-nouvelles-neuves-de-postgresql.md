@@ -6,6 +6,36 @@ redirect_from: "index.php?post/2008-12-03-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 30 novembre 2008</strong></p>
+
+<p>Le site du JPUG, "Let's PostgreSQL", est en ligne (jp)&nbsp;:
+
+<a target="_blank" href="http://lets.postgresql.jp/">http://lets.postgresql.jp/</a></p>
+
+<p>Les brouillons des traductions russes des sections "Introduction" et "Tutoriels" du manuel PostgreSQL sont disponibles à l'adresse&nbsp;:
+
+<a target="_blank" href="http://postgresql.ru.net/manual/index.html">http://postgresql.ru.net/manual/index.html</a></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>Archiveopteryx 2.13 et 3.0.4&nbsp;:
+
+<a target="_blank" href="http://www.archiveopteryx.org/2.13">http://www.archiveopteryx.org/2.13</a> <a target="_blank" href="http://www.archiveopteryx.org/3.0.4">http://www.archiveopteryx.org/3.0.4</a></li>
+
+<li>PostgreSQL a des drivers JDBC flambant neufs&nbsp;:
+
+<a target="_blank" href="http://jdbc.postgresql.org/changes.html">http://jdbc.postgresql.org/changes.html</a></li>
+
+<li>Slony 2.0.0&nbsp;:
+
+<a target="_blank" href="http://slony.info/">http://slony.info/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en novembre</strong></p>
 

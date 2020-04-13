@@ -6,6 +6,68 @@ redirect_from: "index.php?post/drupal-353 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires de PostgreSQL - 16 février 2004 ==</h2>
+
+<p>Une autre semaine est passée avec plein d'actions concernant le développement
+
+de PostgreSQL. Ce travail inclut un bon nombre de nettoyages des récentes
+
+modifications, un peu sur les nouvelles fonctionnalités et un minimum de
+
+corrections de bogues ; mais assez de généralisation, allons-y.<!--break-->
+
+</p>
+
+<p>Tom Lane a terminé la restructuration du gestionnaire de stockage,
+
+en épurant l'API et en améliorant l'efficacité. L'implémentation du code de
+
+délai a été centralisé avec la sous-routine pg_usleep() et le correctif du délai
+
+basé sur le coût du vacuum a été étendu pour s'appliquer aux VACUUM FULL, VACUUM
+
+ANALYZE et aux vacuum associés aux index, à l'exception des btree. Plusieurs
+
+opérateurs de comparaison intertypes (date et timestamp et timestamptz)
+
+devraient permettre l'utilisation d'index d'expression comme
+
+colonne_date &gt;= date 'today' - interval '1 month'. Nous récupérons aussi des
+
+statistiques sur les indexs d'expression via ANALYZE bien que du travail reste à
+
+faire pour faire en sorte que le plannificateur les utilise. Enfin, un bogue
+
+empêchant le verrouillage des threads et l'utilisation des fonctions *_r a été
+
+corrigé dans ecpg et devrait faire partie de la prochaine sortie d'une version
+
+7.4.</p>
+
+<p>Nous avons aussi assisté à quelques mouvements sur PITR cette semaine.
+
+Un enregistrement d'entête a été ajouté dans chaque fichier WAL pour permettre
+
+une identification fiable. Nous évitons maintenant de séparer les
+
+enregistrements WAL entre plusieurs fichiers segment et nous faisons maintenant
+
+des entrées WAL pour chaque création, suppression, troncage de fichier. Ce
+
+travail devrait fournir les bases de la construction d'une réelle implémentation
+
+de PITR, dont la discussion continue sur la liste de diffusion pgsql-hackers-pitr.</p>
+
+<p>Dernier point sur notre liste cette semaine est la sortie d'une version
+
+PDF du manuel PostgreSQL. Merci à Kris Jurka qui a pris le temps de réussir
+
+cette compilation, vous pouvez en obtenir une copie sur
+
+<a href="http://www.postgresql.org/docs/">http://www.postgresql.org/docs/</a>.</p>
+
+<!--more-->
+
 
 <h2>== Nouvelles des produits PostgreSQL ==</h2>
 

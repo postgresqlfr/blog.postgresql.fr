@@ -6,6 +6,20 @@ redirect_from: "index.php?post/drupal-230 "
 ---
 
 
+<p>
+
+Le PostgreSQL Global Development Group a publié aujourd'hui les versions mineures de mises à jour des versions de la 8.2 à la 7.3. Il est urgent de procéder à ces mises à jour.
+
+</p>
+
+<p>
+
+Les versions 8.1.6 et 8.2.1 corrigent un certain nombre de bogues des versions 8.1 et 8.2 pouvant, dans le cas de la 8.2 conduire à un crash du serveur. De plus, toutes les versions incluent la prise en compte des nouvelles règles de changement d'heure pour l'Australie et le Canada. Tous les détails sont dans les notes de version&nbsp;: <a href="http://www.postgresql.org/docs/8.2/static/release.html">http://www.postgresql.org/docs/8.2/static/release.html</a>.
+
+</p>
+
+<!--more-->
+
 
 <p>Le code source, les versions binaires Windows et RedHat peuvent être téléchargées sur&nbsp;: <a href="http://www.postgresql.org/download">http://www.postgresql.org/download</a>. Les binaires des autres OS seront distribués par leurs distributeurs respectifs.
 

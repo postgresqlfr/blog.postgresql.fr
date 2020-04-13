@@ -6,6 +6,90 @@ redirect_from: "index.php?post/2014-03-06-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les versions correctives 9.3.3, 9.2.7, 9.1.12, 9.0.16 et 8.4.20 de PostgreSQL ont &eacute;t&eacute; publi&eacute;es. Mettez &agrave; jour d&egrave;s que possible&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/about/news/1506/">http://www.postgresql.org/about/news/1506/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Npgsql2 2.1.0-rc1, un connecteur .NET pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="https://www.nuget.org/packages/Npgsql/2.1.0-rc1">https://www.nuget.org/packages/Npgsql/2.1.0-rc1</a></li>
+
+<li>La nouvelle version de pgXplorer, une interface graphique pour PostgreSQL (compatible 8.4+), a &eacute;t&eacute; publi&eacute;e. Le code est lib&eacute;r&eacute; sous licence IRC et peut &ecirc;tre trouv&eacute;e sur Github&nbsp;: 
+
+<a target="_blank" href="https://github.com/davyjones/pgXplorer">https://github.com/davyjones/pgXplorer</a></li>
+
+<li>pitrery 1.6 un ensemble de scripts bash pour PostgreSQL permettant de g&eacute;rer les points de sauvegarde PITR&nbsp;: 
+
+<a target="_blank" href="http://dalibo.github.io/pitrery/">http://dalibo.github.io/pitrery/</a></li>
+
+<li>psqlODBC 09.03.0200&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/ftp/odbc/versions/">http://www.postgresql.org/ftp/odbc/versions/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en mars</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2014-03/threads.php">http://archives.postgresql.org/pgsql-jobs/2014-03/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le PGDay Nordique 2014 aura lieu &agrave; Stockholm (Su&egrave;de) &agrave; l'h&ocirc;tel Hilton le 20 mars 2014&nbsp;: 
+
+<a target="_blank" href="http://2014.nordicpgday.org/">http://2014.nordicpgday.org/</a></li>
+
+<li>La <em>PGConf NYC 2014</em> aura lieu les 3 &amp; 4 avril 2014 &agrave; New-York (New-York, USA)&nbsp;: 
+
+<a target="_blank" href="http://nyc.pgconf.us/2014/">http://nyc.pgconf.us/2014/</a></li>
+
+<li>Le sommet Open Data aura lieu le 11 avril 2014 &agrave; Denver (Colorado, &Eacute;tats-Unis)&nbsp;: 
+
+<a target="_blank" href="http://www.opendatasummit.com">http://www.opendatasummit.com</a></li>
+
+<li>La PGCon 2014, la conf&eacute;rence mondiale des d&eacute;veloppeurs PostgreSQL, se tiendra &agrave; Ottawa (Ontario, Canada) du 20 au 24 mai 2014&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2014/">http://www.pgcon.org/2014/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20140303064107.GD4163@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

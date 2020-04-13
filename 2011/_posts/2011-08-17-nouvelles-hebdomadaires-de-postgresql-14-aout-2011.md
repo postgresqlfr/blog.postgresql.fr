@@ -6,6 +6,84 @@ redirect_from: "index.php?post/2011-08-17-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>MyJSQLView 3.30, un outil &agrave; interface graphique, utilisable avec PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://dandymadeproductions.com/projects/MyJSQLView/">http://dandymadeproductions.com/projects/MyJSQLView/</a></li>
+
+<li>pgpool-II 3.1.0 beta1, un distributeur de connexions et bien d'avantage&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+<li>Un tutoriel en allemand sur PostgreSQL a &eacute;t&eacute; publi&eacute;&nbsp;: 
+
+<a target="_blank" href="http://workshop-postgresql.de">http://workshop-postgresql.de</a></li>
+
+<li>pgwatch 1.0beta2, un outil de surveillance pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.cybertec.at/en/pgwatch/">http://www.cybertec.at/en/pgwatch/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li><em>PGDay Porto Alegre</em> est programm&eacute; pour le 19 ao&ucirc;t 2011 &agrave; Porto Alegre (Br&eacute;sil)&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org.br/eventos/2011/pgday/rs">http://www.postgresql.org.br/eventos/2011/pgday/rs</a></li>
+
+<li>Postgres Open 2011, conf&eacute;rence ayant pour th&egrave;me les &eacute;volutions brutales dans l'industrie de la base de donn&eacute;es, aura lieu du 14 au 16 septembre 2011 &agrave; Chicago (Illinois, &Eacute;tats-Unis) &agrave; l'h&ocirc;tel "<em>Westin Michigan Avenue</em>"&nbsp;: 
+
+<a target="_blank" href="http://postgresopen.org">http://postgresopen.org</a></li>
+
+<li>Le <em>PG-Day Denver 2011</em> aura lieu le samedi 17 septembre 2011 dans le campus Auraria pr&egrave;s de Denver, Colorado&nbsp;: 
+
+<a target="_blank" href="http://pgday.consistentstate.com/">http://pgday.consistentstate.com/</a></li>
+
+<li><em>PostgreSQL Conference West</em> (#PgWest) aura lieu du 27 au 30 septembre 2011 au centre des conventions de San Jos&eacute; (Californie, &Eacute;tats-Unis)&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org">http://www.postgresqlconference.org</a></li>
+
+<li>La "<em>PostgreSQL Conference Europe 2011</em>" se tiendra &agrave; Amsterdam, du 18 au 21 octobre&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.eu/">http://2011.pgconf.eu/</a></li>
+
+<li>pgbr aura lieu &agrave; S&atilde;o Paulo (Br&eacute;sil) les 3 &amp; 4 novembre 2011&nbsp;: 
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/">http://pgbr.postgresql.org.br/</a></li>
+
+<li><em>PGConf.DE 2011</em> est une conf&eacute;rence germanophone tenue le 11 novembre au mus&eacute;e industriel du Rhin &agrave; Oberhausen (Allemagne). L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.de/">http://2011.pgconf.de/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20110814">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

@@ -6,6 +6,106 @@ redirect_from: "index.php?post/2012-03-30-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La premi&egrave;re r&eacute;union du PUG d'Arizona est programm&eacute;e pour le 29 mars 2012 &agrave; 17h. Au menu : la pr&eacute;sentation de Ken Rosensteel, mise &agrave; jour depuis le PGEast 2011, avec l'ajout des retours d'exp&eacute;rience de Bull sur l'utilisation de PostgreSQL par de gros clients. Vous pouvez rejoindre la mailing-list, consulter l'agenda et RSVP sur&nbsp;: 
+
+<a target="_blank" href="https://www.bigtent.com/groups/azpug">https://www.bigtent.com/groups/azpug</a></p>
+
+<p>R&eacute;union du PUG londonien le 17 avril 2012&nbsp;: 
+
+<a target="_blank" href="http://www.meetup.com/London-PostgreSQL-Meetup-Group/">http://www.meetup.com/London-PostgreSQL-Meetup-Group/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>DBD::Pg 2.19.1, l'interface Perl pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://search.cpan.org/~turnstep/DBD-Pg-2.19.1/">http://search.cpan.org/~turnstep/DBD-Pg-2.19.1/</a></li>
+
+<li>L'extension <em>Lock Tuple</em>&nbsp;: 
+
+<a target="_blank" href="http://people.apache.org/~fabien/tuplock/">http://people.apache.org/~fabien/tuplock/</a></li>
+
+<li>Le client PGXN 1.0.2&nbsp;: 
+
+<a target="_blank" href="http://pgxnclient.projects.postgresql.org/">http://pgxnclient.projects.postgresql.org/</a></li>
+
+<li>PostgreDAC 2.8.0, un constructeur Delphi/C++ pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/connectivity/postgresdac/download/">http://microolap.com/products/connectivity/postgresdac/download/</a></li>
+
+<li>Skytools 2.1.13, un ensemble d'outils d&eacute;velopp&eacute;s par Skype pour la r&eacute;plication et le failover incluant PgQ, une plateforme g&eacute;n&eacute;rique de mise en queue, et Londiste, un syst&egrave;me de r&eacute;plication ma&icirc;tre-esclave au niveau enregistrement&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/frs/shownotes.php?release_id=1932">http://pgfoundry.org/frs/shownotes.php?release_id=1932</a></li>
+
+<li>Skytools 3.0, incluant la mise en queue en cascade, la copie en parall&egrave;le, <em>multi-database ticker</em> [ndt: m&eacute;tronome multi-BDD&nbsp;?], et de nouveaux modules de gestion de Londiste pour des fins de personnalisation&nbsp;: 
+
+<a target="_blank" href="http://skytools.projects.postgresql.org/skytools-3.0/doc/skytools3.html">http://skytools.projects.postgresql.org/skytools-3.0/doc/skytools3.html</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en mars</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2012-03/threads.php">http://archives.postgresql.org/pgsql-jobs/2012-03/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le PGDay Austin 2012 est programm&eacute; pour le 28 mars&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/about/event/1379/">http://www.postgresql.org/about/event/1379/</a></li>
+
+<li>Le PGDay DC 2012 est programm&eacute; pour le 30 mars&nbsp;: 
+
+<a target="_blank" href="http://pgday.bwpug.org">http://pgday.bwpug.org</a></li>
+
+<li>Le <em>PGDay NYC</em> aura lieu le 2 avril 2012 au <em>Lighthouse International</em> &agrave; New-York&nbsp;: 
+
+<a target="_blank" href="http://pgday.nycpug.org">http://pgday.nycpug.org</a></li>
+
+<li>La <em>PGCon 2012</em> sera tenue &agrave; l'Universit&eacute; d'Ottawa, les 17 et 18 mai 2012. Elle sera pr&eacute;c&eacute;d&eacute;e par deux jours de tutoriels les 15 &amp; 16 mai 2012&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2012/">http://www.pgcon.org/2012/</a></li>
+
+<li>Le <em>PGDay France</em> aura lieu &agrave; Lyon, le 7 juin 2012&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.fr">http://www.pgday.fr</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2012-03/msg00013.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

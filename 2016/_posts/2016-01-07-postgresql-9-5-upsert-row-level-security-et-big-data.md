@@ -7,6 +7,10 @@ redirect_from: "index.php?post/postgresql-9-5 "
 
 
 
+
+<!--more-->
+
+
 Le 7 janvier 2016 : Le PostgreSQL Global Development Group annonce la publication de la version 9.5 de PostgreSQL.
 
 Cette version ajoute les capacités d'UPSERT, les droits de niveau ligne (Row Level Security), et de nombreuses fonctionnalités orientées Big Data, qui ouvrent plus grand encore les possibilités d'utilisation de PostgreSQL.

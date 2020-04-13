@@ -6,6 +6,114 @@ redirect_from: "index.php?post/2010-01-03-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 8.5alpha3 est disponible. Parmi les nouveautés se trouvent le "Hot Standby", les contraintes d'exclusion, l'ORDER BY dans les aggrégats, les ACLs sur les blobs, une amélioration des expressions régulières, PL/pgsql par défaut et diverses améliorations dans PL/pgsql, PL/Perl et PL/Python. À vos tests&nbsp;!
+
+<a target="_blank" href="http://www.postgresql.org/developer/alpha">http://www.postgresql.org/developer/alpha</a></p>
+
+<p>Le PUG allemand aura un stand dans "l'Open Source Park" au Cebit 2010 du 2 au 6 mars 2010 à Hanovre&nbsp;:
+
+<a target="_blank" href="http://www.cebit.de/">http://www.cebit.de/</a></p>
+
+<p>L'appel aux propositions est lancé pour l'OSCON, qui aura lieu à Portland (Oregon) du 19 au 23 juillet 2010&nbsp;:
+
+<a target="_blank" href="http://post.oreilly.com/f2f/9z1zqmm5lhkab0uogt3avlvc4u59bro6f917re423d8">http://post.oreilly.com/f2f/9z1zqmm5lhkab0uogt3avlvc4u59bro6f917re423d8</a></p>
+
+<p>Un enregistrement vidéo de la réunion du SFPUG du 8 décembre 2009 "Operator Exclusion Constraints" [ndt: contraintes d'exclusion via opérateur&nbsp;?] est à présent disponible&nbsp;:
+
+<a target="_blank" href="http://thebuild.com/blog/2009/12/23/sfpug-operator-exclusion-constraints/">http://thebuild.com/blog/2009/12/23/sfpug-operator-exclusion-constraints/</a></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>MicroOLAP Database Designer 1.2.9 pour PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://microolap.com/products/database/postgresql-designer/">http://microolap.com/products/database/postgresql-designer/</a></li>
+
+<li>PostgreSQL PHP Generator 9.12, une interface graphique pour générer du PHP sur des objets PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://www.sqlmaestro.com/products/postgresql/phpgenerator/">http://www.sqlmaestro.com/products/postgresql/phpgenerator/</a></li>
+
+<li>PostERP 2.6, un progiciel de gestion intégré (aka. PGI/ERP) utilisant PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://www.sitig.com">http://www.sitig.com</a></li>
+
+<li>PostgreDAC 2.5.4, un "builder Delphi/C++" pour PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://microolap.com/products/connectivity/postgresdac/download/">http://microolap.com/products/connectivity/postgresdac/download/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalité 8.5 de la semaine</strong></p>
+
+<p>Hot Standby. Après 1,5 année de développement, vous pouvez enfin lancer des requêtes en lecture-seule sur les esclaves PITR. Remerciements à Simon Riggs, Heikki Linnakangas et de nombreux autres pour leurs efforts ininterrompus. Apprenez-en d'avantage sur le "Hot Standby" sur :
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/Hot_Standby">http://wiki.postgresql.org/wiki/Hot_Standby</a> et essayez vite la 8.5Alpha3.</p>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en décembre</strong></p>
+
+<ul>
+
+<li><a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2009-12/threads.php">http://archives.postgresql.org/pgsql-jobs/2009-12/threads.php</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La première réunion du "New York Capital District PUG" aura lieu le 7 janvier 2010&nbsp;:
+
+<a target="_blank" href="http://nycdpug.x10hosting.com/">http://nycdpug.x10hosting.com/</a></li>
+
+<li>Stefan Keller, de l'université des sciences appliquées de Rapperswil (HSR), animera un séminaire intitulé "Introduction à PostGIS/PostgreSQL" le 14 janvier 2010 à Zurich (Suisse)&nbsp;:
+
+<a target="_blank" href="http://www.gis.hsr.ch/wiki/Agenda">http://www.gis.hsr.ch/wiki/Agenda</a></li>
+
+<li>À la recherche de volontaires pour la rencontre de la "Open Day Linux Conf AU" à Wellington, Nouvelle Zélande, le 23 janvier 2010 entre 11 et 14h. Contactez selena -at- postgresql.org.</li>
+
+<li>L'appel à conférencier pour "East" est lancé avec, comme date limite, le 30 janvier 2010. Détails sur&nbsp;:
+
+<a target="_blank" href="http://www.postgresqlconference.org/">http://www.postgresqlconference.org/</a></li>
+
+<li>Le PGDay-Cuba 2010 sera tenu du 4 au 6 février 2010 à l'Université des Sciences Informatiques, à La Havane. Sont invités les participants de Cuba, de la République Dominicaine et du Venezuela.</li>
+
+<li>Le FOSDEM 2010 aura lieu à Bruxelles les 6 &amp; 7 février 2010&nbsp;:
+
+<a target="_blank" href="http://www.fosdem.org/">http://www.fosdem.org/</a></li>
+
+<li>Le "Chemnitzer Linuxtage" aura lieu à Chemnitz (All.) les 13 &amp; 14 mars 2010&nbsp;:
+
+<a target="_blank" href="http://chemnitzer.linux-tage.de/">http://chemnitzer.linux-tage.de/</a></li>
+
+<li>La PgCon 2010 aura lieu les 20 &amp; 21 mai 2010 à Ottawa avec des tutoriels les 18 et 19. L'appel à conférenciers est lancé&nbsp;!
+
+<a target="_blank" href="http://www.pgcon.org/2010/papers.php">http://www.pgcon.org/2010/papers.php</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les média</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;:
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><em>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'équipe PostgreSQLFr sous licence CC BY-NC-SA.</em></p>
+
+<p><em>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais à david (a) fetter.org, en allemand à pwn (a) pgug.de, en italien à pwn (a) itpug.org.</em></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20091227">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqués</strong></p>
 

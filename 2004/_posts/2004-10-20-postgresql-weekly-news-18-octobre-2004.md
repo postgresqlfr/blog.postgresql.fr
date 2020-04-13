@@ -6,6 +6,58 @@ redirect_from: "index.php?post/drupal-41 "
 ---
 
 
+<p>
+
+Le 19 octobre 2004, Robert Treat écrivait sur la liste pgsql-announce:
+
+</p>
+
+<p>
+
+Il y a eu assez de progrès cette semaine pour commencer à espérer une sortie en
+
+Release Candidate (NDT: Les "releases candidates" annoncent la sortie du cycle
+
+béta, pour s'approcher peu à peu de la version finale). Je pense que nous en
+
+sommes cependant encore à une semaine ou plus, avec une béta version encore
+
+possible, mais c'est toujours bon signe, nous nous rapprochons d'une version,
+
+l'étau se ressérant autour des bugs sur les tablespaces et la version windows.
+
+</p>
+
+<p>
+
+En étant aussi près du but, les corrections de cette semaine sont plus larges que profondes. Quelques problèmes avec CygWin et DLLINIT ont étés corrigés. La compilations statique des librairies sur la version Win32 avec CygWin est désormais possible. Tous les modules de /contrib devraient aujourd'hui compiler sans soucis sous CygWin. La fonction getpid() est à présent castée en entier, ce qui résout un problème sur quelques versions de Solaris lorsqu'elle retournait un entier long.
+
+Quelques casts inutiles sur void* lorsqu'on utilisait pfree() dans les
+
+modules contrib/xml et contrib/xml2 ont été supprimés. Nous rapportons
+
+à présent le chemin complet dans les logs d'erreurs pour des
+
+non-concordances de versions dans les binaires. Plusieurs bugs ont été
+
+corrigés et des améliorations faites sur plperl. Un bug sur
+
+pg_get_indexdef() a été supprimé. On peut maintenant arrêter le
+
+processus d'écriture en arrière plan (NDT: "background writer") en
+
+définissant les valeurs limites à zéro. Les fonctions PQprepare et
+
+PQsendPreparend ont été ajoutées à la libpq pour permettre la
+
+préparation des requêtes sans spécifier les types de données de leurs
+
+paramètres.
+
+</p>
+
+<!--more-->
+
 
 <h3>== Nouveaux produits autour de PostgreSQL ==</h3>
 

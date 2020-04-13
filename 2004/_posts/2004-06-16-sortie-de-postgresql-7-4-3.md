@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-15 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Sur la liste pgsql-announce, Marc G. Fournier nous informait le 15 juin 2004 que :
 

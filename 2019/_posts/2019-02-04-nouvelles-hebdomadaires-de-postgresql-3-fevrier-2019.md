@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2019-02-04-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pg2arrow, un utilitaire interrogeant une BD PostgreSQL et sortant le r&eacute;sultat au format Arrow d'Apache&nbsp;: <a target="_blank" href="https://github.com/heterodb/pg2arrow">https://github.com/heterodb/pg2arrow</a></li>
+
+<li>PostgreSQL Automatic Failover (PAF) v2.2.1&nbsp;: <a target="_blank" href="https://github.com/ClusterLabs/PAF/releases/latest">https://github.com/ClusterLabs/PAF/releases/latest</a></li>
+
+<li>check_pgactivity 2.4, un agent distant de Nagios pour surveiller PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/OPMDG/check_pgactivity/releases">https://github.com/OPMDG/check_pgactivity/releases</a></li>
+
+<li>pg_snakeoil 1.0, une extension anti-virus pour PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/credativ/pg_snakeoil/releases/tag/v1.0">https://github.com/credativ/pg_snakeoil/releases/tag/v1.0</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</h2>
 

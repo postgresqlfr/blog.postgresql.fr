@@ -6,6 +6,60 @@ redirect_from: "index.php?post/2009-03-10-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 8 mars 2009</strong></p>
+
+<p>Vous pouvez maintenant suivre la liste "pgsql-announce" sur le twitter @PGSQL_Announce.</p>
+
+<p>Kevin Kempter fera une pr&eacute;sentation des sauvegardes et des r&eacute;cup&eacute;rations lors de la premi&egrave;re r&eacute;union du PUG de Denver, le 8 avril 2009&nbsp;: 
+
+<a target="_blank" href="http://www.diapug.org/Meeting.html">http://www.diapug.org/Meeting.html</a></p>
+
+<p>Nouveau sondage&nbsp;: Avez-vous jamais acc&eacute;d&eacute; aux catalogues syst&egrave;mes de PostgreSQL ? 
+
+<a target="_blank" href="http://www.postgresql.org/community">http://www.postgresql.org/community</a></p>
+
+<p>Les inscriptions pour la "PostgreSQL Conference (JDCon) East 2009" sont ouvertes&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.us/purchase">http://www.postgresql.us/purchase</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>PostgreSQL Maestro 9.2, une interface graphique pour l'administration et le d&eacute;veloppement sous Windows&nbsp;: 
+
+<a target="_blank" href="http://www.sqlmaestro.com/products/postgresql/maestro/">http://www.sqlmaestro.com/products/postgresql/maestro/</a></li>
+
+<li>Npgsql2 2.0.4, a une API .Net pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.npgsql.org">http://www.npgsql.org</a></li>
+
+<li>Turnkey Linux PostgreSQL appliance 8.3.5&nbsp;: 
+
+<a target="_blank" href="http://www.turnkeylinux.org/appliances/postgresql">http://www.turnkeylinux.org/appliances/postgresql</a></li>
+
+<li>Turnkey Linux LAPP appliance&nbsp;: 
+
+<a target="_blank" href="http://www.turnkeylinux.org/appliances/lapp/updates/new-turnkey-lapp-version-200902-hardy">http://www.turnkeylinux.org/appliances/lapp/updates/new-turnkey-lapp-version-200902-hardy</a></li>
+
+<li>Golconde 0.4, un syst&egrave;me de r&eacute;plication &agrave; base de files d'attentes &eacute;crit en Python&nbsp;: 
+
+<a target="_blank" href="http://code.google.com/p/golconde/">http://code.google.com/p/golconde/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 8.4 de la semaine</strong></p>
+
+<p>"auto_explain"&nbsp;: lorsqu'il est install&eacute;, ce module en "contrib" permet d'activer/d&eacute;sactiver &agrave; chaud l'inscription des "explain plans" des requ&ecirc;tes lentes dans les fichiers de log.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Les lignes du fichier pg_hba.conf sont parcourues s&eacute;quentiellement, et seule est test&eacute;e la premi&egrave;re ligne correspondant &agrave; la tentative de connexion en cours.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090308">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en mars</strong></p>
 

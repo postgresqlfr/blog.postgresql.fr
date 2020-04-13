@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-394 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Le projet PostgreSQL a sorti aujourd'hui les versions mineures suivantes. Elles corrigent trois vulnérabilités différentes impliquant un arrêt brutal du serveur. Il y a aussi diverses autres corrections mineures. Il est demandé à tous les utilisateurs de PostgreSQL de mettre à jour à la dernière version dès que possible.
 

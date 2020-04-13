@@ -6,6 +6,26 @@ redirect_from: "index.php?post/2019-11-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Versions correctives 12.1, 11.6, 10.11, 9.6.16, 9.5.20, et 9.4.25 disponibles. Mettez &agrave; jour d&egrave;s que possible. La s&eacute;rie 9.4 recevra sa derni&egrave;re maintenance le 13 f&eacute;vrier 2020&nbsp;: <a target="_blank" href="https://www.postgresql.org/about/news/1994/">https://www.postgresql.org/about/news/1994/</a></p>
+
+<p>Le <em>pgDay Paris 2020</em> se tiendra &agrave; Paris le 26 mars 2020 &agrave; l'espace St Martin. L'appel &agrave; conf&eacute;renciers court jusqu'au 31 d&eacute;cembre 2019 minuit, heure fran&ccedil;aise&nbsp;: <a target="_blank" href="https://2020.pgday.paris/callforpapers/">https://2020.pgday.paris/callforpapers/</a> <a target="_blank" href="http://2020.pgday.paris/">http://2020.pgday.paris/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>PGroonga 2.2.2, une plate-forme de recherche plein texte pour toutes langues&nbsp;: <a target="_blank" href="https://pgroonga.github.io/">https://pgroonga.github.io/</a></li>
+
+<li>check_pgbackrest 1.6, une sonde compatible Nagios pour pgBackRest&nbsp;: <a target="_blank" href="https://github.com/dalibo/check_pgbackrest/releases">https://github.com/dalibo/check_pgbackrest/releases</a></li>
+
+<li>pgAdmin4 4.15, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_15.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_15.html</a></li>
+
+<li>postgres-checkup 1.3.0 "Double Eagle", un outil permettant de g&eacute;n&eacute;rer des rapports de sant&eacute; de clusters PostgreSQL&nbsp;: <a target="_blank" href="https://gitlab.com/postgres-ai-team/postgres-checkup/-/tags/1.3.0">https://gitlab.com/postgres-ai-team/postgres-checkup/-/tags/1.3.0</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en novembre</h2>
 

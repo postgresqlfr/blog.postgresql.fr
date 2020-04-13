@@ -6,6 +6,24 @@ redirect_from: "index.php?post/2009-01-15-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 11 janvier 2009</strong></p>
+
+<p>Les programmes d'installation pour les instantan&eacute;s de d&eacute;veloppement de la 8.4 sont disponibles. N'h&eacute;sitez pas et faites un tour &agrave; bord de la future 8.4&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/download/snapshots">http://www.postgresql.org/download/snapshots</a></p>
+
+<p>Plus que 2 semaines pour proposer des conf&eacute;rences pour les pgCon&nbsp;! 
+
+<a target="_blank" href="http://www.pgcon.org/">www.pgcon.org</a></p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>En ligne de commande dans psql, "\x" vous permet de basculer l'affichage des r&eacute;sultats en mode "&eacute;tendu". C'est tr&egrave;s utile pour les ensembles contenant de longues lignes.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090111">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
 

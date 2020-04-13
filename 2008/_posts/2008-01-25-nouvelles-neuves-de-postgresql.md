@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-279 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 20 janvier 2008</strong></p>
+
+<p>PostgreSQL a remporté le prix Developer.com du Produit de l'Année 2008&nbsp;:
+
+<a target="_blank" href="http://www.developer.com/design/article.php/10925_3721761_1">http://www.developer.com/design/article.php/10925_3721761_1</a></p>
+
+<p>IT-PUG a envoyé une lettre ouverte au ministre italien chargé de l'innovation technique à propos des fonds dédié à l'Open Source en 2007&nbsp;:
+
+<a target="_blank" href="http://www.gabrielebartolini.it/blog/index.php?/archives/40-IT-PUG-signs-a-letter-to-the-Italian-Ministry.html">http://www.gabrielebartolini.it/blog/index.php?/archives/40-IT-PUG-signs-a-letter-to-the-Italian-Ministry.html</a></p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

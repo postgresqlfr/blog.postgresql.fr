@@ -6,6 +6,90 @@ redirect_from: "index.php?post/2013-09-28-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p><em>CommitFest II</em> du nouveau cycle en est au quart de sa course. Avec 83 patchs dont 6 d&eacute;j&agrave; commit&eacute;s, &ccedil;a se d&eacute;roule plut&ocirc;t bien jusque l&agrave;. 8 patchs restent tristement sans relecteur. Corrigeons cela cette semaine. Si vous souhaitez participer, &eacute;crivez &agrave; pgsql-rrreviewers list (infos sur l'inscription ci-apr&egrave;s) et nous vous aiderons &agrave; nous aider&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/community/lists/subscribe/">http://www.postgresql.org/community/lists/subscribe/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Sortie de HadoopFDW&nbsp;: 
+
+<a target="_blank" href="http://www.bigsql.org/se/hadoopfdw/">http://www.bigsql.org/se/hadoopfdw/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en septembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2013-09/threads.php">http://archives.postgresql.org/pgsql-jobs/2013-09/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le PGDay italien (PGDay.IT) sera tenu le 25 octobre &agrave; Prato (Italie, Toscane) au centre de recherche de l'Universit&eacute; Monash. Inscriptions et infos&nbsp;: 
+
+<a target="_blank" href="http://2013.pgday.it">http://2013.pgday.it</a></li>
+
+<li>La <em>PostgreSQL Conference China</em> de 2103 aura lieu les 26 &amp; 27 octobre &agrave; Hangzhou. Informations&nbsp;: 
+
+<a target="_blank" href="https://wiki.postgresql.org/wiki/Pgconf_cn2013">https://wiki.postgresql.org/wiki/Pgconf_cn2013</a><br>
+
+Inscriptions&nbsp;: 
+
+<a target="_blank" href="http://bbs.pgsqldb.com/client/bm.php">http://bbs.pgsqldb.com/client/bm.php</a></li>
+
+<li>La <em>PGConf.EU 2013</em> sera tenue du 29 octobre au 1<sup>er</sup> novembre au Conrad Hotel dans le centre-ville de Dublin en Irlande. Les inscriptions sont ouvertes&nbsp;: 
+
+<a target="_blank" href="http://2013.pgconf.eu/">http://2013.pgconf.eu/</a></li>
+
+<li><em>PGConf.DE 2013</em> aura lieu le 8 novembre 2013 au mus&eacute;e industriel de la Rh&eacute;nanie &agrave; Oberhausen. L'appel &agrave; conf&eacute;renciers porte jusqu'au 15 septembre&nbsp;: 
+
+<a target="_blank" href="http://2013.pgconf.de/">http://2013.pgconf.de/</a></li>
+
+<li>La quatri&egrave;me &eacute;dition du PGDay argentin se tiendra le 14 novembre 2013 &agrave; Buenos Aires, Argentine. L'appel &agrave; conf&eacute;renciers est lanc&eacute; jusqu'au 28 septembre&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/PGDay_Argentina_2013">http://wiki.postgresql.org/wiki/PGDay_Argentina_2013</a></li>
+
+<li>Le PGDay cubain aura lieu en novembre 2013&nbsp;: 
+
+<a target="_blank" href="http://postgresql.uci.cu/">http://postgresql.uci.cu/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20130923051953.GB26841@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

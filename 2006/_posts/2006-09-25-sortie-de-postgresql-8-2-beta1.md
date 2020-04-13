@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-207 "
 
 
 
+
+<!--more-->
+
+
 <p><strong>Ayé!</strong> la béta 1 de PostgreSQL dans sa version 8.2 est enfin dans les bacs!, n'hésitez pas à la télécharger et à la tester ;-)</p>
 
 <ul>

@@ -6,6 +6,16 @@ redirect_from: "index.php?post/2011-12-17-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Nouvelles versions correctives 9.1.2, 9.0.6, 8.4.10, 8.3.17 and 8.2.23. Il s'agit de la derni&egrave;re publication officielle de la s&eacute;rie 8.2. Si vous utilisez la r&eacute;plication int&eacute;gr&eacute;e, il est conseill&eacute; de mettre &agrave; jour d&egrave;s que possible&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/about/news/1366/">http://www.postgresql.org/about/news/1366/</a></p>
+
+<p>FOSDEM 2012 - <em>Devroom</em> PostgreSQL&nbsp;: l'appel &agrave; conf&eacute;renciers est lanc&eacute; (date limite de d&eacute;p&ocirc;t&nbsp;: 20 d&eacute;cembre 2011)&nbsp;: 
+
+<a target="_blank" href="https://www.postgresql.eu/events/callforpapers/fosdem2012/">https://www.postgresql.eu/events/callforpapers/fosdem2012/</a></p>
+
+<!--more-->
+
 
 <p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
 

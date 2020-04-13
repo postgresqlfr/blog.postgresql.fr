@@ -6,6 +6,30 @@ redirect_from: "index.php?post/2009-02-23-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 22 f&eacute;vrier 2009</strong></p>
+
+<p>F&eacute;licitations &agrave; Joshua Drake pour son futur passeport. Prochaine &eacute;tape, le d&eacute;calage horaire&nbsp;!<br>
+
+[ndt: une <a href="http://archives.postgresql.org/pgeu-general/2008-04/msg00008.php">longue</a> <a href="http://www.commandprompt.com/blogs/joshua_drake/2009/02/what_is_that_sound____that_is_the_sound_of_jd_stomping/">histoire</a>]</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>pgbouncer 1.3&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgbouncer/">http://pgfoundry.org/projects/pgbouncer/</a></li>
+
+</ul>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Utilisez la vue syst&egrave;me 'pg_locks', combin&eacute;e avec 'pg_stat_activity', pour lister les requ&ecirc;tes bloqu&eacute;es par des verrous.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090222">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</strong></p>
 

@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-155 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 22 janvier 2006</strong></p>
+
+<p>
+
+Partez à la rencontre des hackers PostgreSQL et notamment Gavin Sherry sur la salon SolutionsLinux 2006 de Paris, du 31 janvier au 2 février <a target="_blank" href="http://solutionslinux.fr/en/index.php">http://solutionslinux.fr/en/index.php</a>
+
+<a target="_blank" href="http://www.postgresqlfr.org/?q=node/463">http://www.postgresqlfr.org/?q=node/463</a>
+
+</p>
+
+<!--more-->
+
 
 <strong>Nouvelles des produits autour de PostgreSQL</strong>
 

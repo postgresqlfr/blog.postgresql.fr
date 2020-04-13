@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-118 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Durant les PostgreSQL Day qui se sont tenu en Italie à Prato Andrea Gioia d'Engineering avait présenté <a href="http://www.pgday.it/files/spagoBI.pdf" target="_blank">QbE</a> un requêteur ad hoc orienté utilisateur final. QbE est en fait moteur d'exécution (un module) d'une plate-forme décisionnel complète, SpagoBI.
 

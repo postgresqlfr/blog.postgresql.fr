@@ -6,6 +6,86 @@ redirect_from: "index.php?post/2011-10-28-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PGDay.SoCal est au programme de SCALE10X (exposition Linux dans le sud de la Californie) tenue au LAX Hilton Hotel de Los Angeles, le vendredi 20 janvier 2012. Veuillez envoyer vos propositions de conf&eacute;rences &agrave; pgday-submissions CHEZ googlegroups POINT com. 
+
+<a target="_blank" href="https://sites.google.com/site/pgdayla/">https://sites.google.com/site/pgdayla/</a></p>
+
+<p>Le programme de <em>Postgres Brazil 2011</em> est en ligne&nbsp;: 
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/2011/programacao.en.php">http://pgbr.postgresql.org.br/2011/programacao.en.php</a></p>
+
+<p>Jim Mlodgenski pr&eacute;sente "<em>Visualizing PostgreSQL Data with Google Web Toolkit</em>" (Visualisation de donn&eacute;es PostgreSQL avec Google Web Toolkit) avec le NYCPUG le 25 octobre 2011 &agrave; 18h30. D&eacute;tails et RSVP ci-dessous&nbsp;: 
+
+<a target="_blank" href="http://www.nycpug.org/events/36991582/">http://www.nycpug.org/events/36991582/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Version 1.21.0 de tail_n_mail, un programme de surveillance des logs de Postgres&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/wiki/Tail_n_mail">http://bucardo.org/wiki/Tail_n_mail</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en octobre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2011-10/threads.php">http://archives.postgresql.org/pgsql-jobs/2011-10/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>pgbr aura lieu &agrave; S&atilde;o Paulo (Br&eacute;sil) les 3 &amp; 4 novembre 2011&nbsp;: 
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/">http://pgbr.postgresql.org.br/</a></li>
+
+<li><em>PGConf.DE 2011</em> est une conf&eacute;rence germanophone tenue le 11 novembre au mus&eacute;e industriel du Rhin &agrave; Oberhausen (Allemagne). L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.de/">http://2011.pgconf.de/</a></li>
+
+<li>La cinqui&egrave;me &eacute;dition du PGDay italien (PGDay.IT 2011) aura lieu le 25 novembre &agrave; Prato&nbsp;: 
+
+<a target="_blank" href="http://2011.pgday.it/">http://2011.pgday.it/</a></li>
+
+<li>L'appel &agrave; conf&eacute;renciers a &eacute;t&eacute; lanc&eacute; pour le FLOSS UK, programm&eacute; du 20 au 22 mars 2012 &agrave; Edimbourg. La date limite de d&eacute;p&ocirc;t des candidatures est fix&eacute;e au 18 novembre 2011 et les conf&eacute;renciers s&eacute;lectionn&eacute;s seront inform&eacute;s avant le 25 novembre. Les propositions sont &agrave; envoyer &agrave; postgresql2012 AT flossuk POINT org. Plus d'informations via le lien suivant&nbsp;: 
+
+<a target="_blank" href="http://www.flossuk.org/Events/Spring2012">http://www.flossuk.org/Events/Spring2012</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20111023">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

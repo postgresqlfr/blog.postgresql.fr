@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2012-09-19-appel-a-candidature-pour-l-organisatio
 
 
 
+
+<!--more-->
+
+
 Bonjour à tous,
 
 

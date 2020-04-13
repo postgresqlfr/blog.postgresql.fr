@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2013-09-29-pg-day-france-2014-appel "
 
 
 
+
+<!--more-->
+
+
 Depuis 2008, PG Day France est l’événement phare de la communauté francophone de PostgreSQL. Une journée de conférence où les utilisateurs de PostgreSQL peuvent rencontrer les développeurs, les entreprises et les chercheurs qui font vivre ce logiciel. 
 
 

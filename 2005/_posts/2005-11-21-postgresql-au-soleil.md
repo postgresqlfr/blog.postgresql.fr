@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-136 "
 
 
 
+
+<!--more-->
+
+
 <p><small>Le 17 novembre 2005, Josh Berkus annonçait sur la liste pgsql-advocacy:</small></p>
 
 <p>

@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2009-12-14-nouvelles-versions-mineures-8-4-2-8-3-
 
 
 
+
+<!--more-->
+
+
 Le projet PostgreSQL annonce aujourd'hui la disponibilité de nouvelles versions mineures pour toutes les branches actives du SGBD PostgreSQL. Cette mise à jour corrige une faille de sécurité modérée et une faille de sécurité faible : un problème sur l'authentification SSL et une élévation des droits avec les index partiels. Il est recommandé de mettre à jour votre version de PostgreSQL dès que possible.
 
 

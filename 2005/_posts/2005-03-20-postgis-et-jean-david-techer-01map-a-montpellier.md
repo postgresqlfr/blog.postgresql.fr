@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-85 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Au sein de <a href="http://www.01map.com">01Map</a> à Montpellier, <a href="http://techer.pascal.free.fr/cv">Jean David Techer</a> a acquis une forte connaissance de PostGIS, l'outil de SIG basé sur PostgreSQL.</p>
 

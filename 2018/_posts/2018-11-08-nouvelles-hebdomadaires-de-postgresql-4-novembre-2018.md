@@ -6,6 +6,36 @@ redirect_from: "index.php?post/2018-11-08-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>FOSDEM PGDay 2019 est une conf&eacute;rence d'une journ&eacute;e qui sera tenue avant le FOSDEM &agrave; Bruxelles (Belgique) le 1<sup>er</sup> f&eacute;vrier 2019. L'appel &agrave; conf&eacute;renciers expire le 9 novembre 2018&nbsp;: <a target="_blank" href="https://2019.fosdempgday.org/callforpapers/">https://2019.fosdempgday.org/callforpapers/</a> . <a target="_blank" href="https://2019.fosdempgday.org/">https://2019.fosdempgday.org/</a></p>
+
+<p>La <em>PGConf India 2018</em> aura lieu du 13 au 15 f&eacute;vrier 2018 &agrave; Bengalore (&Eacute;tat du Karnataka en Inde). Les propositions sont attendues via <a target="_blank" href="https://pgconf.in/conferences/pgconfin2019/program/proposals/new">https://pgconf.in/conferences/pgconfin2019/program/proposals/new</a> avant le 30 novembre 2018&nbsp;: <a target="_blank" href="http://pgconf.in/">http://pgconf.in/</a></p>
+
+<p><em>Prague PostgreSQL Developer Day 2019</em> (P2D2 2019) est une s&eacute;rie de conf&eacute;rences sur deux jours qui se tiendra les 13 & 14 f&eacute;vrier 2019 &agrave; Prague (R&eacute;publique Tch&egrave;que). L'appel &agrave; conf&eacute;renciers court jusqu'au 4 janvier 2019 via&nbsp;: <a target="_blank" href="https://p2d2.cz/callforpapers">https://p2d2.cz/callforpapers</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgpool-II versions 4.0.1, 3.7.6, 3.6.13, 3.5.17, et 3.4.20 publi&eacute;es. <a target="_blank" href="http://www.pgpool.net/docs/latest/en/html/release.html">http://www.pgpool.net/docs/latest/en/html/release.html</a></li>
+
+<li>Postgres-XL 10R1, un d&eacute;riv&eacute; de PostgreSQL dot&eacute; de fonctionnalit&eacute;s massivement parall&egrave;les&nbsp;: <a target="_blank" href="https://www.postgres-xl.org/">https://www.postgres-xl.org/</a></li>
+
+<li>sqlite_fdw 1.1.0&nbsp;: <a target="_blank" href="https://github.com/pgspider/sqlite_fdw">https://github.com/pgspider/sqlite_fdw</a></li>
+
+<li>pglogical 2.2.1, un syst&egrave;me de r&eacute;plication bas&eacute; sur les WAL logiques, pour PostgreSQL&nbsp;: <a target="_blank" href="https://www.2ndquadrant.com/en/resources/pglogical/">https://www.2ndquadrant.com/en/resources/pglogical/</a></li>
+
+<li>repmgr 4.2, un gestionnaire de r&eacute;plication pour PostgreSQL&nbsp;: <a target="_blank" href="https://repmgr.org/docs/4.2/release-4.2.html">https://repmgr.org/docs/4.2/release-4.2.html</a></li>
+
+<li>pgmetrics 1.5, un outil en ligne de commande pour acc&eacute;der aux m&eacute;triques de PostgreSQL&nbsp;: <a target="_blank" href="https://pgmetrics.io/">https://pgmetrics.io/</a></li>
+
+<li>pgconfigurator, un outil pour estimer les param&egrave;tres initiaux d'instances PostgreSQL&nbsp;: <a target="_blank" href="http://pgconfigurator.cybertec.at/">http://pgconfigurator.cybertec.at/</a></li>
+
+<li>pgAdmin4 3.5, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_3_5.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_3_5.html</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en novembre</h2>
 

@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-162 "
 ---
 
 
+<h2>Nouvelles Hebdomadaires de PostgreSQL - 19 février 2006</h2>
+
+<p>
+
+Les mises à jour de sécurité 8.1.3, 8.0.7, 7.4.12 et 7.3.14 sont sorties. Mettez à jour ! Votre systeme de paquetages devrait fournir les paquets, et les paquets RPMs sont disponibles à <a href="http://www.postgresql.org/download/">http://www.postgresql.org/download/</a></p>
+
+<!--more-->
+
 
 <h3>Nouvelles de produits PostgreSQL</h3>
 

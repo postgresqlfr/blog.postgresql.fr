@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2019-03-21-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le premier pgDay autrichien aura lieu le 6 septembre 2019 au Hilton Garden Inn de Wiener Neustadt. L'appel &agrave; conf&eacute;renciers court jusqu'au 1er avril&nbsp;: <a target="_blank" href="https://pgday.at/en/">https://pgday.at/en/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pggraphblas 0.2, une extension permettant d'utiliser l'API GraphBLAS dans PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/michelp/pggraphblas">https://github.com/michelp/pggraphblas</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en mars</h2>
 

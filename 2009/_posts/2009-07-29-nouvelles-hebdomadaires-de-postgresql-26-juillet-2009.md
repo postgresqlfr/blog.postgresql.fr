@@ -6,6 +6,34 @@ redirect_from: "index.php?post/2009-07-29-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Si vous utilisez une plateforme Win32, merci de nous aider dans les tests du patch corrigeant l'inf&acirc;me <em>&ldquo;failed to re-attach to shared memory&rdquo;&nbsp;</em>: <a href="http://blog.hagander.net/archives/149-Help-us-test-a-patch-for-the-Win32-shared-memory-issue.html">http://blog.hagander.net/archives/149-Help-us-test-a-patch-for-the-Win32-shared-memory-issue.html</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>psqlODBC 08.04.0100&nbsp;: 
+
+<a target="_blank" href="http://psqlodbc.projects.postgresql.org/release.html">http://psqlodbc.projects.postgresql.org/release.html</a></li>
+
+<li>Lancement de l'&ldquo;Open Source Database Magazine&rdquo; avec un article de Robert Treat&nbsp;: 
+
+<a target="_blank" href="http://www.osdbzine.net">http://www.osdbzine.net</a></li>
+
+<li>Lancement &eacute;galement de l'&ldquo;Open Source Database Podcast&rdquo;&nbsp;: 
+
+<a target="_blank" href="http://www.osdbzine.net/podcast/osdbpodcast.xml">http://www.osdbzine.net/podcast/osdbpodcast.xml</a></li>
+
+<li>PostGIS 1.4.0, un syst&egrave;me g&eacute;ospatial pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://postgis.refractions.net/">http://postgis.refractions.net/</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090726">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en juillet</strong></p>
 

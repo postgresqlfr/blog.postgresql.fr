@@ -6,6 +6,32 @@ redirect_from: "index.php?post/drupal-408 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 23 décembre 2007</strong></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>Le plugin check_postgres 1.1.0 pour Nagios est disponible&nbsp;:
+
+<a target="_blank" href="http://bucardo.org/nagios_postgres/">http://bucardo.org/nagios_postgres/</a></li>
+
+<li>Npgsql 2 Beta2 est sorti&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/npgsql/">http://pgfoundry.org/projects/npgsql/</a></li>
+
+<li>phpPgAdmin 4.2 beta 1 est disponible&nbsp;:
+
+<a target="_blank" href="http://phppgadmin.sourceforge.net/">http://phppgadmin.sourceforge.net/</a></li>
+
+<li>ptop 3.6.1 beta 2 est sorti&nbsp;:
+
+<a target="_blank" href="http://ptop.projects.postgresql.org/">http://ptop.projects.postgresql.org/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <!--break-->
 

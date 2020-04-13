@@ -6,6 +6,52 @@ redirect_from: "index.php?post/drupal-380 "
 ---
 
 
+<h3>== PostgreSQL Weekly News - 1er novembre 2004 ==</h3>
+
+<p>Après beaucoup d'activité cette dernière semaine, les choses se sont un peu
+
+tassées pour notre première semaine en beta 4. Bien sûr, si vous souhaitez
+
+une stabilisation, c'est probablement un bon signe&nbsp;; voici la liste des
+
+modifications pour cette semaine&nbsp;: les compilations Cygwin sur les fuseaux
+
+horaires ont été corrigées. Maintenant, nous forçons un point de vérification
+
+juste avant de supprimer les fichiers physiques des bases de données, ce qui a
+
+corrigé un problème sur la suppression des bases de données rapporté sur cette
+
+plateforme. Les traces ont été ajustés pour le début et la fin du point de
+
+vérification, pour le recyclage et la suppression des journaux de traces. Un
+
+problème sur les erreurs de conversion lors d'un codage a été corrigé pour COPY.
+
+Une nouvelle méthode pour des threads sûrs améliorés a été ajouté dans le moteur
+
+pour les requêtes annulées et implémentée dans psql, activant l'annulation de
+
+requête dans la version win32 de psql. Enfin, quelques modifications ont eu lieu
+
+pour les types de données timestamp permettant de mieux gérer les décalages de
+
+zone horaire.
+
+</p>
+
+<p>Avec la sortie finale approchant, nous avons aussi besoin de personnes pour
+
+traduire les informations de sortie vers d'autres langues. Les personnes
+
+intéressées devraient jeter un œil à l'appel à l'aide sur les listes de diffusion
+
+cette semaine
+
+(<a href="http://archives.postgresql.org/pgsql-advocacy/2004-11/msg00000.php">http://archives.postgresql.org/pgsql-advocacy/2004-11/msg00000.php</a>) et s'impliquer. Cela ne devrait plus être long maintenant.</p>
+
+<!--more-->
+
 
 <h3>== Nouvelles des produits PostgreSQL==</h3>
 

@@ -6,6 +6,48 @@ redirect_from: "index.php?post/2009-03-05-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 1<sup>er</sup> mars 2009</strong></p>
+
+<p>PostgreSQLFr tiendra un stand aux Solutions Linux 2009 &agrave; Paris. Volontaires&nbsp;: sas (a) postgresql (point) fr, ou sur le wiki&nbsp;: 
+
+<a target="_blank" href="http://postgresql.fr/sl2009:start">http://postgresql.fr/sl2009:start</a></p>
+
+<p>Le PUG de Denver se r&eacute;unira le 27 mars. Restez branch&eacute;s pour les d&eacute;tails.</p>
+
+<p>Michael Renner animera un atelier sur la r&eacute;plication PostgreSQL lors des "Netways OSDC" 2009 &agrave; Nuremberg (All.)&nbsp;: 
+
+<a target="_blank" href="http://www.netways.de/english/osdc/y2009/programm/w/michael_renner_postgresql_repliziert_ein_ueberblick/">http://www.netways.de/english/osdc/y2009/programm/w/michael_renner_postgresql_repliziert_ein_ueberblick/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Npgsql2 2.0.3, une API .Net pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.npgsql.org">http://www.npgsql.org</a></li>
+
+<li>pgpool-II 2.2, un gestionnaire de connexions et bien plus, ainsi que son interface graphique pgpoolAdmin 2.2&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+<li>Simpycity, un syst&egrave;me de mapping en Python pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="https://projects.commandprompt.com/public/simpycity/">https://projects.commandprompt.com/public/simpycity/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 8.4 de la semaine</strong></p>
+
+<p>pg_stat_statements. Ce module en "contrib" de Itagaki Takahiro vous donnera, en quasi-temps r&eacute;el, un "Top 25 des requ&ecirc;tes" &agrave; la pgFouine sur vos bases de donn&eacute;es.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>L'"autovacuum" est fortement conseill&eacute; pour la plupart des applications de BD, &agrave; une exception pr&egrave;s&nbsp;: le chargement massif de donn&eacute;es, avec un ETL ou une restauration de base par exemple.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090301">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en mars</strong></p>
 

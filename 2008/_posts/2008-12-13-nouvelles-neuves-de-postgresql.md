@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2008-12-13-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 7 d&eacute;cembre 2008</strong></p>
+
+<p>Lorenzo Alberton a r&eacute;dig&eacute; un article comparant la gestion de la casse des caract&egrave;res par plusieurs SGBDR&nbsp;: 
+
+<a target="_blank" href="http://www.alberton.info/dbms_identifiers_and_case_sensitivity.html">http://www.alberton.info/dbms_identifiers_and_case_sensitivity.html</a></p>
+
+<p>Fedora 10 a maintenant son propre d&eacute;p&ocirc;t de "pgsqlrpms"&nbsp;: 
+
+<a target="_blank" href="http://yum.pgsqlrpms.org/">http://yum.pgsqlrpms.org/</a></p>
+
+<p>(<a href="http://www.postgresql.org/community/weeklynews/pwn20081207">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
 

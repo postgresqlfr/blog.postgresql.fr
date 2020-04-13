@@ -6,6 +6,98 @@ redirect_from: "index.php?post/2014-06-15-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 9.4 Beta 1 est disponible. TEST&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/developer/beta">http://www.postgresql.org/developer/beta</a></p>
+
+<p>La <em>PostgreSQL Conference Europe 2014</em> aura lieu du 21 au 24 octobre &agrave; l'h&ocirc;tel Miguel Angel &agrave; Madrid (Espagne). L'appel &agrave; conf&eacute;renciers est lanc&eacute; en direction des orateurs anglo- et hispanophones. 
+
+<a target="_blank" href="http://2014.pgconf.eu/">http://2014.pgconf.eu/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>pg_catcheck, un v&eacute;rificateur d'int&eacute;grit&eacute; du catalogue pour PostgreSQL et Postgres Plus Advanced Server&nbsp;: 
+
+<a target="_blank" href="https://github.com/EnterpriseDB/pg_catcheck">https://github.com/EnterpriseDB/pg_catcheck</a></li>
+
+<li>PG Commander 1.3, une interface graphique faite sp&eacute;cialement pour PostgreSQL sur OSX&nbsp;: 
+
+<a target="_blank" href="https://eggerapps.at/pgcommander/">https://eggerapps.at/pgcommander/</a></li>
+
+<li>psqlODBC 09.03.0300&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/ftp/odbc/versions/">http://www.postgresql.org/ftp/odbc/versions/</a></li>
+
+<li>psycopg2 2.5.3, un connecteur Python pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://initd.org/psycopg/articles/2014/05/13/psycopg-253-released/">http://initd.org/psycopg/articles/2014/05/13/psycopg-253-released/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en mai</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2014-05/threads.php">http://archives.postgresql.org/pgsql-jobs/2014-05/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La PGCon 2014, la conf&eacute;rence mondiale des d&eacute;veloppeurs PostgreSQL, se tiendra &agrave; Ottawa (Ontario, Canada) du 20 au 24 mai 2014&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2014/">http://www.pgcon.org/2014/</a></li>
+
+<li>Char(14) et le PGday UK auront lieu les 8 &amp; 9 juillet 2014&nbsp;: 
+
+<a target="_blank" href="http://www.char14.info">http://www.char14.info</a> <a target="_blank" href="http://postgresqlusergroup.org.uk/">http://postgresqlusergroup.org.uk/</a></li>
+
+<li>Le sixi&egrave;me PGDay cubain aura lieu les 13 et 14 octobre 2014 &agrave; la Havane&nbsp;: 
+
+<a target="_blank" href="https://postgresql.uci.cu/?p=380">https://postgresql.uci.cu/?p=380</a></li>
+
+<li>Postgres Open 2014 aura lieu &agrave; Chicago, Illinois - USA, du 17 au 19 septembre. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://postgresopen.org/2014/callforpapers/">http://postgresopen.org/2014/callforpapers/</a></li>
+
+<li>La PGConf europ&eacute;enne 2014 se tiendra &agrave; Madrid (Espagne) du 21 au 24 octobre, &agrave; l'h&ocirc;tel Miguel Angel&nbsp;: 
+
+<a target="_blank" href="http://2014.pgconf.eu/">http://2014.pgconf.eu/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20140519032443.GA19829@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

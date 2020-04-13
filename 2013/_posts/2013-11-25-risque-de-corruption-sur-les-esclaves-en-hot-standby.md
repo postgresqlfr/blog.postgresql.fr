@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2013-11-25-risque-de-corruption-sur-les-esclaves-
 
 
 
+
+<!--more-->
+
+
 Le 18 novembre, un problème de réplication a été découvert dans les
 
 dernières versions de PostgreSQL. Ce problème peut causer des

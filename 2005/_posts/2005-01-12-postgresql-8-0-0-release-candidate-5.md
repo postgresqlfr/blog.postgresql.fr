@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-63 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p><em>Dans son annonce du 11 janvier 2005 sur la liste pg-announce, Marc G. Fournier nous apprenait : </em></p>
 

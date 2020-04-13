@@ -6,6 +6,132 @@ redirect_from: "index.php?post/2011-07-26-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 9.1 beta 3 est disponible. Tests&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/developer/beta">http://www.postgresql.org/developer/beta</a><br>
+
+[ndt: 
+
+<a target="_blank" href="http://blog.postgresql.fr/index.php?post/2011/07/18/Sortie-de-PostgreSQL-9.1-b%C3%AAta-3">annonce sur postgresqlfr</a>]</p>
+
+<p><em>PGDay Porto Alegre</em> est programm&eacute; pour le 19 ao&ucirc;t 2011 &agrave; Porto Alegre (Br&eacute;sil)&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org.br/eventos/2011/pgday/rs">http://www.postgresql.org.br/eventos/2011/pgday/rs</a></p>
+
+<p>Cette semaine, la section des patches a d&ucirc; &ecirc;tre tronqu&eacute;e pour publier la newsletter dans les temps.</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>PostgreSQL Maestro 11.7, un outil d'administration sous Windows pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.sqlmaestro.com/products/anysql/maestro/">http://www.sqlmaestro.com/products/anysql/maestro/</a></li>
+
+<li>pg_blockinfo 0.1, un outil en Perl pour examiner vos fichiers PostgreSQL <em>heap data</em>&nbsp;: 
+
+<a target="_blank" href="http://github.com/machack666/pg_blockinfo/">http://github.com/machack666/pg_blockinfo/</a></li>
+
+<li>pgbuildfarm client 4.6&nbsp;: 
+
+<a target="_blank" href="https://github.com/PGBuildFarm/client-code">https://github.com/PGBuildFarm/client-code</a></li>
+
+<li>PostgreSQL Enterprise Manager Beta&nbsp;: 
+
+<a target="_blank" href="http://www.enterprisedb.com/products-services-training/products/postgres-enterprise-manager">http://www.enterprisedb.com/products-services-training/products/postgres-enterprise-manager</a></li>
+
+<li>pgpool-II 3.1.0 alpha3, un distributeur de connexions et bien d'avantage&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+<li>PostgreDAC 2.6.4, un <em>builder</em> Delphi/C++ pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/connectivity/postgresdac/download/">http://microolap.com/products/connectivity/postgresdac/download/</a></li>
+
+<li>psqlODBC 09.00.0310, un driver ODBC pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://psqlodbc.projects.postgresql.org/release.html">http://psqlodbc.projects.postgresql.org/release.html</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en juillet</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2011-07/threads.php">http://archives.postgresql.org/pgsql-jobs/2011-07/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>CHAR(11), la conf&eacute;rence PostgreSQL sur le <em>clustering</em>, la haute disponibilit&eacute; et la r&eacute;plication accepte &agrave; pr&eacute;sent les inscriptions et r&eacute;servations. Dates&nbsp;: 11 &amp; 12 juillet 2011 &agrave; Cambridge, Royaume-Uni&nbsp;: 
+
+<a target="_blank" href="http://www.char11.org/">http://www.char11.org/</a></li>
+
+<li>La "PgCon China" 2011 aura lieu &agrave; Guangzhou (Canton) les 15 &amp; 16 juillet 2011&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/Pgconchina2011">http://wiki.postgresql.org/wiki/Pgconchina2011</a></li>
+
+<li>Le PDXPUG se chargera d'accueillir le PgDay, dimanche 24 juillet 2011, la veille de l'OSCON &agrave; Portland dans l'Oregon (&Eacute;tats-Unis). Plus de d&eacute;tails sur&nbsp;: 
+
+<a target="_blank" href="http://pugs.postgresql.org/node/1663">http://pugs.postgresql.org/node/1663</a></li>
+
+<li>Postgres Open 2011, conf&eacute;rence ayant pour th&egrave;me les "&eacute;volutions brutales dans l'industrie de la base de donn&eacute;es", aura lieu du 14 au 16 septembre 2011 &agrave; Chicago (Illinois, &Eacute;tats-Unis) &agrave; l'h&ocirc;tel "<em>Westin Michigan Avenue</em>"&nbsp;: 
+
+<a target="_blank" href="http://postgresopen.org">http://postgresopen.org</a></li>
+
+<li>Le <em>PG-Day Denver 2011</em> aura lieu le samedi 17 septembre 2011 dans le campus Auraria pr&egrave;s de Denver, Colorado&nbsp;: 
+
+<a target="_blank" href="http://pgday.consistentstate.com/">http://pgday.consistentstate.com/</a></li>
+
+<li><em>PostgreSQL Conference West</em> (#PgWest) aura lieu du 27 au 30 septembre 2011 au centre des conventions de San Jos&eacute; (Californie, &Eacute;tats-Unis)&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org">http://www.postgresqlconference.org</a></li>
+
+<li>La "<em>PostgreSQL Conference Europe 2011</em>" se tiendra &agrave; Amsterdam, du 18 au 21 octobre&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.eu/">http://2011.pgconf.eu/</a></li>
+
+<li>pgbr aura lieu &agrave; S&atilde;o Paulo (Br&eacute;sil) les 3 &amp; 4 novembre 2011&nbsp;: 
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/">http://pgbr.postgresql.org.br/</a></li>
+
+<li><em>PGConf.DE 2011</em> est une conf&eacute;rence germanophone tenue le 11 novembre au mus&eacute;e industriel du Rhin &agrave; Oberhausen (Allemagne). L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.de/">http://2011.pgconf.de/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20110717">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

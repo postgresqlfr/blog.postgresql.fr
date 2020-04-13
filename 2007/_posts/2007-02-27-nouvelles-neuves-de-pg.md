@@ -6,6 +6,24 @@ redirect_from: "index.php?post/drupal-240 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 25 février 2007</strong></p>
+
+<p>
+
+Le fonds PostgreSQL du SPI a financé ce mois-ci le déplacement de David Fetter à Consili, Brésil, où il a donné une conférence.
+
+Le fonds finance également Neil Conway pour les deux prochains mois qu'il passera à vérifier les correctifs de la version 8.3.
+
+</p>
+
+<p>
+
+Une discussion animée (Lively Discussion(TM)) se poursuit sur -hackers au sujet de la gestion du code source.
+
+</p>
+
+<!--more-->
+
 
 <p>Le septième Framework Programme (FP7) est ouvert aux propositions. Les organisations européenne de PostgreSQL sont encouragées à déposer une proposition :) <a target="_blank" href="http://cordis.europa.eu/fp7/home_en.html">http://cordis.europa.eu/fp7/home_en.html</a></p>
 

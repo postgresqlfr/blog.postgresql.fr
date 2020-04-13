@@ -6,6 +6,54 @@ redirect_from: "index.php?post/2016-12-20-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>[ndt: Meetup du PLUG à Lyon ce mardi 20 décembre&nbsp;: <a href="https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/" target="_blank">https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/</a>]</p>
+
+<p>PGCon 2017 aura lieu &agrave; Ottawa du 23 au 26 mai. Les propositions seront attendues jusqu'au 19 janvier 2017&nbsp;: <a target="_blank" href="http://www.pgcon.org/2017/papers.php">http://www.pgcon.org/2017/papers.php</a></p>
+
+<p>PgConf.Russia 2017 se d&eacute;roulera du 15 au 17 mars 2017 &agrave; Moscou&nbsp;: <a target="_blank" href="https://pgconf.ru/en">https://pgconf.ru/en</a></p>
+
+<p>Le PGDay Asia 2017 s'&eacute;tendra du 17 au 18 mars &agrave; Singapour. L'appel &agrave; conf&eacute;renciers s'&eacute;teindra le 16 janvier 2017&nbsp;: <a target="_blank" href="http://tinyurl.com/pgDay-Asia-2017-Cfp">http://tinyurl.com/pgDay-Asia-2017-Cfp</a></p>
+
+<p>Les inscriptions pour le PGDay du FOSDEM 2017 &agrave; Bruxelles sont &agrave; pr&eacute;sent ouvertes&nbsp;: <a target="_blank" href="https://2017.fosdempgday.org/">https://2017.fosdempgday.org/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<h2>Offres d'emplois autour de PostgreSQL en d&eacute;cembre</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2016-12/threads.php">http://archives.postgresql.org/pgsql-jobs/2016-12/threads.php</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>La <em>PGConf India 2017</em> aura lieu les 2 &amp; 3 mars 2017 &agrave; Bengalore (&Eacute;tat du Karnataka en Inde). Les propositions sont attendues sur &lt;papers AT pgconf DOT in&gt; jusqu'au 31 d&eacute;cembre 2016&nbsp;: <a target="_blank" href="http://pgconf.in/">http://pgconf.in/</a></li>
+
+<li>PostgreSQL@SCaLE aura lieu les 2 &amp; 3 mars 2017 au centre des conventions de Pasadena, comme partie du SCaLE 15X&nbsp;: <a target="_blank" href="http://www.socallinuxexpo.org/scale/15x/">http://www.socallinuxexpo.org/scale/15x/</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20161219002906.GA8714@fetter.org">http://www.postgresql.org/message-id/20161219002906.GA8714@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

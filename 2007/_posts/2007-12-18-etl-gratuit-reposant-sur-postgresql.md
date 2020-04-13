@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-272 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Vous voulez extraire des données de fichiers (.txt, .csv), et stocker ces données dans une base Postgresql ?
 

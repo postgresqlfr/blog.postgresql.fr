@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2009-01-04-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 28 d&eacute;cembre 2008</strong></p>
+
+<p>Hitoshi Harada et plusieurs autres d&eacute;veloppeurs ont ajout&eacute; des fonctionnalit&eacute;s "OLAP" &agrave; PostgreSQL. F&eacute;licitations &agrave; tous&nbsp;!</p>
+
+<p>Stefan Kaltenbrunner et Susanne Ebrecht feront une pr&eacute;sentation lors du 25<sup>&egrave;me</sup> "Chaos Communication Congress" &agrave; Berlin (27-30 d&eacute;cembre 2008)&nbsp;: 
+
+<a target="_blank" href="http://events.ccc.de/congress/2008/">http://events.ccc.de/congress/2008/</a></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20081228">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
 

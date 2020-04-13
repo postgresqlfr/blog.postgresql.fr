@@ -6,6 +6,44 @@ redirect_from: "index.php?post/2009-04-22-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 8.4 beta 1 est disponible. &Agrave; vos tests&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/developer/beta">http://www.postgresql.org/developer/beta</a></p>
+
+<p>La vid&eacute;o "PostgreSQL in the Cloud" est disponible. Merci &agrave; Christophe Pettus pour le cadrage et Dirk Jagdmann pour le streaming en direct pendant l'&eacute;v&eacute;nement&nbsp;: 
+
+<a target="_blank" href="http://media.postgresql.org/sfpug/sfpug-cloud-20090408.mov">http://media.postgresql.org/sfpug/sfpug-cloud-20090408.mov</a> <a target="_blank" href="http://www.vimeo.com/4144396">http://www.vimeo.com/4144396</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Archiveopteryx 3.1.1, un gestionnaire d'e-mail bas&eacute; sur PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.archiveopteryx.org/3.1.1">http://www.archiveopteryx.org/3.1.1</a></li>
+
+<li>Benetl 2.7, un ETL pour fichiers utilisant PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.benetl.net">http://www.benetl.net</a></li>
+
+<li>DBD::Pg 2.13.0, un connecteur Perl pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://search.cpan.org/dist/DBD-Pg/">http://search.cpan.org/dist/DBD-Pg/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 8.4 de la semaine</strong></p>
+
+<p>R&eacute;glage de la FSM&nbsp;: vous &eacute;tiez fan des configurations max_fsm_relations et max_fsm_pages dans le GUC&nbsp;? Tant pis pour vous, &ccedil;a ne se fait plus. Gr&acirc;ce &agrave; Heikki Linnakangas, la FSM [ndt: Free Space Map] est stock&eacute;e sur disque, sans limitation.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Postgresql r&eacute;pond au standard SQL INFORMATION_SCHEMA, qui contient des informations sur les tables, vues, colonnes et contraintes dans un format tabulaire normalis&eacute; et que l'on retrouve chez Oracle, DB2 et MySQL. Tout cela est disponible dans le sch&eacute;ma interne "information_schema".</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090419">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en avril</strong></p>
 

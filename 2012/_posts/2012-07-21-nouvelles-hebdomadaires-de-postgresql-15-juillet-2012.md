@@ -6,6 +6,98 @@ redirect_from: "index.php?post/2012-07-21-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Pour parer &agrave; toute exaction sur un tr&egrave;s vieux nom de domaine ayant abrit&eacute; un d&eacute;p&ocirc;t YUM de PostgreSQL et venant d'expirer, assurez-vous d'utiliser le nom de domaine des d&eacute;p&ocirc;ts courants&nbsp;: 
+
+<a target="_blank" href="http://yum.postgresql.org/repopackages.php">http://yum.postgresql.org/repopackages.php</a></p>
+
+<p>Les clefs GPG correctes pour ceux-ci sont disponibles ici&nbsp;: 
+
+<a target="_blank" href="https://www.postgresql.org/download/keys/RPM-GPG-KEY-PGDG">https://www.postgresql.org/download/keys/RPM-GPG-KEY-PGDG</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Barman 1.0.0, un outil d'administration pour aider au r&eacute;tablissement apr&egrave;s d&eacute;sastre sur des serveurs PostgreSQL, &eacute;crit en Python, est maintenant disponible en GPLv3&nbsp;: 
+
+<a target="_blank" href="http://www.pgbarman.org/">http://www.pgbarman.org/</a></li>
+
+<li>Bucardo 4.5.0, un syst&egrave;me de r&eacute;plication multi-ma&icirc;tres&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/wiki/Bucardo">http://bucardo.org/wiki/Bucardo</a></li>
+
+<li>Npgsql2 2.0.12 beta4, un connecteur .NET pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.npgsql.org">http://www.npgsql.org</a></li>
+
+<li>PGXN Client 1.1.0&nbsp;: 
+
+<a target="_blank" href="http://pgxnclient.projects.postgresql.org/">http://pgxnclient.projects.postgresql.org/</a></li>
+
+<li>Version 1.26.0 de tail_n_mail, un programme de surveillance des logs de PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/wiki/Tail_n_mail">http://bucardo.org/wiki/Tail_n_mail</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en juillet</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2012-07/threads.php">http://archives.postgresql.org/pgsql-jobs/2012-07/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>L'appel &agrave; conf&eacute;renciers &agrave; l'occasion du <em>Postgres Open 2012</em>, du 17 au 19 septembre 2012 &agrave; Chicago, est lanc&eacute;. Les candidatures sont attendues avant le 26 juin, minuit&nbsp;: 
+
+<a target="_blank" href="http://postgresopen.org/2012/speaker/">http://postgresopen.org/2012/speaker/</a></li>
+
+<li>La 4<sup>&egrave;me</sup> Session PostgreSQL aura lieu le 4 octobre 2012 &agrave; Paris. Plus d'informations sur&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/en/4/">http://www.postgresql-sessions.org/en/4/</a></li>
+
+<li>La <em>PostgreSQL Conference Europe 2012</em> aura lieu &agrave; Prague, R&eacute;publique Tch&egrave;que, du 23 au 26 octobre. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2012.pgconf.eu/">http://2012.pgconf.eu/</a></li>
+
+<li>Le PgDay argentin 2012 se tiendra &agrave; l'Universit&eacute; Nationale de Quilmes, &agrave; Bernal pr&egrave;s de Buenos Aires, le 13 novembre. Les sujets couverts concerneront aussi bien les utilisateurs, d&eacute;veloppeurs et contributeurs, que les d&eacute;cideurs et hauts responsables. Pour plus d'informations &agrave; propos de la conf&eacute;rence, consultez le site suivant&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.com.ar/quilmes2012?lang=en">http://www.pgday.com.ar/quilmes2012?lang=en</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2012-07/msg00007.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

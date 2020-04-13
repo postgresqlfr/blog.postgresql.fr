@@ -6,6 +6,86 @@ redirect_from: "index.php?post/2011-02-13-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Entretien de Simon Riggs dans <em>O'Reilly GMT</em>&nbsp;: 
+
+<a target="_blank" href="http://www.oreillygmt.eu/open-sourcefree-software/all-about-postgresql-%E2%80%93-the-world%E2%80%99s-most-advanced-open-source-database/">http://www.oreillygmt.eu/open-sourcefree-software/all-about-postgresql-%E2%80%93-the-world%E2%80%99s-most-advanced-open-source-database/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>PGSI 1.6.0, un outil de rapport des effets globaux produits par des requ&ecirc;tes sur une serveur PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/wiki/Pgsi">http://bucardo.org/wiki/Pgsi</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2011-02/threads.php">http://archives.postgresql.org/pgsql-jobs/2011-01/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Selena Deckelmann parlera de la communaut&eacute; et du d&eacute;veloppement PostgreSQL le 7 f&eacute;vrier 2010 &agrave; 16h, &agrave; l'universit&eacute; d'&eacute;tat de l'Oregon &agrave; Corvallis.</li>
+
+<li>L'appel &agrave; conf&eacute;renciers pour l'annuel "<em>Prague PostgreSQL Developers' Day</em>", 4&egrave;me &eacute;dition, est lanc&eacute;. L'&eacute;v&eacute;nement sera tenu le 10 f&eacute;vrier 2011 &agrave; l'<em>Universitas Carolinas</em>&nbsp;: 
+
+<a target="_blank" href="http://www.p2d2.cz">http://www.p2d2.cz</a></li>
+
+<li>Le PUG de New-York se r&eacute;unira le 15 f&eacute;vrier 2011 &agrave; 18h15 dans les bureaux de Yodle, au 50 de la 23&egrave;me rue Ouest &agrave; New-York. Plus d'infos et RSVP&nbsp;: 
+
+<a target="_blank" href="http://www.meetup.com/postgresql-3/events/16123790/">http://www.meetup.com/postgresql-3/events/16123790/</a></li>
+
+<li>Le PGDay.US est au programme du <em>Southern California Linux Exposition (SCALE)</em> de cette ann&eacute;e, tenu &agrave; l'h&ocirc;tel LAX Hilton de Los Angeles (Californie) le vendredi 25 f&eacute;vrier 2011.</li>
+
+<li>PostgreSQL Conference East 2011&nbsp;: New-York City, du 22 au 25 mars&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org">http://www.postgresqlconference.org</a></li>
+
+<li>L'<em>Open Database Camp</em> aura lieu du 7 au 9 mai 2011 en Sardaigne (Italie)&nbsp;: 
+
+<a target="_blank" href="http://datacharmer.blogspot.com/2011/01/announcing-open-database-camp-sardinia.html">http://datacharmer.blogspot.com/2011/01/announcing-open-database-camp-sardinia.html</a></li>
+
+<li>PGCon aura lieu les 19 &amp; 20 mai 2011 &agrave; l'Universit&eacute; d'Ottawa, pr&eacute;c&eacute;d&eacute; par deux jours de tutoriels les 17 &amp; 18 mai&nbsp;. L'appel &agrave; conf&eacute;renciers a &eacute;t&eacute; lanc&eacute;&nbsp;! 
+
+<a target="_blank" href="http://www.pgcon.org/2011/">http://www.pgcon.org/2011/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20110206">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

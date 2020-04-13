@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-431 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 15 juin 2008</strong></p>
+
+<p>PostgreSQL 8.3.3, 8.2.9, etc. sont disponibles. Mettez à jour dès qu'envisageable.</p>
+
+<p>(<a href="http://people.planetpostgresql.org/dfetter/index.php?/archives/177-PostgreSQL-Weekly-News-June-15-2008.html">lire l'article original</a>)</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

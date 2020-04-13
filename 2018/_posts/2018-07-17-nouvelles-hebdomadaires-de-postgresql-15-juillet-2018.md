@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2018-07-17-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>JDBC 42.2.4&nbsp;: <a target="_blank" href="https://jdbc.postgresql.org/documentation/changelog.html#version_42.2.4">https://jdbc.postgresql.org/documentation/changelog.html#version_42.2.4</a></li>
+
+<li>pg_chameleon 2.0.8, un outil pour r&eacute;pliquer de MySQL vers PostgreSQL&nbsp;: <a target="_blank" href="https://pypi.python.org/pypi/pg_chameleon">https://pypi.python.org/pypi/pg_chameleon</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en juillet</h2>
 

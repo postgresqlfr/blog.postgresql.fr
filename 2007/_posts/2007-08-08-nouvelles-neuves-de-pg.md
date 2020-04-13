@@ -6,6 +6,20 @@ redirect_from: "index.php?post/drupal-261 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 5 août 2007</strong></p>
+
+<ul>
+
+<li>UPDATE people SET celibataire = 'false' WHERE nom = 'Andreas Scherbaum' AND pseudo LIKE '%ads%';</li>
+
+<li>Il y a eu une longue discussion sur -advocacy à propos des wikis&nbsp;:
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-advocacy/2007-08/msg00039.php">http://archives.postgresql.org/pgsql-advocacy/2007-08/msg00039.php</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <!--break-->
 

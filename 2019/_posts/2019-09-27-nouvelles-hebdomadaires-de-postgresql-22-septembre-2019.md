@@ -6,6 +6,24 @@ redirect_from: "index.php?post/2019-09-27-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgBadger v11.1, un analyseur de log PostgreSQL et un g&eacute;n&eacute;rateur de graphe en Perl&nbsp;: <a target="_blank" href="https://github.com/darold/pgbadger/releases">https://github.com/darold/pgbadger/releases</a></li>
+
+<li>PGXN Client 1.3, un client Python pour le <em>PostgreSQL Extension Network</em>&nbsp;: <a target="_blank" href="https://github.com/pgxn/pgxnclient/releases/tag/v1.3">https://github.com/pgxn/pgxnclient/releases/tag/v1.3</a></li>
+
+<li>ldap2pg 5.0, un outil pour la synchronisation de r&ocirc;les et de privil&egrave;ges depuis un annuaire compatible LDAP&nbsp;: <a target="_blank" href="https://dali.bo/ldap2pg_changelog_5_0">https://dali.bo/ldap2pg_changelog_5_0</a></li>
+
+<li>pgCluu 3.0, un programme en Perl pour auditer les performances de PostgreSQL&nbsp;: <a target="_blank" href="http://pgcluu.darold.net/">http://pgcluu.darold.net/</a></li>
+
+<li>pgAdmin4 4.13, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_13.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_13.html</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en septembre</h2>
 

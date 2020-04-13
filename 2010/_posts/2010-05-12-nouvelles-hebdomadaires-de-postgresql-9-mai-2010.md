@@ -6,6 +6,102 @@ redirect_from: "index.php?post/2010-05-12-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 9.0 beta 1 a &eacute;t&eacute; publi&eacute;e. &Agrave; vos tests&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/developer/beta">http://www.postgresql.org/developer/beta</a></p>
+
+<p>Le "Prague PostgreSQL Test Day" aura lieu le 21 mai 2010 &agrave; Prague, R&eacute;publique Tch&egrave;que&nbsp;: 
+
+<a target="_blank" href="http://www.nic.cz/page/747/test-the-new-beta-version-of-postgresql-in-the-cz.nic-laboratories/">http://www.nic.cz/page/747/test-the-new-beta-version-of-postgresql-in-the-cz.nic-laboratories/</a></p>
+
+<p>Le nouveau bureau de l'association PostgreSQLFr a &eacute;t&eacute; &eacute;lu avec, &agrave; sa t&ecirc;te, le pr&eacute;sident Jean-Christophe Arnu, le vice-pr&eacute;sident C&eacute;dric Villeman, le tr&eacute;sorier St&eacute;phane Schildknecht et le secr&eacute;taire Patrick Francelle. D'avantage de d&eacute;tails sur&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.fr/asso:elections">http://www.postgresql.fr/asso:elections</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>pgfincore, 0.41, un ensemble de fonctions de gestion bas-niveau des relations, utilisant mincore pour explorer la m&eacute;moire cache&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgfincore/">http://pgfoundry.org/projects/pgfincore/</a></li>
+
+<li>James W. Pye a publi&eacute; une nouvelle version de PL/Python3&nbsp;: 
+
+<a target="_blank" href="http://python.projects.postgresql.org/backend/">http://python.projects.postgresql.org/backend/</a></li>
+
+<li>RHQ 3.0.0.B05, un gestionnaire syst&egrave;me et outil de surveillance utilisant PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://rhq-project.org/">http://rhq-project.org/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 9.0 de la semaine</strong></p>
+
+<p>Vous pouvez cr&eacute;er des d&eacute;clencheurs propres &agrave; une colonne, c'est-&agrave;-dire des d&eacute;clencheurs qui ne se mettent en branle qu'&agrave; la modification de certaines colonnes. La syntaxe, comme d&eacute;crite dans SQL:2008, est CREATE TRIGGER nom_du_trigger (BEFORE|AFTER) UPDATE OF col1 [,col2...coln] ON nom_de_la_table FOR EACH ROW EXECUTE PROCEDURE fonction_declenchee();</p>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en Mai</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-05/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-05/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La PgCon 2010 aura lieu les 20 &amp; 21 mai 2010 &agrave; Ottawa avec des tutoriels les 18 et 19&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2010/registration.php">http://www.pgcon.org/2010/registration.php</a></li>
+
+<li>Les inscriptions sont ouvertes pour l'Open Source Bridge et les conf&eacute;rences sont annonc&eacute;es&nbsp;! L'&eacute;v&eacute;nement aura lieu du 1er au 4 juin 2010 &agrave; Portland (Oregon)&nbsp;: 
+
+<a target="_blank" href="http://opensourcebridge.org/events/2010/proposals/">http://opensourcebridge.org/events/2010/proposals/</a></li>
+
+<li>Michael Renner tiendra une conf&eacute;rence au AMOOCON qui aura lieu du 4 au 6 juin 2010&nbsp;: 
+
+<a target="_blank" href="http://www.amoocon.de/speakers/214">http://www.amoocon.de/speakers/214</a></li>
+
+<li>La "Southeast Linuxfest 2010" aura lieu &agrave; Spartanburg (Caroline du Sud, &Eacute;tats-Unis) les 12 &amp; 13 juin. Participations/r&eacute;unions et m&eacute;c&eacute;nats encore proposables&nbsp;: 
+
+<a target="_blank" href="http://southeastlinuxfest.org/">http://southeastlinuxfest.org/</a></li>
+
+<li>L'OSCON aura lieu &agrave; Portland (Oregon) du 19 au 23 juillet 2010&nbsp;: 
+
+<a target="_blank" href="http://www.oscon.com/oscon2010">http://www.oscon.com/oscon2010</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20100509">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

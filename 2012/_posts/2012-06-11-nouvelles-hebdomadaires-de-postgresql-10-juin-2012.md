@@ -6,6 +6,94 @@ redirect_from: "index.php?post/2012-06-11-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Mises &agrave; jour de s&eacute;curit&eacute;&nbsp;: 9.1.4, 9.0.8, 8.4.12 et 8.3.19. Mettez &agrave; jour d&egrave;s que possible&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/about/news/1398/">http://www.postgresql.org/about/news/1398/</a></p>
+
+<p>F&eacute;licitations &agrave; Kevin Grittner, nouveau <em>committeur</em> PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-hackers/2012-06/msg00268.php">http://archives.postgresql.org/pgsql-hackers/2012-06/msg00268.php</a></p>
+
+<p>La 4<sup>&egrave;me</sup> Session PostgreSQL aura lieu le 4 octobre 2012 &agrave; Paris. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/en/4/">http://www.postgresql-sessions.org/en/4/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Les utilitaires PaGoDump &amp; PaGoRestore GUI sous Windows pour PG v9.1 sont disponibles&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/database/pagodump/download/">http://microolap.com/products/database/pagodump/download/</a></li>
+
+<li>pgAdmin v1.14.3, un outil graphique, autonome et multi-plateforme d'administration de PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.pgadmin.org/development/changelog.php">http://www.pgadmin.org/development/changelog.php</a></li>
+
+<li>Postgres-XC 1.0.0, un cluster multi-ma&icirc;tres, sym&eacute;trique, aux performances &eacute;volutives en &eacute;criture et bas&eacute; sur PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://postgres-xc.sourceforge.net/docs/1_0/">http://postgres-xc.sourceforge.net/docs/1_0/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en juin</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2012-06/threads.php">http://archives.postgresql.org/pgsql-jobs/2012-06/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La conf&eacute;rence <em>PostgreSQL China 2012</em> aura lieu du 14 au 17 juin &agrave; P&eacute;kin&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/Pgconfchina2012">http://wiki.postgresql.org/wiki/Pgconfchina2012</a></li>
+
+<li>La 4<sup>&egrave;me</sup> Session PostgreSQL aura lieu le 4 octobre 2012 &agrave; Paris. Appel &agrave; conf&eacute;renciers et plus d'informations sur&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/en/4/">http://www.postgresql-sessions.org/en/4/</a></li>
+
+<li>La <em>PostgreSQL Conference Europe</em> 2012 aura lieu &agrave; Prague, R&eacute;publique Tch&egrave;que, du 23 au 26 octobre. L'appel &agrave; sponsors est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2012.pgconf.eu/">http://2012.pgconf.eu/</a></li>
+
+<li>Le PgDay argentin 2012 se tiendra &agrave; l'Universit&eacute; Nationale de Quilmes, &agrave; Bernal pr&egrave;s de Buenos Aires, le 13 novembre. Les sujets couverts concerneront aussi bien les utilisateurs, d&eacute;veloppeurs et contributeurs, que les d&eacute;cideurs et hauts responsables. Pour plus d'informations &agrave; propos de la conf&eacute;rence, consultez le site suivant&nbsp;: 
+
+<a target="_blank" href="http://www.pgday.com.ar/quilmes2012?lang=en">http://www.pgday.com.ar/quilmes2012?lang=en</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2012-06/msg00012.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

@@ -6,6 +6,64 @@ redirect_from: "index.php?post/2015-06-29-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La PGConf.DE se tiendra &agrave; Hamburg (Allemagne) les 26 et 27 novembre au Lindner Hotel am Michel. L'appel &agrave; conf&eacute;renciers court jusqu'au 13 septembre 2015&nbsp;: <a target="_blank" href="http://2015.pgconf.de/">http://2015.pgconf.de/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>HypoPG, une extension ajoutant des index hypoth&eacute;tiques (tests rapides avec explain, sans avoir &agrave; cr&eacute;er r&eacute;ellement l'index)&nbsp;: <a target="_blank" href="https://github.com/dalibo/hypopg">https://github.com/dalibo/hypopg</a></li>
+
+<li>par_psql v0.1 'Parallel psql', qui ajoute des annotations sp&eacute;cifiques aux requ&ecirc;tes &agrave; ex&eacute;cuter en parall&egrave;le&nbsp;: <a target="_blank" href="http://github.com/gbb/par_psql/">http://github.com/gbb/par_psql/</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en juin</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2015-06/threads.php">http://archives.postgresql.org/pgsql-jobs/2015-06/threads.php</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>La conf&eacute;rence PGDay UK aura lieu le 7 juillet 2015 - elle vise les membres de la communaut&eacute; PostgreSQL anglaise. L'appel &agrave; conf&eacute;renciers expire le 13 avril&nbsp;: <a target="_blank" href="http://www.postgresqlusergroup.org.uk">http://www.postgresqlusergroup.org.uk</a></li>
+
+<li>Le <em>PGDay Campinas 2015</em> aura lieu &agrave; Campinas (Br&eacute;sil) le 7 ao&ucirc;t&nbsp;: <a target="_blank" href="http://pgdaycampinas.com.br/english/">http://pgdaycampinas.com.br/english/</a></li>
+
+<li>L'appel &agrave; conf&eacute;renciers pour le PostgresOpen 2015, programm&eacute; &agrave; Dallas (Texas) du 16 au 18 septembre, a &eacute;t&eacute; lanc&eacute;&nbsp;: <a target="_blank" href="http://2015.postgresopen.org/callforpapers/">http://2015.postgresopen.org/callforpapers/</a></li>
+
+<li>La <em>session PostgreSQL n&deg;7</em> aura lieu le 24 septembre 2015 &agrave; Paris (France)&nbsp;: <a target="_blank" href="http://www.postgresql-sessions.org/7/about">http://www.postgresql-sessions.org/7/about</a></li>
+
+<li><em>PostgreSQL Conference Europe 2015</em> aura lieu du 27 au 30 octobre au Vienna Marriott Hotel &agrave; Vienne (Autriche). L'appel &agrave; conf&eacute;renciers est lanc&eacute; jusqu'au 7 ao&ucirc;t&nbsp;: <a target="_blank" href="http://2015.pgconf.eu/">http://2015.pgconf.eu/</a></li>
+
+<li><em>PGConf Silicon Valley 2015</em> se tiendra au centre de convention sud de San Francisco les 17 &amp; 18 novembre. Inscriptions &agrave; prix r&eacute;duit jusqu'au 30 juin&nbsp;: <a target="_blank" href="http://www.pgconfsv.com">http://www.pgconfsv.com</a></li>
+
+<li>PGBR2015 (la PgConf br&eacute;silienne) aura lieu &agrave; Porto Alegre (&Eacute;tat du Rio Grande do Sul) les 18, 19 et 20 novembre. L'appel &agrave; conf&eacute;renciers expire le 15 juillet&nbsp;: <a target="_blank" href="http://pgbr.postgresql.org.br/2015/en/#call-for-papers">http://pgbr.postgresql.org.br/2015/en/#call-for-papers</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20150628215355.GB30019@fetter.org">http://www.postgresql.org/message-id/20150628215355.GB30019@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

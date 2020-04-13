@@ -6,6 +6,20 @@ redirect_from: "index.php?post/drupal-126 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 23 octobre 2005</strong></p>
+
+<p>
+
+8.1 beta4 est sortie. S'il vous plaît, testez-là ! </p>
+
+<p>
+
+Vous pouvez essayer l'outil de gestion de projet et traqueur de bogues Trac chez Commandprompt, maintenant mis à jour toutes les heures : <a target="_blank" href="http://projects.commandprompt.com/projects/public/pgsql">http://projects.commandprompt.com/projects/public/pgsql</a>
+
+</p>
+
+<!--more-->
+
 
 <strong>Nouvelles des produits autour de PostgreSQL</strong>
 

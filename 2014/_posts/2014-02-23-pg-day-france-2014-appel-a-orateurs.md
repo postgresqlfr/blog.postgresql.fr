@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2014-02-23-pg-day-france-2014-appel-a-orateurs "
 
 
 
+
+<!--more-->
+
+
 Le PG Day France est la conférence annuelle de la communauté francophone de PostgreSQL. Cette année, l’événement se tiendra le 5 et 6 juin à Toulon. Une centaine de visiteurs sont attendus pour une journée d'échanges autour de PostgreSQL et de ses projets associés. Retrouvez plus d'informations sur le site de l’événement : [http://www.pgday.fr|http://www.pgday.fr]
 
 

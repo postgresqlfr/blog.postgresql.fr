@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2019-01-18-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La conf&eacute;rence PostgreSQL turque aura lieu le 24 janvier 2019 &agrave; Ankara&nbsp;: <a target="_blank" href="https://postgresql.tubitak.gov.tr/">https://postgresql.tubitak.gov.tr/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgAdmin4 4.0, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_0.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_0.html</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en janvier</h2>
 

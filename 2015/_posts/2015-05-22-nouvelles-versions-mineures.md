@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2015-05-22-nouvelles-versions-mineures "
 
 
 
+
+<!--more-->
+
+
 Le PostgreSQL Global Development Group a publié un correctif qui concerne de nombreuses fonctionnalités et failles de sécurité. 
 
 Toutes les versions de PostgreSQL sont concernées. Les nouvelles versions sont 9.4.2, 9.3.7, 9.2.11, 9.1.16 et 9.0.20.

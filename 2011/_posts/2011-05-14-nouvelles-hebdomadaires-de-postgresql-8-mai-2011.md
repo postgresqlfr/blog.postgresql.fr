@@ -6,6 +6,94 @@ redirect_from: "index.php?post/2011-05-14-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 9.1 beta 1 est disponible. &Agrave; vos tests&nbsp;! 
+
+<a target="_blank" href="http://www.postgresql.org/developer/beta">http://www.postgresql.org/developer/beta</a></p>
+
+<p>L'<em>AustinPUG</em> se r&eacute;unira le 11 mai &agrave; 19h &agrave; Austin (Texas, &Eacute;tats-Unis d'am&eacute;rique). Pizza gratuite&nbsp;! Pour &ecirc;tre nourri, RSVP &agrave; austinpug AT postgresql DOT org&nbsp;: 
+
+<a target="_blank" href="http://pugs.postgresql.org/austinpug">http://pugs.postgresql.org/austinpug</a></p>
+
+<p>CHAR(11), la conf&eacute;rence PostgreSQL sur le <em>clustering</em>, la haute disponibilit&eacute; et la r&eacute;plication accepte &agrave; pr&eacute;sent les inscriptions et r&eacute;servations. Dates&nbsp;: 11 &amp; 12 juillet 2011 &agrave; Cambridge, Royaume-Uni&nbsp;: 
+
+<a target="_blank" href="http://www.char11.org/">http://www.char11.org/</a></p>
+
+<p><em>PostgreSQL Conference West</em> (#PgWest) aura lieu du 27 au 30 septembre 2011 au centre des conventions de San Jose (Californie, &Eacute;tats-Unis)&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org">http://www.postgresqlconference.org</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>pgbuildfarm client 4.5&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/forum/forum.php?forum_id=1833">http://pgfoundry.org/forum/forum.php?forum_id=1833</a></li>
+
+<li>pgpool-II 3.1.0 alpha2, un <em>pooler</em> de connexion et bien d'avantage&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en mai</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2011-05/threads.php">http://archives.postgresql.org/pgsql-jobs/2011-05/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>PGCon aura lieu les 19 &amp; 20 mai 2011 &agrave; l'Universit&eacute; d'Ottawa, pr&eacute;c&eacute;d&eacute; par deux jours de tutoriels les 17 &amp; 18 mai&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2011/">http://www.pgcon.org/2011/</a></li>
+
+<li>La PG Session 2, sur PostGIS, se tiendra &agrave; Paris le 23 juin. Appel &agrave; conf&eacute;renciers&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/en/2/">http://www.postgresql-sessions.org/en/2/</a></li>
+
+<li>La "<em>PostgreSQL Conference Europe 2011</em>" se tiendra &agrave; Amsterdam, du 18 au 21 octobre&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.eu/">http://2011.pgconf.eu/</a></li>
+
+<li>pgbr aura lieu &agrave; S&atilde;o Paulo (Br&eacute;sil) les 3 &amp; 4 novembre 2011&nbsp;: 
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/">http://pgbr.postgresql.org.br/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20110508">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

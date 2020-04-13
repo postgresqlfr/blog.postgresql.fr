@@ -6,6 +6,102 @@ redirect_from: "index.php?post/2011-04-18-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le PUG d'Austin se r&eacute;unira le 13 avril&nbsp;: 
+
+<a target="_blank" href="http://pugs.postgresql.org/austinpug">http://pugs.postgresql.org/austinpug</a></p>
+
+<p>Le PUG de New-York se r&eacute;unira le 14 avril &agrave; 18h. D&eacute;tails et RSVP ci-dessous&nbsp;: 
+
+<a target="_blank" href="http://www.meetup.com/postgresql-3/events/17219508/">http://www.meetup.com/postgresql-3/events/17219508/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>MicroOLAP Database Designer 1.8.0 Beta pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/database/postgresql-designer/">http://microolap.com/products/database/postgresql-designer/</a></li>
+
+<li>pgbouncer 1.4.1, un gestionnaire l&eacute;ger de connexions pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgbouncer/">http://pgfoundry.org/projects/pgbouncer/</a></li>
+
+<li>PostgreSQL Multiple Precision Arithmetic 1.0b1&nbsp;: 
+
+<a target="_blank" href="http://pgmp.projects.postgresql.org/">http://pgmp.projects.postgresql.org/</a></li>
+
+<li>Pyrseas 0.1.0, un ensemble d'outils de gestion de versions pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.pyrseas.org/">http://www.pyrseas.org/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en avril</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2011-04/threads.php">http://archives.postgresql.org/pgsql-jobs/2011-04/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>PostgreSQL aura une pr&eacute;sence importante lors de la "<em>MySQL Conference and Expo</em>", du 11 au 14 avril &agrave; Santa Clara (Californie)&nbsp;: 
+
+<a target="_blank" href="http://en.oreilly.com/mysql2011/public/schedule/tag/postgresql">http://en.oreilly.com/mysql2011/public/schedule/tag/postgresql</a></li>
+
+<li>Le PUG turque organise une journ&eacute;e &eacute;v&eacute;nement le 30 avril 2011. Suivez @PgDayTR (en turc) pour d'avantages de d&eacute;tails&nbsp;: 
+
+<a target="_blank" href="http://pgday.postgresql.org.tr/2011/">http://pgday.postgresql.org.tr/2011/</a></li>
+
+<li>L'<em>Open Database Camp</em> aura lieu du 7 au 9 mai 2011 en Sardaigne (Italie)&nbsp;: 
+
+<a target="_blank" href="http://datacharmer.blogspot.com/2011/01/announcing-open-database-camp-sardinia.html">http://datacharmer.blogspot.com/2011/01/announcing-open-database-camp-sardinia.html</a></li>
+
+<li>PGCon aura lieu les 19 &amp; 20 mai 2011 &agrave; l'Universit&eacute; d'Ottawa, pr&eacute;c&eacute;d&eacute; par deux jours de tutoriels les 17 &amp; 18 mai&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2011/">http://www.pgcon.org/2011/</a></li>
+
+<li>La PG Session 2, sur PostGIS, se tiendra &agrave; Paris le 23 juin. Appel &agrave; conf&eacute;renciers&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/en/2/">http://www.postgresql-sessions.org/en/2/</a></li>
+
+<li>pgbr aura lieu &agrave; S&atilde;o Paulo (Br&eacute;sil) les 3 &amp; 4 novembre 2011&nbsp;: 
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/">http://pgbr.postgresql.org.br/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20110410">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

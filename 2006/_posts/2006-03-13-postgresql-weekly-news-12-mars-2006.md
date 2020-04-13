@@ -6,6 +6,78 @@ redirect_from: "index.php?post/drupal-167 "
 ---
 
 
+<p>
+
+Les informations sur les dates et lieu du sommet-anniversaire de PostgreSQL (<em>«&nbsp;The PostgreSQL Anniversary Summit&nbsp;»</em>) sont à présent en ligne: <a href="http://conference.postgresql.org" target="_blank">http://conference.postgresql.org</a>. Nous cherchons des sponsors: merci de lire la page qui y est consacré sur notre site si cela vous intéresse: <a href="http://conference.postgresql.org/Sponsors/" target="_blank">http://conference.postgresql.org/Sponsors/</a>.
+
+</p>
+
+<p>
+
+LinuxWorld à Boston a besoin de volontaires pour s'occuper du stand
+
+PostgreSQL pour la partie associative (.org) du salon et les
+
+conférences. Vous pouvez nous aider d'une après-midi à trois jours.
+
+Aucune connaissance particulière n'est requise. Merci de contacter Josh
+
+Drake sur <a href="mailto:jd@commandprompt.com">son e.mail</a>.</p>
+
+<p>
+
+Jonah Harris a suggéré l'implémentation des synonymes, qui sont comme
+
+des liens symboliques pour les objets de base de données, dans
+
+PostgreSQL. Bien que les synonymes ne fassent pas partie du standard
+
+SQL, ils sont communs dans bien d'autres SGBD. La discussion sur les
+
+permissions et la syntaxe continue.</p>
+
+<p>
+
+De son côté, Bernd Hemle a soumis un premier patch pour les vues
+
+modifiables conformes SQL92. Vu l'intérêt suscité par ce patch, il
+
+semble certain qu'il soit intégré à la version 8.2. D'autres
+
+programmeurs éditent en effet ce patch.</p>
+
+<p>
+
+Dans la version CVS TIP, PL/Perl possède à présent les requêtes
+
+préparées. Grâce à Dmitry Karasic pour le patch et Andrew Dunstan qui
+
+l'a rendu conforme aux normes de codage de PostgreSQL.</p>
+
+<p>
+
+Il y a eu une discussion enflammée sur l'amélioration des performances
+
+du processus de vacuum et l'utilisation de l'espace libre. Bien qu'il
+
+s'agisse d'un vieux sujet récurrent sur le listes, les idées ont une
+
+fois de plus toutes été exposées. Quelques-unes se sont transformées en
+
+item de la <a href="http://www.postgresql.org/docs/faqs.TODO.html" target="_blank">TODOlist</a>, alors que d'autres sont restées dans l'état "impossible" et/ou "sans intérêt".</p>
+
+<p>
+
+La proposition de Tom Lane pour les améliorations sur les fonctionalités de tri et fusion (<em><ins>NDT:</ins>Il s'agit d'un algorithme de tri, de D. E. Knuth (toujours lui!): <a href="http://fr.wikipedia.org/wiki/Tri_fusion" target="_blank">http://fr.wikipedia.org/wiki/Tri_fusion</a></em>), pour un nombre conséquent de "bandes" (<em><ins>NDT:</ins>: voir <a href="http://en.wikipedia.org/wiki/Merge_sort#Merge_sorting_tape_drives" target="_blank">cet article</a> de Wikipédia en anglais pour un aperçu du principe</em>),
+
+qui utilise pour l'instant une fusion polyphasique standard, a suscitée
+
+une discussion animée et conséquente. D'autres idées sont venues et ont
+
+montré les prochaines étapes...</p>
+
+<!--more-->
+
 
 <h3>== Nouveaux produits autour de PostgreSQL ==</h3>
 

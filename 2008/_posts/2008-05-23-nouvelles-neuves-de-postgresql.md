@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-429 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 18 mai 2008</strong></p>
+
+<p>Comme prévu, la "commit fest" de mai s'est conclue plus sereinement que l'édition précédente.</p>
+
+<p>Tatsuo Ishii a proposé un patch ajoutant WITH RECURSIVE. S'il est accepté, il fera de PostgreSQL la première base open-source capable de gérer les structures arborescentes et à graphes orientés.
+
+[ndt: patch, explications et exemples sur <a href="http://archives.postgresql.org/pgsql-patches/2008-05/msg00362.php">http://archives.postgresql.org/pgsql-patches/2008-05/msg00362.php</a>]</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

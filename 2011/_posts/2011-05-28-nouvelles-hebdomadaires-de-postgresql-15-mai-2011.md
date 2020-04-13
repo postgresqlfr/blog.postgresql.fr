@@ -6,6 +6,126 @@ redirect_from: "index.php?post/2011-05-28-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La "PgCon China" 2011 aura lieu &agrave; Guangzhou (Canton) les 15 &amp; 16 juillet 2011&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/Pgconchina2011">http://wiki.postgresql.org/wiki/Pgconchina2011</a></p>
+
+<p>Nouveau sondage&nbsp;: sur quel nuage utilisez-vous PostgreSQL&nbsp;? 
+
+<a target="_blank" href="http://www.postgresql.org/community">http://www.postgresql.org/community</a></p>
+
+<p>Le NYCPUG se retrouvera pour "Comparer PostgreSQL et MySQL" le 25 mai &agrave; 18h30, au 50 W 23<sup>&egrave;me</sup> rue, New-York, &Eacute;tats-Unis&nbsp;: 
+
+<a target="_blank" href="http://www.meetup.com/postgresql-3/events/17846041/">http://www.meetup.com/postgresql-3/events/17846041/</a></p>
+
+<p>Le PDXPUG se chargera d'accueillir le PgDay, dimanche 24 juillet 2011, la veille de l'OSCON &agrave; Portland dans l'Oregon (&Eacute;tats-Unis). Plus de d&eacute;tails sur&nbsp;: 
+
+<a target="_blank" href="http://pugs.postgresql.org/node/1663">http://pugs.postgresql.org/node/1663</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>DBD::Pg 2.18.1, le driver Perl pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://search.cpan.org/~turnstep/DBD-Pg-2.18.1/">http://search.cpan.org/~turnstep/DBD-Pg-2.18.1/</a></li>
+
+<li>tail_n_mail 1.19.0, un utilitaire de surveillance des logs de PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/wiki/Tail_n_mail">http://bucardo.org/wiki/Tail_n_mail</a></li>
+
+<li>Bucardo 4.4.4, un syst&egrave;me de r&eacute;plication multi-ma&icirc;tres pour Pg&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/wiki/Bucardo">http://bucardo.org/wiki/Bucardo</a></li>
+
+<li>boxinfo 1.3.3, un programme de rassemblement d'informations sur les serveurs&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/wiki/Boxinfo">http://bucardo.org/wiki/Boxinfo</a></li>
+
+<li>MicroOLAP Database Designer 1.8.0-RC pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/database/postgresql-designer/">http://microolap.com/products/database/postgresql-designer/</a></li>
+
+<li>Les utilitaires PaGoDump et PaGoRestore 9.0.4 GUI pour Windows&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/database/pagodump">http://microolap.com/products/database/pagodump</a></li>
+
+<li>psqlODBC 09.00.0300, un driver ODBC pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://psqlodbc.projects.postgresql.org/release.html">http://psqlodbc.projects.postgresql.org/release.html</a></li>
+
+<li>SQL/PSM, une impl&eacute;mentation de la partie homonyme du standard SQL&nbsp;: 
+
+<a target="_blank" href="https://github.com/okbob/plpsm0">https://github.com/okbob/plpsm0</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en mai</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2011-05/threads.php">http://archives.postgresql.org/pgsql-jobs/2011-05/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>PGCon aura lieu les 19 &amp; 20 mai 2011 &agrave; l'Universit&eacute; d'Ottawa, pr&eacute;c&eacute;d&eacute; par deux jours de tutoriels les 17 &amp; 18 mai&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2011/">http://www.pgcon.org/2011/</a></li>
+
+<li>La PG Session 2, sur PostGIS, se tiendra &agrave; Paris le 23 juin. Appel &agrave; conf&eacute;renciers&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/en/2/">http://www.postgresql-sessions.org/en/2/</a></li>
+
+<li>CHAR(11), la conf&eacute;rence PostgreSQL sur le <em>clustering</em>, la haute disponibilit&eacute; et la r&eacute;plication accepte &agrave; pr&eacute;sent les inscriptions et r&eacute;servations. Dates&nbsp;: 11 &amp; 12 juillet 2011 &agrave; Cambridge, Royaume-Uni&nbsp;: 
+
+<a target="_blank" href="http://www.char11.org/">http://www.char11.org/</a></li>
+
+<li><em>PostgreSQL Conference West</em> (#PgWest) aura lieu du 27 au 30 septembre 2011 au centre des conventions de San Jose (Californie, &Eacute;tats-Unis)&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org">http://www.postgresqlconference.org</a></li>
+
+<li>La "<em>PostgreSQL Conference Europe 2011</em>" se tiendra &agrave; Amsterdam, du 18 au 21 octobre&nbsp;: 
+
+<a target="_blank" href="http://2011.pgconf.eu/">http://2011.pgconf.eu/</a></li>
+
+<li>pgbr aura lieu &agrave; S&atilde;o Paulo (Br&eacute;sil) les 3 &amp; 4 novembre 2011&nbsp;: 
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/">http://pgbr.postgresql.org.br/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20110515">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

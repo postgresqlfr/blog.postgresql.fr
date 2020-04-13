@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-297 "
 
 
 
+
+<!--more-->
+
+
 Cette année, l'association PostgreSQLFr est très présente aux RMLL, Les Rencontres Mondiales du Logiciel Libre.
 
 Ces rencontres débutent aujourd'hui et se  terminent samedi  5 juillet à Mont de Marsan.

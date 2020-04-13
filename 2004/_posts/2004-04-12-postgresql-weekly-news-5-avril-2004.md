@@ -6,6 +6,64 @@ redirect_from: "index.php?post/drupal-12 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires de PostgreSQL - 5 avril 2004 ==</h2>
+
+<p>Cette édition tardive des nouvelles hebdomadaires vous arrive grâce à
+
+mon fils Dylan, qui a eu trois ans aujourd'hui. Il a trouvé les modifications
+
+de l'optimiseur très intéressantes, donc allons-y.<!--break-->
+
+</p>
+
+<p>L'optimiseur a été amélioré principalement pour instituer ce qui était appelé la
+
+nouvelle logique de "comparaison fuzzy". Le but du nouveau code est de
+
+marquer les chemins ayant les mêmes clés de chemin et pratiquement les
+
+mêmes coûts comme redondants. Bien que le coût exact de cet "hasard" pourrait
+
+être encore ajusté, il a montré jusqu'à maintenant des performances accrues
+
+dans certains cas sans inconvénients (c'est-à-dire que les résultats, au niveau
+
+des plans choisis ont été identiques, certains chemins ont simplement été
+
+éliminés pour obtenir ces résultats plus rapidement). Le code GIST s'est vu un
+
+peu nettoyé, ce qui a résulté en l'élimination d'un problème avec les boîtes
+
+alignées strictement sur 64 bits ainsi que le passage de l'utilisation de
+
+structures bytea aux structures GistEntryVector. Win32 a aussi reçu quelques
+
+améliorations qui devraient permettre sa compilation avec VC++. Quelques bogues
+
+de la fonction to_char dans la gestion des dates BC ont été corrigés. Sur le
+
+front de la documentation, quelques informations sur l'utilisation de \df
+
+(pour trouver les fonctions utilisant/renvoyant des types de données
+
+spécifiques) ont été incluses. Et dernier point, mais pas le moindre, du code
+
+a été ajouté pour composer la base de l'utilisation des types composites en
+
+colonnes de table (et potentiellement quelques autres fonctionnalités possibles).
+
+</p>
+
+<p>Finalement, une nouvelle de notre communauté internationale : nos amis espagnols
+
+ont annoncé le déplacement de la liste d'aide générale espagnole vers
+
+pgsql-es-ayuda@postgresql.org. De plus, nous sommes fiers d'annoncer notre
+
+premier miroir disponible à Singapour, grâce à Matthew Feinberg et Feratech.com.</p>
+
+<!--more-->
+
 
 <h2>== Nouvelles concernant les produits PostgreSQL ==                                                                                </h2>
 

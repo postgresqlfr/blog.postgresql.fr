@@ -6,6 +6,64 @@ redirect_from: "index.php?post/2016-10-27-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL@SCaLE est un &eacute;v&eacute;nement de 2 jours &agrave; double programmes qui aura lieu les 2 &amp; 3 mars 2017 au centre de convention de Pasadena, int&eacute;gr&eacute; au SCaLE 15X. L'appel &agrave; conf&eacute;renciers court jusqu'au 15 novembre 2016&nbsp;: <a target="_blank" href="http://www.socallinuxexpo.org/scale/15x/cfp">http://www.socallinuxexpo.org/scale/15x/cfp</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>Ora2PG 17.5, un outil de migration de bases Oracle vers PostgreSQL&nbsp;: <a target="_blank" href="http://ora2pg.darold.net/">http://ora2pg.darold.net/</a></li>
+
+<li>PostgresDAC 3.2.0, composants pour acc&egrave;s direct &agrave; PostgreSQL pour Delphi/C++ builder&nbsp;: <a target="_blank" href="http://microolap.com/products/connectivity/postgresdac/news/detail.php?ID=1781">http://microolap.com/products/connectivity/postgresdac/news/detail.php?ID=1781</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en octobre</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2016-10/threads.php">http://archives.postgresql.org/pgsql-jobs/2016-10/threads.php</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>La <em>PostgreSQL Conference Europe 2016</em> aura lieu &agrave; Tallin, Estonie, du 1er au 4 novembre 2016. Le programme a &eacute;t&eacute; publi&eacute;&nbsp;: <a target="_blank" href="http://2016.pgconf.eu/registration/">http://2016.pgconf.eu/registration/</a></li>
+
+<li>[ndt: Meetup &agrave; Paris le 10 novembre&nbsp;: <a href="http://www.meetup.com/fr-FR/PostgreSQL-User-Group-Paris/" target="_blank">http://www.meetup.com/fr-FR/PostgreSQL-User-Group-Paris/</a>]</li>
+
+<li>Le PGDay Austin 2016 aura lieu le 12 novembre 2016&nbsp;: <a target="_blank" href="https://www.postgresql.us/events/2016/austin">https://www.postgresql.us/events/2016/austin</a></li>
+
+<li>La <em>PgConf Silicon Valley 2016</em> aura lieu du 14 au 16 novembre 2016&nbsp;: <a target="_blank" href="http://www.pgconfsv.com/">http://www.pgconfsv.com/</a></li>
+
+<li>[ndt: Meetup &agrave; Nantes le 22 novembre&nbsp;: <a href="http://www.meetup.com/fr-FR/PostgreSQL-User-Group-Nantes/" target="_blank">http://www.meetup.com/fr-FR/PostgreSQL-User-Group-Nantes/</a>]</li>
+
+<li>CHAR(16) aura lieu &agrave; New York le 6 d&eacute;cembre 2016&nbsp;: <a target="_blank" href="http://charconference.org/">http://charconference.org/</a></li>
+
+<li>Le PGDay.IT 2016 aura lieu &agrave; Prato le 13 d&eacute;cembre 2016&nbsp;: <a target="_blank" href="http://pgday.it">http://pgday.it</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20161023230118.GA30097@fetter.org">http://www.postgresql.org/message-id/20161023230118.GA30097@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

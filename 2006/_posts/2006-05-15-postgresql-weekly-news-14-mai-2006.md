@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-183 "
 ---
 
 
+<p>L'enregistrement pour le <em>PostgreSQL Anniversary</em> est maintenant clos, nous sommes à présent à pleine capacité. (<a href="http://conference.postgresql.org" target="_blank">Visiter le site</a>).</p>
+
+<p>Les versions 8.1.4, 8.0.8 et 7.4.13 vont sortir très prochainement. Soyez prêts à mettre à jour.</p>
+
+<!--more-->
+
 
 <h3>== Nouveaux produits autour de PostgreSQL ==</h3>
 

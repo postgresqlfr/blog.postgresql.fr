@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2020-01-06-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>Crunchy PostgreSQL Operator 4.2.0, un syst&egrave;me pour d&eacute;ployer et g&eacute;rer des clusters PostgreSQL open-source dans Kubernetes&nbsp;: <a target="_blank" href="https://access.crunchydata.com/documentation/postgres-operator/latest/quickstart/">https://access.crunchydata.com/documentation/postgres-operator/latest/quickstart/</a></li>
+
+<li>wal2json 2.0, un plugin g&eacute;n&eacute;rateur de JSON pour l'extraction de journaux de changement&nbsp;: <a target="_blank" href="https://github.com/eulerto/wal2json/releases">https://github.com/eulerto/wal2json/releases</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>PostgreSQL Local</h2>
 

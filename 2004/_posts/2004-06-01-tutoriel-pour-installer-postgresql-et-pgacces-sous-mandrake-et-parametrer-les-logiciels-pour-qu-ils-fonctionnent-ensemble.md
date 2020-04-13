@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-13 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <h2>Rapide introduction</h2>
 

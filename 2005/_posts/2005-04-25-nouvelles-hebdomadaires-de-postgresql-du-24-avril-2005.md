@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-92 "
 ---
 
 
+<p><strong>== Nouvelles hebdomadaires de PostgreSQL du 24 avril 2005 ==</strong></p>
+
+<p><em>Dans son mail sur la liste pg-announce, David Fetter nous disait : </em></p>
+
+<p>
+
+Beaucoup de discussions au sujet des brevets et de la position publique devant être adoptée par la communauté de PostgreSQL. La position adoptée est de rendre le logiciel de PostgreSQL vierge de tout brevet dans toutes ses versions. Concernant ce sujet, nous vous demandons de bien vouloir passer de la liste -www à la liste -advocacy qui est plus à propos.
+
+</p>
+
+<!--more-->
+
 
 Tom Lane a ajouté le bitmapping des index classiques en mémoire, connu sous le nom de « bitmapscan ». Le but de cette innovation est de de permettre des opérations bitmap de jointure ou même d'avoir plusieurs conditions OR sur le même INDEX. Le résultat attendu est une amélioration importante des requêtes disposant de conditions complexes dans la clause WHERE, à condition de disposer de CPU rapides et de beaucoup de RAM. Toutefois, nous n'avons pas encore modifié le coût d'estimation du planificateur de requêtes pour les bitmapscans. Si cette fonctionnalité vous intéresse, nous vous conseillons de télécharger la version courante (snapshot) et de la tester en plaçant la variable enable_bitmapscan à « on » ou « off » et d'en reporter les résultats.
 

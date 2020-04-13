@@ -6,6 +6,82 @@ redirect_from: "index.php?post/2013-10-31-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La prochaine r&eacute;union du PUG indien aura lieu &agrave; Pune le 16 novembre 2013. Infos &amp; RSVP&nbsp;: 
+
+<a target="_blank" href="http://www.meetup.com/India-PostgreSQL-UserGroup-Meetup/events/146224752/">http://www.meetup.com/India-PostgreSQL-UserGroup-Meetup/events/146224752/</a><br>
+
+Conf&eacute;rences&nbsp;: 
+
+<a target="_blank" href="http://www.meetup.com/India-PostgreSQL-UserGroup-Meetup/messages/boards/thread/38935632/">http://www.meetup.com/India-PostgreSQL-UserGroup-Meetup/messages/boards/thread/38935632/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Ora2PG 12.0, un outil de migration depuis Oracle vers PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://ora2pg.darold.net/">http://ora2pg.darold.net/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en octobre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2013-10/threads.php">http://archives.postgresql.org/pgsql-jobs/2013-10/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La <em>PGConf.EU 2013</em> sera tenue du 29 octobre au 1<sup>er</sup> novembre au Conrad Hotel dans le centre-ville de Dublin en Irlande&nbsp;: 
+
+<a target="_blank" href="http://2013.pgconf.eu/">http://2013.pgconf.eu/</a></li>
+
+<li><em>PGConf.DE 2013</em> aura lieu le 8 novembre 2013 au mus&eacute;e industriel de la Rh&eacute;nanie &agrave; Oberhausen. L'appel &agrave; conf&eacute;renciers porte jusqu'au 15 septembre&nbsp;: 
+
+<a target="_blank" href="http://2013.pgconf.de/">http://2013.pgconf.de/</a></li>
+
+<li>La quatri&egrave;me &eacute;dition du PGDay argentin se tiendra le 14 novembre 2013 &agrave; Buenos Aires, Argentine&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/PGDay_Argentina_2013">http://wiki.postgresql.org/wiki/PGDay_Argentina_2013</a></li>
+
+<li>Le PGDay cubain aura lieu les 28 &amp; 29 novembre 2013&nbsp;: 
+
+<a target="_blank" href="http://postgresql.uci.cu/?page_id=474">http://postgresql.uci.cu/?page_id=474</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20131028143847.GB12225@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

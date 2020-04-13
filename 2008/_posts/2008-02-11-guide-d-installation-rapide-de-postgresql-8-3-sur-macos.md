@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-277 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Ce document est guide d'installation <em>rapide</em> de <a href="http://www.postgresql.org/">PostgreSQL 8.3</a> sur MacOS 10.4.
 

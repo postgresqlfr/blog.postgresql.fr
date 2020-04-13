@@ -6,6 +6,26 @@ redirect_from: "index.php?post/2009-08-27-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La première <em>commitfest</em> est maintenant terminée, avec 35 patchs inclus. Félicitations à Robert Haas, "maman" de la <em>commitfest</em>, et à tous les candidats et relecteurs.</p>
+
+<p>Nouveau sondage&nbsp;: laquelle de ces erreurs de DBA vous a coûté le plus long "hors service"&nbsp;?
+
+<a target="_blank" href="http://www.postgresql.org/community">http://www.postgresql.org/community</a></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>check_postgres 2.11.0, un module Nagios pour la surveillance de PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://bucardo.org/check_postgres/">http://bucardo.org/check_postgres/</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090823">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en août</strong></p>
 

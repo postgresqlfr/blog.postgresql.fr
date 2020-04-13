@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-299 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Comme promis lors des sessions PostgreSQLFr aux RMLL, voici les différents supports de présentation et de tutoriels que nous avons proposés la semaine passée :
 

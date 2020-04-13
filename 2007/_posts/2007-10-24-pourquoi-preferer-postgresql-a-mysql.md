@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-216 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <h1>Pourquoi préférer PostgreSQL à MySQL&nbsp;: comparatif de fiabilité et de rapidité en 2007</h1>
 

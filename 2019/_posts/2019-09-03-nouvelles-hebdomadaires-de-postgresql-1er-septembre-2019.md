@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2019-09-03-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pg_dumpbinary 1.0, un programme permettant de dumper une base de donn&eacute;es en binaire pur&nbsp;: <a target="_blank" href="https://github.com/darold/pg_dumpbinary/">https://github.com/darold/pg_dumpbinary/</a></li>
+
+<li>Slony 2.2.8, un syst&egrave;me de r&eacute;plication logique bas&eacute; sur les triggers&nbsp;: <a target="_blank" href="http://www.slony.info/">http://www.slony.info/</a></li>
+
+<li>Ajqvue version 3.0, une UI java compatible PostgreSQL&nbsp;: <a target="_blank" href="http://ajqvue.com">http://ajqvue.com</a></li>
+
+<li>pgbouncer 1.11.0, un pooler de connexions &agrave; PostgreSQL et bien d'avantage&nbsp;: <a target="_blank" href="https://pgbouncer.github.io/2019/08/pgbouncer-1-11-0">https://pgbouncer.github.io/2019/08/pgbouncer-1-11-0</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en septembre</h2>
 

@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-397 "
 ---
 
 
+<em>Article écrit par <a href="mailto:depesz@depesz.com">Hubert Lubaczewski</a> et traduit par <a href="mailto:damien@dalibo.com">Damien Clochard</a>, le 18 août 2007. La <a href="http://www.depesz.com/index.php/2007/08/18/securing-your-postgresql-database/">version originale</a> est disponible sur le <a href="http://www.depesz.com/">blog de l'auteur</a> où se trouvent beaucoup d'autres articles intéressants.</em>
+
+<!--more-->
+
 
 <p>Il y a quelques temps j'ai décrit <a href="http://www.depesz.com/index.php/2007/08/12/hacking-with-postgresql/">comment « <code>pirater<code> » un système en utilisant PostgreSQL</code></code></a>. Aujourd'hui, je vais décrire comment sécuriser au maximum une installation PostgreSQL1.</p>
 

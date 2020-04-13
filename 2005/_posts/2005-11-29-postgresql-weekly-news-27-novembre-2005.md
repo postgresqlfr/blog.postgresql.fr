@@ -6,6 +6,20 @@ redirect_from: "index.php?post/drupal-139 "
 ---
 
 
+<h3>== PostgreSQL Weekly News - 27 novembre 2005 ==</h3>
+
+<p>
+
+Teodor Sigaev a de nouveau amélioré tsearch2 dans la version CVS.
+
+</p>
+
+<p>
+
+Il y a eu une très vive discussion sur la liste pgsql-hackers pour obtenir un count(*) plus rapide, ou une approximation de celui-ci. De même pour les procédures stockées en PHP</p>
+
+<!--more-->
+
 
 <h3>== Nouveaux produits autour de PostgreSQL ==</h3>
 

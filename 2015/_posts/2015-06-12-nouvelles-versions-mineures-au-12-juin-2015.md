@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2015-06-12-nouvelles-versions-mineures-au-12-juin
 
 
 
+
+<!--more-->
+
+
 Le PostgreSQL Global Development Group a publié une mise à jour pour toutes les
 
 versions supportées du SGBD, soit les versions 9.4.4, 9.3.9, 9.2.13, 9.1.18 et 9.0.22.%%%

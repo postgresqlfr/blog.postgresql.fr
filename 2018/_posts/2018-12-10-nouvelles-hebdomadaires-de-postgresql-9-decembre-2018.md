@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2018-12-10-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La <em>PGCon 2019</em> se tiendra &agrave; Ottawa du 28 au 31 mai 2019. L'appel &agrave; conf&eacute;renciers court jusqu'au 19 janvier 2019 sur&nbsp;: <a target="_blank" href="http://www.pgcon.org/2019/papers.php">http://www.pgcon.org/2019/papers.php</a> <a target="_blank" href="https://www.pgcon.org/2018/schedule/">https://www.pgcon.org/2018/schedule/</a></p>
+
+<p>Le PGDay suisse 2019 aura lieu &agrave; Rapperswil-Jona (pr&egrave;s de Zurich) le 28 juin 2018. L'appel &agrave; conf&eacute;renciers courra du 17 janvier au 18 avril 2019, et les inscriptions seront ouvertes d&egrave;s le 17 janvier&nbsp;: <a target="_blank" href="http://www.pgday.ch/2019/">http://www.pgday.ch/2019/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgsql_tweaks 0.3.0, une extension ajoutant fonctions et vues&nbsp;: <a target="_blank" href="https://gitlab.com/sjstoelting/pgsql-tweaks">https://gitlab.com/sjstoelting/pgsql-tweaks</a></li>
+
+<li>InfluxDB fdw 0.1&nbsp;: <a target="_blank" href="https://github.com/pgspider/influxdb_fdw">https://github.com/pgspider/influxdb_fdw</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en d&eacute;cembre</h2>
 

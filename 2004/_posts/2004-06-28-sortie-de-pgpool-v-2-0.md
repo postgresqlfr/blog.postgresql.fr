@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-17 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Tatsuo Ishii, sur la liste pgsql-announce@postgresql.org, nous apprenait le 22 juin que pgpool 2.0. était sorti, ci après une traduction de l'annonce:
 

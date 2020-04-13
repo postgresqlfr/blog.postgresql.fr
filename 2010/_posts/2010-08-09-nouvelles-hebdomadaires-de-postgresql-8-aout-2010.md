@@ -6,6 +6,70 @@ redirect_from: "index.php?post/2010-08-09-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Visite guidée de PostgreSQL 9.0 par Bruce Momjian lors du prochain "NYC PostgreSQL Meetup", le 10 août à 18h. RSVP ci-après&nbsp;:
+
+<a target="_blank" href="http://www.meetup.com/postgresql-3/calendar/14310923/">http://www.meetup.com/postgresql-3/calendar/14310923/</a></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>Npgsql 2.0.10, un "fournisseur de données" PostgreSQL pour .NET&nbsp;:
+
+<a target="_blank" href="http://www.npgsql.org">http://www.npgsql.org</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en août</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;:
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-08/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-08/threads.php</a>;</li>
+
+<li>Francophones&nbsp;:
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La FrOSCon 2010 aura lieu à St. Augustin (Allemagne) les 21 &amp; 22 août 2010. Le PUG allemand a obtenu sa propre salle de dev. et est à la recherche de conférenciers. Plus de détails&nbsp;:
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/711-FrOSCon-2010-PostgreSQL-devroom-Call-for-papers.html">http://andreas.scherbaum.la/blog/archives/711-FrOSCon-2010-PostgreSQL-devroom-Call-for-papers.html</a></li>
+
+<li>L'appel à conférenciers pour la "West" est lancé jusqu'au 5 septembre 2010. Détails sur&nbsp;:
+
+<a target="_blank" href="http://www.postgresqlconference.org/">http://www.postgresqlconference.org/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les média</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;:
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><em>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'équipe PostgreSQLFr sous licence CC BY-NC-SA.</em></p>
+
+<p><em>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais à david (a) fetter.org, en allemand à pwn (a) pgug.de, en italien à pwn (a) itpug.org et en espagnol à pwn (a) arpug.com.ar.</em></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20100808">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues</strong></p>
 

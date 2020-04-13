@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-194 "
 
 
 
+
+<!--more-->
+
+
 <p>
 
 La nouvelle version de l'installeur PostgreSQL pour MacOSX vient d'être <a href="http://greg.rubyfr.net/pub/?page_id=10">mise en ligne</a>.

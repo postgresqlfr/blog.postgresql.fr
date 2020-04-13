@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-292 "
 ---
 
 
+<p>Voici en pièces jointes 2 fichiers permettant de configurer pgbouncer
+
+sur un pool de serveurs afin de créer un cluster HA pour pgbouncer.</p>
+
+<!--more-->
+
 
 <p>Le fichier ocf-pgbouncer.txt est un script adapté du script ocf Evmsd fourni par heartbeat-2.
 

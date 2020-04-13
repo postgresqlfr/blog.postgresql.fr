@@ -6,6 +6,22 @@ redirect_from: "index.php?post/drupal-284 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 27 avril 2008</strong></p>
+
+<ul>
+
+<li>Simon Riggs a proposé une implémentation de "MERGE", les discussions vont bon train&nbsp;:
+
+[ndt: il y a l'ébauche de la doc en bas du post: <a target="_blank" href="http://archives.postgresql.org/pgsql-hackers/2008-04/msg01475.php">http://archives.postgresql.org/pgsql-hackers/2008-04/msg01475.php</a>]</li>
+
+<li>[ajout trad.] Conférence PostgreSQL chez Parinux, le 7 mai à 19h15 à Paris VII°&nbsp;:
+
+<a target="_blank" href="http://blog.guillaume.lelarge.info/index.php/post/2008/04/21/Conference-PostgreSQL-chez-Parinux">http://blog.guillaume.lelarge.info/index.php/post/2008/04/21/Conference-PostgreSQL-chez-Parinux</a></li>
+
+</ul><br />
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

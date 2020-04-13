@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-96 "
 ---
 
 
+<p>David Fetter nous annonçait le 22 mai sur la liste pgsql-announce:</p>
+
+<p>
+
+Une discussion importante a eu lieu sur les nouvelles vues des objets système (cf <a href="http://www.pgfoundry.org/projects/newsysviews"> http://www.pgfoundry.org/projects/newsysviews</a>).</p>
+
+<p>Andrew Dunstan a séparé les tests de régression sur les langages procéduraux du reste, ce qui permet à présent à la ferme de compilation de faire ces tests.</p>
+
+<!--more-->
+
 
 Plusieurs nouvelles propositions ont étés ajoutées afin que l'on soit prêt pour un gel des fonctionalités pour le 1er Juillet (NDT: avant une version majeure, on interdit (on "gèle") l'ajout de fonctionalité en délimitant ainsi le périmètre de cette version, afin de planifier un cycle de développement). Andras Kadinger s'est proposé pour revoir le code de LISTEN/NOTIFY afin qu'il soit monté en mémoire partagée, avec un système de messages. Simon Riggs a présenté un document de spécification sur le partitionnement de tables. L'équipe de A. Carnegie Mellon a soumis une spécification sur un système capable de gérer des priorités sur les requêtes. Victor Yegorov a commencé à parler des problèmes qu'il rencontre sur l'implémentation d'un index bitmap sur disque. Il y a eu une discussion très vive ainsi que plusieurs ajouts de correctifs sur la fonctionalité dite du « Two Phase Commit ».
 

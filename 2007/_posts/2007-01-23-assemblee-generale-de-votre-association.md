@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-232 "
 
 
 
+
+<!--more-->
+
+
 <p>Le 31 janvier au soir se tiendra l'Assemblée Générale de l'association PostgreSQLFr.</p>
 
 <p>Nous comptons sur votre présence.</p>

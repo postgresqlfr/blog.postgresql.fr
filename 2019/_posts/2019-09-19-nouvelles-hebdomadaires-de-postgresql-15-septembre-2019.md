@@ -6,6 +6,24 @@ redirect_from: "index.php?post/2019-09-19-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 12 Beta 4 disponible. &Agrave; vos tests&nbsp;! <a target="_blank" href="https://www.postgresql.org/about/news/1972">https://www.postgresql.org/about/news/1972</a></p>
+
+<p>La <em>PGConf India 2020</em> aura lieu du 26 au 28 f&eacute;vrier 2020 &agrave; Bengalore (&Eacute;tat du Karnataka en Inde). L'appel &agrave; conf&eacute;renciers court jusqu'au 15 novembre 2019&nbsp;: <a target="_blank" href="http://pgconf.in/">http://pgconf.in/</a></p>
+
+<p>Le <em>PGDay Down Under</em> 2019 aura lieu le 15 d&eacute;cembre 2019 &agrave; Sydney, Australie. L'appel &agrave; conf&eacute;renciers court jusqu'au 5 octobre 2019 &agrave; 17h AEST&nbsp;: <a target="_blank" href="https://pgdu.org/">https://pgdu.org/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgpool-II 4.1 beta1&nbsp;: <a target="_blank" href="https://www.pgpool.net/docs/41/en/html/">https://www.pgpool.net/docs/41/en/html/</a></li>
+
+<li>pgcrockford, un plugin d'encodage Crockford Base 32 pour les entiers non-sign&eacute;s&nbsp;: <a target="_blank" href="https://github.com/grzm/pgcrockford">https://github.com/grzm/pgcrockford</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en septembre</h2>
 

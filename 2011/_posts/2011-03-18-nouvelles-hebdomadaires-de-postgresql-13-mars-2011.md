@@ -6,6 +6,72 @@ redirect_from: "index.php?post/2011-03-18-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Publication de PostgreSQL 9.1alpha4, avec moultes, grosses gâteries&nbsp;! Il s'agit de la dernière alpha planifiée pour la 9.1 et elle est disponible par là&nbsp;:
+
+<a target="_blank" href="http://www.postgresql.org/developer/alpha">http://www.postgresql.org/developer/alpha</a></p>
+
+<p>Nouveau sondage&nbsp;: quelle est la fonctionnalité de la 9.1 qui vous intéresse le plus&nbsp;?
+
+<a target="_blank" href="http://www.postgresql.org/community">http://www.postgresql.org/community</a></p>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en mars</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;:
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2011-03/threads.php">http://archives.postgresql.org/pgsql-jobs/2011-03/threads.php</a>;</li>
+
+<li>Francophones&nbsp;:
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>PostgreSQL Conference East 2011&nbsp;: New-York City, du 22 au 25 mars&nbsp;:
+
+<a target="_blank" href="http://www.postgresqlconference.org">http://www.postgresqlconference.org</a></li>
+
+<li>PostgreSQL aura une présence importante lors de la "<em>MySQL Conference and Expo</em>", du 11 au 14 avril à Santa Clara (Californie)&nbsp;:
+
+<a target="_blank" href="http://en.oreilly.com/mysql2011/public/schedule/tag/postgresql">http://en.oreilly.com/mysql2011/public/schedule/tag/postgresql</a></li>
+
+<li>L'<em>Open Database Camp</em> aura lieu du 7 au 9 mai 2011 en Sardaigne (Italie)&nbsp;:
+
+<a target="_blank" href="http://datacharmer.blogspot.com/2011/01/announcing-open-database-camp-sardinia.html">http://datacharmer.blogspot.com/2011/01/announcing-open-database-camp-sardinia.html</a></li>
+
+<li>PGCon aura lieu les 19 &amp; 20 mai 2011 à l'Université d'Ottawa, précédé par deux jours de tutoriels les 17 &amp; 18 mai&nbsp;:
+
+<a target="_blank" href="http://www.pgcon.org/2011/">http://www.pgcon.org/2011/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les média</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL:
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;:
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><em>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'équipe PostgreSQLFr sous licence CC BY-NC-SA.</em></p>
+
+<p><em>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais à david (a) fetter.org, en allemand à pwn (a) pgug.de, en italien à pwn (a) itpug.org et en espagnol à pwn (a) arpug.com.ar.</em></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20110313">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

@@ -6,6 +6,44 @@ redirect_from: "index.php?post/drupal-438 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 10 août 2008</strong></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>BitNami LAPPStack 1.0&nbsp;:
+
+<a target="_blank" href="http://bitnami.org/stack/lappstack">http://bitnami.org/stack/lappstack</a></li>
+
+<li>pgbouncer 1.2.3&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgbouncer/">http://pgfoundry.org/projects/pgbouncer/</a></li>
+
+<li>phpPgAdmin 4.2.1&nbsp;:
+
+<a target="_blank" href="http://sourceforge.net/project/showfiles.php?group_id=37132">http://sourceforge.net/project/showfiles.php?group_id=37132</a></li>
+
+<li>PyReplica 1.0.3&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/pyreplica/">http://pgfoundry.org/projects/pyreplica/</a></li>
+
+<li>Another PostgreSQL Diff Tool 1.2&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/apgdiff/">http://pgfoundry.org/projects/apgdiff/</a></li>
+
+<li>pgSphere 1.0.1&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgsphere/">http://pgfoundry.org/projects/pgsphere/</a></li>
+
+<li>PostgreSQL Toolbox 1&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/pg-toolbox/">http://pgfoundry.org/projects/pg-toolbox/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <strong>Offres d'emplois autour de PostgreSQL en août</strong>
 

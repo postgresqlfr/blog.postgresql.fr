@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2012-02-27-mise-a-jour-mineures-de-postgresql-9-1
 
 
 
+
+<!--more-->
+
+
 Le projet PostgreSQL sort aujourd'hui des mises à jour de sécurité pour toutes les branches actives du SGBD PostgreSQL. Ces mises à jour correspondent aux versions 9.1.3, 9.0.7, 8.4.11, 8.3.18.
 
 

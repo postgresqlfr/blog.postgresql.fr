@@ -6,6 +6,56 @@ redirect_from: "index.php?post/2009-06-27-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>L'appel &agrave; conf&eacute;rences pour le PGDay.eu est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2009.pgday.eu/">http://2009.pgday.eu/</a></p>
+
+<p>&Agrave; partir du 1<sup>er</sup> octobre, 2ndQuadrant va offrir, pendant 15 mois, un support gratuit aux &eacute;tudiants de l'universit&eacute; de L'Aquila (r&eacute;gion des Abruzzes en Italie). Plus d'informations (en italien)&nbsp;: 
+
+<a target="_blank" href="http://blog.2ndquadrant.it/it/2009/06/2ndquadrant-universita-aquila.html">http://blog.2ndquadrant.it/it/2009/06/2ndquadrant-universita-aquila.html</a></p>
+
+<p>L'"OpenSQL Camp" aura lieu les 22 &amp; 23 ao&ucirc;t &agrave; S<sup>t</sup> Augustin (All.), pr&egrave;s de Bonn et de Cologne. La date limite pour les propositions de conf&eacute;rences est le 19 juillet 2009&nbsp;: 
+
+<a target="_blank" href="http://opensqlcamp.org/Events/2009/Call_for_Participation">http://opensqlcamp.org/Events/2009/Call_for_Participation</a></p>
+
+<p>L'appel &agrave; conf&eacute;rences pour la "PyCon Argentina" est lanc&eacute; jusqu'&agrave; la date du 29 juin 2009, 23h59 ART [ndt: UTC-3 ?]. La conf&eacute;rence elle-m&ecirc;me aura lieu &agrave; Buenos Aires les 4 &amp; 5 septembre 2009&nbsp;: 
+
+<a target="_blank" href="http://ar.pycon.org/2009/rfp/">http://ar.pycon.org/2009/rfp/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Benetl 2.8, un outil d'ETL utilisant PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.benetl.net">http://www.benetl.net</a></li>
+
+<li>MicroOLAP Database Designer 1.2.8 pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/database/postgresql-designer/">http://microolap.com/products/database/postgresql-designer/</a></li>
+
+<li>PostGIS 1.4.0 beta 1, un syst&egrave;me d'informations g&eacute;ospatiales pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://postgis.refractions.net/">http://postgis.refractions.net/</a></li>
+
+<li>rubyrep 1.0.3, un syst&egrave;me de r&eacute;plication asynchrone ma&icirc;tre-ma&icirc;tre&nbsp;: 
+
+<a target="_blank" href="http://www.rubyrep.org">http://www.rubyrep.org</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 8.4 de la semaine</strong></p>
+
+<p>EXPLAIN ANALYZE affiche l'utilisation de la m&eacute;moire par les diff&eacute;rents tris et hachage.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Les GUC utilisateurs (param&egrave;tres de configuration) comme work_mem et constraint_exclusion peuvent &ecirc;tre sp&eacute;cif&eacute;s comme caract&eacute;ristiques d'un ROLE ou d'une fonction.</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090621">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en juin</strong></p>
 

@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-153 "
 ---
 
 
+<p>Jusqu'à présent l'installation de PostgreSQL sous MacOSX passait forcément par une étape de compilation. En effet il n'existait aucun package d'installation pour Mac. Ce temps est maintenant révolu grâce à la mise en place du projet <a hreh="http://greg.rubyfr.net/pub/?page_id=10"><strong>PostgreSQL for MacOSX</strong></a>.</p>
+
+<!--more-->
+
 
 <p>
 

@@ -6,6 +6,36 @@ redirect_from: "index.php?post/drupal-58 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires de PostgreSQL - 21 décembre 2004 ==</h2>
+
+<p>Le 21 décembre dernier, Robert Treat nous annonçait sur la liste pgsql-announce&nbsp;:</p>
+
+<p>La RC2 de PostgreSQL 8.0.0 a été publiée plus tôt ce jour et devrait déjà être disponible sur votre site miroir local ou via bittorrent. C'est vraisemblablement la dernière RC avant la version finale, mais comme toujours, restez à l'écoute pour plus d'informations au fur et à mesure que la situation évolue.</p>
+
+<p>La semaine passée a été l'occasion de quelques modifications à ce point du cycle de développement&nbsp;: l'utilisation de SETOF comme donnée d'entrée à la fonction parseTypeString() est maintenant explicitement rejetée plutôt que silencieusement ignorée, comportement précédemment accepté. Un problème de sécurité des threads sous AIX a été corrigé. La variable GUC checkpoints_segments peut maintenant être composée de plus de 255 caractères.
+
+Le processus d'ActiveSnapshot à l'intérieur d'une fonction plpgsql a été peaufiné. Le programme pg_resetxlog a été modifié pour tenir compte des noms de fichiers WAL de la 8.0. Le support des mises à jour de Kerberos 5 1.0.* a été supprimé du fait de problèmes lors du configure et des propres problèmes de sécurité des paquetages de Kerberos. Enfin, le support de l'encodage Latin9 a été ajouté à la fonction to_ascii().
+
+</p>
+
+<p>Une histoire intéressante postée sur la liste de diffusion -hackers
+
+la semaine passée est celle postée par Joe Conway et relatant la
+
+restauration d'une base de données. Joe a rencontré une situation
+
+étrange avec une large base de données tournant sur un système de
+
+fichiers en NFS. Les détails sont assez techniques, mais la lecture de
+
+cette histoire est intéressante pour quiconque souhaite une bonne
+
+histoire de restauration quand les choses tournent mal. Lisez cette
+
+histoire en détail sur <a href="http://archives.postgresql.org/pgsql-hackers/2004-12/msg00628.php">http://archives.postgresql.org/pgsql-hackers/2004-12/msg00628.php</a>.</p>
+
+<!--more-->
+
 
 <h2>== Nouvelles des produits PostgreSQL ==</h2>
 

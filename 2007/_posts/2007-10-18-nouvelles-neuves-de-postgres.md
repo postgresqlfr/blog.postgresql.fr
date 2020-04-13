@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-138 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 14 octobre 2007</strong></p>
+
+<p>Questionnaire de dernière minute&nbsp;: quelle fonctionnalité du corps de la 8.3 vous attire le plus&nbsp;?
+
+<a target="_blank" href="http://www.postgresql.org/community/">http://www.postgresql.org/community/</a></p>
+
+<p>Grâce à vos retours sur la bêta 1, la version 8.3 bêta 2 sortira bientôt. Continuez de tester&nbsp;!</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

@@ -6,6 +6,58 @@ redirect_from: "index.php?post/drupal-370 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires de PostgreSQL - 15 juin 2004 ==</h2>
+
+<p>La bonne nouvelle de la semaine a été la sortie de la version 7.4.3 de PostgreSQL aujourd'hui. Il devrait bientôt arriver sur votre miroir FTP local s'il n'y est pas déjà ou vous pouvez le télécharger via BitTorrent (<a href="http://bt.postgresql.org/">http://bt.postgresql.org/</a>)
+
+si vous préférez. Les notes de sortie sont incluses dans l'annonce complète, disponible sur <a href="http://www.postgresql.org/news/200.html">http://www.postgresql.org/news/200.html</a>
+
+et, pour rappel, ceux mettant à jour à partir d'une autre version 7.4.x de PostgreSQL n'ont pas besoin de sauvegarder et restaurer.
+
+</p>
+
+<p>Revenons au monde de la 7.5, nous sommes une semaine plus proche de
+
+la date de gel des fonctionnalités et il reste beaucoup de travail en
+
+cours pour que les développeurs terminent leurs correctifs avant la
+
+bêta. La liste des modifications qui en font partie est relativement
+
+courte, donc faisons un tour rapide. Des temps de démarrage/arrêt ont
+
+été ajouté à pg_dump/pg_dumpall lors l'option --verbose est utilisée.
+
+Le support de l'affectation des sous-champs de colonnes composites pour
+
+les instructions UPDATE et INSERT a été ajouté. Ceci permet aussi la
+
+mise à jour d'un élément de la valeur d'un tableau qui est NULL mais
+
+produisant un résultat non NULL. La plannification d'instructions sans
+
+nom via le protocole étendu de requêtes a profité de quelques
+
+optimisations pour améliorer la qualité du plan lors de l'utilisation
+
+de paramètres hors-ligne au lieu de valeurs littérales. Les types de
+
+données inet/cidr ont eu leur propre fonction hash qui ignore le bit de
+
+type inet/cdir, permettant leur utilisation correcte dans des jointures
+
+et des aggrégations hâchées.</p>
+
+<p>Une dernière note, une version brésilienne de la FAQ a été ajouté au
+
+CVS et sur le site web, merci à Euler Taveira de Oliveira. Toutes nos
+
+FAQ sont disponibles sur <a href="http://www.postgresql.org/docs/#faqs">http://www.postgresql.org/docs/#faqs</a>
+
+et nous sommes toujours à la recherche de nouvelles traductions au cas où celle-ci n'existerait pas dans votre langue.</p>
+
+<!--more-->
+
 
 <h2>== Nouvelles des produits PostgreSQL ==</h2>
 

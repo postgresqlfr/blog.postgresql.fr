@@ -6,6 +6,24 @@ redirect_from: "index.php?post/2018-10-18-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 11 RC1 publi&eacute;e. C'est une belle opportunit&eacute; de tests&nbsp;! Si tout se passe bien, la version 11 sera publi&eacute;e le 18 octobre 2018&nbsp;: <a target="_blank" href="https://www.postgresql.org/about/news/1893/">https://www.postgresql.org/about/news/1893/</a></p>
+
+<p>Le <em>pgday.Seoul 2018</em> aura lieu &agrave; S&eacute;oul (Cor&eacute;e du Sud) le 3 novembre 2018. Plus d'informations en langue cor&eacute;enne&nbsp;: <a target="_blank" href="http://pgday.postgresql.kr/">http://pgday.postgresql.kr/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>Ajqvue version 2.10, une UI java compatible PostgreSQL&nbsp;: <a target="_blank" href="http://ajqvue.com">http://ajqvue.com</a></li>
+
+<li>pg_partman 4.0.0, un syst&egrave;me de gestion pour le partitionnement des tables&nbsp;: <a target="_blank" href="https://github.com/pgpartman/pg_partman">https://github.com/pgpartman/pg_partman</a></li>
+
+<li>pgFormatter 3.2, un outil de formatage/coloration syntaxique pour le code SQL&nbsp;: <a target="_blank" href="http://sqlformat.darold.net/">http://sqlformat.darold.net/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en octobre</h2>
 

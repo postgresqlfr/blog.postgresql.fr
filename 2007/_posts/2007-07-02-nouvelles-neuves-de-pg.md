@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-186 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL du 1er Juillet 2007</strong></p>
+
+<ul><li><p>Le PgDay.it a débuté cette semaine. Il comprend des présentations assurées par Josh Berkus, Federico Campoli, Paolo Cavallini, David Fetter et Enrico Pirozzi.</p>
+
+</li></ul>
+
+<!--more-->
+
 
 <strong>Nouvelles des produits dérivés</strong>
 

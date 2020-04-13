@@ -6,6 +6,28 @@ redirect_from: "index.php?post/2009-01-11-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 4 janvier 2009</strong></p>
+
+<p>L'&eacute;quipe des nouvelles hebdomadaires vous souhaite une Bonne Ann&eacute;e&nbsp;:)</p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090104">lien vers l'article original</a>)</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>PyGreSQL 4.0&nbsp;: 
+
+<a target="_blank" href="http://www.PyGreSQL.org/">http://www.PyGreSQL.org/</a></li>
+
+<li>Devrim GUNDUZ a publi&eacute; un nouvel ensemble de paquets RPMs de tests. Prenez votre courage &agrave; deux mains et lancez-vous&nbsp;:) 
+
+<a target="_blank" href="http://yum.pgsqlrpms.org/news-8.4devel-ready-for-testing.php">http://yum.pgsqlrpms.org/news-8.4devel-ready-for-testing.php</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <p><strong>PostgreSQL Local</strong></p>
 

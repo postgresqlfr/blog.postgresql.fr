@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-400 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Le 4 février 2008, le groupe de développement PostgreSQL (<em>PostgreSQL Global Development Group</em>) annonce la sortie de la version 8.3 de PostgreSQL. Parmi les fonctionnalités les plus intéressantes en terme de performances, vous trouverez&nbsp;:</p>
 

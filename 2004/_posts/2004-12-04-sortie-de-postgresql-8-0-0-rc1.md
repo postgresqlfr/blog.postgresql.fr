@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-383 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Après trois mois de beta tests, le groupe de développement de PostgreSQL est heureux de vous annoncer la sortie de la première RC (Release Candidate).</p>
 

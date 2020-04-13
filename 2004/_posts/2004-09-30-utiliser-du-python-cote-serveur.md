@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-37 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Python est un langage largement utilisé de nos jours. Il permet de s'interfacer avec un grand nombre de bases de données et PostgreSQL n'échappe pas à la règle. Bien que Python soit connu pour le développement de requêtage des serveurs PostgreSQL (applications, maintenance, ...), un support est aussi intégré «côté serveur» dans PostgreSQL. Hors, dans le «&nbsp;ChangeLog&nbsp;» de la version de 7.4 de PostgreSQL (version 7.4 du changelog également), on trouve la petite phrase suivante dans la section «&nbsp;côté serveur&nbsp;»&nbsp;:</p>
 

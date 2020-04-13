@@ -6,6 +6,28 @@ redirect_from: "index.php?post/drupal-416 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 13 Janvier 2008</strong></p>
+
+<ul>
+
+<li>Les mises à jour de sécurité 8.3 RC1, 8.2.6, 8.1.11, 8.0.15, 7.4.19 et 7.3.21 sont là. À installer dès que possible&nbsp;!</li>
+
+<li>Par ailleurs, la version 7.3.21 sera la dernière de la série communautaire 7.3. Passez à une version supérieure au plus vite.</li>
+
+<li>ASQL, un moteur Data Warehouse basé sur Postgres, a été annoncé&nbsp;:
+
+<a target="_blank" href="http://www.analyticsql.org/index.html">http://www.analyticsql.org/index.html</a></li>
+
+<li>Devrim GUNDUZ et Darcy Buskermolen ont mis sur pied une ferme de compilation RPM, qui produira des binaires directement utilisables dans les nombreuses distributions RPM.</li>
+
+<li>Ils ont également créé un dépôt Yum pour Postgres&nbsp;:
+
+<a target="_blank" href="http://yum.pgsqlrpms.org">http://yum.pgsqlrpms.org</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <!--break-->
 

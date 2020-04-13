@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-154 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Conformément à l’article 8 des statuts, les membres de l'association sont invités à participer à l'assemblée générale ordinaire annuelle de l'Association PostgreSQLFr, qui se tiendra le 1er février 2006 à 18h45 heures à Paris, au CNIT, 2 place de La Défense 92053 PARIS LA DEFENSE CEDEX, niveau A.</p>
 

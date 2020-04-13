@@ -6,6 +6,36 @@ redirect_from: "index.php?post/drupal-369 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires de PostgreSQL - 7 juin 2004 ==</h2>
+
+<p>Après une activité intense la semaine dernière, un calme relatif est apparu cette semaine. L'attention a été porté à la correction de quelques unes des grosses fonctionnalités mais aussi aux modifications mises de côté pour un moment. Quelques tests de bogues, niveau alpha, ont aussi débuté et vous pouvez aussi vous attendre à ce que ces corrections continuent avant que nous arrivions à une bêta officielle.</p>
+
+<p>Le processus de construction d'un index btree a été modifié pour ne pas utiliser les tampons partagés, évitant ainsi les conflits de verrouillage avec les points de vérification (checkpoint) concurrents. De même, la mécanique de journalisation WAL des construction d'index a été modifié pour permettre une rapidité accrue dans la construction des
+
+index dans certains cas. Des fonctions serveurs d'envois de signaux INT et TERM vers d'autres processus serveurs  PostgreSQL ont été ajouté au code. Les bibliothèques timezone ont été ajustées pour supprimer des problèmes de
+
+comportement limite aux limites des échelles de temps 32 bits (1901 et 2038).
+
+</p>
+
+<p>Du travail a été effectué sur le passage d'arguments de types
+
+composés dans des expressions SQL pour le langage plpsql, ceci incluant
+
+l'affectation de variables contenant une ligne entière. De façon
+
+similaire, la plupart du moteur est maintenant protégée pour les
+
+colonnes à type composite. Quelques modifications doivent survenir
+
+(comme le support de la commande ALTER TABLE ou la syntaxe exacte pour
+
+UPDATE) mais le code et la documentation sont maintenant dans le CVS
+
+et, donc, disponible publiquement.</p>
+
+<!--more-->
+
 
 <h2>== Nouvelles des produits PostgreSQL ==</h2>
 

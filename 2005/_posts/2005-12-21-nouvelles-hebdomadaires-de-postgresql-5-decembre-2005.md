@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-145 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 5 Décembre 2005</strong></p>
+
+<p>
+
+Quelques discussions au sujet de l'implémentation du type NUMERIC sont apparues sur la liste -hackers. La proposition de le limiter à 508 signes semble être la voie qui a été choisie.</p>
+
+<p>
+
+PostgreSQL 8.1.1 sortira cette semaine.</p>
+
+<!--more-->
+
 
 <strong>Nouvelles des produits autour de PostgreSQL</strong>
 

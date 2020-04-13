@@ -6,6 +6,12 @@ redirect_from: "index.php?post/2019-12-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p><em>Postgres@CERN</em> aura lieu le 17 janvier 2020&nbsp;: <a target="_blank" href="https://indico.cern.ch/e/PGCERN2020">https://indico.cern.ch/e/PGCERN2020</a></p>
+
+<p>[ndt: Meetup PostgreSQL à Lille le 28 janvier à 18h45 chez SFEIR Lille&nbsp;: <a target="_blank" href="https://www.meetup.com/fr-FR/Meetup-PostgreSQL-Lille/">https://www.meetup.com/fr-FR/Meetup-PostgreSQL-Lille/</a>]</p>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en d&eacute;cembre</h2>
 

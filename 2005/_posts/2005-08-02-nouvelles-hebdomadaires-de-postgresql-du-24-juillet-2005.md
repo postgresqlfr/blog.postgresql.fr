@@ -6,6 +6,22 @@ redirect_from: "index.php?post/drupal-102 "
 ---
 
 
+<p><strong>== Nouvelles Hebdomadaires de PostgreSQL du 24 juillet 2005 ==</strong></p>
+
+<p><em>Dans son courrier du 24 juillet 2005 David Fetter annoçait sur pg-announce</em></p>
+
+<p>
+
+Le gel des fonctionnalités de la version 8.1 est effectif. Il est maintenant temps de se mettre au travail sur les détails d'implémentation, le débuggage et de tester, tester et encore tester.  </p>
+
+<p>
+
+EnterpriseDB, Neil Conway et (par la suite) Sean Chittenden on travaillé avec Coverity à la réalisation d'une analyse de code statique sur les sources de PostgreSQL. Ils ont trouvé 20 bugs dans les 750000 de lignes de code de notre projet favori.
+
+</p>
+
+<!--more-->
+
 
 Vous allez à l'OSCON? Nous avons besoin de volontaires pour tenir le stand PostgreSQL. Prenez contact avec Josh Berkus josh@agliodbs.com pour plus d'informations à ce sujet.<br />
 

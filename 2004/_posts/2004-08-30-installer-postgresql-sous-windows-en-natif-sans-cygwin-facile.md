@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-24 "
 
 
 
+
+<!--more-->
+
+
 <p>Eh oui...</p>
 
 <p>Avec PostgreSQL 8.0 qui est en béta 1, pour l'instant, rien de plus simple... Il n'y a qu'à aller faire un tour sur <a href="http://pginstaller.projects.postgresql.org/">la page de PGInstaller</a>!</p>

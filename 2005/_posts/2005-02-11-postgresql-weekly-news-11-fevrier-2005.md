@@ -6,6 +6,48 @@ redirect_from: "index.php?post/drupal-76 "
 ---
 
 
+<p><em>Dans son mail sur pg-announce du 11 Février David Fetter annonçait</em></p>
+
+<p><strong>== PostgreSQL Weekly News - 11 Février 2005 ==</strong></p>
+
+<p>
+
+Tom Lane a proposé un moyen de corriger le problème du « context swap storm» (l'orage du changement de contexte).
+
+<a href="http://archives.postgresql.org/pgsql-hackers/2005-02/msg00228.php">http://archives.postgresql.org/pgsql-hackers/2005-02/msg00228.php</a>
+
+</p>
+
+<p>PHP est en passe de disposer d'une couche d'accès pleinement fonctionnelle avec PHP/PDO. Les personnes intéressées peuvent le télécharger et jeter un oeil sur <a href="http://pecl.php.net/package/pdo">http://pecl.php.net/package/pdo</a>.
+
+</p>
+
+<p>Les fonctions d'entrées pour float4, float8 et oid rejettent
+
+maintenant les chaines de caractères vides plutôt que de les traîter
+
+comme des 0. Si votre application dépend du comportement précédemment
+
+implanté, il est temps de la corriger.
+
+</p>
+
+<p>Les curseurs SPI supportent maintenant le parcours des
+
+résultats de commandes utilitaires qui retournent des tuples. Nous
+
+cherchons des outils permettant de rendre les résultats des EXPLAINs un
+
+peu plus facile à lire.</p>
+
+<p>Quatre (rares) dépassements de tampons supplémentaires ont été supprimé dans le parseur PL/PgSQL.</p>
+
+<p>La documentation a été améliorée et clarifiée.</p>
+
+<p>PGCluster a été déplacé sur pgfoundry.org</p>
+
+<!--more-->
+
 
 <strong>== Nouvelles des produits autour de PostgreSQL ==</strong>
 

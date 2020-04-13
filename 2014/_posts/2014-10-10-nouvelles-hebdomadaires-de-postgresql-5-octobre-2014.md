@@ -6,6 +6,86 @@ redirect_from: "index.php?post/2014-10-10-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La <em>PGCon 2015</em> aura lieu en juin, quelques semaines plus tard par rapport aux ann&eacute;es pr&eacute;c&eacute;dentes. Le site web sera bient&ocirc;t mis &agrave; jour. Entre temps, veuillez lire&nbsp;: 
+
+<a target="_blank" href="https://plus.google.com/109158564828766727391/posts/5VrpSxoZDAa">https://plus.google.com/109158564828766727391/posts/5VrpSxoZDAa</a></p>
+
+<p>Federico Campoli parlera de PostgreSQL et de Big Data lors du Linux Day italien de Ferrara, le 25 octobre 2014&nbsp;: 
+
+<a target="_blank" href="http://www.pgdba.co.uk/2014/10/postgresql-and-big-data-talk.html">http://www.pgdba.co.uk/2014/10/postgresql-and-big-data-talk.html</a></p>
+
+<p>Notez les dates&nbsp;: la seconde conf&eacute;rence PostgreSQLienne suisse aura lieu les 25 &amp; 26 juin 2015 au HSR Rapperswil. Il y aura une journ&eacute;e d&eacute;di&eacute;e aux tutoriels, et une journ&eacute;e pour les pr&eacute;sentations "normales". Plus de d&eacute;tails sous peu.</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>pgtoolkit v1.0.2, une bo&icirc;te &agrave; outil pour la maintenance de PostgreSQL&nbsp;: 
+
+<a target="_blank" href="https://github.com/grayhemp/pgtoolkit">https://github.com/grayhemp/pgtoolkit</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en octobre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2014-10/threads.php">http://archives.postgresql.org/pgsql-jobs/2014-10/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La cinqui&egrave;me &eacute;dition du PgDay argentin est programm&eacute;e pour le 28 novembre 2014 &agrave; Santa Fe. L'appel international &agrave; conf&eacute;renciers court jusqu'au 28 septembre&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org.ar/pgday2014">http://www.postgresql.org.ar/pgday2014</a></li>
+
+<li>Le 4<sup>&egrave;me</sup> PgDay &eacute;quatorien aura lieu le mardi 7 octobre en la ville de Quito, int&eacute;gr&eacute; au 5&egrave;me congr&egrave;s international du Logiciel Libre. Envoyez vos propositions de conf&eacute;rences &agrave; ecpug AT postgresql DOT org.</li>
+
+<li>Le sixi&egrave;me PGDay cubain aura lieu les 13 et 14 octobre 2014 &agrave; la Havane&nbsp;: 
+
+<a target="_blank" href="https://postgresql.uci.cu/?p=380">https://postgresql.uci.cu/?p=380</a></li>
+
+<li>Les inscriptions pour la PGConf.EU 2014 de Madrid, Espagne, du 21 au 24 octobre sont &agrave; pr&eacute;sent ouvertes&nbsp;: 
+
+<a target="_blank" href="http://2014.pgconf.eu/registration/">http://2014.pgconf.eu/registration/</a></li>
+
+<li>Le PGDay.IT 2014 aura lieu &agrave; Prato le 7 novembre 2014. L'appel international &agrave; conf&eacute;renciers a &eacute;t&eacute; lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2014.pgday.it/call-for-papers-en/">http://2014.pgday.it/call-for-papers-en/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20141006053413.GB7761@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

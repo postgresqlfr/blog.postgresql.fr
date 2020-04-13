@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2018-11-22-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>psqlODBC 11.00.0000&nbsp;: <a target="_blank" href="https://odbc.postgresql.org/docs/release.html">https://odbc.postgresql.org/docs/release.html</a></li>
+
+<li>pgCodeKeeper 5.2.0, un gestionnaire open-source de sch&eacute;ma de BDD pour PostgreSQL&nbsp;: <a target="_blank" href="https://pgcodekeeper.org">https://pgcodekeeper.org</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en novembre</h2>
 

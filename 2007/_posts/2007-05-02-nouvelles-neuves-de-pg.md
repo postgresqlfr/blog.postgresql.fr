@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-250 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 29 Avril 2007</strong></p>
+
+<p>Les versions corrigées 8.2.4, 8.1.9, 8.0.13, 7.4.17 et 7.3.19 sont sorties (détails <a href="http://www.postgresql.org/about/news.791">ici (en)</a>). A vos mises à jour...</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

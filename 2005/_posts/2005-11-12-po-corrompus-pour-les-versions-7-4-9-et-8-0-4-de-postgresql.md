@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-385 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>J'ai reçu en fin de semaine dernière un mail m'indiquant que les .po français de la version 8.0.4 étaient étranges au niveau des accents. Après vérification, certains fichiers étaient enregistrés en UTF-8 au lieu de ISO-8859-1. De plus, j'ai aussi remarqué que la version 7.4.9 était aussi impactée, même si dans une moindre mesure.</p>
 

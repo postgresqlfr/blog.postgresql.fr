@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2013-04-04-mises-a-jour-mineures-de-postgresql-9-
 
 
 
+
+<!--more-->
+
+
 > 
 
 > Ceci est une traduction libre de l'annonce officielle disponible ici : [http://www.postgresql.org/about/news/1456/|]

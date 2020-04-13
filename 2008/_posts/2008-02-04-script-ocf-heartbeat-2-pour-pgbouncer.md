@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-222 "
 ---
 
 
+Ce script est une adaptation du script ocf Evmsd fourni par
+
+heartbeat-2,
+
+il y a une ou deux gruikerie (return 7 au lieu du code retour OCF)
+
+mais il est fonctionnel (la bascule s'effectue bien en cas de standby,
+
+défaillance serveur, coupure heartbeat, crash pgbouncer ...)
+
+<!--more-->
+
 
 version des softs :<br />- linux         debian etch
 

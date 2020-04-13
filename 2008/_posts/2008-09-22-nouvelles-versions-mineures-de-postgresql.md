@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-401 "
 
 
 
+
+<!--more-->
+
+
 <p>De nouvelles versions mineures sont apparues aujourd'hui pour toutes les versions actuellement maintenues : 8.3.4, 8.2.10, 8.1.14, 8.0.18 et 7.4.22. Ces versions corrigent plus de trentes bogues mineurs découverts pendant ces trois derniers mois. Des bogues pouvant résulter en des pertes de données sont corrigés. Nous conseillons aux administrateurs de bases de données en production de mettre à jour dès que possible.</p>
 
 <p>De plus, ces versions mineures contiennent des mises à jour pour les fuseaux horaires suivants&nbsp;: Argentine, Bahamas, Brésil, Maurice, Maroc, Pakistan, Palestine et Paraguay. Les utilisateurs de ces fuseaux horaires doivent planifier une mise à jour aussi rapidement que possible pour éviter de faux calculs des changements d'horaire.</p>

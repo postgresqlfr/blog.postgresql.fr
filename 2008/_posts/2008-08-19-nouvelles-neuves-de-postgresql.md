@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-439 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 17 août 2008</strong></p>
+
+<p>(<a href="http://people.planetpostgresql.org/dfetter/index.php?/archives/187-PostgreSQL-Weekly-News-August-17-2008.html">lire l'article original</a>)</p>
+
+<!--more-->
+
 
 <strong>PostgreSQL Local</strong>
 

@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2009-01-16-comment-utilisez-vous-postgresql "
 
 
 
+
+<!--more-->
+
+
 Bonjour à toutes et à tous !
 
 

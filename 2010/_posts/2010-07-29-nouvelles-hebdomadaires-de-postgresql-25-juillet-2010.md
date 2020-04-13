@@ -6,6 +6,80 @@ redirect_from: "index.php?post/2010-07-29-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Another PostgreSQL Diff Tool 2.0 Beta 2, un outil de "diff" pour base de donn&eacute;es&nbsp;: 
+
+<a target="_blank" href="https://sourceforge.net/apps/mediawiki/apgdiff/">https://sourceforge.net/apps/mediawiki/apgdiff/</a></li>
+
+<li>JASPA 0.1RC1, un <a href="http://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27information_g%C3%A9ographique" target="_blank">SIG</a> en Java utilisable avec PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://forge.osor.eu/projects/jaspa/">http://forge.osor.eu/projects/jaspa/</a></li>
+
+<li>MyJSQLView 3.22, un utilitaire graphique utilisable avec PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://dandymadeproductions.com/projects/MyJSQLView/index.html">http://dandymadeproductions.com/projects/MyJSQLView/index.html</a></li>
+
+<li>Simpycity 0.3.1, un syst&egrave;me de "mapping" [ndt: correspondance objet-BDD ?] pour Python et PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.commandprompt.com/blogs/aurynn_shaw/2010/07/announcement_simpycity_031_released/">http://www.commandprompt.com/blogs/aurynn_shaw/2010/07/announcement_simpycity_031_released/</a></li>
+
+<li>tail_n_mail 1.15.0, un programme en Perl pour scanner les fichiers de log et envoyer les r&eacute;sultats par mail&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/wiki/Tail_n_mail">http://bucardo.org/wiki/Tail_n_mail</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en juillet</strong></p>
+
+<ul>
+
+<li><a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-07/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-07/threads.php</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Reuven Lerner donnera un cours de 5 jours sur PostgreSQL du 1er au 5 ao&ucirc;t au "Hi-Tech College" de Herzliya (Isra&euml;l)&nbsp;: 
+
+<a target="_blank" href="http://www.hi-tech.co.il/college/default.asp?PageID=12&amp;CourseNum=4288">http://www.hi-tech.co.il/college/default.asp?PageID=12&amp;CourseNum=4288</a></li>
+
+<li>La FrOSCon 2010 aura lieu &agrave; St. Augustin (Allemagne) les 21 &amp; 22 ao&ucirc;t 2010. Le PUG allemand a obtenu sa propre salle de dev. et est &agrave; la recherche de conf&eacute;renciers. Plus de d&eacute;tails&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/711-FrOSCon-2010-PostgreSQL-devroom-Call-for-papers.html">http://andreas.scherbaum.la/blog/archives/711-FrOSCon-2010-PostgreSQL-devroom-Call-for-papers.html</a></li>
+
+<li>L'appel &agrave; conf&eacute;renciers pour la "West" est lanc&eacute; jusqu'au 5 septembre 2010. D&eacute;tails sur&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org/">http://www.postgresqlconference.org/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20100725">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues</strong></p>
 

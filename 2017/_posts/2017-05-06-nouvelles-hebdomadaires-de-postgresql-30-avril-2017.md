@@ -6,6 +6,66 @@ redirect_from: "index.php?post/2017-05-06-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Ubuntu Zesty (17.04) et Debian stretch (9) sont maintenant prises en charge par apt.postgresql.org&nbsp;: <a target="_blank" href="https://wiki.postgresql.org/wiki/Apt">https://wiki.postgresql.org/wiki/Apt</a></p>
+
+<p>[ndt: MeetUp à Lyon le 28 juin&nbsp;:<a href="https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/">https://www.meetup.com/fr-FR/PostgreSQL-Lyon-User-Group/</a>]</p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgpool-II 3.6.3, 3.5.7, 3.4.11, 3.3.15, 3.2.20 et pgpoolAdmin 3.6.1 ont &eacute;t&eacute; publi&eacute;s&nbsp;: <a target="_blank" href="http://pgpool.net/mediawiki/index.php/Downloads">http://pgpool.net/mediawiki/index.php/Downloads</a></li>
+
+<li>pg_repack 1.4, une extension de nettoyage/compactage&nbsp;: <a target="_blank" href="http://reorg.github.io/pg_repack/1.4/">http://reorg.github.io/pg_repack/1.4/</a></li>
+
+<li>PGroonga 1.2.0, une plate-forme de recherche plein texte pour toutes langues&nbsp;: <a target="_blank" href="http://groonga.org/en/blog/2017/04/29/pgroonga-1.2.0.html">http://groonga.org/en/blog/2017/04/29/pgroonga-1.2.0.html</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en avril</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2017-04/">http://archives.postgresql.org/pgsql-jobs/2017-04/</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>PGCon 2017 aura lieu &agrave; Ottawa du 23 au 26 mai&nbsp;: <a target="_blank" href="http://www.pgcon.org/2017/">http://www.pgcon.org/2017/</a></li>
+
+<li>Le PGDay 2017 argentin sera tenu &agrave; Santa Fe le 9 juin 2017. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: <a target="_blank" href="http://www.pgday.com.ar">http://www.pgday.com.ar</a></li>
+
+<li>Postgres Vision aura lieu &agrave; Boston du 26 au 28 juin 2017&nbsp;: <a target="_blank" href="http://postgresvision.com/">http://postgresvision.com/</a></li>
+
+<li>Le PGDay suisse se tiendra &agrave; Rapperwil le 30 juin 2017&nbsp;: <a target="_blank" href="http://www.pgday.ch/2017/">http://www.pgday.ch/2017/</a></li>
+
+<li>Le PostgresOpen aura lieu &agrave; San Francisco du 6 au 8 septembre 2017. L'appel &agrave; conf&eacute;renciers court jusqu'au 30 mai&nbsp;: <a target="_blank" href="https://2017.postgresopen.org/">https://2017.postgresopen.org/</a></li>
+
+<li>Le PGDay UK 2017 aura lieu &agrave; Londres le 4 juillet 2017&nbsp;: <a target="_blank" href="http://www.pgconf.uk">http://www.pgconf.uk</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20170430221936.GA9169@fetter.org">http://www.postgresql.org/message-id/20170430221936.GA9169@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

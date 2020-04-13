@@ -6,6 +6,26 @@ redirect_from: "index.php?post/2009-09-19-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les mises &agrave; jour de s&eacute;curit&eacute; 8.4.1, 8.3.8, 8.2.14, 8.1.18, 8.0.22 et 7.4.26 sont disponibles. Mettez &agrave; jour d&egrave;s que possible&nbsp;!</p>
+
+<p>[ndt] Guillaume Lelarge fera une conf&eacute;rence sur les solutions de r&eacute;plication avec PostgreSQL le 16 octobre lors des JDLL 2009 au CPE de Lyon (Villeurbanne)&nbsp;: 
+
+<a target="_blank" href="http://jdll.org/edition-2009">http://jdll.org/edition-2009</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Bucardo 4.0.1, un syst&egrave;me de r&eacute;plication capable de g&eacute;rer deux instances "ma&icirc;tres"&nbsp;: 
+
+<a target="_blank" href="http://bucardo.org/wiki/Bucardo">http://bucardo.org/wiki/Bucardo</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090913">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en septembre</strong></p>
 

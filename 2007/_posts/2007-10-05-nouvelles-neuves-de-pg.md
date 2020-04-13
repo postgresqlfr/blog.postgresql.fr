@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-223 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 30 Septembre 2007</strong></p>
+
+<p>Restez branchés&nbsp;! Sortie de la bêta 1 de Postgres 8.3 cette semaine&nbsp;!</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

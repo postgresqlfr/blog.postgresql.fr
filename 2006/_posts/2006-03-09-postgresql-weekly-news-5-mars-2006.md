@@ -6,6 +6,26 @@ redirect_from: "index.php?post/drupal-166 "
 ---
 
 
+<p>
+
+Le sommet organisé à l'occasion des 10 ans de PostgreSQL («&nbsp;PostgreSQL Anniversary Summit&nbsp;») a besoin de vos propositions de conférence&nbsp;! Le sommet se tiendra du 8 au 10 juillet 2006 à Toronto, dans l'Ontario au Canada. Les enregistrements de conférences seront possibles à partir du 1er avril sur le site <a href="http://conference.postgresql.org/" target="_blank">http://conference.postgresql.org/</a>
+
+</p>
+
+<p>
+
+Le groupe allemand des utilisateurs de PostgreSQL sera présent aux <strong>LinuxDays</strong> à Chemnitz:
+
+<a href="http://chemnitzer.linux-tage.de/2006/live/detail.html?idx=305" target="_blank">http://chemnitzer.linux-tage.de/2006/live/detail.html?idx=305</a>
+
+</p>
+
+<p>
+
+Il y a un nouveau sondage auquel vous devez participer sur <a href="http://www.postgresql.org/community/" target="_blank">http://www.postgresql.org/community/</a>.</p>
+
+<!--more-->
+
 
 <h3>== Nouveau produits autour de PostgreSQL ==</h3>
 

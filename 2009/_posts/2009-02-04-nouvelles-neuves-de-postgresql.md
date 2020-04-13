@@ -6,6 +6,40 @@ redirect_from: "index.php?post/2009-02-04-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 1<sup>er</sup> f&eacute;vrier 2009</strong></p>
+
+<p>Des corrections de bugs seront bient&ocirc;t disponibles pour les s&eacute;ries 8.3, 8.2, 8.1, 8.0 et 7.4. Pr&eacute;parez-vous &agrave; mettre &agrave; jour&nbsp;!</p>
+
+<p>Greg Smith a publi&eacute; la version 0.90 de pgtune sur pgfoundry&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgtune/">http://pgfoundry.org/projects/pgtune/</a></p>
+
+<p>L'association des utilisateurs bulgares de PostgreSQL se r&eacute;uniront le 12 f&eacute;vrier 2009 &agrave; 19h au Vinarnata, 19 rue Lavele &agrave; Sofia&nbsp;: 
+
+<a target="_blank" href="http://www.doodle.com/participation.html?pollId=vb788q7v8ybi4z39">http://www.doodle.com/participation.html?pollId=vb788q7v8ybi4z39</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Archiveopteryx 3.0.6, un syst&egrave;me de mails bas&eacute; sur PostgreSQL, est disponible&nbsp;: 
+
+<a target="_blank" href="http://www.archiveopteryx.org/3.0.6">http://www.archiveopteryx.org/3.0.6</a></li>
+
+<li>Le code client de Pgbuildfarm 3.2 est disponible. Mise &agrave; jour&nbsp;! 
+
+<a target="_blank" href="http://pgfoundry.org/frs/download.php/2069/build-farm-3_2.tgz">http://pgfoundry.org/frs/download.php/2069/build-farm-3_2.tgz</a></li>
+
+</ul>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Besoin d'unicit&eacute; sur seulement une partie d'une table, comme par exemple les noms des utilisateurs actifs&nbsp;? Utilisez un index partiel d'unicit&eacute;&nbsp;: <tt>CREATE UNIQUE INDEX ON logins&nbsp;(&nbsp;username&nbsp;) WHERE active&nbsp;=&nbsp;true;</tt></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090201">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>PostgreSQL Local</strong></p>
 

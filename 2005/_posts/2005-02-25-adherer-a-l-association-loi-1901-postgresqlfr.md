@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-273 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>L'Association Loi 1901 PostgreSQLFr a pour but de promouvoir notre SGBDR Open Source favori&nbsp;!</p>
 

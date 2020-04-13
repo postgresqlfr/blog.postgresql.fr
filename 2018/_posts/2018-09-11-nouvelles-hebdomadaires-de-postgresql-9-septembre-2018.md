@@ -6,6 +6,24 @@ redirect_from: "index.php?post/2018-09-11-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le <em>PGDay Down Under</em> 2018 aura lieu le 7 d&eacute;cembre 2018 &agrave; Melbourne, Australie. L'appel &agrave; conf&eacute;renciers court jusqu'au 30 septembre &agrave; 17h AEST&nbsp;: <a target="_blank" href="https://pgdu.org/">https://pgdu.org/</a></p>
+
+<p>[ndt: meetup PostgreSQL à Nantes le 4 octobre à 19h&nbsp;: <a href="https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Nantes/" target="_blank">https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Nantes/</a>]</p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>repmgr 4.1.1, un gestionnaire de r&eacute;plication pour PostgreSQL&nbsp;: <a target="_blank" href="https://repmgr.org/docs/4.1/release-4.1.1.html">https://repmgr.org/docs/4.1/release-4.1.1.html</a></li>
+
+<li>pgAdmin4 3.3, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_3_3.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_3_3.html</a></li>
+
+<li>temboard 2.0, un outil de gestion pour PostgreSQL&nbsp;: <a target="_blank" href="https://dali.bo/temboard-2-0-EN">https://dali.bo/temboard-2-0-EN</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>PostgreSQL Local</h2>
 

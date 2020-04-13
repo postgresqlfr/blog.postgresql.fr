@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2018-09-20-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgBadger v10.1, un analyseur de log PostgreSQL et un g&eacute;n&eacute;rateur de graphe en Perl&nbsp;: <a target="_blank" href="https://github.com/dalibo/pgbadger/releases/">https://github.com/dalibo/pgbadger/releases/</a></li>
+
+<li>Postgres-XL 10R1Beta1, un d&eacute;riv&eacute; de PostgreSQL dot&eacute; de fonctionnalit&eacute;s massivement parall&egrave;les&nbsp;: <a target="_blank" href="https://www.postgres-xl.org/">https://www.postgres-xl.org/</a></li>
+
+<li>PostGIS 2.5.0rc2 le syst&egrave;me d'information g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL&nbsp;: <a target="_blank" href="http://postgis.net/2018/09/16/postgis-2.5.0rc2/">http://postgis.net/2018/09/16/postgis-2.5.0rc2/</a></li>
+
+<li>pgFormatter 3.1, un outil de formatage/coloration syntaxique pour le code SQL&nbsp;: <a target="_blank" href="http://sqlformat.darold.net/">http://sqlformat.darold.net/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>PostgreSQL Local</h2>
 

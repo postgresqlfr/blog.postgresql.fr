@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2019-03-06-nouvelles-hebdomadaires-de-postgresql-
 
 
 
+
+<!--more-->
+
+
 <h2>Offres d'emplois autour de PostgreSQL en mars</h2>
 
 <ul>

@@ -6,6 +6,22 @@ redirect_from: "index.php?post/drupal-243 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 18 mars 2007</strong></p>
+
+<p>
+
+Les inscriptions étudiantes au Google Summer Of Code sont officiellement ouvertes&nbsp;:
+
+<a target="_blank" href="http://code.google.com/soc/">http://code.google.com/soc/</a>
+
+</p>
+
+<p>
+
+N'hésitez pas à contacter Robert Treat à xzilla@users.sourceforge.net si vous souhaitez effectuer un talk au PgCon.</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

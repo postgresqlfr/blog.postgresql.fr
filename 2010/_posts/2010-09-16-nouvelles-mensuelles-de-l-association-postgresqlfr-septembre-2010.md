@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2010-09-16-nouvelles-mensuelles-de-l-association-
 
 
 
+
+<!--more-->
+
+
 Bonjour,
 
 

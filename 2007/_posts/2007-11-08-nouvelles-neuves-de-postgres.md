@@ -6,6 +6,22 @@ redirect_from: "index.php?post/drupal-267 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 4 novembre 2007</strong></p>
+
+<ul>
+
+<li>La 8.3 beta 2 est là&nbsp;: À vos tests&nbsp;!
+
+<a target="_blank" href="http://www.postgresql.org/ftp/source/v8.3beta">http://www.postgresql.org/ftp/source/v8.3beta</a></li>
+
+<li>Sondage&nbsp;: quelle nouvelle fonctionnalité vous excite le plus ?
+
+<a target="_blank" href="http://www.postgresql.org/community">http://www.postgresql.org/community</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

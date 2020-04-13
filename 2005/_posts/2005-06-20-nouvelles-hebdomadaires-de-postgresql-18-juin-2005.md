@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-100 "
 ---
 
 
+<p><strong>== PostgreSQL Weekly News - 18 juin 2005 ==</strong></p>
+
+<p><em>Le 18 juin 2005, David Fetter écrivait : </em></p>
+
+<p>Tom Lane a fait des modifications dans 2PC : un patch touchant 62 fichiers. Prière donc de télécharger la version CVS et de tester, tester et retester....</p>
+
+<p>SHOW ALL inclus maintenant la description des variables</p>
+
+<p>Pavel Stehule a ajouté BETWEEN SYMMETRIC et a donné la possibilité à PL/PgSQL d'avoir des expressions en guise de paramètre de RAISE (suite à un grand nombre de demandes collégiales et de patch patchant les patches).</p>
+
+<!--more-->
+
 
 Le patch de John Hansen afin de prendre en charge les caractères de 3 et 4 octets pour UTF-8 a été appliqué.
 

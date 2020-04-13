@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-86 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Le 19 mars 2005, David Fetter écrivait&nbsp;:<br /><br /><strong>== PostgreSQL Weekly News - March 19 2005 ==</strong><br /><br />Mark Rae a effectué des tests de montée en charge <acronym title="Symetric Multi Processing">SMP</acronym> pour PostgreSQL et estime que le <tt>CVS</tt> contient une amélioration de la version 8.0.1.
 

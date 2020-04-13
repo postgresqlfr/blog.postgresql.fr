@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2019-08-26-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La <em>PGConf India 2020</em> aura lieu du 26 au 28 f&eacute;vrier 2020 &agrave; Bengalore (&Eacute;tat du Karnataka en Inde)&nbsp;: <a target="_blank" href="http://pgconf.in/">http://pgconf.in/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pg_partman 4.2.0, un syst&egrave;me de gestion pour le partitionnement des tables&nbsp;: <a target="_blank" href="https://github.com/pgpartman/pg_partman">https://github.com/pgpartman/pg_partman</a></li>
+
+<li>pgAdmin4 4.12, un centre de contr&ocirc;le pour PostgreSQL en web & GUI native&nbsp;: <a target="_blank" href="https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_12.html">https://www.pgadmin.org/docs/pgadmin4/dev/release_notes_4_12.html</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en ao&ucirc;t</h2>
 

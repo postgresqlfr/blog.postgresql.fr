@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-160 "
 ---
 
 
+<p><em>MAJ 14-02, 15h, </em> : La documentation en francais est donc accessible sur le site <a href="http://docs.postgresqlfr.org/">http://docs.postgresqlfr.org/</a>. Normalement, l'ancien lien (traduc) reste valable. Et les copies, indiquées plus bas aussi. Désolé pour ce dérangement.</p>
+
+<!--more-->
+
 
 <del><p>Depuis quelques temps, l'accès à la documentation en francais de PostgreSQL souffre des problèmes de stabilité du serveur l'hébergeant. Pour pallier cela, vous pouvez accéder à des copies de cette documentation, ainsi qu'à des archives aux formats Zip et tar.gz :
 

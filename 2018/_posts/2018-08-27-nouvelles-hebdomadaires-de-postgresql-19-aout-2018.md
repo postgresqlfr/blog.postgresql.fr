@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2018-08-27-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>Ora2PG 19.0, un outil de migration de bases Oracle vers PostgreSQL&nbsp;: <a target="_blank" href="http://ora2pg.darold.net/">http://ora2pg.darold.net/</a></li>
+
+<li>Ajqvue version 2.0, une UI java compatible PostgreSQL&nbsp;: <a target="_blank" href="http://ajqvue.com">http://ajqvue.com</a></li>
+
+<li>pgbouncer 1.9.0, un pooler de connexions &agrave; PostgreSQL et bien d'avantage&nbsp;: <a target="_blank" href="https://pgbouncer.github.io/2018/08/pgbouncer-1-9-0">https://pgbouncer.github.io/2018/08/pgbouncer-1-9-0</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en ao&ucirc;t</h2>
 

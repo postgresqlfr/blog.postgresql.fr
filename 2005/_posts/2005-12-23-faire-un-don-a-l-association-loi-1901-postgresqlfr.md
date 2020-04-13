@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-141 "
 
 
 
+
+<!--more-->
+
+
 <p>L'Association PostgreSQLFr (Loi 1901) ne fonctionne qu'avec des bénévoles, d'ailleurs <a href="http://www.postgresqlfr.org/?q=node/view/162" target="_blank">vous pouvez nous rejoindre</a>. Cependant, afin de mieux servir la communauté, nous avons besoin de finances pour faire face à de nombreuses dépenses, notament pour assurer notre présence sur les manifestations autour du libre.</p>
 
 <p>Si notre action vous paraît louable, mais que vous n'avez, hélas, pas de temps à y consacrer, vous pouvez nous aider en faisant un don et nous permettre ainsi de rayonner d'avantage...</p>

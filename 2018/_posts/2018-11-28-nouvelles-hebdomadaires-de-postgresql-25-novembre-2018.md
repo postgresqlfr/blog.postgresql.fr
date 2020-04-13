@@ -6,6 +6,30 @@ redirect_from: "index.php?post/2018-11-28-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La <em>PGConf India 2019</em> aura lieu du 13 au 15 f&eacute;vrier 2019 &agrave; Bengalore (&Eacute;tat du Karnataka en Inde). Les candidatures des conf&eacute;renciers sont possibles jusqu'au 15 d&eacute;cembre 2018 via le site ci-apr&egrave;s&nbsp;: <a target="_blank" href="http://pgconf.in/">http://pgconf.in/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pg_backtrace, une extension permettant de r&eacute;cup&eacute;rer les erreurs et exceptions de PostgreSQL quand aucun d&eacute;bogueur n'est disponible&nbsp;: <a target="_blank" href="https://github.com/postgrespro/pg_backtrace">https://github.com/postgrespro/pg_backtrace</a></li>
+
+<li>pgpool-II versions 4.0.2, 3.7.7, 4.6.14, 3.5.18, et 3.4.21 publi&eacute;es. <a target="_blank" href="http://www.pgpool.net/docs/latest/en/html/release.html">http://www.pgpool.net/docs/latest/en/html/release.html</a></li>
+
+<li>PostGIS 2.5.1, le syst&egrave;me d'information g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL&nbsp;: <a target="_blank" href="https://postgis.net/2018/11/18/postgis-2.5.1/">https://postgis.net/2018/11/18/postgis-2.5.1/</a></li>
+
+<li>PostGIS 2.2.8 marque la fin de la lign&eacute;e des 2.2&nbsp;: <a target="_blank" href="https://postgis.net/2018/11/22/postgis-2.2.8/">https://postgis.net/2018/11/22/postgis-2.2.8/</a></li>
+
+<li>PostGIS 2.3.8 et 2.4.6&nbsp;: <a target="_blank" href="https://postgis.net/2018/11/24/postgis-patches/">https://postgis.net/2018/11/24/postgis-patches/</a></li>
+
+<li>pgFormatter 3.3, un outil de formatage/coloration syntaxique pour le code SQL&nbsp;: <a target="_blank" href="http://sqlformat.darold.net/">http://sqlformat.darold.net/</a></li>
+
+<li>griddb_fdw 1.0&nbsp;: <a target="_blank" href="https://github.com/pgspider/griddb_fdw">https://github.com/pgspider/griddb_fdw</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en novembre</h2>
 

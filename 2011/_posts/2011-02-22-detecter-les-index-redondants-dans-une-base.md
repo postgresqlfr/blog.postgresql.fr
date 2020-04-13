@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2011-02-22-detecter-les-index-redondants-dans-une
 
 
 
+
+<!--more-->
+
+
 <p>Voici un petit cas d'école d'utilisation de Window Function… vu que c'est rare dans le travail de DBA d'en rencontrer qui nous servent à nous.</p>
 
 <h1>Intro: Pourquoi un si long article juste pour nous présenter une requête ?</h1>

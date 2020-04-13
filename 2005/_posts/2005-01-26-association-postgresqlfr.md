@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-67 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Bonjour à tous,
 

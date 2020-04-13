@@ -6,6 +6,32 @@ redirect_from: "index.php?post/drupal-188 "
 ---
 
 
+<p>
+
+On recherche activement des volontaires pour le stand PostgreSQL de l'OSCON. Vous recevrez un pass gratuit pour l'expo, permettant d'approcher les développeurs de projets libres, et peut-être aussi des cadeaux PostgreSQL (s'il y en a suffisamment). Si vous résidez aux environs de Portland, n'hésitez pas à venir passer un agréable moment avec nous sur le stand. Centre de Convention de Portland, Oregon, du 26 au 27 juillet. Contacter Josh Drake <jd chez="" commandprompt="" point="" com="">.
+
+</jd>
+
+</p>
+
+<p>
+
+<strong>Recherche Knoppix désespérément&nbsp;:</strong> Le projet PostgreSQL recherche
+
+des compétences en Knoppix ou tout autre image bootable, pour créer des
+
+images CD bootables de PostgreSQL pour les conférences de cet été.
+
+Besoin d'assistance le plus rapidement possible. Merci d'envoyer un
+
+message sur la liste pgsql-advocacy ou de contacter 'josh chez
+
+postgresql point org'.
+
+</p>
+
+<!--more-->
+
 
 <h3>== Nouvelles des produits PostgreSQL ==</h3>
 

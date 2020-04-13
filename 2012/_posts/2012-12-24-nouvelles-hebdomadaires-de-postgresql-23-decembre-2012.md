@@ -6,6 +6,96 @@ redirect_from: "index.php?post/2012-12-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>FOSDEM PGDay est une conf&eacute;rence sur une journ&eacute;e qui se tiendra avant l'ouverture du FOSDEM &agrave; Bruxelles, le 1<sup>er</sup> f&eacute;vrier 2013. D&eacute;tails ci-apr&egrave;s&nbsp;: 
+
+<a target="_blank" href="http://fosdem2013.pgconf.eu/">http://fosdem2013.pgconf.eu/</a></p>
+
+<p>Le PUG de New-York est heureux d'annoncer que les inscriptions pour le PGDay NYC 2013 du vendredi 22 mars &agrave; l'h&ocirc;tel ACE sont &agrave; pr&eacute;sent ouvertes. Des tickets en pr&eacute;-pr&eacute;-vente sont disponibles jusqu'au 29 d&eacute;cembre ou jusqu'&agrave; &eacute;puisement avant date. Les achats sont possibles depuis la page suivante&nbsp;: 
+
+<a target="_blank" href="http://pgday.nycpug.org/registration/">http://pgday.nycpug.org/registration/</a></p>
+
+<p>PyPgDay aura lieu le 13 mars au <em>Santa Clara Convention Center</em>, le premier jour de la <em>PyCon</em>. Informations par l&agrave;&nbsp;: 
+
+<a target="_blank" href="http://wiki.postgresql.org/wiki/PyPgDay2013">http://wiki.postgresql.org/wiki/PyPgDay2013</a> Vous pouvez soumettre vos propositions sur cette page jusqu'au 20 janvier 2013&nbsp;: <a target="_blank" href="http://tinyurl.com/PyPgDayCfP">http://tinyurl.com/PyPgDayCfP</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Ora2PG 10&nbsp;: 
+
+<a target="_blank" href="http://ora2pg.darold.net/">http://ora2pg.darold.net/</a></li>
+
+<li>pg_activity 0.2.0&nbsp;: 
+
+<a target="_blank" href="https://github.com/julmon/pg_activity/">https://github.com/julmon/pg_activity/</a></li>
+
+<li>Skytools 3.1.3, un ensemble d'outils d&eacute;velopp&eacute; par Skype pour la r&eacute;plication et le failover incluant PgQ, un framework g&eacute;n&eacute;rique de mise en queue, et Londiste, un syst&egrave;me de r&eacute;plication ma&icirc;tre-esclave&nbsp;: 
+
+<a target="_blank" href="https://github.com/markokr/skytools">https://github.com/markokr/skytools</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en d&eacute;cembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2012-12/threads.php">http://archives.postgresql.org/pgsql-jobs/2012-12/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La conf&eacute;rence PGDay du FOSDEM sera tenue juste avant l'ouverture du meeting, le 1er f&eacute;vrier &agrave; Bruxelles, Belgique. Les appels &agrave; conf&eacute;renciers, pour cette conf&eacute;rence et pour le cursus PostgreSQL du FOSDEM, sont lanc&eacute;s&nbsp;: 
+
+<a target="_blank" href="http://fosdem2013.pgconf.eu/callforpapers/">http://fosdem2013.pgconf.eu/callforpapers/</a></li>
+
+<li>Il y aura un PgDay lors de la PyCon du 13 mars 2013, au p&ocirc;le de conventions de Santa Clara. D'avantage de d&eacute;tails quand les choses commenceront &agrave; s'organiser. N'h&eacute;sitez pas &agrave; r&eacute;server la date.</li>
+
+<li>Le PGDay 2013 de New-York City aura lieu le 22 mars. La date limite de candidature des conf&eacute;renciers est fix&eacute;e au 7 janvier 2013, midi (heure de New-York). Envois &agrave; l'adresse papers AT nycpug DOT org&nbsp;: 
+
+<a target="_blank" href="http://pgday.nycpug.org/speakers">http://pgday.nycpug.org/speakers</a></li>
+
+<li>La <em>PostgreSQL Session</em> est programm&eacute;e pour le 28 mars 2013 &agrave; Paris. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/en/5/">http://www.postgresql-sessions.org/en/5/</a></li>
+
+<li>PGCon 2013 aura lieu les 23 &amp; 24 mai 2013 &agrave; l'Universit&eacute; d'Ottawa. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2013/">http://www.pgcon.org/2013/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2012-12/msg00023.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

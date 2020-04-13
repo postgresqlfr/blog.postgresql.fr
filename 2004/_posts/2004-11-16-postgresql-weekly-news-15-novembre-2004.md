@@ -6,6 +6,52 @@ redirect_from: "index.php?post/drupal-50 "
 ---
 
 
+<p>
+
+Le 15 novembre 2004, Robert Treat, nous annonçait sur la liste
+
+pgsql-announce:</p>
+
+<p>
+
+Cette semaine a été relativement calme avec la préparation de la béta 5, que
+
+vous pouvez attendre pour ce début de semaine. À moins d'une surprise de
+
+dernière minute, la béta 5 sera probablement la dernière des bétas, avant la
+
+sortie officielle d'une "release candidate". Aussi, gardez les yeux grands
+
+ouverts et testez tout ce que vous n'avez pas encore pu tester!
+
+</p>
+
+<p>
+
+Dû à cette semaine relativement calme, nous avons seulement une poignée de
+
+nouveautés cette semaine. Le plus grand changement est probablement la
+
+disparition du la catégorie de variables de type "GUC userlimit", les variables
+
+affectées ont été changées en SUSET basique à la place. Le plannificateur a
+
+évolué pour classer les fonctions "stables" en constantes lors des estimations
+
+de sélectivité. Le processus de démarrage du postmaster a été amélioré afin de
+
+mieux détecter lorsqu'il est sûr de redemarrer après un boot ou pas. Un premier
+
+support de la localisation a été ajouté à l'installateur Windows, avec une
+
+traduction partielle vers l'Allemand. Enfin, la documentation de l'organisation
+
+du filesystem sous-jacent à PostgreSQL a été faite.
+
+</p>
+
+<!--more-->
+
 
 <h3>== Nouveaux produits autour de PostgreSQL ==</h3>
 

@@ -6,6 +6,26 @@ redirect_from: "index.php?post/2009-09-30-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La <em>commitfest</em> continue, avec une publication alpha 2 sous peu.</p>
+
+<p>[ndt] Le programme du PGDay.EU est disponible, inscrivez-vous au plus t&ocirc;t&nbsp;! 
+
+<a target="_blank" href="http://2009.pgday.eu/fr:schedule">http://2009.pgday.eu/fr:schedule</a> <a target="_blank" href="http://2009.pgday.eu/fr:register">http://2009.pgday.eu/fr:register</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Benetl 3.1, un ETL pour fichiers&nbsp;: 
+
+<a target="_blank" href="http://www.benetl.net">http://www.benetl.net</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090927">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en septembre</strong></p>
 

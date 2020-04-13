@@ -6,6 +6,54 @@ redirect_from: "index.php?post/2008-12-29-nouvelles-neuves-de-postgresql "
 ---
 
 
+Joyeux Solstice/Hanoukka/No&euml;l/Yule/... de la part des Nouvelles Hebdomadaires de PostgreSQL&nbsp;:)
+
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 21 d&eacute;cembre 2008</strong></p>
+
+<p>La "PGCon 2009" aura lieu les 21 &amp; 22 mai 2009 &agrave; l'Universit&eacute; d'Ottawa. &Agrave; noter, un pr&eacute;lude de 2 jours de tutoriaux les 19 &amp; 20 mai&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2009/papers.php">http://www.pgcon.org/2009/papers.php</a></p>
+
+<p>L'&eacute;quipe des RPMs PostgreSQL a publi&eacute; de nouveaux ensembles compil&eacute;s avec l'option --enable-integer-datetimes&nbsp;: 
+
+<a target="_blank" href="http://yum.pgsqlrpms.org/howtoyum.php#idsupporthowto">http://yum.pgsqlrpms.org/howtoyum.php#idsupporthowto</a></p>
+
+<p>Le "PostgreSQL Live CD Project" a mis en place une mailing list pour encourager les retours de la communaut&eacute;&nbsp;: 
+
+<a target="_blank" href="http://www.pglivecd.org/community.php">http://www.pglivecd.org/community.php</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li><strong>mise &agrave; jour de s&eacute;curit&eacute;&nbsp;: phpPgAdmin 4.2.2</strong>&nbsp;: 
+
+<a target="_blank" href="http://phppgadmin.sourceforge.net/">http://phppgadmin.sourceforge.net/</a></li>
+
+<li>Npgsql2 2.0.2&nbsp;: 
+
+<a target="_blank" href="http://www.npgsql.org">http://www.npgsql.org</a></li>
+
+<li>Le "PostgreSQL RPM Building Project" a publi&eacute; la 3&egrave;me version du "PostgreSQL Live CD"&nbsp;: 
+
+<a target="_blank" href="http://www.pglivecd.org">http://www.pglivecd.org</a></li>
+
+<li>PostGIS 1.3.5&nbsp;: 
+
+<a target="_blank" href="http://postgis.refractions.net/">http://postgis.refractions.net/</a></li>
+
+<li>PostgreDAC ver. 2.5.0&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/connectivity/postgresdac/download/">http://microolap.com/products/connectivity/postgresdac/download/</a></li>
+
+<li>Database Designer pour PostgreSQL 1.2.7&nbsp;: 
+
+<a target="_blank" href="http://microolap.com/products/database/postgresql-designer/download/">http://microolap.com/products/database/postgresql-designer/download/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en d&eacute;cembre</strong></p>
 

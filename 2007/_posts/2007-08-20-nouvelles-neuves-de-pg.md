@@ -6,6 +6,32 @@ redirect_from: "index.php?post/drupal-164 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 19 Août 2007</strong></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>
+
+Once:radix 0.9 est sorti.  <a target="_blank" href="http://sourceforge.net/projects/onceradix/">http://sourceforge.net/projects/onceradix/</a>
+
+</li>
+
+<li>
+
+pgAdmin III 1.8.0 Beta 3 est sorti.  <a target="_blank" href="http://www.pgadmin.org/">http://www.pgadmin.org/</a>
+
+</li>
+
+<li>
+
+pgUnitTest est sorti:  <a target="_blank" href="http://pgfoundry.org/projects/pgunittest">http://pgfoundry.org/projects/pgunittest</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <strong>Offres d'emploi PostgreSQL pour Août</strong>
 

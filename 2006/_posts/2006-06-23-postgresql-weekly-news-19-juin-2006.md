@@ -6,6 +6,28 @@ redirect_from: "index.php?post/drupal-190 "
 ---
 
 
+<p>
+
+De nombreuses discussions ont concerné les processus de communication des statistiques et le module de chargement de bibliothèques partagées, <em>pg_module_magic</em>. De nombreux patches sont proposés à mesure que la date de gel des fonctionnalités approche.
+
+</p>
+
+<p>
+
+Andrew Dunstan a validé du code pour <em>DROP IF EXISTS</em>. Un nettoyage du code doit suivre.
+
+</p>
+
+<p>
+
+Koen Martens a réalisé un nouveau LiveCD.
+
+<a href="http://pgfoundry.org/projects/livecd/">http://pgfoundry.org/projects/livecd/</a>
+
+</p>
+
+<!--more-->
+
 
 <h3>== Les nouvelles des produits PostgreSQL ==</h3>
 

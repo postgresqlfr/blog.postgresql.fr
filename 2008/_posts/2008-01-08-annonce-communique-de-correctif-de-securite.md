@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-274 "
 ---
 
 
+<h1>Le 07 Janvier 2008</h1>
+
+<p>Aujourd'hui le «&nbsp;PostgreSQL Global Development Group&nbsp;» a publié des mises à jours de version, qui corrigent cinq failles de sécurité. Ces publications mettent à jour toutes les versions de <strong>PostgreSQL</strong>, de la <strong>8.2</strong> à la <strong>7.3</strong>. Elles sont considérées comme <ins>CRITIQUE</ins> et les administrateurs PostgreSQL et systèmes doivent appliquer les mises à jours le plus rapidement possible. L'équipe de PostgreSQL dédiée à la sécurité a fait de gros efforts pour permettre à ces mises à jours d'être portées également sur les anciennes versions pour que la mise à jour ne nécessite pas de conversion de données.</p>
+
+<p>Merci de lire le reste de ce message pour davantage d'informations complémentaires et d'annonces.</p>
+
+<!--more-->
+
 
 <h2>Détail des correctifs de sécurités</h2>
 

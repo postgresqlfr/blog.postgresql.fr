@@ -6,6 +6,12 @@ redirect_from: "index.php?post/drupal-123 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 20 mai 2007</strong></p>
+
+<p>Les <a target="_blank" href="http://www.pgcon.org/2007/">PgCon</a> ont lieu cette semaine à Ottawa.</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

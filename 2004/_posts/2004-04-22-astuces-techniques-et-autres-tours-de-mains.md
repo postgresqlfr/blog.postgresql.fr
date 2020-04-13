@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-9 "
 
 
 
+
+<!--more-->
+
+
 Sur le site <a href="http://www.varlena.com/varlena/GeneralBits/Tidbits/index.php">TidBits</a> vous trouverez tout un tas de petits articles et autres HOWTO (en anglais par contre, désolé!):
 
 <ul>

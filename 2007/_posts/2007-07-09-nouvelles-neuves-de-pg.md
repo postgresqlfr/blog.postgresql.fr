@@ -6,6 +6,26 @@ redirect_from: "index.php?post/drupal-237 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 8 Juillet 2007</strong></p>
+
+<p>
+
+Les résultats du test Spec jAppserver sont publiés et les performances de PostgreSQL semblent bonnes :
+
+<a target="_blank" href="http://www.spec.org/jAppServer2004/results/res2007q3/">http://www.spec.org/jAppServer2004/results/res2007q3/</a>
+
+</p>
+
+<p>
+
+PgDay a été un succès. Il s'y est tenu la réunion de démarrage du groupe Européeen de PostreSQL (European PostgreSQL group).  Pour plus de détails consultez :
+
+<a target="_blank" href="http://www.planetpostgresql.org/">http://www.planetpostgresql.org/</a> .
+
+</p>
+
+<!--more-->
+
 
 <strong>Jobs de juillet autour de PostgreSQL</strong>
 

@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-10 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Dans un récent mail envoyé sur la liste des hackers de PostgreSQL,
 

@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2020-02-19-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les mises &agrave; jour de s&eacute;curit&eacute; 12.2, 11.7, 10.12, 9.6.17, 9.5.21 et 9.4.26 ont &eacute;t&eacute; publi&eacute;es. Mettez &agrave; jour d&egrave;s que possible. La version 9.4.26 marque la fin de la s&eacute;rie 9.4&nbsp;: <a target="_blank" href="https://www.postgresql.org/about/news/2011/">https://www.postgresql.org/about/news/2011/</a></p>
+
+<p>Le PGDay suisse 2020 aura lieu &agrave; Rapperswil-Jona (pr&egrave;s de Zurich) les 18 & 19 juin 2020. L'appel &agrave; conf&eacute;renciers sera lanc&eacute; le 18 f&eacute;vrier jusqu'au 17 mars 2020&nbsp;: <a target="_blank" href="https://www.pgday.ch/2020/">https://www.pgday.ch/2020/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>wal2json 2.1, un plugin g&eacute;n&eacute;rateur de JSON pour l'extraction de journaux de changement. Cette version corrigeant des bugs importants, il est conseill&eacute; de mettre &agrave; jour au plus t&ocirc;t&nbsp;: <a target="_blank" href="https://github.com/eulerto/wal2json/releases">https://github.com/eulerto/wal2json/releases</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>PostgreSQL Local</h2>
 

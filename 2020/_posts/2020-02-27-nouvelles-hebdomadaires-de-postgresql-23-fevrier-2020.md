@@ -6,6 +6,30 @@ redirect_from: "index.php?post/2020-02-27-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La <em>PGConfNepal 2020</em> aura lieu les 17 et 18 avril 2020 &agrave; l'universit&eacute; de Katmandou, Dulikhel, N&eacute;pal. L'appel &agrave; conf&eacute;renciers est lanc&eacute; jusqu'au 28 f&eacute;vrier 2020 &agrave; l'adresse <a target="_blank" href="https://pgconf.org.np/call-for-paper/">https://pgconf.org.np/call-for-paper/</a> <a target="_blank" href="https://pgconf.org.np/">https://pgconf.org.np/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>Pgpool-II 4.1.1, 4.0.8, 3.7.13, 3.6.20, 3.5.24 et pgpoolAdmin 4.1.0 ont &eacute;t&eacute; publi&eacute;s&nbsp;: <a target="_blank" href="http://www.pgpool.net/docs/latest/en/html/release.html">http://www.pgpool.net/docs/latest/en/html/release.html</a> <a target="_blank" href="http://pgpool.net/mediawiki/index.php/Downloads">http://pgpool.net/mediawiki/index.php/Downloads</a></li>
+
+<li>PostGIS 3.1.0, le syst&egrave;me d'information g&eacute;ographique de r&eacute;f&eacute;rence pour PostgreSQL&nbsp;: <a target="_blank" href="https://git.osgeo.org/gitea/postgis/postgis/src/tag/3.0.1/NEWS">https://git.osgeo.org/gitea/postgis/postgis/src/tag/3.0.1/NEWS</a></li>
+
+<li>pglogical 2.3, un syst&egrave;me de r&eacute;plication bas&eacute; sur les WAL logiques, pour PostgreSQL&nbsp;: <a target="_blank" href="https://www.2ndquadrant.com/en/resources/pglogical/release-notes/">https://www.2ndquadrant.com/en/resources/pglogical/release-notes/</a></li>
+
+<li>Joe bot 0.5.0, un bot de discussion Slack qui aide les d&eacute;veloppeurs backend et les DBA &agrave; corriger et optimiser les requ&ecirc;tes PostgreSQL&nbsp;: <a target="_blank" href="https://gitlab.com/postgres-ai/joe/-/releases#0.5.0">https://gitlab.com/postgres-ai/joe/-/releases#0.5.0</a></li>
+
+<li>pg_partman 4.3.0, un syst&egrave;me de gestion pour le partitionnement des tables&nbsp;: <a target="_blank" href="https://github.com/pgpartman/pg_partman">https://github.com/pgpartman/pg_partman</a></li>
+
+<li>postgres-checkup 1.4.0, un outil permettant de g&eacute;n&eacute;rer des rapports de sant&eacute; de clusters PostgreSQL&nbsp;: <a target="_blank" href="https://gitlab.com/postgres-ai/postgres-checkup/-/releases">https://gitlab.com/postgres-ai/postgres-checkup/-/releases</a></li>
+
+<li>wal2json 2.2, un plugin g&eacute;n&eacute;rateur de JSON pour l'extraction de journaux de changement. Cette version corrigeant des bugs importants dans PostgreSQL 9.4 et 9.5, il est conseill&eacute; de mettre &agrave; jour au plus t&ocirc;t&nbsp;: <a target="_blank" href="https://github.com/eulerto/wal2json/releases">https://github.com/eulerto/wal2json/releases</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</h2>
 

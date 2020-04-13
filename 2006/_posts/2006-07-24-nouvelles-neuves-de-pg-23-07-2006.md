@@ -6,6 +6,22 @@ redirect_from: "index.php?post/drupal-197 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 23 juillet 2006</strong></p>
+
+<p>
+
+Linuxworld Expo San Francisco se tient du 14 au 18 août. Arrêtez-vous sur le stand PostgreSQL dans le pavillon .org. Si vous souhaitez participer, envoyez un mot à David Fetter, <david@fetter.org>.
+
+</david@fetter.org></p>
+
+<p>
+
+L'OSCON se déroule cette semaine à Portland, Oregon. Arrêtez-vous sur le stand PostgreSQL, si vous y êtes.
+
+</p>
+
+<!--more-->
+
 
 <strong>Correctifs appliqués</strong>
 

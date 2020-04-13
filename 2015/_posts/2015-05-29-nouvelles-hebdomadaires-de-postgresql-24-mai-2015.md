@@ -6,6 +6,102 @@ redirect_from: "index.php?post/2015-05-29-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les mises &agrave; jour de s&eacute;curit&eacute; et de correction 9.4.2, 9.3.7, 9.2.11, 9.1.16 et 9.0.20 sont disponibles. D&eacute;ployez au plus t&ocirc;t&nbsp;: 
+
+<a target="_blank" href="http://www.postgresql.org/about/news/1587/">http://www.postgresql.org/about/news/1587/</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>MJSQLView Version 7.02, une interface graphique bas&eacute;e sur Java qui est compatible PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://dandymadeproductions.com/projects/MyJSQLView/">http://dandymadeproductions.com/projects/MyJSQLView/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en mai</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2015-05/threads.php">http://archives.postgresql.org/pgsql-jobs/2015-05/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le PGDay de Belfort (France) aura lieu le 2 juin 2015&nbsp;: 
+
+<a target="_blank" href="http://select-2-6-2015-as-pgday.org">http://select-2-6-2015-as-pgday.org</a></li>
+
+<li>PGCon 2015 du 16 au 20 juin &agrave; Ottawa, Canada&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2015/">http://www.pgcon.org/2015/</a></li>
+
+<li>La deuxi&egrave;me <em>Conf&eacute;rence PostgreSQL Suisse</em> se tiendra &agrave; Rapperswil les 25 &amp; 26 juin 2015&nbsp;: 
+
+<a target="_blank" href="http://www.postgres-conference.ch/">http://www.postgres-conference.ch/</a></li>
+
+<li>La conf&eacute;rence PGDay UK aura lieu le 7 juillet 2015 &ndash; elle vise les membres de la communaut&eacute; PostgreSQL anglaise. L'appel &agrave; conf&eacute;renciers expire le 13 avril&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlusergroup.org.uk">http://www.postgresqlusergroup.org.uk</a></li>
+
+<li>Le <em>PGDay Campinas 2015</em> aura lieu &agrave; Campinas (Br&eacute;sil) le 7 ao&ucirc;t. L'appel &agrave; conf&eacute;renciers expire le 31 mai&nbsp;: 
+
+<a target="_blank" href="http://pgdaycampinas.com.br/english/">http://pgdaycampinas.com.br/english/</a></li>
+
+<li>L'appel &agrave; conf&eacute;renciers pour le PostgresOpen 2015, programm&eacute; &agrave; Dallas (Texas) du 16 au 18 septembre, a &eacute;t&eacute; lanc&eacute;&nbsp;: 
+
+<a target="_blank" href="http://2015.postgresopen.org/callforpapers/">http://2015.postgresopen.org/callforpapers/</a></li>
+
+<li>L'appel &agrave; conf&eacute;renciers pour la <em>session PostgreSQL n&deg;7</em> (24 septembre 2015 &agrave; Paris) est lanc&eacute; jusqu'au 15 juin 2015&nbsp;: call-for-paper &lt;AT&gt; postgresql-sessions &lt;DOT&gt; org. 
+
+<a target="_blank" href="http://www.postgresql-sessions.org/7/about">http://www.postgresql-sessions.org/7/about</a></li>
+
+<li style="list-style: none; display: inline">
+
+<p><em>PostgreSQL Conference Europe 2015</em> aura lieu du 27 au 30 octobre au Vienna Marriott Hotel &agrave; Vienne (Autriche). L'appel &agrave; conf&eacute;renciers est lanc&eacute; jusqu'au 7 ao&ucirc;t&nbsp;: 
+
+<a target="_blank" href="http://2015.pgconf.eu/">http://2015.pgconf.eu/</a></p>
+
+</li>
+
+<li><em>PGConf Silicon Valley 2015</em> se tiendra au centre de convention sud de San Francisco les 17 &amp; 18 novembre. L'appel &agrave; conf&eacute;renciers porte jusqu'au 15 juin&nbsp;: 
+
+<a target="_blank" href="http://www.pgconfsv.com">http://www.pgconfsv.com</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/message-id/20150524230820.GA5086@fetter.org">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqu&eacute;s</strong></p>
 

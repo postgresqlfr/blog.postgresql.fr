@@ -6,6 +6,54 @@ redirect_from: "index.php?post/2016-07-19-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>CHAR(16), une conf&eacute;rence internationale pr&eacute;sentant et c&eacute;l&eacute;brant les avanc&eacute;es significatives que les &eacute;quipes de d&eacute;veloppement de PostgreSQL ont faites dans les domaines du clustering, de la haute disponibilit&eacute; et de la r&eacute;plication, aura lieu &agrave; New York, le 6 d&eacute;cembre 2016. L'appel &agrave; conf&eacute;renciers est lanc&eacute;, la date de fin de candidature est fix&eacute;e &agrave; minuit EDT du 30 septembre 2016&nbsp;: <a target="_blank" href="http://charconference.org/">http://charconference.org/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>PG Bloat Check v2.2.0, un programme donnant des statistiques tr&egrave;s pr&eacute;cises des d&eacute;chets d'occupation pour les tables et index&nbsp;: <a target="_blank" href="https://github.com/keithf4/pg_bloat_check">https://github.com/keithf4/pg_bloat_check</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en juillet</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2016-07/threads.php">http://archives.postgresql.org/pgsql-jobs/2016-07/threads.php</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>Le PostgresOpen 2016 aura lieu &agrave; Dallas (Texas, USA) du 13 au 16 septembre. L'appel &agrave; conf&eacute;renciers &agrave; &eacute;t&eacute; lanc&eacute;&nbsp;: <a target="_blank" href="https://2016.postgresopen.org/callforpapers/">https://2016.postgresopen.org/callforpapers/</a></li>
+
+<li>Session PostgreSQL le 22 septembre 2016 &agrave; Lyon (France). La date limite de candidature est le 20 mai : envoyez vos propositions &agrave; call-for-paper AT postgresql-sessions DOT org. [ndt: <a href="http://www.postgresql-sessions.org/" target="_blank">http://www.postgresql-sessions.org/</a>]</li>
+
+<li>La <em>PgConf Silicon Valley 2016</em> aura lieu du 14 au 16 novembre 2016&nbsp;: <a target="_blank" href="http://www.pgconfsv.com/">http://www.pgconfsv.com/</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20160717235539.GC31696@fetter.org">http://www.postgresql.org/message-id/20160717235539.GC31696@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

@@ -6,6 +6,36 @@ redirect_from: "index.php?post/drupal-184 "
 ---
 
 
+<p>
+
+Les mises à jour de sécurité 8.1.4, 8.0.8, 7.4.13 et 7.3.15 sortiront très bientôt, soyez prêts à mettre à jour dès que possible&nbsp;!</p>
+
+<p>
+
+Il y a eu des discussions sur comment améliorer les manipulations de chaînes de caractères, ajouter de la mémoire partagée pour les projets connexes ou bien encore sur comment utiliser la compression pour améliorer les tris sur disque.
+
+</p>
+
+<p>
+
+Alvaro Herrera a commité deux patches à autovacuum. Le premier nous
+
+permet de voir s'exécuter un autovacuum dans la vue pg_stat_activity, y
+
+compris la table sur laquelle il est actuellement en train de
+
+travailler. L'autre, de Larry Rosenman, ajoute quatre colonnes au vues
+
+pg_stat_*_tables, qui nous permettent de savoir quand les vacuum et
+
+analyze ont été exécutés pour chacune des tables. On y apprend aussi si
+
+le vacuum a été exécuté manuellement ou via autovacuum.
+
+</p>
+
+<!--more-->
+
 
 <h3>== Nouveaux produits autour de PostgreSQL ==</h3>
 

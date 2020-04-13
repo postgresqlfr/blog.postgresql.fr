@@ -6,6 +6,110 @@ redirect_from: "index.php?post/2009-12-24-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>La <em>commitfest</em> de novembre est maintenant termin&eacute;e. F&eacute;licitations &agrave; Greg Smith pour la gestion, et &agrave; tous ceux qui ont relu, patch&eacute; et particip&eacute; d'une mani&egrave;re ou d'une autre.</p>
+
+<p>L'appel &agrave; conf&eacute;rencier pour "East" est lanc&eacute; avec, comme date limite, le 30 janvier 2010. D&eacute;tails sur&nbsp;: 
+
+<a target="_blank" href="http://www.postgresqlconference.org/">http://www.postgresqlconference.org/</a></p>
+
+<p>Les &eacute;lections 2009 pour la direction du PgUS sont en cours&nbsp;: 
+
+<a target="_blank" href="https://www.postgresql.us/elections/2009">https://www.postgresql.us/elections/2009</a></p>
+
+<p>&Agrave; la recherche de volontaires pour la rencontre de la "Open Day Linux Conf AU" &agrave; Wellington, Nouvelle Z&eacute;lande, le 23 janvier 2010 entre 11 et 14h. Contactez selena -at- postgresql.org.</p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>Alerce 1.0.0, un syst&egrave;me de r&eacute;plication synchrone pour Python&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pyreplica/">http://pgfoundry.org/projects/pyreplica/</a></li>
+
+<li>Gluster Storage Platform 3.0&nbsp;: 
+
+<a target="_blank" href="http://www.gluster.org/">http://www.gluster.org/</a></li>
+
+<li>pgpool-II 2.3.1, un gestionnaire de connexion et bien d'avantage&nbsp;: 
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+<li>pg_rman 1.1.1, un outil de sauvegarde/restauration pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://code.google.com/p/pg-rman/">http://code.google.com/p/pg-rman/</a></li>
+
+<li>Devrim GUNDUZ a cr&eacute;&eacute; un nouveau LiveCD bas&eacute; sur Fedora 12 et PostgreSQL 8.4.2&nbsp;: 
+
+<a target="_blank" href="http://pglivecd.org/">http://pglivecd.org/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalit&eacute; 8.5 de la semaine</strong></p>
+
+<p>Clauses "WHEN" sur les d&eacute;clencheurs (triggers)&nbsp;: dans la version 8.5 alpha 3, il sera possible de cr&eacute;er des d&eacute;clencheurs avec une clause WHEN pour conditionner leur ex&eacute;cution. Merci &agrave; Itagaki Takahiro et l'&eacute;quipe NTT.</p>
+
+<p><strong>L'astuce de la semaine</strong></p>
+
+<p>Astuce de la semaine&nbsp;: PostgreSQL offre trois moyens de g&eacute;rer les arbres&nbsp;: les requ&ecirc;tes WITH RECURSIVE, le module contrib "ltree" et la fonction connect_by() dans le module tablefunc.</p>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en d&eacute;cembre</strong></p>
+
+<ul>
+
+<li><a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2009-12/threads.php">http://archives.postgresql.org/pgsql-jobs/2009-12/threads.php</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>La premi&egrave;re r&eacute;union du "New York Capital District PUG" aura lieu le 7 janvier 2010&nbsp;: 
+
+<a target="_blank" href="http://nycdpug.x10hosting.com/">http://nycdpug.x10hosting.com/</a></li>
+
+<li>Stefan Keller, de l'universit&eacute; des sciences appliqu&eacute;es de Rapperswil (HSR), animera un s&eacute;minaire intitul&eacute; "Introduction &agrave; PostGIS/PostgreSQL" le 14 janvier 2010 &agrave; Zurich (Suisse)&nbsp;: 
+
+<a target="_blank" href="http://www.gis.hsr.ch/wiki/Agenda">http://www.gis.hsr.ch/wiki/Agenda</a></li>
+
+<li>Le PGDay-Cuba 2010 sera tenu du 4 au 6 f&eacute;vrier 2010 &agrave; l'Universit&eacute; des Sciences Informatiques, &agrave; La Havane. Sont invit&eacute;s les participants de Cuba, de la R&eacute;publique Dominicaine et du Venezuela.</li>
+
+<li>Le FOSDEM 2010 aura lieu &agrave; Bruxelles les 6 &amp; 7 f&eacute;vrier 2010&nbsp;: 
+
+<a target="_blank" href="http://www.fosdem.org/">http://www.fosdem.org/</a></li>
+
+<li>Le "Chemnitzer Linuxtage" aura lieu &agrave; Chemnitz (All.) les 13 &amp; 14 mars 2010&nbsp;: 
+
+<a target="_blank" href="http://chemnitzer.linux-tage.de/">http://chemnitzer.linux-tage.de/</a></li>
+
+<li>La PgCon 2010 aura lieu les 20 &amp; 21 mai 2010 &agrave; Ottawa avec des tutoriels les 18 et 19. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;! 
+
+<a target="_blank" href="http://www.pgcon.org/2010/papers.php">http://www.pgcon.org/2010/papers.php</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter et Josh Berkus. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org.</i></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20091220">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues</strong></p>
 

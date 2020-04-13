@@ -6,6 +6,86 @@ redirect_from: "index.php?post/2010-12-16-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>L'appel &agrave; conf&eacute;renciers pour la salle PostgreSQL au FOSDEM (Bruxelles, 5-6 f&eacute;vrier 2011) est toujours audible. Envoyez vos propositions &agrave; fosdem AT postgresql DOT eu.</p>
+
+<p>Devrim GUNDUZ a publi&eacute; une correction pour les paquets RPM RHEL6. Voir ci-apr&egrave;s pour les d&eacute;tails&nbsp;: 
+
+<a target="_blank" href="http://people.planetpostgresql.org/devrim/index.php?/archives/54-Attention-9.0.1-OR-RHEL-6-RPM-users.html">http://people.planetpostgresql.org/devrim/index.php?/archives/54-Attention-9.0.1-OR-RHEL-6-RPM-users.html</a></p>
+
+<p><strong>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</strong></p>
+
+<ul>
+
+<li>PostgreSQL Maestro 10.12, une interface graphique d'administration pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://www.sqlmaestro.com/products/postgresql/maestro/">http://www.sqlmaestro.com/products/postgresql/maestro/</a></li>
+
+<li>psycopg2 2.3.1, un connecteur Python pour PostgreSQL&nbsp;: 
+
+<a target="_blank" href="http://initd.org/psycopg/articles/2010/12/04/psycopg-231-released/">http://initd.org/psycopg/articles/2010/12/04/psycopg-231-released/</a></li>
+
+<li>Slony-I, un syst&egrave;me de r&eacute;plication ma&icirc;tre-vers-multiples-esclaves-en-cascade pour PostgreSQL a publi&eacute; les nouvelles r&eacute;vision 1.2.22 et 2.0.6&nbsp;: 
+
+<a target="_blank" href="http://www.slony.info/">http://www.slony.info/</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en d&eacute;cembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;: 
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-12/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-12/threads.php</a>;</li>
+
+<li>Francophones&nbsp;: 
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>L'appel &agrave; projets de PostgreSQLFr a &eacute;t&eacute; lanc&eacute;. Les projets doivent concerner PostgreSQL et la communaut&eacute; francophone. Mail &agrave; appel-projets-2010 (AT) postgresql (DOT) fr. 
+
+<a target="_blank" href="http://www.postgresql.fr/appel_a_projets_2010:call_for_projects">http://www.postgresql.fr/appel_a_projets_2010:call_for_projects</a></li>
+
+<li>Le FOSDEM est l'un des plus grand &eacute;v&eacute;nements autour du Libre et de l'Open Source&nbsp;; il a lieu annuellement &agrave; Bruxelles et rassemble environ 4000 personnes. La prochaine &eacute;dition est programm&eacute;e pour les 5 &amp; 6 f&eacute;vrier 2011. Envoyez vos propositions &agrave; l'adresse fosdem AT postgresql POINT eu&nbsp;: 
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/749-PostgreSQLFOSDEM-2011-Call-for-talks.html">http://andreas.scherbaum.la/blog/archives/749-PostgreSQLFOSDEM-2011-Call-for-talks.html</a></li>
+
+<li>Un PGDay.US est au programme du <em>Southern California Linux Exposition (SCALE)</em> de cette ann&eacute;e, tenu &agrave; l'h&ocirc;tel LAX Hilton de Los Angeles (Californie) le vendredi 25 f&eacute;vrier 2011. Proposez vos conf&eacute;rences sur pgday-submissions (AT) googlegroups (DOT) com.</li>
+
+<li>PGCon aura lieu les 19 &amp; 20 mai 2011 &agrave; l'Universit&eacute; d'Ottawa, pr&eacute;c&eacute;d&eacute; par deux jours de tutoriels les 17 &amp; 18 mai&nbsp;: 
+
+<a target="_blank" href="http://www.pgcon.org/2011/">http://www.pgcon.org/2011/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les m&eacute;dia</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL: 
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;: 
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><i>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA.</i></p>
+
+<p><i>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</i></p>
+
+<p>(<a target="_blank" href="http://archives.postgresql.org/pgsql-announce/2010-12/msg00007.php">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

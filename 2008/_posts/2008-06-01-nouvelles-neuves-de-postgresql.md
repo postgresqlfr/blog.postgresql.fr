@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-430 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 25 mai 2008</strong></p>
+
+<p>La "commit fest" de mai est terminée. Les patchs restants en attente sont celui de Heikki concernant la réplication de plans mémoires, qui était encore en développement et donc non destiné à une inclusion immédiate; et celui de Merlin et Andrew sur les "hooks" de la libpq, qui est toujours en gestation et pas non plus tout à fait prêt à l'inclusion.</p>
+
+<p>Les PgCon 2008 ont été de grands succès&nbsp;: décorticage consciencieux lors de la réunion des développeurs, suivie de l'organisation secrète d'une cabale&nbsp;! [ndt: indices <a href="http://momjian.us/main/blogs/pgblog.html#May_23_2008">ici</a> et <a href="http://people.planetpostgresql.org/mha/index.php?/archives/2008/05/23.html">là</a> ?]
+
+Les participants venaient parfois de très loin, comme Pune en Inde.</p>
+
+<!--more-->
+
 
 Les PgCon 2008 ont été de grands succès&nbsp;: décorticage consciencieux lors de la réunion des développeurs, suivie de l'organisation secrète d'une cabale&nbsp;! [ndt: indices <a href="http://momjian.us/main/blogs/pgblog.html#May_23_2008">ici</a> et <a href="http://people.planetpostgresql.org/mha/index.php?/archives/2008/05/23.html">là</a> ?]
 

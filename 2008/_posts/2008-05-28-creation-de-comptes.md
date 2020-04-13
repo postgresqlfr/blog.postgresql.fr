@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-295 "
 
 
 
+
+<!--more-->
+
+
 <p>
 
 Confrontés à des problèmes de spams sur les forums, nous avons pris la décision de modérer toute demande de création de compte sur le site.

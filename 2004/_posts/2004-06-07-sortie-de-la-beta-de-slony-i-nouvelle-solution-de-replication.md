@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-14 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Dans <a href="http://gborg.postgresql.org/project/slony1/news/newsfull.php?news_id=174">cette news originale (en anglais)</a>, Jan Wiek nous dit que:
 

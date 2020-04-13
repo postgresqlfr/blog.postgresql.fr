@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-80 "
 ---
 
 
+<p><em>Dans son post du 25 février 2005 sur pg-announce, David Fetter nous disait que </em></p>
+
+<p><strong>== PostgreSQL Weekly News - 25 Février 2005 ==</strong></p>
+
+<p>La liste -hackers a été très active cette semaine, notamment au sujet de la sempiternelle question des dates autour des développements (questions sur les fonctionnalités, et sur ce qu'il y aura dans les prochaines versions).<br />
+
+Evgen Potemkin (était-il le possesseur du cuirassé?) a envoyé un patch à appliquer à la version 7.3.4 permettant d'implémenter les requêtes hiérarchiques SQL:99. Si celà suscite des vocations, prière de nous aider à mettre ce code à jour pour la version 8.1 et le standard SQL:2003!</p>
+
+<!--more-->
+
 
 <strong>== Nouvelles des produits autour de PostgreSQL==</strong>
 

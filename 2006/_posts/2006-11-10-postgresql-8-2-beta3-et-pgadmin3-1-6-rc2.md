@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-214 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Josh Berkus a annoncé ce jour&nbsp;:</p>
 

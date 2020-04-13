@@ -6,6 +6,14 @@ redirect_from: "index.php?post/drupal-98 "
 ---
 
 
+<p><em>David Fetter nous annonçait le 6 juin sur la liste pgsql-announce :</em></p>
+
+<p>Une bourrasque de patchs et de nouvelles caractéristiques sont arrivés sur les listes -hackers et -patches, incluant des améliorations de performance sur les contrôles CRC des WALs, des corrections sur les opérations des types NUMERIC, des améliorations du planificateur et de la compression des WALs.</p>
+
+<p>Michael Glaesemann, un utilisateur de longue date de PostgreSQL, et récent développeur, a fourni une fonction to_timestamp(double precision).  Kudos!</p>
+
+<!--more-->
+
 
 <h3>Nouvelles de produits PostgreSQL</h3>
 

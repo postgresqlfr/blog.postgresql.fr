@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2010-06-16-presentation-de-la-version-9-0-de-post
 
 
 
+
+<!--more-->
+
+
 <p>Ce document tente de présenter les principaux changements apportés par PostgreSQL 9.0, par rapport à la version majeure précédente, la version 8.4. Dans la mesure du possible, chaque fonctionnalité sera expliquée et accompagnée d'une démonstration. Toutes les nouveautés ne sont bien sûr pas présentées (il y en a plus de 200).</p>
 
 <p>La version 9.0, comme son nom l'indique, est une version capitale dans la progression de PostgreSQL. Même si les solutions de réplication pour PostgreSQL sont nombreuses et répondent à des problématiques variées, la version 9.0 apporte une réplication simple, robuste et intégrée au moteur, qui sera vraisemblablement utilisée par défaut dans la plupart des configurations de Haute Disponibilité reposant sur PostgreSQL.</p>

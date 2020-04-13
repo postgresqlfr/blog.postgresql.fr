@@ -6,6 +6,24 @@ redirect_from: "index.php?post/2019-11-15-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le PGDay SF aura lieu au <em>Swedish American Hall</em> de San Francisco le 21 janvier 2020. L'appel &agrave; conf&eacute;renciers court jusqu'au 22 novembre 2019&nbsp;: <a target="_blank" href="https://2020.pgdaysf.org/callforpapers/">https://2020.pgdaysf.org/callforpapers/</a></p>
+
+<p><em>Prague PostgreSQL Developer Day 2020</em> (P2D2 2020) est une conf&eacute;rence de deux jours qui se tiendra les 5 & 6 f&eacute;vrier 2020 &agrave; Prague (R&eacute;publique Tch&egrave;que). L'appel &agrave; conf&eacute;renciers expire le 6 d&eacute;cembre 2019&nbsp;: <a target="_blank" href="https://p2d2.cz/callforpapers">https://p2d2.cz/callforpapers</a> <a target="_blank" href="http://www.p2d2.cz/">http://www.p2d2.cz/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>Postgresql Anonymizer, une extension cachant ou substituant &agrave; la vol&eacute;e des informations personnelles ou des donn&eacute;es commerciales sensibles d'une base de donn&eacute;es PostgreSQL&nbsp;: <a target="_blank" href="https://postgresql-anonymizer.readthedocs.io/en/latest/">https://postgresql-anonymizer.readthedocs.io/en/latest/</a></li>
+
+<li>Cybertec Migrator 1.0, un outil de migration d'Oracle vers PostgreSQL&nbsp;: <a target="_blank" href="https://www.cybertec-postgresql.com/en/products/cybertec-migrator/">https://www.cybertec-postgresql.com/en/products/cybertec-migrator/</a></li>
+
+<li>pg_probackup 2.2.5, un utilitaire pour g&eacute;rer les sauvegardes et les restaurations de clusters PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/postgrespro/pg_probackup">https://github.com/postgrespro/pg_probackup</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en novembre</h2>
 

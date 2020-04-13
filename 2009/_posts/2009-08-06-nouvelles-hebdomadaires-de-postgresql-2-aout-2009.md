@@ -6,6 +6,40 @@ redirect_from: "index.php?post/2009-08-06-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le FOSDEM 2010 aura lieu à Bruxelles les 6 &amp; 7 février 2010&nbsp;:
+
+<a target="_blank" href="http://www.fosdem.org/">http://www.fosdem.org/</a></p>
+
+<p>La première réunion du PUG de la Silicon Valley a eu lieu la semaine dernière. Inscrivez-vous sur leur "meetup" pour être averti des prochaines réunions&nbsp;:
+
+<a target="_blank" href="http://www.meetup.com/svpgsql/">http://www.meetup.com/svpgsql/</a></p>
+
+<p>L'OpenSQL Camp de Portland est à la recherche de sponsors. Pensez à votre voyage dès maintenant&nbsp;!&nbsp;:)
+
+<a target="_blank" href="http://www.chesnok.com/daily/2009/07/29/opensql-camp-comes-to-portland-november-14-15-2009/">http://www.chesnok.com/daily/2009/07/29/opensql-camp-comes-to-portland-november-14-15-2009/</a></p>
+
+<p>Christophe Pettus a publié une vidéo tournée lors du PGDay de San Jose&nbsp;:
+
+<a target="_blank" href="http://media.postgresql.org/pgday-sjc-09/">http://media.postgresql.org/pgday-sjc-09/</a></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>DBD::Pg 2.14.1, un connecteur Perl pour PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://search.cpan.org/dist/DBD-Pg/">http://search.cpan.org/dist/DBD-Pg/</a></li>
+
+<li>PostgreSQL + Replication 8.3-1.8, anciennement Mammoth Replicator&nbsp;:
+
+<a target="_blank" href="https://projects.commandprompt.com/public/replicator/wiki/getting_replicator">https://projects.commandprompt.com/public/replicator/wiki/getting_replicator</a></li>
+
+</ul>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20090802">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Offres d'emplois autour de PostgreSQL en août</strong></p>
 

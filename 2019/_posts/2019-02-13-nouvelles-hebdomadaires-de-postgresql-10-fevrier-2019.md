@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2019-02-13-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>[ndt: Meetup PostgreSQL à Paris le 21 f&eacute;vrier&nbsp;: <a target="_blank" href="https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Paris/">https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Paris/</a>]</p>
+
+<p>[ndt: Meetup PostgreSQL à Nantes le 20 mars&nbsp;: <a target="_blank" href="https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Nantes/">https://www.meetup.com/fr-FR/PostgreSQL-User-Group-Nantes/</a>]</p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>barman 2.6, un gestionnaire de sauvegarde et restauration pour PostgreSQL&nbsp;: <a target="_blank" href="https://www.pgbarman.org/barman-2-6-released/">https://www.pgbarman.org/barman-2-6-released/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en f&eacute;vrier</h2>
 

@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2011-09-12-sortie-de-postgresql-9-0 "
 
 
 
+
+<!--more-->
+
+
 <!-- BEGIN page_title_block -->
 
 Dossier de presse PostgreSQL 9.1

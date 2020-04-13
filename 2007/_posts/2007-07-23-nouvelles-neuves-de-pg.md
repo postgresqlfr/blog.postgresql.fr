@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-258 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL du 22 juillet 2007</strong></p>
+
+<p>
+
+Les annonces de sorties de versions pour pgInstaller se feront maintenant sur les listes -hackers (pour les instantanés de développement) et sur  la liste -announce (pour les versions de productions). Ces annonces ne se feront plus sur la page de pgFoundry. Elles sont cependant toujours téléchargeable depuis <a target="_blank" href="http://www.postgresql.org/ftp/win32">http://www.postgresql.org/ftp/win32</a>
+
+</p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

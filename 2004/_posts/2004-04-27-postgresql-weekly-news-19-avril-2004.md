@@ -6,6 +6,80 @@ redirect_from: "index.php?post/drupal-361 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires de PostgreSQL - 19 avril 2004 ==</h2>
+
+<p>Si vous mesurez l'activité d'un projet avec ses seuls intégrations de
+
+sources, vous penseriez que peu de choses se sont passées cette semaine.
+
+Bien qu'il soit vrai que peu de changements a eu lieu au niveau du code,
+
+nous avons reçu quelques nouvelles excitantes comme le fait que Fujitsu
+
+travaille pour sponsoriser le développement de quelques fonctionnalités
+
+avancées commes les espaces de tables (tablespaces), JDBC, PL/J et les
+
+transactions imbriquées. Avec un peu de chances, nous verrons le fruit
+
+de ce partenariat avant la sortie de la 7.5.
+
+</p>
+
+<p>En parlant de la 7.5, faisons un rapide survol des modifications de
+
+la semaine. L'analyseur a été modifié pour que les noms apparaissant
+
+dans les clauses GROUP BY sont cherchés d'abord dans les colonnes FROM,
+
+puis dans les alias de SELECT et finalement dans les colonnes FROM
+
+externes&nbsp;; le comportement précédent faisait précéder les colonnes
+
+FROM externes par rapport aux alias. La fonctionnalité proposée par la
+
+commande COPY et par \copy a été amélioré pour permettre une sauvegarde
+
+et une restauration simplifiées dans plusieurs formats populaires comme
+
+CSV, QUOTE et ESCAPE. Pour plus de détails sur les nouveaux mots clés
+
+impliqués, jetez un oœil sur la documentation développeurs. Enfin,
+
+Tom Lane a passé du temps sur la relecture et l'amélioration du nouveau
+
+code de gestion du tampon ARC de la version 7.5.</p>
+
+<p>Au niveau du web, nous avons enregistré quelques nouveaux sites
+
+miroirs cette semaine avec l'Indonésie, Puerto Rico et la Suisse. Nous
+
+sommes aussi ravi d'apprendre le lancement d'un nouvel site pour les
+
+groupes d'utilisateurs PostgreSQL sur
+
+<a href="http://pugs.postgresql.org/">http://pugs.postgresql.org/</a>. Le
+
+premier de ces sites concerne San Francisco dont vous pouvez récupérer
+
+des informations sur
+
+<a href="http://pugs.postgresql.org/sfpug/">http://pugs.postgresql.org/sfpug/</a>.
+
+Si vous êtes intéressé à placer votre groupe d'utilisateurs PostgreSQL
+
+sur le web, merci de contacter josh@postgresql.org. Un dernier
+
+point pour ceux qui ne l'auraient pas remarqué, il existe un nouveau
+
+sondage en ligne sur le site web principal concernant les compagnies
+
+d'aide et de support pour PostgreSQL, donc faites-y un tour.
+
+</p>
+
+<!--more-->
+
 
 <h2>== Nouvelles concernant les produits PostgreSQL ==</h2>
 

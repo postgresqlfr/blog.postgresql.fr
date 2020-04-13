@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2009-09-10-nouvelles-versions-mineures-8-4-1-8-3-
 
 
 
+
+<!--more-->
+
+
 De nouvelles versions mineures sont apparues aujourd'hui pour toutes les branches actives de PostgreSQL : ce sont donc les versions 8.4.1, 8.3.8, 8.2.14, 8.1.18, 8.0.22 et 7.4.26. Elles corrigent trois failles de sécurité (une de niveau moyen et deux de niveau bas) : un problème d'authentification, un problème de déni de service et un problème d'escalade de droits. Tous les utilisateurs devraient mettre à jour leurs installations dès que possible.
 
 

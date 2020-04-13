@@ -6,6 +6,92 @@ redirect_from: "index.php?post/2010-02-20-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Bonne Année du Tigre de la part du "PostgreSQL Global Development Group"&nbsp;!</p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>pgpool-II 2.3.2.1, un gestionnaire de connexions et bien plus&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+<li>Skytools 2.1.11, un système de réplication en Python&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/skytools/">http://pgfoundry.org/projects/skytools/</a></li>
+
+</ul>
+
+<p><strong>La fonctionnalité 9.0 de la semaine</strong></p>
+
+<p>Les messages d'erreur sur les violations de contrainte d'unicité sont maintenant plus détaillés.</p>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en février</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;:
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2010-02/threads.php">http://archives.postgresql.org/pgsql-jobs/2010-02/threads.php</a>;</li>
+
+<li>Francophones&nbsp;:
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Le PUG germanophone aura un stand dans le "Project Lounge" du hall 2 au Cebit 2010 du 2 au 6 mars 2010 à Hanovre&nbsp;:
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/649-PostgreSQL-stand-at-Cebit-2010.html">http://andreas.scherbaum.la/blog/archives/649-PostgreSQL-stand-at-Cebit-2010.html</a></li>
+
+<li>Le PUG allemand aura un stand aux Linuxdays de Chemnitz les 13 et 14 mars 2010. Andreas (ads) Scherbaum y donnera une conférence sur PostgreSQL 9.0 et dirigera un atelier sur la configuration de PostgreSQL&nbsp;: <a href="http://andreas.scherbaum.la/blog/archives/652-PostgreSQL-stand-at-Chemnitz-Linux-Days-2010.html" target="_blank">http://andreas.scherbaum.la/blog/archives/652-PostgreSQL-stand-at-Chemnitz-Linux-Days-2010.html</a>
+
+<a target="_blank" href="http://chemnitzer.linux-tage.de/2010/vortraege/plan.html">http://chemnitzer.linux-tage.de/2010/vortraege/plan.html</a></li>
+
+<li>La "Linuxfest Northwest 2010" aura lieu à Bellingham, Washington, États-Unis les 24 et 25 avril. Conférences, réunions et mécénat sont proposables&nbsp;:
+
+<a target="_blank" href="http://linuxfestnorthwest.org/">http://linuxfestnorthwest.org/</a></li>
+
+<li>Andreas (ads) Scherbaum enseignera au centre pour adultes de Magdeburg (All.) du 3 au 7 mai 2010 sur le sujet "PostgreSQL for Corporate Use". Détails ci-dessous&nbsp;:
+
+<a target="_blank" href="http://andreas.scherbaum.la/blog/archives/650-PostgreSQL-Schulung-als-Bildungsurlaub-03.-07.05.2010-in-Magdeburg.html">http://andreas.scherbaum.la/blog/archives/650-PostgreSQL-Schulung-als-Bildungsurlaub-03.-07.05.2010-in-Magdeburg.html</a></li>
+
+<li>La PgCon 2010 aura lieu les 20 &amp; 21 mai 2010 à Ottawa avec des tutoriels les 18 et 19. L'appel à conférenciers est lancé&nbsp;!
+
+<a target="_blank" href="http://www.pgcon.org/2010/registration.php">http://www.pgcon.org/2010/registration.php</a></li>
+
+<li>L'appel aux propositions est lancé pour l'OSCON, qui aura lieu à Portland (Oregon) du 19 au 23 juillet 2010&nbsp;:
+
+<a target="_blank" href="http://post.oreilly.com/f2f/9z1zqmm5lhkab0uogt3avlvc4u59bro6f917re423d8">http://post.oreilly.com/f2f/9z1zqmm5lhkab0uogt3avlvc4u59bro6f917re423d8</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les média</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;:
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><em>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'équipe PostgreSQLFr sous licence CC BY-NC-SA.</em></p>
+
+<p><em>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais à david (a) fetter.org, en allemand à pwn (a) pgug.de, en italien à pwn (a) itpug.org.</em></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20100214">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Correctifs appliqués</strong></p>
 

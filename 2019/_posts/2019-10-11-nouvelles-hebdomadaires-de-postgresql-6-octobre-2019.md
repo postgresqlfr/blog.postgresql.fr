@@ -6,6 +6,20 @@ redirect_from: "index.php?post/2019-10-11-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 12 est disponible&nbsp;! <a target="_blank" href="https://www.postgresql.org/about/news/1976/">https://www.postgresql.org/about/news/1976/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>pgBackRest 2.18, un syst&egrave;me de sauvegarde et restauration pour PostgreSQL&nbsp;: <a target="_blank" href="https://pgbackrest.org/release.html#2.18">https://pgbackrest.org/release.html#2.18</a></li>
+
+<li>Le <em>PGDay Down Under</em> 2019 aura lieu le 15 d&eacute;cembre [ndt: novembre ?] 2019 &agrave; Sydney, Australie. Les inscriptions sont ouvertes et les tickets "l&egrave;ve-t&ocirc;t" sont en vente jusqu'au 31 octobre&nbsp;: <a target="_blank" href="https://pgdu.org/">https://pgdu.org/</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en octobre</h2>
 

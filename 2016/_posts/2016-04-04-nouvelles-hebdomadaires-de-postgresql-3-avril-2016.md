@@ -6,6 +6,72 @@ redirect_from: "index.php?post/2016-04-04-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Les mises &agrave; jour de s&eacute;curit&eacute; 9.5.2, 9.4.7, 9.3.12, 9.2.16 et 9.1.21 ont &eacute;t&eacute; publi&eacute;es. Mettez &agrave; jour d&egrave;s que possible&nbsp;! <a target="_blank" href="http://www.postgresql.org/about/news/1656/">http://www.postgresql.org/about/news/1656/</a></p>
+
+<p>Le premier meetup du PUG islamabadien (Pakistan) aura lieu le 8 avril. D&eacute;tails et RSVP ci-apr&egrave;s&nbsp;: <a target="_blank" href="http://www.meetup.com/Islamabad-PostgreSQL-User-Group/events/229935189/">http://www.meetup.com/Islamabad-PostgreSQL-User-Group/events/229935189/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>Postgres-XL 9.5 R1 Beta2&nbsp;: <a target="_blank" href="http://2ndquadrant.com/en-us/resources/postgres-xl/">http://2ndquadrant.com/en-us/resources/postgres-xl/</a></li>
+
+<li>PL/Java 1.5.0 a &eacute;t&eacute; publi&eacute;, avec des changements sur la politique de s&eacute;curit&eacute;&nbsp;: <a target="_blank" href="http://tada.github.io/pljava/">http://tada.github.io/pljava/</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en avril</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2016-04/">http://archives.postgresql.org/pgsql-jobs/2016-04/</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>La 8<sup>&egrave;me</sup> Session PostgreSQL aura lieu le 6 avril 2016 &agrave; Lyon (France). [ndt: session repouss&eacute;e &agrave; septembre <a target="_blank" href="http://blog.dalibo.com/2016/02/15/pgsession-repouss%C3%A9e.html">http://blog.dalibo.com/2016/02/15/pgsession-repouss%C3%A9e.html</a> ]</li>
+
+<li>La premi&egrave;re r&eacute;union de PostgreSQL Isra&euml;l aura lieu &agrave; Tel Aviv le 7 avril 2016&nbsp;: <a target="_blank" href="http://www.meetup.com/PostgreSQL-Israel/events/229430729/">http://www.meetup.com/PostgreSQL-Israel/events/229430729/</a></li>
+
+<li>La <em>PGConf US 2016</em> aura lieu les 18, 19 et 20 avril &agrave; New-York City. Les inscriptions sont ouvertes&nbsp;: <a target="_blank" href="http://www.pgconf.us/2016/">http://www.pgconf.us/2016/</a></li>
+
+<li>La <em>LinuxFest Northwest</em> aura lieu les 23 et 24 avril 2016 au Coll&egrave;ge Technique de Bellingham (Washington, USA). L'appel &agrave; conf&eacute;renciers est maintenant lanc&eacute;&nbsp;: <a target="_blank" href="http://www.linuxfestnorthwest.org/2016/present">http://www.linuxfestnorthwest.org/2016/present</a></li>
+
+<li>FOSS4G NA (<em>Free and Open Source Software for Geospatial - North America</em>) se tiendra &agrave; Raleigh, en Caroline du Nord, du 2 au 5 mai 2016. Les candidatures de conf&eacute;renciers sont encore accept&eacute;es&nbsp;: <a target="_blank" href="https://2016.foss4g-na.org/cfp">https://2016.foss4g-na.org/cfp</a></li>
+
+<li>La <em>PGCon 2016</em> se tiendra du 17 au 21 mai 2016 &agrave; Ottawa&nbsp;: <a target="_blank" href="http://www.pgcon.org/">http://www.pgcon.org/</a></li>
+
+<li>Le PGDay suisse sera, cette ann&eacute;e, tenue &agrave; l'Universit&eacute; des Sciences Appliqu&eacute;es (HSR) de Rapperswil le 24 juin 2016. L'appel &agrave; conf&eacute;renciers est lanc&eacute;&nbsp;: <a target="_blank" href="http://www.pgday.ch/">http://www.pgday.ch/</a></li>
+
+<li>"5432 ... Meet us!" aura lieu &agrave; Milan (Italie) les 28 &amp; 29 juin 2016. L'appel &agrave; conf&eacute;renciers court jusqu'au 14 mars&nbsp;: <a target="_blank" href="http://5432meet.us/">http://5432meet.us/</a></li>
+
+<li>L'appel &agrave; conf&eacute;renciers du <em>PG Day UK 2016</em> cours jusqu'au 5 avril 2016. La conf&eacute;rence aura lieu le 5 juillet 2016. Merci de soumettre vos propositions &agrave; Simon.Riggs@2ndquadrant.com &lt;Simon AT 2ndquadrant DOT com&gt; ou via le site web&nbsp;: <a target="_blank" href="http://www.pgconf.uk/papers">http://www.pgconf.uk/papers</a></li>
+
+<li>La <em>PgConf Silicon Valley 2016</em> aura lieu du 14 au 16 novembre 2016&nbsp;: <a target="_blank" href="http://www.pgconfsv.com/">http://www.pgconfsv.com/</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20160404000514.GD24186@fetter.org">http://www.postgresql.org/message-id/20160404000514.GD24186@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

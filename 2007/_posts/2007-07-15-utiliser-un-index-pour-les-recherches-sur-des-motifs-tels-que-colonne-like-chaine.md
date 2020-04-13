@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-396 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>Depuis la version 8i, Oracle implémente les index inversés. Les index inversés permettent d’accélérer les recherches sur les motifs tels que « colonne LIKE '%chaîne' ». Dans ce type de cas de figure, PostgreSQL effectue un parcours séquentiel (ou «&nbsp;sequential scan&nbsp;») de la table interrogée. Toutefois, il est possible d’émuler un index inverse au moyen d’une fonction de renversement de chaîne couplée à un index sur fonction. Voici une proposition d’implémentation équivalente pour PostgreSQL.</p>
 

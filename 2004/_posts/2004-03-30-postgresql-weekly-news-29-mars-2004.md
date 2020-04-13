@@ -6,6 +6,64 @@ redirect_from: "index.php?post/drupal-359 "
 ---
 
 
+<h2>== Nouvelles hebdomadaires de PostgreSQL - 29 mars 2004 ==</h2>
+
+<p>Alors qu'il ya a eu quelques discussions sur les programmes de
+
+contrôles de source dans les différentes listes de diffusion cette semaine,
+
+les personnes scrutant les modifications du dépôt CVS ont noté quelques
+
+modifications intéressantes. Bien que la liste ne soit pas longue, beaucoup
+
+ont un intérêt pour l'utilisateur et auront un impact une fois la version 7.5
+
+sortie.<!--break-->
+
+</p>
+
+<p>La première amélioration concerne le remplacement des variables GUC
+
+virtual_host et tcpip_socket avec un paramètre unifié listen_addresses dans
+
+postgresql.conf. Le comportement par défaut a aussi été modifié pour écouter
+
+sur localhost, éliminant le besoin de l'option -i dans un grand nombre de cas.
+
+Le paramètre max_expr_depth a été remplacé par max_stack_depth mesuré en
+
+kilo octets et faisant l'objet d'une vérification avec la taille physique de la
+
+pile. Cette implémentation nous donne une bien meilleure défense contre les
+
+fonctions un peu trop récursives. La commande "Alter Table Set Without OIDS"
+
+a été supprimé pour ajouter à la commande "Alter Table Drop Column" la
+
+capacité de gérer les colonnes OID. Ceci corrige les problèmes de suppression
+
+de colonnes OID ayant des dépendances ou étant hérités d'un parent. Manfred
+
+Spraul a mis à jour le code pour SSL et Kerberos, qui devrait les rendre
+
+compatibles avec les threads.</p>
+
+<p>Dans un autre domaine, la communauté PostgreSQL a grandi avec l'ajout
+
+d'une liste de diffusion polonaise disponible à partir de pgsql CHEZ foo-baz
+
+POINT com. La communauté française dispose d'un nouveau site web disponible sur
+
+<a href="http://www.postgresqlfr.org/">http://www.postgresqlfr.org/</a>. Enfin,
+
+un dernier point, l'équipe web a terminé l'importation du code html/php du site
+
+techdocs dans CVS la semaine dernière. Si vous êtes intéressé pour les aider sur
+
+le développement de techdocs, merci de passer sur le projet pgweb sur GBorg.</p>
+
+<!--more-->
+
 
 <h2>== Nouvelles concernant les produits PostgreSQL ==</h2>
 

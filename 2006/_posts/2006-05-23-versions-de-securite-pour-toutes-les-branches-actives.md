@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-392 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 Aujourd'hui, le « PostgreSQL Global Development Group » a sorti les versions 8.1.4, 8.0.8, 7.4.13 et 7.3.15. L'application de cette mise à jour est urgente pour fermer une faille de sécurité sérieuse qui peut permettre une attaque par injection de code SQL sur certaines applications utilisant PostgreSQL.
 

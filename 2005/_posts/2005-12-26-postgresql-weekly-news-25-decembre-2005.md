@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-146 "
 ---
 
 
+<p><strong>Joyeux Noël</strong> à tous de la part de ceux qui sont impliqués de près ou de loin dans la rédaction des PostgreSQL Weekly News&nbsp;!</p>
+
+<!--more-->
+
 
 <h3>== Nouveaux produits autour de PostgreSQL ==</h3>
 

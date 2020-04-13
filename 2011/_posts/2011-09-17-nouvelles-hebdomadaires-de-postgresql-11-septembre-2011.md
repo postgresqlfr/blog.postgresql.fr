@@ -6,6 +6,106 @@ redirect_from: "index.php?post/2011-09-17-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>L'appel à conférenciers a été lancé pour le FLOSS UK, programmé du 20 au 22 mars 2012 à Edimbourg. La date limite de dépôt des candidatures est fixée au 18 novembre 2011 et les conférenciers sélectionnés seront informés avant le 25 novembre. Les propositions sont à envoyer à postgresql2012 AT flossuk POINT org. Plus d'informations via le lien suivant&nbsp;:
+
+<a target="_blank" href="http://www.flossuk.org/Events/Spring2012">http://www.flossuk.org/Events/Spring2012</a></p>
+
+<p>Nouveau sondage&nbsp;: Quand pensez-vous mettre à jour vers la 9.1&nbsp;?
+
+<a target="_blank" href="http://www.postgresql.org/community">http://www.postgresql.org/community</a></p>
+
+<p>Le PUG de New-York présente "<em>PostgreSQL 9.1 Overview</em>" avec Bruce Momjian à 18h30, le 22 septembre au Yodle. RSVP et détails ci-après&nbsp;:
+
+<a target="_blank" href="http://www.nycpug.org/events/32571952/">http://www.nycpug.org/events/32571952/</a></p>
+
+<p>[ndt: sortie de PostgreSQL 9.1, la dépêche en français&nbsp;:
+
+<a target="_blank" href="http://blog.postgresql.fr/index.php?post/2011/09/12/Sortie-de-PostgreSQL-9.0">http://blog.postgresql.fr/index.php?post/2011/09/12/Sortie-de-PostgreSQL-9.0</a>]</p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>pgpool-II 3.1.0, un distributeur de connexion et bien d'avantage&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgpool/">http://pgfoundry.org/projects/pgpool/</a></li>
+
+<li>xlogdump 0.4.0, un outil d'extraction de données à partir de fichiers WAL&nbsp;:
+
+<a target="_blank" href="https://github.com/snaga/xlogdump">https://github.com/snaga/xlogdump</a></li>
+
+</ul>
+
+<p><strong>Offres d'emplois autour de PostgreSQL en septembre</strong></p>
+
+<ul>
+
+<li>Internationales&nbsp;:
+
+<a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2011-09/threads.php">http://archives.postgresql.org/pgsql-jobs/2011-09/threads.php</a>;</li>
+
+<li>Francophones&nbsp;:
+
+<a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a>.</li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Postgres Open 2011, conférence ayant pour thème les évolutions brutales dans l'industrie de la base de données, aura lieu du 14 au 16 septembre 2011 à Chicago (Illinois, États-Unis) à l'hôtel "<em>Westin Michigan Avenue</em>"&nbsp;:
+
+<a target="_blank" href="http://postgresopen.org">http://postgresopen.org</a></li>
+
+<li><em>PostgreSQL Conference West</em> (#PgWest) aura lieu du 27 au 30 septembre 2011 au centre des conventions de San José (Californie, États-Unis)&nbsp;:
+
+<a target="_blank" href="http://www.postgresqlconference.org">http://www.postgresqlconference.org</a></li>
+
+<li>La "<em>PostgreSQL Conference Europe 2011</em>" se tiendra à Amsterdam, du 18 au 21 octobre&nbsp;:
+
+<a target="_blank" href="http://2011.pgconf.eu/">http://2011.pgconf.eu/</a></li>
+
+<li>Le <em>PG-Day Denver 2011</em> aura lieu le vendredi 21 octobre 2011 dans le campus Auraria près de Denver, Colorado&nbsp;:
+
+<a target="_blank" href="http://pgday.consistentstate.com/">http://pgday.consistentstate.com/</a></li>
+
+<li>pgbr aura lieu à São Paulo (Brésil) les 3 &amp; 4 novembre 2011&nbsp;:
+
+<a target="_blank" href="http://pgbr.postgresql.org.br/">http://pgbr.postgresql.org.br/</a></li>
+
+<li><em>PGConf.DE 2011</em> est une conférence germanophone tenue le 11 novembre au musée industriel du Rhin à Oberhausen (Allemagne). L'appel à conférenciers est lancé&nbsp;:
+
+<a target="_blank" href="http://2011.pgconf.de/">http://2011.pgconf.de/</a></li>
+
+<li>La cinquième édition du PGDay italien (PGDay.IT 2011) aura lieu le 25 novembre à Prato&nbsp;:
+
+<a target="_blank" href="http://2011.pgday.it/">http://2011.pgday.it/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les média</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;:
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><em>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'équipe PostgreSQLFr sous licence CC BY-NC-SA.</em></p>
+
+<p><em>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais à david (a) fetter.org, en allemand à pwn (a) pgug.de, en italien à pwn (a) itpug.org et en espagnol à pwn (a) arpug.com.ar.</em></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20110911">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues de code</strong></p>
 

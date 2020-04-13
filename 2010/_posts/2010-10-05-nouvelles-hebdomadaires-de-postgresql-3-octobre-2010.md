@@ -6,6 +6,68 @@ redirect_from: "index.php?post/2010-10-05-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>Le PgDay.IT 2010 aura lieu à Rome le 10 décembre de cette année. L'appel à conférenciers est lancé&nbsp;:
+
+<a target="_blank" href="http://www.pgday.it/">http://www.pgday.it/</a></p>
+
+<p>Le programme des conférences pour la <em>JDCon West</em> a été publié&nbsp;:
+
+<a target="_blank" href="https://www.postgresqlconference.org/2010/west/talks">https://www.postgresqlconference.org/2010/west/talks</a></p>
+
+<p>Michael Renner parlera de réplication de base de données avec PostgreSQL 9.0 le 12 octobre au Metalab de Vienne (Autriche). Lien et infos. (de_AT)&nbsp;:
+
+<a target="_blank" href="http://metalab.at/wiki/PostgreSQL_repliziert_9.0">http://metalab.at/wiki/PostgreSQL_repliziert_9.0</a></p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>Another PostgreSQL Diff Tool 2.1, un outil de comparaison de base de données&nbsp;:
+
+<a target="_blank" href="http://apgdiff.startnet.biz/">http://apgdiff.startnet.biz/</a></li>
+
+<li>phpPgAdmin 5.0-beta2, un outil web d'administration pour PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://phppgadmin.sourceforge.net/">http://phppgadmin.sourceforge.net/</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL Local</strong></p>
+
+<ul>
+
+<li>Les inscriptions spéciales "lève-tôt" pour la JDCon West 2010 [ndt: 2-4 nov.] sont ouvertes&nbsp;:
+
+<a target="_blank" href="https://www.postgresqlconference.org/content/pgwest-2010-registration">https://www.postgresqlconference.org/content/pgwest-2010-registration</a></li>
+
+<li>L'appel à conférenciers pour le PGDay.EU 2010, tenu du 6 au 8 décembre à Stuttgart (All.), est lancé&nbsp;:
+
+<a target="_blank" href="http://2010.pgday.eu/callforpapers">http://2010.pgday.eu/callforpapers</a></li>
+
+</ul>
+
+<p><strong>PostgreSQL dans les média</strong></p>
+
+<ul>
+
+<li>Planet PostgreSQL&nbsp;:
+
+<a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr&nbsp;:
+
+<a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p><em>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'équipe PostgreSQLFr sous licence CC BY-NC-SA.</em></p>
+
+<p><em>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais à david (a) fetter.org, en allemand à pwn (a) pgug.de, en italien à pwn (a) itpug.org et en espagnol à pwn (a) arpug.com.ar.</em></p>
+
+<p>(<a target="_blank" href="http://www.postgresql.org/community/weeklynews/pwn20101003">lien vers l'article original</a>)</p>
+
+<!--more-->
+
 
 <p><strong>Revues</strong></p>
 

@@ -6,6 +6,68 @@ redirect_from: "index.php?post/2017-07-03-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p><em>PGConf Local&nbsp;: Seattle</em> se tiendra les 11 & 12 ao&ucirc;t 2017. L'appel &agrave; conf&eacute;renciers est lanc&eacute; et court jusqu'au 2 juillet. Soumettez vos propositions &agrave;&nbsp;: <a target="_blank" href="https://www.pgconf.us/#Seattle2017">https://www.pgconf.us/#Seattle2017</a></p>
+
+<p>Le PGDay Austin 2017 aura lieu le samedi 26 ao&ucirc;t. L'agenda a &eacute;t&eacute; publi&eacute; et les inscriptions sont d&eacute;sormais ouvertes&nbsp;: <a target="_blank" href="https://pgdayaustin2017.postgresql.us">https://pgdayaustin2017.postgresql.us</a></p>
+
+<p><em>PGConf Local&nbsp;: Philly</em> aura lieu les 13 & 14 juillet 2017. Les inscriptions sont ouvertes&nbsp;: <a target="_blank" href="https://www.pgconf.us/conferences/Philly2017">https://www.pgconf.us/conferences/Philly2017</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>PostgreSQL Automatic Failover (PAF) v2.2_beta1&nbsp;: <a target="_blank" href="https://github.com/dalibo/PAF/releases/tag/v2.2_beta1">https://github.com/dalibo/PAF/releases/tag/v2.2_beta1</a></li>
+
+</ul>
+
+<h2>Offres d'emplois autour de PostgreSQL en juillet</h2>
+
+<ul>
+
+<li>Internationales : <a target="_blank" href="http://archives.postgresql.org/pgsql-jobs/2017-07/">http://archives.postgresql.org/pgsql-jobs/2017-07/</a></li>
+
+<li>Francophones : <a target="_blank" href="http://forums.postgresql.fr/viewforum.php?id=4">http://forums.postgresql.fr/viewforum.php?id=4</a></li>
+
+</ul>
+
+<h2>PostgreSQL Local</h2>
+
+<ul>
+
+<li>PGBR2017 (La PgConf br&eacute;silienne) aura lieu &agrave; Porto Alegre (&Eacute;tat du Rio Grande do Sul) du 14 au 16 septembre 2017&nbsp;: <a target="_blank" href="https://pgbr.postgresql.org.br/2017/">https://pgbr.postgresql.org.br/2017/</a></li>
+
+<li>Le PostgresOpen aura lieu &agrave; San Francisco du 6 au 8 septembre&nbsp;: <a target="_blank" href="https://2017.postgresopen.org/">https://2017.postgresopen.org/</a></li>
+
+<li>Le PGDay UK 2017 aura lieu &agrave; Londres le 4 juillet 2017&nbsp;: <a target="_blank" href="http://www.pgconf.uk">http://www.pgconf.uk</a></li>
+
+<li>La <em>PGConf.Brazil 2017 OnLine Edition</em> sera en direct depuis le Br&eacute;sil du 10 au 14 juillet 2017&nbsp; <a target="_blank" href="http://pgconf.com.br">http://pgconf.com.br</a></li>
+
+<li>Le PGDay Austin 2017 aura lieu le samedi 26 ao&ucirc;t&nbsp;: <a target="_blank" href="https://pgdayaustin2017.postgresql.us">https://pgdayaustin2017.postgresql.us</a></li>
+
+<li>PGDay.IT 2017 aura lieu &agrave; Milan (Italie) le 13 octobre. L'appel &agrave; conf&eacute;renciers court jusqu'au 9 juillet&nbsp;: <a target="_blank" href="http://2017.pgday.it/en/blog/call-for-papers">http://2017.pgday.it/en/blog/call-for-papers</a> <a target="_blank" href="http://pgday.it">http://pgday.it</a></li>
+
+<li>La <em>PostgreSQL Conference Europe 2017</em> aura lieu du 24 au 27 octobre 2017 au Warsaw Marriott Hotel, &agrave; Varsovie (Pologne)&nbsp;: <a target="_blank" href="https://2017.pgconf.eu/">https://2017.pgconf.eu/</a></li>
+
+<li>La PGConf.ASIA 2017 aura lieu &agrave; Akihabara (Tokyo, Japon) du 4 au 6 d&eacute;cembre 2017. L'appel &agrave; conf&eacute;renciers court jusqu'au 31 juillet 2017. Envoyez vos candidatures &agrave; pgconf-asia-2017-submission AT pgconf DOT asia&nbsp;: <a target="_blank" href="http://www.pgconf.asia/EN/2017/">http://www.pgconf.asia/EN/2017/</a></li>
+
+</ul>
+
+<h2>PostgreSQL dans les m&eacute;dia</h2>
+
+<ul>
+
+<li>Planet PostgreSQL : <a target="_blank" href="http://planet.postgresql.org/">http://planet.postgresql.org/</a></li>
+
+<li>Planet PostgreSQLFr : <a target="_blank" href="http://planete.postgresql.fr/">http://planete.postgresql.fr/</a></li>
+
+</ul>
+
+<p>PostgreSQL Weekly News / les nouvelles hebdomadaires vous sont offertes cette semaine par David Fetter. Traduction par l'&eacute;quipe PostgreSQLFr sous licence CC BY-NC-SA. La version originale se trouve &agrave; l'adresse suivante : <a target="_blank" href="http://www.postgresql.org/message-id/20170703032113.GA30126@fetter.org">http://www.postgresql.org/message-id/20170703032113.GA30126@fetter.org</a></p>
+
+<p>Proposez vos articles ou annonces avant dimanche 15:00 (heure du Pacifique). Merci de les envoyer en anglais &agrave; david (a) fetter.org, en allemand &agrave; pwn (a) pgug.de, en italien &agrave; pwn (a) itpug.org et en espagnol &agrave; pwn (a) arpug.com.ar.</p>
+
+<!--more-->
+
 
 <h2>Correctifs appliqu&eacute;s</h2>
 

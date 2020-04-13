@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-2 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 La communauté locale des Utilisateurs de Postgresql en Tunisie <a href="http://pugs.postgresql.org/tunisia/">(tnpug)</a> organise pour la première fois une "Postgresql Party" à l'occasion de la sortie de sa 8ème version, la rencontre prendra place à l'étoile du nord a partir de 19h le vendredi 19 février prochain.
 

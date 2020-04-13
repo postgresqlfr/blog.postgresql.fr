@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2016-06-30-appel-a-soutien-postgresql-fr-a-besoin
 
 
 
+
+<!--more-->
+
+
 Bonjour à toutes et à tous,
 
 

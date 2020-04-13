@@ -6,6 +6,36 @@ redirect_from: "index.php?post/drupal-407 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de Postgres - 30 décembre 2007</strong></p>
+
+<p>Bonne Année&nbsp;!</p>
+
+<p>Bien qu'étant une semaine "fériée", beaucoup de choses s'y sont produites. Jetez un œil sur la liste des patchs pour les détails.</p>
+
+<p><strong>Les nouveautés des produits dérivés</strong></p>
+
+<ul>
+
+<li>GNUmed 0.2.8.0 est sorti&nbsp;:
+
+<a target="_blank" href="http://wiki.gnumed.de">http://wiki.gnumed.de</a></li>
+
+<li>Pgtcl-ng 1.6.2 est disponible&nbsp;:
+
+<a target="_blank" href="http://pgfoundry.org/projects/pgtclng/">http://pgfoundry.org/projects/pgtclng/</a></li>
+
+<li>Viewalyzer 1.0.2 est sorti&nbsp;:
+
+<a target="_blank" href="http://sourceforge.net/projects/viewalyzer/">http://sourceforge.net/projects/viewalyzer/</a></li>
+
+<li>xTuple Apps 2.3 est disponible&nbsp;:
+
+<a target="_blank" href="http://www.xtuple.org/index.php?option=com_content&amp;task=view&amp;id=4281&amp;Itemid=1">http://www.xtuple.org/index.php?option=com_content&amp;task=view&amp;id=4281&amp;Itemid=1</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <!--break-->
 

@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2008-11-11-nouvelles-neuves-de-postgresql "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 9 novembre 2008</strong></p>
+
+<p>Les versions 8.3.5, 8.2.11, 8.1.15, 8.0.19 et 7.4.23 sont disponibles. Mettez à jour&nbsp;!
+
+<a target="_blank" href="http://www.postgresql.org/docs/current/static/release.html">http://www.postgresql.org/docs/current/static/release.html</a></p>
+
+<p>L'atelier PostgreSQL &amp; Perl à Beijing fut un grand succès, rassemblant 180 participants. Les remerciements vont à He Weiping (laser), Li Qiang (James) et beaucoup des membres de la communauté PostgreSQL chinoise qui ont permis cela.
+
+<a target="_blank" href="http://conference.perlchina.org/bjpw2008">http://conference.perlchina.org/bjpw2008</a></p>
+
+<!--more-->
+
 
 <p><strong>Les nouveautés des produits dérivés</strong></p>
 

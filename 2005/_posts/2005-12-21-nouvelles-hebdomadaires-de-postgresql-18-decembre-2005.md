@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-143 "
 ---
 
 
+<p><em>Après quelques semaines d'absence, la traduction française du PostgreSQL Weekly News revient. Je prie les lecteurs d'accepter toutes mes excuses pour cette interruption de traduction</em></p>
+
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 18 Décembre 2005</strong></p>
+
+<p>
+
+Les versions 8.1.1, 8.0.5, 7.4.10 et 7.3.12 sont sorties.  Mettez à jour vos versions avec ces dernières afin de bénéficier de la correction de tous les bugs.</p>
+
+<!--more-->
+
 
 <strong>Nouvelles des produits autour de PostgreSQL</strong>
 

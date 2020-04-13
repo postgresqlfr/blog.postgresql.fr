@@ -6,6 +6,18 @@ redirect_from: "index.php?post/2018-10-26-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 11 est disponible&nbsp;! <a target="_blank" href="https://www.postgresql.org/about/news/1894/">https://www.postgresql.org/about/news/1894/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>sqlite_fdw 1.0.0&nbsp;: <a target="_blank" href="https://github.com/pgspider/sqlite_fdw">https://github.com/pgspider/sqlite_fdw</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en octobre</h2>
 

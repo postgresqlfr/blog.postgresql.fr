@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-282 "
 
 
 
+
+<!--more-->
+
+
 <p>PostgreSQL 8.3 fait la une du mensuel <a href="http://www.gnulinuxmag.com/">Linux Magazine France</a>.</p>
 
 <!--break-->

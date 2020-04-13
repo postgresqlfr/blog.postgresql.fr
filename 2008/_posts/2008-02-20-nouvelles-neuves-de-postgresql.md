@@ -6,6 +6,16 @@ redirect_from: "index.php?post/drupal-283 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 17 février 2008</strong></p>
+
+<p>Le développement de PostgreSQL 8.4 est lancé.</p>
+
+<p>Le "Suncoast PostgreSQL Users' Group" est fondé&nbsp;:
+
+<a target="_blank" href="http://pugs.postgresql.org/spug">http://pugs.postgresql.org/spug</a></p>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

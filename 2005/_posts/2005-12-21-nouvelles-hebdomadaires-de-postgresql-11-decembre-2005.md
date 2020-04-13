@@ -6,6 +6,22 @@ redirect_from: "index.php?post/drupal-144 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 11 Décembre 2005</strong></p>
+
+<p>
+
+8.1.1, 8.0.5, 7.4.10 et 7.3.12 vont sortir cette semaine. Assurez vous de mettre à jour au moins la dernière version mineure.</p>
+
+<p>
+
+Commandprompt a embauché Devrim Gunduz pour qu'il accomplisse du travail pour la communauté. Félicitations aux deux! </p>
+
+<p>
+
+Il y a eu  des discussions animées sur le cache et sur le gestionnaire de verrous. Concernant ce dernier sujet, Tom Lane a mis à jour un patch sur -HEAD qui divise l'état du gestionnaire de verrous en 16 partitions, bien que cette modification améliore les performances par 4, le sujet nécessitera un plus d'investigations.</p>
+
+<!--more-->
+
 
 <strong>Nouvelles des produits autour de PostgreSQL</strong>
 

@@ -6,6 +6,22 @@ redirect_from: "index.php?post/2019-05-31-nouvelles-hebdomadaires-de-postgresql-
 ---
 
 
+<p>PostgreSQL 12 Beta 1 publi&eacute;e. Testez de fond en comble&nbsp;! <a target="_blank" href="https://www.postgresql.org/about/news/1943/">https://www.postgresql.org/about/news/1943/</a></p>
+
+<h2>Les nouveaut&eacute;s des produits d&eacute;riv&eacute;s</h2>
+
+<ul>
+
+<li>barman 2.8, un gestionnaire de sauvegarde et restauration pour PostgreSQL&nbsp;: <a target="_blank" href="https://www.pgbarman.org/barman-2-8-released/">https://www.pgbarman.org/barman-2-8-released/</a></li>
+
+<li>dbForge Studio pour PostgreSQL&nbsp;: <a target="_blank" href="https://blog.devart.com/whats-new-dbforge-studio-pgsql-21.html">https://blog.devart.com/whats-new-dbforge-studio-pgsql-21.html</a></li>
+
+<li>pg_probackup 2.1.2, un utilitaire pour g&eacute;rer les sauvegardes et les restaurations de clusters PostgreSQL&nbsp;: <a target="_blank" href="https://github.com/postgrespro/pg_probackup">https://github.com/postgrespro/pg_probackup</a></li>
+
+</ul>
+
+<!--more-->
+
 
 <h2>Offres d'emplois autour de PostgreSQL en mai</h2>
 

@@ -6,6 +6,18 @@ redirect_from: "index.php?post/drupal-418 "
 ---
 
 
+<p><strong>Nouvelles hebdomadaires de PostgreSQL - 24 février 2008</strong></p>
+
+<ul>
+
+<li>Le FOSDEM fut un grand succès pour PostgreSQL. Il arrivait souvent que les conférences se suivent debout, les personnes qui se sont occupés de la rencontre étaient enthousiastes et pleines de ressources, et les donations ont atteint des sommets. Merci à tous ceux qui ont permis cela.</li>
+
+<li>Le PUG européen a maintenant son comité de direction&nbsp;: Gabriele Bartolini (It), Magnus Hagander (Suède), Andreas Scherbaum (All) et Jean-Paul Argudo (fr). Félicitations à tous&nbsp;!</li>
+
+</ul>
+
+<!--more-->
+
 
 <strong>Les nouveautés des produits dérivés</strong>
 

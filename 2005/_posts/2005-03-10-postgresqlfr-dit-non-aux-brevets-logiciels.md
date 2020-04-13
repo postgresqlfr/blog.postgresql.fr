@@ -6,6 +6,10 @@ redirect_from: "index.php?post/drupal-84 "
 ---
 
 
+<p></p>
+
+<!--more-->
+
 
 <p>PostgreSQLFr dit <strong>NON</strong> aux brevets logiciels en Europe</p>
 

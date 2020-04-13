@@ -7,6 +7,10 @@ redirect_from: "index.php?post/drupal-221 "
 
 
 
+
+<!--more-->
+
+
 <p>Le 27 novembre, la RC1 de PG8.2 est sortie.</p>
 
 <p>N'hésitez pas à la tester avant la sortie imminente de la version stable.</p>

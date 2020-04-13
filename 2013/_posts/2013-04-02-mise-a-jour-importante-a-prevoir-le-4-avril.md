@@ -7,6 +7,10 @@ redirect_from: "index.php?post/2013-04-02-mise-a-jour-importante-a-prevoir-le-4-
 
 
 
+
+<!--more-->
+
+
 Le jeudi 4 avril 2013, le groupe de développement de PostgreSQL
 
 annoncera une mise à jour de sécurité pour toutes les versions de
