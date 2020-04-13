@@ -33,6 +33,9 @@ layout: default
           </a>
         </h3>
           {{ post.excerpt }}
+          <p>
+          <a href="{{ post.url | relative_url }}">Lire la suite...</a>
+          </p>
       </li>
       {%- endfor -%}
       <hr/>
