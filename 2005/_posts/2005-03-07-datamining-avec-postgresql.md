@@ -2,7 +2,8 @@
 layout: post
 title: "Datamining avec PostgreSQL"
 author: "jca"
-redirect_from: "index.php?post/drupal-83 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/83"
 ---
 
 

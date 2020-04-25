@@ -2,7 +2,8 @@
 layout: post
 title: "Présentations et tutoriels PostgreSQLFr aux RMLL"
 author: "jca"
-redirect_from: "index.php?post/drupal-299 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/299"
 ---
 
 

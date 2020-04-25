@@ -2,7 +2,8 @@
 layout: post
 title: "Appel à Orateurs : PG Day France le 13 juin 2013 à Nantes"
 author: "daamien"
-redirect_from: "index.php?post/2013-03-07-appel-a-orateurs-pg-day-france-le-13-juin-2013-a-nantes "
+categories: [Événements]
+redirect_from: "index.php?post/2013/03/07/Appel-à-Orateurs-:-PG-Day-France-le-13-juin-2013-à-Nantes"
 ---
 
 

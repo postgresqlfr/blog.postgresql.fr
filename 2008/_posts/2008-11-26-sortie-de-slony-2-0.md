@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de Slony 2.0"
 author: "gleu"
-redirect_from: "index.php?post/2008-11-26-sortie-de-slony-2-0 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2008/11/26/Sortie-de-Slony-2.0"
 ---
 
 

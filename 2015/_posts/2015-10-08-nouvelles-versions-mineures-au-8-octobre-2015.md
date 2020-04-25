@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles versions mineures au 8 octobre 2015"
-author: "sas"
-redirect_from: "index.php?post/2015-10-08-nouvelles-versions-mineures-au-8-octobre-2015 "
+author: "SAS"
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2015/10/08/Nouvelles-versions-mineures-au-8-octobre-2015"
 ---
 
 

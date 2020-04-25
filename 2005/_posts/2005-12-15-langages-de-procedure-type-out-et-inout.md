@@ -2,7 +2,8 @@
 layout: post
 title: "Langages de procédure : type OUT et INOUT"
 author: "gleu"
-redirect_from: "index.php?post/drupal-389 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/389"
 ---
 
 

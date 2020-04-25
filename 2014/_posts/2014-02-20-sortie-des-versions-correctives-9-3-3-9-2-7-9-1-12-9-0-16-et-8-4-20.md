@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Sortie des versions correctives 9.3.3, 9.2.7, 9.1.12, 9.0.16 et 8.4.20"
-author: "sas"
-redirect_from: "index.php?post/2014-02-20-sortie-des-versions-correctives-9-3-3-9-2-7-9-1-12-9-0-16-et-8-4-20 "
+author: "SAS"
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2014/02/20/Sortie-des-versions-correctives-9.3.3,-9.2.7,-9.1.12,-9.0.16-et-8.4.20"
 ---
 
 

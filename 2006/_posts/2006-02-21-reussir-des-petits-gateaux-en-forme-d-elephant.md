@@ -2,7 +2,8 @@
 layout: post
 title: "Réussir des petits gateaux en forme d&#39;éléphant"
 author: "SAS"
-redirect_from: "index.php?post/drupal-163 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/163"
 ---
 
 

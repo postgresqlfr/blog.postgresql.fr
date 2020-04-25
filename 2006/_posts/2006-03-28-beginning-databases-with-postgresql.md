@@ -2,7 +2,8 @@
 layout: post
 title: "Beginning Databases With PostgreSQL"
 author: "gleu"
-redirect_from: "index.php?post/drupal-390 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/390"
 ---
 
 

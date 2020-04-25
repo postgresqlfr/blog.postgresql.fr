@@ -2,7 +2,8 @@
 layout: post
 title: "Utilisation des rôles dans PostgreSQL 8.1"
 author: "gleu"
-redirect_from: "index.php?post/drupal-137 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/137"
 ---
 
 

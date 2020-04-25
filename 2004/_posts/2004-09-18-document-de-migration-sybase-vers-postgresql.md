@@ -2,7 +2,8 @@
 layout: post
 title: "Document de Migration Sybase vers PostgreSQL"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-29 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/29"
 ---
 
 

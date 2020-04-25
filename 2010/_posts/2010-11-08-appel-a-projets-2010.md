@@ -2,7 +2,8 @@
 layout: post
 title: "Appel à projets 2010 !"
 author: "daamien"
-redirect_from: "index.php?post/2010-11-08-appel-a-projets-2010 "
+categories: [Événements]
+redirect_from: "index.php?post/2010/11/08/Appel-à-projets-2010-!"
 ---
 
 

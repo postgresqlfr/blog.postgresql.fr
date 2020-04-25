@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL au soleil..."
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-136 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/136"
 ---
 
 

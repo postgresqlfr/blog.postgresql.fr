@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de PGSQL DNS 0.71"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-28 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/28"
 ---
 
 

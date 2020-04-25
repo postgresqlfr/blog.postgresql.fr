@@ -2,7 +2,8 @@
 layout: post
 title: "PosgreSQL 8.0.0 Beta 5"
 author: "jca"
-redirect_from: "index.php?post/drupal-51 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/51"
 ---
 
 

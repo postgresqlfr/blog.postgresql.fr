@@ -2,7 +2,8 @@
 layout: post
 title: "Présentations des conférences PostgreSQL - Solutions Linux 2005 Paris"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-72 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/72"
 ---
 
 

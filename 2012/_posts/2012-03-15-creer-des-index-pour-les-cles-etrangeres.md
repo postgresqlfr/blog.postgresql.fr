@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Créer des index pour les clés étrangères"
-author: "marc.cousin"
-redirect_from: "index.php?post/2012-03-15-creer-des-index-pour-les-cles-etrangeres "
+author: "mcousin"
+categories: [None]
+redirect_from: "index.php?post/2012/03/15/Créer-des-index-pour-les-clés-étrangères"
 ---
 
 

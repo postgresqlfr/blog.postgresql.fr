@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles versions mineures"
-author: "sas"
-redirect_from: "index.php?post/2011-09-26-nouvelles-versions-mineures "
+author: "SAS"
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2011/09/26/Nouvelles-versions-mineures"
 ---
 
 

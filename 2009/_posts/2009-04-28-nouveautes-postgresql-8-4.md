@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouveautés PostgreSQL 8.4"
-author: "marc.cousin"
-redirect_from: "index.php?post/2009-04-28-nouveautes-postgresql-8-4 "
+author: "mcousin"
+categories: [Articles]
+redirect_from: "index.php?post/2009/04/28/Nouveautés-PostgreSQL-8.4"
 ---
 
 

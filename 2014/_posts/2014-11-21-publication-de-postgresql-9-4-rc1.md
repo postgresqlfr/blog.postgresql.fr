@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Publication de PostgreSQL 9.4 RC1"
-author: "sas"
-redirect_from: "index.php?post/2014-11-21-publication-de-postgresql-9-4-rc1 "
+author: "SAS"
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2014/11/21/Publication-de-PostgreSQL-9.4-RC1"
 ---
 
 

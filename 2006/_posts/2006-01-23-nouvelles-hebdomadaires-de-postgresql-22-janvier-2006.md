@@ -2,7 +2,8 @@
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 22 janvier 2006"
 author: "jca"
-redirect_from: "index.php?post/drupal-155 "
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/drupal/155"
 ---
 
 

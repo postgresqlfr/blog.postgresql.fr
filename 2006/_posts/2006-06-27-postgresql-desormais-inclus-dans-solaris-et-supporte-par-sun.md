@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL désormais inclus dans Solaris, et supporté par Sun"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-191 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/191"
 ---
 
 

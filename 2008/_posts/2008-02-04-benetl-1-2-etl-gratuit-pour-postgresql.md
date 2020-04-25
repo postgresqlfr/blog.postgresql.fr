@@ -2,7 +2,8 @@
 layout: post
 title: "Benetl 1.2 : ETL gratuit pour postgreSQL"
 author: "Benetl2008"
-redirect_from: "index.php?post/drupal-276 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/276"
 ---
 
 

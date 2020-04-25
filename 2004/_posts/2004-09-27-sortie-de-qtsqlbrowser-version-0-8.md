@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de QtSqlBrowser version 0.8"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-35 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/35"
 ---
 
 

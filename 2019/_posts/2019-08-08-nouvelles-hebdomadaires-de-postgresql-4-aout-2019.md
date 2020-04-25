@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 4 août 2019"
-author: "NBougain"
-redirect_from: "index.php?post/2019-08-08-nouvelles-hebdomadaires-de-postgresql-4-aout-2019 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2019/08/08/Nouvelles-hebdomadaires-de-PostgreSQL-4-août-2019"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "Nouvelles versions de « sécurité »"
 author: "jca"
-redirect_from: "index.php?post/drupal-94 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/94"
 ---
 
 

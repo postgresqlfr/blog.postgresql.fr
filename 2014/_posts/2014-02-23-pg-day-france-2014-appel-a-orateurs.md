@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "[PG Day France 2014] Appel à orateurs"
-author: "gdifolco"
-redirect_from: "index.php?post/2014-02-23-pg-day-france-2014-appel-a-orateurs "
+author: ""
+categories: [None]
+redirect_from: "index.php?post/2014/02/23/[PG-Day-France-2014]-Appel-à-orateurs"
 ---
 
 

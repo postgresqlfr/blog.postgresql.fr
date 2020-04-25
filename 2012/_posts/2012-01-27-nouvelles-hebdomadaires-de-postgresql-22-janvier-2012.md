@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 22 janvier 2012"
-author: "NBougain"
-redirect_from: "index.php?post/2012-01-27-nouvelles-hebdomadaires-de-postgresql-22-janvier-2012 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2012/01/27/Nouvelles-hebdomadaires-de-PostgreSQL-22-janvier-2012"
 ---
 
 

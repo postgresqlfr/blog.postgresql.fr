@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL et Ruby"
 author: "SAS"
-redirect_from: "index.php?post/drupal-264 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/264"
 ---
 
 

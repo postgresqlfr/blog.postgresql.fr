@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Soutien aux Orateurs de PostgreSQL"
-author: "gdifolco"
-redirect_from: "index.php?post/2012-09-19-soutien-aux-orateurs-de-postgresql "
+author: ""
+categories: [Vie de l'association]
+redirect_from: "index.php?post/2012/09/19/Soutien-aux-Orateurs-de-PostgreSQL"
 ---
 
 

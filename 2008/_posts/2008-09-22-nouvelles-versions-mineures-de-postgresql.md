@@ -2,7 +2,8 @@
 layout: post
 title: "Nouvelles versions mineures de PostgreSQL"
 author: "gleu"
-redirect_from: "index.php?post/drupal-401 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/401"
 ---
 
 

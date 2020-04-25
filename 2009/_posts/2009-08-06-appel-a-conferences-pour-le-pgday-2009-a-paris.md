@@ -2,7 +2,8 @@
 layout: post
 title: "Appel à conférences pour le pgDay 2009 à Paris"
 author: "gleu"
-redirect_from: "index.php?post/2009-08-06-appel-a-conferences-pour-le-pgday-2009-a-paris "
+categories: [Événements]
+redirect_from: "index.php?post/2009/08/06/Appel-à-conférences-pour-le-pgDay-2009-à-Paris"
 ---
 
 

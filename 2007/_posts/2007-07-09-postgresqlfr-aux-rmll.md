@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQLFr aux RMLL"
 author: "SAS"
-redirect_from: "index.php?post/drupal-209 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/209"
 ---
 
 

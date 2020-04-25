@@ -2,7 +2,8 @@
 layout: post
 title: "Pourquoi préférer PostgreSQL à MySQL"
 author: "kryskool"
-redirect_from: "index.php?post/drupal-216 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/216"
 ---
 
 

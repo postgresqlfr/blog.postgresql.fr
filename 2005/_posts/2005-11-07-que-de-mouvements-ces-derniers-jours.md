@@ -2,7 +2,8 @@
 layout: post
 title: "Que de mouvements ces derniers jours..."
 author: "SAS"
-redirect_from: "index.php?post/drupal-132 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/132"
 ---
 
 

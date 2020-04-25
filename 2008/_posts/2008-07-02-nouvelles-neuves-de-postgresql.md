@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles neuves de PostgreSQL"
-author: "NBougain"
-redirect_from: "index.php?post/drupal-433 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/drupal/433"
 ---
 
 

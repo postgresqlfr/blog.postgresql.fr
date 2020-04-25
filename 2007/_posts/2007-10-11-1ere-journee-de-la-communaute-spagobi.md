@@ -2,7 +2,8 @@
 layout: post
 title: "1ère journée de la communauté SpagoBI"
 author: "egwada"
-redirect_from: "index.php?post/drupal-118 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/118"
 ---
 
 

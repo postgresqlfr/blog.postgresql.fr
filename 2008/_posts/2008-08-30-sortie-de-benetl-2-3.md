@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de Benetl 2.3"
 author: "Benetl2008"
-redirect_from: "index.php?post/drupal-304 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/304"
 ---
 
 

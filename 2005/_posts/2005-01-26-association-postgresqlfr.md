@@ -2,7 +2,8 @@
 layout: post
 title: "Association PostgreSQLFr"
 author: "SAS"
-redirect_from: "index.php?post/drupal-67 "
+categories: [Vie de l'association]
+redirect_from: "index.php?post/drupal/67"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "ATTENTION : Versions RPM corrompues"
 author: "SAS"
-redirect_from: "index.php?post/drupal-212 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/212"
 ---
 
 

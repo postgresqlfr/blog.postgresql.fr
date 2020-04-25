@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de PostgreSQL 8.2.1"
 author: "SAS"
-redirect_from: "index.php?post/drupal-230 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/230"
 ---
 
 

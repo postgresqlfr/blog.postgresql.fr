@@ -2,7 +2,8 @@
 layout: post
 title: "Un postgresql.conf complètement commenté !"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-75 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/75"
 ---
 
 

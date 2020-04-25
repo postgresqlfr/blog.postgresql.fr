@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de la version 1.0.2 de Slony-I incluant le support de PostgreSQL 8.0"
 author: "Christophe Truffier"
-redirect_from: "index.php?post/drupal-25 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/25"
 ---
 
 

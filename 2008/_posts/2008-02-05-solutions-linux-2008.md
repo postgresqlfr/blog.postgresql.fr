@@ -2,7 +2,8 @@
 layout: post
 title: "Solutions Linux 2008"
 author: "gleu"
-redirect_from: "index.php?post/drupal-398 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/398"
 ---
 
 

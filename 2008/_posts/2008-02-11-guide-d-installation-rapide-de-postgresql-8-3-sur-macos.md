@@ -2,7 +2,8 @@
 layout: post
 title: "Guide d&#39;installation rapide de PostgreSQL 8.3 sur MacOS"
 author: "escapek"
-redirect_from: "index.php?post/drupal-277 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/277"
 ---
 
 

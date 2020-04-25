@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 4 février 2018"
-author: "NBougain"
-redirect_from: "index.php?post/2018-02-08-nouvelles-hebdomadaires-de-postgresql-4-fevrier-2018 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2018/02/08/Nouvelles-hebdomadaires-de-PostgreSQL-4-février-2018"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL 9.6 Beta est sortie ! Testez le parallèlisme"
 author: "daamien"
-redirect_from: "index.php?post/2016-05-13-postgresql-9-6-beta-est-sortie-testez-le-parallelisme "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2016/05/13/PostgreSQL-9.6-Beta-est-sortie-!-Testez-le-parallèlisme"
 ---
 
 

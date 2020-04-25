@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "PostgreSQL 9.0 Beta 4 disponible"
-author: "sas"
-redirect_from: "index.php?post/2010-08-02-postgresql-9-0-beta-4-disponible "
+author: "SAS"
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2010/08/02/PostgreSQL-9.0-Beta-4-disponible"
 ---
 
 

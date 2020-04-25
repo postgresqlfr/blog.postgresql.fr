@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL 8.2 RC1"
 author: "SAS"
-redirect_from: "index.php?post/drupal-221 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/221"
 ---
 
 

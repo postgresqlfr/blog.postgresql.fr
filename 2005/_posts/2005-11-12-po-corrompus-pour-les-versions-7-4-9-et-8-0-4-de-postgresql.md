@@ -2,7 +2,8 @@
 layout: post
 title: ".po corrompus pour les versions 7.4.9 et 8.0.4 de PostgreSQL"
 author: "gleu"
-redirect_from: "index.php?post/drupal-385 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/385"
 ---
 
 

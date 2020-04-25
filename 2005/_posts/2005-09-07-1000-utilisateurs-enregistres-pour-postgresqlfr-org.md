@@ -2,7 +2,8 @@
 layout: post
 title: "1000 utilisateurs enregistrés pour PostgreSQLFr.org !"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-111 "
+categories: [Vie du site]
+redirect_from: "index.php?post/drupal/111"
 ---
 
 

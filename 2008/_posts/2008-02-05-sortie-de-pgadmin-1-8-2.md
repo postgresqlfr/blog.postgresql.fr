@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de pgAdmin 1.8.2"
 author: "gleu"
-redirect_from: "index.php?post/drupal-399 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/399"
 ---
 
 

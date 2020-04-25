@@ -2,7 +2,8 @@
 layout: post
 title: "Astuces techniques et autres tours de mains!"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-9 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/9"
 ---
 
 

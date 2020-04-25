@@ -2,7 +2,8 @@
 layout: post
 title: "== Nouvelles Hebdomadaires de PostgreSQL - 9 Novembre 2004 =="
 author: "jca"
-redirect_from: "index.php?post/drupal-49 "
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/drupal/49"
 ---
 
 

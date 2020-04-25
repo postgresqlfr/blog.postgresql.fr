@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de PostgreSQL 8.0.0 ce mercredi 19 janvier 2005 à 15:00 heure de Paris"
 author: "jca"
-redirect_from: "index.php?post/drupal-64 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/64"
 ---
 
 

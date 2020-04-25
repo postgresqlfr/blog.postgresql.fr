@@ -2,7 +2,8 @@
 layout: post
 title: "Un nouveau projet de la NASA avec PostgreSQL !"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-301 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/301"
 ---
 
 

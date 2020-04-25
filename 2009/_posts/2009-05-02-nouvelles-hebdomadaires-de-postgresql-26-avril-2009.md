@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 26 avril 2009"
-author: "NBougain"
-redirect_from: "index.php?post/2009-05-02-nouvelles-hebdomadaires-de-postgresql-26-avril-2009 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2009/05/02/Nouvelles-hebdomadaires-de-PostgreSQL-26-avril-2009"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "Mises à jour mineures de PostgreSQL : 9.1.5, 9.0.9, 8.4.13, 8.3.20"
 author: "daamien"
-redirect_from: "index.php?post/2012-08-20-mises-a-jour-mineures-de-postgresql-9-1-5-9-0-9-8-4-13-8-3-20 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2012/08/20/Mises-à-jour-mineures-de-PostgreSQL-:-9.1.5,-9.0.9,-8.4.13,-8.3.20"
 ---
 
 

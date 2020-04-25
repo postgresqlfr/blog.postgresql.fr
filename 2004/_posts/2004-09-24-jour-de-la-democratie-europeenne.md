@@ -2,7 +2,8 @@
 layout: post
 title: "Jour de la démocratie européenne"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-34 "
+categories: [Vie de l'association]
+redirect_from: "index.php?post/drupal/34"
 ---
 
 

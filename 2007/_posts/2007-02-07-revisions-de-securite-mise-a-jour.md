@@ -2,7 +2,8 @@
 layout: post
 title: "Révisions de sécurité (Mise à jour)"
 author: "SAS"
-redirect_from: "index.php?post/drupal-127 "
+categories: [Sécurité]
+redirect_from: "index.php?post/drupal/127"
 ---
 
 

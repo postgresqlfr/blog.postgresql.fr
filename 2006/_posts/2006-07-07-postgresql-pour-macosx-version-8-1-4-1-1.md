@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL pour MacOSX version 8.1.4-1.1"
 author: "mowgli"
-redirect_from: "index.php?post/drupal-194 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/194"
 ---
 
 

@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 18 décembre 2011"
-author: "NBougain"
-redirect_from: "index.php?post/2011-12-25-nouvelles-hebdomadaires-de-postgresql-18-decembre-2011 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2011/12/25/Nouvelles-hebdomadaires-de-PostgreSQL-18-décembre-2011"
 ---
 
 

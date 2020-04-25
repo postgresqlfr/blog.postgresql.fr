@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Publication de PostgreSQL 9.2"
-author: "sas"
-redirect_from: "index.php?post/2012-09-10-publication-de-postgresql-9-2 "
+author: "SAS"
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2012/09/10/Publication-de-PostgreSQL-9.2"
 ---
 
 

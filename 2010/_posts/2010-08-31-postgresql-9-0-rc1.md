@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "PostgreSQL 9.0 RC1"
-author: "sas"
-redirect_from: "index.php?post/2010-08-31-postgresql-9-0-rc1 "
+author: "SAS"
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2010/08/31/PostgreSQL-9.0-RC1"
 ---
 
 

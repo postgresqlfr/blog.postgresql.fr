@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de la BETA de Slony-I (nouvelle solution de réplication)"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-14 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/14"
 ---
 
 

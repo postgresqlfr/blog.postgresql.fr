@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQLFr.org aura son stand à Solutions Linux 2006"
 author: "gleu"
-redirect_from: "index.php?post/drupal-386 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/386"
 ---
 
 

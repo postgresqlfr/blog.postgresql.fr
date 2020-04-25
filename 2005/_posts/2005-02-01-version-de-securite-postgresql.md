@@ -2,7 +2,8 @@
 layout: post
 title: "Version de sécurité PostgreSQL"
 author: "jca"
-redirect_from: "index.php?post/drupal-70 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/70"
 ---
 
 

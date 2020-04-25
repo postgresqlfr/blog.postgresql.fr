@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de PostgreSQL 9.6 RC 1"
 author: "daamien"
-redirect_from: "index.php?post/2016-09-04-sortie-de-postgresql-9-6-rc-1 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2016/09/04/Sortie-de-PostgreSQL-9.6-RC-1"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "Utiliser un index pour les recherches sur des motifs tels que « colonne LIKE &#39;%chaîne&#39; »"
 author: "gleu"
-redirect_from: "index.php?post/drupal-396 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/396"
 ---
 
 

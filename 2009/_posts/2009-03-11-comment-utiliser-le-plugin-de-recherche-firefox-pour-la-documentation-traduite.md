@@ -2,7 +2,8 @@
 layout: post
 title: "Comment utiliser le plugin de recherche Firefox pour la documentation traduite"
 author: "gleu"
-redirect_from: "index.php?post/2009-03-11-comment-utiliser-le-plugin-de-recherche-firefox-pour-la-documentation-traduite "
+categories: [Vie du site]
+redirect_from: "index.php?post/2009/03/11/Comment-utiliser-le-plugin-de-recherche-Firefox-pour-la-documentation-traduite"
 ---
 
 

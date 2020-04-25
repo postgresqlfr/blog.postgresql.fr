@@ -2,7 +2,8 @@
 layout: post
 title: "Premiers pas avec Postgresql"
 author: "florence"
-redirect_from: "index.php?post/2010-10-03-iiii "
+categories: [Articles]
+redirect_from: "index.php?post/2010/10/03/iiii"
 ---
 
 

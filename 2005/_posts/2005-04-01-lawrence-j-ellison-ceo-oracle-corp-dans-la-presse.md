@@ -2,7 +2,8 @@
 layout: post
 title: "Lawrence J. Ellison (CEO, Oracle Corp.) dans la presse"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-88 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/88"
 ---
 
 

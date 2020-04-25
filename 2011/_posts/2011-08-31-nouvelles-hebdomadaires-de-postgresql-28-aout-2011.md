@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 28 août 2011"
-author: "NBougain"
-redirect_from: "index.php?post/2011-08-31-nouvelles-hebdomadaires-de-postgresql-28-aout-2011 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2011/08/31/Nouvelles-hebdomadaires-de-PostgreSQL-28-août-2011"
 ---
 
 

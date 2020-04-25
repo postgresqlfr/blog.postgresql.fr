@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Publication de PostgreSQL 9.2 Beta"
-author: "sas"
-redirect_from: "index.php?post/2012-05-14-publication-de-postgresql-9-2-beta "
+author: "SAS"
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2012/05/14/Publication-de-PostgreSQL-9.2-Beta"
 ---
 
 

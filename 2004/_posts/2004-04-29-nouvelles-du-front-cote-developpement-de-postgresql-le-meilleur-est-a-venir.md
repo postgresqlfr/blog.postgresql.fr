@@ -2,7 +2,8 @@
 layout: post
 title: "Nouvelles du front côté développement de PostgreSQL : le meilleur est à venir!"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-10 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/10"
 ---
 
 

@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 15 mars 2020"
-author: "NBougain"
-redirect_from: "index.php?post/2020-03-20-nouvelles-hebdomadaires-de-postgresql-15-mars-2020 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2020/03/20/Nouvelles-hebdomadaires-de-PostgreSQL-15-mars-2020"
 ---
 
 

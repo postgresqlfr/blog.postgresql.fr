@@ -2,7 +2,8 @@
 layout: post
 title: "pgfr @ Solutions Linux 2008"
 author: "daamien"
-redirect_from: "index.php?post/drupal-263 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/263"
 ---
 
 

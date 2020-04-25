@@ -2,7 +2,8 @@
 layout: post
 title: "Accès à la documentation"
 author: "Sebastien Lardiere"
-redirect_from: "index.php?post/drupal-160 "
+categories: [Vie du site]
+redirect_from: "index.php?post/drupal/160"
 ---
 
 

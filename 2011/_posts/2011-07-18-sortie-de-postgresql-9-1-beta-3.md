@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de PostgreSQL 9.1 bêta 3"
 author: "daamien"
-redirect_from: "index.php?post/2011-07-18-sortie-de-postgresql-9-1-beta-3 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2011/07/18/Sortie-de-PostgreSQL-9.1-bêta-3"
 ---
 
 

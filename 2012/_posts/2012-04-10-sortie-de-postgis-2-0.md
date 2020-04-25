@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de PostGIS 2.0"
 author: "daamien"
-redirect_from: "index.php?post/2012-04-10-sortie-de-postgis-2-0 "
+categories: [None]
+redirect_from: "index.php?post/2012/04/10/Sortie-de-PostGIS-2.0"
 ---
 
 

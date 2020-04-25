@@ -2,7 +2,8 @@
 layout: post
 title: "Guide de démarrage rapide avec PostgreSQL"
 author: "florence"
-redirect_from: "index.php?post/2009-06-20-guide-de-demarrage-rapide-avec-postgresql "
+categories: [Articles]
+redirect_from: "index.php?post/2009/06/20/Guide-de-demarrage-rapide-avec-PostgreSQL"
 ---
 
 

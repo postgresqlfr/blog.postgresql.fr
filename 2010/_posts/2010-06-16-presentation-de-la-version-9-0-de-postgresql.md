@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Présentation de la version 9.0 de PostgreSQL"
-author: "marc.cousin"
-redirect_from: "index.php?post/2010-06-16-presentation-de-la-version-9-0-de-postgresql2 "
+author: "mcousin"
+categories: [Articles]
+redirect_from: "index.php?post/2010/06/16/Présentation-de-la-version-9.0-de-PostgreSQL2"
 ---
 
 

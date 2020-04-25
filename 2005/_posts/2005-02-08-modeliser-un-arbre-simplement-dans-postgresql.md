@@ -2,7 +2,8 @@
 layout: post
 title: "Modéliser un arbre simplement dans PostgreSQL"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-74 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/74"
 ---
 
 

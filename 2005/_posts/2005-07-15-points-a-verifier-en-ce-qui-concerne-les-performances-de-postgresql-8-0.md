@@ -2,7 +2,8 @@
 layout: post
 title: "Points à vérifier en ce qui concerne les performances de PostgreSQL 8.0"
 author: "gleu"
-redirect_from: "index.php?post/drupal-105 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/105"
 ---
 
 

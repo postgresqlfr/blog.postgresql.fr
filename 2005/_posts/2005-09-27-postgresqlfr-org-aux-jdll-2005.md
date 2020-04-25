@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQLfr.org aux JDLL 2005"
 author: "gleu"
-redirect_from: "index.php?post/drupal-119 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/119"
 ---
 
 

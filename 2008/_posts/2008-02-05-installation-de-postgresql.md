@@ -2,7 +2,8 @@
 layout: post
 title: "Installation de PostgreSQL"
 author: "eivan"
-redirect_from: "index.php?post/drupal-275 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/275"
 ---
 
 

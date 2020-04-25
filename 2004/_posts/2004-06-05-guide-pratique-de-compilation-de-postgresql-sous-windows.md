@@ -2,7 +2,8 @@
 layout: post
 title: "Guide pratique de compilation de PostgreSQL sous Windows"
 author: "gleu"
-redirect_from: "index.php?post/drupal-367 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/367"
 ---
 
 

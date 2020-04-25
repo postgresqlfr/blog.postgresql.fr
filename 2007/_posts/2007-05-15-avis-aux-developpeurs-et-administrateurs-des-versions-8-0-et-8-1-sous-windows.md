@@ -2,7 +2,8 @@
 layout: post
 title: "Avis aux développeurs et administrateurs des versions 8.0 et 8.1 sous Windows"
 author: "kryskool"
-redirect_from: "index.php?post/drupal-4 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/4"
 ---
 
 

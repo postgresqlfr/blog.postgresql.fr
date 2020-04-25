@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "PostgreSQL 8.4 Release Candidate 1 disponible"
-author: "sas"
-redirect_from: "index.php?post/2009-06-17-postgresql-8-4-release-candidate-1-disponible "
+author: "SAS"
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2009/06/17/PostgreSQL-8.4-Release-Candidate-1-disponible"
 ---
 
 

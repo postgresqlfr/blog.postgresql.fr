@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL Weekly News - 01 novembre 2004"
 author: "gleu"
-redirect_from: "index.php?post/drupal-380 "
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/drupal/380"
 ---
 
 

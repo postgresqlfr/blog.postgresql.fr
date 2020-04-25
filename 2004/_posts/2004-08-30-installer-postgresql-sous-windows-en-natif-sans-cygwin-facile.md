@@ -2,7 +2,8 @@
 layout: post
 title: "Installer PostgreSQL sous Windows, en natif, sans Cygwin? Facile!!!"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-24 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/24"
 ---
 
 

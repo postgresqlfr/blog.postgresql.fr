@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 29 octobre 2017"
-author: "NBougain"
-redirect_from: "index.php?post/2017-11-01-nouvelles-hebdomadaires-de-postgresql-29-octobre-2017 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2017/11/01/Nouvelles-hebdomadaires-de-PostgreSQL-29-octobre-2017"
 ---
 
 

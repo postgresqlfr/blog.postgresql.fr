@@ -2,7 +2,8 @@
 layout: post
 title: "Sun rachète MySQL"
 author: "SAS"
-redirect_from: "index.php?post/drupal-269 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/269"
 ---
 
 

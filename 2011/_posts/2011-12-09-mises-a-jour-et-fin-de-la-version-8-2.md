@@ -2,7 +2,8 @@
 layout: post
 title: "Mises à jour et Fin de la version 8.2"
 author: "daamien"
-redirect_from: "index.php?post/2011-12-09-mises-a-jour-et-fin-de-la-version-8-2 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2011/12/09/Mises-à-jour-et-Fin-de-la-version-8.2"
 ---
 
 

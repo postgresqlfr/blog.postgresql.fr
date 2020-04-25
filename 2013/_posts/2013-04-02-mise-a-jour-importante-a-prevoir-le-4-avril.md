@@ -2,7 +2,8 @@
 layout: post
 title: "Mise à jour importante à prévoir le 4 avril !"
 author: "daamien"
-redirect_from: "index.php?post/2013-04-02-mise-a-jour-importante-a-prevoir-le-4-avril "
+categories: [Sécurité]
+redirect_from: "index.php?post/2013/04/02/Mise-à-jour-importante-à-prévoir-le-4-avril-!"
 ---
 
 

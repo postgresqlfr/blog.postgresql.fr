@@ -2,7 +2,8 @@
 layout: post
 title: "La percée des SGBDR libres en entreprise"
 author: "SAS"
-redirect_from: "index.php?post/drupal-241 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/241"
 ---
 
 

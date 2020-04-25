@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQLFr.org change de serveur Web"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-142 "
+categories: [Vie du site]
+redirect_from: "index.php?post/drupal/142"
 ---
 
 

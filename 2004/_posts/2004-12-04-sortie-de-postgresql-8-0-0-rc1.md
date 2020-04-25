@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de PostgreSQL-8.0.0-RC1"
 author: "gleu"
-redirect_from: "index.php?post/drupal-383 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/383"
 ---
 
 

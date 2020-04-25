@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 10 septembre 2012"
-author: "NBougain"
-redirect_from: "index.php?post/2012-09-22-nouvelles-hebdomadaires-de-postgresql-10-septembre-2012 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2012/09/22/Nouvelles-hebdomadaires-de-PostgreSQL-10-septembre-2012"
 ---
 
 

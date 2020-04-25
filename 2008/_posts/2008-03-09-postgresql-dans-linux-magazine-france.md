@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL dans Linux Magazine France"
 author: "Sebastien Lardiere"
-redirect_from: "index.php?post/drupal-282 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/282"
 ---
 
 

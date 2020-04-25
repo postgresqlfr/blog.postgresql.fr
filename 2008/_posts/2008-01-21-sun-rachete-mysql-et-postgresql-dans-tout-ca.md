@@ -2,7 +2,8 @@
 layout: post
 title: "Sun rachète MySQL... et PostgreSQL dans tout ça ?"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-271 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/271"
 ---
 
 

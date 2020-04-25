@@ -2,7 +2,8 @@
 layout: post
 title: "Sécuriser votre base PostgreSQL"
 author: "gleu"
-redirect_from: "index.php?post/drupal-397 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/397"
 ---
 
 

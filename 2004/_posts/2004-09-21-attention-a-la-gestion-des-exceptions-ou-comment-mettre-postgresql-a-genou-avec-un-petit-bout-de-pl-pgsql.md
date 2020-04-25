@@ -2,7 +2,8 @@
 layout: post
 title: "Attention à la gestion des exceptions ou comment mettre PostgreSQL à genou avec un petit bout de PL/pgSQL..."
 author: "SAS"
-redirect_from: "index.php?post/drupal-32 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/32"
 ---
 
 

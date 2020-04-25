@@ -2,7 +2,8 @@
 layout: post
 title: "Assemblée Générale de votre association"
 author: "SAS"
-redirect_from: "index.php?post/drupal-232 "
+categories: [Vie de l'association]
+redirect_from: "index.php?post/drupal/232"
 ---
 
 

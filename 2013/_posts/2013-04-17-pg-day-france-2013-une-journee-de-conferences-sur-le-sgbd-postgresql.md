@@ -2,7 +2,8 @@
 layout: post
 title: "PG Day France 2013 : une journée de conférences sur le SGBD PostgreSQL"
 author: "daamien"
-redirect_from: "index.php?post/2013-04-17-pg-day-france-2013-une-journee-de-conferences-sur-le-sgbd-postgresql "
+categories: [Événements]
+redirect_from: "index.php?post/2013/04/17/PG-Day-France-2013-:-une-journée-de-conférences-sur-le-SGBD-PostgreSQL"
 ---
 
 

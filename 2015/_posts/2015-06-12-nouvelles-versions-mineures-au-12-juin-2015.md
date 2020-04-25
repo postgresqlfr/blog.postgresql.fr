@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles versions mineures au 12 juin 2015"
-author: "sas"
-redirect_from: "index.php?post/2015-06-12-nouvelles-versions-mineures-au-12-juin-2015 "
+author: "SAS"
+categories: [None]
+redirect_from: "index.php?post/2015/06/12/Nouvelles-versions-mineures-au-12-juin-2015"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "Arrivée de Glom en version Alpha."
 author: "Christophe Truffier"
-redirect_from: "index.php?post/drupal-16 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/16"
 ---
 
 

@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 29 juillet 2018"
-author: "NBougain"
-redirect_from: "index.php?post/2018-08-03-nouvelles-hebdomadaires-de-postgresql-29-juillet-2018 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2018/08/03/Nouvelles-hebdomadaires-de-PostgreSQL-29-juillet-2018"
 ---
 
 

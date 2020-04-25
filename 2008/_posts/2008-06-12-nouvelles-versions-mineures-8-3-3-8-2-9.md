@@ -2,7 +2,8 @@
 layout: post
 title: "Nouvelles versions mineures (8.3.3, 8.2.9...)"
 author: "SAS"
-redirect_from: "index.php?post/drupal-296 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/296"
 ---
 
 

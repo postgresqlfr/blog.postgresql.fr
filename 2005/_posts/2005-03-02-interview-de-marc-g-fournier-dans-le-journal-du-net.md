@@ -2,7 +2,8 @@
 layout: post
 title: "Interview de Marc G. Fournier dans le Journal Du Net"
 author: "jca"
-redirect_from: "index.php?post/drupal-81 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/81"
 ---
 
 

@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles neuves de PostgreSQL"
-author: "NBougain"
-redirect_from: "index.php?post/2009-01-15-nouvelles-neuves-de-postgresql "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2009/01/15/Nouvelles-neuves-de-PostgreSQL"
 ---
 
 

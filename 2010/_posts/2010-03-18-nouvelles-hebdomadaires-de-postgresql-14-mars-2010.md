@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 14 mars 2010"
-author: "NBougain"
-redirect_from: "index.php?post/2010-03-18-nouvelles-hebdomadaires-de-postgresql-14-mars-2010 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2010/03/18/Nouvelles-hebdomadaires-de-PostgreSQL-14-mars-2010"
 ---
 
 

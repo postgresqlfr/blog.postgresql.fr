@@ -2,7 +2,8 @@
 layout: post
 title: "Création de PostgreSQL Europe !"
 author: "daamien"
-redirect_from: "index.php?post/drupal-203 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/203"
 ---
 
 

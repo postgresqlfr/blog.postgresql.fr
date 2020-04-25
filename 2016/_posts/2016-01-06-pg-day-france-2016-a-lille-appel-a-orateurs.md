@@ -2,7 +2,8 @@
 layout: post
 title: "PG Day France 2016 à Lille : Appel à Orateurs"
 author: "daamien"
-redirect_from: "index.php?post/2016-01-06-pg-day-france-2016-a-lille-appel-a-orateurs "
+categories: [Événements]
+redirect_from: "index.php?post/2016/01/06/PG-Day-France-2016-à-Lille-:-Appel-à-Orateurs"
 ---
 
 

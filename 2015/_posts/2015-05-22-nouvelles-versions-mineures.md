@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles versions mineures"
-author: "sas"
-redirect_from: "index.php?post/2015-05-22-nouvelles-versions-mineures "
+author: "SAS"
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2015/05/22/Nouvelles-versions-mineures"
 ---
 
 

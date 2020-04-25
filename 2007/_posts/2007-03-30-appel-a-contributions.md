@@ -2,7 +2,8 @@
 layout: post
 title: "Appel à contributions"
 author: "SAS"
-redirect_from: "index.php?post/drupal-246 "
+categories: [Vie du site]
+redirect_from: "index.php?post/drupal/246"
 ---
 
 

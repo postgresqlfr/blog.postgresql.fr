@@ -2,7 +2,8 @@
 layout: post
 title: "Le centre informatique de l&#39;Université d&#39;Oxford a migré à PostgreSQL"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-48 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/48"
 ---
 
 

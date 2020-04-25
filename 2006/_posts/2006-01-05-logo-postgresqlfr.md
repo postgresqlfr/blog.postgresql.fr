@@ -2,7 +2,8 @@
 layout: post
 title: "Logo PostgreSQLFr"
 author: "SAS"
-redirect_from: "index.php?post/drupal-148 "
+categories: [Vie de l'association]
+redirect_from: "index.php?post/drupal/148"
 ---
 
 

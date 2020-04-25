@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 9 mai 2010"
-author: "NBougain"
-redirect_from: "index.php?post/2010-05-12-nouvelles-hebdomadaires-de-postgresql-9-mai-2010 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2010/05/12/Nouvelles-hebdomadaires-de-PostgreSQL-9-mai-2010"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "Écoutez les conférences du pgday en Italie, en live!"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-256 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/256"
 ---
 
 

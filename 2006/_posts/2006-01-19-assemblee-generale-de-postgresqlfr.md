@@ -2,7 +2,8 @@
 layout: post
 title: "Assemblée générale de PostgreSQLFr"
 author: "SAS"
-redirect_from: "index.php?post/drupal-154 "
+categories: [Vie de l'association]
+redirect_from: "index.php?post/drupal/154"
 ---
 
 

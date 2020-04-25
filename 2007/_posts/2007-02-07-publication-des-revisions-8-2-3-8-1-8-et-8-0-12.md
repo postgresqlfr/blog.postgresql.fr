@@ -2,7 +2,8 @@
 layout: post
 title: "Publication des révisions 8.2.3, 8.1.8 et 8.0.12"
 author: "SAS"
-redirect_from: "index.php?post/drupal-235 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/235"
 ---
 
 

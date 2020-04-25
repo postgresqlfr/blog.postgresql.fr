@@ -2,7 +2,8 @@
 layout: post
 title: "Retour de congés..."
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-23 "
+categories: [Vie de l'association]
+redirect_from: "index.php?post/drupal/23"
 ---
 
 

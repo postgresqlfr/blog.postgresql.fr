@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 9 juin 2019"
-author: "NBougain"
-redirect_from: "index.php?post/2019-06-22-nouvelles-hebdomadaires-de-postgresql-9-juin-2019 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2019/06/22/Nouvelles-hebdomadaires-de-PostgreSQL-9-juin-2019"
 ---
 
 

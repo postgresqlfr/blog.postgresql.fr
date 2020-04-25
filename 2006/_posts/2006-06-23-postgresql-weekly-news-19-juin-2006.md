@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL Weekly News - 19 juin 2006"
 author: "SAS"
-redirect_from: "index.php?post/drupal-190 "
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/drupal/190"
 ---
 
 

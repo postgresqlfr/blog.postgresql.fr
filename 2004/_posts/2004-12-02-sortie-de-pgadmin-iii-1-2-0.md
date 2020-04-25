@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de pgAdmin III 1.2.0"
 author: "jca"
-redirect_from: "index.php?post/drupal-53 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/53"
 ---
 
 

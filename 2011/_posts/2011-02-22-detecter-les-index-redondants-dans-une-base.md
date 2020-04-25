@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Détecter les index redondants dans une base"
-author: "marc.cousin"
-redirect_from: "index.php?post/2011-02-22-detecter-les-index-redondants-dans-une-base "
+author: "mcousin"
+categories: [None]
+redirect_from: "index.php?post/2011/02/22/Détecter-les-index-redondants-dans-une-base"
 ---
 
 

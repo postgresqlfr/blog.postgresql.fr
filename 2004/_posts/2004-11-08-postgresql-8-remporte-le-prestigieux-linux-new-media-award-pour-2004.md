@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL 8 remporte le prestigieux «&amp;nbsp;Linux New Media Award&amp;nbsp;» pour 2004!"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-47 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/47"
 ---
 
 

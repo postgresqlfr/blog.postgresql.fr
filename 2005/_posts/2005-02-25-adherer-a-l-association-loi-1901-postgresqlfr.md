@@ -2,7 +2,8 @@
 layout: post
 title: "Adhérer à l&#39;Association Loi 1901 PostgreSQLFr"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-273 "
+categories: [Vie de l'association]
+redirect_from: "index.php?post/drupal/273"
 ---
 
 

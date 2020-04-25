@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de versions mineures (8.1.5, 8.0.9, 7.4.14 et 7.3.16)"
 author: "gleu"
-redirect_from: "index.php?post/drupal-394 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/394"
 ---
 
 

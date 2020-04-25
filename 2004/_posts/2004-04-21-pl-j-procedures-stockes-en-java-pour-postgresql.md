@@ -2,7 +2,8 @@
 layout: post
 title: "Pl-j : Procédures stockés en Java Pour Postgresql"
 author: "karim2k"
-redirect_from: "index.php?post/drupal-8 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/8"
 ---
 
 

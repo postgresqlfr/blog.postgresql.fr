@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 28 septembre 2019"
-author: "NBougain"
-redirect_from: "index.php?post/2019-10-02-nouvelles-hebdomadaires-de-postgresql-28-septembre-2019 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2019/10/02/Nouvelles-hebdomadaires-de-PostgreSQL-28-septembre-2019"
 ---
 
 

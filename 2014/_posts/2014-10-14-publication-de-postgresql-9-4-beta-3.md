@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Publication de PostgreSQL 9.4 bêta 3"
-author: "sas"
-redirect_from: "index.php?post/2014-10-14-publication-de-postgresql-9-4-beta-3 "
+author: "SAS"
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2014/10/14/Publication-de-PostgreSQL-9.4-bêta-3"
 ---
 
 

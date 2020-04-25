@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL 8.0 sort officiellement en béta version"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-22 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/22"
 ---
 
 

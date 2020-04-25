@@ -2,7 +2,8 @@
 layout: post
 title: "Un article de 01net"
 author: "SAS"
-redirect_from: "index.php?post/drupal-268 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/268"
 ---
 
 

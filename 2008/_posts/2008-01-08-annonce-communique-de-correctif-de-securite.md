@@ -2,7 +2,8 @@
 layout: post
 title: "[ANNONCE] Communiqué de correctif de sécurité"
 author: "kryskool"
-redirect_from: "index.php?post/drupal-274 "
+categories: [Sécurité]
+redirect_from: "index.php?post/drupal/274"
 ---
 
 

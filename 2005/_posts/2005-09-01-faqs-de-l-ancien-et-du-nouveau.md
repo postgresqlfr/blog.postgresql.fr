@@ -2,7 +2,8 @@
 layout: post
 title: "FAQs : de l&#39;ancien... et du nouveau !"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-108 "
+categories: [Vie du site]
+redirect_from: "index.php?post/drupal/108"
 ---
 
 

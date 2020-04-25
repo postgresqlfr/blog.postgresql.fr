@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de Bricolage 1.8.0"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-11 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/11"
 ---
 
 

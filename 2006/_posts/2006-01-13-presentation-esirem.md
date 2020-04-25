@@ -2,7 +2,8 @@
 layout: post
 title: "Présentation ESIREM"
 author: "SAS"
-redirect_from: "index.php?post/drupal-150 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/150"
 ---
 
 

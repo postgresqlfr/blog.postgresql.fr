@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles mensuelles de l&#39;association PostgreSQLFr : septembre 2010"
-author: "pfrancelle"
-redirect_from: "index.php?post/2010-09-16-nouvelles-mensuelles-de-l-association-postgresqlfr-septembre-2010 "
+author: "Patrick Francelle"
+categories: [Vie de l'association]
+redirect_from: "index.php?post/2010/09/16/Nouvelles-mensuelles-de-l-association-PostgreSQLFr-:-septembre-2010"
 ---
 
 

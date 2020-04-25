@@ -2,7 +2,8 @@
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 23 octobre 2005"
 author: "Sebastien Lardiere"
-redirect_from: "index.php?post/drupal-126 "
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/drupal/126"
 ---
 
 

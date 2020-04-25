@@ -2,7 +2,8 @@
 layout: post
 title: "FAQ PostgreSQL"
 author: "gleu"
-redirect_from: "index.php?post/drupal-373 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/373"
 ---
 
 

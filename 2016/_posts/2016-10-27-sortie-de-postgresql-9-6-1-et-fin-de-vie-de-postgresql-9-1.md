@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de PostgreSQL 9.6.1 et Fin de Vie de PostgreSQL 9.1"
 author: "daamien"
-redirect_from: "index.php?post/2016-10-27-sortie-de-postgresql-9-6-1-et-fin-de-vie-de-postgresql-9-1 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2016/10/27/Sortie-de-PostgreSQL-9.6.1-et-Fin-de-Vie-de-PostgreSQL-9.1"
 ---
 
 

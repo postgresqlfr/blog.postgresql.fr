@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "PostgreSQL 8.4 disponible"
-author: "sas"
-redirect_from: "index.php?post/2009-07-02-postgresql-8-4-disponible "
+author: "SAS"
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2009/07/02/PostgreSQL-8.4-disponible"
 ---
 
 

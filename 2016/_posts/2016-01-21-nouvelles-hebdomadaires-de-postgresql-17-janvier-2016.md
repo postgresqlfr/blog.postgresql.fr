@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 17 janvier 2016"
-author: "NBougain"
-redirect_from: "index.php?post/2016-01-21-nouvelles-hebdomadaires-de-postgresql-17-janvier-2016 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2016/01/21/Nouvelles-hebdomadaires-de-PostgreSQL-17-janvier-2016"
 ---
 
 

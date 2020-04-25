@@ -2,7 +2,8 @@
 layout: post
 title: "Fin du support des fonctionnalités ACID dans PostgreSQL"
 author: "kryskool"
-redirect_from: "index.php?post/drupal-288 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/288"
 ---
 
 

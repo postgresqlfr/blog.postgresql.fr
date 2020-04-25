@@ -2,7 +2,8 @@
 layout: post
 title: "Nouvelles versions mineures (8.4.1, 8.3.8, 8.2.14...)"
 author: "gleu"
-redirect_from: "index.php?post/2009-09-10-nouvelles-versions-mineures-8-4-1-8-3-8-8-2-14 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2009/09/10/Nouvelles-versions-mineures-(8.4.1,-8.3.8,-8.2.14...)"
 ---
 
 

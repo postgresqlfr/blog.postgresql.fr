@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQLFr.org aura son stand à Solutions Linux 2005"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-55 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/55"
 ---
 
 

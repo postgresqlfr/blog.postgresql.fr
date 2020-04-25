@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL 8.0.0 Beta 3 disponible!"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-36 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/36"
 ---
 
 

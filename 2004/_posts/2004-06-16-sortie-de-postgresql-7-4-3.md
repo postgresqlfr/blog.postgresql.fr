@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de PostgreSQL 7.4.3"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-15 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/15"
 ---
 
 

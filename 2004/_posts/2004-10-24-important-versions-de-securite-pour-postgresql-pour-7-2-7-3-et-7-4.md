@@ -2,7 +2,8 @@
 layout: post
 title: "Important: Versions de sécurité pour PostgreSQL pour 7.2, 7.3 et 7.4!"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-43 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/43"
 ---
 
 

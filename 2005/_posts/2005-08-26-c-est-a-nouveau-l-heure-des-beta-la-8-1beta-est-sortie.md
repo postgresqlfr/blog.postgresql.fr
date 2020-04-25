@@ -2,7 +2,8 @@
 layout: post
 title: "C&#39;est à nouveau l&#39;heure des bêta... la 8.1beta est sortie"
 author: "jca"
-redirect_from: "index.php?post/drupal-104 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/104"
 ---
 
 

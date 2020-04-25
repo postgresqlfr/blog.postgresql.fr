@@ -2,7 +2,8 @@
 layout: post
 title: "Premiers pas avec PostgreSQL 9.0"
 author: "florence"
-redirect_from: "index.php?post/2010-09-26-premiers-pas-avec-postgresql-9-0 "
+categories: [Articles]
+redirect_from: "index.php?post/2010/09/26/Premiers-pas-avec-PostgreSQL-9.0"
 ---
 
 

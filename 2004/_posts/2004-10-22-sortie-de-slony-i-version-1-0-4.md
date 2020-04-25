@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de Slony-I version 1.0.4"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-42 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/42"
 ---
 
 

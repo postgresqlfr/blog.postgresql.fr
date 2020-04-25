@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 21 février 2010"
-author: "NBougain"
-redirect_from: "index.php?post/2010-02-27-nouvelles-hebdomadaires-de-postgresql-21-fevrier-2010 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2010/02/27/Nouvelles-hebdomadaires-de-PostgreSQL-21-février-2010"
 ---
 
 

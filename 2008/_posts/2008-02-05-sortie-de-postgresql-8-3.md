@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de PostgreSQL 8.3"
 author: "gleu"
-redirect_from: "index.php?post/drupal-400 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/400"
 ---
 
 

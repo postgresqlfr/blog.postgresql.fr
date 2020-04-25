@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 12 décembre 2010"
-author: "NBougain"
-redirect_from: "index.php?post/2010-12-16-nouvelles-hebdomadaires-de-postgresql-12-decembre-2010 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2010/12/16/Nouvelles-hebdomadaires-de-PostgreSQL-12-décembre-2010"
 ---
 
 

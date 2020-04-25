@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "ma fonctionnalité 8.4 préférée : pg_stat_statement"
-author: "marc.cousin"
-redirect_from: "index.php?post/2009-07-09-ma-fonctionnalite-8-4-preferee-pg-stat-statement "
+author: "mcousin"
+categories: [Articles]
+redirect_from: "index.php?post/2009/07/09/ma-fonctionnalité-8.4-préférée-%3A-pg_stat_statement"
 ---
 
 

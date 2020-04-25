@@ -2,7 +2,8 @@
 layout: post
 title: "ETL gratuit reposant sur Postgresql"
 author: "Benetl2008"
-redirect_from: "index.php?post/drupal-272 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/272"
 ---
 
 

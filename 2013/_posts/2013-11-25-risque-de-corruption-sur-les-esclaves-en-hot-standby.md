@@ -2,7 +2,8 @@
 layout: post
 title: "Risque de corruption sur les &#34;esclaves&#34; en Hot-Standby"
 author: "daamien"
-redirect_from: "index.php?post/2013-11-25-risque-de-corruption-sur-les-esclaves-en-hot-standby "
+categories: [Sécurité]
+redirect_from: "index.php?post/2013/11/25/Risque-de-corruption-sur-les-esclaves-en-Hot-Standby"
 ---
 
 

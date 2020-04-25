@@ -2,7 +2,8 @@
 layout: post
 title: "Le site Mysql.com annonce son passage à PostgreSQL !"
 author: "daamien"
-redirect_from: "index.php?post/2011-04-01-le-site-mysql-com-annonce-son-passage-a-postgresql "
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2011/04/01/Le-site-Mysql.com-annonce-son-passage-à-PostgreSQL-!"
 ---
 
 

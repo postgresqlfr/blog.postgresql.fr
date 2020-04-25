@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL Day Italie les 6 et 7 juillet 2007 à Prato en Italie"
 author: "egwada"
-redirect_from: "index.php?post/drupal-253 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/253"
 ---
 
 

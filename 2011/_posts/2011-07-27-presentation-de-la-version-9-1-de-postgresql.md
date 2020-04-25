@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Présentation de la version 9.1 de PostgreSQL"
-author: "marc.cousin"
-redirect_from: "index.php?post/2011-07-27-presentation-de-la-version-9-1-de-postgresql "
+author: "mcousin"
+categories: [None]
+redirect_from: "index.php?post/2011/07/27/Présentation-de-la-version-9.1-de-PostgreSQL"
 ---
 
 

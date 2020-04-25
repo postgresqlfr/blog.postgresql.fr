@@ -2,7 +2,8 @@
 layout: post
 title: "Recherche de témoignage"
 author: "SAS"
-redirect_from: "index.php?post/drupal-226 "
+categories: [Vie de l'association]
+redirect_from: "index.php?post/drupal/226"
 ---
 
 

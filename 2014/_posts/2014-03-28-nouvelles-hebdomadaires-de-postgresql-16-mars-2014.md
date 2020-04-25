@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 16 mars 2014"
-author: "NBougain"
-redirect_from: "index.php?post/2014-03-28-nouvelles-hebdomadaires-de-postgresql-16-mars-2014 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2014/03/28/Nouvelles-hebdomadaires-de-PostgreSQL-16-mars-2014"
 ---
 
 

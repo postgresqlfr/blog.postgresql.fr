@@ -2,7 +2,8 @@
 layout: post
 title: "RMLL 2008 : C&#39;est parti !"
 author: "daamien"
-redirect_from: "index.php?post/drupal-297 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/297"
 ---
 
 

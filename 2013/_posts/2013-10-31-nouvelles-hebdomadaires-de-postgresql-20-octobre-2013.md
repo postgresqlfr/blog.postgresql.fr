@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 20 octobre 2013"
-author: "NBougain"
-redirect_from: "index.php?post/2013-10-31-nouvelles-hebdomadaires-de-postgresql-20-octobre-2013 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2013/10/31/Nouvelles-hebdomadaires-de-PostgreSQL-20-octobre-2013"
 ---
 
 

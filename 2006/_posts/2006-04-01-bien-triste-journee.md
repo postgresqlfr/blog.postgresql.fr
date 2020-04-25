@@ -2,7 +2,8 @@
 layout: post
 title: "Bien triste journée..."
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-172 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/172"
 ---
 
 

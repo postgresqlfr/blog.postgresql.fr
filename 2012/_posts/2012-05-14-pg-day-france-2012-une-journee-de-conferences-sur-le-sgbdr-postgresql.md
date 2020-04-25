@@ -2,7 +2,8 @@
 layout: post
 title: "PG Day France 2012 : une journée de conférences sur le SGBDR PostgreSQL."
 author: "daamien"
-redirect_from: "index.php?post/2012-05-14-pg-day-france-2012-une-journee-de-conferences-sur-le-sgbdr-postgresql "
+categories: [Événements]
+redirect_from: "index.php?post/2012/05/14/PG-Day-France-2012 : une-journée-de-conférences-sur-le-SGBDR PostgreSQL."
 ---
 
 

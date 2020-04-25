@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQLFr(.org): rétrospective sur un an d&#39;activité"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-79 "
+categories: [Vie de l'association]
+redirect_from: "index.php?post/drupal/79"
 ---
 
 

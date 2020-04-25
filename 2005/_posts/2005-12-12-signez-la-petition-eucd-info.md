@@ -2,7 +2,8 @@
 layout: post
 title: "Signez la pétition eucd.info !"
 author: "gleu"
-redirect_from: "index.php?post/drupal-387 "
+categories: [Vie de l'association]
+redirect_from: "index.php?post/drupal/387"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "Création de comptes"
 author: "SAS"
-redirect_from: "index.php?post/drupal-295 "
+categories: [Vie du site]
+redirect_from: "index.php?post/drupal/295"
 ---
 
 

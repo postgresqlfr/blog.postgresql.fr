@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 26 février 2017"
-author: "NBougain"
-redirect_from: "index.php?post/2017-03-02-nouvelles-hebdomadaires-de-postgresql-26-fevrier-2017 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2017/03/02/Nouvelles-hebdomadaires-de-PostgreSQL-26-février-2017"
 ---
 
 

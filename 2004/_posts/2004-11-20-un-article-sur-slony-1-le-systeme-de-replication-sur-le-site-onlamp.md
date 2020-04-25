@@ -2,7 +2,8 @@
 layout: post
 title: "Un article sur Slony-1, le système de réplication, sur le site OnLamp"
 author: "gleu"
-redirect_from: "index.php?post/drupal-381 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/381"
 ---
 
 

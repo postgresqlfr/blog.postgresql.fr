@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de PostgreSQL 8.0.0 Release Candidate 3"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-60 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/60"
 ---
 
 

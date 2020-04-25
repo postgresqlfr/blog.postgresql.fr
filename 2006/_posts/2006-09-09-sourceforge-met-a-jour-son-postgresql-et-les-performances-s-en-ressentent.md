@@ -2,7 +2,8 @@
 layout: post
 title: "SourceForge met à jour son PostgreSQL et les performances s&#39;en ressentent"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-206 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/206"
 ---
 
 

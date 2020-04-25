@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 22 février 2015"
-author: "NBougain"
-redirect_from: "index.php?post/2015-02-24-nouvelles-hebdomadaires-de-postgresql-22-fevrier-2015 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2015/02/24/Nouvelles-hebdomadaires-de-PostgreSQL-22-février-2015"
 ---
 
 

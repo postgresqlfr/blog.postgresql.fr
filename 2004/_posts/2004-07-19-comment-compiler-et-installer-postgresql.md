@@ -2,7 +2,8 @@
 layout: post
 title: "Comment compiler et installer PostgreSQL ?"
 author: "gleu"
-redirect_from: "index.php?post/drupal-372 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/372"
 ---
 
 

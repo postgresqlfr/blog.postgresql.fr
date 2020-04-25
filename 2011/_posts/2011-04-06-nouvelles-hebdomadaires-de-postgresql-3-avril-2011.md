@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 3 avril 2011"
-author: "NBougain"
-redirect_from: "index.php?post/2011-04-06-nouvelles-hebdomadaires-de-postgresql-3-avril-2011 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2011/04/06/Nouvelles-hebdomadaires-de-PostgreSQL-3-avril-2011"
 ---
 
 

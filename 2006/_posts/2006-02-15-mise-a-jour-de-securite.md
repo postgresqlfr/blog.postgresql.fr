@@ -2,7 +2,8 @@
 layout: post
 title: "Mise à jour de sécurité"
 author: "SAS"
-redirect_from: "index.php?post/drupal-161 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/161"
 ---
 
 

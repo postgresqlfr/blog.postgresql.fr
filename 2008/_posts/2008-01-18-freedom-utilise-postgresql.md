@@ -2,7 +2,8 @@
 layout: post
 title: "Freedom utilise PostgreSQL"
 author: "SAS"
-redirect_from: "index.php?post/drupal-270 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/270"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "La réplication Maitre/Esclave intégrée dans PostgreSQL 8.4"
 author: "daamien"
-redirect_from: "index.php?post/drupal-294 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/294"
 ---
 
 

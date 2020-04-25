@@ -2,7 +2,8 @@
 layout: post
 title: "Nouvelle composition du bureau"
 author: "jca"
-redirect_from: "index.php?post/drupal-218 "
+categories: [Vie de l'association]
+redirect_from: "index.php?post/drupal/218"
 ---
 
 

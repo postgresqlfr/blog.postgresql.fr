@@ -2,7 +2,8 @@
 layout: post
 title: "Première Tunis PostgreSQL Party"
 author: "karim2k"
-redirect_from: "index.php?post/drupal-2 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/2"
 ---
 
 

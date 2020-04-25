@@ -2,7 +2,8 @@
 layout: post
 title: "Un comparatif des SGBD OpenSource"
 author: "SAS"
-redirect_from: "index.php?post/drupal-3 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/3"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "Perte d&#39;une table sous PostgreSQL V.7.3.2... et solution!"
 author: "jca"
-redirect_from: "index.php?post/drupal-19 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/19"
 ---
 
 

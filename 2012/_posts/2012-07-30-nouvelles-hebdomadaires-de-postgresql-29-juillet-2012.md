@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 29 juillet 2012"
-author: "NBougain"
-redirect_from: "index.php?post/2012-07-30-nouvelles-hebdomadaires-de-postgresql-29-juillet-2012 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2012/07/30/Nouvelles-hebdomadaires-de-PostgreSQL-29-juillet-2012"
 ---
 
 

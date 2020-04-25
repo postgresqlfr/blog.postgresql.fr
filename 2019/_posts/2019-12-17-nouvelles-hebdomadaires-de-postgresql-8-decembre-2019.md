@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 8 décembre 2019"
-author: "NBougain"
-redirect_from: "index.php?post/2019-12-17-nouvelles-hebdomadaires-de-postgresql-08-decembre-2019 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2019/12/17/Nouvelles-hebdomadaires-de-PostgreSQL-08-décembre-2019"
 ---
 
 

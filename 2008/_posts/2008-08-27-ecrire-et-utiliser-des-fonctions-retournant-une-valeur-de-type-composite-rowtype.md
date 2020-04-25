@@ -2,7 +2,8 @@
 layout: post
 title: "Écrire et utiliser des fonctions retournant une valeur de type composite (ROWTYPE)"
 author: "RockyRoad"
-redirect_from: "index.php?post/drupal-303 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/303"
 ---
 
 

@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 10 mars 2019"
-author: "NBougain"
-redirect_from: "index.php?post/2019-03-15-nouvelles-hebdomadaires-de-postgresql-10-mars-2019 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2019/03/15/Nouvelles-hebdomadaires-de-PostgreSQL-10-mars-2019"
 ---
 
 

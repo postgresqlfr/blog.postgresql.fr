@@ -2,7 +2,8 @@
 layout: post
 title: "IMPORTANT: MIGRATION DES FORUMS. À LIRE!!!"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-305 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/305"
 ---
 
 

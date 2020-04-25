@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL : Présentation rapide à l&#39;usage des professionnels de l&#39;informatique"
 author: "erwan"
-redirect_from: "index.php?post/drupal-68 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/68"
 ---
 
 

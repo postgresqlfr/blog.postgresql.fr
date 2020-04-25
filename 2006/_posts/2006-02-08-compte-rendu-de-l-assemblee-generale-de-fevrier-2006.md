@@ -2,7 +2,8 @@
 layout: post
 title: "Compte-Rendu de l&#39;Assemblée Générale de Février 2006"
 author: "SAS"
-redirect_from: "index.php?post/drupal-158 "
+categories: [Vie de l'association]
+redirect_from: "index.php?post/drupal/158"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "Debian Sarge, PostgreSQL 8.1, XID Wraparound et Single User Mode"
 author: "jca"
-redirect_from: "index.php?post/drupal-199 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/199"
 ---
 
 

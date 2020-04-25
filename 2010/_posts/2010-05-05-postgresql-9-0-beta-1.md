@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "PostgreSQL 9.0 Bêta 1"
-author: "sas"
-redirect_from: "index.php?post/2010-05-05-postgresql-9-0-beta-1 "
+author: "SAS"
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2010/05/05/PostgreSQL-9.0-Bêta-1"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "Tutoriel pour installer PostgreSQL et pgacces sous Mandrake et paramétrer les logiciels pour qu&#39;ils fonctionnent ensemble"
 author: "siruphi"
-redirect_from: "index.php?post/drupal-13 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/13"
 ---
 
 

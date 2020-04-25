@@ -2,7 +2,8 @@
 layout: post
 title: "3 articles à ne pas rater..."
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-224 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/224"
 ---
 
 

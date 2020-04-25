@@ -2,7 +2,8 @@
 layout: post
 title: "Utiliser du Python côté serveur"
 author: "jca"
-redirect_from: "index.php?post/drupal-37 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/37"
 ---
 
 

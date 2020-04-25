@@ -2,7 +2,8 @@
 layout: post
 title: "Cartographie : PostgreSQL+PostGIS : &#34;la solution la plus aboutie&#34;"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-6 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/6"
 ---
 
 

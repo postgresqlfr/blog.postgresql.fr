@@ -2,7 +2,8 @@
 layout: post
 title: "PostGIS et Jean David Techer, 01MAP à Montpellier"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-85 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/85"
 ---
 
 

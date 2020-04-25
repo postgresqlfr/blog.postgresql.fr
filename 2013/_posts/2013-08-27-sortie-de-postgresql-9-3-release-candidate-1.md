@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de PostgreSQL 9.3 Release Candidate 1"
 author: "daamien"
-redirect_from: "index.php?post/2013-08-27-sortie-de-postgresql-9-3-release-candidate-1 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2013/08/27/Sortie-de-PostgreSQL-9.3-Release-Candidate-1"
 ---
 
 

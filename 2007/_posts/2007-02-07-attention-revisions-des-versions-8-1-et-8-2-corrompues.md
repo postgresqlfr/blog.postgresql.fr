@@ -2,7 +2,8 @@
 layout: post
 title: "Attention : Révisions des versions 8.1 et 8.2 corrompues"
 author: "SAS"
-redirect_from: "index.php?post/drupal-236 "
+categories: [Sécurité]
+redirect_from: "index.php?post/drupal/236"
 ---
 
 

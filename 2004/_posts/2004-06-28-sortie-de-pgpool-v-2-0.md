@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de pgpool v.2.0"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-17 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/17"
 ---
 
 

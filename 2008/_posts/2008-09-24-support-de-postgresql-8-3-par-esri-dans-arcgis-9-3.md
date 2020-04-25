@@ -2,7 +2,8 @@
 layout: post
 title: "Support de PostgreSQL 8.3 par ESRI dans ArcGIS 9.3"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-308 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/308"
 ---
 
 

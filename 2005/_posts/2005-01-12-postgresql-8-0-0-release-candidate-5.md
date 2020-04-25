@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL 8.0.0 Release Candidate 5"
 author: "jca"
-redirect_from: "index.php?post/drupal-63 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/63"
 ---
 
 

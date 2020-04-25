@@ -2,7 +2,8 @@
 layout: post
 title: "Comment utilisez-vous PostgreSQL ?"
 author: "daamien"
-redirect_from: "index.php?post/2009-01-16-comment-utilisez-vous-postgresql "
+categories: [Vie de l'association]
+redirect_from: "index.php?post/2009/01/16/Comment-utilisez-vous-PostgreSQL"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "Nouvelles versions"
 author: "SAS"
-redirect_from: "index.php?post/drupal-149 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/149"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de PostgreSL 8.4 beta 2"
 author: "gleu"
-redirect_from: "index.php?post/2009-05-22-sortie-de-postgresl-8-4-beta-2 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2009/05/22/Sortie-de-PostgreSL-8.4-beta-2"
 ---
 
 

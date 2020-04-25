@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 26 juin 2016"
-author: "NBougain"
-redirect_from: "index.php?post/2016-06-28-nouvelles-hebdomadaires-de-postgresql-26-juin-2016 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2016/06/28/Nouvelles-hebdomadaires-de-PostgreSQL-26-juin-2016"
 ---
 
 

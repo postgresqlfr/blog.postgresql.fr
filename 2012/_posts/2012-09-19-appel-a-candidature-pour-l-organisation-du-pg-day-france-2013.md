@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Appel à Candidature pour l&#39;organisation du PG Day France 2013"
-author: "gdifolco"
-redirect_from: "index.php?post/2012-09-19-appel-a-candidature-pour-l-organisation-du-pg-day-france-2013 "
+author: ""
+categories: [Événements]
+redirect_from: "index.php?post/2012/09/19/Appel-à-Candidature-pour-l-organisation-du-PG-Day-France-2013"
 ---
 
 

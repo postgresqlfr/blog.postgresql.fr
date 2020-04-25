@@ -2,7 +2,8 @@
 layout: post
 title: "Appel à conférences : PGConf.EU 2011"
 author: "daamien"
-redirect_from: "index.php?post/2011-05-31-appel-a-conferences-pgconf-eu-2011 "
+categories: [Événements]
+redirect_from: "index.php?post/2011/05/31/Appel-à-conférences-:-PGConf.EU-2011"
 ---
 
 

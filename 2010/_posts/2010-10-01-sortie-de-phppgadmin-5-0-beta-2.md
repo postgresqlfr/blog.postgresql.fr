@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de phpPgAdmin 5.0 béta 2"
 author: "ioguix"
-redirect_from: "index.php?post/2010-10-01-sortie-de-phppgadmin-5-0-beta-2 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2010/10/01/Sortie-de-phpPgAdmin-5.0-béta-2"
 ---
 
 

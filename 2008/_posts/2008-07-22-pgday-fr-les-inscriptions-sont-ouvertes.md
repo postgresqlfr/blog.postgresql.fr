@@ -2,7 +2,8 @@
 layout: post
 title: "[Pgday.fr] Les inscriptions sont ouvertes"
 author: "SAS"
-redirect_from: "index.php?post/drupal-300 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/300"
 ---
 
 

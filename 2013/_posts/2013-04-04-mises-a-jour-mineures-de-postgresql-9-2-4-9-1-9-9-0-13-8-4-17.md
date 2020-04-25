@@ -2,7 +2,8 @@
 layout: post
 title: "Mises à jour mineures de PostgreSQL : 9.2.4, 9.1.9, 9.0.13, 8.4.17"
 author: "daamien"
-redirect_from: "index.php?post/2013-04-04-mises-a-jour-mineures-de-postgresql-9-2-4-9-1-9-9-0-13-8-4-17 "
+categories: [Sécurité]
+redirect_from: "index.php?post/2013/04/04/Mises-à-jour-mineures-de-PostgreSQL-:-9.2.4,-9.1.9,-9.0.13,-8.4.17"
 ---
 
 

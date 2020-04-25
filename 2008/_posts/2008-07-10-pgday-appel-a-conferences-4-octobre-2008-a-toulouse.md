@@ -2,7 +2,8 @@
 layout: post
 title: "[Pgday] Appel à conférences /  4 octobre 2008 à Toulouse"
 author: "daamien"
-redirect_from: "index.php?post/drupal-252 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/252"
 ---
 
 

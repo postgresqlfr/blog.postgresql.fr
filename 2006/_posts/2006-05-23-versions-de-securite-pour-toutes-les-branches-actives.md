@@ -2,7 +2,8 @@
 layout: post
 title: "Versions de sécurité pour toutes les branches actives"
 author: "gleu"
-redirect_from: "index.php?post/drupal-392 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/392"
 ---
 
 

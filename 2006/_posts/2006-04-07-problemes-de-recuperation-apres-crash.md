@@ -2,7 +2,8 @@
 layout: post
 title: "Problèmes de récupération après crash"
 author: "SAS"
-redirect_from: "index.php?post/drupal-174 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/174"
 ---
 
 

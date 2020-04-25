@@ -2,7 +2,8 @@
 layout: post
 title: "Cityvox, exemple d’une migration réussie d’une architecture propriétaire Oracle vers PostgreSQL&amp;nbsp;!"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-78 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/78"
 ---
 
 

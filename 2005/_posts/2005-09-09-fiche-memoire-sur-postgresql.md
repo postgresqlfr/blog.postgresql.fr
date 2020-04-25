@@ -2,7 +2,8 @@
 layout: post
 title: "Fiche mémoire sur PostgreSQL"
 author: "gleu"
-redirect_from: "index.php?post/drupal-113 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/113"
 ---
 
 

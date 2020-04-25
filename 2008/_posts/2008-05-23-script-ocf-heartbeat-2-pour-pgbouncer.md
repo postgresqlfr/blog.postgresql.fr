@@ -2,7 +2,8 @@
 layout: post
 title: "Script OCF (heartbeat-2) pour pgbouncer"
 author: "tigrou3tac"
-redirect_from: "index.php?post/drupal-292 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/292"
 ---
 
 

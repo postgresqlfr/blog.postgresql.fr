@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 27 juillet 2014"
-author: "NBougain"
-redirect_from: "index.php?post/2014-08-05-nouvelles-hebdomadaires-de-postgresql-27-juillet-2014 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2014/08/05/Nouvelles-hebdomadaires-de-PostgreSQL-27-juillet-2014"
 ---
 
 

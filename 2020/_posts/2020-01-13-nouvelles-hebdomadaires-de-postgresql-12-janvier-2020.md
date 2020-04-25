@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 12 janvier 2020"
-author: "NBougain"
-redirect_from: "index.php?post/2020-01-13-nouvelles-hebdomadaires-de-postgresql-12-janvier-2020 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2020/01/13/Nouvelles-hebdomadaires-de-PostgreSQL-12-janvier-2020"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "Huit bases de données de 180 Gigas, réplication et plus..."
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-169 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/169"
 ---
 
 

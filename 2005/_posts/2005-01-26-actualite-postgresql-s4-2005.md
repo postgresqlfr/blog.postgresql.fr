@@ -2,7 +2,8 @@
 layout: post
 title: "Actualité PostgreSQL (S4-2005)"
 author: "jca"
-redirect_from: "index.php?post/drupal-66 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/66"
 ---
 
 

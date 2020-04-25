@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de PostgreSQL 8.1"
 author: "fsuter"
-redirect_from: "index.php?post/drupal-133 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/133"
 ---
 
 

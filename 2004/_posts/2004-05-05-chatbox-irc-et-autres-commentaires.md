@@ -2,7 +2,8 @@
 layout: post
 title: "Chatbox, IRC et autres commentaires..."
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-1 "
+categories: [Vie du site]
+redirect_from: "index.php?post/drupal/1"
 ---
 
 

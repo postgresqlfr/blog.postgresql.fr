@@ -2,7 +2,8 @@
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 28 mars 2005"
 author: "SAS"
-redirect_from: "index.php?post/drupal-87 "
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/drupal/87"
 ---
 
 

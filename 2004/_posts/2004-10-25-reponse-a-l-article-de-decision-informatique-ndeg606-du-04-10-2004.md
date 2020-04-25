@@ -2,7 +2,8 @@
 layout: post
 title: "Réponse à l&#39;article de Décision Informatique n°606 du 04/10/2004"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-44 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/44"
 ---
 
 

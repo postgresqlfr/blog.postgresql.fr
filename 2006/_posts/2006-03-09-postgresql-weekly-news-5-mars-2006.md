@@ -2,7 +2,8 @@
 layout: post
 title: "== PostgreSQL Weekly News - 5 mars 2006 =="
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-166 "
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/drupal/166"
 ---
 
 

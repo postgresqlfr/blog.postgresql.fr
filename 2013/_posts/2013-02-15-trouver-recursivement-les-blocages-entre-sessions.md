@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Trouver récursivement les blocages entre sessions."
-author: "marc.cousin"
-redirect_from: "index.php?post/2013-02-15-trouver-recursivement-les-blocages-entre-sessions "
+author: "mcousin"
+categories: [None]
+redirect_from: "index.php?post/2013/02/15/Trouver-récursivement-les-blocages-entre-sessions."
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "Contributions"
 author: "SAS"
-redirect_from: "index.php?post/drupal-140 "
+categories: [Événements]
+redirect_from: "index.php?post/drupal/140"
 ---
 
 

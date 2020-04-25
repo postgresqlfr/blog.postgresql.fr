@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "[PG Day France 2014] Appel"
-author: "gdifolco"
-redirect_from: "index.php?post/2013-09-29-pg-day-france-2014-appel "
+author: ""
+categories: [Événements]
+redirect_from: "index.php?post/2013/09/29/[PG-Day-France-2014]-Appel"
 ---
 
 

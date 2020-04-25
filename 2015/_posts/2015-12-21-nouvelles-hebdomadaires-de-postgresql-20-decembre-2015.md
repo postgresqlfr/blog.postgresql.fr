@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 20 décembre 2015"
-author: "NBougain"
-redirect_from: "index.php?post/2015-12-21-nouvelles-hebdomadaires-de-postgresql-20-decembre-2015 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2015/12/21/Nouvelles-hebdomadaires-de-PostgreSQL-20-décembre-2015"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "Appel à soutien : postgresql.fr a besoin de 2 vm Linux"
 author: "daamien"
-redirect_from: "index.php?post/2016-06-30-appel-a-soutien-postgresql-fr-a-besoin-de-2-vm-linux "
+categories: [Vie du site]
+redirect_from: "index.php?post/2016/06/30/Appel-à-soutien-:-postgresql.fr-a-besoin-de-2-vm-Linux"
 ---
 
 

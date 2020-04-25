@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 18 août 2013"
-author: "NBougain"
-redirect_from: "index.php?post/2013-08-25-nouvelles-hebdomadaires-de-postgresql-18-aout-2013 "
+author: "chl"
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2013/08/25/Nouvelles-hebdomadaires-de-PostgreSQL-18-août-2013"
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL 8.2 beta3 et PgAdmin3 1.6 RC2"
 author: "SAS"
-redirect_from: "index.php?post/drupal-214 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/drupal/214"
 ---
 
 

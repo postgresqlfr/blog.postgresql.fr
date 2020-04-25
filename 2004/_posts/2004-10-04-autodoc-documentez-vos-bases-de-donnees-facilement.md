@@ -2,7 +2,8 @@
 layout: post
 title: "Autodoc : documentez vos bases de données facilement!"
 author: "Jean-Paul Argudo"
-redirect_from: "index.php?post/drupal-38 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/38"
 ---
 
 

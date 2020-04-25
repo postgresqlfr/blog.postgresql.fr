@@ -2,7 +2,8 @@
 layout: post
 title: "Nouvelles neuves de PG - 23/07/2006"
 author: "SAS"
-redirect_from: "index.php?post/drupal-197 "
+categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/drupal/197"
 ---
 
 

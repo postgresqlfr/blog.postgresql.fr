@@ -2,7 +2,8 @@
 layout: post
 title: "Index inversé, en C"
 author: "gleu"
-redirect_from: "index.php?post/drupal-393 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/393"
 ---
 
 

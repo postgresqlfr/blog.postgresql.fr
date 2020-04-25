@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Sun fait un point sur l&#39;acquisition de MySQL"
-author: "sas"
-redirect_from: "index.php?post/2009-01-22-sun-fait-un-point-sur-l-acquisition-de-mysql "
+author: "SAS"
+categories: [Articles]
+redirect_from: "index.php?post/2009/01/22/Sun-fait-un-point-sur-l-acquisition-de-MySQL"
 ---
 
 

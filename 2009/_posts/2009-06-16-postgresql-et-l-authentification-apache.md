@@ -2,7 +2,8 @@
 layout: post
 title: "Postgresql et l&#39;authentification Apache"
 author: "pascal62fr"
-redirect_from: "index.php?post/2009-06-11-postgresql-et-l-authentification-apache "
+categories: [Articles]
+redirect_from: "index.php?post/2009/06/11/Postgresql-et-l-authentification-Apache"
 ---
 
 

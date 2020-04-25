@@ -2,7 +2,8 @@
 layout: post
 title: "Sortie de la verion beta 3 de PostgreSQL 9.0"
 author: "daamien"
-redirect_from: "index.php?post/2010-07-13-sortie-de-la-verion-beta-3-de-postgresql-9-0 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2010/07/13/Sortie-de-la-verion-beta-3-de-PostgreSQL-9.0"
 ---
 
 

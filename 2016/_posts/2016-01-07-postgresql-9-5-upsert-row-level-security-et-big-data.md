@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL 9.5 : UPSERT, Row Level Security et Big Data"
 author: "daamien"
-redirect_from: "index.php?post/postgresql-9-5 "
+categories: [Dans les bacs]
+redirect_from: "index.php?post/PostgreSQL-9-5"
 ---
 
 

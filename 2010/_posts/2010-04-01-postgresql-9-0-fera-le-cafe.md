@@ -2,7 +2,8 @@
 layout: post
 title: "PostgreSQL 9.0 fera le café !"
 author: "daamien"
-redirect_from: "index.php?post/2010-03-31-postgresql-9-0-fera-le-cafe "
+categories: [Événements]
+redirect_from: "index.php?post/2010/03/31/PostgreSQL-9.0-fera-le-café-!"
 ---
 
 

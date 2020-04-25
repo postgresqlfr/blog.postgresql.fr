@@ -2,7 +2,8 @@
 layout: post
 title: "Version PDF du manuel français grandement améliorée"
 author: "gleu"
-redirect_from: "index.php?post/drupal-391 "
+categories: [Vie du site]
+redirect_from: "index.php?post/drupal/391"
 ---
 
 

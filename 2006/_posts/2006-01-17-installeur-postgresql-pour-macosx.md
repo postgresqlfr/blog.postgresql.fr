@@ -2,7 +2,8 @@
 layout: post
 title: "Installeur PostgreSQL pour MacOSX"
 author: "mowgli"
-redirect_from: "index.php?post/drupal-153 "
+categories: [Articles]
+redirect_from: "index.php?post/drupal/153"
 ---
 
 

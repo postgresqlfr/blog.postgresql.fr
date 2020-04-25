@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Sortie de PostgreSQL 9.0"
-author: "sas"
-redirect_from: "index.php?post/2010-09-20-sortie-de-postgresql-9-0 "
+author: "SAS"
+categories: [Dans les bacs]
+redirect_from: "index.php?post/2010/09/20/Sortie-de-PostgreSQL-9.0"
 ---
 
 
