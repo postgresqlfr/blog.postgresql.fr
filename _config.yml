@@ -34,7 +34,7 @@ markdown: kramdown
 theme: minima
 excerpt_separator: <!--more-->
 paginate: 5
-paginate_path: "/page:num/"
+paginate_path: "/page/:num/"
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
