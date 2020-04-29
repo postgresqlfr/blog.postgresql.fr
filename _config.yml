@@ -36,7 +36,6 @@ paginate: 5
 paginate_path: "/page/:num/"
 plugins:
   - jekyll-feed
-  - jekyll-redirect-from
 exclude:
   - .jekyll-cache
   - Gemfile
