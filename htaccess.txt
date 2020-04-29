@@ -1,0 +1,14 @@
+---
+layout: null
+---
+
+RewriteEngine On
+
+{% for p in site.posts %}
+{% if p.redirect_from %}
+{% assign  url_parts = p.redirect_from | split: "?" %}
+RewriteCond %{QUERY_STRING} ^{{ url_parts[1] }}$
+RewriteRule ^.*$ {{ p.url }}?  [R=301]
+{% endif %}
+{% endfor %}
+
