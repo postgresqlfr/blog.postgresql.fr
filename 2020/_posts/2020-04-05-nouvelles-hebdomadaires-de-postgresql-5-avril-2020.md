@@ -3,6 +3,7 @@ layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 5 avril 2020"
 author: "chl"
 categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2020/04/27/Nouvelles-hebdomadaires-de-PostgreSQL-5-avril-2020"
 ---
 
 Le comité du Code de Conduite a publié le rapport annuel de 2019 :

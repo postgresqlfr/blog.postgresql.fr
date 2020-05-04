@@ -3,6 +3,7 @@ layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 12 avril 2020"
 author: "chl"
 categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2020/04/27/Nouvelles-hebdomadaires-de-PostgreSQL-12-avril-2020"
 ---
 
 Il existe maintenant un dépôt Yum "commun" pour stocker ce qui ne dépend pas directement
