@@ -1,0 +1,11 @@
+---
+layout: null
+---
+
+RewriteEngine On
+
+{% for p in site.posts %}{% if p.redirect_from %}
+RewriteCond %{QUERY_STRING} ^{{ p.redirect_from | remove: "index.php?" | replace: "[", "%5B" | replace: ']','%5D' | replace: "à", "%C3%A0" | replace: "é", "%C3%A9" | replace: "è","%C3%A8%0A" | replace: "ê","%C3%AA%0A" | replace: "û","%C3%BB%0A%0A" }}$
+RewriteRule ^.*$ {{ p.url }}?  [R=301]
+{% endif %}{% endfor %}
+

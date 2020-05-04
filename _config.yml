@@ -19,7 +19,6 @@ email: contact@postgresql.fr
 description: > # this means to ignore newlines until "baseurl:"
   Retrouvez l'actualité de PostgreSQL et de ses logiciels satelittes
 
-# /!\ Temporairement
 baseurl: "" # the subpath of your site, e.g. /blog
 
 url: "https://testblog.postgresql.fr" # the base hostname & protocol for your site, e.g. http://example.com
@@ -37,9 +36,9 @@ paginate: 5
 paginate_path: "/page/:num/"
 plugins:
   - jekyll-feed
-  - jekyll-redirect-from
 exclude:
   - .jekyll-cache
   - Gemfile
   - Gemfile.lock
   - Makefile
+#  - htaccess.txt # les redirections sont statiques (cf .htaccess)

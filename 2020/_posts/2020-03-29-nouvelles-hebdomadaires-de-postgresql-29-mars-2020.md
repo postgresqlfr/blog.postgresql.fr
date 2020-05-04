@@ -3,6 +3,7 @@ layout: post
 title: "Nouvelles hebdomadaires de PostgreSQL - 29 mars 2020"
 author: "chl"
 categories: [PostgreSQL Weekly News]
+redirect_from: "index.php?post/2020/04/27/Nouvelles-hebdomadaires-de-PostgreSQL-29-mars-2020"
 ---
 
 Personne de la semaine : [https://postgresql.life/post/dave_cramer/](https://postgresql.life/post/dave_cramer/)
