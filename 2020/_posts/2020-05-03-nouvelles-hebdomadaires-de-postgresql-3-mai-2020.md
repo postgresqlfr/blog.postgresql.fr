@@ -18,6 +18,7 @@ categories: [PostgreSQL Weekly News]
 - griddb_fdw 1.2 :
   [https://github.com/pgspider/griddb_fdw](https://github.com/pgspider/griddb_fdw)
 
+<!--more-->
 ## PostgreSQL Local
 
 - *PGCon 2020* se déroulera en ligne, du 26 au 29 mai 2020 :
