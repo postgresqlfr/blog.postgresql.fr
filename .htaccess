@@ -1,5 +1,7 @@
 RewriteEngine On
 
+RewriteCond %{QUERY_STRING} ^feed/atom$
+RewriteRule ^.*$ /feed.xml?  [R=301]
 
 RewriteCond %{QUERY_STRING} ^post/2020/04/27/Nouvelles-hebdomadaires-de-PostgreSQL-19-avril-2020$
 RewriteRule ^.*$ /2020/nouvelles-hebdomadaires-de-postgresql-19-avril-2020.html?  [R=301]
