@@ -27,7 +27,7 @@
 
 #pgHeader {
   position: relative;
-  background: url("http://blog.postgresql.fr/themes/postgresql/img/hdr_fill.png") repeat-x;
+  background: url("/assets/tortoise/images/hdr_fill.png") repeat-x;
   height: 80px;
   margin: 0;
   padding: 0;
@@ -44,8 +44,8 @@
   float: left;
 }
 
-#pgHeaderLogoLeft img { 
-  border: 0px; 
+#pgHeaderLogoLeft img {
+  border: 0px;
 }
 
 #pgHeaderLogoRight {
@@ -79,13 +79,13 @@
   white-space: nowrap; /* for Opera */
 }
 
-#pgSearch form label { 
-  color: #666; 
-  font-size: 0.8em; 
+#pgSearch form label {
+  color: #666;
+  font-size: 0.8em;
 }
 
-#pgSearch form input { 
-  font-size: 0.8em; 
+#pgSearch form input {
+  font-size: 0.8em;
 }
 
 #pgSearch form #submit {
@@ -126,7 +126,7 @@
 
 #pgFrontFeature {
   position: relative;
-  background: #F5F5F5 url(http://blog.postgresql.fr/themes/postgresql/img/feature_elephant.png) bottom right no-repeat; 
+  background: #F5F5F5 url(/assets/tortoise/images/feature_elephant.png) bottom right no-repeat;
   padding: 15px;
   margin-bottom: 1em;
   font-size: 1.0em;
@@ -165,7 +165,7 @@
 }
 
 #pgFrontFeature #pgFrontFeatureContent {
-  padding: 6px 132px 16px 10px; 
+  padding: 6px 132px 16px 10px;
 }
 
 #pgFrontNewsEventsContainer {
@@ -244,7 +244,7 @@ div.pgFrontUser {
   width: 100%;
   padding-top: 7px;
   float: left;
-  background: url(http://blog.postgresql.fr/themes/postgresql/img/usr_tbl_top.png) top right no-repeat;
+  background: url(/assets/tortoise/images/usr_tbl_top.png) top right no-repeat;
   background-size: auto;
   margin-bottom: 15px;
 }
@@ -257,10 +257,10 @@ div.pgFrontCenterUser {
   /*margin-bottom: 15px;*/
   padding-bottom: 7px;
 }
-	    
+
 
 div.pgFrontUserInner {
-  background: url(http://blog.postgresql.fr/themes/postgresql/img/images/usr_tbl_btm.png) bottom left no-repeat;
+  background: url(/assets/tortoise/images/images/usr_tbl_btm.png) bottom left no-repeat;
   width: 100%;
   padding-bottom: 7px;
 }
@@ -269,7 +269,7 @@ div.pgFrontUserWrap {
   padding: 11px 14px 12px 15px;
   -moz-border-radius: 12px;
   border-left: 1px solid #DADADA;
-  border-right: 1px solid #DADADA;  
+  border-right: 1px solid #DADADA;
   border-top: 1px solid #DADADA;
   border-bottom: 1px solid #DADADA;
   margin-bottom: 7px;
@@ -278,31 +278,31 @@ div.pgFrontUserWrap {
 
 }
 
-div.pgFrontUserContent { 
-  margin-left: 4px; 
+div.pgFrontUserContent {
+  margin-left: 4px;
 }
 
-#pgFrontSupportUs { 
+#pgFrontSupportUs {
   float: left;
   width: 25%;
   margin-left: 15px;
 }
 
-#pgFrontShortcuts { 
+#pgFrontShortcuts {
   float: right;
   width: 25%;
 }
 
-#pgFrontSupportUsWrap { 
-  margin-left: 8px; 
-  color: #666; 
+#pgFrontSupportUsWrap {
+  margin-left: 8px;
+  color: #666;
 }
 
-#pgFrontShortcutsWrap { 
-  font-size: 0.9em; 
-  margin-left: 12px; 
-  margin-top: 10px; 
-  color: #666; 
+#pgFrontShortcutsWrap {
+  font-size: 0.9em;
+  margin-left: 12px;
+  margin-top: 10px;
+  color: #666;
 }
 
 #pgFrontShortcutsWrap img {
@@ -318,7 +318,7 @@ div.pgFrontUserContent {
 #pgFrontShortcutsList li {
   margin: 0;
   padding-left: 12px;
-  background-image: url(http://blog.postgresql.fr/themes/postgresql/img/images/blt_blu_arrow.png);
+  background-image: url(/assets/tortoise/images/images/blt_blu_arrow.png);
   background-repeat: no-repeat;
   background-position: 0px 0.5em;
 }
@@ -340,7 +340,7 @@ div.pgFrontUserContent {
 #pgSponsorWrap {
   width: 150px;
   background-color: #F5F5F5;
-  background-image: url(http://blog.postgresql.fr/themes/postgresql/img/images/nav_tbl_top.png);
+  background-image: url(/assets/tortoise/images/images/nav_tbl_top.png);
   background-position: top right;
   background-repeat: no-repeat;
   font-size: 0.4em;
@@ -348,7 +348,7 @@ div.pgFrontUserContent {
 }
 
 #pgSponsorWrap ul {
-  background-image: url(http://blog.postgresql.fr/themes/postgresql/img/images/nav_tbl_btm.png);
+  background-image: url(/assets/tortoise/images/images/nav_tbl_btm.png);
   background-position: bottom left;
   background-repeat: no-repeat;
   list-style: none;
@@ -413,7 +413,7 @@ div.pgFrontUserContent {
   border-bottom: 1px solid #EFEFEF;
   background: #F5F5F5 url(/layout/images/box_top.gif) no-repeat top left;
 }
-	
+
 #pgSurvey dd {
   margin: 0 0 0 10px;
   padding: 0 10px 0 0;
@@ -469,7 +469,7 @@ div.pgFrontUserContent {
   border-bottom: 1px solid #EFEFEF;
   background: #F5F5F5 url(/layout/images/box_top.gif) no-repeat top left;
 }
-	
+
 #pgQuickDocs dd {
   margin: 0 0 0 10px;
   padding: 0 10px 0 0;
@@ -514,7 +514,7 @@ div.pgFrontUserContent {
   border-bottom: 1px solid #EFEFEF;
   background: #F5F5F5 url(/layout/images/box_top.gif) no-repeat top left;
 }
-	
+
 #pgQuickDownloads dd {
   margin: 0 0 0 10px;
   padding: 0 10px 0 0;
@@ -528,7 +528,7 @@ div.pgFrontUserContent {
 
 #pgPressContacts dd {
   margin-bottom: 10px;
-  
+
 }
 
 #pgArchiveWrap {
@@ -537,9 +537,9 @@ div.pgFrontUserContent {
 
 /* Footer Container */
 #pgFooter {
-  font-size: 0.9em; 
-  color: #666; 
-  line-height: 14px; 
+  font-size: 0.9em;
+  color: #666;
+  line-height: 14px;
   padding-top: 5px;
   clear: both;
 }
@@ -581,7 +581,7 @@ img {
   margin: 0;
   padding: 0;
   height: 23px;
-  background: #B7B7B7 url("http://blog.postgresql.fr/themes/postgresql/img/nav_fill.png") top left repeat-x;
+  background: #B7B7B7 url("/assets/tortoise/images/nav_fill.png") top left repeat-x;
   overflow: visible;
   margin-top: 2px;
 }
@@ -633,7 +633,7 @@ img {
 
 .pgTopNavList li a {
   color: #fff;
-  font-weight: bold; 
+  font-weight: bold;
   text-decoration: none;
 }
 
@@ -705,14 +705,14 @@ img {
   width: 90%;
   background-color: #F5F5F5;
   -moz-border-radius:12px;
-  background-image: url(http://blog.postgresql.fr/themes/postgresql/img/nav_tbl_top.png);
+  background-image: url(/assets/tortoise/images/nav_tbl_top.png);
   background-position: top right;
   background-repeat: no-repeat;
   padding-left: 7px;
 }
 
 .pgSideNav ul, #pgSideNav div {
-  background-image: url(http://blog.postgresql.fr/themes/postgresql/img/nav_tbl_btm.png);
+  background-image: url(/assets/tortoise/images/nav_tbl_btm.png);
   -moz-border-radius:12px;
   background-position: bottom left;
   background-repeat: no-repeat;
@@ -736,7 +736,7 @@ img {
   border-bottom: 1px solid #EFEFEF;
   margin: 0;
   padding-left: 12px;
-  background-image: url(http://blog.postgresql.fr/themes/postgresql/img/blt_gry_arrow.png);
+  background-image: url(/assets/tortoise/images/blt_gry_arrow.png);
   background-repeat: no-repeat;
   background-position: 12px 0.65em;
   list-style-type: none;
@@ -804,7 +804,7 @@ img {
   color: #333;
 }
 
-/* 
+/*
   ajout par kryskool
   24 septembre 2007
 */
