@@ -12,7 +12,7 @@
     {% when "Tuesday" %}
       {% assign date_french = date_french | append: "mardi" %}
     {% when "Wednesday" %}
-      {% assign date_french = date_french | append: "Mercredi" %}
+      {% assign date_french = date_french | append: "mercredi" %}
     {% when "Thursday" %}
       {% assign date_french = date_french | append: "jeudi" %}
     {% when "Friday" %}
@@ -42,7 +42,7 @@
     {% when "January" %}
       {% assign date_french = date_french | append: "janvier" %}
     {% when "February" %}
-      {% assign date_french = date_french | append: "fevrier" %}
+      {% assign date_french = date_french | append: "février" %}
     {% when "March" %}
       {% assign date_french = date_french | append: "mars" %}
     {% when "April" %}
@@ -68,13 +68,13 @@
     {% when "Jan" %}
       {% assign date_french = date_french | append: "janv" %}
     {% when "Feb" %}
-      {% assign date_french = date_french | append: "fevr" %}
+      {% assign date_french = date_french | append: "fév" %}
     {% when "Mar" %}
       {% assign date_french = date_french | append: "mars" %}
     {% when "Apr" %}
       {% assign date_french = date_french | append: "avr" %}
     {% when "May" %}
-      {% assign date_french = date_french | append: "mai" %}
+      {% comment %} Do nothing, it's already been done on long format {% endcomment %}
     {% when "Jun" %}
       {% assign date_french = date_french | append: "juin" %}
     {% when "Jul" %}
