@@ -7,12 +7,12 @@ categories: [PostgreSQL Weekly News]
 
 Personne de la semaine : [https://postgresql.life/post/carole_arnaud/](https://postgresql.life/post/carole_arnaud/)
 
-<!--more-->
-
 ## Offres d'emplois autour de PostgreSQL en décembre
 
 - Internationales : [http://archives.postgresql.org/pgsql-jobs/2020-12/](http://archives.postgresql.org/pgsql-jobs/2020-12/)
 - Francophones : [http://forums.postgresql.fr/viewforum.php?id=4](http://forums.postgresql.fr/viewforum.php?id=4)
+
+<!--more-->
 
 ## PostgreSQL dans les média
 
