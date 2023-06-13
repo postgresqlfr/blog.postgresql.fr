@@ -2,7 +2,7 @@
 layout: post
 title: "Composition du bureau de l'association"
 author: "Anthony Nowocien"
-categories: bureau
+categories: [bureau]
 ---
 
 À l'issue de l'assemblée générale ordinaire de l'association PostgreSQLFr qui s'est tenue le 24 mai 2023, le bureau de l'association est composé des personnes suivantes :
